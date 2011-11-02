@@ -1,0 +1,147 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="classportal_1_1registration_1_1dao_1_1VoDAOImpl" kind="class" prot="public">
+    <compoundname>portal::registration::dao::VoDAOImpl</compoundname>
+    <basecompoundref refid="interfaceportal_1_1registration_1_1dao_1_1VoDAO" prot="public" virt="non-virtual">portal.registration.dao.VoDAO</basecompoundref>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classportal_1_1registration_1_1dao_1_1VoDAOImpl_1aabbe1e1ee26e5a1a2b13c6d49b77449f" prot="private" static="yes" mutable="no">
+        <type>final Logger</type>
+        <definition>final Logger portal.registration.dao.VoDAOImpl.log</definition>
+        <argsstring></argsstring>
+        <name>log</name>
+        <initializer> Logger
+			.getLogger(UserInfoServiceImpl.class)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/dao/VoDAOImpl.java" line="19" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/dao/VoDAOImpl.java" bodystart="18" bodyend="-1"/>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1VoDAOImpl_1ad7e3ba1a2bb558ac86421cd941332fde" compoundref="VoDAOImpl_8java" startline="42" endline="53">portal.registration.dao.VoDAOImpl::findById</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1VoDAOImpl_1a835ab0538757bee251c57acf0ff1d606" compoundref="VoDAOImpl_8java" startline="56" endline="72">portal.registration.dao.VoDAOImpl::getAllDiscipline</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1VoDAOImpl_1af31fcf85409b93ccae3745d57844d4e3" compoundref="VoDAOImpl_8java" startline="25" endline="40">portal.registration.dao.VoDAOImpl::getAllVo</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classportal_1_1registration_1_1dao_1_1VoDAOImpl_1ac5ec3502e9e6c89e2545a21c355d5b9d" prot="private" static="no" mutable="no">
+        <type>SessionFactory</type>
+        <definition>SessionFactory portal.registration.dao.VoDAOImpl.sessionFactory</definition>
+        <argsstring></argsstring>
+        <name>sessionFactory</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/dao/VoDAOImpl.java" line="22" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/dao/VoDAOImpl.java" bodystart="22" bodyend="-1"/>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1VoDAOImpl_1ad7e3ba1a2bb558ac86421cd941332fde" compoundref="VoDAOImpl_8java" startline="42" endline="53">portal.registration.dao.VoDAOImpl::findById</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1VoDAOImpl_1a835ab0538757bee251c57acf0ff1d606" compoundref="VoDAOImpl_8java" startline="56" endline="72">portal.registration.dao.VoDAOImpl::getAllDiscipline</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1VoDAOImpl_1af31fcf85409b93ccae3745d57844d4e3" compoundref="VoDAOImpl_8java" startline="25" endline="40">portal.registration.dao.VoDAOImpl::getAllVo</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classportal_1_1registration_1_1dao_1_1VoDAOImpl_1af31fcf85409b93ccae3745d57844d4e3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>List&lt; <ref refid="classportal_1_1registration_1_1domain_1_1Vo" kindref="compound">Vo</ref> &gt;</type>
+        <definition>List&lt;Vo&gt; portal.registration.dao.VoDAOImpl.getAllVo</definition>
+        <argsstring>()</argsstring>
+        <name>getAllVo</name>
+        <reimplements refid="interfaceportal_1_1registration_1_1dao_1_1VoDAO_1a86370596aa8198130e009f25f9fbb191">getAllVo</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/dao/VoDAOImpl.java" line="25" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/dao/VoDAOImpl.java" bodystart="25" bodyend="40"/>
+        <references refid="classportal_1_1registration_1_1dao_1_1VoDAOImpl_1aabbe1e1ee26e5a1a2b13c6d49b77449f" compoundref="VoDAOImpl_8java" startline="18">portal.registration.dao.VoDAOImpl::log</references>
+        <references refid="classportal_1_1registration_1_1dao_1_1VoDAOImpl_1ac5ec3502e9e6c89e2545a21c355d5b9d" compoundref="VoDAOImpl_8java" startline="22">portal.registration.dao.VoDAOImpl::sessionFactory</references>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1dao_1_1VoDAOImpl_1ad7e3ba1a2bb558ac86421cd941332fde" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classportal_1_1registration_1_1domain_1_1Vo" kindref="compound">Vo</ref></type>
+        <definition>Vo portal.registration.dao.VoDAOImpl.findById</definition>
+        <argsstring>(Integer id)</argsstring>
+        <name>findById</name>
+        <reimplements refid="interfaceportal_1_1registration_1_1dao_1_1VoDAO_1a1e615e3cc23d178459a789ff9e91da5f">findById</reimplements>
+        <param>
+          <type>Integer</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/dao/VoDAOImpl.java" line="42" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/dao/VoDAOImpl.java" bodystart="42" bodyend="53"/>
+        <references refid="classportal_1_1registration_1_1dao_1_1VoDAOImpl_1aabbe1e1ee26e5a1a2b13c6d49b77449f" compoundref="VoDAOImpl_8java" startline="18">portal.registration.dao.VoDAOImpl::log</references>
+        <references refid="classportal_1_1registration_1_1dao_1_1VoDAOImpl_1ac5ec3502e9e6c89e2545a21c355d5b9d" compoundref="VoDAOImpl_8java" startline="22">portal.registration.dao.VoDAOImpl::sessionFactory</references>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1dao_1_1VoDAOImpl_1a835ab0538757bee251c57acf0ff1d606" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>List&lt; String &gt;</type>
+        <definition>List&lt;String&gt; portal.registration.dao.VoDAOImpl.getAllDiscipline</definition>
+        <argsstring>()</argsstring>
+        <name>getAllDiscipline</name>
+        <reimplements refid="interfaceportal_1_1registration_1_1dao_1_1VoDAO_1aa8dde2c7f1a71332033c97f2729e18fb">getAllDiscipline</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/dao/VoDAOImpl.java" line="56" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/dao/VoDAOImpl.java" bodystart="56" bodyend="72"/>
+        <references refid="classportal_1_1registration_1_1dao_1_1VoDAOImpl_1aabbe1e1ee26e5a1a2b13c6d49b77449f" compoundref="VoDAOImpl_8java" startline="18">portal.registration.dao.VoDAOImpl::log</references>
+        <references refid="classportal_1_1registration_1_1dao_1_1VoDAOImpl_1ac5ec3502e9e6c89e2545a21c355d5b9d" compoundref="VoDAOImpl_8java" startline="22">portal.registration.dao.VoDAOImpl::sessionFactory</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="634">
+        <label>portal.registration.dao.VoDAO</label>
+        <link refid="interfaceportal_1_1registration_1_1dao_1_1VoDAO"/>
+      </node>
+      <node id="633">
+        <label>portal.registration.dao.VoDAOImpl</label>
+        <link refid="classportal_1_1registration_1_1dao_1_1VoDAOImpl"/>
+        <childnode refid="634" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="636">
+        <label>portal.registration.dao.VoDAO</label>
+        <link refid="interfaceportal_1_1registration_1_1dao_1_1VoDAO"/>
+      </node>
+      <node id="638">
+        <label>SessionFactory</label>
+      </node>
+      <node id="635">
+        <label>portal.registration.dao.VoDAOImpl</label>
+        <link refid="classportal_1_1registration_1_1dao_1_1VoDAOImpl"/>
+        <childnode refid="636" relation="public-inheritance">
+        </childnode>
+        <childnode refid="637" relation="usage">
+          <edgelabel>log</edgelabel>
+        </childnode>
+        <childnode refid="638" relation="usage">
+          <edgelabel>sessionFactory</edgelabel>
+        </childnode>
+      </node>
+      <node id="637">
+        <label>Logger</label>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/dao/VoDAOImpl.java" line="16" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/dao/VoDAOImpl.java" bodystart="16" bodyend="74"/>
+    <listofallmembers>
+      <member refid="classportal_1_1registration_1_1dao_1_1VoDAOImpl_1ad7e3ba1a2bb558ac86421cd941332fde" prot="public" virt="non-virtual"><scope>portal::registration::dao::VoDAOImpl</scope><name>findById</name></member>
+      <member refid="classportal_1_1registration_1_1dao_1_1VoDAOImpl_1a835ab0538757bee251c57acf0ff1d606" prot="public" virt="non-virtual"><scope>portal::registration::dao::VoDAOImpl</scope><name>getAllDiscipline</name></member>
+      <member refid="classportal_1_1registration_1_1dao_1_1VoDAOImpl_1af31fcf85409b93ccae3745d57844d4e3" prot="public" virt="non-virtual"><scope>portal::registration::dao::VoDAOImpl</scope><name>getAllVo</name></member>
+      <member refid="classportal_1_1registration_1_1dao_1_1VoDAOImpl_1aabbe1e1ee26e5a1a2b13c6d49b77449f" prot="private" virt="non-virtual"><scope>portal::registration::dao::VoDAOImpl</scope><name>log</name></member>
+      <member refid="classportal_1_1registration_1_1dao_1_1VoDAOImpl_1ac5ec3502e9e6c89e2545a21c355d5b9d" prot="private" virt="non-virtual"><scope>portal::registration::dao::VoDAOImpl</scope><name>sessionFactory</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

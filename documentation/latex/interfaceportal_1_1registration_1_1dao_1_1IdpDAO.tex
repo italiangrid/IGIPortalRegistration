@@ -1,0 +1,121 @@
+\hypertarget{interfaceportal_1_1registration_1_1dao_1_1IdpDAO}{
+\section{portal.registration.dao.IdpDAO Interface Reference}
+\label{interfaceportal_1_1registration_1_1dao_1_1IdpDAO}\index{portal::registration::dao::IdpDAO@{portal::registration::dao::IdpDAO}}
+}
+
+
+Inheritance diagram for portal.registration.dao.IdpDAO:
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{interfaceportal_1_1registration_1_1dao_1_1IdpDAO_a9b2e8e4e34ed4e93390800c616ede515}{save} (\hyperlink{classportal_1_1registration_1_1domain_1_1Idp}{Idp} transientInstance)
+\item 
+void \hyperlink{interfaceportal_1_1registration_1_1dao_1_1IdpDAO_ace3b3c0baf06d654758d15621589def8}{delete} (\hyperlink{classportal_1_1registration_1_1domain_1_1Idp}{Idp} persistentInstance)
+\item 
+\hyperlink{classportal_1_1registration_1_1domain_1_1Idp}{Idp} \hyperlink{interfaceportal_1_1registration_1_1dao_1_1IdpDAO_a25a3bfb1767b32c725e0aad4b578cc2c}{findById} (Integer id)
+\item 
+List$<$ \hyperlink{classportal_1_1registration_1_1domain_1_1Idp}{Idp} $>$ \hyperlink{interfaceportal_1_1registration_1_1dao_1_1IdpDAO_aa22ce1c72510b68e32bdd370e2b2c2e7}{getAllIdp} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 7 of file IdpDAO.java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{interfaceportal_1_1registration_1_1dao_1_1IdpDAO_ace3b3c0baf06d654758d15621589def8}{
+\index{portal::registration::dao::IdpDAO@{portal::registration::dao::IdpDAO}!delete@{delete}}
+\index{delete@{delete}!portal::registration::dao::IdpDAO@{portal::registration::dao::IdpDAO}}
+\subsubsection[{delete}]{\setlength{\rightskip}{0pt plus 5cm}void portal.registration.dao.IdpDAO.delete (
+\begin{DoxyParamCaption}
+\item[{{\bf Idp}}]{persistentInstance}
+\end{DoxyParamCaption}
+)}}
+\label{interfaceportal_1_1registration_1_1dao_1_1IdpDAO_ace3b3c0baf06d654758d15621589def8}
+
+
+Implemented in \hyperlink{classportal_1_1registration_1_1dao_1_1IdpDAOImpl_a63e3814d1126ab4ae9ce93e576515650}{portal.registration.dao.IdpDAOImpl}.
+
+
+
+Referenced by portal.registration.services.IdpServiceImpl.delete().
+
+
+
+Here is the caller graph for this function:
+
+
+\hypertarget{interfaceportal_1_1registration_1_1dao_1_1IdpDAO_a25a3bfb1767b32c725e0aad4b578cc2c}{
+\index{portal::registration::dao::IdpDAO@{portal::registration::dao::IdpDAO}!findById@{findById}}
+\index{findById@{findById}!portal::registration::dao::IdpDAO@{portal::registration::dao::IdpDAO}}
+\subsubsection[{findById}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Idp} portal.registration.dao.IdpDAO.findById (
+\begin{DoxyParamCaption}
+\item[{Integer}]{id}
+\end{DoxyParamCaption}
+)}}
+\label{interfaceportal_1_1registration_1_1dao_1_1IdpDAO_a25a3bfb1767b32c725e0aad4b578cc2c}
+
+
+Implemented in \hyperlink{classportal_1_1registration_1_1dao_1_1IdpDAOImpl_a90d580cdc427c86e306d8a0a64999060}{portal.registration.dao.IdpDAOImpl}.
+
+
+
+Referenced by portal.registration.services.IdpServiceImpl.findById(), portal.registration.services.IdpServiceImpl.findByIdp(), and portal.registration.services.UserInfoServiceImpl.save().
+
+
+
+Here is the caller graph for this function:
+
+
+\hypertarget{interfaceportal_1_1registration_1_1dao_1_1IdpDAO_aa22ce1c72510b68e32bdd370e2b2c2e7}{
+\index{portal::registration::dao::IdpDAO@{portal::registration::dao::IdpDAO}!getAllIdp@{getAllIdp}}
+\index{getAllIdp@{getAllIdp}!portal::registration::dao::IdpDAO@{portal::registration::dao::IdpDAO}}
+\subsubsection[{getAllIdp}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Idp}$>$ portal.registration.dao.IdpDAO.getAllIdp (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{interfaceportal_1_1registration_1_1dao_1_1IdpDAO_aa22ce1c72510b68e32bdd370e2b2c2e7}
+
+
+Implemented in \hyperlink{classportal_1_1registration_1_1dao_1_1IdpDAOImpl_a11d56e0832db6e91e8b55ee15931406b}{portal.registration.dao.IdpDAOImpl}.
+
+
+
+Referenced by portal.registration.services.IdpServiceImpl.getAllIdp().
+
+
+
+Here is the caller graph for this function:
+
+
+\hypertarget{interfaceportal_1_1registration_1_1dao_1_1IdpDAO_a9b2e8e4e34ed4e93390800c616ede515}{
+\index{portal::registration::dao::IdpDAO@{portal::registration::dao::IdpDAO}!save@{save}}
+\index{save@{save}!portal::registration::dao::IdpDAO@{portal::registration::dao::IdpDAO}}
+\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}void portal.registration.dao.IdpDAO.save (
+\begin{DoxyParamCaption}
+\item[{{\bf Idp}}]{transientInstance}
+\end{DoxyParamCaption}
+)}}
+\label{interfaceportal_1_1registration_1_1dao_1_1IdpDAO_a9b2e8e4e34ed4e93390800c616ede515}
+
+
+Implemented in \hyperlink{classportal_1_1registration_1_1dao_1_1IdpDAOImpl_a531666f1be9ad29adcb5927b435ede02}{portal.registration.dao.IdpDAOImpl}.
+
+
+
+Referenced by portal.registration.services.IdpServiceImpl.save().
+
+
+
+Here is the caller graph for this function:
+
+
+
+
+The documentation for this interface was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/dao/\hyperlink{IdpDAO_8java}{IdpDAO.java}\end{DoxyCompactItemize}

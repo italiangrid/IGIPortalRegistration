@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classportal_1_1registration_1_1services_1_1IdpServiceImpl.html#a019ee67c777bd792515072a59c32e1e9" title="portal.registration.services.IdpServiceImpl.findById" alt="" coords="291,4,581,31"/>
+<area shape="rect" id="node5" href="$classportal_1_1registration_1_1services_1_1IdpServiceImpl.html#a06dd428d0f1451712432d8cc63091aa1" title="portal.registration.services.IdpServiceImpl.findByIdp" alt="" coords="287,55,585,81"/>
+<area shape="rect" id="node7" href="$classportal_1_1registration_1_1services_1_1UserInfoServiceImpl.html#ad15a856a87f217600bbd708e576d80ba" title="portal.registration.services.UserInfoServiceImpl.save" alt="" coords="285,105,587,132"/>
+</map>

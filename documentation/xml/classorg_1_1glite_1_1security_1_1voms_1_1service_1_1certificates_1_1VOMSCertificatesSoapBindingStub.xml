@@ -1,0 +1,430 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesSoapBindingStub" kind="class" prot="public">
+    <compoundname>org::glite::security::voms::service::certificates::VOMSCertificatesSoapBindingStub</compoundname>
+    <basecompoundref refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificates" prot="public" virt="non-virtual">org.glite.security.voms.service.certificates.VOMSCertificates</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesSoapBindingStub_1ae2308f8f6cf96c5cf5b9ac0c854d9114" prot="private" static="no" mutable="no">
+        <type>java.util.Vector</type>
+        <definition>java.util.Vector org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingStub.cachedSerClasses</definition>
+        <argsstring></argsstring>
+        <name>cachedSerClasses</name>
+        <initializer> new java.util.Vector()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/VOMSCertificatesSoapBindingStub.java" line="11" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/VOMSCertificatesSoapBindingStub.java" bodystart="11" bodyend="-1"/>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesSoapBindingStub_1a82436d41869dc562a8568c97eee119e7" compoundref="VOMSCertificatesSoapBindingStub_8java" startline="165" endline="228">org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingStub::createCall</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesSoapBindingStub_1a502765c048b3b7c589b08e59bb37b36a" compoundref="VOMSCertificatesSoapBindingStub_8java" startline="127" endline="163">org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingStub::VOMSCertificatesSoapBindingStub</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesSoapBindingStub_1a63bdef3d7a3488e55c1900ac491e79a5" prot="private" static="no" mutable="no">
+        <type>java.util.Vector</type>
+        <definition>java.util.Vector org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingStub.cachedSerQNames</definition>
+        <argsstring></argsstring>
+        <name>cachedSerQNames</name>
+        <initializer> new java.util.Vector()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/VOMSCertificatesSoapBindingStub.java" line="12" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/VOMSCertificatesSoapBindingStub.java" bodystart="12" bodyend="-1"/>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesSoapBindingStub_1a82436d41869dc562a8568c97eee119e7" compoundref="VOMSCertificatesSoapBindingStub_8java" startline="165" endline="228">org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingStub::createCall</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesSoapBindingStub_1a502765c048b3b7c589b08e59bb37b36a" compoundref="VOMSCertificatesSoapBindingStub_8java" startline="127" endline="163">org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingStub::VOMSCertificatesSoapBindingStub</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesSoapBindingStub_1a66a5fa754279379d65f71345bce521a5" prot="private" static="no" mutable="no">
+        <type>java.util.Vector</type>
+        <definition>java.util.Vector org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingStub.cachedSerFactories</definition>
+        <argsstring></argsstring>
+        <name>cachedSerFactories</name>
+        <initializer> new java.util.Vector()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/VOMSCertificatesSoapBindingStub.java" line="13" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/VOMSCertificatesSoapBindingStub.java" bodystart="13" bodyend="-1"/>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesSoapBindingStub_1a82436d41869dc562a8568c97eee119e7" compoundref="VOMSCertificatesSoapBindingStub_8java" startline="165" endline="228">org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingStub::createCall</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesSoapBindingStub_1a502765c048b3b7c589b08e59bb37b36a" compoundref="VOMSCertificatesSoapBindingStub_8java" startline="127" endline="163">org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingStub::VOMSCertificatesSoapBindingStub</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesSoapBindingStub_1a3ee5954225532892b4843477390b55d4" prot="private" static="no" mutable="no">
+        <type>java.util.Vector</type>
+        <definition>java.util.Vector org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingStub.cachedDeserFactories</definition>
+        <argsstring></argsstring>
+        <name>cachedDeserFactories</name>
+        <initializer> new java.util.Vector()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/VOMSCertificatesSoapBindingStub.java" line="14" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/VOMSCertificatesSoapBindingStub.java" bodystart="14" bodyend="-1"/>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesSoapBindingStub_1a82436d41869dc562a8568c97eee119e7" compoundref="VOMSCertificatesSoapBindingStub_8java" startline="165" endline="228">org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingStub::createCall</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesSoapBindingStub_1a502765c048b3b7c589b08e59bb37b36a" compoundref="VOMSCertificatesSoapBindingStub_8java" startline="127" endline="163">org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingStub::VOMSCertificatesSoapBindingStub</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="package-static-attrib">
+      <memberdef kind="variable" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesSoapBindingStub_1ab3111b5cf47855fe95aa496610062dbe" prot="package" static="yes" mutable="no">
+        <type>org.apache.axis.description.OperationDesc[]</type>
+        <definition>org.apache.axis.description.OperationDesc [] org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingStub._operations</definition>
+        <argsstring></argsstring>
+        <name>_operations</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/VOMSCertificatesSoapBindingStub.java" line="16" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/VOMSCertificatesSoapBindingStub.java" bodystart="16" bodyend="-1"/>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesSoapBindingStub_1a225966a46f6641c7c509384a29d7bcbb" compoundref="VOMSCertificatesSoapBindingStub_8java" startline="23" endline="116">org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingStub::_initOperationDesc1</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesSoapBindingStub_1aba3f40bf0179e4b66b8f0dd213d477e6" compoundref="VOMSCertificatesSoapBindingStub_8java" startline="230" endline="259">org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingStub::getCertificates</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="package-static-func">
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesSoapBindingStub_1a3cf8ff6a466262e63d30094978468368" prot="package" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingStub.[static initializer]</definition>
+        <argsstring></argsstring>
+        <name>[static initializer]</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/VOMSCertificatesSoapBindingStub.java" line="18"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesSoapBindingStub_1a225966a46f6641c7c509384a29d7bcbb" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingStub._initOperationDesc1</definition>
+        <argsstring>()</argsstring>
+        <name>_initOperationDesc1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/VOMSCertificatesSoapBindingStub.java" line="23" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/VOMSCertificatesSoapBindingStub.java" bodystart="23" bodyend="116"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesSoapBindingStub_1ab3111b5cf47855fe95aa496610062dbe" compoundref="VOMSCertificatesSoapBindingStub_8java" startline="16">org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingStub::_operations</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesSoapBindingStub_1ad521bc2a4c630b7de9596cd964db61c6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingStub.VOMSCertificatesSoapBindingStub</definition>
+        <argsstring>()</argsstring>
+        <name>VOMSCertificatesSoapBindingStub</name>
+        <exceptions> throws org.apache.axis.AxisFault </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/VOMSCertificatesSoapBindingStub.java" line="118" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/VOMSCertificatesSoapBindingStub.java" bodystart="118" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesSoapBindingStub_1a459f2981599b444cea036d78906d85b4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingStub.VOMSCertificatesSoapBindingStub</definition>
+        <argsstring>(java.net.URL endpointURL, javax.xml.rpc.Service service)</argsstring>
+        <name>VOMSCertificatesSoapBindingStub</name>
+        <param>
+          <type>java.net.URL</type>
+          <declname>endpointURL</declname>
+        </param>
+        <param>
+          <type>javax.xml.rpc.Service</type>
+          <declname>service</declname>
+        </param>
+        <exceptions> throws org.apache.axis.AxisFault </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/VOMSCertificatesSoapBindingStub.java" line="122" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/VOMSCertificatesSoapBindingStub.java" bodystart="122" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesSoapBindingStub_1a502765c048b3b7c589b08e59bb37b36a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingStub.VOMSCertificatesSoapBindingStub</definition>
+        <argsstring>(javax.xml.rpc.Service service)</argsstring>
+        <name>VOMSCertificatesSoapBindingStub</name>
+        <param>
+          <type>javax.xml.rpc.Service</type>
+          <declname>service</declname>
+        </param>
+        <exceptions> throws org.apache.axis.AxisFault </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/VOMSCertificatesSoapBindingStub.java" line="127" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/VOMSCertificatesSoapBindingStub.java" bodystart="127" bodyend="163"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesSoapBindingStub_1a3ee5954225532892b4843477390b55d4" compoundref="VOMSCertificatesSoapBindingStub_8java" startline="14">org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingStub::cachedDeserFactories</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesSoapBindingStub_1ae2308f8f6cf96c5cf5b9ac0c854d9114" compoundref="VOMSCertificatesSoapBindingStub_8java" startline="11">org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingStub::cachedSerClasses</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesSoapBindingStub_1a66a5fa754279379d65f71345bce521a5" compoundref="VOMSCertificatesSoapBindingStub_8java" startline="13">org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingStub::cachedSerFactories</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesSoapBindingStub_1a63bdef3d7a3488e55c1900ac491e79a5" compoundref="VOMSCertificatesSoapBindingStub_8java" startline="12">org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingStub::cachedSerQNames</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesSoapBindingStub_1aba3f40bf0179e4b66b8f0dd213d477e6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate" kindref="compound">org.glite.security.voms.service.certificates.X509Certificate</ref>[]</type>
+        <definition>org.glite.security.voms.service.certificates.X509Certificate [] org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingStub.getCertificates</definition>
+        <argsstring>(long in0)</argsstring>
+        <name>getCertificates</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificates_1a53fb5a4b8f86c1b0a4c63e9e033dd071">getCertificates</reimplements>
+        <param>
+          <type>long</type>
+          <declname>in0</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/VOMSCertificatesSoapBindingStub.java" line="230" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/VOMSCertificatesSoapBindingStub.java" bodystart="230" bodyend="259"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesSoapBindingStub_1ab3111b5cf47855fe95aa496610062dbe" compoundref="VOMSCertificatesSoapBindingStub_8java" startline="16">org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingStub::_operations</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesSoapBindingStub_1a82436d41869dc562a8568c97eee119e7" compoundref="VOMSCertificatesSoapBindingStub_8java" startline="165" endline="228">org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingStub::createCall</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesSoapBindingStub_1a92131b1b85847d21f8c3cd9a89c2d430" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate" kindref="compound">org.glite.security.voms.service.certificates.X509Certificate</ref>[]</type>
+        <definition>org.glite.security.voms.service.certificates.X509Certificate [] org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingStub.getCertificates</definition>
+        <argsstring>(java.lang.String in0, java.lang.String in1)</argsstring>
+        <name>getCertificates</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificates_1a043ddef1543bc48c39a8cd7efa2a48ed">getCertificates</reimplements>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in0</declname>
+        </param>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in1</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/VOMSCertificatesSoapBindingStub.java" line="261" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/VOMSCertificatesSoapBindingStub.java" bodystart="261" bodyend="290"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesSoapBindingStub_1a3095f49424d8e410e62ecfd90248d3d8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>long</type>
+        <definition>long org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingStub.getUserIdFromDn</definition>
+        <argsstring>(java.lang.String in0, java.lang.String in1)</argsstring>
+        <name>getUserIdFromDn</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificates_1a2880bef5d97529992378418fc0b04b9d">getUserIdFromDn</reimplements>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in0</declname>
+        </param>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in1</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/VOMSCertificatesSoapBindingStub.java" line="292" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/VOMSCertificatesSoapBindingStub.java" bodystart="292" bodyend="321"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesSoapBindingStub_1ab4c9ad4a8d1a1007bfcb408f57669a5e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingStub.addCertificate</definition>
+        <argsstring>(long in0, org.glite.security.voms.service.certificates.X509Certificate in1)</argsstring>
+        <name>addCertificate</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificates_1a48bc3e355dd9497781967a142139a841">addCertificate</reimplements>
+        <param>
+          <type>long</type>
+          <declname>in0</declname>
+        </param>
+        <param>
+          <type><ref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate" kindref="compound">org.glite.security.voms.service.certificates.X509Certificate</ref></type>
+          <declname>in1</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/VOMSCertificatesSoapBindingStub.java" line="323" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/VOMSCertificatesSoapBindingStub.java" bodystart="323" bodyend="345"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesSoapBindingStub_1ace7569d74867a19d0054985e9e1c756b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingStub.addCertificate</definition>
+        <argsstring>(java.lang.String in0, java.lang.String in1, org.glite.security.voms.service.certificates.X509Certificate in2)</argsstring>
+        <name>addCertificate</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificates_1a47bd6d56a9d958167a3d5e69f3229544">addCertificate</reimplements>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in0</declname>
+        </param>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in1</declname>
+        </param>
+        <param>
+          <type><ref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate" kindref="compound">org.glite.security.voms.service.certificates.X509Certificate</ref></type>
+          <declname>in2</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/VOMSCertificatesSoapBindingStub.java" line="347" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/VOMSCertificatesSoapBindingStub.java" bodystart="347" bodyend="369"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesSoapBindingStub_1ac4c3e55c6411b043ce8f425620acc2e9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingStub.suspendCertificate</definition>
+        <argsstring>(org.glite.security.voms.service.certificates.X509Certificate in0, java.lang.String in1)</argsstring>
+        <name>suspendCertificate</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificates_1ab66e25381a49f5f2210fe7ab4fa9a964">suspendCertificate</reimplements>
+        <param>
+          <type><ref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate" kindref="compound">org.glite.security.voms.service.certificates.X509Certificate</ref></type>
+          <declname>in0</declname>
+        </param>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in1</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/VOMSCertificatesSoapBindingStub.java" line="371" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/VOMSCertificatesSoapBindingStub.java" bodystart="371" bodyend="393"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesSoapBindingStub_1afe3145342d70a6112ec165773c6e9b5f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingStub.restoreCertificate</definition>
+        <argsstring>(org.glite.security.voms.service.certificates.X509Certificate in0)</argsstring>
+        <name>restoreCertificate</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificates_1aca71c4651eab46e31bee191eb8854bc3">restoreCertificate</reimplements>
+        <param>
+          <type><ref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate" kindref="compound">org.glite.security.voms.service.certificates.X509Certificate</ref></type>
+          <declname>in0</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/VOMSCertificatesSoapBindingStub.java" line="395" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/VOMSCertificatesSoapBindingStub.java" bodystart="395" bodyend="417"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesSoapBindingStub_1abaf833412097e7039ef3abe8fff6dd71" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingStub.removeCertificate</definition>
+        <argsstring>(org.glite.security.voms.service.certificates.X509Certificate in0)</argsstring>
+        <name>removeCertificate</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificates_1ad88056ae3465a5c74a3bda6d6d62f4fa">removeCertificate</reimplements>
+        <param>
+          <type><ref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate" kindref="compound">org.glite.security.voms.service.certificates.X509Certificate</ref></type>
+          <declname>in0</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/VOMSCertificatesSoapBindingStub.java" line="419" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/VOMSCertificatesSoapBindingStub.java" bodystart="419" bodyend="441"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesSoapBindingStub_1a82436d41869dc562a8568c97eee119e7" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>org.apache.axis.client.Call</type>
+        <definition>org.apache.axis.client.Call org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingStub.createCall</definition>
+        <argsstring>()</argsstring>
+        <name>createCall</name>
+        <exceptions> throws java.rmi.RemoteException </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/VOMSCertificatesSoapBindingStub.java" line="165" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/VOMSCertificatesSoapBindingStub.java" bodystart="165" bodyend="228"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesSoapBindingStub_1a3ee5954225532892b4843477390b55d4" compoundref="VOMSCertificatesSoapBindingStub_8java" startline="14">org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingStub::cachedDeserFactories</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesSoapBindingStub_1ae2308f8f6cf96c5cf5b9ac0c854d9114" compoundref="VOMSCertificatesSoapBindingStub_8java" startline="11">org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingStub::cachedSerClasses</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesSoapBindingStub_1a66a5fa754279379d65f71345bce521a5" compoundref="VOMSCertificatesSoapBindingStub_8java" startline="13">org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingStub::cachedSerFactories</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesSoapBindingStub_1a63bdef3d7a3488e55c1900ac491e79a5" compoundref="VOMSCertificatesSoapBindingStub_8java" startline="12">org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingStub::cachedSerQNames</references>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesSoapBindingStub_1aba3f40bf0179e4b66b8f0dd213d477e6" compoundref="VOMSCertificatesSoapBindingStub_8java" startline="230" endline="259">org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingStub::getCertificates</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="745">
+        <label>org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingStub</label>
+        <link refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesSoapBindingStub"/>
+        <childnode refid="746" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="746">
+        <label>org.glite.security.voms.service.certificates.VOMSCertificates</label>
+        <link refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificates"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="747">
+        <label>org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingStub</label>
+        <link refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesSoapBindingStub"/>
+        <childnode refid="748" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="748">
+        <label>org.glite.security.voms.service.certificates.VOMSCertificates</label>
+        <link refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificates"/>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/VOMSCertificatesSoapBindingStub.java" line="10" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/VOMSCertificatesSoapBindingStub.java" bodystart="10" bodyend="443"/>
+    <listofallmembers>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesSoapBindingStub_1a3cf8ff6a466262e63d30094978468368" prot="package" virt="non-virtual"><scope>org::glite::security::voms::service::certificates::VOMSCertificatesSoapBindingStub</scope><name>[static initializer]</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesSoapBindingStub_1a225966a46f6641c7c509384a29d7bcbb" prot="private" virt="non-virtual"><scope>org::glite::security::voms::service::certificates::VOMSCertificatesSoapBindingStub</scope><name>_initOperationDesc1</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesSoapBindingStub_1ab3111b5cf47855fe95aa496610062dbe" prot="package" virt="non-virtual"><scope>org::glite::security::voms::service::certificates::VOMSCertificatesSoapBindingStub</scope><name>_operations</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesSoapBindingStub_1ab4c9ad4a8d1a1007bfcb408f57669a5e" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::certificates::VOMSCertificatesSoapBindingStub</scope><name>addCertificate</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesSoapBindingStub_1ace7569d74867a19d0054985e9e1c756b" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::certificates::VOMSCertificatesSoapBindingStub</scope><name>addCertificate</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesSoapBindingStub_1a3ee5954225532892b4843477390b55d4" prot="private" virt="non-virtual"><scope>org::glite::security::voms::service::certificates::VOMSCertificatesSoapBindingStub</scope><name>cachedDeserFactories</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesSoapBindingStub_1ae2308f8f6cf96c5cf5b9ac0c854d9114" prot="private" virt="non-virtual"><scope>org::glite::security::voms::service::certificates::VOMSCertificatesSoapBindingStub</scope><name>cachedSerClasses</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesSoapBindingStub_1a66a5fa754279379d65f71345bce521a5" prot="private" virt="non-virtual"><scope>org::glite::security::voms::service::certificates::VOMSCertificatesSoapBindingStub</scope><name>cachedSerFactories</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesSoapBindingStub_1a63bdef3d7a3488e55c1900ac491e79a5" prot="private" virt="non-virtual"><scope>org::glite::security::voms::service::certificates::VOMSCertificatesSoapBindingStub</scope><name>cachedSerQNames</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesSoapBindingStub_1a82436d41869dc562a8568c97eee119e7" prot="protected" virt="non-virtual"><scope>org::glite::security::voms::service::certificates::VOMSCertificatesSoapBindingStub</scope><name>createCall</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesSoapBindingStub_1aba3f40bf0179e4b66b8f0dd213d477e6" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::certificates::VOMSCertificatesSoapBindingStub</scope><name>getCertificates</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesSoapBindingStub_1a92131b1b85847d21f8c3cd9a89c2d430" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::certificates::VOMSCertificatesSoapBindingStub</scope><name>getCertificates</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesSoapBindingStub_1a3095f49424d8e410e62ecfd90248d3d8" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::certificates::VOMSCertificatesSoapBindingStub</scope><name>getUserIdFromDn</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesSoapBindingStub_1abaf833412097e7039ef3abe8fff6dd71" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::certificates::VOMSCertificatesSoapBindingStub</scope><name>removeCertificate</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesSoapBindingStub_1afe3145342d70a6112ec165773c6e9b5f" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::certificates::VOMSCertificatesSoapBindingStub</scope><name>restoreCertificate</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesSoapBindingStub_1ac4c3e55c6411b043ce8f425620acc2e9" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::certificates::VOMSCertificatesSoapBindingStub</scope><name>suspendCertificate</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesSoapBindingStub_1ad521bc2a4c630b7de9596cd964db61c6" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::certificates::VOMSCertificatesSoapBindingStub</scope><name>VOMSCertificatesSoapBindingStub</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesSoapBindingStub_1a459f2981599b444cea036d78906d85b4" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::certificates::VOMSCertificatesSoapBindingStub</scope><name>VOMSCertificatesSoapBindingStub</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesSoapBindingStub_1a502765c048b3b7c589b08e59bb37b36a" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::certificates::VOMSCertificatesSoapBindingStub</scope><name>VOMSCertificatesSoapBindingStub</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,173 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="classportal_1_1registration_1_1dao_1_1IdpDAOImpl" kind="class" prot="public">
+    <compoundname>portal::registration::dao::IdpDAOImpl</compoundname>
+    <basecompoundref refid="interfaceportal_1_1registration_1_1dao_1_1IdpDAO" prot="public" virt="non-virtual">portal.registration.dao.IdpDAO</basecompoundref>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classportal_1_1registration_1_1dao_1_1IdpDAOImpl_1a7afb61fce1c69227c0233f4f9109a59e" prot="private" static="yes" mutable="no">
+        <type>final Logger</type>
+        <definition>final Logger portal.registration.dao.IdpDAOImpl.log</definition>
+        <argsstring></argsstring>
+        <name>log</name>
+        <initializer> Logger.getLogger(IdpDAOImpl.class)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/dao/IdpDAOImpl.java" line="17" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/dao/IdpDAOImpl.java" bodystart="17" bodyend="-1"/>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1IdpDAOImpl_1a63e3814d1126ab4ae9ce93e576515650" compoundref="IdpDAOImpl_8java" startline="34" endline="44">portal.registration.dao.IdpDAOImpl::delete</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1IdpDAOImpl_1a90d580cdc427c86e306d8a0a64999060" compoundref="IdpDAOImpl_8java" startline="46" endline="57">portal.registration.dao.IdpDAOImpl::findById</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1IdpDAOImpl_1a11d56e0832db6e91e8b55ee15931406b" compoundref="IdpDAOImpl_8java" startline="60" endline="75">portal.registration.dao.IdpDAOImpl::getAllIdp</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1IdpDAOImpl_1a531666f1be9ad29adcb5927b435ede02" compoundref="IdpDAOImpl_8java" startline="22" endline="32">portal.registration.dao.IdpDAOImpl::save</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classportal_1_1registration_1_1dao_1_1IdpDAOImpl_1a92e1382182c2bb2542cfbb22af8040dc" prot="private" static="no" mutable="no">
+        <type>SessionFactory</type>
+        <definition>SessionFactory portal.registration.dao.IdpDAOImpl.sessionFactory</definition>
+        <argsstring></argsstring>
+        <name>sessionFactory</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/dao/IdpDAOImpl.java" line="20" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/dao/IdpDAOImpl.java" bodystart="20" bodyend="-1"/>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1IdpDAOImpl_1a63e3814d1126ab4ae9ce93e576515650" compoundref="IdpDAOImpl_8java" startline="34" endline="44">portal.registration.dao.IdpDAOImpl::delete</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1IdpDAOImpl_1a90d580cdc427c86e306d8a0a64999060" compoundref="IdpDAOImpl_8java" startline="46" endline="57">portal.registration.dao.IdpDAOImpl::findById</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1IdpDAOImpl_1a11d56e0832db6e91e8b55ee15931406b" compoundref="IdpDAOImpl_8java" startline="60" endline="75">portal.registration.dao.IdpDAOImpl::getAllIdp</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1IdpDAOImpl_1a531666f1be9ad29adcb5927b435ede02" compoundref="IdpDAOImpl_8java" startline="22" endline="32">portal.registration.dao.IdpDAOImpl::save</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classportal_1_1registration_1_1dao_1_1IdpDAOImpl_1a531666f1be9ad29adcb5927b435ede02" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void portal.registration.dao.IdpDAOImpl.save</definition>
+        <argsstring>(Idp transientInstance)</argsstring>
+        <name>save</name>
+        <reimplements refid="interfaceportal_1_1registration_1_1dao_1_1IdpDAO_1a9b2e8e4e34ed4e93390800c616ede515">save</reimplements>
+        <param>
+          <type><ref refid="classportal_1_1registration_1_1domain_1_1Idp" kindref="compound">Idp</ref></type>
+          <declname>transientInstance</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/dao/IdpDAOImpl.java" line="22" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/dao/IdpDAOImpl.java" bodystart="22" bodyend="32"/>
+        <references refid="classportal_1_1registration_1_1dao_1_1IdpDAOImpl_1a7afb61fce1c69227c0233f4f9109a59e" compoundref="IdpDAOImpl_8java" startline="17">portal.registration.dao.IdpDAOImpl::log</references>
+        <references refid="classportal_1_1registration_1_1dao_1_1IdpDAOImpl_1a92e1382182c2bb2542cfbb22af8040dc" compoundref="IdpDAOImpl_8java" startline="20">portal.registration.dao.IdpDAOImpl::sessionFactory</references>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1dao_1_1IdpDAOImpl_1a63e3814d1126ab4ae9ce93e576515650" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void portal.registration.dao.IdpDAOImpl.delete</definition>
+        <argsstring>(Idp persistentInstance)</argsstring>
+        <name>delete</name>
+        <reimplements refid="interfaceportal_1_1registration_1_1dao_1_1IdpDAO_1ace3b3c0baf06d654758d15621589def8">delete</reimplements>
+        <param>
+          <type><ref refid="classportal_1_1registration_1_1domain_1_1Idp" kindref="compound">Idp</ref></type>
+          <declname>persistentInstance</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/dao/IdpDAOImpl.java" line="34" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/dao/IdpDAOImpl.java" bodystart="34" bodyend="44"/>
+        <references refid="classportal_1_1registration_1_1dao_1_1IdpDAOImpl_1a7afb61fce1c69227c0233f4f9109a59e" compoundref="IdpDAOImpl_8java" startline="17">portal.registration.dao.IdpDAOImpl::log</references>
+        <references refid="classportal_1_1registration_1_1dao_1_1IdpDAOImpl_1a92e1382182c2bb2542cfbb22af8040dc" compoundref="IdpDAOImpl_8java" startline="20">portal.registration.dao.IdpDAOImpl::sessionFactory</references>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1dao_1_1IdpDAOImpl_1a90d580cdc427c86e306d8a0a64999060" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classportal_1_1registration_1_1domain_1_1Idp" kindref="compound">Idp</ref></type>
+        <definition>Idp portal.registration.dao.IdpDAOImpl.findById</definition>
+        <argsstring>(Integer id)</argsstring>
+        <name>findById</name>
+        <reimplements refid="interfaceportal_1_1registration_1_1dao_1_1IdpDAO_1a25a3bfb1767b32c725e0aad4b578cc2c">findById</reimplements>
+        <param>
+          <type>Integer</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/dao/IdpDAOImpl.java" line="46" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/dao/IdpDAOImpl.java" bodystart="46" bodyend="57"/>
+        <references refid="classportal_1_1registration_1_1dao_1_1IdpDAOImpl_1a7afb61fce1c69227c0233f4f9109a59e" compoundref="IdpDAOImpl_8java" startline="17">portal.registration.dao.IdpDAOImpl::log</references>
+        <references refid="classportal_1_1registration_1_1dao_1_1IdpDAOImpl_1a92e1382182c2bb2542cfbb22af8040dc" compoundref="IdpDAOImpl_8java" startline="20">portal.registration.dao.IdpDAOImpl::sessionFactory</references>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1dao_1_1IdpDAOImpl_1a11d56e0832db6e91e8b55ee15931406b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>List&lt; <ref refid="classportal_1_1registration_1_1domain_1_1Idp" kindref="compound">Idp</ref> &gt;</type>
+        <definition>List&lt;Idp&gt; portal.registration.dao.IdpDAOImpl.getAllIdp</definition>
+        <argsstring>()</argsstring>
+        <name>getAllIdp</name>
+        <reimplements refid="interfaceportal_1_1registration_1_1dao_1_1IdpDAO_1aa22ce1c72510b68e32bdd370e2b2c2e7">getAllIdp</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/dao/IdpDAOImpl.java" line="60" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/dao/IdpDAOImpl.java" bodystart="60" bodyend="75"/>
+        <references refid="classportal_1_1registration_1_1dao_1_1IdpDAOImpl_1a7afb61fce1c69227c0233f4f9109a59e" compoundref="IdpDAOImpl_8java" startline="17">portal.registration.dao.IdpDAOImpl::log</references>
+        <references refid="classportal_1_1registration_1_1dao_1_1IdpDAOImpl_1a92e1382182c2bb2542cfbb22af8040dc" compoundref="IdpDAOImpl_8java" startline="20">portal.registration.dao.IdpDAOImpl::sessionFactory</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="516">
+        <label>portal.registration.dao.IdpDAOImpl</label>
+        <link refid="classportal_1_1registration_1_1dao_1_1IdpDAOImpl"/>
+        <childnode refid="517" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="517">
+        <label>portal.registration.dao.IdpDAO</label>
+        <link refid="interfaceportal_1_1registration_1_1dao_1_1IdpDAO"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="521">
+        <label>SessionFactory</label>
+      </node>
+      <node id="518">
+        <label>portal.registration.dao.IdpDAOImpl</label>
+        <link refid="classportal_1_1registration_1_1dao_1_1IdpDAOImpl"/>
+        <childnode refid="519" relation="public-inheritance">
+        </childnode>
+        <childnode refid="520" relation="usage">
+          <edgelabel>log</edgelabel>
+        </childnode>
+        <childnode refid="521" relation="usage">
+          <edgelabel>sessionFactory</edgelabel>
+        </childnode>
+      </node>
+      <node id="520">
+        <label>Logger</label>
+      </node>
+      <node id="519">
+        <label>portal.registration.dao.IdpDAO</label>
+        <link refid="interfaceportal_1_1registration_1_1dao_1_1IdpDAO"/>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/dao/IdpDAOImpl.java" line="15" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/dao/IdpDAOImpl.java" bodystart="15" bodyend="77"/>
+    <listofallmembers>
+      <member refid="classportal_1_1registration_1_1dao_1_1IdpDAOImpl_1a63e3814d1126ab4ae9ce93e576515650" prot="public" virt="non-virtual"><scope>portal::registration::dao::IdpDAOImpl</scope><name>delete</name></member>
+      <member refid="classportal_1_1registration_1_1dao_1_1IdpDAOImpl_1a90d580cdc427c86e306d8a0a64999060" prot="public" virt="non-virtual"><scope>portal::registration::dao::IdpDAOImpl</scope><name>findById</name></member>
+      <member refid="classportal_1_1registration_1_1dao_1_1IdpDAOImpl_1a11d56e0832db6e91e8b55ee15931406b" prot="public" virt="non-virtual"><scope>portal::registration::dao::IdpDAOImpl</scope><name>getAllIdp</name></member>
+      <member refid="classportal_1_1registration_1_1dao_1_1IdpDAOImpl_1a7afb61fce1c69227c0233f4f9109a59e" prot="private" virt="non-virtual"><scope>portal::registration::dao::IdpDAOImpl</scope><name>log</name></member>
+      <member refid="classportal_1_1registration_1_1dao_1_1IdpDAOImpl_1a531666f1be9ad29adcb5927b435ede02" prot="public" virt="non-virtual"><scope>portal::registration::dao::IdpDAOImpl</scope><name>save</name></member>
+      <member refid="classportal_1_1registration_1_1dao_1_1IdpDAOImpl_1a92e1382182c2bb2542cfbb22af8040dc" prot="private" virt="non-virtual"><scope>portal::registration::dao::IdpDAOImpl</scope><name>sessionFactory</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

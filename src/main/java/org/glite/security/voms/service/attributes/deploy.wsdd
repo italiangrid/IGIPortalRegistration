@@ -1,0 +1,72 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from VOMSAttributesService WSDL service -->
+
+  <service name="VOMSAttributes" provider="java:RPC" style="rpc" use="encoded">
+      <parameter name="wsdlTargetNamespace" value="http://glite.org/wsdl/services/org.glite.security.voms.service.attributes"/>
+      <parameter name="wsdlServiceElement" value="VOMSAttributesService"/>
+      <parameter name="schemaUnqualified" value="http://glite.org/wsdl/services/org.glite.security.voms.service.attributes,http://glite.org/wsdl/services/org.glite.security.voms"/>
+      <parameter name="wsdlServicePort" value="VOMSAttributes"/>
+      <parameter name="className" value="org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton"/>
+      <parameter name="wsdlPortType" value="VOMSAttributes"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <parameter name="allowedMethods" value="*"/>
+
+      <typeMapping
+        xmlns:ns="http://glite.org/wsdl/services/org.glite.security.voms.service.attributes"
+        qname="ns:AttributeClass"
+        type="java:org.glite.security.voms.service.attributes.AttributeClass"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://glite.org/wsdl/services/org.glite.security.voms"
+        qname="ns:User"
+        type="java:org.glite.security.voms.User"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://glite.org/wsdl/services/org.glite.security.voms"
+        qname="ns:VOMSException"
+        type="java:org.glite.security.voms.VOMSException"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <arrayMapping
+        xmlns:ns="http://glite.org/wsdl/services/org.glite.security.voms.service.attributes"
+        qname="ns:ArrayOfAttributeClass"
+        type="java:org.glite.security.voms.service.attributes.AttributeClass[]"
+        innerType="cmp-ns:AttributeClass" xmlns:cmp-ns="http://glite.org/wsdl/services/org.glite.security.voms.service.attributes"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <arrayMapping
+        xmlns:ns="http://glite.org/wsdl/services/org.glite.security.voms.service.attributes"
+        qname="ns:ArrayOfAttributeValue"
+        type="java:org.glite.security.voms.service.attributes.AttributeValue[]"
+        innerType="cmp-ns:AttributeValue" xmlns:cmp-ns="http://glite.org/wsdl/services/org.glite.security.voms.service.attributes"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://glite.org/wsdl/services/org.glite.security.voms.service.attributes"
+        qname="ns:AttributeValue"
+        type="java:org.glite.security.voms.service.attributes.AttributeValue"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+  </service>
+</deployment>

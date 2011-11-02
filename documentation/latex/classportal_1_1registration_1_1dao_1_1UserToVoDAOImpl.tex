@@ -1,0 +1,399 @@
+\hypertarget{classportal_1_1registration_1_1dao_1_1UserToVoDAOImpl}{
+\section{portal.registration.dao.UserToVoDAOImpl Class Reference}
+\label{classportal_1_1registration_1_1dao_1_1UserToVoDAOImpl}\index{portal::registration::dao::UserToVoDAOImpl@{portal::registration::dao::UserToVoDAOImpl}}
+}
+
+
+Inheritance diagram for portal.registration.dao.UserToVoDAOImpl:
+
+
+Collaboration diagram for portal.registration.dao.UserToVoDAOImpl:
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classportal_1_1registration_1_1dao_1_1UserToVoDAOImpl_a789b9e9bb0eb777498afe53ede2902ed}{save} (\hyperlink{classportal_1_1registration_1_1domain_1_1UserToVo}{UserToVo} transientInstance)
+\item 
+List$<$ \hyperlink{classportal_1_1registration_1_1domain_1_1UserToVo}{UserToVo} $>$ \hyperlink{classportal_1_1registration_1_1dao_1_1UserToVoDAOImpl_a674ef52989e20d842a88267fba68cf2a}{findById} (\hyperlink{classportal_1_1registration_1_1domain_1_1UserInfo}{UserInfo} userInfo)
+\item 
+\hyperlink{classportal_1_1registration_1_1domain_1_1Vo}{Vo} \hyperlink{classportal_1_1registration_1_1dao_1_1UserToVoDAOImpl_ace46933eb9117d6aee1739da9dd90a34}{getVoByUserToVo} (\hyperlink{classportal_1_1registration_1_1domain_1_1UserToVo}{UserToVo} userToVo)
+\item 
+void \hyperlink{classportal_1_1registration_1_1dao_1_1UserToVoDAOImpl_ad46f970a0ba6e789452871285e91e8aa}{delete} (int userId, int idVo)
+\item 
+\hyperlink{classportal_1_1registration_1_1domain_1_1UserToVo}{UserToVo} \hyperlink{classportal_1_1registration_1_1dao_1_1UserToVoDAOImpl_ad672a9e02279a24f322b9041a28f1660}{findByIds} (int userId, int idVo)
+\item 
+void \hyperlink{classportal_1_1registration_1_1dao_1_1UserToVoDAOImpl_a99367cb6fd9ecb12d6cd1da21d216a1c}{update} (\hyperlink{classportal_1_1registration_1_1domain_1_1UserToVo}{UserToVo} temp)
+\item 
+int \hyperlink{classportal_1_1registration_1_1dao_1_1UserToVoDAOImpl_a322e6675f44c7c89bfee68b41ec74ea2}{getNumberOfUserToVo} (int userId)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+SessionFactory \hyperlink{classportal_1_1registration_1_1dao_1_1UserToVoDAOImpl_aaee7493b3273ae50e1594f8cbcb07c46}{sessionFactory}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static final Logger \hyperlink{classportal_1_1registration_1_1dao_1_1UserToVoDAOImpl_a8cb65475ce6db7bfea1d0be519bf06a5}{log} = Logger.getLogger(UserToVoDAOImpl.class)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 19 of file UserToVoDAOImpl.java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classportal_1_1registration_1_1dao_1_1UserToVoDAOImpl_ad46f970a0ba6e789452871285e91e8aa}{
+\index{portal::registration::dao::UserToVoDAOImpl@{portal::registration::dao::UserToVoDAOImpl}!delete@{delete}}
+\index{delete@{delete}!portal::registration::dao::UserToVoDAOImpl@{portal::registration::dao::UserToVoDAOImpl}}
+\subsubsection[{delete}]{\setlength{\rightskip}{0pt plus 5cm}void portal.registration.dao.UserToVoDAOImpl.delete (
+\begin{DoxyParamCaption}
+\item[{int}]{userId, }
+\item[{int}]{idVo}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1dao_1_1UserToVoDAOImpl_ad46f970a0ba6e789452871285e91e8aa}
+
+
+Implements \hyperlink{interfaceportal_1_1registration_1_1dao_1_1UserToVoDAO_aad028aefe411d02e83c25089908a0123}{portal.registration.dao.UserToVoDAO}.
+
+
+
+Definition at line 74 of file UserToVoDAOImpl.java.
+
+
+
+References portal.registration.dao.UserToVoDAOImpl.findByIds(), portal.registration.dao.UserToVoDAOImpl.log, and portal.registration.dao.UserToVoDAOImpl.sessionFactory.
+
+
+\begin{DoxyCode}
+                                                 {
+                log.debug("getting all Certificate instance of user");
+                try {
+
+                        Session session = sessionFactory.getCurrentSession();
+
+                        // Create a Hibernate query (HQL)
+                        UserToVo utv = findByIds(userId, idVo);
+                        session.delete(utv);
+                        session.flush();
+                } catch (RuntimeException re) {
+                        log.error("get failed", re);
+                        throw re;
+                }
+
+        }
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+
+
+\hypertarget{classportal_1_1registration_1_1dao_1_1UserToVoDAOImpl_a674ef52989e20d842a88267fba68cf2a}{
+\index{portal::registration::dao::UserToVoDAOImpl@{portal::registration::dao::UserToVoDAOImpl}!findById@{findById}}
+\index{findById@{findById}!portal::registration::dao::UserToVoDAOImpl@{portal::registration::dao::UserToVoDAOImpl}}
+\subsubsection[{findById}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf UserToVo}$>$ portal.registration.dao.UserToVoDAOImpl.findById (
+\begin{DoxyParamCaption}
+\item[{{\bf UserInfo}}]{userInfo}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1dao_1_1UserToVoDAOImpl_a674ef52989e20d842a88267fba68cf2a}
+
+
+Implements \hyperlink{interfaceportal_1_1registration_1_1dao_1_1UserToVoDAO_a69d40c38f99fa8e610a7706f01971458}{portal.registration.dao.UserToVoDAO}.
+
+
+
+Definition at line 42 of file UserToVoDAOImpl.java.
+
+
+
+References portal.registration.dao.UserToVoDAOImpl.log, and portal.registration.dao.UserToVoDAOImpl.sessionFactory.
+
+
+\begin{DoxyCode}
+                                                          {
+                log.debug("getting all Certificate instance of user");
+                try {
+
+                        Session session = sessionFactory.getCurrentSession();
+
+                        // Create a Hibernate query (HQL)
+                        Query query = session.createQuery("FROM  UserToVo WHERE u
+      serId = "
+                                        + userInfo.getUserId());
+
+                        // Retrieve all
+                        return query.list();
+                } catch (RuntimeException re) {
+                        log.error("get failed", re);
+                        throw re;
+                }
+        }
+\end{DoxyCode}
+\hypertarget{classportal_1_1registration_1_1dao_1_1UserToVoDAOImpl_ad672a9e02279a24f322b9041a28f1660}{
+\index{portal::registration::dao::UserToVoDAOImpl@{portal::registration::dao::UserToVoDAOImpl}!findByIds@{findByIds}}
+\index{findByIds@{findByIds}!portal::registration::dao::UserToVoDAOImpl@{portal::registration::dao::UserToVoDAOImpl}}
+\subsubsection[{findByIds}]{\setlength{\rightskip}{0pt plus 5cm}{\bf UserToVo} portal.registration.dao.UserToVoDAOImpl.findByIds (
+\begin{DoxyParamCaption}
+\item[{int}]{userId, }
+\item[{int}]{idVo}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1dao_1_1UserToVoDAOImpl_ad672a9e02279a24f322b9041a28f1660}
+
+
+Implements \hyperlink{interfaceportal_1_1registration_1_1dao_1_1UserToVoDAO_aa50e9d0d19887dfd02c83ef3fb55211f}{portal.registration.dao.UserToVoDAO}.
+
+
+
+Definition at line 91 of file UserToVoDAOImpl.java.
+
+
+
+References portal.registration.dao.UserToVoDAOImpl.log, and portal.registration.dao.UserToVoDAOImpl.sessionFactory.
+
+
+
+Referenced by portal.registration.dao.UserToVoDAOImpl.delete().
+
+
+\begin{DoxyCode}
+                                                        {
+                log.debug("getting all Certificate instance of user");
+                try {
+
+                        Session session = sessionFactory.getCurrentSession();
+
+                        UserToVoId userToVoId = new UserToVoId(userId, idVo);
+
+                        // Create a Hibernate query (HQL)
+                        return (UserToVo) session.get(UserToVo.class, userToVoId)
+      ;
+
+                } catch (RuntimeException re) {
+                        log.error("get failed", re);
+                        throw re;
+
+                }
+        }
+\end{DoxyCode}
+
+
+Here is the caller graph for this function:
+
+
+\hypertarget{classportal_1_1registration_1_1dao_1_1UserToVoDAOImpl_a322e6675f44c7c89bfee68b41ec74ea2}{
+\index{portal::registration::dao::UserToVoDAOImpl@{portal::registration::dao::UserToVoDAOImpl}!getNumberOfUserToVo@{getNumberOfUserToVo}}
+\index{getNumberOfUserToVo@{getNumberOfUserToVo}!portal::registration::dao::UserToVoDAOImpl@{portal::registration::dao::UserToVoDAOImpl}}
+\subsubsection[{getNumberOfUserToVo}]{\setlength{\rightskip}{0pt plus 5cm}int portal.registration.dao.UserToVoDAOImpl.getNumberOfUserToVo (
+\begin{DoxyParamCaption}
+\item[{int}]{userId}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1dao_1_1UserToVoDAOImpl_a322e6675f44c7c89bfee68b41ec74ea2}
+
+
+Implements \hyperlink{interfaceportal_1_1registration_1_1dao_1_1UserToVoDAO_a95942d96eb73a286ed00cea23ea3785f}{portal.registration.dao.UserToVoDAO}.
+
+
+
+Definition at line 132 of file UserToVoDAOImpl.java.
+
+
+
+References portal.registration.dao.UserToVoDAOImpl.log, and portal.registration.dao.UserToVoDAOImpl.sessionFactory.
+
+
+\begin{DoxyCode}
+                                                   {
+                log.debug("getting the number of Vo fo userId = " + userId);
+                try {
+
+                        Session session = sessionFactory.getCurrentSession();
+                        int count = 0;
+                        String SQL_QUERY = "SELECT count(*) FROM UserToVo WHERE u
+      serId = "
+                                        + userId;
+                        Query query = session.createQuery(SQL_QUERY);
+                        for (Iterator it = query.iterate(); it.hasNext();) {
+                                it.next();
+                                count++;
+                        }
+
+                        return count;
+
+                } catch (RuntimeException re) {
+                        log.error("get failed", re);
+                        throw re;
+
+                }
+        }
+\end{DoxyCode}
+\hypertarget{classportal_1_1registration_1_1dao_1_1UserToVoDAOImpl_ace46933eb9117d6aee1739da9dd90a34}{
+\index{portal::registration::dao::UserToVoDAOImpl@{portal::registration::dao::UserToVoDAOImpl}!getVoByUserToVo@{getVoByUserToVo}}
+\index{getVoByUserToVo@{getVoByUserToVo}!portal::registration::dao::UserToVoDAOImpl@{portal::registration::dao::UserToVoDAOImpl}}
+\subsubsection[{getVoByUserToVo}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vo} portal.registration.dao.UserToVoDAOImpl.getVoByUserToVo (
+\begin{DoxyParamCaption}
+\item[{{\bf UserToVo}}]{userToVo}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1dao_1_1UserToVoDAOImpl_ace46933eb9117d6aee1739da9dd90a34}
+
+
+Implements \hyperlink{interfaceportal_1_1registration_1_1dao_1_1UserToVoDAO_ab03d3abd18040c4fbee7a843115d8272}{portal.registration.dao.UserToVoDAO}.
+
+
+
+Definition at line 60 of file UserToVoDAOImpl.java.
+
+
+
+References portal.registration.domain.UserToVo.getVo(), portal.registration.dao.UserToVoDAOImpl.log, and portal.registration.dao.UserToVoDAOImpl.sessionFactory.
+
+
+\begin{DoxyCode}
+                                                     {
+                log.debug("getting all Certificate instance of user");
+                try {
+
+                        Session session = sessionFactory.getCurrentSession();
+
+                        return (Vo) session.get(Vo.class,
+                                        session.getIdentifier(userToVo.getVo()));
+      
+                } catch (RuntimeException re) {
+                        log.error("get failed", re);
+                        throw re;
+                }
+        }
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+
+
+\hypertarget{classportal_1_1registration_1_1dao_1_1UserToVoDAOImpl_a789b9e9bb0eb777498afe53ede2902ed}{
+\index{portal::registration::dao::UserToVoDAOImpl@{portal::registration::dao::UserToVoDAOImpl}!save@{save}}
+\index{save@{save}!portal::registration::dao::UserToVoDAOImpl@{portal::registration::dao::UserToVoDAOImpl}}
+\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}void portal.registration.dao.UserToVoDAOImpl.save (
+\begin{DoxyParamCaption}
+\item[{{\bf UserToVo}}]{transientInstance}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1dao_1_1UserToVoDAOImpl_a789b9e9bb0eb777498afe53ede2902ed}
+
+
+Implements \hyperlink{interfaceportal_1_1registration_1_1dao_1_1UserToVoDAO_a1b64a9ef38ac754471c8fb0ff069e973}{portal.registration.dao.UserToVoDAO}.
+
+
+
+Definition at line 26 of file UserToVoDAOImpl.java.
+
+
+
+References portal.registration.dao.UserToVoDAOImpl.log, and portal.registration.dao.UserToVoDAOImpl.sessionFactory.
+
+
+\begin{DoxyCode}
+                                                     {
+                log.debug("persisting UserInfo instance");
+                try {
+                        Session session = sessionFactory.getCurrentSession();
+                        session.save(transientInstance);
+                        //
+                        session.flush();
+                        session.refresh(transientInstance);
+                        log.debug("persist successful");
+                } catch (RuntimeException re) {
+                        log.error("persist failed", re);
+                        throw re;
+                }
+        }
+\end{DoxyCode}
+\hypertarget{classportal_1_1registration_1_1dao_1_1UserToVoDAOImpl_a99367cb6fd9ecb12d6cd1da21d216a1c}{
+\index{portal::registration::dao::UserToVoDAOImpl@{portal::registration::dao::UserToVoDAOImpl}!update@{update}}
+\index{update@{update}!portal::registration::dao::UserToVoDAOImpl@{portal::registration::dao::UserToVoDAOImpl}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void portal.registration.dao.UserToVoDAOImpl.update (
+\begin{DoxyParamCaption}
+\item[{{\bf UserToVo}}]{temp}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1dao_1_1UserToVoDAOImpl_a99367cb6fd9ecb12d6cd1da21d216a1c}
+
+
+Implements \hyperlink{interfaceportal_1_1registration_1_1dao_1_1UserToVoDAO_ae75b46fbc3679c3b5d48666ade7645a4}{portal.registration.dao.UserToVoDAO}.
+
+
+
+Definition at line 109 of file UserToVoDAOImpl.java.
+
+
+
+References portal.registration.domain.UserToVo.getFqans(), portal.registration.domain.UserToVo.getId(), portal.registration.domain.UserToVo.getIsDefault(), portal.registration.domain.UserToVo.getUserInfo(), portal.registration.domain.UserToVo.getVo(), portal.registration.dao.UserToVoDAOImpl.log, portal.registration.dao.UserToVoDAOImpl.sessionFactory, portal.registration.domain.UserToVo.setFqans(), portal.registration.domain.UserToVo.setIsDefault(), portal.registration.domain.UserToVo.setUserInfo(), and portal.registration.domain.UserToVo.setVo().
+
+
+\begin{DoxyCode}
+                                          {
+                log.debug("Editing existing userToVo");
+
+                // Retrieve session from Hibernate
+                Session session = sessionFactory.getCurrentSession();
+
+                // Retrieve existing userInfo via id
+                UserToVo existingUTV = (UserToVo) session.get(UserToVo.class,
+                                temp.getId());
+
+                // Assign updated values to this userInfo
+                existingUTV.setFqans(temp.getFqans());
+                existingUTV.setIsDefault(temp.getIsDefault());
+                existingUTV.setUserInfo(temp.getUserInfo());
+                existingUTV.setVo(temp.getVo());
+
+                // Save updates
+                session.save(existingUTV);
+                session.flush();
+                session.refresh(existingUTV);
+        }
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classportal_1_1registration_1_1dao_1_1UserToVoDAOImpl_a8cb65475ce6db7bfea1d0be519bf06a5}{
+\index{portal::registration::dao::UserToVoDAOImpl@{portal::registration::dao::UserToVoDAOImpl}!log@{log}}
+\index{log@{log}!portal::registration::dao::UserToVoDAOImpl@{portal::registration::dao::UserToVoDAOImpl}}
+\subsubsection[{log}]{\setlength{\rightskip}{0pt plus 5cm}final Logger {\bf portal.registration.dao.UserToVoDAOImpl.log} = Logger.getLogger(UserToVoDAOImpl.class)\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{classportal_1_1registration_1_1dao_1_1UserToVoDAOImpl_a8cb65475ce6db7bfea1d0be519bf06a5}
+
+
+Definition at line 21 of file UserToVoDAOImpl.java.
+
+
+
+Referenced by portal.registration.dao.UserToVoDAOImpl.delete(), portal.registration.dao.UserToVoDAOImpl.findById(), portal.registration.dao.UserToVoDAOImpl.findByIds(), portal.registration.dao.UserToVoDAOImpl.getNumberOfUserToVo(), portal.registration.dao.UserToVoDAOImpl.getVoByUserToVo(), portal.registration.dao.UserToVoDAOImpl.save(), and portal.registration.dao.UserToVoDAOImpl.update().
+
+\hypertarget{classportal_1_1registration_1_1dao_1_1UserToVoDAOImpl_aaee7493b3273ae50e1594f8cbcb07c46}{
+\index{portal::registration::dao::UserToVoDAOImpl@{portal::registration::dao::UserToVoDAOImpl}!sessionFactory@{sessionFactory}}
+\index{sessionFactory@{sessionFactory}!portal::registration::dao::UserToVoDAOImpl@{portal::registration::dao::UserToVoDAOImpl}}
+\subsubsection[{sessionFactory}]{\setlength{\rightskip}{0pt plus 5cm}SessionFactory {\bf portal.registration.dao.UserToVoDAOImpl.sessionFactory}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classportal_1_1registration_1_1dao_1_1UserToVoDAOImpl_aaee7493b3273ae50e1594f8cbcb07c46}
+
+
+Definition at line 24 of file UserToVoDAOImpl.java.
+
+
+
+Referenced by portal.registration.dao.UserToVoDAOImpl.delete(), portal.registration.dao.UserToVoDAOImpl.findById(), portal.registration.dao.UserToVoDAOImpl.findByIds(), portal.registration.dao.UserToVoDAOImpl.getNumberOfUserToVo(), portal.registration.dao.UserToVoDAOImpl.getVoByUserToVo(), portal.registration.dao.UserToVoDAOImpl.save(), and portal.registration.dao.UserToVoDAOImpl.update().
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/dao/\hyperlink{UserToVoDAOImpl_8java}{UserToVoDAOImpl.java}\end{DoxyCompactItemize}

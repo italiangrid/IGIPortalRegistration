@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="VOMSTest_8java" kind="file">
+    <compoundname>VOMSTest.java</compoundname>
+    <innerclass refid="classportal_1_1registration_1_1utils_1_1VOMSTest" prot="public">portal::registration::utils::VOMSTest</innerclass>
+    <innernamespace refid="namespaceportal_1_1registration_1_1utils">portal::registration::utils</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">package<sp/></highlight><highlight class="normal">portal.registration.utils;</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>java.net.MalformedURLException;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>java.rmi.RemoteException;</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>javax.xml.rpc.ServiceException;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>org.glite.security.voms.VOMSException;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10" refid="classportal_1_1registration_1_1utils_1_1VOMSTest" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classportal_1_1registration_1_1utils_1_1VOMSTest" kindref="compound">VOMSTest</ref><sp/>{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12" refid="classportal_1_1registration_1_1utils_1_1VOMSTest_1a5b50cacf533113b01ca54e44682993bf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classportal_1_1registration_1_1utils_1_1VOMSTest_1a5b50cacf533113b01ca54e44682993bf" kindref="member">main</ref>(String[]<sp/>args)<sp/></highlight><highlight class="keywordflow">throws</highlight><highlight class="normal"><sp/><ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">VOMSException</ref>,<sp/>MalformedURLException,<sp/>RemoteException,<sp/>ServiceException<sp/>{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>String[]<sp/>roles<sp/>=<sp/><ref refid="classportal_1_1registration_1_1utils_1_1VOMSAdminCallOut" kindref="compound">VOMSAdminCallOut</ref>.<ref refid="classportal_1_1registration_1_1utils_1_1VOMSAdminCallOut_1ac7248574c47f256fe524dfcb82059304" kindref="member">getUserFQANs</ref>(</highlight><highlight class="stringliteral">&quot;/C=IT/O=INFN/OU=Personal<sp/>Certificate/L=Ferrara/CN=Enrico<sp/>Vianello&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;/C=IT/O=INFN/CN=INFN<sp/>CA&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;voms-02.pd.infn.it:8443/voms/superbvo.org&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>roles.length;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>System.out.println(</highlight><highlight class="stringliteral">&quot;roles<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>i<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>=<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>roles[i]);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/utils/VOMSTest.java"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,16 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classportal_1_1registration_1_1domain_1_1UserInfo.html#a1626a0c995db599481eae8538dced879" title="portal.registration.domain.UserInfo.getFirstName" alt="" coords="342,4,623,31"/>
+<area shape="rect" id="node5" href="$classportal_1_1registration_1_1domain_1_1UserInfo.html#a6e91d15bce496b1d5980803d344710a4" title="portal.registration.domain.UserInfo.getInstitute" alt="" coords="349,55,616,81"/>
+<area shape="rect" id="node7" href="$classportal_1_1registration_1_1domain_1_1UserInfo.html#a515a516db97a054a8f8074ebeac4d645" title="portal.registration.domain.UserInfo.getLastName" alt="" coords="343,105,623,132"/>
+<area shape="rect" id="node9" href="$classportal_1_1registration_1_1domain_1_1UserInfo.html#ab6dea2bfa58260b955cd40c7990f6755" title="portal.registration.domain.UserInfo.getMail" alt="" coords="359,156,606,183"/>
+<area shape="rect" id="node11" href="$classportal_1_1registration_1_1domain_1_1UserInfo.html#abc3f4b70068a3c48d4570f89d4526cd5" title="portal.registration.domain.UserInfo.getPhone" alt="" coords="353,207,613,233"/>
+<area shape="rect" id="node13" href="$classportal_1_1registration_1_1domain_1_1UserInfo.html#a48077c9afd126dac031566c4f4f7ef39" title="portal.registration.domain.UserInfo.getUserId" alt="" coords="352,257,613,284"/>
+<area shape="rect" id="node15" href="$classportal_1_1registration_1_1domain_1_1UserInfo.html#a929f371c5886ad09e6d4c068490d5299" title="portal.registration.domain.UserInfo.getUsername" alt="" coords="342,308,623,335"/>
+<area shape="rect" id="node17" href="$classportal_1_1registration_1_1domain_1_1UserInfo.html#a2b5087901b31b751400f47a1e64dd913" title="portal.registration.domain.UserInfo.setFirstName" alt="" coords="343,359,623,385"/>
+<area shape="rect" id="node19" href="$classportal_1_1registration_1_1domain_1_1UserInfo.html#a734241ba2b19ba148375017bb3cad0b2" title="portal.registration.domain.UserInfo.setInstitute" alt="" coords="349,409,616,436"/>
+<area shape="rect" id="node21" href="$classportal_1_1registration_1_1domain_1_1UserInfo.html#a0b40b46fc03b4c1c38ed1abce4f621ca" title="portal.registration.domain.UserInfo.setLastName" alt="" coords="343,460,622,487"/>
+<area shape="rect" id="node23" href="$classportal_1_1registration_1_1domain_1_1UserInfo.html#acdda421b0770953b2e37fa17651b4287" title="portal.registration.domain.UserInfo.setMail" alt="" coords="359,511,606,537"/>
+<area shape="rect" id="node25" href="$classportal_1_1registration_1_1domain_1_1UserInfo.html#a3080c8f1b99d67bdd5b5e7b3b8301bfb" title="portal.registration.domain.UserInfo.setPhone" alt="" coords="353,561,612,588"/>
+<area shape="rect" id="node27" href="$classportal_1_1registration_1_1domain_1_1UserInfo.html#a0faf57dfd8593ff7fd523793bc20d5a1" title="portal.registration.domain.UserInfo.setRegistrationComplete" alt="" coords="313,612,653,639"/>
+<area shape="rect" id="node29" href="$classportal_1_1registration_1_1domain_1_1UserInfo.html#afc1777958910500eab3a8b604c3a9f57" title="portal.registration.domain.UserInfo.setUsername" alt="" coords="343,663,623,689"/>
+</map>

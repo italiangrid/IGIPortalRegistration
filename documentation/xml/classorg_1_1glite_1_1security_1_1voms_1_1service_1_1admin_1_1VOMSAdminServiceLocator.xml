@@ -1,0 +1,392 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator" kind="class" prot="public">
+    <compoundname>org::glite::security::voms::service::admin::VOMSAdminServiceLocator</compoundname>
+    <basecompoundref refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminService" prot="public" virt="non-virtual">org.glite.security.voms.service.admin.VOMSAdminService</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator_1a65424a457a064c5405aad0ca1304503e" prot="private" static="no" mutable="no">
+        <type>java.lang.String</type>
+        <definition>java.lang.String org.glite.security.voms.service.admin.VOMSAdminServiceLocator.VOMSAdmin_address</definition>
+        <argsstring></argsstring>
+        <name>VOMSAdmin_address</name>
+        <initializer>&quot;https://localhost:8443/glite-security-voms-admin-interface/<ref refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdmin" kindref="compound">VOMSAdmin</ref>&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminServiceLocator.java" line="25" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminServiceLocator.java" bodystart="25" bodyend="-1"/>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator_1a5fb2e26694d7fe37047324a67a699fc1" compoundref="VOMSAdminServiceLocator_8java" startline="73" endline="85">org.glite.security.voms.service.admin.VOMSAdminServiceLocator::getPort</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator_1a2ed7cc83a0ba2ed7d65aa7a97eebe4fd" compoundref="VOMSAdminServiceLocator_8java" startline="42" endline="51">org.glite.security.voms.service.admin.VOMSAdminServiceLocator::getVOMSAdmin</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator_1a9aa20e106732f35e8180750326cb033f" compoundref="VOMSAdminServiceLocator_8java" startline="27" endline="29">org.glite.security.voms.service.admin.VOMSAdminServiceLocator::getVOMSAdminAddress</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator_1a9f8a71c0d0810a4430596ab94950847d" compoundref="VOMSAdminServiceLocator_8java" startline="64" endline="66">org.glite.security.voms.service.admin.VOMSAdminServiceLocator::setVOMSAdminEndpointAddress</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator_1a00b09a56a70c27e1f729adfec6f6b9d1" prot="private" static="no" mutable="no">
+        <type>java.lang.String</type>
+        <definition>java.lang.String org.glite.security.voms.service.admin.VOMSAdminServiceLocator.VOMSAdminWSDDServiceName</definition>
+        <argsstring></argsstring>
+        <name>VOMSAdminWSDDServiceName</name>
+        <initializer>&quot;VOMSAdmin&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminServiceLocator.java" line="32" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminServiceLocator.java" bodystart="32" bodyend="-1"/>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator_1abb4a267178077063d27cbcb7aaf621aa" compoundref="VOMSAdminServiceLocator_8java" startline="34" endline="36">org.glite.security.voms.service.admin.VOMSAdminServiceLocator::getVOMSAdminWSDDServiceName</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator_1a06c7c211cf04b1c2646f7bd389210c50" compoundref="VOMSAdminServiceLocator_8java" startline="38" endline="40">org.glite.security.voms.service.admin.VOMSAdminServiceLocator::setVOMSAdminWSDDServiceName</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator_1a5d5510e2ba038ca0dd8dafe5bc7fd330" prot="private" static="no" mutable="no">
+        <type>java.util.HashSet</type>
+        <definition>java.util.HashSet org.glite.security.voms.service.admin.VOMSAdminServiceLocator.ports</definition>
+        <argsstring></argsstring>
+        <name>ports</name>
+        <initializer> null</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminServiceLocator.java" line="111" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminServiceLocator.java" bodystart="111" bodyend="-1"/>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator_1aec50359e551027dd4c86d0427a9cb5cc" compoundref="VOMSAdminServiceLocator_8java" startline="113" endline="119">org.glite.security.voms.service.admin.VOMSAdminServiceLocator::getPorts</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator_1a219781270cf92256001da6206d3834bc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>org.glite.security.voms.service.admin.VOMSAdminServiceLocator.VOMSAdminServiceLocator</definition>
+        <argsstring>()</argsstring>
+        <name>VOMSAdminServiceLocator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminServiceLocator.java" line="12" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminServiceLocator.java" bodystart="12" bodyend="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator_1a700fcfa6c12e49da139e114ec3d3aee8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>org.glite.security.voms.service.admin.VOMSAdminServiceLocator.VOMSAdminServiceLocator</definition>
+        <argsstring>(org.apache.axis.EngineConfiguration config)</argsstring>
+        <name>VOMSAdminServiceLocator</name>
+        <param>
+          <type>org.apache.axis.EngineConfiguration</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminServiceLocator.java" line="16" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminServiceLocator.java" bodystart="16" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator_1a67101d07d4f9d8cdc8936b18ecbba408" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>org.glite.security.voms.service.admin.VOMSAdminServiceLocator.VOMSAdminServiceLocator</definition>
+        <argsstring>(java.lang.String wsdlLoc, javax.xml.namespace.QName sName)</argsstring>
+        <name>VOMSAdminServiceLocator</name>
+        <param>
+          <type>java.lang.String</type>
+          <declname>wsdlLoc</declname>
+        </param>
+        <param>
+          <type>javax.xml.namespace.QName</type>
+          <declname>sName</declname>
+        </param>
+        <exceptions> throws javax.xml.rpc.ServiceException </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminServiceLocator.java" line="20" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminServiceLocator.java" bodystart="20" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator_1a9aa20e106732f35e8180750326cb033f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>java.lang.String</type>
+        <definition>java.lang.String org.glite.security.voms.service.admin.VOMSAdminServiceLocator.getVOMSAdminAddress</definition>
+        <argsstring>()</argsstring>
+        <name>getVOMSAdminAddress</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminService_1aa6954ab207748588e65b1d3acb342cbe">getVOMSAdminAddress</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminServiceLocator.java" line="27" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminServiceLocator.java" bodystart="27" bodyend="29"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator_1a65424a457a064c5405aad0ca1304503e" compoundref="VOMSAdminServiceLocator_8java" startline="25">org.glite.security.voms.service.admin.VOMSAdminServiceLocator::VOMSAdmin_address</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator_1abb4a267178077063d27cbcb7aaf621aa" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>java.lang.String</type>
+        <definition>java.lang.String org.glite.security.voms.service.admin.VOMSAdminServiceLocator.getVOMSAdminWSDDServiceName</definition>
+        <argsstring>()</argsstring>
+        <name>getVOMSAdminWSDDServiceName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminServiceLocator.java" line="34" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminServiceLocator.java" bodystart="34" bodyend="36"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator_1a00b09a56a70c27e1f729adfec6f6b9d1" compoundref="VOMSAdminServiceLocator_8java" startline="32">org.glite.security.voms.service.admin.VOMSAdminServiceLocator::VOMSAdminWSDDServiceName</references>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator_1a5fb2e26694d7fe37047324a67a699fc1" compoundref="VOMSAdminServiceLocator_8java" startline="73" endline="85">org.glite.security.voms.service.admin.VOMSAdminServiceLocator::getPort</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator_1af9230883ddc8118ab6ea6960b3d3b370" compoundref="VOMSAdminServiceLocator_8java" startline="53" endline="62">org.glite.security.voms.service.admin.VOMSAdminServiceLocator::getVOMSAdmin</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator_1a06c7c211cf04b1c2646f7bd389210c50" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.admin.VOMSAdminServiceLocator.setVOMSAdminWSDDServiceName</definition>
+        <argsstring>(java.lang.String name)</argsstring>
+        <name>setVOMSAdminWSDDServiceName</name>
+        <param>
+          <type>java.lang.String</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminServiceLocator.java" line="38" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminServiceLocator.java" bodystart="38" bodyend="40"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator_1a00b09a56a70c27e1f729adfec6f6b9d1" compoundref="VOMSAdminServiceLocator_8java" startline="32">org.glite.security.voms.service.admin.VOMSAdminServiceLocator::VOMSAdminWSDDServiceName</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator_1a2ed7cc83a0ba2ed7d65aa7a97eebe4fd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdmin" kindref="compound">org.glite.security.voms.service.admin.VOMSAdmin</ref></type>
+        <definition>org.glite.security.voms.service.admin.VOMSAdmin org.glite.security.voms.service.admin.VOMSAdminServiceLocator.getVOMSAdmin</definition>
+        <argsstring>()</argsstring>
+        <name>getVOMSAdmin</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminService_1a3a21cfa1a638a583606607085ae65092">getVOMSAdmin</reimplements>
+        <exceptions> throws javax.xml.rpc.ServiceException </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminServiceLocator.java" line="42" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminServiceLocator.java" bodystart="42" bodyend="51"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator_1a65424a457a064c5405aad0ca1304503e" compoundref="VOMSAdminServiceLocator_8java" startline="25">org.glite.security.voms.service.admin.VOMSAdminServiceLocator::VOMSAdmin_address</references>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator_1a3cf5b1535dfa2ca9ab9c602e24c02685" compoundref="VOMSAdminServiceLocator_8java" startline="92" endline="105">org.glite.security.voms.service.admin.VOMSAdminServiceLocator::getPort</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1utils_1_1VOMSAdminCallOut_1ac7248574c47f256fe524dfcb82059304" compoundref="VOMSAdminCallOut_8java" startline="18" endline="50">portal.registration.utils.VOMSAdminCallOut::getUserFQANs</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator_1af9230883ddc8118ab6ea6960b3d3b370" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdmin" kindref="compound">org.glite.security.voms.service.admin.VOMSAdmin</ref></type>
+        <definition>org.glite.security.voms.service.admin.VOMSAdmin org.glite.security.voms.service.admin.VOMSAdminServiceLocator.getVOMSAdmin</definition>
+        <argsstring>(java.net.URL portAddress)</argsstring>
+        <name>getVOMSAdmin</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminService_1a1c71525ec982f1d3928310edc1b46405">getVOMSAdmin</reimplements>
+        <param>
+          <type>java.net.URL</type>
+          <declname>portAddress</declname>
+        </param>
+        <exceptions> throws javax.xml.rpc.ServiceException </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminServiceLocator.java" line="53" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminServiceLocator.java" bodystart="53" bodyend="62"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator_1abb4a267178077063d27cbcb7aaf621aa" compoundref="VOMSAdminServiceLocator_8java" startline="34" endline="36">org.glite.security.voms.service.admin.VOMSAdminServiceLocator::getVOMSAdminWSDDServiceName</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator_1a9f8a71c0d0810a4430596ab94950847d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.admin.VOMSAdminServiceLocator.setVOMSAdminEndpointAddress</definition>
+        <argsstring>(java.lang.String address)</argsstring>
+        <name>setVOMSAdminEndpointAddress</name>
+        <param>
+          <type>java.lang.String</type>
+          <declname>address</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminServiceLocator.java" line="64" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminServiceLocator.java" bodystart="64" bodyend="66"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator_1a65424a457a064c5405aad0ca1304503e" compoundref="VOMSAdminServiceLocator_8java" startline="25">org.glite.security.voms.service.admin.VOMSAdminServiceLocator::VOMSAdmin_address</references>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator_1a25bb96ac7e29defff54403a595ac17ee" compoundref="VOMSAdminServiceLocator_8java" startline="124" endline="133">org.glite.security.voms.service.admin.VOMSAdminServiceLocator::setEndpointAddress</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator_1a5fb2e26694d7fe37047324a67a699fc1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>java.rmi.Remote</type>
+        <definition>java.rmi.Remote org.glite.security.voms.service.admin.VOMSAdminServiceLocator.getPort</definition>
+        <argsstring>(Class serviceEndpointInterface)</argsstring>
+        <name>getPort</name>
+        <param>
+          <type>Class</type>
+          <declname>serviceEndpointInterface</declname>
+        </param>
+        <exceptions> throws javax.xml.rpc.ServiceException </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>For the given interface, get the stub implementation. If this service has no port for the given interface, then ServiceException is thrown. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminServiceLocator.java" line="73" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminServiceLocator.java" bodystart="73" bodyend="85"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator_1abb4a267178077063d27cbcb7aaf621aa" compoundref="VOMSAdminServiceLocator_8java" startline="34" endline="36">org.glite.security.voms.service.admin.VOMSAdminServiceLocator::getVOMSAdminWSDDServiceName</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator_1a65424a457a064c5405aad0ca1304503e" compoundref="VOMSAdminServiceLocator_8java" startline="25">org.glite.security.voms.service.admin.VOMSAdminServiceLocator::VOMSAdmin_address</references>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator_1a3cf5b1535dfa2ca9ab9c602e24c02685" compoundref="VOMSAdminServiceLocator_8java" startline="92" endline="105">org.glite.security.voms.service.admin.VOMSAdminServiceLocator::getPort</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator_1a3cf5b1535dfa2ca9ab9c602e24c02685" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>java.rmi.Remote</type>
+        <definition>java.rmi.Remote org.glite.security.voms.service.admin.VOMSAdminServiceLocator.getPort</definition>
+        <argsstring>(javax.xml.namespace.QName portName, Class serviceEndpointInterface)</argsstring>
+        <name>getPort</name>
+        <param>
+          <type>javax.xml.namespace.QName</type>
+          <declname>portName</declname>
+        </param>
+        <param>
+          <type>Class</type>
+          <declname>serviceEndpointInterface</declname>
+        </param>
+        <exceptions> throws javax.xml.rpc.ServiceException </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>For the given interface, get the stub implementation. If this service has no port for the given interface, then ServiceException is thrown. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminServiceLocator.java" line="92" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminServiceLocator.java" bodystart="92" bodyend="105"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator_1a5fb2e26694d7fe37047324a67a699fc1" compoundref="VOMSAdminServiceLocator_8java" startline="73" endline="85">org.glite.security.voms.service.admin.VOMSAdminServiceLocator::getPort</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator_1a2ed7cc83a0ba2ed7d65aa7a97eebe4fd" compoundref="VOMSAdminServiceLocator_8java" startline="42" endline="51">org.glite.security.voms.service.admin.VOMSAdminServiceLocator::getVOMSAdmin</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator_1a0ef87cdf4ccc744554a022978483c35d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>namespace::QName</type>
+        <definition>namespace ::QName org.glite.security.voms.service.admin.VOMSAdminServiceLocator.getServiceName</definition>
+        <argsstring>()</argsstring>
+        <name>getServiceName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminServiceLocator.java" line="107" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminServiceLocator.java" bodystart="107" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator_1aec50359e551027dd4c86d0427a9cb5cc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>java.util.Iterator</type>
+        <definition>java.util.Iterator org.glite.security.voms.service.admin.VOMSAdminServiceLocator.getPorts</definition>
+        <argsstring>()</argsstring>
+        <name>getPorts</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminServiceLocator.java" line="113" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminServiceLocator.java" bodystart="113" bodyend="119"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator_1a5d5510e2ba038ca0dd8dafe5bc7fd330" compoundref="VOMSAdminServiceLocator_8java" startline="111">org.glite.security.voms.service.admin.VOMSAdminServiceLocator::ports</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator_1a25bb96ac7e29defff54403a595ac17ee" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.admin.VOMSAdminServiceLocator.setEndpointAddress</definition>
+        <argsstring>(java.lang.String portName, java.lang.String address)</argsstring>
+        <name>setEndpointAddress</name>
+        <param>
+          <type>java.lang.String</type>
+          <declname>portName</declname>
+        </param>
+        <param>
+          <type>java.lang.String</type>
+          <declname>address</declname>
+        </param>
+        <exceptions> throws javax.xml.rpc.ServiceException </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set the endpoint address for the specified port name. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminServiceLocator.java" line="124" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminServiceLocator.java" bodystart="124" bodyend="133"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator_1a9f8a71c0d0810a4430596ab94950847d" compoundref="VOMSAdminServiceLocator_8java" startline="64" endline="66">org.glite.security.voms.service.admin.VOMSAdminServiceLocator::setVOMSAdminEndpointAddress</references>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator_1a926dbce6cd1b65637bedb6dac11214a7" compoundref="VOMSAdminServiceLocator_8java" startline="138" endline="140">org.glite.security.voms.service.admin.VOMSAdminServiceLocator::setEndpointAddress</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator_1a926dbce6cd1b65637bedb6dac11214a7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.admin.VOMSAdminServiceLocator.setEndpointAddress</definition>
+        <argsstring>(javax.xml.namespace.QName portName, java.lang.String address)</argsstring>
+        <name>setEndpointAddress</name>
+        <param>
+          <type>javax.xml.namespace.QName</type>
+          <declname>portName</declname>
+        </param>
+        <param>
+          <type>java.lang.String</type>
+          <declname>address</declname>
+        </param>
+        <exceptions> throws javax.xml.rpc.ServiceException </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set the endpoint address for the specified port name. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminServiceLocator.java" line="138" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminServiceLocator.java" bodystart="138" bodyend="140"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator_1a25bb96ac7e29defff54403a595ac17ee" compoundref="VOMSAdminServiceLocator_8java" startline="124" endline="133">org.glite.security.voms.service.admin.VOMSAdminServiceLocator::setEndpointAddress</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="679">
+        <label>org.glite.security.voms.service.admin.VOMSAdminServiceLocator</label>
+        <link refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator"/>
+        <childnode refid="680" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="680">
+        <label>org.glite.security.voms.service.admin.VOMSAdminService</label>
+        <link refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminService"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="681">
+        <label>org.glite.security.voms.service.admin.VOMSAdminServiceLocator</label>
+        <link refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator"/>
+        <childnode refid="682" relation="public-inheritance">
+        </childnode>
+        <childnode refid="683" relation="usage">
+          <edgelabel>ports</edgelabel>
+        </childnode>
+      </node>
+      <node id="683">
+        <label>HashSet</label>
+      </node>
+      <node id="682">
+        <label>org.glite.security.voms.service.admin.VOMSAdminService</label>
+        <link refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminService"/>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminServiceLocator.java" line="10" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminServiceLocator.java" bodystart="10" bodyend="142"/>
+    <listofallmembers>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator_1a5fb2e26694d7fe37047324a67a699fc1" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::admin::VOMSAdminServiceLocator</scope><name>getPort</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator_1a3cf5b1535dfa2ca9ab9c602e24c02685" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::admin::VOMSAdminServiceLocator</scope><name>getPort</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator_1aec50359e551027dd4c86d0427a9cb5cc" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::admin::VOMSAdminServiceLocator</scope><name>getPorts</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator_1a0ef87cdf4ccc744554a022978483c35d" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::admin::VOMSAdminServiceLocator</scope><name>getServiceName</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator_1a2ed7cc83a0ba2ed7d65aa7a97eebe4fd" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::admin::VOMSAdminServiceLocator</scope><name>getVOMSAdmin</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator_1af9230883ddc8118ab6ea6960b3d3b370" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::admin::VOMSAdminServiceLocator</scope><name>getVOMSAdmin</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator_1a9aa20e106732f35e8180750326cb033f" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::admin::VOMSAdminServiceLocator</scope><name>getVOMSAdminAddress</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator_1abb4a267178077063d27cbcb7aaf621aa" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::admin::VOMSAdminServiceLocator</scope><name>getVOMSAdminWSDDServiceName</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator_1a5d5510e2ba038ca0dd8dafe5bc7fd330" prot="private" virt="non-virtual"><scope>org::glite::security::voms::service::admin::VOMSAdminServiceLocator</scope><name>ports</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator_1a25bb96ac7e29defff54403a595ac17ee" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::admin::VOMSAdminServiceLocator</scope><name>setEndpointAddress</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator_1a926dbce6cd1b65637bedb6dac11214a7" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::admin::VOMSAdminServiceLocator</scope><name>setEndpointAddress</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator_1a9f8a71c0d0810a4430596ab94950847d" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::admin::VOMSAdminServiceLocator</scope><name>setVOMSAdminEndpointAddress</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator_1a06c7c211cf04b1c2646f7bd389210c50" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::admin::VOMSAdminServiceLocator</scope><name>setVOMSAdminWSDDServiceName</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator_1a65424a457a064c5405aad0ca1304503e" prot="private" virt="non-virtual"><scope>org::glite::security::voms::service::admin::VOMSAdminServiceLocator</scope><name>VOMSAdmin_address</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator_1a219781270cf92256001da6206d3834bc" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::admin::VOMSAdminServiceLocator</scope><name>VOMSAdminServiceLocator</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator_1a700fcfa6c12e49da139e114ec3d3aee8" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::admin::VOMSAdminServiceLocator</scope><name>VOMSAdminServiceLocator</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator_1a67101d07d4f9d8cdc8936b18ecbba408" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::admin::VOMSAdminServiceLocator</scope><name>VOMSAdminServiceLocator</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator_1a00b09a56a70c27e1f729adfec6f6b9d1" prot="private" virt="non-virtual"><scope>org::glite::security::voms::service::admin::VOMSAdminServiceLocator</scope><name>VOMSAdminWSDDServiceName</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

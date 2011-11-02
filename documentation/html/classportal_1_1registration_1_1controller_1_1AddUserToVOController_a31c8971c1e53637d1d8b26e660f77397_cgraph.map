@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$interfaceportal_1_1registration_1_1services_1_1UserToVoService.html#ab5f5da32c585f0fcd1eac1ac0302b733" title="portal.registration.services.UserToVoService.findById" alt="" coords="404,4,708,31"/>
+<area shape="rect" id="node5" href="$interfaceportal_1_1registration_1_1services_1_1CertificateService.html#a6e2ec6680c5fe99c57210c58567e5df1" title="portal.registration.services.CertificateService.findById" alt="" coords="403,55,709,81"/>
+<area shape="rect" id="node7" href="$interfaceportal_1_1registration_1_1services_1_1VoService.html#ade41c70e67fa304a7e4bea814b454b3e" title="portal.registration.services.VoService.findById" alt="" coords="423,105,689,132"/>
+<area shape="rect" id="node9" href="$classportal_1_1registration_1_1domain_1_1Vo.html#ad730aeefc109dcbf2cccb8674cdd77ab" title="portal.registration.domain.Vo.getHost" alt="" coords="447,156,665,183"/>
+<area shape="rect" id="node11" href="$classportal_1_1registration_1_1domain_1_1Vo.html#aab3c44f5df69949be59c33cfa557a1ad" title="portal.registration.domain.Vo.getVo" alt="" coords="452,207,660,233"/>
+</map>

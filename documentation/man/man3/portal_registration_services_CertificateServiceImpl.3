@@ -1,0 +1,225 @@
+.TH "portal::registration::services::CertificateServiceImpl" 3 "Wed Jul 13 2011" "Version 4" "Registration" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+portal::registration::services::CertificateServiceImpl \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBportal.registration.services.CertificateService\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "Integer \fBsave\fP (\fBCertificate\fP transientInstance)"
+.br
+.ti -1c
+.RI "void \fBdelete\fP (\fBCertificate\fP persistentInstance)"
+.br
+.ti -1c
+.RI "void \fBdelete\fP (int idCert)"
+.br
+.ti -1c
+.RI "int \fBsave\fP (\fBCertificate\fP certificate, int userId)"
+.br
+.ti -1c
+.RI "List< \fBCertificate\fP > \fBfindById\fP (int userId)"
+.br
+.ti -1c
+.RI "boolean \fBsetDefault\fP (int idCert)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBCertificateDAO\fP \fBcertificateDAO\fP"
+.br
+.ti -1c
+.RI "\fBUserInfoDAO\fP \fBuserInfoDAO\fP"
+.br
+.in -1c
+.SS "Static Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "static final Logger \fBlog\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Home object for domain model class UserInfo.
+.PP
+\fBSee also:\fP
+.RS 4
+portal.registration.services.UserInfo 
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Hibernate Tools 
+.RE
+.PP
+
+.PP
+Definition at line 28 of file CertificateServiceImpl.java.
+.SH "Member Function Documentation"
+.PP 
+.SS "void portal.registration.services.CertificateServiceImpl.delete (\fBCertificate\fPpersistentInstance)"
+.PP
+Implements \fBportal.registration.services.CertificateService\fP.
+.PP
+Definition at line 46 of file CertificateServiceImpl.java.
+.PP
+References portal.registration.services.CertificateServiceImpl.certificateDAO, portal.registration.dao.CertificateDAO.delete(), and portal.registration.services.CertificateServiceImpl.log.
+.PP
+.nf
+                                                           {
+                log.debug('removing UserInfo instance');
+                certificateDAO.delete(persistentInstance);
+        }
+.fi
+.SS "void portal.registration.services.CertificateServiceImpl.delete (intidCert)"
+.PP
+Implements \fBportal.registration.services.CertificateService\fP.
+.PP
+Definition at line 52 of file CertificateServiceImpl.java.
+.PP
+References portal.registration.services.CertificateServiceImpl.certificateDAO, portal.registration.dao.CertificateDAO.delete(), portal.registration.dao.CertificateDAO.findById(), and portal.registration.services.CertificateServiceImpl.log.
+.PP
+.nf
+                                       {
+                log.debug('removing UserInfo instance');
+                Certificate persistentInstance = certificateDAO.findById(idCert);
+                certificateDAO.delete(persistentInstance);
+        }
+.fi
+.SS "List<\fBCertificate\fP> portal.registration.services.CertificateServiceImpl.findById (intuserId)"
+.PP
+Implements \fBportal.registration.services.CertificateService\fP.
+.PP
+Definition at line 91 of file CertificateServiceImpl.java.
+.PP
+References portal.registration.services.CertificateServiceImpl.certificateDAO, portal.registration.dao.CertificateDAO.findById(), portal.registration.dao.UserInfoDAO.findById(), and portal.registration.services.CertificateServiceImpl.userInfoDAO.
+.PP
+.nf
+                                                      {
+                UserInfo userInfo = userInfoDAO.findById(userId);
+                return certificateDAO.findById(userInfo);
+        }
+.fi
+.SS "int portal.registration.services.CertificateServiceImpl.save (\fBCertificate\fPcertificate, intuserId)"
+.PP
+Implements \fBportal.registration.services.CertificateService\fP.
+.PP
+Definition at line 59 of file CertificateServiceImpl.java.
+.PP
+References portal.registration.services.CertificateServiceImpl.certificateDAO, portal.registration.dao.CertificateDAO.edit(), portal.registration.dao.CertificateDAO.findById(), portal.registration.dao.UserInfoDAO.findById(), portal.registration.domain.Certificate.getIdCert(), portal.registration.domain.Certificate.getPrimaryCert(), portal.registration.domain.UserInfo.getUsername(), portal.registration.services.CertificateServiceImpl.log, portal.registration.dao.CertificateDAO.save(), portal.registration.domain.Certificate.setPrimaryCert(), portal.registration.domain.Certificate.setUserInfo(), portal.registration.domain.Certificate.setUsernameCert(), and portal.registration.services.CertificateServiceImpl.userInfoDAO.
+.PP
+.nf
+                                                             {
+                log.debug('persisting UserInfo instance');
+                UserInfo userInfo = userInfoDAO.findById(userId);
+                List<Certificate> lc = certificateDAO.findById(userInfo);
+
+                certificate.setUserInfo(userInfo);
+                certificate.setUsernameCert(userInfo.getUsername() + '_'
+                                + certificate.getIdCert());
+
+                if (certificate.getPrimaryCert().equals('true')) {
+
+                        Certificate tmp = null;
+
+                        int i = 0;
+
+                        for (i = 0; i < lc.size(); i++) {
+                                tmp = lc.get(i);
+                                tmp.setPrimaryCert('false');
+                                certificateDAO.edit(tmp);
+                        }
+                }
+
+                int result = certificateDAO.save(certificate);
+
+                certificate.setUsernameCert(userInfo.getUsername() + '_' + result);
+
+                certificateDAO.edit(certificate);
+
+                return result;
+        }
+.fi
+.SS "Integer portal.registration.services.CertificateServiceImpl.save (\fBCertificate\fPtransientInstance)"
+.PP
+Implements \fBportal.registration.services.CertificateService\fP.
+.PP
+Definition at line 40 of file CertificateServiceImpl.java.
+.PP
+References portal.registration.services.CertificateServiceImpl.certificateDAO, portal.registration.services.CertificateServiceImpl.log, and portal.registration.dao.CertificateDAO.save().
+.PP
+.nf
+                                                           {
+                log.debug('persisting UserInfo instance');
+                return certificateDAO.save(transientInstance);
+        }
+.fi
+.SS "boolean portal.registration.services.CertificateServiceImpl.setDefault (intidCert)"
+.PP
+Implements \fBportal.registration.services.CertificateService\fP.
+.PP
+Definition at line 97 of file CertificateServiceImpl.java.
+.PP
+References portal.registration.services.CertificateServiceImpl.certificateDAO, portal.registration.dao.CertificateDAO.edit(), portal.registration.dao.CertificateDAO.findById(), portal.registration.domain.Certificate.getPrimaryCert(), portal.registration.services.CertificateServiceImpl.log, and portal.registration.domain.Certificate.setPrimaryCert().
+.PP
+.nf
+                                              {
+                log.debug('ugrading Certificate instance');
+                Certificate persistentInstance = certificateDAO.findById(idCert);
+
+                if (persistentInstance.getPrimaryCert().equals('false')) {
+                        List<Certificate> lc = certificateDAO.findById(persistentInstance
+                                        .getUserInfo());
+                        Certificate tmp = null;
+
+                        int i = 0;
+
+                        for (i = 0; i < lc.size(); i++) {
+                                tmp = lc.get(i);
+                                tmp.setPrimaryCert('false');
+                                certificateDAO.edit(tmp);
+                        }
+
+                        persistentInstance.setPrimaryCert('true');
+                        certificateDAO.edit(persistentInstance);
+                        return true;
+                }
+
+                return false;
+        }
+.fi
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBCertificateDAO\fP \fBportal.registration.services.CertificateServiceImpl.certificateDAO\fP\fC [private]\fP"
+.PP
+Definition at line 34 of file CertificateServiceImpl.java.
+.PP
+Referenced by portal.registration.services.CertificateServiceImpl.delete(), portal.registration.services.CertificateServiceImpl.findById(), portal.registration.services.CertificateServiceImpl.save(), and portal.registration.services.CertificateServiceImpl.setDefault().
+.SS "final Logger \fBportal.registration.services.CertificateServiceImpl.log\fP\fC [static, private]\fP"\fBInitial value:\fP
+.PP
+.nf
+ Logger
+                        .getLogger(CertificateServiceImpl.class)
+.fi
+.PP
+Definition at line 30 of file CertificateServiceImpl.java.
+.PP
+Referenced by portal.registration.services.CertificateServiceImpl.delete(), portal.registration.services.CertificateServiceImpl.save(), and portal.registration.services.CertificateServiceImpl.setDefault().
+.SS "\fBUserInfoDAO\fP \fBportal.registration.services.CertificateServiceImpl.userInfoDAO\fP\fC [private]\fP"
+.PP
+Definition at line 37 of file CertificateServiceImpl.java.
+.PP
+Referenced by portal.registration.services.CertificateServiceImpl.findById(), and portal.registration.services.CertificateServiceImpl.save().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Registration from the source code.

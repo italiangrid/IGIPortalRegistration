@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$interfaceportal_1_1registration_1_1services_1_1UserToVoService.html#ab5f5da32c585f0fcd1eac1ac0302b733" title="portal.registration.services.UserToVoService.findById" alt="" coords="424,4,728,31"/>
+<area shape="rect" id="node5" href="$classportal_1_1registration_1_1domain_1_1UserToVo.html#ab43dc78a2cd554718276387fd0b98ca7" title="portal.registration.domain.UserToVo.setFqans" alt="" coords="444,55,708,81"/>
+<area shape="rect" id="node7" href="$interfaceportal_1_1registration_1_1services_1_1UserToVoService.html#a085c0254ca3f91556da0c51b19ffbdac" title="portal.registration.services.UserToVoService.update" alt="" coords="428,105,724,132"/>
+</map>

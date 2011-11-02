@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classportal_1_1registration_1_1dao_1_1CertificateDAOImpl.html#a4baa20618a158327206b303a62b469e7" title="portal.registration.dao.CertificateDAOImpl.edit" alt="" coords="391,4,657,31"/>
+<area shape="rect" id="node5" href="$classportal_1_1registration_1_1services_1_1CertificateServiceImpl.html#a592df743c12b9a43db06dbae92db23c2" title="portal.registration.services.CertificateServiceImpl.save" alt="" coords="369,55,679,81"/>
+<area shape="rect" id="node7" href="$classportal_1_1registration_1_1services_1_1CertificateServiceImpl.html#abac3e70bf6b1f63ca1d96e0829365f5c" title="portal.registration.services.CertificateServiceImpl.setDefault" alt="" coords="355,105,693,132"/>
+<area shape="rect" id="node9" href="$classportal_1_1registration_1_1controller_1_1UploadCertController.html#aabfea247d5dc60c807432e5c7d097b88" title="portal.registration.controller.UploadCertController.uploadCert" alt="" coords="352,156,696,183"/>
+</map>

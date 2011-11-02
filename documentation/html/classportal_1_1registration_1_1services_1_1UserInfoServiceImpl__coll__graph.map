@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$interfaceportal_1_1registration_1_1services_1_1UserInfoService.html" title="{portal.registration.services.UserInfoService\n||+ save()\l+ delete()\l+ delete()\l+ findById()\l+ getAllUserInfo()\l+ edit()\l+ save()\l}" alt="" coords="4,5,253,168"/>
+<area shape="rect" id="node6" href="$interfaceportal_1_1registration_1_1dao_1_1UserInfoDAO.html" title="{portal.registration.dao.UserInfoDAO\n||+ save()\l+ delete()\l+ findById()\l+ getAllUserInfo()\l+ edit()\l}" alt="" coords="362,20,573,154"/>
+<area shape="rect" id="node8" href="$interfaceportal_1_1registration_1_1dao_1_1IdpDAO.html" title="{portal.registration.dao.IdpDAO\n||+ save()\l+ delete()\l+ findById()\l+ getAllIdp()\l}" alt="" coords="598,27,780,147"/>
+</map>

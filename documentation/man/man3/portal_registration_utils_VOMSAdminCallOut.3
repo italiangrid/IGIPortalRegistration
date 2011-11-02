@@ -1,0 +1,79 @@
+.TH "portal::registration::utils::VOMSAdminCallOut" 3 "Wed Jul 13 2011" "Version 4" "Registration" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+portal::registration::utils::VOMSAdminCallOut \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static String[] \fBgetUserFQANs\fP (String subject, String issuer, String voHost)  throws MalformedURLException, ServiceException, 			VOMSException, RemoteException "
+.br
+.in -1c
+.SS "Static Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "static final Logger \fBlog\fP = Logger.getLogger(VOMSAdminCallOut.class)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 14 of file VOMSAdminCallOut.java.
+.SH "Member Function Documentation"
+.PP 
+.SS "static String [] portal.registration.utils.VOMSAdminCallOut.getUserFQANs (Stringsubject, Stringissuer, StringvoHost)  throws MalformedURLException, ServiceException, 			\fBVOMSException\fP, RemoteException \fC [static]\fP"
+.PP
+Definition at line 18 of file VOMSAdminCallOut.java.
+.PP
+References org.glite.security.voms.service.admin.VOMSAdminServiceLocator.getVOMSAdmin(), org.glite.security.voms.service.admin.VOMSAdmin.listRoles(), and portal.registration.utils.VOMSAdminCallOut.log.
+.PP
+Referenced by portal.registration.utils.VOMSTest.main().
+.PP
+.nf
+                                                       {
+
+                log.info('Contatto VOMSAdmin con URL = https://' + voHost
+                                + '/services/VOMSAdmin');
+
+                String url = 'https://' + voHost + '/services/VOMSAdmin';
+
+                log.info('Trovo VOMSAdmin Service');
+
+                VOMSAdminServiceLocator locator = new VOMSAdminServiceLocator();
+
+                log.info('Prendo VOMSAdmin Service');
+
+                VOMSAdmin adminService = locator.getVOMSAdmin(new URL(url));
+
+                log.info('Uso VOMSAdmin Service con subject = ' + subject
+                                + ' e issuer = ' + issuer);
+
+                String[] roles = adminService.listRoles(subject, issuer);
+
+                if (roles == null) {
+                        log.info('nessun risultato con subject = ' + subject
+                                        + ' e issuer = ' + issuer);
+                        log.info('Contatto VOMSAdmin con URL = https://' + voHost
+                                        + '/services/VOMSAdmin');
+                        return null;
+                }
+
+                return roles;
+
+        }
+.fi
+.SH "Member Data Documentation"
+.PP 
+.SS "final Logger \fBportal.registration.utils.VOMSAdminCallOut.log\fP = Logger.getLogger(VOMSAdminCallOut.class)\fC [static, private]\fP"
+.PP
+Definition at line 16 of file VOMSAdminCallOut.java.
+.PP
+Referenced by portal.registration.utils.VOMSAdminCallOut.getUserFQANs().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Registration from the source code.

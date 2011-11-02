@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$interfaceportal_1_1registration_1_1dao_1_1IdpDAO.html#a25a3bfb1767b32c725e0aad4b578cc2c" title="portal.registration.dao.IdpDAO.findById" alt="" coords="361,4,591,31"/>
+<area shape="rect" id="node5" href="$interfaceportal_1_1registration_1_1dao_1_1UserInfoDAO.html#ab4af4547afb3bd184da2de4bfefdc47b" title="portal.registration.dao.UserInfoDAO.save" alt="" coords="356,55,596,81"/>
+<area shape="rect" id="node7" href="$classportal_1_1registration_1_1domain_1_1UserInfo.html#af0d840379d615b691972dff9f22f640b" title="portal.registration.domain.UserInfo.setIdp" alt="" coords="355,105,597,132"/>
+</map>

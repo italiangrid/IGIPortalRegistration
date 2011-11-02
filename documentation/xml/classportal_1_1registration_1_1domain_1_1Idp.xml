@@ -1,0 +1,516 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="classportal_1_1registration_1_1domain_1_1Idp" kind="class" prot="public">
+    <compoundname>portal::registration::domain::Idp</compoundname>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classportal_1_1registration_1_1domain_1_1Idp_1ad23f25650a51690bef88c89d63a6e4b9" prot="private" static="yes" mutable="no">
+        <type>final long</type>
+        <definition>final long portal.registration.domain.Idp.serialVersionUID</definition>
+        <argsstring></argsstring>
+        <name>serialVersionUID</name>
+        <initializer> 8730283017965656825L</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Idp.java" line="26" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Idp.java" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classportal_1_1registration_1_1domain_1_1Idp_1a73cc8adc0bc9d24116a0f5ca6ab8a2bf" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int portal.registration.domain.Idp.idIdp</definition>
+        <argsstring></argsstring>
+        <name>idIdp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Idp.java" line="27" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Idp.java" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classportal_1_1registration_1_1domain_1_1Idp_1a26fab2dd3a812749a8cef7b376d529f7" prot="private" static="no" mutable="no">
+        <type>String</type>
+        <definition>String portal.registration.domain.Idp.idpname</definition>
+        <argsstring></argsstring>
+        <name>idpname</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Idp.java" line="28" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Idp.java" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classportal_1_1registration_1_1domain_1_1Idp_1a3eaa57b7e2ce7351be26c8eab9dba8e9" prot="private" static="no" mutable="no">
+        <type>String</type>
+        <definition>String portal.registration.domain.Idp.idpaddress</definition>
+        <argsstring></argsstring>
+        <name>idpaddress</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Idp.java" line="29" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Idp.java" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classportal_1_1registration_1_1domain_1_1Idp_1a4690c173d3e4110cd5501e5c7818ae23" prot="private" static="no" mutable="no">
+        <type>String</type>
+        <definition>String portal.registration.domain.Idp.idploginAddress</definition>
+        <argsstring></argsstring>
+        <name>idploginAddress</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Idp.java" line="30" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Idp.java" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classportal_1_1registration_1_1domain_1_1Idp_1acd9b443db5b19445703d63d4f340cf9a" prot="private" static="no" mutable="no">
+        <type>String</type>
+        <definition>String portal.registration.domain.Idp.idpparameterRequest</definition>
+        <argsstring></argsstring>
+        <name>idpparameterRequest</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Idp.java" line="31" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Idp.java" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classportal_1_1registration_1_1domain_1_1Idp_1abf267afc4e5c91da690804e5abbef7df" prot="private" static="no" mutable="no">
+        <type>String</type>
+        <definition>String portal.registration.domain.Idp.idpattributeRequest</definition>
+        <argsstring></argsstring>
+        <name>idpattributeRequest</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Idp.java" line="32" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Idp.java" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classportal_1_1registration_1_1domain_1_1Idp_1a55fbc92095f6fd9d1fb4c5bd42b18baa" prot="private" static="no" mutable="no">
+        <type>String</type>
+        <definition>String portal.registration.domain.Idp.idpdescription</definition>
+        <argsstring></argsstring>
+        <name>idpdescription</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Idp.java" line="33" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Idp.java" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classportal_1_1registration_1_1domain_1_1Idp_1a888963b67e250b7810486a9566d90e62" prot="private" static="no" mutable="no">
+        <type>Set&lt; <ref refid="classportal_1_1registration_1_1domain_1_1UserInfo" kindref="compound">UserInfo</ref> &gt;</type>
+        <definition>Set&lt;UserInfo&gt; portal.registration.domain.Idp.userInfos</definition>
+        <argsstring></argsstring>
+        <name>userInfos</name>
+        <initializer> new HashSet&lt;<ref refid="classportal_1_1registration_1_1domain_1_1UserInfo" kindref="compound">UserInfo</ref>&gt;(0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Idp.java" line="34" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Idp.java" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1Idp_1a89d6a58205cda942a28e7bce398c9c56" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>portal.registration.domain.Idp.Idp</definition>
+        <argsstring>()</argsstring>
+        <name>Idp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Idp.java" line="36" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Idp.java" bodystart="36" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1Idp_1a91f22e723061415783b3cfd9079cdfa6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>portal.registration.domain.Idp.Idp</definition>
+        <argsstring>(String idpname, String idpaddress, String idploginAddress, String idpparameterRequest, String idpattributeRequest, String idpdescription)</argsstring>
+        <name>Idp</name>
+        <param>
+          <type>String</type>
+          <declname>idpname</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>idpaddress</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>idploginAddress</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>idpparameterRequest</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>idpattributeRequest</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>idpdescription</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Idp.java" line="41" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Idp.java" bodystart="39" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1Idp_1a468b787e0d2a25b2d3644e41059c10ed" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>portal.registration.domain.Idp.Idp</definition>
+        <argsstring>(String idpname, String idpaddress, String idploginAddress, String idpparameterRequest, String idpattributeRequest, String idpdescription, Set&lt; UserInfo &gt; userInfos)</argsstring>
+        <name>Idp</name>
+        <param>
+          <type>String</type>
+          <declname>idpname</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>idpaddress</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>idploginAddress</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>idpparameterRequest</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>idpattributeRequest</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>idpdescription</declname>
+        </param>
+        <param>
+          <type>Set&lt; <ref refid="classportal_1_1registration_1_1domain_1_1UserInfo" kindref="compound">UserInfo</ref> &gt;</type>
+          <declname>userInfos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Idp.java" line="52" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Idp.java" bodystart="50" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1Idp_1a85c3d7f485c004bde2248f5bd88d711f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int portal.registration.domain.Idp.getIdIdp</definition>
+        <argsstring>()</argsstring>
+        <name>getIdIdp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Idp.java" line="65" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Idp.java" bodystart="65" bodyend="67"/>
+        <referencedby refid="classportal_1_1registration_1_1services_1_1IdpServiceImpl_1a06dd428d0f1451712432d8cc63091aa1" compoundref="IdpServiceImpl_8java" startline="42" endline="45">portal.registration.services.IdpServiceImpl::findByIdp</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1Idp_1a229816ea0c398ccc45a67790a1ab0ec5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void portal.registration.domain.Idp.setIdIdp</definition>
+        <argsstring>(int idIdp)</argsstring>
+        <name>setIdIdp</name>
+        <param>
+          <type>int</type>
+          <declname>idIdp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Idp.java" line="69" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Idp.java" bodystart="69" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1Idp_1a8f6dc19913656699268798502dd6bc56" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String portal.registration.domain.Idp.getIdpname</definition>
+        <argsstring>()</argsstring>
+        <name>getIdpname</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Idp.java" line="74" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Idp.java" bodystart="74" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1Idp_1acd4bb136629a96b902b13f879a801b40" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void portal.registration.domain.Idp.setIdpname</definition>
+        <argsstring>(String idpname)</argsstring>
+        <name>setIdpname</name>
+        <param>
+          <type>String</type>
+          <declname>idpname</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Idp.java" line="78" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Idp.java" bodystart="78" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1Idp_1ac8d3fcf8e9cef95d0c26f0a525a069a4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String portal.registration.domain.Idp.getIdpaddress</definition>
+        <argsstring>()</argsstring>
+        <name>getIdpaddress</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Idp.java" line="83" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Idp.java" bodystart="83" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1Idp_1a811ba6cef2d8180ba6f8d657d1a8925e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void portal.registration.domain.Idp.setIdpaddress</definition>
+        <argsstring>(String idpaddress)</argsstring>
+        <name>setIdpaddress</name>
+        <param>
+          <type>String</type>
+          <declname>idpaddress</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Idp.java" line="87" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Idp.java" bodystart="87" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1Idp_1a52ecad06f910b5a478387d0e08c7b8bb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String portal.registration.domain.Idp.getIdploginAddress</definition>
+        <argsstring>()</argsstring>
+        <name>getIdploginAddress</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Idp.java" line="92" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Idp.java" bodystart="92" bodyend="94"/>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1Idp_1a0c6c4702f1bbacb679b5551f559feeaf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void portal.registration.domain.Idp.setIdploginAddress</definition>
+        <argsstring>(String idploginAddress)</argsstring>
+        <name>setIdploginAddress</name>
+        <param>
+          <type>String</type>
+          <declname>idploginAddress</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Idp.java" line="96" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Idp.java" bodystart="96" bodyend="98"/>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1Idp_1af916e4ae8d7003fd3c38b120e8e4245e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String portal.registration.domain.Idp.getIdpparameterRequest</definition>
+        <argsstring>()</argsstring>
+        <name>getIdpparameterRequest</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Idp.java" line="101" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Idp.java" bodystart="101" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1Idp_1a5f6c75139ff8f3c1ca00d796782aa5cf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void portal.registration.domain.Idp.setIdpparameterRequest</definition>
+        <argsstring>(String idpparameterRequest)</argsstring>
+        <name>setIdpparameterRequest</name>
+        <param>
+          <type>String</type>
+          <declname>idpparameterRequest</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Idp.java" line="105" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Idp.java" bodystart="105" bodyend="107"/>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1Idp_1a57afd3534ebddbcef19664967b96a4b9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String portal.registration.domain.Idp.getIdpattributeRequest</definition>
+        <argsstring>()</argsstring>
+        <name>getIdpattributeRequest</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Idp.java" line="110" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Idp.java" bodystart="110" bodyend="112"/>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1Idp_1aeb863ed4e2dac243034c31cdfad57233" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void portal.registration.domain.Idp.setIdpattributeRequest</definition>
+        <argsstring>(String idpattributeRequest)</argsstring>
+        <name>setIdpattributeRequest</name>
+        <param>
+          <type>String</type>
+          <declname>idpattributeRequest</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Idp.java" line="114" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Idp.java" bodystart="114" bodyend="116"/>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1Idp_1ad67ae86c69db43d8ba70102a44e6f15f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String portal.registration.domain.Idp.getIdpdescription</definition>
+        <argsstring>()</argsstring>
+        <name>getIdpdescription</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Idp.java" line="119" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Idp.java" bodystart="119" bodyend="121"/>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1Idp_1ab9d080023e1899f2bc6a82011047ad43" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void portal.registration.domain.Idp.setIdpdescription</definition>
+        <argsstring>(String idpdescription)</argsstring>
+        <name>setIdpdescription</name>
+        <param>
+          <type>String</type>
+          <declname>idpdescription</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Idp.java" line="123" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Idp.java" bodystart="123" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1Idp_1a9b7aa194175493052d8a460e61163bae" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Set&lt; <ref refid="classportal_1_1registration_1_1domain_1_1UserInfo" kindref="compound">UserInfo</ref> &gt;</type>
+        <definition>Set&lt;UserInfo&gt; portal.registration.domain.Idp.getUserInfos</definition>
+        <argsstring>()</argsstring>
+        <name>getUserInfos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Idp.java" line="128" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Idp.java" bodystart="128" bodyend="130"/>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1Idp_1abcc606566a414198ea129e7b5614b413" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void portal.registration.domain.Idp.setUserInfos</definition>
+        <argsstring>(Set&lt; UserInfo &gt; userInfos)</argsstring>
+        <name>setUserInfos</name>
+        <param>
+          <type>Set&lt; <ref refid="classportal_1_1registration_1_1domain_1_1UserInfo" kindref="compound">UserInfo</ref> &gt;</type>
+          <declname>userInfos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Idp.java" line="132" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Idp.java" bodystart="132" bodyend="134"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="classportal_1_1registration_1_1domain_1_1Idp" kindref="compound">Idp</ref> generated by hbm2java </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="511">
+        <label>Set&lt; UserInfo &gt;</label>
+        <childnode refid="512" relation="template-instance">
+          <edgelabel>&lt; UserInfo &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="510">
+        <label>portal.registration.domain.Idp</label>
+        <link refid="classportal_1_1registration_1_1domain_1_1Idp"/>
+        <childnode refid="511" relation="usage">
+          <edgelabel>userInfos</edgelabel>
+        </childnode>
+      </node>
+      <node id="512">
+        <label>Set</label>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Idp.java" line="21" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Idp.java" bodystart="21" bodyend="136"/>
+    <listofallmembers>
+      <member refid="classportal_1_1registration_1_1domain_1_1Idp_1a85c3d7f485c004bde2248f5bd88d711f" prot="public" virt="non-virtual"><scope>portal::registration::domain::Idp</scope><name>getIdIdp</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Idp_1ac8d3fcf8e9cef95d0c26f0a525a069a4" prot="public" virt="non-virtual"><scope>portal::registration::domain::Idp</scope><name>getIdpaddress</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Idp_1a57afd3534ebddbcef19664967b96a4b9" prot="public" virt="non-virtual"><scope>portal::registration::domain::Idp</scope><name>getIdpattributeRequest</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Idp_1ad67ae86c69db43d8ba70102a44e6f15f" prot="public" virt="non-virtual"><scope>portal::registration::domain::Idp</scope><name>getIdpdescription</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Idp_1a52ecad06f910b5a478387d0e08c7b8bb" prot="public" virt="non-virtual"><scope>portal::registration::domain::Idp</scope><name>getIdploginAddress</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Idp_1a8f6dc19913656699268798502dd6bc56" prot="public" virt="non-virtual"><scope>portal::registration::domain::Idp</scope><name>getIdpname</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Idp_1af916e4ae8d7003fd3c38b120e8e4245e" prot="public" virt="non-virtual"><scope>portal::registration::domain::Idp</scope><name>getIdpparameterRequest</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Idp_1a9b7aa194175493052d8a460e61163bae" prot="public" virt="non-virtual"><scope>portal::registration::domain::Idp</scope><name>getUserInfos</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Idp_1a73cc8adc0bc9d24116a0f5ca6ab8a2bf" prot="private" virt="non-virtual"><scope>portal::registration::domain::Idp</scope><name>idIdp</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Idp_1a89d6a58205cda942a28e7bce398c9c56" prot="public" virt="non-virtual"><scope>portal::registration::domain::Idp</scope><name>Idp</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Idp_1a91f22e723061415783b3cfd9079cdfa6" prot="public" virt="non-virtual"><scope>portal::registration::domain::Idp</scope><name>Idp</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Idp_1a468b787e0d2a25b2d3644e41059c10ed" prot="public" virt="non-virtual"><scope>portal::registration::domain::Idp</scope><name>Idp</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Idp_1a3eaa57b7e2ce7351be26c8eab9dba8e9" prot="private" virt="non-virtual"><scope>portal::registration::domain::Idp</scope><name>idpaddress</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Idp_1abf267afc4e5c91da690804e5abbef7df" prot="private" virt="non-virtual"><scope>portal::registration::domain::Idp</scope><name>idpattributeRequest</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Idp_1a55fbc92095f6fd9d1fb4c5bd42b18baa" prot="private" virt="non-virtual"><scope>portal::registration::domain::Idp</scope><name>idpdescription</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Idp_1a4690c173d3e4110cd5501e5c7818ae23" prot="private" virt="non-virtual"><scope>portal::registration::domain::Idp</scope><name>idploginAddress</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Idp_1a26fab2dd3a812749a8cef7b376d529f7" prot="private" virt="non-virtual"><scope>portal::registration::domain::Idp</scope><name>idpname</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Idp_1acd9b443db5b19445703d63d4f340cf9a" prot="private" virt="non-virtual"><scope>portal::registration::domain::Idp</scope><name>idpparameterRequest</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Idp_1ad23f25650a51690bef88c89d63a6e4b9" prot="private" virt="non-virtual"><scope>portal::registration::domain::Idp</scope><name>serialVersionUID</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Idp_1a229816ea0c398ccc45a67790a1ab0ec5" prot="public" virt="non-virtual"><scope>portal::registration::domain::Idp</scope><name>setIdIdp</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Idp_1a811ba6cef2d8180ba6f8d657d1a8925e" prot="public" virt="non-virtual"><scope>portal::registration::domain::Idp</scope><name>setIdpaddress</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Idp_1aeb863ed4e2dac243034c31cdfad57233" prot="public" virt="non-virtual"><scope>portal::registration::domain::Idp</scope><name>setIdpattributeRequest</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Idp_1ab9d080023e1899f2bc6a82011047ad43" prot="public" virt="non-virtual"><scope>portal::registration::domain::Idp</scope><name>setIdpdescription</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Idp_1a0c6c4702f1bbacb679b5551f559feeaf" prot="public" virt="non-virtual"><scope>portal::registration::domain::Idp</scope><name>setIdploginAddress</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Idp_1acd4bb136629a96b902b13f879a801b40" prot="public" virt="non-virtual"><scope>portal::registration::domain::Idp</scope><name>setIdpname</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Idp_1a5f6c75139ff8f3c1ca00d796782aa5cf" prot="public" virt="non-virtual"><scope>portal::registration::domain::Idp</scope><name>setIdpparameterRequest</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Idp_1abcc606566a414198ea129e7b5614b413" prot="public" virt="non-virtual"><scope>portal::registration::domain::Idp</scope><name>setUserInfos</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Idp_1a888963b67e250b7810486a9566d90e62" prot="private" virt="non-virtual"><scope>portal::registration::domain::Idp</scope><name>userInfos</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

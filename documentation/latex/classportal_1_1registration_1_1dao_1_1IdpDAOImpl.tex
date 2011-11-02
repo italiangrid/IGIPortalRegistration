@@ -1,0 +1,221 @@
+\hypertarget{classportal_1_1registration_1_1dao_1_1IdpDAOImpl}{
+\section{portal.registration.dao.IdpDAOImpl Class Reference}
+\label{classportal_1_1registration_1_1dao_1_1IdpDAOImpl}\index{portal::registration::dao::IdpDAOImpl@{portal::registration::dao::IdpDAOImpl}}
+}
+
+
+Inheritance diagram for portal.registration.dao.IdpDAOImpl:
+
+
+Collaboration diagram for portal.registration.dao.IdpDAOImpl:
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classportal_1_1registration_1_1dao_1_1IdpDAOImpl_a531666f1be9ad29adcb5927b435ede02}{save} (\hyperlink{classportal_1_1registration_1_1domain_1_1Idp}{Idp} transientInstance)
+\item 
+void \hyperlink{classportal_1_1registration_1_1dao_1_1IdpDAOImpl_a63e3814d1126ab4ae9ce93e576515650}{delete} (\hyperlink{classportal_1_1registration_1_1domain_1_1Idp}{Idp} persistentInstance)
+\item 
+\hyperlink{classportal_1_1registration_1_1domain_1_1Idp}{Idp} \hyperlink{classportal_1_1registration_1_1dao_1_1IdpDAOImpl_a90d580cdc427c86e306d8a0a64999060}{findById} (Integer id)
+\item 
+List$<$ \hyperlink{classportal_1_1registration_1_1domain_1_1Idp}{Idp} $>$ \hyperlink{classportal_1_1registration_1_1dao_1_1IdpDAOImpl_a11d56e0832db6e91e8b55ee15931406b}{getAllIdp} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+SessionFactory \hyperlink{classportal_1_1registration_1_1dao_1_1IdpDAOImpl_a92e1382182c2bb2542cfbb22af8040dc}{sessionFactory}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static final Logger \hyperlink{classportal_1_1registration_1_1dao_1_1IdpDAOImpl_a7afb61fce1c69227c0233f4f9109a59e}{log} = Logger.getLogger(IdpDAOImpl.class)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 15 of file IdpDAOImpl.java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classportal_1_1registration_1_1dao_1_1IdpDAOImpl_a63e3814d1126ab4ae9ce93e576515650}{
+\index{portal::registration::dao::IdpDAOImpl@{portal::registration::dao::IdpDAOImpl}!delete@{delete}}
+\index{delete@{delete}!portal::registration::dao::IdpDAOImpl@{portal::registration::dao::IdpDAOImpl}}
+\subsubsection[{delete}]{\setlength{\rightskip}{0pt plus 5cm}void portal.registration.dao.IdpDAOImpl.delete (
+\begin{DoxyParamCaption}
+\item[{{\bf Idp}}]{persistentInstance}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1dao_1_1IdpDAOImpl_a63e3814d1126ab4ae9ce93e576515650}
+
+
+Implements \hyperlink{interfaceportal_1_1registration_1_1dao_1_1IdpDAO_ace3b3c0baf06d654758d15621589def8}{portal.registration.dao.IdpDAO}.
+
+
+
+Definition at line 34 of file IdpDAOImpl.java.
+
+
+
+References portal.registration.dao.IdpDAOImpl.log, and portal.registration.dao.IdpDAOImpl.sessionFactory.
+
+
+\begin{DoxyCode}
+                                                   {
+                log.debug("removing Idp instance");
+                try {
+                        Session session = sessionFactory.getCurrentSession();
+                        session.delete(persistentInstance);
+                        log.debug("remove successful");
+                } catch (RuntimeException re) {
+                        log.error("remove failed", re);
+                        throw re;
+                }
+        }
+\end{DoxyCode}
+\hypertarget{classportal_1_1registration_1_1dao_1_1IdpDAOImpl_a90d580cdc427c86e306d8a0a64999060}{
+\index{portal::registration::dao::IdpDAOImpl@{portal::registration::dao::IdpDAOImpl}!findById@{findById}}
+\index{findById@{findById}!portal::registration::dao::IdpDAOImpl@{portal::registration::dao::IdpDAOImpl}}
+\subsubsection[{findById}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Idp} portal.registration.dao.IdpDAOImpl.findById (
+\begin{DoxyParamCaption}
+\item[{Integer}]{id}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1dao_1_1IdpDAOImpl_a90d580cdc427c86e306d8a0a64999060}
+
+
+Implements \hyperlink{interfaceportal_1_1registration_1_1dao_1_1IdpDAO_a25a3bfb1767b32c725e0aad4b578cc2c}{portal.registration.dao.IdpDAO}.
+
+
+
+Definition at line 46 of file IdpDAOImpl.java.
+
+
+
+References portal.registration.dao.IdpDAOImpl.log, and portal.registration.dao.IdpDAOImpl.sessionFactory.
+
+
+\begin{DoxyCode}
+                                        {
+                log.debug("getting Idp instance with id: " + id);
+                try {
+                        Session session = sessionFactory.getCurrentSession();
+                        Idp instance = (Idp) session.get(Idp.class, id);
+                        log.debug("get successful");
+                        return instance;
+                } catch (RuntimeException re) {
+                        log.error("get failed", re);
+                        throw re;
+                }
+        }
+\end{DoxyCode}
+\hypertarget{classportal_1_1registration_1_1dao_1_1IdpDAOImpl_a11d56e0832db6e91e8b55ee15931406b}{
+\index{portal::registration::dao::IdpDAOImpl@{portal::registration::dao::IdpDAOImpl}!getAllIdp@{getAllIdp}}
+\index{getAllIdp@{getAllIdp}!portal::registration::dao::IdpDAOImpl@{portal::registration::dao::IdpDAOImpl}}
+\subsubsection[{getAllIdp}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Idp}$>$ portal.registration.dao.IdpDAOImpl.getAllIdp (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1dao_1_1IdpDAOImpl_a11d56e0832db6e91e8b55ee15931406b}
+
+
+Implements \hyperlink{interfaceportal_1_1registration_1_1dao_1_1IdpDAO_aa22ce1c72510b68e32bdd370e2b2c2e7}{portal.registration.dao.IdpDAO}.
+
+
+
+Definition at line 60 of file IdpDAOImpl.java.
+
+
+
+References portal.registration.dao.IdpDAOImpl.log, and portal.registration.dao.IdpDAOImpl.sessionFactory.
+
+
+\begin{DoxyCode}
+                                     {
+                log.debug("getting all Idp instance");
+                try {
+
+                        Session session = sessionFactory.getCurrentSession();
+
+                        // Create a Hibernate query (HQL)
+                        Query query = session.createQuery("FROM  Idp");
+
+                        // Retrieve all
+                        return query.list();
+                } catch (RuntimeException re) {
+                        log.error("get failed", re);
+                        throw re;
+                }
+        }
+\end{DoxyCode}
+\hypertarget{classportal_1_1registration_1_1dao_1_1IdpDAOImpl_a531666f1be9ad29adcb5927b435ede02}{
+\index{portal::registration::dao::IdpDAOImpl@{portal::registration::dao::IdpDAOImpl}!save@{save}}
+\index{save@{save}!portal::registration::dao::IdpDAOImpl@{portal::registration::dao::IdpDAOImpl}}
+\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}void portal.registration.dao.IdpDAOImpl.save (
+\begin{DoxyParamCaption}
+\item[{{\bf Idp}}]{transientInstance}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1dao_1_1IdpDAOImpl_a531666f1be9ad29adcb5927b435ede02}
+
+
+Implements \hyperlink{interfaceportal_1_1registration_1_1dao_1_1IdpDAO_a9b2e8e4e34ed4e93390800c616ede515}{portal.registration.dao.IdpDAO}.
+
+
+
+Definition at line 22 of file IdpDAOImpl.java.
+
+
+
+References portal.registration.dao.IdpDAOImpl.log, and portal.registration.dao.IdpDAOImpl.sessionFactory.
+
+
+\begin{DoxyCode}
+                                                {
+                log.debug("persisting Idp instance");
+                try {
+                        Session session = sessionFactory.getCurrentSession();
+                        session.save(transientInstance);
+                        log.debug("persist successful");
+                } catch (RuntimeException re) {
+                        log.error("persist failed", re);
+                        throw re;
+                }
+        }
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classportal_1_1registration_1_1dao_1_1IdpDAOImpl_a7afb61fce1c69227c0233f4f9109a59e}{
+\index{portal::registration::dao::IdpDAOImpl@{portal::registration::dao::IdpDAOImpl}!log@{log}}
+\index{log@{log}!portal::registration::dao::IdpDAOImpl@{portal::registration::dao::IdpDAOImpl}}
+\subsubsection[{log}]{\setlength{\rightskip}{0pt plus 5cm}final Logger {\bf portal.registration.dao.IdpDAOImpl.log} = Logger.getLogger(IdpDAOImpl.class)\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{classportal_1_1registration_1_1dao_1_1IdpDAOImpl_a7afb61fce1c69227c0233f4f9109a59e}
+
+
+Definition at line 17 of file IdpDAOImpl.java.
+
+
+
+Referenced by portal.registration.dao.IdpDAOImpl.delete(), portal.registration.dao.IdpDAOImpl.findById(), portal.registration.dao.IdpDAOImpl.getAllIdp(), and portal.registration.dao.IdpDAOImpl.save().
+
+\hypertarget{classportal_1_1registration_1_1dao_1_1IdpDAOImpl_a92e1382182c2bb2542cfbb22af8040dc}{
+\index{portal::registration::dao::IdpDAOImpl@{portal::registration::dao::IdpDAOImpl}!sessionFactory@{sessionFactory}}
+\index{sessionFactory@{sessionFactory}!portal::registration::dao::IdpDAOImpl@{portal::registration::dao::IdpDAOImpl}}
+\subsubsection[{sessionFactory}]{\setlength{\rightskip}{0pt plus 5cm}SessionFactory {\bf portal.registration.dao.IdpDAOImpl.sessionFactory}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classportal_1_1registration_1_1dao_1_1IdpDAOImpl_a92e1382182c2bb2542cfbb22af8040dc}
+
+
+Definition at line 20 of file IdpDAOImpl.java.
+
+
+
+Referenced by portal.registration.dao.IdpDAOImpl.delete(), portal.registration.dao.IdpDAOImpl.findById(), portal.registration.dao.IdpDAOImpl.getAllIdp(), and portal.registration.dao.IdpDAOImpl.save().
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/dao/\hyperlink{IdpDAOImpl_8java}{IdpDAOImpl.java}\end{DoxyCompactItemize}

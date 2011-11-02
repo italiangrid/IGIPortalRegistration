@@ -1,0 +1,318 @@
+.TH "org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator" 3 "Wed Jul 13 2011" "Version 4" "Registration" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBorg.glite.security.voms.service.registration.VOMSRegistrationService\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBVOMSRegistrationServiceLocator\fP ()"
+.br
+.ti -1c
+.RI "\fBVOMSRegistrationServiceLocator\fP (org.apache.axis.EngineConfiguration config)"
+.br
+.ti -1c
+.RI "\fBVOMSRegistrationServiceLocator\fP (java.lang.String wsdlLoc, javax.xml.namespace.QName sName)  throws javax.xml.rpc.ServiceException "
+.br
+.ti -1c
+.RI "java.lang.String \fBgetVOMSRegistrationAddress\fP ()"
+.br
+.ti -1c
+.RI "java.lang.String \fBgetVOMSRegistrationWSDDServiceName\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetVOMSRegistrationWSDDServiceName\fP (java.lang.String name)"
+.br
+.ti -1c
+.RI "\fBorg.glite.security.voms.service.registration.VOMSRegistration\fP \fBgetVOMSRegistration\fP ()  throws javax.xml.rpc.ServiceException "
+.br
+.ti -1c
+.RI "\fBorg.glite.security.voms.service.registration.VOMSRegistration\fP \fBgetVOMSRegistration\fP (java.net.URL portAddress)  throws javax.xml.rpc.ServiceException "
+.br
+.ti -1c
+.RI "void \fBsetVOMSRegistrationEndpointAddress\fP (java.lang.String address)"
+.br
+.ti -1c
+.RI "java.rmi.Remote \fBgetPort\fP (Class serviceEndpointInterface)  throws javax.xml.rpc.ServiceException "
+.br
+.ti -1c
+.RI "java.rmi.Remote \fBgetPort\fP (javax.xml.namespace.QName portName, Class serviceEndpointInterface)  throws javax.xml.rpc.ServiceException "
+.br
+.ti -1c
+.RI "namespace::QName \fBgetServiceName\fP ()"
+.br
+.ti -1c
+.RI "java.util.Iterator \fBgetPorts\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetEndpointAddress\fP (java.lang.String portName, java.lang.String address)  throws javax.xml.rpc.ServiceException "
+.br
+.ti -1c
+.RI "void \fBsetEndpointAddress\fP (javax.xml.namespace.QName portName, java.lang.String address)  throws javax.xml.rpc.ServiceException "
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "java.lang.String \fBVOMSRegistration_address\fP = 'https://localhost:8443/glite-security-voms-admin-interface/\fBVOMSRegistration\fP'"
+.br
+.ti -1c
+.RI "java.lang.String \fBVOMSRegistrationWSDDServiceName\fP = 'VOMSRegistration'"
+.br
+.ti -1c
+.RI "java.util.HashSet \fBports\fP = null"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 10 of file VOMSRegistrationServiceLocator.java.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.VOMSRegistrationServiceLocator ()"
+.PP
+Definition at line 12 of file VOMSRegistrationServiceLocator.java.
+.PP
+.nf
+                                            {
+    }
+.fi
+.SS "org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.VOMSRegistrationServiceLocator (org.apache.axis.EngineConfigurationconfig)"
+.PP
+Definition at line 16 of file VOMSRegistrationServiceLocator.java.
+.PP
+.nf
+                                                                                      {
+        super(config);
+    }
+.fi
+.SS "org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.VOMSRegistrationServiceLocator (java.lang.StringwsdlLoc, javax.xml.namespace.QNamesName)  throws javax.xml.rpc.ServiceException "
+.PP
+Definition at line 20 of file VOMSRegistrationServiceLocator.java.
+.PP
+.nf
+                                                                                                                                           {
+        super(wsdlLoc, sName);
+    }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "java.rmi.Remote org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.getPort (ClassserviceEndpointInterface)  throws javax.xml.rpc.ServiceException "For the given interface, get the stub implementation. If this service has no port for the given interface, then ServiceException is thrown. 
+.PP
+Definition at line 73 of file VOMSRegistrationServiceLocator.java.
+.PP
+References org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.getVOMSRegistrationWSDDServiceName(), and org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.VOMSRegistration_address.
+.PP
+Referenced by org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.getPort().
+.PP
+.nf
+                                                                                                         {
+        try {
+            if (org.glite.security.voms.service.registration.VOMSRegistration.class.isAssignableFrom(serviceEndpointInterface)) {
+                org.glite.security.voms.service.registration.VOMSRegistrationSoapBindingStub _stub = new org.glite.security.voms.service.registration.VOMSRegistrationSoapBindingStub(new java.net.URL(VOMSRegistration_address), this);
+                _stub.setPortName(getVOMSRegistrationWSDDServiceName());
+                return _stub;
+            }
+        }
+        catch (java.lang.Throwable t) {
+            throw new javax.xml.rpc.ServiceException(t);
+        }
+        throw new javax.xml.rpc.ServiceException('There is no stub implementation for the interface:  ' + (serviceEndpointInterface == null ? 'null' : serviceEndpointInterface.getName()));
+    }
+.fi
+.SS "java.rmi.Remote org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.getPort (javax.xml.namespace.QNameportName, ClassserviceEndpointInterface)  throws javax.xml.rpc.ServiceException "For the given interface, get the stub implementation. If this service has no port for the given interface, then ServiceException is thrown. 
+.PP
+Definition at line 92 of file VOMSRegistrationServiceLocator.java.
+.PP
+References org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.getPort(), and org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.getVOMSRegistration().
+.PP
+.nf
+                                                                                                                                             {
+        if (portName == null) {
+            return getPort(serviceEndpointInterface);
+        }
+        java.lang.String inputPortName = portName.getLocalPart();
+        if ('VOMSRegistration'.equals(inputPortName)) {
+            return getVOMSRegistration();
+        }
+        else  {
+            java.rmi.Remote _stub = getPort(serviceEndpointInterface);
+            ((org.apache.axis.client.Stub) _stub).setPortName(portName);
+            return _stub;
+        }
+    }
+.fi
+.SS "java.util.Iterator org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.getPorts ()"
+.PP
+Definition at line 113 of file VOMSRegistrationServiceLocator.java.
+.PP
+References org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.ports.
+.PP
+.nf
+                                         {
+        if (ports == null) {
+            ports = new java.util.HashSet();
+            ports.add(new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.registration', 'VOMSRegistration'));
+        }
+        return ports.iterator();
+    }
+.fi
+.SS "namespace ::QName org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.getServiceName ()"
+.PP
+Definition at line 107 of file VOMSRegistrationServiceLocator.java.
+.PP
+.nf
+                                                      {
+        return new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.registration', 'VOMSRegistrationService');
+    }
+.fi
+.SS "\fBorg.glite.security.voms.service.registration.VOMSRegistration\fP org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.getVOMSRegistration (java.net.URLportAddress)  throws javax.xml.rpc.ServiceException "
+.PP
+Implements \fBorg.glite.security.voms.service.registration.VOMSRegistrationService\fP.
+.PP
+Definition at line 53 of file VOMSRegistrationServiceLocator.java.
+.PP
+References org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.getVOMSRegistrationWSDDServiceName().
+.PP
+.nf
+                                                                                                                                                             {
+        try {
+            org.glite.security.voms.service.registration.VOMSRegistrationSoapBindingStub _stub = new org.glite.security.voms.service.registration.VOMSRegistrationSoapBindingStub(portAddress, this);
+            _stub.setPortName(getVOMSRegistrationWSDDServiceName());
+            return _stub;
+        }
+        catch (org.apache.axis.AxisFault e) {
+            return null;
+        }
+    }
+.fi
+.SS "\fBorg.glite.security.voms.service.registration.VOMSRegistration\fP org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.getVOMSRegistration ()  throws javax.xml.rpc.ServiceException "
+.PP
+Implements \fBorg.glite.security.voms.service.registration.VOMSRegistrationService\fP.
+.PP
+Definition at line 42 of file VOMSRegistrationServiceLocator.java.
+.PP
+References org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.VOMSRegistration_address.
+.PP
+Referenced by org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.getPort().
+.PP
+.nf
+                                                                                                                                     {
+       java.net.URL endpoint;
+        try {
+            endpoint = new java.net.URL(VOMSRegistration_address);
+        }
+        catch (java.net.MalformedURLException e) {
+            throw new javax.xml.rpc.ServiceException(e);
+        }
+        return getVOMSRegistration(endpoint);
+    }
+.fi
+.SS "java.lang.String org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.getVOMSRegistrationAddress ()"
+.PP
+Implements \fBorg.glite.security.voms.service.registration.VOMSRegistrationService\fP.
+.PP
+Definition at line 27 of file VOMSRegistrationServiceLocator.java.
+.PP
+References org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.VOMSRegistration_address.
+.PP
+.nf
+                                                         {
+        return VOMSRegistration_address;
+    }
+.fi
+.SS "java.lang.String org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.getVOMSRegistrationWSDDServiceName ()"
+.PP
+Definition at line 34 of file VOMSRegistrationServiceLocator.java.
+.PP
+References org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.VOMSRegistrationWSDDServiceName.
+.PP
+Referenced by org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.getPort(), and org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.getVOMSRegistration().
+.PP
+.nf
+                                                                 {
+        return VOMSRegistrationWSDDServiceName;
+    }
+.fi
+.SS "void org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.setEndpointAddress (java.lang.StringportName, java.lang.Stringaddress)  throws javax.xml.rpc.ServiceException "Set the endpoint address for the specified port name. 
+.PP
+Definition at line 124 of file VOMSRegistrationServiceLocator.java.
+.PP
+References org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.setVOMSRegistrationEndpointAddress().
+.PP
+Referenced by org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.setEndpointAddress().
+.PP
+.nf
+                                                                                                                              {
+        
+if ('VOMSRegistration'.equals(portName)) {
+            setVOMSRegistrationEndpointAddress(address);
+        }
+        else 
+{ // Unknown Port Name
+            throw new javax.xml.rpc.ServiceException(' Cannot set Endpoint Address for Unknown Port' + portName);
+        }
+    }
+.fi
+.SS "void org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.setEndpointAddress (javax.xml.namespace.QNameportName, java.lang.Stringaddress)  throws javax.xml.rpc.ServiceException "Set the endpoint address for the specified port name. 
+.PP
+Definition at line 138 of file VOMSRegistrationServiceLocator.java.
+.PP
+References org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.setEndpointAddress().
+.PP
+.nf
+                                                                                                                                       {
+        setEndpointAddress(portName.getLocalPart(), address);
+    }
+.fi
+.SS "void org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.setVOMSRegistrationEndpointAddress (java.lang.Stringaddress)"
+.PP
+Definition at line 64 of file VOMSRegistrationServiceLocator.java.
+.PP
+References org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.VOMSRegistration_address.
+.PP
+Referenced by org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.setEndpointAddress().
+.PP
+.nf
+                                                                             {
+        VOMSRegistration_address = address;
+    }
+.fi
+.SS "void org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.setVOMSRegistrationWSDDServiceName (java.lang.Stringname)"
+.PP
+Definition at line 38 of file VOMSRegistrationServiceLocator.java.
+.PP
+References org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.VOMSRegistrationWSDDServiceName.
+.PP
+.nf
+                                                                          {
+        VOMSRegistrationWSDDServiceName = name;
+    }
+.fi
+.SH "Member Data Documentation"
+.PP 
+.SS "java.util.HashSet \fBorg.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.ports\fP = null\fC [private]\fP"
+.PP
+Definition at line 111 of file VOMSRegistrationServiceLocator.java.
+.PP
+Referenced by org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.getPorts().
+.SS "java.lang.String \fBorg.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.VOMSRegistration_address\fP = 'https://localhost:8443/glite-security-voms-admin-interface/\fBVOMSRegistration\fP'\fC [private]\fP"
+.PP
+Definition at line 25 of file VOMSRegistrationServiceLocator.java.
+.PP
+Referenced by org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.getPort(), org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.getVOMSRegistration(), org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.getVOMSRegistrationAddress(), and org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.setVOMSRegistrationEndpointAddress().
+.SS "java.lang.String \fBorg.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.VOMSRegistrationWSDDServiceName\fP = 'VOMSRegistration'\fC [private]\fP"
+.PP
+Definition at line 32 of file VOMSRegistrationServiceLocator.java.
+.PP
+Referenced by org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.getVOMSRegistrationWSDDServiceName(), and org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.setVOMSRegistrationWSDDServiceName().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Registration from the source code.

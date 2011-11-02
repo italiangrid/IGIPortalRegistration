@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="namespaceorg_1_1springframework_1_1beans_1_1factory_1_1annotation_1_1" kind="namespace">
+    <compoundname>org::springframework::beans::factory::annotation::</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/AddUserInfoController.java" line="1"/>
+  </compounddef>
+</doxygen>

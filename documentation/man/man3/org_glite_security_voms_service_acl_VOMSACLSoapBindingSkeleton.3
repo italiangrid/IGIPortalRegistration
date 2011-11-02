@@ -1,0 +1,257 @@
+.TH "org::glite::security::voms::service::acl::VOMSACLSoapBindingSkeleton" 3 "Wed Jul 13 2011" "Version 4" "Registration" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+org::glite::security::voms::service::acl::VOMSACLSoapBindingSkeleton \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBorg.glite.security.voms.service.acl.VOMSACL\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBVOMSACLSoapBindingSkeleton\fP ()"
+.br
+.ti -1c
+.RI "\fBVOMSACLSoapBindingSkeleton\fP (\fBorg.glite.security.voms.service.acl.VOMSACL\fP \fBimpl\fP)"
+.br
+.ti -1c
+.RI "\fBorg.glite.security.voms.service.acl.ACLEntry\fP[] \fBgetACL\fP (java.lang.String in0)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException     "
+.br
+.ti -1c
+.RI "void \fBsetACL\fP (java.lang.String in0, \fBorg.glite.security.voms.service.acl.ACLEntry\fP[] in1)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException     "
+.br
+.ti -1c
+.RI "void \fBaddACLEntry\fP (java.lang.String in0, \fBorg.glite.security.voms.service.acl.ACLEntry\fP in1, boolean in2)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException     "
+.br
+.ti -1c
+.RI "void \fBremoveACLEntry\fP (java.lang.String in0, \fBorg.glite.security.voms.service.acl.ACLEntry\fP in1, boolean in2)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException     "
+.br
+.ti -1c
+.RI "\fBorg.glite.security.voms.service.acl.ACLEntry\fP[] \fBgetDefaultACL\fP (java.lang.String in0)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException     "
+.br
+.ti -1c
+.RI "void \fBsetDefaultACL\fP (java.lang.String in0, \fBorg.glite.security.voms.service.acl.ACLEntry\fP[] in1)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException     "
+.br
+.ti -1c
+.RI "void \fBaddDefaultACLEntry\fP (java.lang.String in0, \fBorg.glite.security.voms.service.acl.ACLEntry\fP in1)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException     "
+.br
+.ti -1c
+.RI "void \fBremoveDefaultACLEntry\fP (java.lang.String in0, \fBorg.glite.security.voms.service.acl.ACLEntry\fP in1)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException     "
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static java.util.List \fBgetOperationDescByName\fP (java.lang.String methodName)"
+.br
+.ti -1c
+.RI "static java.util.Collection \fBgetOperationDescs\fP ()"
+.br
+.in -1c
+.SS "Static Package Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB[static initializer]\fP"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBorg.glite.security.voms.service.acl.VOMSACL\fP \fBimpl\fP"
+.br
+.in -1c
+.SS "Static Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "static java.util.Map \fB_myOperations\fP = new java.util.Hashtable()"
+.br
+.ti -1c
+.RI "static java.util.Collection \fB_myOperationsList\fP = new java.util.ArrayList()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 10 of file VOMSACLSoapBindingSkeleton.java.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "org.glite.security.voms.service.acl.VOMSACLSoapBindingSkeleton.VOMSACLSoapBindingSkeleton ()"
+.PP
+Definition at line 181 of file VOMSACLSoapBindingSkeleton.java.
+.PP
+References org.glite.security.voms.service.acl.VOMSACLSoapBindingSkeleton.impl.
+.PP
+.nf
+                                        {
+        this.impl = new org.glite.security.voms.service.acl.VOMSACLSoapBindingImpl();
+    }
+.fi
+.SS "org.glite.security.voms.service.acl.VOMSACLSoapBindingSkeleton.VOMSACLSoapBindingSkeleton (\fBorg.glite.security.voms.service.acl.VOMSACL\fPimpl)"
+.PP
+Definition at line 185 of file VOMSACLSoapBindingSkeleton.java.
+.PP
+References org.glite.security.voms.service.acl.VOMSACLSoapBindingSkeleton.impl.
+.PP
+.nf
+                                                                                        {
+        this.impl = impl;
+    }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "org.glite.security.voms.service.acl.VOMSACLSoapBindingSkeleton.[static initializer] ()\fC [static, package]\fP"
+.SS "void org.glite.security.voms.service.acl.VOMSACLSoapBindingSkeleton.addACLEntry (java.lang.Stringin0, \fBorg.glite.security.voms.service.acl.ACLEntry\fPin1, booleanin2)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP     "
+.PP
+Implements \fBorg.glite.security.voms.service.acl.VOMSACL\fP.
+.PP
+Definition at line 199 of file VOMSACLSoapBindingSkeleton.java.
+.PP
+References org.glite.security.voms.service.acl.VOMSACL.addACLEntry(), and org.glite.security.voms.service.acl.VOMSACLSoapBindingSkeleton.impl.
+.PP
+.nf
+    {
+        impl.addACLEntry(in0, in1, in2);
+    }
+.fi
+.SS "void org.glite.security.voms.service.acl.VOMSACLSoapBindingSkeleton.addDefaultACLEntry (java.lang.Stringin0, \fBorg.glite.security.voms.service.acl.ACLEntry\fPin1)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP     "
+.PP
+Implements \fBorg.glite.security.voms.service.acl.VOMSACL\fP.
+.PP
+Definition at line 220 of file VOMSACLSoapBindingSkeleton.java.
+.PP
+References org.glite.security.voms.service.acl.VOMSACL.addDefaultACLEntry(), and org.glite.security.voms.service.acl.VOMSACLSoapBindingSkeleton.impl.
+.PP
+.nf
+    {
+        impl.addDefaultACLEntry(in0, in1);
+    }
+.fi
+.SS "\fBorg.glite.security.voms.service.acl.ACLEntry\fP [] org.glite.security.voms.service.acl.VOMSACLSoapBindingSkeleton.getACL (java.lang.Stringin0)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP     "
+.PP
+Implements \fBorg.glite.security.voms.service.acl.VOMSACL\fP.
+.PP
+Definition at line 188 of file VOMSACLSoapBindingSkeleton.java.
+.PP
+References org.glite.security.voms.service.acl.VOMSACL.getACL(), and org.glite.security.voms.service.acl.VOMSACLSoapBindingSkeleton.impl.
+.PP
+.nf
+    {
+        org.glite.security.voms.service.acl.ACLEntry[] ret = impl.getACL(in0);
+        return ret;
+    }
+.fi
+.SS "\fBorg.glite.security.voms.service.acl.ACLEntry\fP [] org.glite.security.voms.service.acl.VOMSACLSoapBindingSkeleton.getDefaultACL (java.lang.Stringin0)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP     "
+.PP
+Implements \fBorg.glite.security.voms.service.acl.VOMSACL\fP.
+.PP
+Definition at line 209 of file VOMSACLSoapBindingSkeleton.java.
+.PP
+References org.glite.security.voms.service.acl.VOMSACL.getDefaultACL(), and org.glite.security.voms.service.acl.VOMSACLSoapBindingSkeleton.impl.
+.PP
+.nf
+    {
+        org.glite.security.voms.service.acl.ACLEntry[] ret = impl.getDefaultACL(in0);
+        return ret;
+    }
+.fi
+.SS "static java.util.List org.glite.security.voms.service.acl.VOMSACLSoapBindingSkeleton.getOperationDescByName (java.lang.StringmethodName)\fC [static]\fP"Returns List of OperationDesc objects with this name 
+.PP
+Definition at line 18 of file VOMSACLSoapBindingSkeleton.java.
+.PP
+References org.glite.security.voms.service.acl.VOMSACLSoapBindingSkeleton._myOperations.
+.PP
+.nf
+                                                                                     {
+        return (java.util.List)_myOperations.get(methodName);
+    }
+.fi
+.SS "static java.util.Collection org.glite.security.voms.service.acl.VOMSACLSoapBindingSkeleton.getOperationDescs ()\fC [static]\fP"Returns Collection of OperationDescs 
+.PP
+Definition at line 25 of file VOMSACLSoapBindingSkeleton.java.
+.PP
+References org.glite.security.voms.service.acl.VOMSACLSoapBindingSkeleton._myOperationsList.
+.PP
+.nf
+                                                           {
+        return _myOperationsList;
+    }
+.fi
+.SS "void org.glite.security.voms.service.acl.VOMSACLSoapBindingSkeleton.removeACLEntry (java.lang.Stringin0, \fBorg.glite.security.voms.service.acl.ACLEntry\fPin1, booleanin2)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP     "
+.PP
+Implements \fBorg.glite.security.voms.service.acl.VOMSACL\fP.
+.PP
+Definition at line 204 of file VOMSACLSoapBindingSkeleton.java.
+.PP
+References org.glite.security.voms.service.acl.VOMSACLSoapBindingSkeleton.impl, and org.glite.security.voms.service.acl.VOMSACL.removeACLEntry().
+.PP
+.nf
+    {
+        impl.removeACLEntry(in0, in1, in2);
+    }
+.fi
+.SS "void org.glite.security.voms.service.acl.VOMSACLSoapBindingSkeleton.removeDefaultACLEntry (java.lang.Stringin0, \fBorg.glite.security.voms.service.acl.ACLEntry\fPin1)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP     "
+.PP
+Implements \fBorg.glite.security.voms.service.acl.VOMSACL\fP.
+.PP
+Definition at line 225 of file VOMSACLSoapBindingSkeleton.java.
+.PP
+References org.glite.security.voms.service.acl.VOMSACLSoapBindingSkeleton.impl, and org.glite.security.voms.service.acl.VOMSACL.removeDefaultACLEntry().
+.PP
+.nf
+    {
+        impl.removeDefaultACLEntry(in0, in1);
+    }
+.fi
+.SS "void org.glite.security.voms.service.acl.VOMSACLSoapBindingSkeleton.setACL (java.lang.Stringin0, \fBorg.glite.security.voms.service.acl.ACLEntry\fP[]in1)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP     "
+.PP
+Implements \fBorg.glite.security.voms.service.acl.VOMSACL\fP.
+.PP
+Definition at line 194 of file VOMSACLSoapBindingSkeleton.java.
+.PP
+References org.glite.security.voms.service.acl.VOMSACLSoapBindingSkeleton.impl, and org.glite.security.voms.service.acl.VOMSACL.setACL().
+.PP
+.nf
+    {
+        impl.setACL(in0, in1);
+    }
+.fi
+.SS "void org.glite.security.voms.service.acl.VOMSACLSoapBindingSkeleton.setDefaultACL (java.lang.Stringin0, \fBorg.glite.security.voms.service.acl.ACLEntry\fP[]in1)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP     "
+.PP
+Implements \fBorg.glite.security.voms.service.acl.VOMSACL\fP.
+.PP
+Definition at line 215 of file VOMSACLSoapBindingSkeleton.java.
+.PP
+References org.glite.security.voms.service.acl.VOMSACLSoapBindingSkeleton.impl, and org.glite.security.voms.service.acl.VOMSACL.setDefaultACL().
+.PP
+.nf
+    {
+        impl.setDefaultACL(in0, in1);
+    }
+.fi
+.SH "Member Data Documentation"
+.PP 
+.SS "java.util.Map \fBorg.glite.security.voms.service.acl.VOMSACLSoapBindingSkeleton._myOperations\fP = new java.util.Hashtable()\fC [static, private]\fP"
+.PP
+Definition at line 12 of file VOMSACLSoapBindingSkeleton.java.
+.PP
+Referenced by org.glite.security.voms.service.acl.VOMSACLSoapBindingSkeleton.getOperationDescByName().
+.SS "java.util.Collection \fBorg.glite.security.voms.service.acl.VOMSACLSoapBindingSkeleton._myOperationsList\fP = new java.util.ArrayList()\fC [static, private]\fP"
+.PP
+Definition at line 13 of file VOMSACLSoapBindingSkeleton.java.
+.PP
+Referenced by org.glite.security.voms.service.acl.VOMSACLSoapBindingSkeleton.getOperationDescs().
+.SS "\fBorg.glite.security.voms.service.acl.VOMSACL\fP \fBorg.glite.security.voms.service.acl.VOMSACLSoapBindingSkeleton.impl\fP\fC [private]\fP"
+.PP
+Definition at line 11 of file VOMSACLSoapBindingSkeleton.java.
+.PP
+Referenced by org.glite.security.voms.service.acl.VOMSACLSoapBindingSkeleton.addACLEntry(), org.glite.security.voms.service.acl.VOMSACLSoapBindingSkeleton.addDefaultACLEntry(), org.glite.security.voms.service.acl.VOMSACLSoapBindingSkeleton.getACL(), org.glite.security.voms.service.acl.VOMSACLSoapBindingSkeleton.getDefaultACL(), org.glite.security.voms.service.acl.VOMSACLSoapBindingSkeleton.removeACLEntry(), org.glite.security.voms.service.acl.VOMSACLSoapBindingSkeleton.removeDefaultACLEntry(), org.glite.security.voms.service.acl.VOMSACLSoapBindingSkeleton.setACL(), org.glite.security.voms.service.acl.VOMSACLSoapBindingSkeleton.setDefaultACL(), and org.glite.security.voms.service.acl.VOMSACLSoapBindingSkeleton.VOMSACLSoapBindingSkeleton().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Registration from the source code.

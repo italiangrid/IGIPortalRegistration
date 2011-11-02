@@ -1,0 +1,391 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator" kind="class" prot="public">
+    <compoundname>org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator</compoundname>
+    <basecompoundref refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationService" prot="public" virt="non-virtual">org.glite.security.voms.service.registration.VOMSRegistrationService</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_1a8b1d238baa33c02d1366768aac9fb7bc" prot="private" static="no" mutable="no">
+        <type>java.lang.String</type>
+        <definition>java.lang.String org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.VOMSRegistration_address</definition>
+        <argsstring></argsstring>
+        <name>VOMSRegistration_address</name>
+        <initializer>&quot;https://localhost:8443/glite-security-voms-admin-interface/<ref refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistration" kindref="compound">VOMSRegistration</ref>&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/VOMSRegistrationServiceLocator.java" line="25" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/VOMSRegistrationServiceLocator.java" bodystart="25" bodyend="-1"/>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_1ac0d38d86947d56afe47bd4042eaf2dbd" compoundref="VOMSRegistrationServiceLocator_8java" startline="73" endline="85">org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator::getPort</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_1ae0102259b68be98cc8fd174a50b19e4c" compoundref="VOMSRegistrationServiceLocator_8java" startline="42" endline="51">org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator::getVOMSRegistration</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_1aff49dcfa180e773dc87a5c559b9e9fed" compoundref="VOMSRegistrationServiceLocator_8java" startline="27" endline="29">org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator::getVOMSRegistrationAddress</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_1a027076b3679899b742d499429827f488" compoundref="VOMSRegistrationServiceLocator_8java" startline="64" endline="66">org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator::setVOMSRegistrationEndpointAddress</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_1a37abee409465b82c58014954c0b576e9" prot="private" static="no" mutable="no">
+        <type>java.lang.String</type>
+        <definition>java.lang.String org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.VOMSRegistrationWSDDServiceName</definition>
+        <argsstring></argsstring>
+        <name>VOMSRegistrationWSDDServiceName</name>
+        <initializer>&quot;VOMSRegistration&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/VOMSRegistrationServiceLocator.java" line="32" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/VOMSRegistrationServiceLocator.java" bodystart="32" bodyend="-1"/>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_1a253149d8117eb6e99fe661b010a39d14" compoundref="VOMSRegistrationServiceLocator_8java" startline="34" endline="36">org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator::getVOMSRegistrationWSDDServiceName</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_1a51ec327cdaa76980982ce67d04b0318d" compoundref="VOMSRegistrationServiceLocator_8java" startline="38" endline="40">org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator::setVOMSRegistrationWSDDServiceName</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_1afe50260789264526462a9fe86fbd1a4f" prot="private" static="no" mutable="no">
+        <type>java.util.HashSet</type>
+        <definition>java.util.HashSet org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.ports</definition>
+        <argsstring></argsstring>
+        <name>ports</name>
+        <initializer> null</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/VOMSRegistrationServiceLocator.java" line="111" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/VOMSRegistrationServiceLocator.java" bodystart="111" bodyend="-1"/>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_1a4b23f185f25c87b26b1ce2d7f7be22b4" compoundref="VOMSRegistrationServiceLocator_8java" startline="113" endline="119">org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator::getPorts</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_1addf31979358c4e54d4a7d88184e84731" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.VOMSRegistrationServiceLocator</definition>
+        <argsstring>()</argsstring>
+        <name>VOMSRegistrationServiceLocator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/VOMSRegistrationServiceLocator.java" line="12" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/VOMSRegistrationServiceLocator.java" bodystart="12" bodyend="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_1a84fd1e657e3a15d0aa8203b5002aefac" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.VOMSRegistrationServiceLocator</definition>
+        <argsstring>(org.apache.axis.EngineConfiguration config)</argsstring>
+        <name>VOMSRegistrationServiceLocator</name>
+        <param>
+          <type>org.apache.axis.EngineConfiguration</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/VOMSRegistrationServiceLocator.java" line="16" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/VOMSRegistrationServiceLocator.java" bodystart="16" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_1aee36664ca3d55f369b49d9923c2c2e5d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.VOMSRegistrationServiceLocator</definition>
+        <argsstring>(java.lang.String wsdlLoc, javax.xml.namespace.QName sName)</argsstring>
+        <name>VOMSRegistrationServiceLocator</name>
+        <param>
+          <type>java.lang.String</type>
+          <declname>wsdlLoc</declname>
+        </param>
+        <param>
+          <type>javax.xml.namespace.QName</type>
+          <declname>sName</declname>
+        </param>
+        <exceptions> throws javax.xml.rpc.ServiceException </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/VOMSRegistrationServiceLocator.java" line="20" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/VOMSRegistrationServiceLocator.java" bodystart="20" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_1aff49dcfa180e773dc87a5c559b9e9fed" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>java.lang.String</type>
+        <definition>java.lang.String org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.getVOMSRegistrationAddress</definition>
+        <argsstring>()</argsstring>
+        <name>getVOMSRegistrationAddress</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationService_1ac5e74e6684713b9880a717da20478e80">getVOMSRegistrationAddress</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/VOMSRegistrationServiceLocator.java" line="27" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/VOMSRegistrationServiceLocator.java" bodystart="27" bodyend="29"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_1a8b1d238baa33c02d1366768aac9fb7bc" compoundref="VOMSRegistrationServiceLocator_8java" startline="25">org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator::VOMSRegistration_address</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_1a253149d8117eb6e99fe661b010a39d14" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>java.lang.String</type>
+        <definition>java.lang.String org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.getVOMSRegistrationWSDDServiceName</definition>
+        <argsstring>()</argsstring>
+        <name>getVOMSRegistrationWSDDServiceName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/VOMSRegistrationServiceLocator.java" line="34" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/VOMSRegistrationServiceLocator.java" bodystart="34" bodyend="36"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_1a37abee409465b82c58014954c0b576e9" compoundref="VOMSRegistrationServiceLocator_8java" startline="32">org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator::VOMSRegistrationWSDDServiceName</references>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_1ac0d38d86947d56afe47bd4042eaf2dbd" compoundref="VOMSRegistrationServiceLocator_8java" startline="73" endline="85">org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator::getPort</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_1a878febd9facfc250a8ee7485322e10ef" compoundref="VOMSRegistrationServiceLocator_8java" startline="53" endline="62">org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator::getVOMSRegistration</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_1a51ec327cdaa76980982ce67d04b0318d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.setVOMSRegistrationWSDDServiceName</definition>
+        <argsstring>(java.lang.String name)</argsstring>
+        <name>setVOMSRegistrationWSDDServiceName</name>
+        <param>
+          <type>java.lang.String</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/VOMSRegistrationServiceLocator.java" line="38" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/VOMSRegistrationServiceLocator.java" bodystart="38" bodyend="40"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_1a37abee409465b82c58014954c0b576e9" compoundref="VOMSRegistrationServiceLocator_8java" startline="32">org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator::VOMSRegistrationWSDDServiceName</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_1ae0102259b68be98cc8fd174a50b19e4c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistration" kindref="compound">org.glite.security.voms.service.registration.VOMSRegistration</ref></type>
+        <definition>org.glite.security.voms.service.registration.VOMSRegistration org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.getVOMSRegistration</definition>
+        <argsstring>()</argsstring>
+        <name>getVOMSRegistration</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationService_1a57d3ef89895c9fe44c48a1a27fb7a9c0">getVOMSRegistration</reimplements>
+        <exceptions> throws javax.xml.rpc.ServiceException </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/VOMSRegistrationServiceLocator.java" line="42" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/VOMSRegistrationServiceLocator.java" bodystart="42" bodyend="51"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_1a8b1d238baa33c02d1366768aac9fb7bc" compoundref="VOMSRegistrationServiceLocator_8java" startline="25">org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator::VOMSRegistration_address</references>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_1a138e62089c2450c8eacf2b94718d07cb" compoundref="VOMSRegistrationServiceLocator_8java" startline="92" endline="105">org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator::getPort</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_1a878febd9facfc250a8ee7485322e10ef" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistration" kindref="compound">org.glite.security.voms.service.registration.VOMSRegistration</ref></type>
+        <definition>org.glite.security.voms.service.registration.VOMSRegistration org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.getVOMSRegistration</definition>
+        <argsstring>(java.net.URL portAddress)</argsstring>
+        <name>getVOMSRegistration</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationService_1a0833a75c9bcd4ff1f3d392f1fe82991c">getVOMSRegistration</reimplements>
+        <param>
+          <type>java.net.URL</type>
+          <declname>portAddress</declname>
+        </param>
+        <exceptions> throws javax.xml.rpc.ServiceException </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/VOMSRegistrationServiceLocator.java" line="53" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/VOMSRegistrationServiceLocator.java" bodystart="53" bodyend="62"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_1a253149d8117eb6e99fe661b010a39d14" compoundref="VOMSRegistrationServiceLocator_8java" startline="34" endline="36">org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator::getVOMSRegistrationWSDDServiceName</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_1a027076b3679899b742d499429827f488" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.setVOMSRegistrationEndpointAddress</definition>
+        <argsstring>(java.lang.String address)</argsstring>
+        <name>setVOMSRegistrationEndpointAddress</name>
+        <param>
+          <type>java.lang.String</type>
+          <declname>address</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/VOMSRegistrationServiceLocator.java" line="64" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/VOMSRegistrationServiceLocator.java" bodystart="64" bodyend="66"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_1a8b1d238baa33c02d1366768aac9fb7bc" compoundref="VOMSRegistrationServiceLocator_8java" startline="25">org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator::VOMSRegistration_address</references>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_1a682393f3ee2ac6cc3b0be395e46ae802" compoundref="VOMSRegistrationServiceLocator_8java" startline="124" endline="133">org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator::setEndpointAddress</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_1ac0d38d86947d56afe47bd4042eaf2dbd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>java.rmi.Remote</type>
+        <definition>java.rmi.Remote org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.getPort</definition>
+        <argsstring>(Class serviceEndpointInterface)</argsstring>
+        <name>getPort</name>
+        <param>
+          <type>Class</type>
+          <declname>serviceEndpointInterface</declname>
+        </param>
+        <exceptions> throws javax.xml.rpc.ServiceException </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>For the given interface, get the stub implementation. If this service has no port for the given interface, then ServiceException is thrown. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/VOMSRegistrationServiceLocator.java" line="73" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/VOMSRegistrationServiceLocator.java" bodystart="73" bodyend="85"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_1a253149d8117eb6e99fe661b010a39d14" compoundref="VOMSRegistrationServiceLocator_8java" startline="34" endline="36">org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator::getVOMSRegistrationWSDDServiceName</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_1a8b1d238baa33c02d1366768aac9fb7bc" compoundref="VOMSRegistrationServiceLocator_8java" startline="25">org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator::VOMSRegistration_address</references>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_1a138e62089c2450c8eacf2b94718d07cb" compoundref="VOMSRegistrationServiceLocator_8java" startline="92" endline="105">org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator::getPort</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_1a138e62089c2450c8eacf2b94718d07cb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>java.rmi.Remote</type>
+        <definition>java.rmi.Remote org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.getPort</definition>
+        <argsstring>(javax.xml.namespace.QName portName, Class serviceEndpointInterface)</argsstring>
+        <name>getPort</name>
+        <param>
+          <type>javax.xml.namespace.QName</type>
+          <declname>portName</declname>
+        </param>
+        <param>
+          <type>Class</type>
+          <declname>serviceEndpointInterface</declname>
+        </param>
+        <exceptions> throws javax.xml.rpc.ServiceException </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>For the given interface, get the stub implementation. If this service has no port for the given interface, then ServiceException is thrown. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/VOMSRegistrationServiceLocator.java" line="92" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/VOMSRegistrationServiceLocator.java" bodystart="92" bodyend="105"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_1ac0d38d86947d56afe47bd4042eaf2dbd" compoundref="VOMSRegistrationServiceLocator_8java" startline="73" endline="85">org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator::getPort</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_1ae0102259b68be98cc8fd174a50b19e4c" compoundref="VOMSRegistrationServiceLocator_8java" startline="42" endline="51">org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator::getVOMSRegistration</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_1a7f4a3a45a9d544e0ee85ec1f456039fd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>namespace::QName</type>
+        <definition>namespace ::QName org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.getServiceName</definition>
+        <argsstring>()</argsstring>
+        <name>getServiceName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/VOMSRegistrationServiceLocator.java" line="107" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/VOMSRegistrationServiceLocator.java" bodystart="107" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_1a4b23f185f25c87b26b1ce2d7f7be22b4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>java.util.Iterator</type>
+        <definition>java.util.Iterator org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.getPorts</definition>
+        <argsstring>()</argsstring>
+        <name>getPorts</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/VOMSRegistrationServiceLocator.java" line="113" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/VOMSRegistrationServiceLocator.java" bodystart="113" bodyend="119"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_1afe50260789264526462a9fe86fbd1a4f" compoundref="VOMSRegistrationServiceLocator_8java" startline="111">org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator::ports</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_1a682393f3ee2ac6cc3b0be395e46ae802" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.setEndpointAddress</definition>
+        <argsstring>(java.lang.String portName, java.lang.String address)</argsstring>
+        <name>setEndpointAddress</name>
+        <param>
+          <type>java.lang.String</type>
+          <declname>portName</declname>
+        </param>
+        <param>
+          <type>java.lang.String</type>
+          <declname>address</declname>
+        </param>
+        <exceptions> throws javax.xml.rpc.ServiceException </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set the endpoint address for the specified port name. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/VOMSRegistrationServiceLocator.java" line="124" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/VOMSRegistrationServiceLocator.java" bodystart="124" bodyend="133"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_1a027076b3679899b742d499429827f488" compoundref="VOMSRegistrationServiceLocator_8java" startline="64" endline="66">org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator::setVOMSRegistrationEndpointAddress</references>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_1acbaf26806a09fa835fe373b8a00ea630" compoundref="VOMSRegistrationServiceLocator_8java" startline="138" endline="140">org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator::setEndpointAddress</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_1acbaf26806a09fa835fe373b8a00ea630" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.setEndpointAddress</definition>
+        <argsstring>(javax.xml.namespace.QName portName, java.lang.String address)</argsstring>
+        <name>setEndpointAddress</name>
+        <param>
+          <type>javax.xml.namespace.QName</type>
+          <declname>portName</declname>
+        </param>
+        <param>
+          <type>java.lang.String</type>
+          <declname>address</declname>
+        </param>
+        <exceptions> throws javax.xml.rpc.ServiceException </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set the endpoint address for the specified port name. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/VOMSRegistrationServiceLocator.java" line="138" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/VOMSRegistrationServiceLocator.java" bodystart="138" bodyend="140"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_1a682393f3ee2ac6cc3b0be395e46ae802" compoundref="VOMSRegistrationServiceLocator_8java" startline="124" endline="133">org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator::setEndpointAddress</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="788">
+        <label>org.glite.security.voms.service.registration.VOMSRegistrationService</label>
+        <link refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationService"/>
+      </node>
+      <node id="787">
+        <label>org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator</label>
+        <link refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator"/>
+        <childnode refid="788" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="791">
+        <label>HashSet</label>
+      </node>
+      <node id="790">
+        <label>org.glite.security.voms.service.registration.VOMSRegistrationService</label>
+        <link refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationService"/>
+      </node>
+      <node id="789">
+        <label>org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator</label>
+        <link refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator"/>
+        <childnode refid="790" relation="public-inheritance">
+        </childnode>
+        <childnode refid="791" relation="usage">
+          <edgelabel>ports</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/VOMSRegistrationServiceLocator.java" line="10" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/VOMSRegistrationServiceLocator.java" bodystart="10" bodyend="142"/>
+    <listofallmembers>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_1ac0d38d86947d56afe47bd4042eaf2dbd" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator</scope><name>getPort</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_1a138e62089c2450c8eacf2b94718d07cb" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator</scope><name>getPort</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_1a4b23f185f25c87b26b1ce2d7f7be22b4" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator</scope><name>getPorts</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_1a7f4a3a45a9d544e0ee85ec1f456039fd" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator</scope><name>getServiceName</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_1ae0102259b68be98cc8fd174a50b19e4c" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator</scope><name>getVOMSRegistration</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_1a878febd9facfc250a8ee7485322e10ef" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator</scope><name>getVOMSRegistration</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_1aff49dcfa180e773dc87a5c559b9e9fed" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator</scope><name>getVOMSRegistrationAddress</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_1a253149d8117eb6e99fe661b010a39d14" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator</scope><name>getVOMSRegistrationWSDDServiceName</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_1afe50260789264526462a9fe86fbd1a4f" prot="private" virt="non-virtual"><scope>org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator</scope><name>ports</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_1a682393f3ee2ac6cc3b0be395e46ae802" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator</scope><name>setEndpointAddress</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_1acbaf26806a09fa835fe373b8a00ea630" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator</scope><name>setEndpointAddress</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_1a027076b3679899b742d499429827f488" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator</scope><name>setVOMSRegistrationEndpointAddress</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_1a51ec327cdaa76980982ce67d04b0318d" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator</scope><name>setVOMSRegistrationWSDDServiceName</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_1a8b1d238baa33c02d1366768aac9fb7bc" prot="private" virt="non-virtual"><scope>org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator</scope><name>VOMSRegistration_address</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_1addf31979358c4e54d4a7d88184e84731" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator</scope><name>VOMSRegistrationServiceLocator</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_1a84fd1e657e3a15d0aa8203b5002aefac" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator</scope><name>VOMSRegistrationServiceLocator</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_1aee36664ca3d55f369b49d9923c2c2e5d" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator</scope><name>VOMSRegistrationServiceLocator</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_1a37abee409465b82c58014954c0b576e9" prot="private" virt="non-virtual"><scope>org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator</scope><name>VOMSRegistrationWSDDServiceName</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

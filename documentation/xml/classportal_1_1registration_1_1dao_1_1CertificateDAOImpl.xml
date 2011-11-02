@@ -1,0 +1,214 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="classportal_1_1registration_1_1dao_1_1CertificateDAOImpl" kind="class" prot="public">
+    <compoundname>portal::registration::dao::CertificateDAOImpl</compoundname>
+    <basecompoundref refid="interfaceportal_1_1registration_1_1dao_1_1CertificateDAO" prot="public" virt="non-virtual">portal.registration.dao.CertificateDAO</basecompoundref>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classportal_1_1registration_1_1dao_1_1CertificateDAOImpl_1a2e41d81ff0e96ed91c4793080fc82071" prot="private" static="yes" mutable="no">
+        <type>final Logger</type>
+        <definition>final Logger portal.registration.dao.CertificateDAOImpl.log</definition>
+        <argsstring></argsstring>
+        <name>log</name>
+        <initializer> Logger
+			.getLogger(CertificateDAOImpl.class)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/dao/CertificateDAOImpl.java" line="19" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/dao/CertificateDAOImpl.java" bodystart="18" bodyend="-1"/>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1CertificateDAOImpl_1a46214fc34d32586747e7d9b7ff0a735d" compoundref="CertificateDAOImpl_8java" startline="37" endline="47">portal.registration.dao.CertificateDAOImpl::delete</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1CertificateDAOImpl_1a4baa20618a158327206b303a62b469e7" compoundref="CertificateDAOImpl_8java" startline="83" endline="105">portal.registration.dao.CertificateDAOImpl::edit</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1CertificateDAOImpl_1aed1fed865abe0006ad14bdf5dffe2932" compoundref="CertificateDAOImpl_8java" startline="49" endline="61">portal.registration.dao.CertificateDAOImpl::findById</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1CertificateDAOImpl_1a6131a112c85bb539f61dc079d8afcbbb" compoundref="CertificateDAOImpl_8java" startline="24" endline="35">portal.registration.dao.CertificateDAOImpl::save</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classportal_1_1registration_1_1dao_1_1CertificateDAOImpl_1a14bdf753d92377fe970839b6f362ef4f" prot="private" static="no" mutable="no">
+        <type>SessionFactory</type>
+        <definition>SessionFactory portal.registration.dao.CertificateDAOImpl.sessionFactory</definition>
+        <argsstring></argsstring>
+        <name>sessionFactory</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/dao/CertificateDAOImpl.java" line="22" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/dao/CertificateDAOImpl.java" bodystart="22" bodyend="-1"/>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1CertificateDAOImpl_1a46214fc34d32586747e7d9b7ff0a735d" compoundref="CertificateDAOImpl_8java" startline="37" endline="47">portal.registration.dao.CertificateDAOImpl::delete</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1CertificateDAOImpl_1a4baa20618a158327206b303a62b469e7" compoundref="CertificateDAOImpl_8java" startline="83" endline="105">portal.registration.dao.CertificateDAOImpl::edit</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1CertificateDAOImpl_1aed1fed865abe0006ad14bdf5dffe2932" compoundref="CertificateDAOImpl_8java" startline="49" endline="61">portal.registration.dao.CertificateDAOImpl::findById</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1CertificateDAOImpl_1a6131a112c85bb539f61dc079d8afcbbb" compoundref="CertificateDAOImpl_8java" startline="24" endline="35">portal.registration.dao.CertificateDAOImpl::save</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classportal_1_1registration_1_1dao_1_1CertificateDAOImpl_1a6131a112c85bb539f61dc079d8afcbbb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Integer</type>
+        <definition>Integer portal.registration.dao.CertificateDAOImpl.save</definition>
+        <argsstring>(Certificate transientInstance)</argsstring>
+        <name>save</name>
+        <reimplements refid="interfaceportal_1_1registration_1_1dao_1_1CertificateDAO_1a7451336de83411bab9a9d61b6ca719ee">save</reimplements>
+        <param>
+          <type><ref refid="classportal_1_1registration_1_1domain_1_1Certificate" kindref="compound">Certificate</ref></type>
+          <declname>transientInstance</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/dao/CertificateDAOImpl.java" line="24" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/dao/CertificateDAOImpl.java" bodystart="24" bodyend="35"/>
+        <references refid="classportal_1_1registration_1_1dao_1_1CertificateDAOImpl_1a2e41d81ff0e96ed91c4793080fc82071" compoundref="CertificateDAOImpl_8java" startline="18">portal.registration.dao.CertificateDAOImpl::log</references>
+        <references refid="classportal_1_1registration_1_1dao_1_1CertificateDAOImpl_1a14bdf753d92377fe970839b6f362ef4f" compoundref="CertificateDAOImpl_8java" startline="22">portal.registration.dao.CertificateDAOImpl::sessionFactory</references>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1dao_1_1CertificateDAOImpl_1a46214fc34d32586747e7d9b7ff0a735d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void portal.registration.dao.CertificateDAOImpl.delete</definition>
+        <argsstring>(Certificate persistentInstance)</argsstring>
+        <name>delete</name>
+        <reimplements refid="interfaceportal_1_1registration_1_1dao_1_1CertificateDAO_1ab535f1e3d72dc9bd0bcda6c042d513bb">delete</reimplements>
+        <param>
+          <type><ref refid="classportal_1_1registration_1_1domain_1_1Certificate" kindref="compound">Certificate</ref></type>
+          <declname>persistentInstance</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/dao/CertificateDAOImpl.java" line="37" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/dao/CertificateDAOImpl.java" bodystart="37" bodyend="47"/>
+        <references refid="classportal_1_1registration_1_1dao_1_1CertificateDAOImpl_1a2e41d81ff0e96ed91c4793080fc82071" compoundref="CertificateDAOImpl_8java" startline="18">portal.registration.dao.CertificateDAOImpl::log</references>
+        <references refid="classportal_1_1registration_1_1dao_1_1CertificateDAOImpl_1a14bdf753d92377fe970839b6f362ef4f" compoundref="CertificateDAOImpl_8java" startline="22">portal.registration.dao.CertificateDAOImpl::sessionFactory</references>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1dao_1_1CertificateDAOImpl_1aed1fed865abe0006ad14bdf5dffe2932" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classportal_1_1registration_1_1domain_1_1Certificate" kindref="compound">Certificate</ref></type>
+        <definition>Certificate portal.registration.dao.CertificateDAOImpl.findById</definition>
+        <argsstring>(Integer id)</argsstring>
+        <name>findById</name>
+        <reimplements refid="interfaceportal_1_1registration_1_1dao_1_1CertificateDAO_1aecb22f7cf02b37a0330600686147243d">findById</reimplements>
+        <param>
+          <type>Integer</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/dao/CertificateDAOImpl.java" line="49" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/dao/CertificateDAOImpl.java" bodystart="49" bodyend="61"/>
+        <references refid="classportal_1_1registration_1_1dao_1_1CertificateDAOImpl_1a2e41d81ff0e96ed91c4793080fc82071" compoundref="CertificateDAOImpl_8java" startline="18">portal.registration.dao.CertificateDAOImpl::log</references>
+        <references refid="classportal_1_1registration_1_1dao_1_1CertificateDAOImpl_1a14bdf753d92377fe970839b6f362ef4f" compoundref="CertificateDAOImpl_8java" startline="22">portal.registration.dao.CertificateDAOImpl::sessionFactory</references>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1dao_1_1CertificateDAOImpl_1a3e023e8f1bb0aed1b21dc556f148a640" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>List&lt; <ref refid="classportal_1_1registration_1_1domain_1_1Certificate" kindref="compound">Certificate</ref> &gt;</type>
+        <definition>List&lt;Certificate&gt; portal.registration.dao.CertificateDAOImpl.findById</definition>
+        <argsstring>(UserInfo userInfo)</argsstring>
+        <name>findById</name>
+        <reimplements refid="interfaceportal_1_1registration_1_1dao_1_1CertificateDAO_1a1a1782267b60378309ca30ce76528fd4">findById</reimplements>
+        <param>
+          <type><ref refid="classportal_1_1registration_1_1domain_1_1UserInfo" kindref="compound">UserInfo</ref></type>
+          <declname>userInfo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/dao/CertificateDAOImpl.java" line="64" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/dao/CertificateDAOImpl.java" bodystart="64" bodyend="81"/>
+        <references refid="classportal_1_1registration_1_1dao_1_1CertificateDAOImpl_1a2e41d81ff0e96ed91c4793080fc82071" compoundref="CertificateDAOImpl_8java" startline="18">portal.registration.dao.CertificateDAOImpl::log</references>
+        <references refid="classportal_1_1registration_1_1dao_1_1CertificateDAOImpl_1a14bdf753d92377fe970839b6f362ef4f" compoundref="CertificateDAOImpl_8java" startline="22">portal.registration.dao.CertificateDAOImpl::sessionFactory</references>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1dao_1_1CertificateDAOImpl_1a4baa20618a158327206b303a62b469e7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void portal.registration.dao.CertificateDAOImpl.edit</definition>
+        <argsstring>(Certificate certificate)</argsstring>
+        <name>edit</name>
+        <reimplements refid="interfaceportal_1_1registration_1_1dao_1_1CertificateDAO_1ab538437429b4b6b2065affa7b2742f45">edit</reimplements>
+        <param>
+          <type><ref refid="classportal_1_1registration_1_1domain_1_1Certificate" kindref="compound">Certificate</ref></type>
+          <declname>certificate</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/dao/CertificateDAOImpl.java" line="83" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/dao/CertificateDAOImpl.java" bodystart="83" bodyend="105"/>
+        <references refid="classportal_1_1registration_1_1domain_1_1Certificate_1a44521ac962555b7f5b60f5fe604666e2" compoundref="Certificate_8java" startline="94" endline="96">portal.registration.domain.Certificate::getCaonline</references>
+        <references refid="classportal_1_1registration_1_1domain_1_1Certificate_1a46c6cc759643e1725dee2e1b55b7f75f" compoundref="Certificate_8java" startline="85" endline="87">portal.registration.domain.Certificate::getExpirationDate</references>
+        <references refid="classportal_1_1registration_1_1domain_1_1Certificate_1ab8b18d7c1b63efd645a8b505d62339f6" compoundref="Certificate_8java" startline="56" endline="58">portal.registration.domain.Certificate::getIdCert</references>
+        <references refid="classportal_1_1registration_1_1domain_1_1Certificate_1a7ab9a48236680e0482a0588ae4d677f7" compoundref="Certificate_8java" startline="112" endline="114">portal.registration.domain.Certificate::getIssuer</references>
+        <references refid="classportal_1_1registration_1_1domain_1_1Certificate_1a1bd3514654fcf5151f11033ff135de03" compoundref="Certificate_8java" startline="103" endline="105">portal.registration.domain.Certificate::getPrimaryCert</references>
+        <references refid="classportal_1_1registration_1_1domain_1_1Certificate_1a0fb0e7b1607351ee8b07eef328e45e76" compoundref="Certificate_8java" startline="75" endline="77">portal.registration.domain.Certificate::getSubject</references>
+        <references refid="classportal_1_1registration_1_1domain_1_1Certificate_1a363b5e2296e1a83e916fac2cbe39cf42" compoundref="Certificate_8java" startline="66" endline="68">portal.registration.domain.Certificate::getUserInfo</references>
+        <references refid="classportal_1_1registration_1_1domain_1_1Certificate_1a523b5944db11a39de56b45f233227fd2" compoundref="Certificate_8java" startline="121" endline="123">portal.registration.domain.Certificate::getUsernameCert</references>
+        <references refid="classportal_1_1registration_1_1dao_1_1CertificateDAOImpl_1a2e41d81ff0e96ed91c4793080fc82071" compoundref="CertificateDAOImpl_8java" startline="18">portal.registration.dao.CertificateDAOImpl::log</references>
+        <references refid="classportal_1_1registration_1_1dao_1_1CertificateDAOImpl_1a14bdf753d92377fe970839b6f362ef4f" compoundref="CertificateDAOImpl_8java" startline="22">portal.registration.dao.CertificateDAOImpl::sessionFactory</references>
+        <references refid="classportal_1_1registration_1_1domain_1_1Certificate_1a1768dd3798008b6e1bf3c80c2cfb4885" compoundref="Certificate_8java" startline="98" endline="100">portal.registration.domain.Certificate::setCaonline</references>
+        <references refid="classportal_1_1registration_1_1domain_1_1Certificate_1a5be4ee6795b3c26252c099c98218479f" compoundref="Certificate_8java" startline="89" endline="91">portal.registration.domain.Certificate::setExpirationDate</references>
+        <references refid="classportal_1_1registration_1_1domain_1_1Certificate_1aa469f1b297ff231d37b56cf926774365" compoundref="Certificate_8java" startline="116" endline="118">portal.registration.domain.Certificate::setIssuer</references>
+        <references refid="classportal_1_1registration_1_1domain_1_1Certificate_1a265b7255aabb51902882c5d7c12c122e" compoundref="Certificate_8java" startline="107" endline="109">portal.registration.domain.Certificate::setPrimaryCert</references>
+        <references refid="classportal_1_1registration_1_1domain_1_1Certificate_1a6f285c68c3095c89f9432e42b4f4dc37" compoundref="Certificate_8java" startline="79" endline="81">portal.registration.domain.Certificate::setSubject</references>
+        <references refid="classportal_1_1registration_1_1domain_1_1Certificate_1a664deb85df4be4d81fcb3990a959b989" compoundref="Certificate_8java" startline="70" endline="72">portal.registration.domain.Certificate::setUserInfo</references>
+        <references refid="classportal_1_1registration_1_1domain_1_1Certificate_1a004787ddffdd6f50f5f38accee3155d5" compoundref="Certificate_8java" startline="125" endline="127">portal.registration.domain.Certificate::setUsernameCert</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="456">
+        <label>portal.registration.dao.CertificateDAOImpl</label>
+        <link refid="classportal_1_1registration_1_1dao_1_1CertificateDAOImpl"/>
+        <childnode refid="457" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="457">
+        <label>portal.registration.dao.CertificateDAO</label>
+        <link refid="interfaceportal_1_1registration_1_1dao_1_1CertificateDAO"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="461">
+        <label>SessionFactory</label>
+      </node>
+      <node id="460">
+        <label>Logger</label>
+      </node>
+      <node id="458">
+        <label>portal.registration.dao.CertificateDAOImpl</label>
+        <link refid="classportal_1_1registration_1_1dao_1_1CertificateDAOImpl"/>
+        <childnode refid="459" relation="public-inheritance">
+        </childnode>
+        <childnode refid="460" relation="usage">
+          <edgelabel>log</edgelabel>
+        </childnode>
+        <childnode refid="461" relation="usage">
+          <edgelabel>sessionFactory</edgelabel>
+        </childnode>
+      </node>
+      <node id="459">
+        <label>portal.registration.dao.CertificateDAO</label>
+        <link refid="interfaceportal_1_1registration_1_1dao_1_1CertificateDAO"/>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/dao/CertificateDAOImpl.java" line="16" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/dao/CertificateDAOImpl.java" bodystart="16" bodyend="107"/>
+    <listofallmembers>
+      <member refid="classportal_1_1registration_1_1dao_1_1CertificateDAOImpl_1a46214fc34d32586747e7d9b7ff0a735d" prot="public" virt="non-virtual"><scope>portal::registration::dao::CertificateDAOImpl</scope><name>delete</name></member>
+      <member refid="classportal_1_1registration_1_1dao_1_1CertificateDAOImpl_1a4baa20618a158327206b303a62b469e7" prot="public" virt="non-virtual"><scope>portal::registration::dao::CertificateDAOImpl</scope><name>edit</name></member>
+      <member refid="classportal_1_1registration_1_1dao_1_1CertificateDAOImpl_1aed1fed865abe0006ad14bdf5dffe2932" prot="public" virt="non-virtual"><scope>portal::registration::dao::CertificateDAOImpl</scope><name>findById</name></member>
+      <member refid="classportal_1_1registration_1_1dao_1_1CertificateDAOImpl_1a3e023e8f1bb0aed1b21dc556f148a640" prot="public" virt="non-virtual"><scope>portal::registration::dao::CertificateDAOImpl</scope><name>findById</name></member>
+      <member refid="classportal_1_1registration_1_1dao_1_1CertificateDAOImpl_1a2e41d81ff0e96ed91c4793080fc82071" prot="private" virt="non-virtual"><scope>portal::registration::dao::CertificateDAOImpl</scope><name>log</name></member>
+      <member refid="classportal_1_1registration_1_1dao_1_1CertificateDAOImpl_1a6131a112c85bb539f61dc079d8afcbbb" prot="public" virt="non-virtual"><scope>portal::registration::dao::CertificateDAOImpl</scope><name>save</name></member>
+      <member refid="classportal_1_1registration_1_1dao_1_1CertificateDAOImpl_1a14bdf753d92377fe970839b6f362ef4f" prot="private" virt="non-virtual"><scope>portal::registration::dao::CertificateDAOImpl</scope><name>sessionFactory</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

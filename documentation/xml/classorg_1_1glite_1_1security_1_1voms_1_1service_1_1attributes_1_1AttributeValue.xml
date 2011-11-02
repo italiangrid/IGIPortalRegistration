@@ -1,0 +1,341 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue" kind="class" prot="public">
+    <compoundname>org::glite::security::voms::service::attributes::AttributeValue</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1a1cbf215d1cf7105a3680f39d81a8a6c5" prot="private" static="no" mutable="no">
+        <type><ref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeClass" kindref="compound">org.glite.security.voms.service.attributes.AttributeClass</ref></type>
+        <definition>org.glite.security.voms.service.attributes.AttributeClass org.glite.security.voms.service.attributes.AttributeValue.attributeClass</definition>
+        <argsstring></argsstring>
+        <name>attributeClass</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/AttributeValue.java" line="11" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/AttributeValue.java" bodystart="11" bodyend="-1"/>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1a00598f8df5a5be5ec28eaeebe49da09e" compoundref="AttributeValue_8java" startline="20" endline="27">org.glite.security.voms.service.attributes.AttributeValue::AttributeValue</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1a1f9ea73b48fb45e648749aaca3bed059" compoundref="AttributeValue_8java" startline="90" endline="112">org.glite.security.voms.service.attributes.AttributeValue::equals</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1a077926e599abfddc1625730f3ef269e8" compoundref="AttributeValue_8java" startline="35" endline="37">org.glite.security.voms.service.attributes.AttributeValue::getAttributeClass</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1ac6e8e91cb7ca69028c0de65b6ba3e684" compoundref="AttributeValue_8java" startline="45" endline="47">org.glite.security.voms.service.attributes.AttributeValue::setAttributeClass</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1acfb2dbac22d0f61179a66e37178845fd" prot="private" static="no" mutable="no">
+        <type>java.lang.String</type>
+        <definition>java.lang.String org.glite.security.voms.service.attributes.AttributeValue.context</definition>
+        <argsstring></argsstring>
+        <name>context</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/AttributeValue.java" line="13" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/AttributeValue.java" bodystart="13" bodyend="-1"/>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1a00598f8df5a5be5ec28eaeebe49da09e" compoundref="AttributeValue_8java" startline="20" endline="27">org.glite.security.voms.service.attributes.AttributeValue::AttributeValue</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1a1f9ea73b48fb45e648749aaca3bed059" compoundref="AttributeValue_8java" startline="90" endline="112">org.glite.security.voms.service.attributes.AttributeValue::equals</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1a91e49b78a55daf65c1f1a1178f6c3b1a" compoundref="AttributeValue_8java" startline="55" endline="57">org.glite.security.voms.service.attributes.AttributeValue::getContext</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1a831f95600ae460667f89178d75a3689d" compoundref="AttributeValue_8java" startline="65" endline="67">org.glite.security.voms.service.attributes.AttributeValue::setContext</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1aa1f50539b35f3efd45c50ca8165f52d8" prot="private" static="no" mutable="no">
+        <type>java.lang.String</type>
+        <definition>java.lang.String org.glite.security.voms.service.attributes.AttributeValue.value</definition>
+        <argsstring></argsstring>
+        <name>value</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/AttributeValue.java" line="15" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/AttributeValue.java" bodystart="15" bodyend="-1"/>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1a00598f8df5a5be5ec28eaeebe49da09e" compoundref="AttributeValue_8java" startline="20" endline="27">org.glite.security.voms.service.attributes.AttributeValue::AttributeValue</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1a1f9ea73b48fb45e648749aaca3bed059" compoundref="AttributeValue_8java" startline="90" endline="112">org.glite.security.voms.service.attributes.AttributeValue::equals</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1a4d3aeb584986394b980733fcf954d2fa" compoundref="AttributeValue_8java" startline="75" endline="77">org.glite.security.voms.service.attributes.AttributeValue::getValue</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1ab5e9f4411b420dc6c8041bf4a0d45067" compoundref="AttributeValue_8java" startline="85" endline="87">org.glite.security.voms.service.attributes.AttributeValue::setValue</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1acd87aec60573e754e6fccb6490b6e70a" prot="private" static="no" mutable="no">
+        <type>java.lang.Object</type>
+        <definition>java.lang.Object org.glite.security.voms.service.attributes.AttributeValue.__equalsCalc</definition>
+        <argsstring></argsstring>
+        <name>__equalsCalc</name>
+        <initializer> null</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/AttributeValue.java" line="89" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/AttributeValue.java" bodystart="89" bodyend="-1"/>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1a1f9ea73b48fb45e648749aaca3bed059" compoundref="AttributeValue_8java" startline="90" endline="112">org.glite.security.voms.service.attributes.AttributeValue::equals</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1a6c0c0a14443e29ef8d0994afc223e593" prot="private" static="no" mutable="no">
+        <type>boolean</type>
+        <definition>boolean org.glite.security.voms.service.attributes.AttributeValue.__hashCodeCalc</definition>
+        <argsstring></argsstring>
+        <name>__hashCodeCalc</name>
+        <initializer> false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/AttributeValue.java" line="114" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/AttributeValue.java" bodystart="114" bodyend="-1"/>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1ad456b6d90c4ade061e035f75e5c4f661" compoundref="AttributeValue_8java" startline="115" endline="132">org.glite.security.voms.service.attributes.AttributeValue::hashCode</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1aad8d9c5d9af13c460f5d5fce5408eed9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>org.glite.security.voms.service.attributes.AttributeValue.AttributeValue</definition>
+        <argsstring>()</argsstring>
+        <name>AttributeValue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/AttributeValue.java" line="17" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/AttributeValue.java" bodystart="17" bodyend="18"/>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1a1f9ea73b48fb45e648749aaca3bed059" compoundref="AttributeValue_8java" startline="90" endline="112">org.glite.security.voms.service.attributes.AttributeValue::equals</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1a00598f8df5a5be5ec28eaeebe49da09e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>org.glite.security.voms.service.attributes.AttributeValue.AttributeValue</definition>
+        <argsstring>(org.glite.security.voms.service.attributes.AttributeClass attributeClass, java.lang.String context, java.lang.String value)</argsstring>
+        <name>AttributeValue</name>
+        <param>
+          <type><ref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeClass" kindref="compound">org.glite.security.voms.service.attributes.AttributeClass</ref></type>
+          <declname>attributeClass</declname>
+        </param>
+        <param>
+          <type>java.lang.String</type>
+          <declname>context</declname>
+        </param>
+        <param>
+          <type>java.lang.String</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/AttributeValue.java" line="23" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/AttributeValue.java" bodystart="20" bodyend="27"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1a1cbf215d1cf7105a3680f39d81a8a6c5" compoundref="AttributeValue_8java" startline="11">org.glite.security.voms.service.attributes.AttributeValue::attributeClass</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1acfb2dbac22d0f61179a66e37178845fd" compoundref="AttributeValue_8java" startline="13">org.glite.security.voms.service.attributes.AttributeValue::context</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1aa1f50539b35f3efd45c50ca8165f52d8" compoundref="AttributeValue_8java" startline="15">org.glite.security.voms.service.attributes.AttributeValue::value</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1a077926e599abfddc1625730f3ef269e8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeClass" kindref="compound">org.glite.security.voms.service.attributes.AttributeClass</ref></type>
+        <definition>org.glite.security.voms.service.attributes.AttributeClass org.glite.security.voms.service.attributes.AttributeValue.getAttributeClass</definition>
+        <argsstring>()</argsstring>
+        <name>getAttributeClass</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets the attributeClass value for this <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue" kindref="compound">AttributeValue</ref>.</para><para><simplesect kind="return"><para>attributeClass </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/AttributeValue.java" line="35" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/AttributeValue.java" bodystart="35" bodyend="37"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1a1cbf215d1cf7105a3680f39d81a8a6c5" compoundref="AttributeValue_8java" startline="11">org.glite.security.voms.service.attributes.AttributeValue::attributeClass</references>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1a1f9ea73b48fb45e648749aaca3bed059" compoundref="AttributeValue_8java" startline="90" endline="112">org.glite.security.voms.service.attributes.AttributeValue::equals</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1ad456b6d90c4ade061e035f75e5c4f661" compoundref="AttributeValue_8java" startline="115" endline="132">org.glite.security.voms.service.attributes.AttributeValue::hashCode</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1ac6e8e91cb7ca69028c0de65b6ba3e684" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.attributes.AttributeValue.setAttributeClass</definition>
+        <argsstring>(org.glite.security.voms.service.attributes.AttributeClass attributeClass)</argsstring>
+        <name>setAttributeClass</name>
+        <param>
+          <type><ref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeClass" kindref="compound">org.glite.security.voms.service.attributes.AttributeClass</ref></type>
+          <declname>attributeClass</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the attributeClass value for this <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue" kindref="compound">AttributeValue</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>attributeClass</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/AttributeValue.java" line="45" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/AttributeValue.java" bodystart="45" bodyend="47"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1a1cbf215d1cf7105a3680f39d81a8a6c5" compoundref="AttributeValue_8java" startline="11">org.glite.security.voms.service.attributes.AttributeValue::attributeClass</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1a91e49b78a55daf65c1f1a1178f6c3b1a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>java.lang.String</type>
+        <definition>java.lang.String org.glite.security.voms.service.attributes.AttributeValue.getContext</definition>
+        <argsstring>()</argsstring>
+        <name>getContext</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets the context value for this <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue" kindref="compound">AttributeValue</ref>.</para><para><simplesect kind="return"><para>context </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/AttributeValue.java" line="55" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/AttributeValue.java" bodystart="55" bodyend="57"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1acfb2dbac22d0f61179a66e37178845fd" compoundref="AttributeValue_8java" startline="13">org.glite.security.voms.service.attributes.AttributeValue::context</references>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1a1f9ea73b48fb45e648749aaca3bed059" compoundref="AttributeValue_8java" startline="90" endline="112">org.glite.security.voms.service.attributes.AttributeValue::equals</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1ad456b6d90c4ade061e035f75e5c4f661" compoundref="AttributeValue_8java" startline="115" endline="132">org.glite.security.voms.service.attributes.AttributeValue::hashCode</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1a831f95600ae460667f89178d75a3689d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.attributes.AttributeValue.setContext</definition>
+        <argsstring>(java.lang.String context)</argsstring>
+        <name>setContext</name>
+        <param>
+          <type>java.lang.String</type>
+          <declname>context</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the context value for this <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue" kindref="compound">AttributeValue</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>context</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/AttributeValue.java" line="65" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/AttributeValue.java" bodystart="65" bodyend="67"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1acfb2dbac22d0f61179a66e37178845fd" compoundref="AttributeValue_8java" startline="13">org.glite.security.voms.service.attributes.AttributeValue::context</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1a4d3aeb584986394b980733fcf954d2fa" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>java.lang.String</type>
+        <definition>java.lang.String org.glite.security.voms.service.attributes.AttributeValue.getValue</definition>
+        <argsstring>()</argsstring>
+        <name>getValue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets the value value for this <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue" kindref="compound">AttributeValue</ref>.</para><para><simplesect kind="return"><para>value </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/AttributeValue.java" line="75" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/AttributeValue.java" bodystart="75" bodyend="77"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1aa1f50539b35f3efd45c50ca8165f52d8" compoundref="AttributeValue_8java" startline="15">org.glite.security.voms.service.attributes.AttributeValue::value</references>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1a1f9ea73b48fb45e648749aaca3bed059" compoundref="AttributeValue_8java" startline="90" endline="112">org.glite.security.voms.service.attributes.AttributeValue::equals</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1ad456b6d90c4ade061e035f75e5c4f661" compoundref="AttributeValue_8java" startline="115" endline="132">org.glite.security.voms.service.attributes.AttributeValue::hashCode</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1ab5e9f4411b420dc6c8041bf4a0d45067" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.attributes.AttributeValue.setValue</definition>
+        <argsstring>(java.lang.String value)</argsstring>
+        <name>setValue</name>
+        <param>
+          <type>java.lang.String</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the value value for this <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue" kindref="compound">AttributeValue</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/AttributeValue.java" line="85" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/AttributeValue.java" bodystart="85" bodyend="87"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1aa1f50539b35f3efd45c50ca8165f52d8" compoundref="AttributeValue_8java" startline="15">org.glite.security.voms.service.attributes.AttributeValue::value</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1a1f9ea73b48fb45e648749aaca3bed059" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>synchronized boolean</type>
+        <definition>synchronized boolean org.glite.security.voms.service.attributes.AttributeValue.equals</definition>
+        <argsstring>(java.lang.Object obj)</argsstring>
+        <name>equals</name>
+        <param>
+          <type>java.lang.Object</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/AttributeValue.java" line="90" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/AttributeValue.java" bodystart="90" bodyend="112"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1acd87aec60573e754e6fccb6490b6e70a" compoundref="AttributeValue_8java" startline="89">org.glite.security.voms.service.attributes.AttributeValue::__equalsCalc</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1a1cbf215d1cf7105a3680f39d81a8a6c5" compoundref="AttributeValue_8java" startline="11">org.glite.security.voms.service.attributes.AttributeValue::attributeClass</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1aad8d9c5d9af13c460f5d5fce5408eed9" compoundref="AttributeValue_8java" startline="17" endline="18">org.glite.security.voms.service.attributes.AttributeValue::AttributeValue</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1acfb2dbac22d0f61179a66e37178845fd" compoundref="AttributeValue_8java" startline="13">org.glite.security.voms.service.attributes.AttributeValue::context</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeClass_1a098cf5b6b36daa71ffbed1c735217dae" compoundref="AttributeClass_8java" startline="90" endline="110">org.glite.security.voms.service.attributes.AttributeClass::equals</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1a077926e599abfddc1625730f3ef269e8" compoundref="AttributeValue_8java" startline="35" endline="37">org.glite.security.voms.service.attributes.AttributeValue::getAttributeClass</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1a91e49b78a55daf65c1f1a1178f6c3b1a" compoundref="AttributeValue_8java" startline="55" endline="57">org.glite.security.voms.service.attributes.AttributeValue::getContext</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1a4d3aeb584986394b980733fcf954d2fa" compoundref="AttributeValue_8java" startline="75" endline="77">org.glite.security.voms.service.attributes.AttributeValue::getValue</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1aa1f50539b35f3efd45c50ca8165f52d8" compoundref="AttributeValue_8java" startline="15">org.glite.security.voms.service.attributes.AttributeValue::value</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1ad456b6d90c4ade061e035f75e5c4f661" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>synchronized int</type>
+        <definition>synchronized int org.glite.security.voms.service.attributes.AttributeValue.hashCode</definition>
+        <argsstring>()</argsstring>
+        <name>hashCode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/AttributeValue.java" line="115" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/AttributeValue.java" bodystart="115" bodyend="132"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1a6c0c0a14443e29ef8d0994afc223e593" compoundref="AttributeValue_8java" startline="114">org.glite.security.voms.service.attributes.AttributeValue::__hashCodeCalc</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1a077926e599abfddc1625730f3ef269e8" compoundref="AttributeValue_8java" startline="35" endline="37">org.glite.security.voms.service.attributes.AttributeValue::getAttributeClass</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1a91e49b78a55daf65c1f1a1178f6c3b1a" compoundref="AttributeValue_8java" startline="55" endline="57">org.glite.security.voms.service.attributes.AttributeValue::getContext</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1a4d3aeb584986394b980733fcf954d2fa" compoundref="AttributeValue_8java" startline="75" endline="77">org.glite.security.voms.service.attributes.AttributeValue::getValue</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeClass_1a753c75691c2c94086f480373cdfee84d" compoundref="AttributeClass_8java" startline="113" endline="128">org.glite.security.voms.service.attributes.AttributeClass::hashCode</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="440">
+        <label>org.glite.security.voms.service.attributes.AttributeValue</label>
+        <link refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue"/>
+        <childnode refid="441" relation="usage">
+          <edgelabel>attributeClass</edgelabel>
+        </childnode>
+      </node>
+      <node id="441">
+        <label>org.glite.security.voms.service.attributes.AttributeClass</label>
+        <link refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeClass"/>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/AttributeValue.java" line="10" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/AttributeValue.java" bodystart="10" bodyend="134"/>
+    <listofallmembers>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1acd87aec60573e754e6fccb6490b6e70a" prot="private" virt="non-virtual"><scope>org::glite::security::voms::service::attributes::AttributeValue</scope><name>__equalsCalc</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1a6c0c0a14443e29ef8d0994afc223e593" prot="private" virt="non-virtual"><scope>org::glite::security::voms::service::attributes::AttributeValue</scope><name>__hashCodeCalc</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1a1cbf215d1cf7105a3680f39d81a8a6c5" prot="private" virt="non-virtual"><scope>org::glite::security::voms::service::attributes::AttributeValue</scope><name>attributeClass</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1aad8d9c5d9af13c460f5d5fce5408eed9" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::attributes::AttributeValue</scope><name>AttributeValue</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1a00598f8df5a5be5ec28eaeebe49da09e" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::attributes::AttributeValue</scope><name>AttributeValue</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1acfb2dbac22d0f61179a66e37178845fd" prot="private" virt="non-virtual"><scope>org::glite::security::voms::service::attributes::AttributeValue</scope><name>context</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1a1f9ea73b48fb45e648749aaca3bed059" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::attributes::AttributeValue</scope><name>equals</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1a077926e599abfddc1625730f3ef269e8" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::attributes::AttributeValue</scope><name>getAttributeClass</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1a91e49b78a55daf65c1f1a1178f6c3b1a" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::attributes::AttributeValue</scope><name>getContext</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1a4d3aeb584986394b980733fcf954d2fa" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::attributes::AttributeValue</scope><name>getValue</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1ad456b6d90c4ade061e035f75e5c4f661" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::attributes::AttributeValue</scope><name>hashCode</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1ac6e8e91cb7ca69028c0de65b6ba3e684" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::attributes::AttributeValue</scope><name>setAttributeClass</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1a831f95600ae460667f89178d75a3689d" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::attributes::AttributeValue</scope><name>setContext</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1ab5e9f4411b420dc6c8041bf4a0d45067" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::attributes::AttributeValue</scope><name>setValue</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue_1aa1f50539b35f3efd45c50ca8165f52d8" prot="private" virt="non-virtual"><scope>org::glite::security::voms::service::attributes::AttributeValue</scope><name>value</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

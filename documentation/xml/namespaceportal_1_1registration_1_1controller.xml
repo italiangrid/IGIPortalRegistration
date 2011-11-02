@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="namespaceportal_1_1registration_1_1controller" kind="namespace">
+    <compoundname>portal::registration::controller</compoundname>
+    <innerclass refid="classportal_1_1registration_1_1controller_1_1AddUserInfoController" prot="public">portal::registration::controller::AddUserInfoController</innerclass>
+    <innerclass refid="classportal_1_1registration_1_1controller_1_1AddUserToVOController" prot="public">portal::registration::controller::AddUserToVOController</innerclass>
+    <innerclass refid="classportal_1_1registration_1_1controller_1_1AddUserToVoPresentsController" prot="public">portal::registration::controller::AddUserToVoPresentsController</innerclass>
+    <innerclass refid="classportal_1_1registration_1_1controller_1_1EditUserInfoController" prot="public">portal::registration::controller::EditUserInfoController</innerclass>
+    <innerclass refid="classportal_1_1registration_1_1controller_1_1EditUserToVoController" prot="public">portal::registration::controller::EditUserToVoController</innerclass>
+    <innerclass refid="classportal_1_1registration_1_1controller_1_1RemoveUserInfoController" prot="public">portal::registration::controller::RemoveUserInfoController</innerclass>
+    <innerclass refid="classportal_1_1registration_1_1controller_1_1RequestCertificateController" prot="public">portal::registration::controller::RequestCertificateController</innerclass>
+    <innerclass refid="classportal_1_1registration_1_1controller_1_1UploadCertController" prot="public">portal::registration::controller::UploadCertController</innerclass>
+    <innerclass refid="classportal_1_1registration_1_1controller_1_1UserInfoController" prot="public">portal::registration::controller::UserInfoController</innerclass>
+    <innerclass refid="classportal_1_1registration_1_1controller_1_1VOListController" prot="public">portal::registration::controller::VOListController</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/AddUserInfoController.java" line="1"/>
+  </compounddef>
+</doxygen>

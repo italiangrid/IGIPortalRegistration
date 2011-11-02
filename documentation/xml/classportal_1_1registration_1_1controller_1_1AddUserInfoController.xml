@@ -1,0 +1,192 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="classportal_1_1registration_1_1controller_1_1AddUserInfoController" kind="class" prot="public">
+    <compoundname>portal::registration::controller::AddUserInfoController</compoundname>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classportal_1_1registration_1_1controller_1_1AddUserInfoController_1af927058bc53f731960f2e6f060a1a2f2" prot="private" static="yes" mutable="no">
+        <type>final Logger</type>
+        <definition>final Logger portal.registration.controller.AddUserInfoController.log</definition>
+        <argsstring></argsstring>
+        <name>log</name>
+        <initializer> Logger
+			.getLogger(AddUserInfoController.class)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/AddUserInfoController.java" line="50" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/AddUserInfoController.java" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classportal_1_1registration_1_1controller_1_1AddUserInfoController_1a3c5be3236bf7b6003fea1c2ca64ef350" prot="private" static="no" mutable="no">
+        <type><ref refid="interfaceportal_1_1registration_1_1services_1_1IdpService" kindref="compound">IdpService</ref></type>
+        <definition>IdpService portal.registration.controller.AddUserInfoController.idpService</definition>
+        <argsstring></argsstring>
+        <name>idpService</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/AddUserInfoController.java" line="53" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/AddUserInfoController.java" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classportal_1_1registration_1_1controller_1_1AddUserInfoController_1a1a21bbb7663d92f2485157535a250956" prot="private" static="no" mutable="no">
+        <type><ref refid="interfaceportal_1_1registration_1_1services_1_1UserInfoService" kindref="compound">UserInfoService</ref></type>
+        <definition>UserInfoService portal.registration.controller.AddUserInfoController.userInfoService</definition>
+        <argsstring></argsstring>
+        <name>userInfoService</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/AddUserInfoController.java" line="56" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/AddUserInfoController.java" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classportal_1_1registration_1_1controller_1_1AddUserInfoController_1abcb27dd8d2bd04640df8db01d5325dc9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classportal_1_1registration_1_1domain_1_1UserInfo" kindref="compound">UserInfo</ref></type>
+        <definition>UserInfo portal.registration.controller.AddUserInfoController.getCommandObject</definition>
+        <argsstring>()</argsstring>
+        <name>getCommandObject</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/AddUserInfoController.java" line="59" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/AddUserInfoController.java" bodystart="59" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1controller_1_1AddUserInfoController_1a1f6461d624bb25d839f173e912c6a9f0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String portal.registration.controller.AddUserInfoController.showUserInfoForm</definition>
+        <argsstring>(RenderResponse response)</argsstring>
+        <name>showUserInfoForm</name>
+        <param>
+          <type>RenderResponse</type>
+          <declname>response</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/AddUserInfoController.java" line="64" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/AddUserInfoController.java" bodystart="64" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1controller_1_1AddUserInfoController_1a925c7078048b00218ff13515a24c3891" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void portal.registration.controller.AddUserInfoController.initBinder</definition>
+        <argsstring>(WebDataBinder binder)</argsstring>
+        <name>initBinder</name>
+        <param>
+          <type>WebDataBinder</type>
+          <declname>binder</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/AddUserInfoController.java" line="69" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/AddUserInfoController.java" bodystart="69" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1controller_1_1AddUserInfoController_1a2750658abc595b838f458b87464e51fe" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void portal.registration.controller.AddUserInfoController.addUserInfo</definition>
+        <argsstring>(@Valid @ModelAttribute UserInfo userInfo, BindingResult bindingResult, ActionRequest request, ActionResponse response, SessionStatus sessionStatus)</argsstring>
+        <name>addUserInfo</name>
+        <param>
+          <type>@Valid @ModelAttribute <ref refid="classportal_1_1registration_1_1domain_1_1UserInfo" kindref="compound">UserInfo</ref></type>
+          <declname>userInfo</declname>
+        </param>
+        <param>
+          <type>BindingResult</type>
+          <declname>bindingResult</declname>
+        </param>
+        <param>
+          <type>ActionRequest</type>
+          <declname>request</declname>
+        </param>
+        <param>
+          <type>ActionResponse</type>
+          <declname>response</declname>
+        </param>
+        <param>
+          <type>SessionStatus</type>
+          <declname>sessionStatus</declname>
+        </param>
+        <exceptions> throws PortalException, SystemException </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/AddUserInfoController.java" line="77" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/AddUserInfoController.java" bodystart="74" bodyend="212"/>
+        <references refid="interfaceportal_1_1registration_1_1services_1_1IdpService_1a86683b14e9bb0cbedc41bf0aea7f6b66">portal.registration.services.IdpService::findById</references>
+        <references refid="interfaceportal_1_1registration_1_1services_1_1UserInfoService_1abb06f632b024da6c7458c5d0ee4cc456">portal.registration.services.UserInfoService::save</references>
+        <references refid="classportal_1_1registration_1_1utils_1_1MyValidator_1acdf993cfac49201b241d31284851e165" compoundref="MyValidator_8java" startline="17" endline="86">portal.registration.utils.MyValidator::validate</references>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1controller_1_1AddUserInfoController_1a75d0eda43cc0f5e93d292744d81b9e6e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>List&lt; <ref refid="classportal_1_1registration_1_1domain_1_1Idp" kindref="compound">Idp</ref> &gt;</type>
+        <definition>List&lt;Idp&gt; portal.registration.controller.AddUserInfoController.getIdps</definition>
+        <argsstring>()</argsstring>
+        <name>getIdps</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/AddUserInfoController.java" line="215" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/AddUserInfoController.java" bodystart="215" bodyend="217"/>
+        <references refid="interfaceportal_1_1registration_1_1services_1_1IdpService_1a960ddec4986911fa1588e72c9cc10c0f">portal.registration.services.IdpService::getAllIdp</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="419">
+        <label>portal.registration.controller.AddUserInfoController</label>
+        <link refid="classportal_1_1registration_1_1controller_1_1AddUserInfoController"/>
+        <childnode refid="420" relation="usage">
+          <edgelabel>log</edgelabel>
+        </childnode>
+        <childnode refid="421" relation="usage">
+          <edgelabel>userInfoService</edgelabel>
+        </childnode>
+        <childnode refid="422" relation="usage">
+          <edgelabel>idpService</edgelabel>
+        </childnode>
+      </node>
+      <node id="420">
+        <label>Logger</label>
+      </node>
+      <node id="421">
+        <label>portal.registration.services.UserInfoService</label>
+        <link refid="interfaceportal_1_1registration_1_1services_1_1UserInfoService"/>
+      </node>
+      <node id="422">
+        <label>portal.registration.services.IdpService</label>
+        <link refid="interfaceportal_1_1registration_1_1services_1_1IdpService"/>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/AddUserInfoController.java" line="47" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/AddUserInfoController.java" bodystart="47" bodyend="219"/>
+    <listofallmembers>
+      <member refid="classportal_1_1registration_1_1controller_1_1AddUserInfoController_1a2750658abc595b838f458b87464e51fe" prot="public" virt="non-virtual"><scope>portal::registration::controller::AddUserInfoController</scope><name>addUserInfo</name></member>
+      <member refid="classportal_1_1registration_1_1controller_1_1AddUserInfoController_1abcb27dd8d2bd04640df8db01d5325dc9" prot="public" virt="non-virtual"><scope>portal::registration::controller::AddUserInfoController</scope><name>getCommandObject</name></member>
+      <member refid="classportal_1_1registration_1_1controller_1_1AddUserInfoController_1a75d0eda43cc0f5e93d292744d81b9e6e" prot="public" virt="non-virtual"><scope>portal::registration::controller::AddUserInfoController</scope><name>getIdps</name></member>
+      <member refid="classportal_1_1registration_1_1controller_1_1AddUserInfoController_1a3c5be3236bf7b6003fea1c2ca64ef350" prot="private" virt="non-virtual"><scope>portal::registration::controller::AddUserInfoController</scope><name>idpService</name></member>
+      <member refid="classportal_1_1registration_1_1controller_1_1AddUserInfoController_1a925c7078048b00218ff13515a24c3891" prot="public" virt="non-virtual"><scope>portal::registration::controller::AddUserInfoController</scope><name>initBinder</name></member>
+      <member refid="classportal_1_1registration_1_1controller_1_1AddUserInfoController_1af927058bc53f731960f2e6f060a1a2f2" prot="private" virt="non-virtual"><scope>portal::registration::controller::AddUserInfoController</scope><name>log</name></member>
+      <member refid="classportal_1_1registration_1_1controller_1_1AddUserInfoController_1a1f6461d624bb25d839f173e912c6a9f0" prot="public" virt="non-virtual"><scope>portal::registration::controller::AddUserInfoController</scope><name>showUserInfoForm</name></member>
+      <member refid="classportal_1_1registration_1_1controller_1_1AddUserInfoController_1a1a21bbb7663d92f2485157535a250956" prot="private" virt="non-virtual"><scope>portal::registration::controller::AddUserInfoController</scope><name>userInfoService</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

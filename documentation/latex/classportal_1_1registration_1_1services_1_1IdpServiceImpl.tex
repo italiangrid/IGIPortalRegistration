@@ -1,0 +1,242 @@
+\hypertarget{classportal_1_1registration_1_1services_1_1IdpServiceImpl}{
+\section{portal.registration.services.IdpServiceImpl Class Reference}
+\label{classportal_1_1registration_1_1services_1_1IdpServiceImpl}\index{portal::registration::services::IdpServiceImpl@{portal::registration::services::IdpServiceImpl}}
+}
+
+
+Inheritance diagram for portal.registration.services.IdpServiceImpl:
+
+
+Collaboration diagram for portal.registration.services.IdpServiceImpl:
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classportal_1_1registration_1_1services_1_1IdpServiceImpl_ae5a32bff76d7cfacf83a1211ddc79cc6}{save} (\hyperlink{classportal_1_1registration_1_1domain_1_1Idp}{Idp} transientInstance)
+\item 
+void \hyperlink{classportal_1_1registration_1_1services_1_1IdpServiceImpl_ae56e8d3a6e827ab559294bff8f68f3cb}{delete} (\hyperlink{classportal_1_1registration_1_1domain_1_1Idp}{Idp} persistentInstance)
+\item 
+\hyperlink{classportal_1_1registration_1_1domain_1_1Idp}{Idp} \hyperlink{classportal_1_1registration_1_1services_1_1IdpServiceImpl_a019ee67c777bd792515072a59c32e1e9}{findById} (Integer id)
+\item 
+String \hyperlink{classportal_1_1registration_1_1services_1_1IdpServiceImpl_a06dd428d0f1451712432d8cc63091aa1}{findByIdp} (\hyperlink{classportal_1_1registration_1_1domain_1_1Idp}{Idp} idp)
+\item 
+List$<$ \hyperlink{classportal_1_1registration_1_1domain_1_1Idp}{Idp} $>$ \hyperlink{classportal_1_1registration_1_1services_1_1IdpServiceImpl_a1ef0bbe03c964c5074dccdb1d9709957}{getAllIdp} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{interfaceportal_1_1registration_1_1dao_1_1IdpDAO}{IdpDAO} \hyperlink{classportal_1_1registration_1_1services_1_1IdpServiceImpl_a3d073eb979463f04014e05bddba54d7c}{idpDAO}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static final Log \hyperlink{classportal_1_1registration_1_1services_1_1IdpServiceImpl_a2aff21e86d4ff71dd5070a6d5ec1107e}{log} = LogFactory.getLog(IdpServiceImpl.class)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 16 of file IdpServiceImpl.java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classportal_1_1registration_1_1services_1_1IdpServiceImpl_ae56e8d3a6e827ab559294bff8f68f3cb}{
+\index{portal::registration::services::IdpServiceImpl@{portal::registration::services::IdpServiceImpl}!delete@{delete}}
+\index{delete@{delete}!portal::registration::services::IdpServiceImpl@{portal::registration::services::IdpServiceImpl}}
+\subsubsection[{delete}]{\setlength{\rightskip}{0pt plus 5cm}void portal.registration.services.IdpServiceImpl.delete (
+\begin{DoxyParamCaption}
+\item[{{\bf Idp}}]{persistentInstance}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1services_1_1IdpServiceImpl_ae56e8d3a6e827ab559294bff8f68f3cb}
+
+
+Implements \hyperlink{interfaceportal_1_1registration_1_1services_1_1IdpService_acae983320a6d563924da831b37688d3e}{portal.registration.services.IdpService}.
+
+
+
+Definition at line 30 of file IdpServiceImpl.java.
+
+
+
+References portal.registration.dao.IdpDAO.delete(), portal.registration.services.IdpServiceImpl.idpDAO, and portal.registration.services.IdpServiceImpl.log.
+
+
+\begin{DoxyCode}
+                                                   {
+                log.debug("removing Idp instance");
+                idpDAO.delete(persistentInstance);
+        }
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+
+
+\hypertarget{classportal_1_1registration_1_1services_1_1IdpServiceImpl_a019ee67c777bd792515072a59c32e1e9}{
+\index{portal::registration::services::IdpServiceImpl@{portal::registration::services::IdpServiceImpl}!findById@{findById}}
+\index{findById@{findById}!portal::registration::services::IdpServiceImpl@{portal::registration::services::IdpServiceImpl}}
+\subsubsection[{findById}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Idp} portal.registration.services.IdpServiceImpl.findById (
+\begin{DoxyParamCaption}
+\item[{Integer}]{id}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1services_1_1IdpServiceImpl_a019ee67c777bd792515072a59c32e1e9}
+
+
+Implements \hyperlink{interfaceportal_1_1registration_1_1services_1_1IdpService_a86683b14e9bb0cbedc41bf0aea7f6b66}{portal.registration.services.IdpService}.
+
+
+
+Definition at line 36 of file IdpServiceImpl.java.
+
+
+
+References portal.registration.dao.IdpDAO.findById(), portal.registration.services.IdpServiceImpl.idpDAO, and portal.registration.services.IdpServiceImpl.log.
+
+
+\begin{DoxyCode}
+                                        {
+                log.debug("getting Idp instance with id: " + id);
+                return idpDAO.findById(id);
+        }
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+
+
+\hypertarget{classportal_1_1registration_1_1services_1_1IdpServiceImpl_a06dd428d0f1451712432d8cc63091aa1}{
+\index{portal::registration::services::IdpServiceImpl@{portal::registration::services::IdpServiceImpl}!findByIdp@{findByIdp}}
+\index{findByIdp@{findByIdp}!portal::registration::services::IdpServiceImpl@{portal::registration::services::IdpServiceImpl}}
+\subsubsection[{findByIdp}]{\setlength{\rightskip}{0pt plus 5cm}String portal.registration.services.IdpServiceImpl.findByIdp (
+\begin{DoxyParamCaption}
+\item[{{\bf Idp}}]{idp}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1services_1_1IdpServiceImpl_a06dd428d0f1451712432d8cc63091aa1}
+
+
+Implements \hyperlink{interfaceportal_1_1registration_1_1services_1_1IdpService_ab0052670b9f95e31d046e7bf43c432b8}{portal.registration.services.IdpService}.
+
+
+
+Definition at line 42 of file IdpServiceImpl.java.
+
+
+
+References portal.registration.dao.IdpDAO.findById(), portal.registration.domain.Idp.getIdIdp(), portal.registration.services.IdpServiceImpl.idpDAO, and portal.registration.services.IdpServiceImpl.log.
+
+
+\begin{DoxyCode}
+                                         {
+                log.debug("getting Idp instance");
+                return idpDAO.findById(idp.getIdIdp()).getIdpname();
+        }
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+
+
+\hypertarget{classportal_1_1registration_1_1services_1_1IdpServiceImpl_a1ef0bbe03c964c5074dccdb1d9709957}{
+\index{portal::registration::services::IdpServiceImpl@{portal::registration::services::IdpServiceImpl}!getAllIdp@{getAllIdp}}
+\index{getAllIdp@{getAllIdp}!portal::registration::services::IdpServiceImpl@{portal::registration::services::IdpServiceImpl}}
+\subsubsection[{getAllIdp}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Idp}$>$ portal.registration.services.IdpServiceImpl.getAllIdp (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1services_1_1IdpServiceImpl_a1ef0bbe03c964c5074dccdb1d9709957}
+
+
+Implements \hyperlink{interfaceportal_1_1registration_1_1services_1_1IdpService_a960ddec4986911fa1588e72c9cc10c0f}{portal.registration.services.IdpService}.
+
+
+
+Definition at line 48 of file IdpServiceImpl.java.
+
+
+
+References portal.registration.dao.IdpDAO.getAllIdp(), portal.registration.services.IdpServiceImpl.idpDAO, and portal.registration.services.IdpServiceImpl.log.
+
+
+\begin{DoxyCode}
+                                     {
+                log.debug("getting all Idp instance");
+                return idpDAO.getAllIdp();
+        }
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+
+
+\hypertarget{classportal_1_1registration_1_1services_1_1IdpServiceImpl_ae5a32bff76d7cfacf83a1211ddc79cc6}{
+\index{portal::registration::services::IdpServiceImpl@{portal::registration::services::IdpServiceImpl}!save@{save}}
+\index{save@{save}!portal::registration::services::IdpServiceImpl@{portal::registration::services::IdpServiceImpl}}
+\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}void portal.registration.services.IdpServiceImpl.save (
+\begin{DoxyParamCaption}
+\item[{{\bf Idp}}]{transientInstance}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1services_1_1IdpServiceImpl_ae5a32bff76d7cfacf83a1211ddc79cc6}
+
+
+Implements \hyperlink{interfaceportal_1_1registration_1_1services_1_1IdpService_a9580d378bcabcb2937fe25d864cebfad}{portal.registration.services.IdpService}.
+
+
+
+Definition at line 24 of file IdpServiceImpl.java.
+
+
+
+References portal.registration.services.IdpServiceImpl.idpDAO, portal.registration.services.IdpServiceImpl.log, and portal.registration.dao.IdpDAO.save().
+
+
+\begin{DoxyCode}
+                                                {
+                log.debug("persisting Idp instance");
+                idpDAO.save(transientInstance);
+        }
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classportal_1_1registration_1_1services_1_1IdpServiceImpl_a3d073eb979463f04014e05bddba54d7c}{
+\index{portal::registration::services::IdpServiceImpl@{portal::registration::services::IdpServiceImpl}!idpDAO@{idpDAO}}
+\index{idpDAO@{idpDAO}!portal::registration::services::IdpServiceImpl@{portal::registration::services::IdpServiceImpl}}
+\subsubsection[{idpDAO}]{\setlength{\rightskip}{0pt plus 5cm}{\bf IdpDAO} {\bf portal.registration.services.IdpServiceImpl.idpDAO}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classportal_1_1registration_1_1services_1_1IdpServiceImpl_a3d073eb979463f04014e05bddba54d7c}
+
+
+Definition at line 21 of file IdpServiceImpl.java.
+
+
+
+Referenced by portal.registration.services.IdpServiceImpl.delete(), portal.registration.services.IdpServiceImpl.findById(), portal.registration.services.IdpServiceImpl.findByIdp(), portal.registration.services.IdpServiceImpl.getAllIdp(), and portal.registration.services.IdpServiceImpl.save().
+
+\hypertarget{classportal_1_1registration_1_1services_1_1IdpServiceImpl_a2aff21e86d4ff71dd5070a6d5ec1107e}{
+\index{portal::registration::services::IdpServiceImpl@{portal::registration::services::IdpServiceImpl}!log@{log}}
+\index{log@{log}!portal::registration::services::IdpServiceImpl@{portal::registration::services::IdpServiceImpl}}
+\subsubsection[{log}]{\setlength{\rightskip}{0pt plus 5cm}final Log {\bf portal.registration.services.IdpServiceImpl.log} = LogFactory.getLog(IdpServiceImpl.class)\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{classportal_1_1registration_1_1services_1_1IdpServiceImpl_a2aff21e86d4ff71dd5070a6d5ec1107e}
+
+
+Definition at line 18 of file IdpServiceImpl.java.
+
+
+
+Referenced by portal.registration.services.IdpServiceImpl.delete(), portal.registration.services.IdpServiceImpl.findById(), portal.registration.services.IdpServiceImpl.findByIdp(), portal.registration.services.IdpServiceImpl.getAllIdp(), and portal.registration.services.IdpServiceImpl.save().
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/services/\hyperlink{IdpServiceImpl_8java}{IdpServiceImpl.java}\end{DoxyCompactItemize}

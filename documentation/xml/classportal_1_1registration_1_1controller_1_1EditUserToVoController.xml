@@ -1,0 +1,258 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="classportal_1_1registration_1_1controller_1_1EditUserToVoController" kind="class" prot="public">
+    <compoundname>portal::registration::controller::EditUserToVoController</compoundname>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classportal_1_1registration_1_1controller_1_1EditUserToVoController_1abc91983450be169b71a43139da136573" prot="private" static="yes" mutable="no">
+        <type>final Logger</type>
+        <definition>final Logger portal.registration.controller.EditUserToVoController.log</definition>
+        <argsstring></argsstring>
+        <name>log</name>
+        <initializer> Logger
+			.getLogger(EditUserToVoController.class)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/EditUserToVoController.java" line="34" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/EditUserToVoController.java" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classportal_1_1registration_1_1controller_1_1EditUserToVoController_1adfc9f529073107272adc85ef5af0ba64" prot="private" static="no" mutable="no">
+        <type><ref refid="interfaceportal_1_1registration_1_1services_1_1UserInfoService" kindref="compound">UserInfoService</ref></type>
+        <definition>UserInfoService portal.registration.controller.EditUserToVoController.userInfoService</definition>
+        <argsstring></argsstring>
+        <name>userInfoService</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/EditUserToVoController.java" line="37" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/EditUserToVoController.java" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classportal_1_1registration_1_1controller_1_1EditUserToVoController_1a6b47f2cf57b93f14868b6643a7a05647" prot="private" static="no" mutable="no">
+        <type><ref refid="interfaceportal_1_1registration_1_1services_1_1VoService" kindref="compound">VoService</ref></type>
+        <definition>VoService portal.registration.controller.EditUserToVoController.voService</definition>
+        <argsstring></argsstring>
+        <name>voService</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/EditUserToVoController.java" line="40" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/EditUserToVoController.java" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classportal_1_1registration_1_1controller_1_1EditUserToVoController_1ab8208b9d0524717c5d5c3b7ce8cfbfd8" prot="private" static="no" mutable="no">
+        <type><ref refid="interfaceportal_1_1registration_1_1services_1_1UserToVoService" kindref="compound">UserToVoService</ref></type>
+        <definition>UserToVoService portal.registration.controller.EditUserToVoController.userToVoService</definition>
+        <argsstring></argsstring>
+        <name>userToVoService</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/EditUserToVoController.java" line="43" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/EditUserToVoController.java" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classportal_1_1registration_1_1controller_1_1EditUserToVoController_1ae7631577179067193dd0ff2ad24631b1" prot="private" static="no" mutable="no">
+        <type><ref refid="interfaceportal_1_1registration_1_1services_1_1FqanService" kindref="compound">FqanService</ref></type>
+        <definition>FqanService portal.registration.controller.EditUserToVoController.fqanService</definition>
+        <argsstring></argsstring>
+        <name>fqanService</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/EditUserToVoController.java" line="46" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/EditUserToVoController.java" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classportal_1_1registration_1_1controller_1_1EditUserToVoController_1a6fb863621d3ccd57b7c228d642167c79" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String portal.registration.controller.EditUserToVoController.showEditUserInfoForm</definition>
+        <argsstring>()</argsstring>
+        <name>showEditUserInfoForm</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/EditUserToVoController.java" line="49" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/EditUserToVoController.java" bodystart="49" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1controller_1_1EditUserToVoController_1a7e131f83378f7f675880aafc3deed55c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classportal_1_1registration_1_1domain_1_1UserInfo" kindref="compound">UserInfo</ref></type>
+        <definition>UserInfo portal.registration.controller.EditUserToVoController.getUserInfo</definition>
+        <argsstring>(@RequestParam int userId)</argsstring>
+        <name>getUserInfo</name>
+        <param>
+          <type>@RequestParam int</type>
+          <declname>userId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/EditUserToVoController.java" line="54" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/EditUserToVoController.java" bodystart="54" bodyend="56"/>
+        <references refid="interfaceportal_1_1registration_1_1services_1_1UserInfoService_1a27530d570ec61a3376c655212d0f070a">portal.registration.services.UserInfoService::findById</references>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1controller_1_1EditUserToVoController_1ab5f3b0f3201e6fead40534252c9f6836" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classportal_1_1registration_1_1domain_1_1UserToVo" kindref="compound">UserToVo</ref></type>
+        <definition>UserToVo portal.registration.controller.EditUserToVoController.getUserToVo</definition>
+        <argsstring>(@RequestParam int userId,@RequestParam int idVo)</argsstring>
+        <name>getUserToVo</name>
+        <param>
+          <type>@RequestParam int</type>
+          <declname>userId</declname>
+        </param>
+        <param>
+          <type>@RequestParam int</type>
+          <declname>idVo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/EditUserToVoController.java" line="59" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/EditUserToVoController.java" bodystart="59" bodyend="61"/>
+        <references refid="interfaceportal_1_1registration_1_1services_1_1UserToVoService_1ab5f5da32c585f0fcd1eac1ac0302b733">portal.registration.services.UserToVoService::findById</references>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1controller_1_1EditUserToVoController_1a47df37128ba11b11fc01d8875e33c7ef" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classportal_1_1registration_1_1domain_1_1Vo" kindref="compound">Vo</ref></type>
+        <definition>Vo portal.registration.controller.EditUserToVoController.getVO</definition>
+        <argsstring>(@RequestParam int idVo)</argsstring>
+        <name>getVO</name>
+        <param>
+          <type>@RequestParam int</type>
+          <declname>idVo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/EditUserToVoController.java" line="64" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/EditUserToVoController.java" bodystart="64" bodyend="67"/>
+        <references refid="interfaceportal_1_1registration_1_1services_1_1VoService_1ade41c70e67fa304a7e4bea814b454b3e">portal.registration.services.VoService::findById</references>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1controller_1_1EditUserToVoController_1a4f02e82cbea1050780b3cf7e020f6a4d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>List&lt; <ref refid="classportal_1_1registration_1_1domain_1_1Fqan" kindref="compound">Fqan</ref> &gt;</type>
+        <definition>List&lt;Fqan&gt; portal.registration.controller.EditUserToVoController.getFqans</definition>
+        <argsstring>(@RequestParam int userId,@RequestParam int idVo)</argsstring>
+        <name>getFqans</name>
+        <param>
+          <type>@RequestParam int</type>
+          <declname>userId</declname>
+        </param>
+        <param>
+          <type>@RequestParam int</type>
+          <declname>idVo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/EditUserToVoController.java" line="75" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/EditUserToVoController.java" bodystart="75" bodyend="77"/>
+        <references refid="interfaceportal_1_1registration_1_1services_1_1FqanService_1aca0e7fff1b64885dc7d1454fa9451d04">portal.registration.services.FqanService::findByIdVo</references>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1controller_1_1EditUserToVoController_1aeb87d1e842bf381602343632f23f58e2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void portal.registration.controller.EditUserToVoController.addUserToVo</definition>
+        <argsstring>(ActionRequest request, ActionResponse response, SessionStatus sessionStatus)</argsstring>
+        <name>addUserToVo</name>
+        <param>
+          <type>ActionRequest</type>
+          <declname>request</declname>
+        </param>
+        <param>
+          <type>ActionResponse</type>
+          <declname>response</declname>
+        </param>
+        <param>
+          <type>SessionStatus</type>
+          <declname>sessionStatus</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/EditUserToVoController.java" line="81" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/EditUserToVoController.java" bodystart="80" bodyend="114"/>
+        <references refid="interfaceportal_1_1registration_1_1services_1_1UserToVoService_1ab5f5da32c585f0fcd1eac1ac0302b733">portal.registration.services.UserToVoService::findById</references>
+        <references refid="classportal_1_1registration_1_1domain_1_1UserToVo_1ab43dc78a2cd554718276387fd0b98ca7" compoundref="UserToVo_8java" startline="96" endline="98">portal.registration.domain.UserToVo::setFqans</references>
+        <references refid="interfaceportal_1_1registration_1_1services_1_1UserToVoService_1a085c0254ca3f91556da0c51b19ffbdac">portal.registration.services.UserToVoService::update</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="481">
+        <label>portal.registration.services.VoService</label>
+        <link refid="interfaceportal_1_1registration_1_1services_1_1VoService"/>
+      </node>
+      <node id="482">
+        <label>portal.registration.services.UserToVoService</label>
+        <link refid="interfaceportal_1_1registration_1_1services_1_1UserToVoService"/>
+      </node>
+      <node id="479">
+        <label>portal.registration.services.FqanService</label>
+        <link refid="interfaceportal_1_1registration_1_1services_1_1FqanService"/>
+      </node>
+      <node id="480">
+        <label>Logger</label>
+      </node>
+      <node id="483">
+        <label>portal.registration.services.UserInfoService</label>
+        <link refid="interfaceportal_1_1registration_1_1services_1_1UserInfoService"/>
+      </node>
+      <node id="478">
+        <label>portal.registration.controller.EditUserToVoController</label>
+        <link refid="classportal_1_1registration_1_1controller_1_1EditUserToVoController"/>
+        <childnode refid="479" relation="usage">
+          <edgelabel>fqanService</edgelabel>
+        </childnode>
+        <childnode refid="480" relation="usage">
+          <edgelabel>log</edgelabel>
+        </childnode>
+        <childnode refid="481" relation="usage">
+          <edgelabel>voService</edgelabel>
+        </childnode>
+        <childnode refid="482" relation="usage">
+          <edgelabel>userToVoService</edgelabel>
+        </childnode>
+        <childnode refid="483" relation="usage">
+          <edgelabel>userInfoService</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/EditUserToVoController.java" line="31" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/EditUserToVoController.java" bodystart="31" bodyend="116"/>
+    <listofallmembers>
+      <member refid="classportal_1_1registration_1_1controller_1_1EditUserToVoController_1aeb87d1e842bf381602343632f23f58e2" prot="public" virt="non-virtual"><scope>portal::registration::controller::EditUserToVoController</scope><name>addUserToVo</name></member>
+      <member refid="classportal_1_1registration_1_1controller_1_1EditUserToVoController_1ae7631577179067193dd0ff2ad24631b1" prot="private" virt="non-virtual"><scope>portal::registration::controller::EditUserToVoController</scope><name>fqanService</name></member>
+      <member refid="classportal_1_1registration_1_1controller_1_1EditUserToVoController_1a4f02e82cbea1050780b3cf7e020f6a4d" prot="public" virt="non-virtual"><scope>portal::registration::controller::EditUserToVoController</scope><name>getFqans</name></member>
+      <member refid="classportal_1_1registration_1_1controller_1_1EditUserToVoController_1a7e131f83378f7f675880aafc3deed55c" prot="public" virt="non-virtual"><scope>portal::registration::controller::EditUserToVoController</scope><name>getUserInfo</name></member>
+      <member refid="classportal_1_1registration_1_1controller_1_1EditUserToVoController_1ab5f3b0f3201e6fead40534252c9f6836" prot="public" virt="non-virtual"><scope>portal::registration::controller::EditUserToVoController</scope><name>getUserToVo</name></member>
+      <member refid="classportal_1_1registration_1_1controller_1_1EditUserToVoController_1a47df37128ba11b11fc01d8875e33c7ef" prot="public" virt="non-virtual"><scope>portal::registration::controller::EditUserToVoController</scope><name>getVO</name></member>
+      <member refid="classportal_1_1registration_1_1controller_1_1EditUserToVoController_1abc91983450be169b71a43139da136573" prot="private" virt="non-virtual"><scope>portal::registration::controller::EditUserToVoController</scope><name>log</name></member>
+      <member refid="classportal_1_1registration_1_1controller_1_1EditUserToVoController_1a6fb863621d3ccd57b7c228d642167c79" prot="public" virt="non-virtual"><scope>portal::registration::controller::EditUserToVoController</scope><name>showEditUserInfoForm</name></member>
+      <member refid="classportal_1_1registration_1_1controller_1_1EditUserToVoController_1adfc9f529073107272adc85ef5af0ba64" prot="private" virt="non-virtual"><scope>portal::registration::controller::EditUserToVoController</scope><name>userInfoService</name></member>
+      <member refid="classportal_1_1registration_1_1controller_1_1EditUserToVoController_1ab8208b9d0524717c5d5c3b7ce8cfbfd8" prot="private" virt="non-virtual"><scope>portal::registration::controller::EditUserToVoController</scope><name>userToVoService</name></member>
+      <member refid="classportal_1_1registration_1_1controller_1_1EditUserToVoController_1a6b47f2cf57b93f14868b6643a7a05647" prot="private" virt="non-virtual"><scope>portal::registration::controller::EditUserToVoController</scope><name>voService</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

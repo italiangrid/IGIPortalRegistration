@@ -1,0 +1,900 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl" kind="class" prot="public">
+    <compoundname>org::glite::security::voms::service::admin::VOMSAdminSoapBindingImpl</compoundname>
+    <basecompoundref refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdmin" prot="public" virt="non-virtual">org.glite.security.voms.service.admin.VOMSAdmin</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1a2c91c6defbb09fd091e2ce2f29cd2511" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl.createGroup</definition>
+        <argsstring>(java.lang.String in0, java.lang.String in1)</argsstring>
+        <name>createGroup</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdmin_1a63cdf7b5f384d24b9680763e08562a5f">createGroup</reimplements>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in0</declname>
+        </param>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in1</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref> </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" line="11" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" bodystart="11" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1a68808255d105dff14f74f13d1095b27b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classorg_1_1glite_1_1security_1_1voms_1_1User" kindref="compound">org.glite.security.voms.User</ref></type>
+        <definition>org.glite.security.voms.User org.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl.getUser</definition>
+        <argsstring>(java.lang.String in0, java.lang.String in1)</argsstring>
+        <name>getUser</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdmin_1a539d9d88122edfeae1cb2d658528ea1d">getUser</reimplements>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in0</declname>
+        </param>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in1</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref> </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" line="14" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" bodystart="14" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1ae2169346cd25a45e4090ddb4e4871490" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl.setUser</definition>
+        <argsstring>(org.glite.security.voms.User in0)</argsstring>
+        <name>setUser</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdmin_1a452eb7b4ee3bcf8c3f7f155b1e772321">setUser</reimplements>
+        <param>
+          <type><ref refid="classorg_1_1glite_1_1security_1_1voms_1_1User" kindref="compound">org.glite.security.voms.User</ref></type>
+          <declname>in0</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref> </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" line="18" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" bodystart="18" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1a4edc3a4efb665a96ce36121018d1d9b2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int org.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl.getMajorVersionNumber</definition>
+        <argsstring>()</argsstring>
+        <name>getMajorVersionNumber</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdmin_1a2de952b7dee8eac5a15e693341facc3a">getMajorVersionNumber</reimplements>
+        <exceptions> throws java.rmi.RemoteException </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" line="21" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" bodystart="21" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1abcf600eaa6bb54382254727bd6152ac8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>java.lang.String</type>
+        <definition>java.lang.String org.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl.getVOName</definition>
+        <argsstring>()</argsstring>
+        <name>getVOName</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdmin_1ad09b4594f6d5e5ae1fe114b5bdb5e442">getVOName</reimplements>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref> </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" line="25" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" bodystart="25" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1ac803e9fe4e2f3da52ee506e136a81a82" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl.createUser</definition>
+        <argsstring>(org.glite.security.voms.User in0)</argsstring>
+        <name>createUser</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdmin_1a2410cf8cf557ad58a5d59e731e964565">createUser</reimplements>
+        <param>
+          <type><ref refid="classorg_1_1glite_1_1security_1_1voms_1_1User" kindref="compound">org.glite.security.voms.User</ref></type>
+          <declname>in0</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref> </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" line="29" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" bodystart="29" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1aecfa84483640262bbf0b8a2e59fc9193" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl.deleteUser</definition>
+        <argsstring>(java.lang.String in0, java.lang.String in1)</argsstring>
+        <name>deleteUser</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdmin_1a47c8e0f360ea6ffa7ec11e463965788c">deleteUser</reimplements>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in0</declname>
+        </param>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in1</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref> </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" line="32" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" bodystart="32" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1a5ad125bfc7f25f70eee48dc09a82e8c9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl.deleteGroup</definition>
+        <argsstring>(java.lang.String in0)</argsstring>
+        <name>deleteGroup</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdmin_1af9fef1bd825f0c441d2b3476471385f6">deleteGroup</reimplements>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in0</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref> </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" line="35" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" bodystart="35" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1a5eb2d9fe25665077f5b74bbc108d46d7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl.createRole</definition>
+        <argsstring>(java.lang.String in0)</argsstring>
+        <name>createRole</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdmin_1ab8472ec890af94dd4d5e1655e181b5b3">createRole</reimplements>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in0</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref> </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" line="38" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" bodystart="38" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1a29d8f5ecce7bb351d1ffb18adbc7f128" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl.deleteRole</definition>
+        <argsstring>(java.lang.String in0)</argsstring>
+        <name>deleteRole</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdmin_1adf36b4ddff06962101c268e1e032f7cb">deleteRole</reimplements>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in0</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref> </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" line="41" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" bodystart="41" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1ae1a1709e53392528cf190611e1f15a87" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl.createCapability</definition>
+        <argsstring>(java.lang.String in0)</argsstring>
+        <name>createCapability</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdmin_1a55698e09753f88c5b6934a5481caf129">createCapability</reimplements>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in0</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref> </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" line="44" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" bodystart="44" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1a320ea2969f6209f39dc2d945fc800e92" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl.deleteCapability</definition>
+        <argsstring>(java.lang.String in0)</argsstring>
+        <name>deleteCapability</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdmin_1af3fc436266d432bba0e4b3011bd7bf79">deleteCapability</reimplements>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in0</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref> </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" line="47" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" bodystart="47" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1a0b2349b6e19856cd48dd557dff3b3c75" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl.addMember</definition>
+        <argsstring>(java.lang.String in0, java.lang.String in1, java.lang.String in2)</argsstring>
+        <name>addMember</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdmin_1a1009495645c72839d744c0228b75f2ad">addMember</reimplements>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in0</declname>
+        </param>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in1</declname>
+        </param>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in2</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref> </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" line="50" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" bodystart="50" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1abe065af732ab135c5844aa5f1d6474b5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl.removeMember</definition>
+        <argsstring>(java.lang.String in0, java.lang.String in1, java.lang.String in2)</argsstring>
+        <name>removeMember</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdmin_1a5b702a9b5a884d9a83ee6302674d8ef3">removeMember</reimplements>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in0</declname>
+        </param>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in1</declname>
+        </param>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in2</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref> </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" line="53" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" bodystart="53" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1a2685a1f86c6760f7e6425ca947b6d756" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl.assignRole</definition>
+        <argsstring>(java.lang.String in0, java.lang.String in1, java.lang.String in2, java.lang.String in3)</argsstring>
+        <name>assignRole</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdmin_1ae1663c7a603e4ac0d164c2a9ba19162a">assignRole</reimplements>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in0</declname>
+        </param>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in1</declname>
+        </param>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in2</declname>
+        </param>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in3</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref> </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" line="56" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" bodystart="56" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1a1559885594ad27e6675e1582f92d59ea" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl.dismissRole</definition>
+        <argsstring>(java.lang.String in0, java.lang.String in1, java.lang.String in2, java.lang.String in3)</argsstring>
+        <name>dismissRole</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdmin_1a886f9fccf6a7df9c6b91ed59d79f9982">dismissRole</reimplements>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in0</declname>
+        </param>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in1</declname>
+        </param>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in2</declname>
+        </param>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in3</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref> </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" line="59" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" bodystart="59" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1aae7c7253c7d23ba1ed8cfcabd24df61d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl.assignCapability</definition>
+        <argsstring>(java.lang.String in0, java.lang.String in1, java.lang.String in2)</argsstring>
+        <name>assignCapability</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdmin_1a7970b0f5dfbdf135bedd413305b33514">assignCapability</reimplements>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in0</declname>
+        </param>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in1</declname>
+        </param>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in2</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref> </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" line="62" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" bodystart="62" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1a26d68912087d40015ef0c9422aeef0ef" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl.dismissCapability</definition>
+        <argsstring>(java.lang.String in0, java.lang.String in1, java.lang.String in2)</argsstring>
+        <name>dismissCapability</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdmin_1aa90fd4a29ffb1daae1cbc73d2eced653">dismissCapability</reimplements>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in0</declname>
+        </param>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in1</declname>
+        </param>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in2</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref> </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" line="65" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" bodystart="65" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1ab2b385db9a83f447d5ab595741e56060" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classorg_1_1glite_1_1security_1_1voms_1_1User" kindref="compound">org.glite.security.voms.User</ref>[]</type>
+        <definition>org.glite.security.voms.User [] org.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl.listMembers</definition>
+        <argsstring>(java.lang.String in0)</argsstring>
+        <name>listMembers</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdmin_1a338612f5e41990ac9ef0b070b09ffeeb">listMembers</reimplements>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in0</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref> </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" line="68" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" bodystart="68" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1a567e90cc58557b6fd0c5239faf6bbbe9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classorg_1_1glite_1_1security_1_1voms_1_1User" kindref="compound">org.glite.security.voms.User</ref>[]</type>
+        <definition>org.glite.security.voms.User [] org.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl.listUsersWithRole</definition>
+        <argsstring>(java.lang.String in0, java.lang.String in1)</argsstring>
+        <name>listUsersWithRole</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdmin_1a1d333d0a1c328145f626f47313324643">listUsersWithRole</reimplements>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in0</declname>
+        </param>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in1</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref> </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" line="72" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" bodystart="72" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1a2928f65a06fb8a726ff8572854deb902" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classorg_1_1glite_1_1security_1_1voms_1_1User" kindref="compound">org.glite.security.voms.User</ref>[]</type>
+        <definition>org.glite.security.voms.User [] org.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl.listUsersWithCapability</definition>
+        <argsstring>(java.lang.String in0)</argsstring>
+        <name>listUsersWithCapability</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdmin_1a2c0f19e37d956785695fded8196b3571">listUsersWithCapability</reimplements>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in0</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref> </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" line="76" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" bodystart="76" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1af0c3d65f192d20c9f26cbf2286b9e724" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>java.lang.String[]</type>
+        <definition>java.lang.String [] org.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl.getGroupPath</definition>
+        <argsstring>(java.lang.String in0)</argsstring>
+        <name>getGroupPath</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdmin_1aa05d3561e3a55b86c8f623c476f58bab">getGroupPath</reimplements>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in0</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref> </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" line="80" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" bodystart="80" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1a9696308e5df3214d6eaaae12b677f43f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>java.lang.String[]</type>
+        <definition>java.lang.String [] org.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl.listSubGroups</definition>
+        <argsstring>(java.lang.String in0)</argsstring>
+        <name>listSubGroups</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdmin_1aa1e810a4f059f8fa7d2e11084808bacc">listSubGroups</reimplements>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in0</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref> </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" line="84" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" bodystart="84" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1a54825a0fb0c15015461d3ba35b89cac7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>java.lang.String[]</type>
+        <definition>java.lang.String [] org.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl.listGroups</definition>
+        <argsstring>(java.lang.String in0, java.lang.String in1)</argsstring>
+        <name>listGroups</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdmin_1adeac6e344b577d79aeb7053497facc8f">listGroups</reimplements>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in0</declname>
+        </param>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in1</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref> </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" line="88" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" bodystart="88" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1abf612303f644040873a1a736cc53336b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>java.lang.String[]</type>
+        <definition>java.lang.String [] org.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl.listRoles</definition>
+        <argsstring>()</argsstring>
+        <name>listRoles</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdmin_1ae30030789ad2ffefe074675c9a2c6597">listRoles</reimplements>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref> </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" line="92" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" bodystart="92" bodyend="94"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1a1ade79eb37d78963481d5f6152cdcba2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>java.lang.String[]</type>
+        <definition>java.lang.String [] org.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl.listRoles</definition>
+        <argsstring>(java.lang.String in0, java.lang.String in1)</argsstring>
+        <name>listRoles</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdmin_1a546a643a9bbf549ce8e60c2ec03d30c6">listRoles</reimplements>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in0</declname>
+        </param>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in1</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref> </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" line="96" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" bodystart="96" bodyend="98"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1a7897e47c0fdf88505b8912b896dd39ce" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>java.lang.String[]</type>
+        <definition>java.lang.String [] org.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl.listCapabilities</definition>
+        <argsstring>()</argsstring>
+        <name>listCapabilities</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdmin_1a34f85e3dac9841ee75cd180e76985efb">listCapabilities</reimplements>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref> </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" line="100" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" bodystart="100" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1ac61094ba5f8f5d1414a00d95e5ead2e3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>java.lang.String[]</type>
+        <definition>java.lang.String [] org.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl.listCapabilities</definition>
+        <argsstring>(java.lang.String in0, java.lang.String in1)</argsstring>
+        <name>listCapabilities</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdmin_1a2513c2945625c4511311c97bea249050">listCapabilities</reimplements>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in0</declname>
+        </param>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in1</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref> </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" line="104" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" bodystart="104" bodyend="106"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1ac18dd0c7094f4457bf5e292b20edd1d9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>java.lang.String[]</type>
+        <definition>java.lang.String [] org.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl.listCAs</definition>
+        <argsstring>()</argsstring>
+        <name>listCAs</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdmin_1aca6b571c31d7a6b4f1bba9eac8b50f33">listCAs</reimplements>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref> </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" line="108" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" bodystart="108" bodyend="110"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1a5f3cb8635e79911ec843638299cfc370" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classorg_1_1glite_1_1security_1_1voms_1_1ACLEntry" kindref="compound">org.glite.security.voms.ACLEntry</ref>[]</type>
+        <definition>org.glite.security.voms.ACLEntry [] org.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl.getACL</definition>
+        <argsstring>(java.lang.String in0)</argsstring>
+        <name>getACL</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdmin_1ae13dbdb9e42f415cbe2aa7c29e789e98">getACL</reimplements>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in0</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref> </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" line="112" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" bodystart="112" bodyend="114"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1af5788ed58fb3d9868851940d43fcc5ed" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl.setACL</definition>
+        <argsstring>(java.lang.String in0, org.glite.security.voms.ACLEntry[] in1)</argsstring>
+        <name>setACL</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdmin_1a8af93a80896770561cb6aa491802d631">setACL</reimplements>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in0</declname>
+        </param>
+        <param>
+          <type><ref refid="classorg_1_1glite_1_1security_1_1voms_1_1ACLEntry" kindref="compound">org.glite.security.voms.ACLEntry</ref>[]</type>
+          <declname>in1</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref> </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" line="116" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" bodystart="116" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1aa5a0ba80361758e0e53383ea6e76778e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl.addACLEntry</definition>
+        <argsstring>(java.lang.String in0, org.glite.security.voms.ACLEntry in1)</argsstring>
+        <name>addACLEntry</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdmin_1ad65f31d3eadcbe2a63081a370ada5a5e">addACLEntry</reimplements>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in0</declname>
+        </param>
+        <param>
+          <type><ref refid="classorg_1_1glite_1_1security_1_1voms_1_1ACLEntry" kindref="compound">org.glite.security.voms.ACLEntry</ref></type>
+          <declname>in1</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref> </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" line="119" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" bodystart="119" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1a1b635d8816ceebc6c58aa3a6368522e7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl.removeACLEntry</definition>
+        <argsstring>(java.lang.String in0, org.glite.security.voms.ACLEntry in1)</argsstring>
+        <name>removeACLEntry</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdmin_1ae6dd61d2a72a363eaaca5cdf4fe02a6a">removeACLEntry</reimplements>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in0</declname>
+        </param>
+        <param>
+          <type><ref refid="classorg_1_1glite_1_1security_1_1voms_1_1ACLEntry" kindref="compound">org.glite.security.voms.ACLEntry</ref></type>
+          <declname>in1</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref> </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" line="122" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" bodystart="122" bodyend="123"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1af0ba448479f1151cbd74053f4e136fa4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classorg_1_1glite_1_1security_1_1voms_1_1ACLEntry" kindref="compound">org.glite.security.voms.ACLEntry</ref>[]</type>
+        <definition>org.glite.security.voms.ACLEntry [] org.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl.getDefaultACL</definition>
+        <argsstring>(java.lang.String in0)</argsstring>
+        <name>getDefaultACL</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdmin_1a65a29f134cd5d06f01299d421d12d12f">getDefaultACL</reimplements>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in0</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref> </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" line="125" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" bodystart="125" bodyend="127"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1a8dbeefded95cd2bfef792606267e66e9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl.setDefaultACL</definition>
+        <argsstring>(java.lang.String in0, org.glite.security.voms.ACLEntry[] in1)</argsstring>
+        <name>setDefaultACL</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdmin_1aa3745c4b47675e96b06baea7849f1376">setDefaultACL</reimplements>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in0</declname>
+        </param>
+        <param>
+          <type><ref refid="classorg_1_1glite_1_1security_1_1voms_1_1ACLEntry" kindref="compound">org.glite.security.voms.ACLEntry</ref>[]</type>
+          <declname>in1</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref> </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" line="129" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" bodystart="129" bodyend="130"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1a477b3c63b0984c95ef37ca0e3f9f2602" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl.addDefaultACLEntry</definition>
+        <argsstring>(java.lang.String in0, org.glite.security.voms.ACLEntry in1)</argsstring>
+        <name>addDefaultACLEntry</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdmin_1aba8b9a0081029c3a803ddbb2860e059f">addDefaultACLEntry</reimplements>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in0</declname>
+        </param>
+        <param>
+          <type><ref refid="classorg_1_1glite_1_1security_1_1voms_1_1ACLEntry" kindref="compound">org.glite.security.voms.ACLEntry</ref></type>
+          <declname>in1</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref> </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" line="132" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" bodystart="132" bodyend="133"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1acd957ed9a1e586f76b04236298d3c511" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl.removeDefaultACLEntry</definition>
+        <argsstring>(java.lang.String in0, org.glite.security.voms.ACLEntry in1)</argsstring>
+        <name>removeDefaultACLEntry</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdmin_1a560d3fe21447e359f2a1010ce500afbd">removeDefaultACLEntry</reimplements>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in0</declname>
+        </param>
+        <param>
+          <type><ref refid="classorg_1_1glite_1_1security_1_1voms_1_1ACLEntry" kindref="compound">org.glite.security.voms.ACLEntry</ref></type>
+          <declname>in1</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref> </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" line="135" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" bodystart="135" bodyend="136"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1a02a972bc003ac394e0929bcfed81ee18" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int org.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl.getMinorVersionNumber</definition>
+        <argsstring>()</argsstring>
+        <name>getMinorVersionNumber</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdmin_1aa8680387ae34fdf00209be2d9327abad">getMinorVersionNumber</reimplements>
+        <exceptions> throws java.rmi.RemoteException </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" line="138" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" bodystart="138" bodyend="140"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1adf080b45daf7070c290549828cb80835" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int org.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl.getPatchVersionNumber</definition>
+        <argsstring>()</argsstring>
+        <name>getPatchVersionNumber</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdmin_1a1f02e6d57e0b68006f6f57bbdd9b451a">getPatchVersionNumber</reimplements>
+        <exceptions> throws java.rmi.RemoteException </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" line="142" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" bodystart="142" bodyend="144"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="685">
+        <label>org.glite.security.voms.service.admin.VOMSAdmin</label>
+        <link refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdmin"/>
+      </node>
+      <node id="684">
+        <label>org.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl</label>
+        <link refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl"/>
+        <childnode refid="685" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="687">
+        <label>org.glite.security.voms.service.admin.VOMSAdmin</label>
+        <link refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdmin"/>
+      </node>
+      <node id="686">
+        <label>org.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl</label>
+        <link refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl"/>
+        <childnode refid="687" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" line="10" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminSoapBindingImpl.java" bodystart="10" bodyend="146"/>
+    <listofallmembers>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1aa5a0ba80361758e0e53383ea6e76778e" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::admin::VOMSAdminSoapBindingImpl</scope><name>addACLEntry</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1a477b3c63b0984c95ef37ca0e3f9f2602" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::admin::VOMSAdminSoapBindingImpl</scope><name>addDefaultACLEntry</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1a0b2349b6e19856cd48dd557dff3b3c75" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::admin::VOMSAdminSoapBindingImpl</scope><name>addMember</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1aae7c7253c7d23ba1ed8cfcabd24df61d" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::admin::VOMSAdminSoapBindingImpl</scope><name>assignCapability</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1a2685a1f86c6760f7e6425ca947b6d756" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::admin::VOMSAdminSoapBindingImpl</scope><name>assignRole</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1ae1a1709e53392528cf190611e1f15a87" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::admin::VOMSAdminSoapBindingImpl</scope><name>createCapability</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1a2c91c6defbb09fd091e2ce2f29cd2511" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::admin::VOMSAdminSoapBindingImpl</scope><name>createGroup</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1a5eb2d9fe25665077f5b74bbc108d46d7" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::admin::VOMSAdminSoapBindingImpl</scope><name>createRole</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1ac803e9fe4e2f3da52ee506e136a81a82" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::admin::VOMSAdminSoapBindingImpl</scope><name>createUser</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1a320ea2969f6209f39dc2d945fc800e92" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::admin::VOMSAdminSoapBindingImpl</scope><name>deleteCapability</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1a5ad125bfc7f25f70eee48dc09a82e8c9" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::admin::VOMSAdminSoapBindingImpl</scope><name>deleteGroup</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1a29d8f5ecce7bb351d1ffb18adbc7f128" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::admin::VOMSAdminSoapBindingImpl</scope><name>deleteRole</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1aecfa84483640262bbf0b8a2e59fc9193" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::admin::VOMSAdminSoapBindingImpl</scope><name>deleteUser</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1a26d68912087d40015ef0c9422aeef0ef" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::admin::VOMSAdminSoapBindingImpl</scope><name>dismissCapability</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1a1559885594ad27e6675e1582f92d59ea" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::admin::VOMSAdminSoapBindingImpl</scope><name>dismissRole</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1a5f3cb8635e79911ec843638299cfc370" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::admin::VOMSAdminSoapBindingImpl</scope><name>getACL</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1af0ba448479f1151cbd74053f4e136fa4" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::admin::VOMSAdminSoapBindingImpl</scope><name>getDefaultACL</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1af0c3d65f192d20c9f26cbf2286b9e724" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::admin::VOMSAdminSoapBindingImpl</scope><name>getGroupPath</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1a4edc3a4efb665a96ce36121018d1d9b2" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::admin::VOMSAdminSoapBindingImpl</scope><name>getMajorVersionNumber</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1a02a972bc003ac394e0929bcfed81ee18" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::admin::VOMSAdminSoapBindingImpl</scope><name>getMinorVersionNumber</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1adf080b45daf7070c290549828cb80835" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::admin::VOMSAdminSoapBindingImpl</scope><name>getPatchVersionNumber</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1a68808255d105dff14f74f13d1095b27b" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::admin::VOMSAdminSoapBindingImpl</scope><name>getUser</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1abcf600eaa6bb54382254727bd6152ac8" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::admin::VOMSAdminSoapBindingImpl</scope><name>getVOName</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1a7897e47c0fdf88505b8912b896dd39ce" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::admin::VOMSAdminSoapBindingImpl</scope><name>listCapabilities</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1ac61094ba5f8f5d1414a00d95e5ead2e3" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::admin::VOMSAdminSoapBindingImpl</scope><name>listCapabilities</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1ac18dd0c7094f4457bf5e292b20edd1d9" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::admin::VOMSAdminSoapBindingImpl</scope><name>listCAs</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1a54825a0fb0c15015461d3ba35b89cac7" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::admin::VOMSAdminSoapBindingImpl</scope><name>listGroups</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1ab2b385db9a83f447d5ab595741e56060" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::admin::VOMSAdminSoapBindingImpl</scope><name>listMembers</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1abf612303f644040873a1a736cc53336b" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::admin::VOMSAdminSoapBindingImpl</scope><name>listRoles</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1a1ade79eb37d78963481d5f6152cdcba2" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::admin::VOMSAdminSoapBindingImpl</scope><name>listRoles</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1a9696308e5df3214d6eaaae12b677f43f" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::admin::VOMSAdminSoapBindingImpl</scope><name>listSubGroups</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1a2928f65a06fb8a726ff8572854deb902" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::admin::VOMSAdminSoapBindingImpl</scope><name>listUsersWithCapability</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1a567e90cc58557b6fd0c5239faf6bbbe9" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::admin::VOMSAdminSoapBindingImpl</scope><name>listUsersWithRole</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1a1b635d8816ceebc6c58aa3a6368522e7" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::admin::VOMSAdminSoapBindingImpl</scope><name>removeACLEntry</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1acd957ed9a1e586f76b04236298d3c511" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::admin::VOMSAdminSoapBindingImpl</scope><name>removeDefaultACLEntry</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1abe065af732ab135c5844aa5f1d6474b5" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::admin::VOMSAdminSoapBindingImpl</scope><name>removeMember</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1af5788ed58fb3d9868851940d43fcc5ed" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::admin::VOMSAdminSoapBindingImpl</scope><name>setACL</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1a8dbeefded95cd2bfef792606267e66e9" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::admin::VOMSAdminSoapBindingImpl</scope><name>setDefaultACL</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminSoapBindingImpl_1ae2169346cd25a45e4090ddb4e4871490" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::admin::VOMSAdminSoapBindingImpl</scope><name>setUser</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

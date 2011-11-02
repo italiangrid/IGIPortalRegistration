@@ -1,0 +1,258 @@
+.TH "org::glite::security::voms::service::certificates::VOMSCertificatesSoapBindingSkeleton" 3 "Wed Jul 13 2011" "Version 4" "Registration" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+org::glite::security::voms::service::certificates::VOMSCertificatesSoapBindingSkeleton \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBorg.glite.security.voms.service.certificates.VOMSCertificates\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBVOMSCertificatesSoapBindingSkeleton\fP ()"
+.br
+.ti -1c
+.RI "\fBVOMSCertificatesSoapBindingSkeleton\fP (\fBorg.glite.security.voms.service.certificates.VOMSCertificates\fP \fBimpl\fP)"
+.br
+.ti -1c
+.RI "\fBorg.glite.security.voms.service.certificates.X509Certificate\fP[] \fBgetCertificates\fP (long in0)  throws java.rmi.RemoteException     "
+.br
+.ti -1c
+.RI "\fBorg.glite.security.voms.service.certificates.X509Certificate\fP[] \fBgetCertificates\fP (java.lang.String in0, java.lang.String in1)  throws java.rmi.RemoteException     "
+.br
+.ti -1c
+.RI "long \fBgetUserIdFromDn\fP (java.lang.String in0, java.lang.String in1)  throws java.rmi.RemoteException     "
+.br
+.ti -1c
+.RI "void \fBaddCertificate\fP (long in0, \fBorg.glite.security.voms.service.certificates.X509Certificate\fP in1)  throws java.rmi.RemoteException     "
+.br
+.ti -1c
+.RI "void \fBaddCertificate\fP (java.lang.String in0, java.lang.String in1, \fBorg.glite.security.voms.service.certificates.X509Certificate\fP in2)  throws java.rmi.RemoteException     "
+.br
+.ti -1c
+.RI "void \fBsuspendCertificate\fP (\fBorg.glite.security.voms.service.certificates.X509Certificate\fP in0, java.lang.String in1)  throws java.rmi.RemoteException     "
+.br
+.ti -1c
+.RI "void \fBrestoreCertificate\fP (\fBorg.glite.security.voms.service.certificates.X509Certificate\fP in0)  throws java.rmi.RemoteException     "
+.br
+.ti -1c
+.RI "void \fBremoveCertificate\fP (\fBorg.glite.security.voms.service.certificates.X509Certificate\fP in0)  throws java.rmi.RemoteException     "
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static java.util.List \fBgetOperationDescByName\fP (java.lang.String methodName)"
+.br
+.ti -1c
+.RI "static java.util.Collection \fBgetOperationDescs\fP ()"
+.br
+.in -1c
+.SS "Static Package Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB[static initializer]\fP"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBorg.glite.security.voms.service.certificates.VOMSCertificates\fP \fBimpl\fP"
+.br
+.in -1c
+.SS "Static Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "static java.util.Map \fB_myOperations\fP = new java.util.Hashtable()"
+.br
+.ti -1c
+.RI "static java.util.Collection \fB_myOperationsList\fP = new java.util.ArrayList()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 10 of file VOMSCertificatesSoapBindingSkeleton.java.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingSkeleton.VOMSCertificatesSoapBindingSkeleton ()"
+.PP
+Definition at line 132 of file VOMSCertificatesSoapBindingSkeleton.java.
+.PP
+References org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingSkeleton.impl.
+.PP
+.nf
+                                                 {
+        this.impl = new org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingImpl();
+    }
+.fi
+.SS "org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingSkeleton.VOMSCertificatesSoapBindingSkeleton (\fBorg.glite.security.voms.service.certificates.VOMSCertificates\fPimpl)"
+.PP
+Definition at line 136 of file VOMSCertificatesSoapBindingSkeleton.java.
+.PP
+References org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingSkeleton.impl.
+.PP
+.nf
+                                                                                                                   {
+        this.impl = impl;
+    }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingSkeleton.[static initializer] ()\fC [static, package]\fP"
+.SS "void org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingSkeleton.addCertificate (java.lang.Stringin0, java.lang.Stringin1, \fBorg.glite.security.voms.service.certificates.X509Certificate\fPin2)  throws java.rmi.RemoteException     "
+.PP
+Implements \fBorg.glite.security.voms.service.certificates.VOMSCertificates\fP.
+.PP
+Definition at line 162 of file VOMSCertificatesSoapBindingSkeleton.java.
+.PP
+References org.glite.security.voms.service.certificates.VOMSCertificates.addCertificate(), and org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingSkeleton.impl.
+.PP
+.nf
+    {
+        impl.addCertificate(in0, in1, in2);
+    }
+.fi
+.SS "void org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingSkeleton.addCertificate (longin0, \fBorg.glite.security.voms.service.certificates.X509Certificate\fPin1)  throws java.rmi.RemoteException     "
+.PP
+Implements \fBorg.glite.security.voms.service.certificates.VOMSCertificates\fP.
+.PP
+Definition at line 157 of file VOMSCertificatesSoapBindingSkeleton.java.
+.PP
+References org.glite.security.voms.service.certificates.VOMSCertificates.addCertificate(), and org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingSkeleton.impl.
+.PP
+.nf
+    {
+        impl.addCertificate(in0, in1);
+    }
+.fi
+.SS "\fBorg.glite.security.voms.service.certificates.X509Certificate\fP [] org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingSkeleton.getCertificates (longin0)  throws java.rmi.RemoteException     "
+.PP
+Implements \fBorg.glite.security.voms.service.certificates.VOMSCertificates\fP.
+.PP
+Definition at line 139 of file VOMSCertificatesSoapBindingSkeleton.java.
+.PP
+References org.glite.security.voms.service.certificates.VOMSCertificates.getCertificates(), org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingSkeleton.impl, and org.glite.security.voms.service.certificates.X509Certificate.X509Certificate().
+.PP
+.nf
+    {
+        org.glite.security.voms.service.certificates.X509Certificate[] ret = impl.getCertificates(in0);
+        return ret;
+    }
+.fi
+.SS "\fBorg.glite.security.voms.service.certificates.X509Certificate\fP [] org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingSkeleton.getCertificates (java.lang.Stringin0, java.lang.Stringin1)  throws java.rmi.RemoteException     "
+.PP
+Implements \fBorg.glite.security.voms.service.certificates.VOMSCertificates\fP.
+.PP
+Definition at line 145 of file VOMSCertificatesSoapBindingSkeleton.java.
+.PP
+References org.glite.security.voms.service.certificates.VOMSCertificates.getCertificates(), org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingSkeleton.impl, and org.glite.security.voms.service.certificates.X509Certificate.X509Certificate().
+.PP
+.nf
+    {
+        org.glite.security.voms.service.certificates.X509Certificate[] ret = impl.getCertificates(in0, in1);
+        return ret;
+    }
+.fi
+.SS "static java.util.List org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingSkeleton.getOperationDescByName (java.lang.StringmethodName)\fC [static]\fP"Returns List of OperationDesc objects with this name 
+.PP
+Definition at line 18 of file VOMSCertificatesSoapBindingSkeleton.java.
+.PP
+References org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingSkeleton._myOperations.
+.PP
+.nf
+                                                                                     {
+        return (java.util.List)_myOperations.get(methodName);
+    }
+.fi
+.SS "static java.util.Collection org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingSkeleton.getOperationDescs ()\fC [static]\fP"Returns Collection of OperationDescs 
+.PP
+Definition at line 25 of file VOMSCertificatesSoapBindingSkeleton.java.
+.PP
+References org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingSkeleton._myOperationsList.
+.PP
+.nf
+                                                           {
+        return _myOperationsList;
+    }
+.fi
+.SS "long org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingSkeleton.getUserIdFromDn (java.lang.Stringin0, java.lang.Stringin1)  throws java.rmi.RemoteException     "
+.PP
+Implements \fBorg.glite.security.voms.service.certificates.VOMSCertificates\fP.
+.PP
+Definition at line 151 of file VOMSCertificatesSoapBindingSkeleton.java.
+.PP
+References org.glite.security.voms.service.certificates.VOMSCertificates.getUserIdFromDn(), and org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingSkeleton.impl.
+.PP
+.nf
+    {
+        long ret = impl.getUserIdFromDn(in0, in1);
+        return ret;
+    }
+.fi
+.SS "void org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingSkeleton.removeCertificate (\fBorg.glite.security.voms.service.certificates.X509Certificate\fPin0)  throws java.rmi.RemoteException     "
+.PP
+Implements \fBorg.glite.security.voms.service.certificates.VOMSCertificates\fP.
+.PP
+Definition at line 177 of file VOMSCertificatesSoapBindingSkeleton.java.
+.PP
+References org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingSkeleton.impl, and org.glite.security.voms.service.certificates.VOMSCertificates.removeCertificate().
+.PP
+.nf
+    {
+        impl.removeCertificate(in0);
+    }
+.fi
+.SS "void org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingSkeleton.restoreCertificate (\fBorg.glite.security.voms.service.certificates.X509Certificate\fPin0)  throws java.rmi.RemoteException     "
+.PP
+Implements \fBorg.glite.security.voms.service.certificates.VOMSCertificates\fP.
+.PP
+Definition at line 172 of file VOMSCertificatesSoapBindingSkeleton.java.
+.PP
+References org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingSkeleton.impl, and org.glite.security.voms.service.certificates.VOMSCertificates.restoreCertificate().
+.PP
+.nf
+    {
+        impl.restoreCertificate(in0);
+    }
+.fi
+.SS "void org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingSkeleton.suspendCertificate (\fBorg.glite.security.voms.service.certificates.X509Certificate\fPin0, java.lang.Stringin1)  throws java.rmi.RemoteException     "
+.PP
+Implements \fBorg.glite.security.voms.service.certificates.VOMSCertificates\fP.
+.PP
+Definition at line 167 of file VOMSCertificatesSoapBindingSkeleton.java.
+.PP
+References org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingSkeleton.impl, and org.glite.security.voms.service.certificates.VOMSCertificates.suspendCertificate().
+.PP
+.nf
+    {
+        impl.suspendCertificate(in0, in1);
+    }
+.fi
+.SH "Member Data Documentation"
+.PP 
+.SS "java.util.Map \fBorg.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingSkeleton._myOperations\fP = new java.util.Hashtable()\fC [static, private]\fP"
+.PP
+Definition at line 12 of file VOMSCertificatesSoapBindingSkeleton.java.
+.PP
+Referenced by org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingSkeleton.getOperationDescByName().
+.SS "java.util.Collection \fBorg.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingSkeleton._myOperationsList\fP = new java.util.ArrayList()\fC [static, private]\fP"
+.PP
+Definition at line 13 of file VOMSCertificatesSoapBindingSkeleton.java.
+.PP
+Referenced by org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingSkeleton.getOperationDescs().
+.SS "\fBorg.glite.security.voms.service.certificates.VOMSCertificates\fP \fBorg.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingSkeleton.impl\fP\fC [private]\fP"
+.PP
+Definition at line 11 of file VOMSCertificatesSoapBindingSkeleton.java.
+.PP
+Referenced by org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingSkeleton.addCertificate(), org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingSkeleton.getCertificates(), org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingSkeleton.getUserIdFromDn(), org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingSkeleton.removeCertificate(), org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingSkeleton.restoreCertificate(), org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingSkeleton.suspendCertificate(), and org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingSkeleton.VOMSCertificatesSoapBindingSkeleton().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Registration from the source code.

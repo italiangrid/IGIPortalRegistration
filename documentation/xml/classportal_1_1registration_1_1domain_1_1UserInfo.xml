@@ -1,0 +1,714 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="classportal_1_1registration_1_1domain_1_1UserInfo" kind="class" prot="public">
+    <compoundname>portal::registration::domain::UserInfo</compoundname>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classportal_1_1registration_1_1domain_1_1UserInfo_1aea84836830b4057e574b59aad5679de8" prot="private" static="yes" mutable="no">
+        <type>final long</type>
+        <definition>final long portal.registration.domain.UserInfo.serialVersionUID</definition>
+        <argsstring></argsstring>
+        <name>serialVersionUID</name>
+        <initializer> -8793989934172666454L</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" line="28" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classportal_1_1registration_1_1domain_1_1UserInfo_1abbdfca0a8a809e1a28a5dd2e56874c1b" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int portal.registration.domain.UserInfo.userId</definition>
+        <argsstring></argsstring>
+        <name>userId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" line="29" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classportal_1_1registration_1_1domain_1_1UserInfo_1a9ee2008ca7555a9237135aedd8d0949b" prot="private" static="no" mutable="no">
+        <type><ref refid="classportal_1_1registration_1_1domain_1_1Idp" kindref="compound">Idp</ref></type>
+        <definition>Idp portal.registration.domain.UserInfo.idp</definition>
+        <argsstring></argsstring>
+        <name>idp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" line="30" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classportal_1_1registration_1_1domain_1_1UserInfo_1a40352804afaf61b92208e4835ca8e5af" prot="private" static="no" mutable="no">
+        <type>String</type>
+        <definition>String portal.registration.domain.UserInfo.firstName</definition>
+        <argsstring></argsstring>
+        <name>firstName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" line="31" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classportal_1_1registration_1_1domain_1_1UserInfo_1a294fb84a68dad74ae5ed4e2186f5e460" prot="private" static="no" mutable="no">
+        <type>String</type>
+        <definition>String portal.registration.domain.UserInfo.lastName</definition>
+        <argsstring></argsstring>
+        <name>lastName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" line="32" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classportal_1_1registration_1_1domain_1_1UserInfo_1a71b2ba532eff8a9fb4fac4c000b3a8f3" prot="private" static="no" mutable="no">
+        <type>String</type>
+        <definition>String portal.registration.domain.UserInfo.institute</definition>
+        <argsstring></argsstring>
+        <name>institute</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" line="33" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classportal_1_1registration_1_1domain_1_1UserInfo_1af6775663ccce32e01fc070f1342f523f" prot="private" static="no" mutable="no">
+        <type>String</type>
+        <definition>String portal.registration.domain.UserInfo.phone</definition>
+        <argsstring></argsstring>
+        <name>phone</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" line="34" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classportal_1_1registration_1_1domain_1_1UserInfo_1a0433a86cea33aac5e724356012617157" prot="private" static="no" mutable="no">
+        <type>String</type>
+        <definition>String portal.registration.domain.UserInfo.mail</definition>
+        <argsstring></argsstring>
+        <name>mail</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" line="35" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classportal_1_1registration_1_1domain_1_1UserInfo_1ac3583a042c907bcce6ee84d3b2ee637d" prot="private" static="no" mutable="no">
+        <type>String</type>
+        <definition>String portal.registration.domain.UserInfo.username</definition>
+        <argsstring></argsstring>
+        <name>username</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" line="36" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classportal_1_1registration_1_1domain_1_1UserInfo_1ab5145405b331d11672cd66053ceb012c" prot="private" static="no" mutable="no">
+        <type>String</type>
+        <definition>String portal.registration.domain.UserInfo.registrationComplete</definition>
+        <argsstring></argsstring>
+        <name>registrationComplete</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" line="37" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classportal_1_1registration_1_1domain_1_1UserInfo_1a5923ed9351bde36f580647933f7b3fe0" prot="private" static="no" mutable="no">
+        <type>Set&lt; <ref refid="classportal_1_1registration_1_1domain_1_1Certificate" kindref="compound">Certificate</ref> &gt;</type>
+        <definition>Set&lt;Certificate&gt; portal.registration.domain.UserInfo.certificates</definition>
+        <argsstring></argsstring>
+        <name>certificates</name>
+        <initializer> new HashSet&lt;<ref refid="classportal_1_1registration_1_1domain_1_1Certificate" kindref="compound">Certificate</ref>&gt;(0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" line="38" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classportal_1_1registration_1_1domain_1_1UserInfo_1a334522ed169ed1e54ac676a31b0cc701" prot="private" static="no" mutable="no">
+        <type>Set&lt; <ref refid="classportal_1_1registration_1_1domain_1_1UserToVo" kindref="compound">UserToVo</ref> &gt;</type>
+        <definition>Set&lt;UserToVo&gt; portal.registration.domain.UserInfo.userToVos</definition>
+        <argsstring></argsstring>
+        <name>userToVos</name>
+        <initializer> new HashSet&lt;<ref refid="classportal_1_1registration_1_1domain_1_1UserToVo" kindref="compound">UserToVo</ref>&gt;(0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" line="39" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1UserInfo_1a6c17329b45a9e55c087de4b7d21cfa0a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>portal.registration.domain.UserInfo.UserInfo</definition>
+        <argsstring>()</argsstring>
+        <name>UserInfo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" line="41" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" bodystart="41" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1UserInfo_1a881fb81e3217c91595c867a7b079df84" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>portal.registration.domain.UserInfo.UserInfo</definition>
+        <argsstring>(Idp idp, String firstName, String lastName, String institute, String mail, String username)</argsstring>
+        <name>UserInfo</name>
+        <param>
+          <type><ref refid="classportal_1_1registration_1_1domain_1_1Idp" kindref="compound">Idp</ref></type>
+          <declname>idp</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>firstName</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>lastName</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>institute</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>mail</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>username</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" line="45" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" bodystart="44" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1UserInfo_1afc3d148d311ec9d48e33933668177cc0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>portal.registration.domain.UserInfo.UserInfo</definition>
+        <argsstring>(Idp idp, String firstName, String lastName, String institute, String phone, String mail, String username, Set&lt; Certificate &gt; certificates, Set&lt; UserToVo &gt; userToVos)</argsstring>
+        <name>UserInfo</name>
+        <param>
+          <type><ref refid="classportal_1_1registration_1_1domain_1_1Idp" kindref="compound">Idp</ref></type>
+          <declname>idp</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>firstName</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>lastName</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>institute</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>phone</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>mail</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>username</declname>
+        </param>
+        <param>
+          <type>Set&lt; <ref refid="classportal_1_1registration_1_1domain_1_1Certificate" kindref="compound">Certificate</ref> &gt;</type>
+          <declname>certificates</declname>
+        </param>
+        <param>
+          <type>Set&lt; <ref refid="classportal_1_1registration_1_1domain_1_1UserToVo" kindref="compound">UserToVo</ref> &gt;</type>
+          <declname>userToVos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" line="56" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" bodystart="54" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1UserInfo_1a48077c9afd126dac031566c4f4f7ef39" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int portal.registration.domain.UserInfo.getUserId</definition>
+        <argsstring>()</argsstring>
+        <name>getUserId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" line="71" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" bodystart="71" bodyend="73"/>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_1aee85fd8c887f40d7d6e0ebcb51ba68e2" compoundref="UserInfoDAOImpl_8java" startline="78" endline="100">portal.registration.dao.UserInfoDAOImpl::edit</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1UserInfo_1a967c33be00c4ef3bf69cc065ff02ba29" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void portal.registration.domain.UserInfo.setUserId</definition>
+        <argsstring>(int userId)</argsstring>
+        <name>setUserId</name>
+        <param>
+          <type>int</type>
+          <declname>userId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" line="75" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" bodystart="75" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1UserInfo_1a1baadc828a54624e9184b12492413c9c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classportal_1_1registration_1_1domain_1_1Idp" kindref="compound">Idp</ref></type>
+        <definition>Idp portal.registration.domain.UserInfo.getIdp</definition>
+        <argsstring>()</argsstring>
+        <name>getIdp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" line="81" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" bodystart="81" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1UserInfo_1af0d840379d615b691972dff9f22f640b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void portal.registration.domain.UserInfo.setIdp</definition>
+        <argsstring>(Idp idp)</argsstring>
+        <name>setIdp</name>
+        <param>
+          <type><ref refid="classportal_1_1registration_1_1domain_1_1Idp" kindref="compound">Idp</ref></type>
+          <declname>idp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" line="85" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" bodystart="85" bodyend="87"/>
+        <referencedby refid="classportal_1_1registration_1_1services_1_1UserInfoServiceImpl_1ad15a856a87f217600bbd708e576d80ba" compoundref="UserInfoServiceImpl_8java" startline="66" endline="71">portal.registration.services.UserInfoServiceImpl::save</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1UserInfo_1a1626a0c995db599481eae8538dced879" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String portal.registration.domain.UserInfo.getFirstName</definition>
+        <argsstring>()</argsstring>
+        <name>getFirstName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" line="90" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" bodystart="90" bodyend="92"/>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_1aee85fd8c887f40d7d6e0ebcb51ba68e2" compoundref="UserInfoDAOImpl_8java" startline="78" endline="100">portal.registration.dao.UserInfoDAOImpl::edit</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1UserInfo_1a2b5087901b31b751400f47a1e64dd913" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void portal.registration.domain.UserInfo.setFirstName</definition>
+        <argsstring>(String firstName)</argsstring>
+        <name>setFirstName</name>
+        <param>
+          <type>String</type>
+          <declname>firstName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" line="94" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" bodystart="94" bodyend="96"/>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_1aee85fd8c887f40d7d6e0ebcb51ba68e2" compoundref="UserInfoDAOImpl_8java" startline="78" endline="100">portal.registration.dao.UserInfoDAOImpl::edit</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1controller_1_1EditUserInfoController_1af4b8f77882febac15cb98813ad8b89da" compoundref="EditUserInfoController_8java" startline="95" endline="143">portal.registration.controller.EditUserInfoController::editUserInfo</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1UserInfo_1a515a516db97a054a8f8074ebeac4d645" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String portal.registration.domain.UserInfo.getLastName</definition>
+        <argsstring>()</argsstring>
+        <name>getLastName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" line="99" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" bodystart="99" bodyend="101"/>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_1aee85fd8c887f40d7d6e0ebcb51ba68e2" compoundref="UserInfoDAOImpl_8java" startline="78" endline="100">portal.registration.dao.UserInfoDAOImpl::edit</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1UserInfo_1a0b40b46fc03b4c1c38ed1abce4f621ca" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void portal.registration.domain.UserInfo.setLastName</definition>
+        <argsstring>(String lastName)</argsstring>
+        <name>setLastName</name>
+        <param>
+          <type>String</type>
+          <declname>lastName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" line="103" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" bodystart="103" bodyend="105"/>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_1aee85fd8c887f40d7d6e0ebcb51ba68e2" compoundref="UserInfoDAOImpl_8java" startline="78" endline="100">portal.registration.dao.UserInfoDAOImpl::edit</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1UserInfo_1a6e91d15bce496b1d5980803d344710a4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String portal.registration.domain.UserInfo.getInstitute</definition>
+        <argsstring>()</argsstring>
+        <name>getInstitute</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" line="108" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" bodystart="108" bodyend="110"/>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_1aee85fd8c887f40d7d6e0ebcb51ba68e2" compoundref="UserInfoDAOImpl_8java" startline="78" endline="100">portal.registration.dao.UserInfoDAOImpl::edit</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1UserInfo_1a734241ba2b19ba148375017bb3cad0b2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void portal.registration.domain.UserInfo.setInstitute</definition>
+        <argsstring>(String institute)</argsstring>
+        <name>setInstitute</name>
+        <param>
+          <type>String</type>
+          <declname>institute</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" line="112" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" bodystart="112" bodyend="114"/>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_1aee85fd8c887f40d7d6e0ebcb51ba68e2" compoundref="UserInfoDAOImpl_8java" startline="78" endline="100">portal.registration.dao.UserInfoDAOImpl::edit</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1UserInfo_1abc3f4b70068a3c48d4570f89d4526cd5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String portal.registration.domain.UserInfo.getPhone</definition>
+        <argsstring>()</argsstring>
+        <name>getPhone</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" line="117" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" bodystart="117" bodyend="119"/>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_1aee85fd8c887f40d7d6e0ebcb51ba68e2" compoundref="UserInfoDAOImpl_8java" startline="78" endline="100">portal.registration.dao.UserInfoDAOImpl::edit</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1UserInfo_1a3080c8f1b99d67bdd5b5e7b3b8301bfb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void portal.registration.domain.UserInfo.setPhone</definition>
+        <argsstring>(String phone)</argsstring>
+        <name>setPhone</name>
+        <param>
+          <type>String</type>
+          <declname>phone</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" line="121" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" bodystart="121" bodyend="123"/>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_1aee85fd8c887f40d7d6e0ebcb51ba68e2" compoundref="UserInfoDAOImpl_8java" startline="78" endline="100">portal.registration.dao.UserInfoDAOImpl::edit</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1UserInfo_1ab6dea2bfa58260b955cd40c7990f6755" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String portal.registration.domain.UserInfo.getMail</definition>
+        <argsstring>()</argsstring>
+        <name>getMail</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" line="126" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" bodystart="126" bodyend="128"/>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_1aee85fd8c887f40d7d6e0ebcb51ba68e2" compoundref="UserInfoDAOImpl_8java" startline="78" endline="100">portal.registration.dao.UserInfoDAOImpl::edit</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1UserInfo_1acdda421b0770953b2e37fa17651b4287" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void portal.registration.domain.UserInfo.setMail</definition>
+        <argsstring>(String mail)</argsstring>
+        <name>setMail</name>
+        <param>
+          <type>String</type>
+          <declname>mail</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" line="130" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" bodystart="130" bodyend="132"/>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_1aee85fd8c887f40d7d6e0ebcb51ba68e2" compoundref="UserInfoDAOImpl_8java" startline="78" endline="100">portal.registration.dao.UserInfoDAOImpl::edit</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1UserInfo_1a929f371c5886ad09e6d4c068490d5299" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String portal.registration.domain.UserInfo.getUsername</definition>
+        <argsstring>()</argsstring>
+        <name>getUsername</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" line="135" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" bodystart="135" bodyend="137"/>
+        <referencedby refid="classportal_1_1registration_1_1controller_1_1AddUserToVOController_1abd142c68f2e74216087976e202ab1eae" compoundref="AddUserToVOController_8java" startline="144" endline="174">portal.registration.controller.AddUserToVOController::activateUser</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1controller_1_1EditUserInfoController_1a9d4f65b993d3f9b6f978bcaa7c51aede" compoundref="EditUserInfoController_8java" startline="62" endline="92">portal.registration.controller.EditUserInfoController::deactivateUser</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1controller_1_1AddUserToVoPresentsController_1aa50525ef91683e6c99413cca24b54ddd" compoundref="AddUserToVoPresentsController_8java" startline="65" endline="95">portal.registration.controller.AddUserToVoPresentsController::deactivateUser</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_1aee85fd8c887f40d7d6e0ebcb51ba68e2" compoundref="UserInfoDAOImpl_8java" startline="78" endline="100">portal.registration.dao.UserInfoDAOImpl::edit</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1controller_1_1RemoveUserInfoController_1a7bb13ed82ea190f5c33820b30876c33f" compoundref="RemoveUserInfoController_8java" startline="35" endline="50">portal.registration.controller.RemoveUserInfoController::removeUserInfo</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1services_1_1CertificateServiceImpl_1a592df743c12b9a43db06dbae92db23c2" compoundref="CertificateServiceImpl_8java" startline="59" endline="88">portal.registration.services.CertificateServiceImpl::save</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1UserInfo_1afc1777958910500eab3a8b604c3a9f57" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void portal.registration.domain.UserInfo.setUsername</definition>
+        <argsstring>(String username)</argsstring>
+        <name>setUsername</name>
+        <param>
+          <type>String</type>
+          <declname>username</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" line="139" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" bodystart="139" bodyend="141"/>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_1aee85fd8c887f40d7d6e0ebcb51ba68e2" compoundref="UserInfoDAOImpl_8java" startline="78" endline="100">portal.registration.dao.UserInfoDAOImpl::edit</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1UserInfo_1aa7222bfbc7d52de11f68a83cab308885" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String portal.registration.domain.UserInfo.getRegistrationComplete</definition>
+        <argsstring>()</argsstring>
+        <name>getRegistrationComplete</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" line="144" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" bodystart="144" bodyend="146"/>
+        <referencedby refid="classportal_1_1registration_1_1controller_1_1AddUserToVOController_1a299d78081b72ac80a2adba3f33c7970c" compoundref="AddUserToVOController_8java" startline="70" endline="142">portal.registration.controller.AddUserToVOController::addUserToVo</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1controller_1_1EditUserInfoController_1a9d4f65b993d3f9b6f978bcaa7c51aede" compoundref="EditUserInfoController_8java" startline="62" endline="92">portal.registration.controller.EditUserInfoController::deactivateUser</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1controller_1_1AddUserToVoPresentsController_1aa50525ef91683e6c99413cca24b54ddd" compoundref="AddUserToVoPresentsController_8java" startline="65" endline="95">portal.registration.controller.AddUserToVoPresentsController::deactivateUser</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1UserInfo_1a0faf57dfd8593ff7fd523793bc20d5a1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void portal.registration.domain.UserInfo.setRegistrationComplete</definition>
+        <argsstring>(String registrationComplete)</argsstring>
+        <name>setRegistrationComplete</name>
+        <param>
+          <type>String</type>
+          <declname>registrationComplete</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" line="148" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" bodystart="148" bodyend="150"/>
+        <referencedby refid="classportal_1_1registration_1_1controller_1_1AddUserToVOController_1abd142c68f2e74216087976e202ab1eae" compoundref="AddUserToVOController_8java" startline="144" endline="174">portal.registration.controller.AddUserToVOController::activateUser</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1controller_1_1EditUserInfoController_1a9d4f65b993d3f9b6f978bcaa7c51aede" compoundref="EditUserInfoController_8java" startline="62" endline="92">portal.registration.controller.EditUserInfoController::deactivateUser</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1controller_1_1AddUserToVoPresentsController_1aa50525ef91683e6c99413cca24b54ddd" compoundref="AddUserToVoPresentsController_8java" startline="65" endline="95">portal.registration.controller.AddUserToVoPresentsController::deactivateUser</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_1aee85fd8c887f40d7d6e0ebcb51ba68e2" compoundref="UserInfoDAOImpl_8java" startline="78" endline="100">portal.registration.dao.UserInfoDAOImpl::edit</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1UserInfo_1af15ae00df478bb8a72b56dcb8fd808e0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Set&lt; <ref refid="classportal_1_1registration_1_1domain_1_1Certificate" kindref="compound">Certificate</ref> &gt;</type>
+        <definition>Set&lt;Certificate&gt; portal.registration.domain.UserInfo.getCertificates</definition>
+        <argsstring>()</argsstring>
+        <name>getCertificates</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" line="153" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" bodystart="153" bodyend="155"/>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1UserInfo_1a8d01ab50b64992c36920e567fae78253" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void portal.registration.domain.UserInfo.setCertificates</definition>
+        <argsstring>(Set&lt; Certificate &gt; certificates)</argsstring>
+        <name>setCertificates</name>
+        <param>
+          <type>Set&lt; <ref refid="classportal_1_1registration_1_1domain_1_1Certificate" kindref="compound">Certificate</ref> &gt;</type>
+          <declname>certificates</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" line="157" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" bodystart="157" bodyend="159"/>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1UserInfo_1a43782780c57a4a97e8d3261424a8041e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Set&lt; <ref refid="classportal_1_1registration_1_1domain_1_1UserToVo" kindref="compound">UserToVo</ref> &gt;</type>
+        <definition>Set&lt;UserToVo&gt; portal.registration.domain.UserInfo.getUserToVos</definition>
+        <argsstring>()</argsstring>
+        <name>getUserToVos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" line="162" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" bodystart="162" bodyend="164"/>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1UserInfo_1a7f6eaaa74e90c6b184238762e93547d2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void portal.registration.domain.UserInfo.setUserToVos</definition>
+        <argsstring>(Set&lt; UserToVo &gt; userToVos)</argsstring>
+        <name>setUserToVos</name>
+        <param>
+          <type>Set&lt; <ref refid="classportal_1_1registration_1_1domain_1_1UserToVo" kindref="compound">UserToVo</ref> &gt;</type>
+          <declname>userToVos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" line="166" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" bodystart="166" bodyend="168"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="classportal_1_1registration_1_1domain_1_1UserInfo" kindref="compound">UserInfo</ref> generated by hbm2java </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="561">
+        <label>portal.registration.domain.UserInfo</label>
+        <link refid="classportal_1_1registration_1_1domain_1_1UserInfo"/>
+        <childnode refid="562" relation="usage">
+          <edgelabel>userToVos</edgelabel>
+        </childnode>
+        <childnode refid="564" relation="usage">
+          <edgelabel>certificates</edgelabel>
+        </childnode>
+        <childnode refid="565" relation="usage">
+          <edgelabel>idp</edgelabel>
+        </childnode>
+      </node>
+      <node id="566">
+        <label>Set&lt; UserInfo &gt;</label>
+        <childnode refid="563" relation="template-instance">
+          <edgelabel>&lt; UserInfo &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="565">
+        <label>portal.registration.domain.Idp</label>
+        <link refid="classportal_1_1registration_1_1domain_1_1Idp"/>
+        <childnode refid="566" relation="usage">
+          <edgelabel>userInfos</edgelabel>
+        </childnode>
+      </node>
+      <node id="562">
+        <label>Set&lt; UserToVo &gt;</label>
+        <childnode refid="563" relation="template-instance">
+          <edgelabel>&lt; UserToVo &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="563">
+        <label>Set</label>
+      </node>
+      <node id="564">
+        <label>Set&lt; Certificate &gt;</label>
+        <childnode refid="563" relation="template-instance">
+          <edgelabel>&lt; Certificate &gt;</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" line="23" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserInfo.java" bodystart="23" bodyend="170"/>
+    <listofallmembers>
+      <member refid="classportal_1_1registration_1_1domain_1_1UserInfo_1a5923ed9351bde36f580647933f7b3fe0" prot="private" virt="non-virtual"><scope>portal::registration::domain::UserInfo</scope><name>certificates</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1UserInfo_1a40352804afaf61b92208e4835ca8e5af" prot="private" virt="non-virtual"><scope>portal::registration::domain::UserInfo</scope><name>firstName</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1UserInfo_1af15ae00df478bb8a72b56dcb8fd808e0" prot="public" virt="non-virtual"><scope>portal::registration::domain::UserInfo</scope><name>getCertificates</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1UserInfo_1a1626a0c995db599481eae8538dced879" prot="public" virt="non-virtual"><scope>portal::registration::domain::UserInfo</scope><name>getFirstName</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1UserInfo_1a1baadc828a54624e9184b12492413c9c" prot="public" virt="non-virtual"><scope>portal::registration::domain::UserInfo</scope><name>getIdp</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1UserInfo_1a6e91d15bce496b1d5980803d344710a4" prot="public" virt="non-virtual"><scope>portal::registration::domain::UserInfo</scope><name>getInstitute</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1UserInfo_1a515a516db97a054a8f8074ebeac4d645" prot="public" virt="non-virtual"><scope>portal::registration::domain::UserInfo</scope><name>getLastName</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1UserInfo_1ab6dea2bfa58260b955cd40c7990f6755" prot="public" virt="non-virtual"><scope>portal::registration::domain::UserInfo</scope><name>getMail</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1UserInfo_1abc3f4b70068a3c48d4570f89d4526cd5" prot="public" virt="non-virtual"><scope>portal::registration::domain::UserInfo</scope><name>getPhone</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1UserInfo_1aa7222bfbc7d52de11f68a83cab308885" prot="public" virt="non-virtual"><scope>portal::registration::domain::UserInfo</scope><name>getRegistrationComplete</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1UserInfo_1a48077c9afd126dac031566c4f4f7ef39" prot="public" virt="non-virtual"><scope>portal::registration::domain::UserInfo</scope><name>getUserId</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1UserInfo_1a929f371c5886ad09e6d4c068490d5299" prot="public" virt="non-virtual"><scope>portal::registration::domain::UserInfo</scope><name>getUsername</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1UserInfo_1a43782780c57a4a97e8d3261424a8041e" prot="public" virt="non-virtual"><scope>portal::registration::domain::UserInfo</scope><name>getUserToVos</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1UserInfo_1a9ee2008ca7555a9237135aedd8d0949b" prot="private" virt="non-virtual"><scope>portal::registration::domain::UserInfo</scope><name>idp</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1UserInfo_1a71b2ba532eff8a9fb4fac4c000b3a8f3" prot="private" virt="non-virtual"><scope>portal::registration::domain::UserInfo</scope><name>institute</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1UserInfo_1a294fb84a68dad74ae5ed4e2186f5e460" prot="private" virt="non-virtual"><scope>portal::registration::domain::UserInfo</scope><name>lastName</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1UserInfo_1a0433a86cea33aac5e724356012617157" prot="private" virt="non-virtual"><scope>portal::registration::domain::UserInfo</scope><name>mail</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1UserInfo_1af6775663ccce32e01fc070f1342f523f" prot="private" virt="non-virtual"><scope>portal::registration::domain::UserInfo</scope><name>phone</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1UserInfo_1ab5145405b331d11672cd66053ceb012c" prot="private" virt="non-virtual"><scope>portal::registration::domain::UserInfo</scope><name>registrationComplete</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1UserInfo_1aea84836830b4057e574b59aad5679de8" prot="private" virt="non-virtual"><scope>portal::registration::domain::UserInfo</scope><name>serialVersionUID</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1UserInfo_1a8d01ab50b64992c36920e567fae78253" prot="public" virt="non-virtual"><scope>portal::registration::domain::UserInfo</scope><name>setCertificates</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1UserInfo_1a2b5087901b31b751400f47a1e64dd913" prot="public" virt="non-virtual"><scope>portal::registration::domain::UserInfo</scope><name>setFirstName</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1UserInfo_1af0d840379d615b691972dff9f22f640b" prot="public" virt="non-virtual"><scope>portal::registration::domain::UserInfo</scope><name>setIdp</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1UserInfo_1a734241ba2b19ba148375017bb3cad0b2" prot="public" virt="non-virtual"><scope>portal::registration::domain::UserInfo</scope><name>setInstitute</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1UserInfo_1a0b40b46fc03b4c1c38ed1abce4f621ca" prot="public" virt="non-virtual"><scope>portal::registration::domain::UserInfo</scope><name>setLastName</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1UserInfo_1acdda421b0770953b2e37fa17651b4287" prot="public" virt="non-virtual"><scope>portal::registration::domain::UserInfo</scope><name>setMail</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1UserInfo_1a3080c8f1b99d67bdd5b5e7b3b8301bfb" prot="public" virt="non-virtual"><scope>portal::registration::domain::UserInfo</scope><name>setPhone</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1UserInfo_1a0faf57dfd8593ff7fd523793bc20d5a1" prot="public" virt="non-virtual"><scope>portal::registration::domain::UserInfo</scope><name>setRegistrationComplete</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1UserInfo_1a967c33be00c4ef3bf69cc065ff02ba29" prot="public" virt="non-virtual"><scope>portal::registration::domain::UserInfo</scope><name>setUserId</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1UserInfo_1afc1777958910500eab3a8b604c3a9f57" prot="public" virt="non-virtual"><scope>portal::registration::domain::UserInfo</scope><name>setUsername</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1UserInfo_1a7f6eaaa74e90c6b184238762e93547d2" prot="public" virt="non-virtual"><scope>portal::registration::domain::UserInfo</scope><name>setUserToVos</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1UserInfo_1abbdfca0a8a809e1a28a5dd2e56874c1b" prot="private" virt="non-virtual"><scope>portal::registration::domain::UserInfo</scope><name>userId</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1UserInfo_1a6c17329b45a9e55c087de4b7d21cfa0a" prot="public" virt="non-virtual"><scope>portal::registration::domain::UserInfo</scope><name>UserInfo</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1UserInfo_1a881fb81e3217c91595c867a7b079df84" prot="public" virt="non-virtual"><scope>portal::registration::domain::UserInfo</scope><name>UserInfo</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1UserInfo_1afc3d148d311ec9d48e33933668177cc0" prot="public" virt="non-virtual"><scope>portal::registration::domain::UserInfo</scope><name>UserInfo</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1UserInfo_1ac3583a042c907bcce6ee84d3b2ee637d" prot="private" virt="non-virtual"><scope>portal::registration::domain::UserInfo</scope><name>username</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1UserInfo_1a334522ed169ed1e54ac676a31b0cc701" prot="private" virt="non-virtual"><scope>portal::registration::domain::UserInfo</scope><name>userToVos</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

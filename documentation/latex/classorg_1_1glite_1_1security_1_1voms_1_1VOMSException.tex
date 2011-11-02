@@ -1,0 +1,185 @@
+\hypertarget{classorg_1_1glite_1_1security_1_1voms_1_1VOMSException}{
+\section{org.glite.security.voms.VOMSException Class Reference}
+\label{classorg_1_1glite_1_1security_1_1voms_1_1VOMSException}\index{org::glite::security::voms::VOMSException@{org::glite::security::voms::VOMSException}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classorg_1_1glite_1_1security_1_1voms_1_1VOMSException_a00d28bd5e41c3f05dc93a6a30111c5a9}{VOMSException} ()
+\item 
+synchronized boolean \hyperlink{classorg_1_1glite_1_1security_1_1voms_1_1VOMSException_a6e0d3355c36952510f2d2bde6ac598ab}{equals} (java.lang.Object obj)
+\item 
+synchronized int \hyperlink{classorg_1_1glite_1_1security_1_1voms_1_1VOMSException_a8f9da552e68282e94c8a7167c52bea7f}{hashCode} ()
+\item 
+void \hyperlink{classorg_1_1glite_1_1security_1_1voms_1_1VOMSException_a1f0e7b3d87b5817394ca0b53a1f97d00}{writeDetails} (javax.xml.namespace.QName qname, org.apache.axis.encoding.SerializationContext context)  throws java.io.IOException 
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+java.lang.Object \hyperlink{classorg_1_1glite_1_1security_1_1voms_1_1VOMSException_ab6440c26ca2767f73c23cf7f7762bd8f}{\_\-\_\-equalsCalc} = null
+\item 
+boolean \hyperlink{classorg_1_1glite_1_1security_1_1voms_1_1VOMSException_a7e4179821de4dcaab56ecd6d4ee0babb}{\_\-\_\-hashCodeCalc} = false
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 10 of file VOMSException.java.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classorg_1_1glite_1_1security_1_1voms_1_1VOMSException_a00d28bd5e41c3f05dc93a6a30111c5a9}{
+\index{org::glite::security::voms::VOMSException@{org::glite::security::voms::VOMSException}!VOMSException@{VOMSException}}
+\index{VOMSException@{VOMSException}!org::glite::security::voms::VOMSException@{org::glite::security::voms::VOMSException}}
+\subsubsection[{VOMSException}]{\setlength{\rightskip}{0pt plus 5cm}org.glite.security.voms.VOMSException.VOMSException (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classorg_1_1glite_1_1security_1_1voms_1_1VOMSException_a00d28bd5e41c3f05dc93a6a30111c5a9}
+
+
+Definition at line 11 of file VOMSException.java.
+
+
+
+Referenced by org.glite.security.voms.VOMSException.equals().
+
+
+\begin{DoxyCode}
+                           {
+    }
+\end{DoxyCode}
+
+
+Here is the caller graph for this function:
+
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classorg_1_1glite_1_1security_1_1voms_1_1VOMSException_a6e0d3355c36952510f2d2bde6ac598ab}{
+\index{org::glite::security::voms::VOMSException@{org::glite::security::voms::VOMSException}!equals@{equals}}
+\index{equals@{equals}!org::glite::security::voms::VOMSException@{org::glite::security::voms::VOMSException}}
+\subsubsection[{equals}]{\setlength{\rightskip}{0pt plus 5cm}synchronized boolean org.glite.security.voms.VOMSException.equals (
+\begin{DoxyParamCaption}
+\item[{java.lang.Object}]{obj}
+\end{DoxyParamCaption}
+)}}
+\label{classorg_1_1glite_1_1security_1_1voms_1_1VOMSException_a6e0d3355c36952510f2d2bde6ac598ab}
+
+
+Definition at line 15 of file VOMSException.java.
+
+
+
+References org.glite.security.voms.VOMSException.\_\-\_\-equalsCalc, and org.glite.security.voms.VOMSException.VOMSException().
+
+
+\begin{DoxyCode}
+                                                             {
+        if (!(obj instanceof VOMSException)) return false;
+        VOMSException other = (VOMSException) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true;
+        __equalsCalc = null;
+        return _equals;
+    }
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+
+
+\hypertarget{classorg_1_1glite_1_1security_1_1voms_1_1VOMSException_a8f9da552e68282e94c8a7167c52bea7f}{
+\index{org::glite::security::voms::VOMSException@{org::glite::security::voms::VOMSException}!hashCode@{hashCode}}
+\index{hashCode@{hashCode}!org::glite::security::voms::VOMSException@{org::glite::security::voms::VOMSException}}
+\subsubsection[{hashCode}]{\setlength{\rightskip}{0pt plus 5cm}synchronized int org.glite.security.voms.VOMSException.hashCode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classorg_1_1glite_1_1security_1_1voms_1_1VOMSException_a8f9da552e68282e94c8a7167c52bea7f}
+
+
+Definition at line 31 of file VOMSException.java.
+
+
+
+References org.glite.security.voms.VOMSException.\_\-\_\-hashCodeCalc.
+
+
+\begin{DoxyCode}
+                                       {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+\end{DoxyCode}
+\hypertarget{classorg_1_1glite_1_1security_1_1voms_1_1VOMSException_a1f0e7b3d87b5817394ca0b53a1f97d00}{
+\index{org::glite::security::voms::VOMSException@{org::glite::security::voms::VOMSException}!writeDetails@{writeDetails}}
+\index{writeDetails@{writeDetails}!org::glite::security::voms::VOMSException@{org::glite::security::voms::VOMSException}}
+\subsubsection[{writeDetails}]{\setlength{\rightskip}{0pt plus 5cm}void org.glite.security.voms.VOMSException.writeDetails (
+\begin{DoxyParamCaption}
+\item[{javax.xml.namespace.QName}]{qname, }
+\item[{org.apache.axis.encoding.SerializationContext}]{context}
+\end{DoxyParamCaption}
+)  throws java.io.IOException }}
+\label{classorg_1_1glite_1_1security_1_1voms_1_1VOMSException_a1f0e7b3d87b5817394ca0b53a1f97d00}
+Writes the exception data to the faultDetails 
+
+Definition at line 45 of file VOMSException.java.
+
+
+\begin{DoxyCode}
+                                                                                 
+                                                                     {
+        context.serialize(qname, null, this);
+    }
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classorg_1_1glite_1_1security_1_1voms_1_1VOMSException_ab6440c26ca2767f73c23cf7f7762bd8f}{
+\index{org::glite::security::voms::VOMSException@{org::glite::security::voms::VOMSException}!\_\-\_\-equalsCalc@{\_\-\_\-equalsCalc}}
+\index{\_\-\_\-equalsCalc@{\_\-\_\-equalsCalc}!org::glite::security::voms::VOMSException@{org::glite::security::voms::VOMSException}}
+\subsubsection[{\_\-\_\-equalsCalc}]{\setlength{\rightskip}{0pt plus 5cm}java.lang.Object {\bf org.glite.security.voms.VOMSException.\_\-\_\-equalsCalc} = null\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classorg_1_1glite_1_1security_1_1voms_1_1VOMSException_ab6440c26ca2767f73c23cf7f7762bd8f}
+
+
+Definition at line 14 of file VOMSException.java.
+
+
+
+Referenced by org.glite.security.voms.VOMSException.equals().
+
+\hypertarget{classorg_1_1glite_1_1security_1_1voms_1_1VOMSException_a7e4179821de4dcaab56ecd6d4ee0babb}{
+\index{org::glite::security::voms::VOMSException@{org::glite::security::voms::VOMSException}!\_\-\_\-hashCodeCalc@{\_\-\_\-hashCodeCalc}}
+\index{\_\-\_\-hashCodeCalc@{\_\-\_\-hashCodeCalc}!org::glite::security::voms::VOMSException@{org::glite::security::voms::VOMSException}}
+\subsubsection[{\_\-\_\-hashCodeCalc}]{\setlength{\rightskip}{0pt plus 5cm}boolean {\bf org.glite.security.voms.VOMSException.\_\-\_\-hashCodeCalc} = false\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classorg_1_1glite_1_1security_1_1voms_1_1VOMSException_a7e4179821de4dcaab56ecd6d4ee0babb}
+
+
+Definition at line 30 of file VOMSException.java.
+
+
+
+Referenced by org.glite.security.voms.VOMSException.hashCode().
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/\hyperlink{VOMSException_8java}{VOMSException.java}\end{DoxyCompactItemize}

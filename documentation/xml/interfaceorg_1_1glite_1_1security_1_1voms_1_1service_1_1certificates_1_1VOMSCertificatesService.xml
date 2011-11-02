@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesService" kind="interface" prot="public">
+    <compoundname>org::glite::security::voms::service::certificates::VOMSCertificatesService</compoundname>
+    <derivedcompoundref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesServiceLocator" prot="public" virt="non-virtual">org.glite.security.voms.service.certificates.VOMSCertificatesServiceLocator</derivedcompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesService_1a19921fdf4f7eb4fe7ed3fb3852a92745" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>java.lang.String</type>
+        <definition>java.lang.String org.glite.security.voms.service.certificates.VOMSCertificatesService.getVOMSCertificatesAddress</definition>
+        <argsstring>()</argsstring>
+        <name>getVOMSCertificatesAddress</name>
+        <reimplementedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesServiceLocator_1ad6203c262940257f673f58e36bb4ac43">getVOMSCertificatesAddress</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/VOMSCertificatesService.java" line="11"/>
+      </memberdef>
+      <memberdef kind="function" id="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesService_1a3bfd85c27f7196c222bfe6a7635a5abe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificates" kindref="compound">org.glite.security.voms.service.certificates.VOMSCertificates</ref></type>
+        <definition>org.glite.security.voms.service.certificates.VOMSCertificates org.glite.security.voms.service.certificates.VOMSCertificatesService.getVOMSCertificates</definition>
+        <argsstring>()</argsstring>
+        <name>getVOMSCertificates</name>
+        <reimplementedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesServiceLocator_1adcad3b23256f84acba212e60333b93f4">getVOMSCertificates</reimplementedby>
+        <exceptions> throws javax.xml.rpc.ServiceException</exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/VOMSCertificatesService.java" line="13"/>
+      </memberdef>
+      <memberdef kind="function" id="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesService_1aba38b382d3921f7cbe8468ad3449de3f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificates" kindref="compound">org.glite.security.voms.service.certificates.VOMSCertificates</ref></type>
+        <definition>org.glite.security.voms.service.certificates.VOMSCertificates org.glite.security.voms.service.certificates.VOMSCertificatesService.getVOMSCertificates</definition>
+        <argsstring>(java.net.URL portAddress)</argsstring>
+        <name>getVOMSCertificates</name>
+        <reimplementedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesServiceLocator_1ad0f4cb8aef61e4f619cc174db6063d39">getVOMSCertificates</reimplementedby>
+        <param>
+          <type>java.net.URL</type>
+          <declname>portAddress</declname>
+        </param>
+        <exceptions> throws javax.xml.rpc.ServiceException</exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/VOMSCertificatesService.java" line="15"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="729">
+        <label>org.glite.security.voms.service.certificates.VOMSCertificatesServiceLocator</label>
+        <link refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesServiceLocator"/>
+        <childnode refid="728" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="728">
+        <label>org.glite.security.voms.service.certificates.VOMSCertificatesService</label>
+        <link refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesService"/>
+      </node>
+    </inheritancegraph>
+    <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/VOMSCertificatesService.java" line="10" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/VOMSCertificatesService.java" bodystart="10" bodyend="16"/>
+    <listofallmembers>
+      <member refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesService_1a3bfd85c27f7196c222bfe6a7635a5abe" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::certificates::VOMSCertificatesService</scope><name>getVOMSCertificates</name></member>
+      <member refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesService_1aba38b382d3921f7cbe8468ad3449de3f" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::certificates::VOMSCertificatesService</scope><name>getVOMSCertificates</name></member>
+      <member refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesService_1a19921fdf4f7eb4fe7ed3fb3852a92745" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::certificates::VOMSCertificatesService</scope><name>getVOMSCertificatesAddress</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

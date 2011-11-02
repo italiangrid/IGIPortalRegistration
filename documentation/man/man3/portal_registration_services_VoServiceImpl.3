@@ -1,0 +1,121 @@
+.TH "portal::registration::services::VoServiceImpl" 3 "Wed Jul 13 2011" "Version 4" "Registration" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+portal::registration::services::VoServiceImpl \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBportal.registration.services.VoService\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "List< \fBVo\fP > \fBgetAllVo\fP ()"
+.br
+.ti -1c
+.RI "\fBVo\fP \fBfindById\fP (Integer id)"
+.br
+.ti -1c
+.RI "String \fBfindByVo\fP (\fBVo\fP vo)"
+.br
+.ti -1c
+.RI "List< String > \fBgetAllDiscplines\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBVoDAO\fP \fBvoDAO\fP"
+.br
+.in -1c
+.SS "Static Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "static final Logger \fBlog\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 14 of file VoServiceImpl.java.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBVo\fP portal.registration.services.VoServiceImpl.findById (Integerid)"
+.PP
+Implements \fBportal.registration.services.VoService\fP.
+.PP
+Definition at line 29 of file VoServiceImpl.java.
+.PP
+References portal.registration.dao.VoDAO.findById(), portal.registration.services.VoServiceImpl.log, and portal.registration.services.VoServiceImpl.voDAO.
+.PP
+.nf
+                                       {
+                log.debug('getting UserInfo instance with id: ' + id);
+                return voDAO.findById(id);
+        }
+.fi
+.SS "String portal.registration.services.VoServiceImpl.findByVo (\fBVo\fPvo)"
+.PP
+Implements \fBportal.registration.services.VoService\fP.
+.PP
+Definition at line 35 of file VoServiceImpl.java.
+.PP
+References portal.registration.dao.VoDAO.findById(), portal.registration.domain.Vo.getIdVo(), portal.registration.services.VoServiceImpl.log, and portal.registration.services.VoServiceImpl.voDAO.
+.PP
+.nf
+                                      {
+                log.debug('getting Vo instance');
+                return voDAO.findById(vo.getIdVo()).getVo();
+        }
+.fi
+.SS "List<String> portal.registration.services.VoServiceImpl.getAllDiscplines ()"
+.PP
+Implements \fBportal.registration.services.VoService\fP.
+.PP
+Definition at line 41 of file VoServiceImpl.java.
+.PP
+References portal.registration.dao.VoDAO.getAllDiscipline(), and portal.registration.services.VoServiceImpl.voDAO.
+.PP
+.nf
+                                               {
+                return voDAO.getAllDiscipline();
+        }
+.fi
+.SS "List<\fBVo\fP> portal.registration.services.VoServiceImpl.getAllVo ()"
+.PP
+Implements \fBportal.registration.services.VoService\fP.
+.PP
+Definition at line 23 of file VoServiceImpl.java.
+.PP
+References portal.registration.dao.VoDAO.getAllVo(), portal.registration.services.VoServiceImpl.log, and portal.registration.services.VoServiceImpl.voDAO.
+.PP
+.nf
+                                   {
+                log.debug('getting all Vo instance');
+                return voDAO.getAllVo();
+        }
+.fi
+.SH "Member Data Documentation"
+.PP 
+.SS "final Logger \fBportal.registration.services.VoServiceImpl.log\fP\fC [static, private]\fP"\fBInitial value:\fP
+.PP
+.nf
+ Logger
+                        .getLogger(UserInfoServiceImpl.class)
+.fi
+.PP
+Definition at line 16 of file VoServiceImpl.java.
+.PP
+Referenced by portal.registration.services.VoServiceImpl.findById(), portal.registration.services.VoServiceImpl.findByVo(), and portal.registration.services.VoServiceImpl.getAllVo().
+.SS "\fBVoDAO\fP \fBportal.registration.services.VoServiceImpl.voDAO\fP\fC [private]\fP"
+.PP
+Definition at line 20 of file VoServiceImpl.java.
+.PP
+Referenced by portal.registration.services.VoServiceImpl.findById(), portal.registration.services.VoServiceImpl.findByVo(), portal.registration.services.VoServiceImpl.getAllDiscplines(), and portal.registration.services.VoServiceImpl.getAllVo().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Registration from the source code.

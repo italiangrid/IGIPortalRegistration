@@ -1,0 +1,331 @@
+.TH "org::glite::security::voms::service::admin::VOMSAdmin" 3 "Wed Jul 13 2011" "Version 4" "Registration" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+org::glite::security::voms::service::admin::VOMSAdmin \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl\fP, \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton\fP, and \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingStub\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBcreateGroup\fP (java.lang.String in0, java.lang.String in1)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException"
+.br
+.ti -1c
+.RI "\fBorg.glite.security.voms.User\fP \fBgetUser\fP (java.lang.String in0, java.lang.String in1)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException"
+.br
+.ti -1c
+.RI "void \fBsetUser\fP (\fBorg.glite.security.voms.User\fP in0)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException"
+.br
+.ti -1c
+.RI "int \fBgetMajorVersionNumber\fP ()  throws java.rmi.RemoteException"
+.br
+.ti -1c
+.RI "java.lang.String \fBgetVOName\fP ()  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException"
+.br
+.ti -1c
+.RI "void \fBcreateUser\fP (\fBorg.glite.security.voms.User\fP in0)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException"
+.br
+.ti -1c
+.RI "void \fBdeleteUser\fP (java.lang.String in0, java.lang.String in1)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException"
+.br
+.ti -1c
+.RI "void \fBdeleteGroup\fP (java.lang.String in0)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException"
+.br
+.ti -1c
+.RI "void \fBcreateRole\fP (java.lang.String in0)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException"
+.br
+.ti -1c
+.RI "void \fBdeleteRole\fP (java.lang.String in0)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException"
+.br
+.ti -1c
+.RI "void \fBcreateCapability\fP (java.lang.String in0)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException"
+.br
+.ti -1c
+.RI "void \fBdeleteCapability\fP (java.lang.String in0)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException"
+.br
+.ti -1c
+.RI "void \fBaddMember\fP (java.lang.String in0, java.lang.String in1, java.lang.String in2)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException"
+.br
+.ti -1c
+.RI "void \fBremoveMember\fP (java.lang.String in0, java.lang.String in1, java.lang.String in2)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException"
+.br
+.ti -1c
+.RI "void \fBassignRole\fP (java.lang.String in0, java.lang.String in1, java.lang.String in2, java.lang.String in3)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException"
+.br
+.ti -1c
+.RI "void \fBdismissRole\fP (java.lang.String in0, java.lang.String in1, java.lang.String in2, java.lang.String in3)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException"
+.br
+.ti -1c
+.RI "void \fBassignCapability\fP (java.lang.String in0, java.lang.String in1, java.lang.String in2)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException"
+.br
+.ti -1c
+.RI "void \fBdismissCapability\fP (java.lang.String in0, java.lang.String in1, java.lang.String in2)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException"
+.br
+.ti -1c
+.RI "\fBorg.glite.security.voms.User\fP[] \fBlistMembers\fP (java.lang.String in0)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException"
+.br
+.ti -1c
+.RI "\fBorg.glite.security.voms.User\fP[] \fBlistUsersWithRole\fP (java.lang.String in0, java.lang.String in1)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException"
+.br
+.ti -1c
+.RI "\fBorg.glite.security.voms.User\fP[] \fBlistUsersWithCapability\fP (java.lang.String in0)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException"
+.br
+.ti -1c
+.RI "java.lang.String[] \fBgetGroupPath\fP (java.lang.String in0)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException"
+.br
+.ti -1c
+.RI "java.lang.String[] \fBlistSubGroups\fP (java.lang.String in0)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException"
+.br
+.ti -1c
+.RI "java.lang.String[] \fBlistGroups\fP (java.lang.String in0, java.lang.String in1)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException"
+.br
+.ti -1c
+.RI "java.lang.String[] \fBlistRoles\fP ()  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException"
+.br
+.ti -1c
+.RI "java.lang.String[] \fBlistRoles\fP (java.lang.String in0, java.lang.String in1)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException"
+.br
+.ti -1c
+.RI "java.lang.String[] \fBlistCapabilities\fP ()  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException"
+.br
+.ti -1c
+.RI "java.lang.String[] \fBlistCapabilities\fP (java.lang.String in0, java.lang.String in1)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException"
+.br
+.ti -1c
+.RI "java.lang.String[] \fBlistCAs\fP ()  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException"
+.br
+.ti -1c
+.RI "\fBorg.glite.security.voms.ACLEntry\fP[] \fBgetACL\fP (java.lang.String in0)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException"
+.br
+.ti -1c
+.RI "void \fBsetACL\fP (java.lang.String in0, \fBorg.glite.security.voms.ACLEntry\fP[] in1)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException"
+.br
+.ti -1c
+.RI "void \fBaddACLEntry\fP (java.lang.String in0, \fBorg.glite.security.voms.ACLEntry\fP in1)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException"
+.br
+.ti -1c
+.RI "void \fBremoveACLEntry\fP (java.lang.String in0, \fBorg.glite.security.voms.ACLEntry\fP in1)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException"
+.br
+.ti -1c
+.RI "\fBorg.glite.security.voms.ACLEntry\fP[] \fBgetDefaultACL\fP (java.lang.String in0)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException"
+.br
+.ti -1c
+.RI "void \fBsetDefaultACL\fP (java.lang.String in0, \fBorg.glite.security.voms.ACLEntry\fP[] in1)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException"
+.br
+.ti -1c
+.RI "void \fBaddDefaultACLEntry\fP (java.lang.String in0, \fBorg.glite.security.voms.ACLEntry\fP in1)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException"
+.br
+.ti -1c
+.RI "void \fBremoveDefaultACLEntry\fP (java.lang.String in0, \fBorg.glite.security.voms.ACLEntry\fP in1)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException"
+.br
+.ti -1c
+.RI "int \fBgetMinorVersionNumber\fP ()  throws java.rmi.RemoteException"
+.br
+.ti -1c
+.RI "int \fBgetPatchVersionNumber\fP ()  throws java.rmi.RemoteException"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 10 of file VOMSAdmin.java.
+.SH "Member Function Documentation"
+.PP 
+.SS "void org.glite.security.voms.service.admin.VOMSAdmin.addACLEntry (java.lang.Stringin0, \fBorg.glite.security.voms.ACLEntry\fPin1)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP"
+.PP
+Implemented in \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl\fP, \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton\fP, and \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingStub\fP.
+.PP
+Referenced by org.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton.addACLEntry().
+.SS "void org.glite.security.voms.service.admin.VOMSAdmin.addDefaultACLEntry (java.lang.Stringin0, \fBorg.glite.security.voms.ACLEntry\fPin1)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP"
+.PP
+Implemented in \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl\fP, \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton\fP, and \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingStub\fP.
+.PP
+Referenced by org.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton.addDefaultACLEntry().
+.SS "void org.glite.security.voms.service.admin.VOMSAdmin.addMember (java.lang.Stringin0, java.lang.Stringin1, java.lang.Stringin2)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP"
+.PP
+Implemented in \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl\fP, \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton\fP, and \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingStub\fP.
+.PP
+Referenced by org.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton.addMember().
+.SS "void org.glite.security.voms.service.admin.VOMSAdmin.assignCapability (java.lang.Stringin0, java.lang.Stringin1, java.lang.Stringin2)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP"
+.PP
+Implemented in \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl\fP, \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton\fP, and \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingStub\fP.
+.PP
+Referenced by org.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton.assignCapability().
+.SS "void org.glite.security.voms.service.admin.VOMSAdmin.assignRole (java.lang.Stringin0, java.lang.Stringin1, java.lang.Stringin2, java.lang.Stringin3)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP"
+.PP
+Implemented in \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl\fP, \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton\fP, and \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingStub\fP.
+.PP
+Referenced by org.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton.assignRole().
+.SS "void org.glite.security.voms.service.admin.VOMSAdmin.createCapability (java.lang.Stringin0)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP"
+.PP
+Implemented in \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl\fP, \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton\fP, and \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingStub\fP.
+.PP
+Referenced by org.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton.createCapability().
+.SS "void org.glite.security.voms.service.admin.VOMSAdmin.createGroup (java.lang.Stringin0, java.lang.Stringin1)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP"
+.PP
+Implemented in \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl\fP, \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton\fP, and \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingStub\fP.
+.PP
+Referenced by org.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton.createGroup().
+.SS "void org.glite.security.voms.service.admin.VOMSAdmin.createRole (java.lang.Stringin0)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP"
+.PP
+Implemented in \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl\fP, \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton\fP, and \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingStub\fP.
+.PP
+Referenced by org.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton.createRole().
+.SS "void org.glite.security.voms.service.admin.VOMSAdmin.createUser (\fBorg.glite.security.voms.User\fPin0)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP"
+.PP
+Implemented in \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl\fP, \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton\fP, and \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingStub\fP.
+.PP
+Referenced by org.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton.createUser().
+.SS "void org.glite.security.voms.service.admin.VOMSAdmin.deleteCapability (java.lang.Stringin0)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP"
+.PP
+Implemented in \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl\fP, \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton\fP, and \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingStub\fP.
+.PP
+Referenced by org.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton.deleteCapability().
+.SS "void org.glite.security.voms.service.admin.VOMSAdmin.deleteGroup (java.lang.Stringin0)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP"
+.PP
+Implemented in \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl\fP, \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton\fP, and \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingStub\fP.
+.PP
+Referenced by org.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton.deleteGroup().
+.SS "void org.glite.security.voms.service.admin.VOMSAdmin.deleteRole (java.lang.Stringin0)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP"
+.PP
+Implemented in \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl\fP, \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton\fP, and \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingStub\fP.
+.PP
+Referenced by org.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton.deleteRole().
+.SS "void org.glite.security.voms.service.admin.VOMSAdmin.deleteUser (java.lang.Stringin0, java.lang.Stringin1)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP"
+.PP
+Implemented in \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl\fP, \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton\fP, and \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingStub\fP.
+.PP
+Referenced by org.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton.deleteUser().
+.SS "void org.glite.security.voms.service.admin.VOMSAdmin.dismissCapability (java.lang.Stringin0, java.lang.Stringin1, java.lang.Stringin2)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP"
+.PP
+Implemented in \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl\fP, \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton\fP, and \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingStub\fP.
+.PP
+Referenced by org.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton.dismissCapability().
+.SS "void org.glite.security.voms.service.admin.VOMSAdmin.dismissRole (java.lang.Stringin0, java.lang.Stringin1, java.lang.Stringin2, java.lang.Stringin3)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP"
+.PP
+Implemented in \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl\fP, \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton\fP, and \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingStub\fP.
+.PP
+Referenced by org.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton.dismissRole().
+.SS "\fBorg.glite.security.voms.ACLEntry\fP [] org.glite.security.voms.service.admin.VOMSAdmin.getACL (java.lang.Stringin0)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP"
+.PP
+Implemented in \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl\fP, \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton\fP, and \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingStub\fP.
+.PP
+Referenced by org.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton.getACL().
+.SS "\fBorg.glite.security.voms.ACLEntry\fP [] org.glite.security.voms.service.admin.VOMSAdmin.getDefaultACL (java.lang.Stringin0)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP"
+.PP
+Implemented in \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl\fP, \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton\fP, and \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingStub\fP.
+.PP
+Referenced by org.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton.getDefaultACL().
+.SS "java.lang.String [] org.glite.security.voms.service.admin.VOMSAdmin.getGroupPath (java.lang.Stringin0)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP"
+.PP
+Implemented in \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl\fP, \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton\fP, and \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingStub\fP.
+.PP
+Referenced by org.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton.getGroupPath().
+.SS "int org.glite.security.voms.service.admin.VOMSAdmin.getMajorVersionNumber ()  throws java.rmi.RemoteException"
+.PP
+Implemented in \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl\fP, \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton\fP, and \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingStub\fP.
+.PP
+Referenced by org.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton.getMajorVersionNumber().
+.SS "int org.glite.security.voms.service.admin.VOMSAdmin.getMinorVersionNumber ()  throws java.rmi.RemoteException"
+.PP
+Implemented in \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl\fP, \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton\fP, and \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingStub\fP.
+.PP
+Referenced by org.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton.getMinorVersionNumber().
+.SS "int org.glite.security.voms.service.admin.VOMSAdmin.getPatchVersionNumber ()  throws java.rmi.RemoteException"
+.PP
+Implemented in \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl\fP, \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton\fP, and \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingStub\fP.
+.PP
+Referenced by org.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton.getPatchVersionNumber().
+.SS "\fBorg.glite.security.voms.User\fP org.glite.security.voms.service.admin.VOMSAdmin.getUser (java.lang.Stringin0, java.lang.Stringin1)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP"
+.PP
+Implemented in \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl\fP, \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton\fP, and \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingStub\fP.
+.PP
+Referenced by org.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton.getUser().
+.SS "java.lang.String org.glite.security.voms.service.admin.VOMSAdmin.getVOName ()  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP"
+.PP
+Implemented in \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl\fP, \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton\fP, and \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingStub\fP.
+.PP
+Referenced by org.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton.getVOName().
+.SS "java.lang.String [] org.glite.security.voms.service.admin.VOMSAdmin.listCapabilities ()  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP"
+.PP
+Implemented in \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl\fP, \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton\fP, and \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingStub\fP.
+.PP
+Referenced by org.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton.listCapabilities().
+.SS "java.lang.String [] org.glite.security.voms.service.admin.VOMSAdmin.listCapabilities (java.lang.Stringin0, java.lang.Stringin1)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP"
+.PP
+Implemented in \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl\fP, \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton\fP, and \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingStub\fP.
+.SS "java.lang.String [] org.glite.security.voms.service.admin.VOMSAdmin.listCAs ()  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP"
+.PP
+Implemented in \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl\fP, \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton\fP, and \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingStub\fP.
+.PP
+Referenced by org.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton.listCAs().
+.SS "java.lang.String [] org.glite.security.voms.service.admin.VOMSAdmin.listGroups (java.lang.Stringin0, java.lang.Stringin1)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP"
+.PP
+Implemented in \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl\fP, \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton\fP, and \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingStub\fP.
+.PP
+Referenced by org.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton.listGroups().
+.SS "\fBorg.glite.security.voms.User\fP [] org.glite.security.voms.service.admin.VOMSAdmin.listMembers (java.lang.Stringin0)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP"
+.PP
+Implemented in \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl\fP, \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton\fP, and \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingStub\fP.
+.PP
+Referenced by org.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton.listMembers().
+.SS "java.lang.String [] org.glite.security.voms.service.admin.VOMSAdmin.listRoles (java.lang.Stringin0, java.lang.Stringin1)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP"
+.PP
+Implemented in \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl\fP, \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton\fP, and \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingStub\fP.
+.SS "java.lang.String [] org.glite.security.voms.service.admin.VOMSAdmin.listRoles ()  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP"
+.PP
+Implemented in \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl\fP, \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton\fP, and \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingStub\fP.
+.PP
+Referenced by portal.registration.utils.VOMSAdminCallOut.getUserFQANs(), and org.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton.listRoles().
+.SS "java.lang.String [] org.glite.security.voms.service.admin.VOMSAdmin.listSubGroups (java.lang.Stringin0)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP"
+.PP
+Implemented in \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl\fP, \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton\fP, and \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingStub\fP.
+.PP
+Referenced by org.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton.listSubGroups().
+.SS "\fBorg.glite.security.voms.User\fP [] org.glite.security.voms.service.admin.VOMSAdmin.listUsersWithCapability (java.lang.Stringin0)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP"
+.PP
+Implemented in \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl\fP, \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton\fP, and \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingStub\fP.
+.PP
+Referenced by org.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton.listUsersWithCapability().
+.SS "\fBorg.glite.security.voms.User\fP [] org.glite.security.voms.service.admin.VOMSAdmin.listUsersWithRole (java.lang.Stringin0, java.lang.Stringin1)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP"
+.PP
+Implemented in \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl\fP, \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton\fP, and \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingStub\fP.
+.PP
+Referenced by org.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton.listUsersWithRole().
+.SS "void org.glite.security.voms.service.admin.VOMSAdmin.removeACLEntry (java.lang.Stringin0, \fBorg.glite.security.voms.ACLEntry\fPin1)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP"
+.PP
+Implemented in \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl\fP, \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton\fP, and \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingStub\fP.
+.PP
+Referenced by org.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton.removeACLEntry().
+.SS "void org.glite.security.voms.service.admin.VOMSAdmin.removeDefaultACLEntry (java.lang.Stringin0, \fBorg.glite.security.voms.ACLEntry\fPin1)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP"
+.PP
+Implemented in \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl\fP, \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton\fP, and \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingStub\fP.
+.PP
+Referenced by org.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton.removeDefaultACLEntry().
+.SS "void org.glite.security.voms.service.admin.VOMSAdmin.removeMember (java.lang.Stringin0, java.lang.Stringin1, java.lang.Stringin2)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP"
+.PP
+Implemented in \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl\fP, \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton\fP, and \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingStub\fP.
+.PP
+Referenced by org.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton.removeMember().
+.SS "void org.glite.security.voms.service.admin.VOMSAdmin.setACL (java.lang.Stringin0, \fBorg.glite.security.voms.ACLEntry\fP[]in1)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP"
+.PP
+Implemented in \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl\fP, \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton\fP, and \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingStub\fP.
+.PP
+Referenced by org.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton.setACL().
+.SS "void org.glite.security.voms.service.admin.VOMSAdmin.setDefaultACL (java.lang.Stringin0, \fBorg.glite.security.voms.ACLEntry\fP[]in1)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP"
+.PP
+Implemented in \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl\fP, \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton\fP, and \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingStub\fP.
+.PP
+Referenced by org.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton.setDefaultACL().
+.SS "void org.glite.security.voms.service.admin.VOMSAdmin.setUser (\fBorg.glite.security.voms.User\fPin0)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP"
+.PP
+Implemented in \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingImpl\fP, \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton\fP, and \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingStub\fP.
+.PP
+Referenced by org.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton.setUser().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Registration from the source code.

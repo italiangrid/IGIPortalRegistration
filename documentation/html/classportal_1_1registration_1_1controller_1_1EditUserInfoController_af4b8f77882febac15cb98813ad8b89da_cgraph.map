@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$interfaceportal_1_1registration_1_1services_1_1UserInfoService.html#ad0df285c951d11fcf3c1ccd263a39989" title="portal.registration.services.UserInfoService.edit" alt="" coords="421,4,694,31"/>
+<area shape="rect" id="node5" href="$interfaceportal_1_1registration_1_1services_1_1UserInfoService.html#a27530d570ec61a3376c655212d0f070a" title="portal.registration.services.UserInfoService.findById" alt="" coords="409,55,706,81"/>
+<area shape="rect" id="node7" href="$classportal_1_1registration_1_1domain_1_1UserInfo.html#a2b5087901b31b751400f47a1e64dd913" title="portal.registration.domain.UserInfo.setFirstName" alt="" coords="417,105,697,132"/>
+<area shape="rect" id="node9" href="$classportal_1_1registration_1_1utils_1_1MyValidator.html#a6a9bff1eb67d2322fadae0eba39e1c22" title="portal.registration.utils.MyValidator.validateUpdate" alt="" coords="414,156,701,183"/>
+</map>

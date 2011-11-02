@@ -1,0 +1,63 @@
+\hypertarget{classportal_1_1registration_1_1utils_1_1VOMSTest}{
+\section{portal.registration.utils.VOMSTest Class Reference}
+\label{classportal_1_1registration_1_1utils_1_1VOMSTest}\index{portal::registration::utils::VOMSTest@{portal::registration::utils::VOMSTest}}
+}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classportal_1_1registration_1_1utils_1_1VOMSTest_a5b50cacf533113b01ca54e44682993bf}{main} (String\mbox{[}$\,$\mbox{]} args)  throws VOMSException, MalformedURLException, RemoteException, ServiceException 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 10 of file VOMSTest.java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classportal_1_1registration_1_1utils_1_1VOMSTest_a5b50cacf533113b01ca54e44682993bf}{
+\index{portal::registration::utils::VOMSTest@{portal::registration::utils::VOMSTest}!main@{main}}
+\index{main@{main}!portal::registration::utils::VOMSTest@{portal::registration::utils::VOMSTest}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}static void portal.registration.utils.VOMSTest.main (
+\begin{DoxyParamCaption}
+\item[{String\mbox{[}$\,$\mbox{]}}]{args}
+\end{DoxyParamCaption}
+)  throws {\bf VOMSException}, MalformedURLException, RemoteException, ServiceException \hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classportal_1_1registration_1_1utils_1_1VOMSTest_a5b50cacf533113b01ca54e44682993bf}
+
+
+Definition at line 12 of file VOMSTest.java.
+
+
+
+References portal.registration.utils.VOMSAdminCallOut.getUserFQANs().
+
+
+\begin{DoxyCode}
+                                                                                 
+                                                   {
+                
+                
+                String[] roles = VOMSAdminCallOut.getUserFQANs("/C=IT/O=INFN/OU=P
+      ersonal Certificate/L=Ferrara/CN=Enrico Vianello", "/C=IT/O=INFN/CN=INFN CA", "vo
+      ms-02.pd.infn.it:8443/voms/superbvo.org");
+
+                for (int i = 0; i < roles.length; i++) {
+
+                        System.out.println("roles " + i + " = " + roles[i]);
+
+                }
+        }
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/utils/\hyperlink{VOMSTest_8java}{VOMSTest.java}\end{DoxyCompactItemize}

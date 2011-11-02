@@ -1,0 +1,59 @@
+.TH "portal::registration::services::IdpService" 3 "Wed Jul 13 2011" "Version 4" "Registration" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+portal::registration::services::IdpService \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBportal.registration.services.IdpServiceImpl\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsave\fP (\fBIdp\fP transientInstance)"
+.br
+.ti -1c
+.RI "void \fBdelete\fP (\fBIdp\fP persistentInstance)"
+.br
+.ti -1c
+.RI "\fBIdp\fP \fBfindById\fP (Integer id)"
+.br
+.ti -1c
+.RI "String \fBfindByIdp\fP (\fBIdp\fP idp)"
+.br
+.ti -1c
+.RI "List< \fBIdp\fP > \fBgetAllIdp\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 7 of file IdpService.java.
+.SH "Member Function Documentation"
+.PP 
+.SS "void portal.registration.services.IdpService.delete (\fBIdp\fPpersistentInstance)"
+.PP
+Implemented in \fBportal.registration.services.IdpServiceImpl\fP.
+.SS "\fBIdp\fP portal.registration.services.IdpService.findById (Integerid)"
+.PP
+Implemented in \fBportal.registration.services.IdpServiceImpl\fP.
+.PP
+Referenced by portal.registration.controller.AddUserInfoController.addUserInfo().
+.SS "String portal.registration.services.IdpService.findByIdp (\fBIdp\fPidp)"
+.PP
+Implemented in \fBportal.registration.services.IdpServiceImpl\fP.
+.PP
+Referenced by portal.registration.controller.UserInfoController.getIdpsName().
+.SS "List<\fBIdp\fP> portal.registration.services.IdpService.getAllIdp ()"
+.PP
+Implemented in \fBportal.registration.services.IdpServiceImpl\fP.
+.PP
+Referenced by portal.registration.controller.UserInfoController.getIdps(), and portal.registration.controller.AddUserInfoController.getIdps().
+.SS "void portal.registration.services.IdpService.save (\fBIdp\fPtransientInstance)"
+.PP
+Implemented in \fBportal.registration.services.IdpServiceImpl\fP.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Registration from the source code.

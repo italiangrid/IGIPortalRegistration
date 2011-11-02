@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesService" kind="interface" prot="public">
+    <compoundname>org::glite::security::voms::service::attributes::VOMSAttributesService</compoundname>
+    <derivedcompoundref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesServiceLocator" prot="public" virt="non-virtual">org.glite.security.voms.service.attributes.VOMSAttributesServiceLocator</derivedcompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesService_1ab4419b6bb9b110b6024e4dff1c7adb6a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>java.lang.String</type>
+        <definition>java.lang.String org.glite.security.voms.service.attributes.VOMSAttributesService.getVOMSAttributesAddress</definition>
+        <argsstring>()</argsstring>
+        <name>getVOMSAttributesAddress</name>
+        <reimplementedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesServiceLocator_1a76fb084ac841fa506ce6b4386efc79fc">getVOMSAttributesAddress</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesService.java" line="11"/>
+      </memberdef>
+      <memberdef kind="function" id="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesService_1a52534b33370338d04135d31534432406" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes" kindref="compound">org.glite.security.voms.service.attributes.VOMSAttributes</ref></type>
+        <definition>org.glite.security.voms.service.attributes.VOMSAttributes org.glite.security.voms.service.attributes.VOMSAttributesService.getVOMSAttributes</definition>
+        <argsstring>()</argsstring>
+        <name>getVOMSAttributes</name>
+        <reimplementedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesServiceLocator_1a981a432f1407ace3c240c9c7b2d1f909">getVOMSAttributes</reimplementedby>
+        <exceptions> throws javax.xml.rpc.ServiceException</exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesService.java" line="13"/>
+      </memberdef>
+      <memberdef kind="function" id="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesService_1a9b6cb66a299183714447f6596d448dee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes" kindref="compound">org.glite.security.voms.service.attributes.VOMSAttributes</ref></type>
+        <definition>org.glite.security.voms.service.attributes.VOMSAttributes org.glite.security.voms.service.attributes.VOMSAttributesService.getVOMSAttributes</definition>
+        <argsstring>(java.net.URL portAddress)</argsstring>
+        <name>getVOMSAttributes</name>
+        <reimplementedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesServiceLocator_1a9d3db6a1afcd41087cb93ca2ed8683c8">getVOMSAttributes</reimplementedby>
+        <param>
+          <type>java.net.URL</type>
+          <declname>portAddress</declname>
+        </param>
+        <exceptions> throws javax.xml.rpc.ServiceException</exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesService.java" line="15"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="703">
+        <label>org.glite.security.voms.service.attributes.VOMSAttributesServiceLocator</label>
+        <link refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesServiceLocator"/>
+        <childnode refid="702" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="702">
+        <label>org.glite.security.voms.service.attributes.VOMSAttributesService</label>
+        <link refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesService"/>
+      </node>
+    </inheritancegraph>
+    <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesService.java" line="10" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesService.java" bodystart="10" bodyend="16"/>
+    <listofallmembers>
+      <member refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesService_1a52534b33370338d04135d31534432406" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::attributes::VOMSAttributesService</scope><name>getVOMSAttributes</name></member>
+      <member refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesService_1a9b6cb66a299183714447f6596d448dee" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::attributes::VOMSAttributesService</scope><name>getVOMSAttributes</name></member>
+      <member refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesService_1ab4419b6bb9b110b6024e4dff1c7adb6a" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::attributes::VOMSAttributesService</scope><name>getVOMSAttributesAddress</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

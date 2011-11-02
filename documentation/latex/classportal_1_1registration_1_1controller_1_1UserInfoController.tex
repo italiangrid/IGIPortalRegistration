@@ -1,0 +1,175 @@
+\hypertarget{classportal_1_1registration_1_1controller_1_1UserInfoController}{
+\section{portal.registration.controller.UserInfoController Class Reference}
+\label{classportal_1_1registration_1_1controller_1_1UserInfoController}\index{portal::registration::controller::UserInfoController@{portal::registration::controller::UserInfoController}}
+}
+
+
+Collaboration diagram for portal.registration.controller.UserInfoController:
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+String \hyperlink{classportal_1_1registration_1_1controller_1_1UserInfoController_a6e2c26b56d5b19cdf53dc1fc21340fed}{showUserInfos} (RenderResponse response)
+\item 
+List$<$ \hyperlink{classportal_1_1registration_1_1domain_1_1UserInfo}{UserInfo} $>$ \hyperlink{classportal_1_1registration_1_1controller_1_1UserInfoController_a18a0895286727db4f137c8388032436c}{getUserInfos} ()
+\item 
+List$<$ \hyperlink{classportal_1_1registration_1_1domain_1_1Idp}{Idp} $>$ \hyperlink{classportal_1_1registration_1_1controller_1_1UserInfoController_adaa936d75f430ec7491d04ba2ab1c801}{getIdps} ()
+\item 
+Map$<$ Object, Object $>$ \hyperlink{classportal_1_1registration_1_1controller_1_1UserInfoController_a729989822e30433e3f24b3163254a61f}{getIdpsName} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{interfaceportal_1_1registration_1_1services_1_1UserInfoService}{UserInfoService} \hyperlink{classportal_1_1registration_1_1controller_1_1UserInfoController_ac06a557486646e8c2fd7a75ad935b6d3}{userInfoService}
+\item 
+\hyperlink{interfaceportal_1_1registration_1_1services_1_1IdpService}{IdpService} \hyperlink{classportal_1_1registration_1_1controller_1_1UserInfoController_a6624c6a71628b8393fd31acfed28cf16}{idpService}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 22 of file UserInfoController.java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classportal_1_1registration_1_1controller_1_1UserInfoController_adaa936d75f430ec7491d04ba2ab1c801}{
+\index{portal::registration::controller::UserInfoController@{portal::registration::controller::UserInfoController}!getIdps@{getIdps}}
+\index{getIdps@{getIdps}!portal::registration::controller::UserInfoController@{portal::registration::controller::UserInfoController}}
+\subsubsection[{getIdps}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Idp}$>$ portal.registration.controller.UserInfoController.getIdps (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1controller_1_1UserInfoController_adaa936d75f430ec7491d04ba2ab1c801}
+
+
+Definition at line 41 of file UserInfoController.java.
+
+
+
+References portal.registration.services.IdpService.getAllIdp().
+
+
+\begin{DoxyCode}
+                                   {
+                return idpService.getAllIdp();
+        }
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+
+
+\hypertarget{classportal_1_1registration_1_1controller_1_1UserInfoController_a729989822e30433e3f24b3163254a61f}{
+\index{portal::registration::controller::UserInfoController@{portal::registration::controller::UserInfoController}!getIdpsName@{getIdpsName}}
+\index{getIdpsName@{getIdpsName}!portal::registration::controller::UserInfoController@{portal::registration::controller::UserInfoController}}
+\subsubsection[{getIdpsName}]{\setlength{\rightskip}{0pt plus 5cm}Map$<$Object, Object$>$ portal.registration.controller.UserInfoController.getIdpsName (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1controller_1_1UserInfoController_a729989822e30433e3f24b3163254a61f}
+
+
+Definition at line 46 of file UserInfoController.java.
+
+
+
+References portal.registration.services.IdpService.findByIdp(), and portal.registration.services.UserInfoService.getAllUserInfo().
+
+
+\begin{DoxyCode}
+                                                 {
+
+                Map<Object, Object> x = new Properties();
+
+                List<UserInfo> users = userInfoService.getAllUserInfo();
+
+                for (int i = 0; i < users.size(); i++) {
+
+                        x.put(users.get(i).getUserId(),
+                                        idpService.findByIdp(users.get(i).getIdp(
+      )));
+                }
+                return x;
+        }
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+
+
+\hypertarget{classportal_1_1registration_1_1controller_1_1UserInfoController_a18a0895286727db4f137c8388032436c}{
+\index{portal::registration::controller::UserInfoController@{portal::registration::controller::UserInfoController}!getUserInfos@{getUserInfos}}
+\index{getUserInfos@{getUserInfos}!portal::registration::controller::UserInfoController@{portal::registration::controller::UserInfoController}}
+\subsubsection[{getUserInfos}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf UserInfo}$>$ portal.registration.controller.UserInfoController.getUserInfos (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1controller_1_1UserInfoController_a18a0895286727db4f137c8388032436c}
+
+
+Definition at line 36 of file UserInfoController.java.
+
+
+
+References portal.registration.services.UserInfoService.getAllUserInfo().
+
+
+\begin{DoxyCode}
+                                             {
+                return userInfoService.getAllUserInfo();
+        }
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+
+
+\hypertarget{classportal_1_1registration_1_1controller_1_1UserInfoController_a6e2c26b56d5b19cdf53dc1fc21340fed}{
+\index{portal::registration::controller::UserInfoController@{portal::registration::controller::UserInfoController}!showUserInfos@{showUserInfos}}
+\index{showUserInfos@{showUserInfos}!portal::registration::controller::UserInfoController@{portal::registration::controller::UserInfoController}}
+\subsubsection[{showUserInfos}]{\setlength{\rightskip}{0pt plus 5cm}String portal.registration.controller.UserInfoController.showUserInfos (
+\begin{DoxyParamCaption}
+\item[{RenderResponse}]{response}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1controller_1_1UserInfoController_a6e2c26b56d5b19cdf53dc1fc21340fed}
+
+
+Definition at line 31 of file UserInfoController.java.
+
+
+\begin{DoxyCode}
+                                                             {
+                return "home";
+        }
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classportal_1_1registration_1_1controller_1_1UserInfoController_a6624c6a71628b8393fd31acfed28cf16}{
+\index{portal::registration::controller::UserInfoController@{portal::registration::controller::UserInfoController}!idpService@{idpService}}
+\index{idpService@{idpService}!portal::registration::controller::UserInfoController@{portal::registration::controller::UserInfoController}}
+\subsubsection[{idpService}]{\setlength{\rightskip}{0pt plus 5cm}{\bf IdpService} {\bf portal.registration.controller.UserInfoController.idpService}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classportal_1_1registration_1_1controller_1_1UserInfoController_a6624c6a71628b8393fd31acfed28cf16}
+
+
+Definition at line 28 of file UserInfoController.java.
+
+\hypertarget{classportal_1_1registration_1_1controller_1_1UserInfoController_ac06a557486646e8c2fd7a75ad935b6d3}{
+\index{portal::registration::controller::UserInfoController@{portal::registration::controller::UserInfoController}!userInfoService@{userInfoService}}
+\index{userInfoService@{userInfoService}!portal::registration::controller::UserInfoController@{portal::registration::controller::UserInfoController}}
+\subsubsection[{userInfoService}]{\setlength{\rightskip}{0pt plus 5cm}{\bf UserInfoService} {\bf portal.registration.controller.UserInfoController.userInfoService}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classportal_1_1registration_1_1controller_1_1UserInfoController_ac06a557486646e8c2fd7a75ad935b6d3}
+
+
+Definition at line 25 of file UserInfoController.java.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/\hyperlink{UserInfoController_8java}{UserInfoController.java}\end{DoxyCompactItemize}

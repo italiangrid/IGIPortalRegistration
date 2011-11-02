@@ -1,0 +1,176 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="interfaceportal_1_1registration_1_1services_1_1UserInfoService" kind="interface" prot="public">
+    <compoundname>portal::registration::services::UserInfoService</compoundname>
+    <derivedcompoundref refid="classportal_1_1registration_1_1services_1_1UserInfoServiceImpl" prot="public" virt="non-virtual">portal.registration.services.UserInfoServiceImpl</derivedcompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="interfaceportal_1_1registration_1_1services_1_1UserInfoService_1abb06f632b024da6c7458c5d0ee4cc456" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Integer</type>
+        <definition>Integer portal.registration.services.UserInfoService.save</definition>
+        <argsstring>(UserInfo transientInstance)</argsstring>
+        <name>save</name>
+        <reimplementedby refid="classportal_1_1registration_1_1services_1_1UserInfoServiceImpl_1a1c859300be6b65159f13c115828c8255">save</reimplementedby>
+        <param>
+          <type><ref refid="classportal_1_1registration_1_1domain_1_1UserInfo" kindref="compound">UserInfo</ref></type>
+          <declname>transientInstance</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/services/UserInfoService.java" line="9"/>
+        <referencedby refid="classportal_1_1registration_1_1controller_1_1AddUserInfoController_1a2750658abc595b838f458b87464e51fe" compoundref="AddUserInfoController_8java" startline="74" endline="212">portal.registration.controller.AddUserInfoController::addUserInfo</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="interfaceportal_1_1registration_1_1services_1_1UserInfoService_1aa458e4d758973ed5f22fe7af839064fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void portal.registration.services.UserInfoService.delete</definition>
+        <argsstring>(UserInfo persistentInstance)</argsstring>
+        <name>delete</name>
+        <reimplementedby refid="classportal_1_1registration_1_1services_1_1UserInfoServiceImpl_1a12f7a4c7e73e0f36ed24ce19c1f9473c">delete</reimplementedby>
+        <param>
+          <type><ref refid="classportal_1_1registration_1_1domain_1_1UserInfo" kindref="compound">UserInfo</ref></type>
+          <declname>persistentInstance</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/services/UserInfoService.java" line="11"/>
+        <referencedby refid="classportal_1_1registration_1_1controller_1_1RemoveUserInfoController_1a7bb13ed82ea190f5c33820b30876c33f" compoundref="RemoveUserInfoController_8java" startline="35" endline="50">portal.registration.controller.RemoveUserInfoController::removeUserInfo</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="interfaceportal_1_1registration_1_1services_1_1UserInfoService_1a0b419e147d97414e30baafe11b44ade5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void portal.registration.services.UserInfoService.delete</definition>
+        <argsstring>(int userId)</argsstring>
+        <name>delete</name>
+        <reimplementedby refid="classportal_1_1registration_1_1services_1_1UserInfoServiceImpl_1a59c0dc5d8e3cd6773677a97f75748cc4">delete</reimplementedby>
+        <param>
+          <type>int</type>
+          <declname>userId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/services/UserInfoService.java" line="13"/>
+      </memberdef>
+      <memberdef kind="function" id="interfaceportal_1_1registration_1_1services_1_1UserInfoService_1a27530d570ec61a3376c655212d0f070a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classportal_1_1registration_1_1domain_1_1UserInfo" kindref="compound">UserInfo</ref></type>
+        <definition>UserInfo portal.registration.services.UserInfoService.findById</definition>
+        <argsstring>(Integer id)</argsstring>
+        <name>findById</name>
+        <reimplementedby refid="classportal_1_1registration_1_1services_1_1UserInfoServiceImpl_1aea9a7b9166bf093b0013919c28bb52cc">findById</reimplementedby>
+        <param>
+          <type>Integer</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/services/UserInfoService.java" line="15"/>
+        <referencedby refid="classportal_1_1registration_1_1controller_1_1AddUserToVOController_1a299d78081b72ac80a2adba3f33c7970c" compoundref="AddUserToVOController_8java" startline="70" endline="142">portal.registration.controller.AddUserToVOController::addUserToVo</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1controller_1_1EditUserInfoController_1a9d4f65b993d3f9b6f978bcaa7c51aede" compoundref="EditUserInfoController_8java" startline="62" endline="92">portal.registration.controller.EditUserInfoController::deactivateUser</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1controller_1_1AddUserToVoPresentsController_1aa50525ef91683e6c99413cca24b54ddd" compoundref="AddUserToVoPresentsController_8java" startline="65" endline="95">portal.registration.controller.AddUserToVoPresentsController::deactivateUser</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1controller_1_1EditUserInfoController_1af4b8f77882febac15cb98813ad8b89da" compoundref="EditUserInfoController_8java" startline="95" endline="143">portal.registration.controller.EditUserInfoController::editUserInfo</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1controller_1_1EditUserToVoController_1a7e131f83378f7f675880aafc3deed55c" compoundref="EditUserToVoController_8java" startline="54" endline="56">portal.registration.controller.EditUserToVoController::getUserInfo</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1controller_1_1EditUserInfoController_1a3d4be346ddb5fe32799a2c2298f032de" compoundref="EditUserInfoController_8java" startline="156" endline="158">portal.registration.controller.EditUserInfoController::getUserInfo</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1controller_1_1RemoveUserInfoController_1a7bb13ed82ea190f5c33820b30876c33f" compoundref="RemoveUserInfoController_8java" startline="35" endline="50">portal.registration.controller.RemoveUserInfoController::removeUserInfo</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="interfaceportal_1_1registration_1_1services_1_1UserInfoService_1a242b07321e766bd2d400cd575ea97dfb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>List&lt; <ref refid="classportal_1_1registration_1_1domain_1_1UserInfo" kindref="compound">UserInfo</ref> &gt;</type>
+        <definition>List&lt;UserInfo&gt; portal.registration.services.UserInfoService.getAllUserInfo</definition>
+        <argsstring>()</argsstring>
+        <name>getAllUserInfo</name>
+        <reimplementedby refid="classportal_1_1registration_1_1services_1_1UserInfoServiceImpl_1a481f54f59bb67c11e1b9c4497bfa426b">getAllUserInfo</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/services/UserInfoService.java" line="17"/>
+        <referencedby refid="classportal_1_1registration_1_1controller_1_1UserInfoController_1a729989822e30433e3f24b3163254a61f" compoundref="UserInfoController_8java" startline="46" endline="58">portal.registration.controller.UserInfoController::getIdpsName</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1controller_1_1UserInfoController_1a18a0895286727db4f137c8388032436c" compoundref="UserInfoController_8java" startline="36" endline="38">portal.registration.controller.UserInfoController::getUserInfos</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="interfaceportal_1_1registration_1_1services_1_1UserInfoService_1ad0df285c951d11fcf3c1ccd263a39989" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void portal.registration.services.UserInfoService.edit</definition>
+        <argsstring>(UserInfo userInfo)</argsstring>
+        <name>edit</name>
+        <reimplementedby refid="classportal_1_1registration_1_1services_1_1UserInfoServiceImpl_1ad14b5bdfe6a57e8a9b412fb3084f51d9">edit</reimplementedby>
+        <param>
+          <type><ref refid="classportal_1_1registration_1_1domain_1_1UserInfo" kindref="compound">UserInfo</ref></type>
+          <declname>userInfo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/services/UserInfoService.java" line="19"/>
+        <referencedby refid="classportal_1_1registration_1_1controller_1_1AddUserToVOController_1abd142c68f2e74216087976e202ab1eae" compoundref="AddUserToVOController_8java" startline="144" endline="174">portal.registration.controller.AddUserToVOController::activateUser</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1controller_1_1EditUserInfoController_1a9d4f65b993d3f9b6f978bcaa7c51aede" compoundref="EditUserInfoController_8java" startline="62" endline="92">portal.registration.controller.EditUserInfoController::deactivateUser</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1controller_1_1AddUserToVoPresentsController_1aa50525ef91683e6c99413cca24b54ddd" compoundref="AddUserToVoPresentsController_8java" startline="65" endline="95">portal.registration.controller.AddUserToVoPresentsController::deactivateUser</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1controller_1_1EditUserInfoController_1af4b8f77882febac15cb98813ad8b89da" compoundref="EditUserInfoController_8java" startline="95" endline="143">portal.registration.controller.EditUserInfoController::editUserInfo</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="interfaceportal_1_1registration_1_1services_1_1UserInfoService_1a804ca2b3bc236ed56c5940a230b56b86" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int portal.registration.services.UserInfoService.save</definition>
+        <argsstring>(UserInfo userInfo, int idIDP)</argsstring>
+        <name>save</name>
+        <reimplementedby refid="classportal_1_1registration_1_1services_1_1UserInfoServiceImpl_1ad15a856a87f217600bbd708e576d80ba">save</reimplementedby>
+        <param>
+          <type><ref refid="classportal_1_1registration_1_1domain_1_1UserInfo" kindref="compound">UserInfo</ref></type>
+          <declname>userInfo</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>idIDP</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/services/UserInfoService.java" line="21"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="581">
+        <label>portal.registration.services.UserInfoServiceImpl</label>
+        <link refid="classportal_1_1registration_1_1services_1_1UserInfoServiceImpl"/>
+        <childnode refid="580" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="580">
+        <label>portal.registration.services.UserInfoService</label>
+        <link refid="interfaceportal_1_1registration_1_1services_1_1UserInfoService"/>
+      </node>
+    </inheritancegraph>
+    <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/services/UserInfoService.java" line="7" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/services/UserInfoService.java" bodystart="7" bodyend="23"/>
+    <listofallmembers>
+      <member refid="interfaceportal_1_1registration_1_1services_1_1UserInfoService_1aa458e4d758973ed5f22fe7af839064fc" prot="public" virt="non-virtual"><scope>portal::registration::services::UserInfoService</scope><name>delete</name></member>
+      <member refid="interfaceportal_1_1registration_1_1services_1_1UserInfoService_1a0b419e147d97414e30baafe11b44ade5" prot="public" virt="non-virtual"><scope>portal::registration::services::UserInfoService</scope><name>delete</name></member>
+      <member refid="interfaceportal_1_1registration_1_1services_1_1UserInfoService_1ad0df285c951d11fcf3c1ccd263a39989" prot="public" virt="non-virtual"><scope>portal::registration::services::UserInfoService</scope><name>edit</name></member>
+      <member refid="interfaceportal_1_1registration_1_1services_1_1UserInfoService_1a27530d570ec61a3376c655212d0f070a" prot="public" virt="non-virtual"><scope>portal::registration::services::UserInfoService</scope><name>findById</name></member>
+      <member refid="interfaceportal_1_1registration_1_1services_1_1UserInfoService_1a242b07321e766bd2d400cd575ea97dfb" prot="public" virt="non-virtual"><scope>portal::registration::services::UserInfoService</scope><name>getAllUserInfo</name></member>
+      <member refid="interfaceportal_1_1registration_1_1services_1_1UserInfoService_1abb06f632b024da6c7458c5d0ee4cc456" prot="public" virt="non-virtual"><scope>portal::registration::services::UserInfoService</scope><name>save</name></member>
+      <member refid="interfaceportal_1_1registration_1_1services_1_1UserInfoService_1a804ca2b3bc236ed56c5940a230b56b86" prot="public" virt="non-virtual"><scope>portal::registration::services::UserInfoService</scope><name>save</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

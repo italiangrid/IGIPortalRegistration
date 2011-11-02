@@ -1,0 +1,303 @@
+\hypertarget{classportal_1_1registration_1_1controller_1_1EditUserToVoController}{
+\section{portal.registration.controller.EditUserToVoController Class Reference}
+\label{classportal_1_1registration_1_1controller_1_1EditUserToVoController}\index{portal::registration::controller::EditUserToVoController@{portal::registration::controller::EditUserToVoController}}
+}
+
+
+Collaboration diagram for portal.registration.controller.EditUserToVoController:
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+String \hyperlink{classportal_1_1registration_1_1controller_1_1EditUserToVoController_a6fb863621d3ccd57b7c228d642167c79}{showEditUserInfoForm} ()
+\item 
+\hyperlink{classportal_1_1registration_1_1domain_1_1UserInfo}{UserInfo} \hyperlink{classportal_1_1registration_1_1controller_1_1EditUserToVoController_a7e131f83378f7f675880aafc3deed55c}{getUserInfo} (@RequestParam int userId)
+\item 
+\hyperlink{classportal_1_1registration_1_1domain_1_1UserToVo}{UserToVo} \hyperlink{classportal_1_1registration_1_1controller_1_1EditUserToVoController_ab5f3b0f3201e6fead40534252c9f6836}{getUserToVo} (@RequestParam int userId,@RequestParam int idVo)
+\item 
+\hyperlink{classportal_1_1registration_1_1domain_1_1Vo}{Vo} \hyperlink{classportal_1_1registration_1_1controller_1_1EditUserToVoController_a47df37128ba11b11fc01d8875e33c7ef}{getVO} (@RequestParam int idVo)
+\item 
+List$<$ \hyperlink{classportal_1_1registration_1_1domain_1_1Fqan}{Fqan} $>$ \hyperlink{classportal_1_1registration_1_1controller_1_1EditUserToVoController_a4f02e82cbea1050780b3cf7e020f6a4d}{getFqans} (@RequestParam int userId,@RequestParam int idVo)
+\item 
+void \hyperlink{classportal_1_1registration_1_1controller_1_1EditUserToVoController_aeb87d1e842bf381602343632f23f58e2}{addUserToVo} (ActionRequest request, ActionResponse response, SessionStatus sessionStatus)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{interfaceportal_1_1registration_1_1services_1_1UserInfoService}{UserInfoService} \hyperlink{classportal_1_1registration_1_1controller_1_1EditUserToVoController_adfc9f529073107272adc85ef5af0ba64}{userInfoService}
+\item 
+\hyperlink{interfaceportal_1_1registration_1_1services_1_1VoService}{VoService} \hyperlink{classportal_1_1registration_1_1controller_1_1EditUserToVoController_a6b47f2cf57b93f14868b6643a7a05647}{voService}
+\item 
+\hyperlink{interfaceportal_1_1registration_1_1services_1_1UserToVoService}{UserToVoService} \hyperlink{classportal_1_1registration_1_1controller_1_1EditUserToVoController_ab8208b9d0524717c5d5c3b7ce8cfbfd8}{userToVoService}
+\item 
+\hyperlink{interfaceportal_1_1registration_1_1services_1_1FqanService}{FqanService} \hyperlink{classportal_1_1registration_1_1controller_1_1EditUserToVoController_ae7631577179067193dd0ff2ad24631b1}{fqanService}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static final Logger \hyperlink{classportal_1_1registration_1_1controller_1_1EditUserToVoController_abc91983450be169b71a43139da136573}{log}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 31 of file EditUserToVoController.java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classportal_1_1registration_1_1controller_1_1EditUserToVoController_aeb87d1e842bf381602343632f23f58e2}{
+\index{portal::registration::controller::EditUserToVoController@{portal::registration::controller::EditUserToVoController}!addUserToVo@{addUserToVo}}
+\index{addUserToVo@{addUserToVo}!portal::registration::controller::EditUserToVoController@{portal::registration::controller::EditUserToVoController}}
+\subsubsection[{addUserToVo}]{\setlength{\rightskip}{0pt plus 5cm}void portal.registration.controller.EditUserToVoController.addUserToVo (
+\begin{DoxyParamCaption}
+\item[{ActionRequest}]{request, }
+\item[{ActionResponse}]{response, }
+\item[{SessionStatus}]{sessionStatus}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1controller_1_1EditUserToVoController_aeb87d1e842bf381602343632f23f58e2}
+
+
+Definition at line 80 of file EditUserToVoController.java.
+
+
+
+References portal.registration.services.UserToVoService.findById(), portal.registration.domain.UserToVo.setFqans(), and portal.registration.services.UserToVoService.update().
+
+
+\begin{DoxyCode}
+                                                     {
+
+                String[] fqans = request.getParameterValues("resultList");
+                int userId = Integer.parseInt(request.getParameter("userId"));
+                int idVo = Integer.parseInt(request.getParameter("idVo"));
+                UserToVo utv = userToVoService.findById(userId, idVo);
+
+                if (fqans != null && !fqans[0].equals("")) {
+
+                        log.info("prova =" + fqans[0] + ";fine");
+
+                        String toSave = "";
+
+                        for (int i = 0; i < fqans.length; i++)
+                                toSave += fqans[i] + ";";
+
+                        log.info("Stampa FQANS: " + toSave);
+
+                        utv.setFqans(toSave);
+
+                } else {
+                        utv.setFqans("");
+                }
+
+                userToVoService.update(utv);
+
+                SessionMessages.add(request, "userToVo-updated-successufully");
+
+                response.setRenderParameter("myaction", "editUserInfoForm");
+                response.setRenderParameter("userId", Integer.toString(userId));
+                request.setAttribute("userId", userId);
+                sessionStatus.setComplete();
+
+        }
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+
+
+\hypertarget{classportal_1_1registration_1_1controller_1_1EditUserToVoController_a4f02e82cbea1050780b3cf7e020f6a4d}{
+\index{portal::registration::controller::EditUserToVoController@{portal::registration::controller::EditUserToVoController}!getFqans@{getFqans}}
+\index{getFqans@{getFqans}!portal::registration::controller::EditUserToVoController@{portal::registration::controller::EditUserToVoController}}
+\subsubsection[{getFqans}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Fqan}$>$ portal.registration.controller.EditUserToVoController.getFqans (
+\begin{DoxyParamCaption}
+\item[{@RequestParam int}]{userId, }
+\item[{@RequestParam int}]{idVo}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1controller_1_1EditUserToVoController_a4f02e82cbea1050780b3cf7e020f6a4d}
+
+
+Definition at line 75 of file EditUserToVoController.java.
+
+
+
+References portal.registration.services.FqanService.findByIdVo().
+
+
+\begin{DoxyCode}
+                                                                                 
+          {
+                return fqanService.findByIdVo(idVo);
+        }
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+
+
+\hypertarget{classportal_1_1registration_1_1controller_1_1EditUserToVoController_a7e131f83378f7f675880aafc3deed55c}{
+\index{portal::registration::controller::EditUserToVoController@{portal::registration::controller::EditUserToVoController}!getUserInfo@{getUserInfo}}
+\index{getUserInfo@{getUserInfo}!portal::registration::controller::EditUserToVoController@{portal::registration::controller::EditUserToVoController}}
+\subsubsection[{getUserInfo}]{\setlength{\rightskip}{0pt plus 5cm}{\bf UserInfo} portal.registration.controller.EditUserToVoController.getUserInfo (
+\begin{DoxyParamCaption}
+\item[{@RequestParam int}]{userId}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1controller_1_1EditUserToVoController_a7e131f83378f7f675880aafc3deed55c}
+
+
+Definition at line 54 of file EditUserToVoController.java.
+
+
+
+References portal.registration.services.UserInfoService.findById().
+
+
+\begin{DoxyCode}
+                                                              {
+                return userInfoService.findById(userId);
+        }
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+
+
+\hypertarget{classportal_1_1registration_1_1controller_1_1EditUserToVoController_ab5f3b0f3201e6fead40534252c9f6836}{
+\index{portal::registration::controller::EditUserToVoController@{portal::registration::controller::EditUserToVoController}!getUserToVo@{getUserToVo}}
+\index{getUserToVo@{getUserToVo}!portal::registration::controller::EditUserToVoController@{portal::registration::controller::EditUserToVoController}}
+\subsubsection[{getUserToVo}]{\setlength{\rightskip}{0pt plus 5cm}{\bf UserToVo} portal.registration.controller.EditUserToVoController.getUserToVo (
+\begin{DoxyParamCaption}
+\item[{@RequestParam int}]{userId, }
+\item[{@RequestParam int}]{idVo}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1controller_1_1EditUserToVoController_ab5f3b0f3201e6fead40534252c9f6836}
+
+
+Definition at line 59 of file EditUserToVoController.java.
+
+
+
+References portal.registration.services.UserToVoService.findById().
+
+
+\begin{DoxyCode}
+                                                                                 
+           {
+                return userToVoService.findById(userId, idVo);
+        }
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+
+
+\hypertarget{classportal_1_1registration_1_1controller_1_1EditUserToVoController_a47df37128ba11b11fc01d8875e33c7ef}{
+\index{portal::registration::controller::EditUserToVoController@{portal::registration::controller::EditUserToVoController}!getVO@{getVO}}
+\index{getVO@{getVO}!portal::registration::controller::EditUserToVoController@{portal::registration::controller::EditUserToVoController}}
+\subsubsection[{getVO}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vo} portal.registration.controller.EditUserToVoController.getVO (
+\begin{DoxyParamCaption}
+\item[{@RequestParam int}]{idVo}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1controller_1_1EditUserToVoController_a47df37128ba11b11fc01d8875e33c7ef}
+
+
+Definition at line 64 of file EditUserToVoController.java.
+
+
+
+References portal.registration.services.VoService.findById().
+
+
+\begin{DoxyCode}
+                                                {
+
+                return voService.findById(idVo);
+        }
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+
+
+\hypertarget{classportal_1_1registration_1_1controller_1_1EditUserToVoController_a6fb863621d3ccd57b7c228d642167c79}{
+\index{portal::registration::controller::EditUserToVoController@{portal::registration::controller::EditUserToVoController}!showEditUserInfoForm@{showEditUserInfoForm}}
+\index{showEditUserInfoForm@{showEditUserInfoForm}!portal::registration::controller::EditUserToVoController@{portal::registration::controller::EditUserToVoController}}
+\subsubsection[{showEditUserInfoForm}]{\setlength{\rightskip}{0pt plus 5cm}String portal.registration.controller.EditUserToVoController.showEditUserInfoForm (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1controller_1_1EditUserToVoController_a6fb863621d3ccd57b7c228d642167c79}
+
+
+Definition at line 49 of file EditUserToVoController.java.
+
+
+\begin{DoxyCode}
+                                             {
+                return "editUserToVo";
+        }
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classportal_1_1registration_1_1controller_1_1EditUserToVoController_ae7631577179067193dd0ff2ad24631b1}{
+\index{portal::registration::controller::EditUserToVoController@{portal::registration::controller::EditUserToVoController}!fqanService@{fqanService}}
+\index{fqanService@{fqanService}!portal::registration::controller::EditUserToVoController@{portal::registration::controller::EditUserToVoController}}
+\subsubsection[{fqanService}]{\setlength{\rightskip}{0pt plus 5cm}{\bf FqanService} {\bf portal.registration.controller.EditUserToVoController.fqanService}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classportal_1_1registration_1_1controller_1_1EditUserToVoController_ae7631577179067193dd0ff2ad24631b1}
+
+
+Definition at line 46 of file EditUserToVoController.java.
+
+\hypertarget{classportal_1_1registration_1_1controller_1_1EditUserToVoController_abc91983450be169b71a43139da136573}{
+\index{portal::registration::controller::EditUserToVoController@{portal::registration::controller::EditUserToVoController}!log@{log}}
+\index{log@{log}!portal::registration::controller::EditUserToVoController@{portal::registration::controller::EditUserToVoController}}
+\subsubsection[{log}]{\setlength{\rightskip}{0pt plus 5cm}final Logger {\bf portal.registration.controller.EditUserToVoController.log}\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{classportal_1_1registration_1_1controller_1_1EditUserToVoController_abc91983450be169b71a43139da136573}
+{\bfseries Initial value:}
+\begin{DoxyCode}
+ Logger
+                        .getLogger(EditUserToVoController.class)
+\end{DoxyCode}
+
+
+Definition at line 33 of file EditUserToVoController.java.
+
+\hypertarget{classportal_1_1registration_1_1controller_1_1EditUserToVoController_adfc9f529073107272adc85ef5af0ba64}{
+\index{portal::registration::controller::EditUserToVoController@{portal::registration::controller::EditUserToVoController}!userInfoService@{userInfoService}}
+\index{userInfoService@{userInfoService}!portal::registration::controller::EditUserToVoController@{portal::registration::controller::EditUserToVoController}}
+\subsubsection[{userInfoService}]{\setlength{\rightskip}{0pt plus 5cm}{\bf UserInfoService} {\bf portal.registration.controller.EditUserToVoController.userInfoService}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classportal_1_1registration_1_1controller_1_1EditUserToVoController_adfc9f529073107272adc85ef5af0ba64}
+
+
+Definition at line 37 of file EditUserToVoController.java.
+
+\hypertarget{classportal_1_1registration_1_1controller_1_1EditUserToVoController_ab8208b9d0524717c5d5c3b7ce8cfbfd8}{
+\index{portal::registration::controller::EditUserToVoController@{portal::registration::controller::EditUserToVoController}!userToVoService@{userToVoService}}
+\index{userToVoService@{userToVoService}!portal::registration::controller::EditUserToVoController@{portal::registration::controller::EditUserToVoController}}
+\subsubsection[{userToVoService}]{\setlength{\rightskip}{0pt plus 5cm}{\bf UserToVoService} {\bf portal.registration.controller.EditUserToVoController.userToVoService}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classportal_1_1registration_1_1controller_1_1EditUserToVoController_ab8208b9d0524717c5d5c3b7ce8cfbfd8}
+
+
+Definition at line 43 of file EditUserToVoController.java.
+
+\hypertarget{classportal_1_1registration_1_1controller_1_1EditUserToVoController_a6b47f2cf57b93f14868b6643a7a05647}{
+\index{portal::registration::controller::EditUserToVoController@{portal::registration::controller::EditUserToVoController}!voService@{voService}}
+\index{voService@{voService}!portal::registration::controller::EditUserToVoController@{portal::registration::controller::EditUserToVoController}}
+\subsubsection[{voService}]{\setlength{\rightskip}{0pt plus 5cm}{\bf VoService} {\bf portal.registration.controller.EditUserToVoController.voService}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classportal_1_1registration_1_1controller_1_1EditUserToVoController_a6b47f2cf57b93f14868b6643a7a05647}
+
+
+Definition at line 40 of file EditUserToVoController.java.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/\hyperlink{EditUserToVoController_8java}{EditUserToVoController.java}\end{DoxyCompactItemize}

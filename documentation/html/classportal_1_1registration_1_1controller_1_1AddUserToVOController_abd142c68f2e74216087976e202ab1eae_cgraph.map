@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$interfaceportal_1_1registration_1_1services_1_1UserInfoService.html#ad0df285c951d11fcf3c1ccd263a39989" title="portal.registration.services.UserInfoService.edit" alt="" coords="456,4,728,31"/>
+<area shape="rect" id="node5" href="$classportal_1_1registration_1_1domain_1_1UserInfo.html#a929f371c5886ad09e6d4c068490d5299" title="portal.registration.domain.UserInfo.getUsername" alt="" coords="452,55,732,81"/>
+<area shape="rect" id="node7" href="$classportal_1_1registration_1_1domain_1_1UserInfo.html#a0faf57dfd8593ff7fd523793bc20d5a1" title="portal.registration.domain.UserInfo.setRegistrationComplete" alt="" coords="422,105,762,132"/>
+</map>

@@ -1,0 +1,103 @@
+.TH "portal::registration::controller::UserInfoController" 3 "Wed Jul 13 2011" "Version 4" "Registration" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+portal::registration::controller::UserInfoController \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "String \fBshowUserInfos\fP (RenderResponse response)"
+.br
+.ti -1c
+.RI "List< \fBUserInfo\fP > \fBgetUserInfos\fP ()"
+.br
+.ti -1c
+.RI "List< \fBIdp\fP > \fBgetIdps\fP ()"
+.br
+.ti -1c
+.RI "Map< Object, Object > \fBgetIdpsName\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBUserInfoService\fP \fBuserInfoService\fP"
+.br
+.ti -1c
+.RI "\fBIdpService\fP \fBidpService\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 22 of file UserInfoController.java.
+.SH "Member Function Documentation"
+.PP 
+.SS "List<\fBIdp\fP> portal.registration.controller.UserInfoController.getIdps ()"
+.PP
+Definition at line 41 of file UserInfoController.java.
+.PP
+References portal.registration.services.IdpService.getAllIdp().
+.PP
+.nf
+                                   {
+                return idpService.getAllIdp();
+        }
+.fi
+.SS "Map<Object, Object> portal.registration.controller.UserInfoController.getIdpsName ()"
+.PP
+Definition at line 46 of file UserInfoController.java.
+.PP
+References portal.registration.services.IdpService.findByIdp(), and portal.registration.services.UserInfoService.getAllUserInfo().
+.PP
+.nf
+                                                 {
+
+                Map<Object, Object> x = new Properties();
+
+                List<UserInfo> users = userInfoService.getAllUserInfo();
+
+                for (int i = 0; i < users.size(); i++) {
+
+                        x.put(users.get(i).getUserId(),
+                                        idpService.findByIdp(users.get(i).getIdp()));
+                }
+                return x;
+        }
+.fi
+.SS "List<\fBUserInfo\fP> portal.registration.controller.UserInfoController.getUserInfos ()"
+.PP
+Definition at line 36 of file UserInfoController.java.
+.PP
+References portal.registration.services.UserInfoService.getAllUserInfo().
+.PP
+.nf
+                                             {
+                return userInfoService.getAllUserInfo();
+        }
+.fi
+.SS "String portal.registration.controller.UserInfoController.showUserInfos (RenderResponseresponse)"
+.PP
+Definition at line 31 of file UserInfoController.java.
+.PP
+.nf
+                                                             {
+                return 'home';
+        }
+.fi
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBIdpService\fP \fBportal.registration.controller.UserInfoController.idpService\fP\fC [private]\fP"
+.PP
+Definition at line 28 of file UserInfoController.java.
+.SS "\fBUserInfoService\fP \fBportal.registration.controller.UserInfoController.userInfoService\fP\fC [private]\fP"
+.PP
+Definition at line 25 of file UserInfoController.java.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Registration from the source code.

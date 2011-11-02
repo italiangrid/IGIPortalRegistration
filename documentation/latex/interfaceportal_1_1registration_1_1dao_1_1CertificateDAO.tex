@@ -1,0 +1,136 @@
+\hypertarget{interfaceportal_1_1registration_1_1dao_1_1CertificateDAO}{
+\section{portal.registration.dao.CertificateDAO Interface Reference}
+\label{interfaceportal_1_1registration_1_1dao_1_1CertificateDAO}\index{portal::registration::dao::CertificateDAO@{portal::registration::dao::CertificateDAO}}
+}
+
+
+Inheritance diagram for portal.registration.dao.CertificateDAO:
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Integer \hyperlink{interfaceportal_1_1registration_1_1dao_1_1CertificateDAO_a7451336de83411bab9a9d61b6ca719ee}{save} (\hyperlink{classportal_1_1registration_1_1domain_1_1Certificate}{Certificate} transientInstance)
+\item 
+void \hyperlink{interfaceportal_1_1registration_1_1dao_1_1CertificateDAO_ab535f1e3d72dc9bd0bcda6c042d513bb}{delete} (\hyperlink{classportal_1_1registration_1_1domain_1_1Certificate}{Certificate} persistentInstance)
+\item 
+List$<$ \hyperlink{classportal_1_1registration_1_1domain_1_1Certificate}{Certificate} $>$ \hyperlink{interfaceportal_1_1registration_1_1dao_1_1CertificateDAO_a1a1782267b60378309ca30ce76528fd4}{findById} (\hyperlink{classportal_1_1registration_1_1domain_1_1UserInfo}{UserInfo} userInfo)
+\item 
+\hyperlink{classportal_1_1registration_1_1domain_1_1Certificate}{Certificate} \hyperlink{interfaceportal_1_1registration_1_1dao_1_1CertificateDAO_aecb22f7cf02b37a0330600686147243d}{findById} (Integer id)
+\item 
+void \hyperlink{interfaceportal_1_1registration_1_1dao_1_1CertificateDAO_ab538437429b4b6b2065affa7b2742f45}{edit} (\hyperlink{classportal_1_1registration_1_1domain_1_1Certificate}{Certificate} certificate)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 8 of file CertificateDAO.java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{interfaceportal_1_1registration_1_1dao_1_1CertificateDAO_ab535f1e3d72dc9bd0bcda6c042d513bb}{
+\index{portal::registration::dao::CertificateDAO@{portal::registration::dao::CertificateDAO}!delete@{delete}}
+\index{delete@{delete}!portal::registration::dao::CertificateDAO@{portal::registration::dao::CertificateDAO}}
+\subsubsection[{delete}]{\setlength{\rightskip}{0pt plus 5cm}void portal.registration.dao.CertificateDAO.delete (
+\begin{DoxyParamCaption}
+\item[{{\bf Certificate}}]{persistentInstance}
+\end{DoxyParamCaption}
+)}}
+\label{interfaceportal_1_1registration_1_1dao_1_1CertificateDAO_ab535f1e3d72dc9bd0bcda6c042d513bb}
+
+
+Implemented in \hyperlink{classportal_1_1registration_1_1dao_1_1CertificateDAOImpl_a46214fc34d32586747e7d9b7ff0a735d}{portal.registration.dao.CertificateDAOImpl}.
+
+
+
+Referenced by portal.registration.services.CertificateServiceImpl.delete().
+
+
+
+Here is the caller graph for this function:
+
+
+\hypertarget{interfaceportal_1_1registration_1_1dao_1_1CertificateDAO_ab538437429b4b6b2065affa7b2742f45}{
+\index{portal::registration::dao::CertificateDAO@{portal::registration::dao::CertificateDAO}!edit@{edit}}
+\index{edit@{edit}!portal::registration::dao::CertificateDAO@{portal::registration::dao::CertificateDAO}}
+\subsubsection[{edit}]{\setlength{\rightskip}{0pt plus 5cm}void portal.registration.dao.CertificateDAO.edit (
+\begin{DoxyParamCaption}
+\item[{{\bf Certificate}}]{certificate}
+\end{DoxyParamCaption}
+)}}
+\label{interfaceportal_1_1registration_1_1dao_1_1CertificateDAO_ab538437429b4b6b2065affa7b2742f45}
+
+
+Implemented in \hyperlink{classportal_1_1registration_1_1dao_1_1CertificateDAOImpl_a4baa20618a158327206b303a62b469e7}{portal.registration.dao.CertificateDAOImpl}.
+
+
+
+Referenced by portal.registration.services.CertificateServiceImpl.save(), and portal.registration.services.CertificateServiceImpl.setDefault().
+
+
+
+Here is the caller graph for this function:
+
+
+\hypertarget{interfaceportal_1_1registration_1_1dao_1_1CertificateDAO_aecb22f7cf02b37a0330600686147243d}{
+\index{portal::registration::dao::CertificateDAO@{portal::registration::dao::CertificateDAO}!findById@{findById}}
+\index{findById@{findById}!portal::registration::dao::CertificateDAO@{portal::registration::dao::CertificateDAO}}
+\subsubsection[{findById}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Certificate} portal.registration.dao.CertificateDAO.findById (
+\begin{DoxyParamCaption}
+\item[{Integer}]{id}
+\end{DoxyParamCaption}
+)}}
+\label{interfaceportal_1_1registration_1_1dao_1_1CertificateDAO_aecb22f7cf02b37a0330600686147243d}
+
+
+Implemented in \hyperlink{classportal_1_1registration_1_1dao_1_1CertificateDAOImpl_aed1fed865abe0006ad14bdf5dffe2932}{portal.registration.dao.CertificateDAOImpl}.
+
+\hypertarget{interfaceportal_1_1registration_1_1dao_1_1CertificateDAO_a1a1782267b60378309ca30ce76528fd4}{
+\index{portal::registration::dao::CertificateDAO@{portal::registration::dao::CertificateDAO}!findById@{findById}}
+\index{findById@{findById}!portal::registration::dao::CertificateDAO@{portal::registration::dao::CertificateDAO}}
+\subsubsection[{findById}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Certificate}$>$ portal.registration.dao.CertificateDAO.findById (
+\begin{DoxyParamCaption}
+\item[{{\bf UserInfo}}]{userInfo}
+\end{DoxyParamCaption}
+)}}
+\label{interfaceportal_1_1registration_1_1dao_1_1CertificateDAO_a1a1782267b60378309ca30ce76528fd4}
+
+
+Implemented in \hyperlink{classportal_1_1registration_1_1dao_1_1CertificateDAOImpl_a3e023e8f1bb0aed1b21dc556f148a640}{portal.registration.dao.CertificateDAOImpl}.
+
+
+
+Referenced by portal.registration.services.CertificateServiceImpl.delete(), portal.registration.services.CertificateServiceImpl.findById(), portal.registration.services.CertificateServiceImpl.save(), and portal.registration.services.CertificateServiceImpl.setDefault().
+
+
+
+Here is the caller graph for this function:
+
+
+\hypertarget{interfaceportal_1_1registration_1_1dao_1_1CertificateDAO_a7451336de83411bab9a9d61b6ca719ee}{
+\index{portal::registration::dao::CertificateDAO@{portal::registration::dao::CertificateDAO}!save@{save}}
+\index{save@{save}!portal::registration::dao::CertificateDAO@{portal::registration::dao::CertificateDAO}}
+\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}Integer portal.registration.dao.CertificateDAO.save (
+\begin{DoxyParamCaption}
+\item[{{\bf Certificate}}]{transientInstance}
+\end{DoxyParamCaption}
+)}}
+\label{interfaceportal_1_1registration_1_1dao_1_1CertificateDAO_a7451336de83411bab9a9d61b6ca719ee}
+
+
+Implemented in \hyperlink{classportal_1_1registration_1_1dao_1_1CertificateDAOImpl_a6131a112c85bb539f61dc079d8afcbbb}{portal.registration.dao.CertificateDAOImpl}.
+
+
+
+Referenced by portal.registration.services.CertificateServiceImpl.save().
+
+
+
+Here is the caller graph for this function:
+
+
+
+
+The documentation for this interface was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/dao/\hyperlink{CertificateDAO_8java}{CertificateDAO.java}\end{DoxyCompactItemize}

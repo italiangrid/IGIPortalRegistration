@@ -1,0 +1,385 @@
+\hypertarget{classportal_1_1registration_1_1controller_1_1AddUserInfoController}{
+\section{portal.registration.controller.AddUserInfoController Class Reference}
+\label{classportal_1_1registration_1_1controller_1_1AddUserInfoController}\index{portal::registration::controller::AddUserInfoController@{portal::registration::controller::AddUserInfoController}}
+}
+
+
+Collaboration diagram for portal.registration.controller.AddUserInfoController:
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classportal_1_1registration_1_1domain_1_1UserInfo}{UserInfo} \hyperlink{classportal_1_1registration_1_1controller_1_1AddUserInfoController_abcb27dd8d2bd04640df8db01d5325dc9}{getCommandObject} ()
+\item 
+String \hyperlink{classportal_1_1registration_1_1controller_1_1AddUserInfoController_a1f6461d624bb25d839f173e912c6a9f0}{showUserInfoForm} (RenderResponse response)
+\item 
+void \hyperlink{classportal_1_1registration_1_1controller_1_1AddUserInfoController_a925c7078048b00218ff13515a24c3891}{initBinder} (WebDataBinder binder)
+\item 
+void \hyperlink{classportal_1_1registration_1_1controller_1_1AddUserInfoController_a2750658abc595b838f458b87464e51fe}{addUserInfo} (@Valid @ModelAttribute \hyperlink{classportal_1_1registration_1_1domain_1_1UserInfo}{UserInfo} userInfo, BindingResult bindingResult, ActionRequest request, ActionResponse response, SessionStatus sessionStatus)  throws PortalException, SystemException 
+\item 
+List$<$ \hyperlink{classportal_1_1registration_1_1domain_1_1Idp}{Idp} $>$ \hyperlink{classportal_1_1registration_1_1controller_1_1AddUserInfoController_a75d0eda43cc0f5e93d292744d81b9e6e}{getIdps} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{interfaceportal_1_1registration_1_1services_1_1IdpService}{IdpService} \hyperlink{classportal_1_1registration_1_1controller_1_1AddUserInfoController_a3c5be3236bf7b6003fea1c2ca64ef350}{idpService}
+\item 
+\hyperlink{interfaceportal_1_1registration_1_1services_1_1UserInfoService}{UserInfoService} \hyperlink{classportal_1_1registration_1_1controller_1_1AddUserInfoController_a1a21bbb7663d92f2485157535a250956}{userInfoService}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static final Logger \hyperlink{classportal_1_1registration_1_1controller_1_1AddUserInfoController_af927058bc53f731960f2e6f060a1a2f2}{log}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 47 of file AddUserInfoController.java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classportal_1_1registration_1_1controller_1_1AddUserInfoController_a2750658abc595b838f458b87464e51fe}{
+\index{portal::registration::controller::AddUserInfoController@{portal::registration::controller::AddUserInfoController}!addUserInfo@{addUserInfo}}
+\index{addUserInfo@{addUserInfo}!portal::registration::controller::AddUserInfoController@{portal::registration::controller::AddUserInfoController}}
+\subsubsection[{addUserInfo}]{\setlength{\rightskip}{0pt plus 5cm}void portal.registration.controller.AddUserInfoController.addUserInfo (
+\begin{DoxyParamCaption}
+\item[{@Valid @ModelAttribute {\bf UserInfo}}]{userInfo, }
+\item[{BindingResult}]{bindingResult, }
+\item[{ActionRequest}]{request, }
+\item[{ActionResponse}]{response, }
+\item[{SessionStatus}]{sessionStatus}
+\end{DoxyParamCaption}
+)  throws PortalException, SystemException }}
+\label{classportal_1_1registration_1_1controller_1_1AddUserInfoController_a2750658abc595b838f458b87464e51fe}
+
+
+Definition at line 74 of file AddUserInfoController.java.
+
+
+
+References portal.registration.services.IdpService.findById(), portal.registration.services.UserInfoService.save(), and portal.registration.utils.MyValidator.validate().
+
+
+\begin{DoxyCode}
+                                                                {
+
+                log.info("sono dentro");
+                if (!bindingResult.hasErrors()) {
+
+                        ArrayList<String> errors = new ArrayList<String>();
+                        boolean allOk = true;
+
+                        int userId = 0;
+                        if (request.getParameter("useCondition").equals("true")) 
+      {
+                                if (MyValidator.validate(userInfo, errors)) {
+
+                                        log.info("Valore passato idp "
+                                                        + Integer.parseInt(reques
+      t.getParameter("idpId")));
+                                        log.info("Valore passato havecert "
+                                                        + request.getParameter("h
+      aveCert"));
+
+                                        if (Integer.parseInt(request.getParameter
+      ("idpId")) != 0) {
+                                                Idp idp = idpService.findById(Int
+      eger.parseInt(request
+                                                                .getParameter("id
+      pId")));
+                                                userInfo.setIdp(idp);
+
+                                                log.info("Settato idp "
+                                                                + Integer.parseIn
+      t(request
+                                                                                .
+      getParameter("idpId")));
+
+                                                try {
+
+                                                        long companyId = PortalUt
+      il.getCompanyId(request);
+                                                        log.info("companyid = " +
+       companyId);
+                                                        log.info("settate variabi
+      li di supporto ora si aggiunge un utenti a liferay!!");
+
+                                                        User u = UserLocalService
+      Util.addUser(0L,
+                                                                        companyId
+      , false, "settedByPortal",
+                                                                        "settedBy
+      Portal", false, userInfo
+                                                                                        .
+      getUsername(), userInfo.getMail(),
+                                                                        0L, "", n
+      ew Locale("en"), userInfo
+                                                                                        .
+      getFirstName(), "", userInfo
+                                                                                        .
+      getLastName(), 0, 0, true,
+                                                                        Calendar.
+      JANUARY, 1, 1970, "", null, null,
+                                                                        null, nul
+      l, true, ServiceContextFactory
+                                                                                        .
+      getInstance(User.class.getName(),
+                                                                                                        r
+      equest));
+
+                                                        if (u == null)
+                                                                log.info("nulla d
+      i fatto");
+
+                                                } catch (Exception e) {
+
+                                                        errors.add("user-liferay-
+      problem");
+                                                        log.info("Inserimento ute
+      nte in liferay" + e);
+                                                        allOk = false;
+                                                        request.setAttribute("fir
+      stReg", "true");
+                                                }
+
+                                                if (allOk) {
+                                                        try {
+
+                                                                log.info("aggiunt
+      o utente in liferay, ora aggiungo in PortalUser");
+                                                                userInfo.setRegis
+      trationComplete("false");
+                                                                userId = 
+      userInfoService.save(userInfo,
+                                                                                I
+      nteger.parseInt(request
+                                                                                                .
+      getParameter("idpId")));
+
+                                                                log.info("Utente 
+      aggiunto in PortalUsert con UserId = "
+                                                                                +
+       userId);
+
+                                                        } catch (Exception e) {
+
+                                                                errors.add("user-
+      PortalUser-problem");
+                                                                log.info("Inserim
+      ento utente in PortalUser");
+                                                                e.printStackTrace
+      ();
+                                                                allOk = false;
+                                                        }
+                                                }
+                                        } else {
+
+                                                errors.add("user-idp-problem");
+                                                allOk = false;
+
+                                        }
+
+                                } else {
+
+                                        allOk = false;
+                                }
+
+                                if (allOk) {
+
+                                        SessionMessages.add(request, "user-saved-
+      successufully");
+
+                                        if (request.getParameter("haveCert").equa
+      ls("true")) {
+                                                response.setRenderParameter("myac
+      tion",
+                                                                "showUploadCert")
+      ;
+                                                request.setAttribute("userId", us
+      erId);
+                                                request.setAttribute("username", 
+      userInfo.getUsername());
+                                                request.setAttribute("firstReg", 
+      "true");
+                                        } else {
+                                                response.setRenderParameter("myac
+      tion",
+                                                                "showRequestCerti
+      ficate");
+                                        }
+
+                                        sessionStatus.setComplete();
+
+                                } else {
+
+                                        errors.add("error-saving-registration");
+
+                                        for (String error : errors) {
+                                                log.info("Errore: " + error);
+                                                SessionErrors.add(request, error)
+      ;
+                                        }
+
+                                        log.info("non va bene");
+
+                                        response.setRenderParameter("myaction", "
+      addUserInfoForm");
+                                        request.setAttribute("idpValue",
+                                                        Integer.parseInt(request.
+      getParameter("idpId")));
+                                        request.setAttribute("userInfo", userInfo
+      );
+                                        request.setAttribute("checked",
+                                                        request.getParameter("hav
+      eCert"));
+
+                                        log.info("non va bene");
+                                }
+                        } else {
+                                log.info("condizioni d'uso non accettate");
+                                SessionErrors.add(request, "use-condition-not-ace
+      pted");
+                                response.setRenderParameter("myaction", "userInfo
+      s");
+                        }
+                } else {
+
+                        log.info("Errore errore");
+                        response.setRenderParameter("myaction", "addUserInfoForm"
+      );
+                }
+
+        }
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+
+
+\hypertarget{classportal_1_1registration_1_1controller_1_1AddUserInfoController_abcb27dd8d2bd04640df8db01d5325dc9}{
+\index{portal::registration::controller::AddUserInfoController@{portal::registration::controller::AddUserInfoController}!getCommandObject@{getCommandObject}}
+\index{getCommandObject@{getCommandObject}!portal::registration::controller::AddUserInfoController@{portal::registration::controller::AddUserInfoController}}
+\subsubsection[{getCommandObject}]{\setlength{\rightskip}{0pt plus 5cm}{\bf UserInfo} portal.registration.controller.AddUserInfoController.getCommandObject (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1controller_1_1AddUserInfoController_abcb27dd8d2bd04640df8db01d5325dc9}
+
+
+Definition at line 59 of file AddUserInfoController.java.
+
+
+\begin{DoxyCode}
+                                           {
+                return new UserInfo();
+        }
+\end{DoxyCode}
+\hypertarget{classportal_1_1registration_1_1controller_1_1AddUserInfoController_a75d0eda43cc0f5e93d292744d81b9e6e}{
+\index{portal::registration::controller::AddUserInfoController@{portal::registration::controller::AddUserInfoController}!getIdps@{getIdps}}
+\index{getIdps@{getIdps}!portal::registration::controller::AddUserInfoController@{portal::registration::controller::AddUserInfoController}}
+\subsubsection[{getIdps}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Idp}$>$ portal.registration.controller.AddUserInfoController.getIdps (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1controller_1_1AddUserInfoController_a75d0eda43cc0f5e93d292744d81b9e6e}
+
+
+Definition at line 215 of file AddUserInfoController.java.
+
+
+
+References portal.registration.services.IdpService.getAllIdp().
+
+
+\begin{DoxyCode}
+                                   {
+                return idpService.getAllIdp();
+        }
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+
+
+\hypertarget{classportal_1_1registration_1_1controller_1_1AddUserInfoController_a925c7078048b00218ff13515a24c3891}{
+\index{portal::registration::controller::AddUserInfoController@{portal::registration::controller::AddUserInfoController}!initBinder@{initBinder}}
+\index{initBinder@{initBinder}!portal::registration::controller::AddUserInfoController@{portal::registration::controller::AddUserInfoController}}
+\subsubsection[{initBinder}]{\setlength{\rightskip}{0pt plus 5cm}void portal.registration.controller.AddUserInfoController.initBinder (
+\begin{DoxyParamCaption}
+\item[{WebDataBinder}]{binder}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1controller_1_1AddUserInfoController_a925c7078048b00218ff13515a24c3891}
+
+
+Definition at line 69 of file AddUserInfoController.java.
+
+
+\begin{DoxyCode}
+                                                     {
+                binder.registerCustomEditor(Long.class, new LongNumberEditor());
+        }
+\end{DoxyCode}
+\hypertarget{classportal_1_1registration_1_1controller_1_1AddUserInfoController_a1f6461d624bb25d839f173e912c6a9f0}{
+\index{portal::registration::controller::AddUserInfoController@{portal::registration::controller::AddUserInfoController}!showUserInfoForm@{showUserInfoForm}}
+\index{showUserInfoForm@{showUserInfoForm}!portal::registration::controller::AddUserInfoController@{portal::registration::controller::AddUserInfoController}}
+\subsubsection[{showUserInfoForm}]{\setlength{\rightskip}{0pt plus 5cm}String portal.registration.controller.AddUserInfoController.showUserInfoForm (
+\begin{DoxyParamCaption}
+\item[{RenderResponse}]{response}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1controller_1_1AddUserInfoController_a1f6461d624bb25d839f173e912c6a9f0}
+
+
+Definition at line 64 of file AddUserInfoController.java.
+
+
+\begin{DoxyCode}
+                                                                {
+                return "addUserInfoForm";
+        }
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classportal_1_1registration_1_1controller_1_1AddUserInfoController_a3c5be3236bf7b6003fea1c2ca64ef350}{
+\index{portal::registration::controller::AddUserInfoController@{portal::registration::controller::AddUserInfoController}!idpService@{idpService}}
+\index{idpService@{idpService}!portal::registration::controller::AddUserInfoController@{portal::registration::controller::AddUserInfoController}}
+\subsubsection[{idpService}]{\setlength{\rightskip}{0pt plus 5cm}{\bf IdpService} {\bf portal.registration.controller.AddUserInfoController.idpService}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classportal_1_1registration_1_1controller_1_1AddUserInfoController_a3c5be3236bf7b6003fea1c2ca64ef350}
+
+
+Definition at line 53 of file AddUserInfoController.java.
+
+\hypertarget{classportal_1_1registration_1_1controller_1_1AddUserInfoController_af927058bc53f731960f2e6f060a1a2f2}{
+\index{portal::registration::controller::AddUserInfoController@{portal::registration::controller::AddUserInfoController}!log@{log}}
+\index{log@{log}!portal::registration::controller::AddUserInfoController@{portal::registration::controller::AddUserInfoController}}
+\subsubsection[{log}]{\setlength{\rightskip}{0pt plus 5cm}final Logger {\bf portal.registration.controller.AddUserInfoController.log}\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{classportal_1_1registration_1_1controller_1_1AddUserInfoController_af927058bc53f731960f2e6f060a1a2f2}
+{\bfseries Initial value:}
+\begin{DoxyCode}
+ Logger
+                        .getLogger(AddUserInfoController.class)
+\end{DoxyCode}
+
+
+Definition at line 49 of file AddUserInfoController.java.
+
+\hypertarget{classportal_1_1registration_1_1controller_1_1AddUserInfoController_a1a21bbb7663d92f2485157535a250956}{
+\index{portal::registration::controller::AddUserInfoController@{portal::registration::controller::AddUserInfoController}!userInfoService@{userInfoService}}
+\index{userInfoService@{userInfoService}!portal::registration::controller::AddUserInfoController@{portal::registration::controller::AddUserInfoController}}
+\subsubsection[{userInfoService}]{\setlength{\rightskip}{0pt plus 5cm}{\bf UserInfoService} {\bf portal.registration.controller.AddUserInfoController.userInfoService}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classportal_1_1registration_1_1controller_1_1AddUserInfoController_a1a21bbb7663d92f2485157535a250956}
+
+
+Definition at line 56 of file AddUserInfoController.java.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/\hyperlink{AddUserInfoController_8java}{AddUserInfoController.java}\end{DoxyCompactItemize}

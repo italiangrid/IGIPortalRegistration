@@ -1,0 +1,180 @@
+.TH "portal::registration::controller::EditUserToVoController" 3 "Wed Jul 13 2011" "Version 4" "Registration" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+portal::registration::controller::EditUserToVoController \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "String \fBshowEditUserInfoForm\fP ()"
+.br
+.ti -1c
+.RI "\fBUserInfo\fP \fBgetUserInfo\fP (@RequestParam int userId)"
+.br
+.ti -1c
+.RI "\fBUserToVo\fP \fBgetUserToVo\fP (@RequestParam int userId,@RequestParam int idVo)"
+.br
+.ti -1c
+.RI "\fBVo\fP \fBgetVO\fP (@RequestParam int idVo)"
+.br
+.ti -1c
+.RI "List< \fBFqan\fP > \fBgetFqans\fP (@RequestParam int userId,@RequestParam int idVo)"
+.br
+.ti -1c
+.RI "void \fBaddUserToVo\fP (ActionRequest request, ActionResponse response, SessionStatus sessionStatus)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBUserInfoService\fP \fBuserInfoService\fP"
+.br
+.ti -1c
+.RI "\fBVoService\fP \fBvoService\fP"
+.br
+.ti -1c
+.RI "\fBUserToVoService\fP \fBuserToVoService\fP"
+.br
+.ti -1c
+.RI "\fBFqanService\fP \fBfqanService\fP"
+.br
+.in -1c
+.SS "Static Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "static final Logger \fBlog\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 31 of file EditUserToVoController.java.
+.SH "Member Function Documentation"
+.PP 
+.SS "void portal.registration.controller.EditUserToVoController.addUserToVo (ActionRequestrequest, ActionResponseresponse, SessionStatussessionStatus)"
+.PP
+Definition at line 80 of file EditUserToVoController.java.
+.PP
+References portal.registration.services.UserToVoService.findById(), portal.registration.domain.UserToVo.setFqans(), and portal.registration.services.UserToVoService.update().
+.PP
+.nf
+                                                     {
+
+                String[] fqans = request.getParameterValues('resultList');
+                int userId = Integer.parseInt(request.getParameter('userId'));
+                int idVo = Integer.parseInt(request.getParameter('idVo'));
+                UserToVo utv = userToVoService.findById(userId, idVo);
+
+                if (fqans != null && !fqans[0].equals('')) {
+
+                        log.info('prova =' + fqans[0] + ';fine');
+
+                        String toSave = '';
+
+                        for (int i = 0; i < fqans.length; i++)
+                                toSave += fqans[i] + ';';
+
+                        log.info('Stampa FQANS: ' + toSave);
+
+                        utv.setFqans(toSave);
+
+                } else {
+                        utv.setFqans('');
+                }
+
+                userToVoService.update(utv);
+
+                SessionMessages.add(request, 'userToVo-updated-successufully');
+
+                response.setRenderParameter('myaction', 'editUserInfoForm');
+                response.setRenderParameter('userId', Integer.toString(userId));
+                request.setAttribute('userId', userId);
+                sessionStatus.setComplete();
+
+        }
+.fi
+.SS "List<\fBFqan\fP> portal.registration.controller.EditUserToVoController.getFqans (@RequestParam intuserId, @RequestParam intidVo)"
+.PP
+Definition at line 75 of file EditUserToVoController.java.
+.PP
+References portal.registration.services.FqanService.findByIdVo().
+.PP
+.nf
+                                                                                     {
+                return fqanService.findByIdVo(idVo);
+        }
+.fi
+.SS "\fBUserInfo\fP portal.registration.controller.EditUserToVoController.getUserInfo (@RequestParam intuserId)"
+.PP
+Definition at line 54 of file EditUserToVoController.java.
+.PP
+References portal.registration.services.UserInfoService.findById().
+.PP
+.nf
+                                                              {
+                return userInfoService.findById(userId);
+        }
+.fi
+.SS "\fBUserToVo\fP portal.registration.controller.EditUserToVoController.getUserToVo (@RequestParam intuserId, @RequestParam intidVo)"
+.PP
+Definition at line 59 of file EditUserToVoController.java.
+.PP
+References portal.registration.services.UserToVoService.findById().
+.PP
+.nf
+                                                                                      {
+                return userToVoService.findById(userId, idVo);
+        }
+.fi
+.SS "\fBVo\fP portal.registration.controller.EditUserToVoController.getVO (@RequestParam intidVo)"
+.PP
+Definition at line 64 of file EditUserToVoController.java.
+.PP
+References portal.registration.services.VoService.findById().
+.PP
+.nf
+                                                {
+
+                return voService.findById(idVo);
+        }
+.fi
+.SS "String portal.registration.controller.EditUserToVoController.showEditUserInfoForm ()"
+.PP
+Definition at line 49 of file EditUserToVoController.java.
+.PP
+.nf
+                                             {
+                return 'editUserToVo';
+        }
+.fi
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBFqanService\fP \fBportal.registration.controller.EditUserToVoController.fqanService\fP\fC [private]\fP"
+.PP
+Definition at line 46 of file EditUserToVoController.java.
+.SS "final Logger \fBportal.registration.controller.EditUserToVoController.log\fP\fC [static, private]\fP"\fBInitial value:\fP
+.PP
+.nf
+ Logger
+                        .getLogger(EditUserToVoController.class)
+.fi
+.PP
+Definition at line 33 of file EditUserToVoController.java.
+.SS "\fBUserInfoService\fP \fBportal.registration.controller.EditUserToVoController.userInfoService\fP\fC [private]\fP"
+.PP
+Definition at line 37 of file EditUserToVoController.java.
+.SS "\fBUserToVoService\fP \fBportal.registration.controller.EditUserToVoController.userToVoService\fP\fC [private]\fP"
+.PP
+Definition at line 43 of file EditUserToVoController.java.
+.SS "\fBVoService\fP \fBportal.registration.controller.EditUserToVoController.voService\fP\fC [private]\fP"
+.PP
+Definition at line 40 of file EditUserToVoController.java.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Registration from the source code.

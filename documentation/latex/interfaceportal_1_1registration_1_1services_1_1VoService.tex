@@ -1,0 +1,112 @@
+\hypertarget{interfaceportal_1_1registration_1_1services_1_1VoService}{
+\section{portal.registration.services.VoService Interface Reference}
+\label{interfaceportal_1_1registration_1_1services_1_1VoService}\index{portal::registration::services::VoService@{portal::registration::services::VoService}}
+}
+
+
+Inheritance diagram for portal.registration.services.VoService:
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \hyperlink{classportal_1_1registration_1_1domain_1_1Vo}{Vo} $>$ \hyperlink{interfaceportal_1_1registration_1_1services_1_1VoService_aa153862b17e17380ca3a8bf64558b070}{getAllVo} ()
+\item 
+\hyperlink{classportal_1_1registration_1_1domain_1_1Vo}{Vo} \hyperlink{interfaceportal_1_1registration_1_1services_1_1VoService_ade41c70e67fa304a7e4bea814b454b3e}{findById} (Integer id)
+\item 
+String \hyperlink{interfaceportal_1_1registration_1_1services_1_1VoService_ab8c2f110a7529b44a3c56c292fac20b8}{findByVo} (\hyperlink{classportal_1_1registration_1_1domain_1_1Vo}{Vo} vo)
+\item 
+List$<$ String $>$ \hyperlink{interfaceportal_1_1registration_1_1services_1_1VoService_a7b58b5a1cfad32b0c4697c5f37eb432e}{getAllDiscplines} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 7 of file VoService.java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{interfaceportal_1_1registration_1_1services_1_1VoService_ade41c70e67fa304a7e4bea814b454b3e}{
+\index{portal::registration::services::VoService@{portal::registration::services::VoService}!findById@{findById}}
+\index{findById@{findById}!portal::registration::services::VoService@{portal::registration::services::VoService}}
+\subsubsection[{findById}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vo} portal.registration.services.VoService.findById (
+\begin{DoxyParamCaption}
+\item[{Integer}]{id}
+\end{DoxyParamCaption}
+)}}
+\label{interfaceportal_1_1registration_1_1services_1_1VoService_ade41c70e67fa304a7e4bea814b454b3e}
+
+
+Implemented in \hyperlink{classportal_1_1registration_1_1services_1_1VoServiceImpl_a033d10a34bb55d383d9c9fbf8e06934d}{portal.registration.services.VoServiceImpl}.
+
+
+
+Referenced by portal.registration.controller.AddUserToVOController.checkVO(), and portal.registration.controller.EditUserToVoController.getVO().
+
+
+
+Here is the caller graph for this function:
+
+
+\hypertarget{interfaceportal_1_1registration_1_1services_1_1VoService_ab8c2f110a7529b44a3c56c292fac20b8}{
+\index{portal::registration::services::VoService@{portal::registration::services::VoService}!findByVo@{findByVo}}
+\index{findByVo@{findByVo}!portal::registration::services::VoService@{portal::registration::services::VoService}}
+\subsubsection[{findByVo}]{\setlength{\rightskip}{0pt plus 5cm}String portal.registration.services.VoService.findByVo (
+\begin{DoxyParamCaption}
+\item[{{\bf Vo}}]{vo}
+\end{DoxyParamCaption}
+)}}
+\label{interfaceportal_1_1registration_1_1services_1_1VoService_ab8c2f110a7529b44a3c56c292fac20b8}
+
+
+Implemented in \hyperlink{classportal_1_1registration_1_1services_1_1VoServiceImpl_ae34d214263258edd26540c6931c89f4a}{portal.registration.services.VoServiceImpl}.
+
+\hypertarget{interfaceportal_1_1registration_1_1services_1_1VoService_a7b58b5a1cfad32b0c4697c5f37eb432e}{
+\index{portal::registration::services::VoService@{portal::registration::services::VoService}!getAllDiscplines@{getAllDiscplines}}
+\index{getAllDiscplines@{getAllDiscplines}!portal::registration::services::VoService@{portal::registration::services::VoService}}
+\subsubsection[{getAllDiscplines}]{\setlength{\rightskip}{0pt plus 5cm}List$<$String$>$ portal.registration.services.VoService.getAllDiscplines (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{interfaceportal_1_1registration_1_1services_1_1VoService_a7b58b5a1cfad32b0c4697c5f37eb432e}
+
+
+Implemented in \hyperlink{classportal_1_1registration_1_1services_1_1VoServiceImpl_a524d75940e34418e48a3d50a521490f5}{portal.registration.services.VoServiceImpl}.
+
+
+
+Referenced by portal.registration.controller.AddUserToVOController.getDisciplines().
+
+
+
+Here is the caller graph for this function:
+
+
+\hypertarget{interfaceportal_1_1registration_1_1services_1_1VoService_aa153862b17e17380ca3a8bf64558b070}{
+\index{portal::registration::services::VoService@{portal::registration::services::VoService}!getAllVo@{getAllVo}}
+\index{getAllVo@{getAllVo}!portal::registration::services::VoService@{portal::registration::services::VoService}}
+\subsubsection[{getAllVo}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Vo}$>$ portal.registration.services.VoService.getAllVo (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{interfaceportal_1_1registration_1_1services_1_1VoService_aa153862b17e17380ca3a8bf64558b070}
+
+
+Implemented in \hyperlink{classportal_1_1registration_1_1services_1_1VoServiceImpl_aa5774cef8f51f0d1fa3db99fb52b5089}{portal.registration.services.VoServiceImpl}.
+
+
+
+Referenced by portal.registration.controller.VOListController.getVos(), portal.registration.controller.AddUserToVoPresentsController.getVos(), and portal.registration.controller.AddUserToVOController.getVos().
+
+
+
+Here is the caller graph for this function:
+
+
+
+
+The documentation for this interface was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/services/\hyperlink{VoService_8java}{VoService.java}\end{DoxyCompactItemize}

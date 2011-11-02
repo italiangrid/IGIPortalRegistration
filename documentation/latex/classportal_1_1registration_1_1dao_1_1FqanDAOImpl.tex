@@ -1,0 +1,266 @@
+\hypertarget{classportal_1_1registration_1_1dao_1_1FqanDAOImpl}{
+\section{portal.registration.dao.FqanDAOImpl Class Reference}
+\label{classportal_1_1registration_1_1dao_1_1FqanDAOImpl}\index{portal::registration::dao::FqanDAOImpl@{portal::registration::dao::FqanDAOImpl}}
+}
+
+
+Inheritance diagram for portal.registration.dao.FqanDAOImpl:
+
+
+Collaboration diagram for portal.registration.dao.FqanDAOImpl:
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classportal_1_1registration_1_1dao_1_1FqanDAOImpl_af429f668a38b68a4f166954266d57af0}{save} (\hyperlink{classportal_1_1registration_1_1domain_1_1Fqan}{Fqan} transientInstance)
+\item 
+void \hyperlink{classportal_1_1registration_1_1dao_1_1FqanDAOImpl_aff1a784a03f00607e55ef7a8e6f473a6}{delete} (\hyperlink{classportal_1_1registration_1_1domain_1_1Fqan}{Fqan} persistentInstance)
+\item 
+\hyperlink{classportal_1_1registration_1_1domain_1_1Fqan}{Fqan} \hyperlink{classportal_1_1registration_1_1dao_1_1FqanDAOImpl_a75fd10c1a58647de38eb10af28b74cd4}{findById} (Integer id)
+\item 
+List$<$ \hyperlink{classportal_1_1registration_1_1domain_1_1Fqan}{Fqan} $>$ \hyperlink{classportal_1_1registration_1_1dao_1_1FqanDAOImpl_aa0701c8920f8222dfd73f3c6fccc35d0}{getAllFqan} ()
+\item 
+List$<$ \hyperlink{classportal_1_1registration_1_1domain_1_1Fqan}{Fqan} $>$ \hyperlink{classportal_1_1registration_1_1dao_1_1FqanDAOImpl_a09f9108798b2af4c9903cc6f70f1110f}{findByIdVo} (Integer id)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+SessionFactory \hyperlink{classportal_1_1registration_1_1dao_1_1FqanDAOImpl_a0cff64d972eb00b9796b06c5141d5807}{sessionFactory}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static final Logger \hyperlink{classportal_1_1registration_1_1dao_1_1FqanDAOImpl_aa9640e5b881a23f5e86db80c4664bea1}{log} = Logger.getLogger(FqanDAOImpl.class)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 15 of file FqanDAOImpl.java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classportal_1_1registration_1_1dao_1_1FqanDAOImpl_aff1a784a03f00607e55ef7a8e6f473a6}{
+\index{portal::registration::dao::FqanDAOImpl@{portal::registration::dao::FqanDAOImpl}!delete@{delete}}
+\index{delete@{delete}!portal::registration::dao::FqanDAOImpl@{portal::registration::dao::FqanDAOImpl}}
+\subsubsection[{delete}]{\setlength{\rightskip}{0pt plus 5cm}void portal.registration.dao.FqanDAOImpl.delete (
+\begin{DoxyParamCaption}
+\item[{{\bf Fqan}}]{persistentInstance}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1dao_1_1FqanDAOImpl_aff1a784a03f00607e55ef7a8e6f473a6}
+
+
+Implements \hyperlink{interfaceportal_1_1registration_1_1dao_1_1FqanDAO_a3591404c6a1507fcc4c9fb2fa5393c21}{portal.registration.dao.FqanDAO}.
+
+
+
+Definition at line 35 of file FqanDAOImpl.java.
+
+
+
+References portal.registration.dao.FqanDAOImpl.log, and portal.registration.dao.FqanDAOImpl.sessionFactory.
+
+
+\begin{DoxyCode}
+                                                    {
+                log.debug("removing Fqan instance");
+                try {
+                        Session session = sessionFactory.getCurrentSession();
+                        session.delete(persistentInstance);
+                        log.debug("remove successful");
+                } catch (RuntimeException re) {
+                        log.error("remove failed", re);
+                        throw re;
+                }
+
+        }
+\end{DoxyCode}
+\hypertarget{classportal_1_1registration_1_1dao_1_1FqanDAOImpl_a75fd10c1a58647de38eb10af28b74cd4}{
+\index{portal::registration::dao::FqanDAOImpl@{portal::registration::dao::FqanDAOImpl}!findById@{findById}}
+\index{findById@{findById}!portal::registration::dao::FqanDAOImpl@{portal::registration::dao::FqanDAOImpl}}
+\subsubsection[{findById}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Fqan} portal.registration.dao.FqanDAOImpl.findById (
+\begin{DoxyParamCaption}
+\item[{Integer}]{id}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1dao_1_1FqanDAOImpl_a75fd10c1a58647de38eb10af28b74cd4}
+
+
+Implements \hyperlink{interfaceportal_1_1registration_1_1dao_1_1FqanDAO_ac15041f9e33cc8f54f685a1724f19896}{portal.registration.dao.FqanDAO}.
+
+
+
+Definition at line 48 of file FqanDAOImpl.java.
+
+
+
+References portal.registration.dao.FqanDAOImpl.log, and portal.registration.dao.FqanDAOImpl.sessionFactory.
+
+
+\begin{DoxyCode}
+                                         {
+                log.debug("getting Idp instance with id: " + id);
+                try {
+                        Session session = sessionFactory.getCurrentSession();
+                        Fqan instance = (Fqan) session.get(Fqan.class, id);
+                        log.debug("get successful");
+                        return instance;
+                } catch (RuntimeException re) {
+                        log.error("get failed", re);
+                        throw re;
+                }
+        }
+\end{DoxyCode}
+\hypertarget{classportal_1_1registration_1_1dao_1_1FqanDAOImpl_a09f9108798b2af4c9903cc6f70f1110f}{
+\index{portal::registration::dao::FqanDAOImpl@{portal::registration::dao::FqanDAOImpl}!findByIdVo@{findByIdVo}}
+\index{findByIdVo@{findByIdVo}!portal::registration::dao::FqanDAOImpl@{portal::registration::dao::FqanDAOImpl}}
+\subsubsection[{findByIdVo}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Fqan}$>$ portal.registration.dao.FqanDAOImpl.findByIdVo (
+\begin{DoxyParamCaption}
+\item[{Integer}]{id}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1dao_1_1FqanDAOImpl_a09f9108798b2af4c9903cc6f70f1110f}
+
+
+Implements \hyperlink{interfaceportal_1_1registration_1_1dao_1_1FqanDAO_a76a4e62e16f357337742feb6ab275bfd}{portal.registration.dao.FqanDAO}.
+
+
+
+Definition at line 80 of file FqanDAOImpl.java.
+
+
+
+References portal.registration.dao.FqanDAOImpl.log, and portal.registration.dao.FqanDAOImpl.sessionFactory.
+
+
+\begin{DoxyCode}
+                                                 {
+                log.debug("getting all Idp instance");
+                try {
+
+                        Session session = sessionFactory.getCurrentSession();
+
+                        // Create a Hibernate query (HQL)
+                        Query query = session.createQuery("FROM  Fqan WHERE idVo 
+      = " + id);
+
+                        // Retrieve all
+                        return query.list();
+                } catch (RuntimeException re) {
+                        log.error("get failed", re);
+                        throw re;
+                }
+        }
+\end{DoxyCode}
+\hypertarget{classportal_1_1registration_1_1dao_1_1FqanDAOImpl_aa0701c8920f8222dfd73f3c6fccc35d0}{
+\index{portal::registration::dao::FqanDAOImpl@{portal::registration::dao::FqanDAOImpl}!getAllFqan@{getAllFqan}}
+\index{getAllFqan@{getAllFqan}!portal::registration::dao::FqanDAOImpl@{portal::registration::dao::FqanDAOImpl}}
+\subsubsection[{getAllFqan}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Fqan}$>$ portal.registration.dao.FqanDAOImpl.getAllFqan (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1dao_1_1FqanDAOImpl_aa0701c8920f8222dfd73f3c6fccc35d0}
+
+
+Implements \hyperlink{interfaceportal_1_1registration_1_1dao_1_1FqanDAO_ace2743b3402de69776ab0c5250fb17a2}{portal.registration.dao.FqanDAO}.
+
+
+
+Definition at line 62 of file FqanDAOImpl.java.
+
+
+
+References portal.registration.dao.FqanDAOImpl.log, and portal.registration.dao.FqanDAOImpl.sessionFactory.
+
+
+\begin{DoxyCode}
+                                       {
+                log.debug("getting all Idp instance");
+                try {
+
+                        Session session = sessionFactory.getCurrentSession();
+
+                        // Create a Hibernate query (HQL)
+                        Query query = session.createQuery("FROM  Fqan");
+
+                        // Retrieve all
+                        return query.list();
+                } catch (RuntimeException re) {
+                        log.error("get failed", re);
+                        throw re;
+                }
+        }
+\end{DoxyCode}
+\hypertarget{classportal_1_1registration_1_1dao_1_1FqanDAOImpl_af429f668a38b68a4f166954266d57af0}{
+\index{portal::registration::dao::FqanDAOImpl@{portal::registration::dao::FqanDAOImpl}!save@{save}}
+\index{save@{save}!portal::registration::dao::FqanDAOImpl@{portal::registration::dao::FqanDAOImpl}}
+\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}void portal.registration.dao.FqanDAOImpl.save (
+\begin{DoxyParamCaption}
+\item[{{\bf Fqan}}]{transientInstance}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1dao_1_1FqanDAOImpl_af429f668a38b68a4f166954266d57af0}
+
+
+Implements \hyperlink{interfaceportal_1_1registration_1_1dao_1_1FqanDAO_af4188ed24459d62d80cd6fca356cf93e}{portal.registration.dao.FqanDAO}.
+
+
+
+Definition at line 22 of file FqanDAOImpl.java.
+
+
+
+References portal.registration.dao.FqanDAOImpl.log, and portal.registration.dao.FqanDAOImpl.sessionFactory.
+
+
+\begin{DoxyCode}
+                                                 {
+                log.debug("persisting Fqan instance");
+                try {
+                        Session session = sessionFactory.getCurrentSession();
+                        session.save(transientInstance);
+                        log.debug("persist successful");
+                } catch (RuntimeException re) {
+                        log.error("persist failed", re);
+                        throw re;
+                }
+
+        }
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classportal_1_1registration_1_1dao_1_1FqanDAOImpl_aa9640e5b881a23f5e86db80c4664bea1}{
+\index{portal::registration::dao::FqanDAOImpl@{portal::registration::dao::FqanDAOImpl}!log@{log}}
+\index{log@{log}!portal::registration::dao::FqanDAOImpl@{portal::registration::dao::FqanDAOImpl}}
+\subsubsection[{log}]{\setlength{\rightskip}{0pt plus 5cm}final Logger {\bf portal.registration.dao.FqanDAOImpl.log} = Logger.getLogger(FqanDAOImpl.class)\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{classportal_1_1registration_1_1dao_1_1FqanDAOImpl_aa9640e5b881a23f5e86db80c4664bea1}
+
+
+Definition at line 17 of file FqanDAOImpl.java.
+
+
+
+Referenced by portal.registration.dao.FqanDAOImpl.delete(), portal.registration.dao.FqanDAOImpl.findById(), portal.registration.dao.FqanDAOImpl.findByIdVo(), portal.registration.dao.FqanDAOImpl.getAllFqan(), and portal.registration.dao.FqanDAOImpl.save().
+
+\hypertarget{classportal_1_1registration_1_1dao_1_1FqanDAOImpl_a0cff64d972eb00b9796b06c5141d5807}{
+\index{portal::registration::dao::FqanDAOImpl@{portal::registration::dao::FqanDAOImpl}!sessionFactory@{sessionFactory}}
+\index{sessionFactory@{sessionFactory}!portal::registration::dao::FqanDAOImpl@{portal::registration::dao::FqanDAOImpl}}
+\subsubsection[{sessionFactory}]{\setlength{\rightskip}{0pt plus 5cm}SessionFactory {\bf portal.registration.dao.FqanDAOImpl.sessionFactory}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classportal_1_1registration_1_1dao_1_1FqanDAOImpl_a0cff64d972eb00b9796b06c5141d5807}
+
+
+Definition at line 20 of file FqanDAOImpl.java.
+
+
+
+Referenced by portal.registration.dao.FqanDAOImpl.delete(), portal.registration.dao.FqanDAOImpl.findById(), portal.registration.dao.FqanDAOImpl.findByIdVo(), portal.registration.dao.FqanDAOImpl.getAllFqan(), and portal.registration.dao.FqanDAOImpl.save().
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/dao/\hyperlink{FqanDAOImpl_8java}{FqanDAOImpl.java}\end{DoxyCompactItemize}

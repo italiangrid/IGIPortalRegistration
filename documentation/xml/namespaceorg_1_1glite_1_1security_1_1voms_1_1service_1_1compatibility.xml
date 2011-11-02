@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="namespaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility" kind="namespace">
+    <compoundname>org::glite::security::voms::service::compatibility</compoundname>
+    <innerclass refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibility" prot="public">org::glite::security::voms::service::compatibility::VOMSCompatibility</innerclass>
+    <innerclass refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilityService" prot="public">org::glite::security::voms::service::compatibility::VOMSCompatibilityService</innerclass>
+    <innerclass refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilityServiceLocator" prot="public">org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator</innerclass>
+    <innerclass refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilitySoapBindingImpl" prot="public">org::glite::security::voms::service::compatibility::VOMSCompatibilitySoapBindingImpl</innerclass>
+    <innerclass refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilitySoapBindingSkeleton" prot="public">org::glite::security::voms::service::compatibility::VOMSCompatibilitySoapBindingSkeleton</innerclass>
+    <innerclass refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilitySoapBindingStub" prot="public">org::glite::security::voms::service::compatibility::VOMSCompatibilitySoapBindingStub</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="VOMSCompatibility_8java" kindref="compound">VOMSCompatibility.java</ref></para><para>This file was auto-generated from WSDL by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.</para><para><ref refid="VOMSCompatibilityService_8java" kindref="compound">VOMSCompatibilityService.java</ref></para><para>This file was auto-generated from WSDL by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.</para><para><ref refid="VOMSCompatibilityServiceLocator_8java" kindref="compound">VOMSCompatibilityServiceLocator.java</ref></para><para>This file was auto-generated from WSDL by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.</para><para><ref refid="VOMSCompatibilitySoapBindingImpl_8java" kindref="compound">VOMSCompatibilitySoapBindingImpl.java</ref></para><para>This file was auto-generated from WSDL by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.</para><para><ref refid="VOMSCompatibilitySoapBindingSkeleton_8java" kindref="compound">VOMSCompatibilitySoapBindingSkeleton.java</ref></para><para>This file was auto-generated from WSDL by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.</para><para><ref refid="VOMSCompatibilitySoapBindingStub_8java" kindref="compound">VOMSCompatibilitySoapBindingStub.java</ref></para><para>This file was auto-generated from WSDL by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter. </para>    </detaileddescription>
+    <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/compatibility/VOMSCompatibility.java" line="8"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminService" kind="interface" prot="public">
+    <compoundname>org::glite::security::voms::service::admin::VOMSAdminService</compoundname>
+    <derivedcompoundref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator" prot="public" virt="non-virtual">org.glite.security.voms.service.admin.VOMSAdminServiceLocator</derivedcompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminService_1aa6954ab207748588e65b1d3acb342cbe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>java.lang.String</type>
+        <definition>java.lang.String org.glite.security.voms.service.admin.VOMSAdminService.getVOMSAdminAddress</definition>
+        <argsstring>()</argsstring>
+        <name>getVOMSAdminAddress</name>
+        <reimplementedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator_1a9aa20e106732f35e8180750326cb033f">getVOMSAdminAddress</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminService.java" line="11"/>
+      </memberdef>
+      <memberdef kind="function" id="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminService_1a3a21cfa1a638a583606607085ae65092" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdmin" kindref="compound">org.glite.security.voms.service.admin.VOMSAdmin</ref></type>
+        <definition>org.glite.security.voms.service.admin.VOMSAdmin org.glite.security.voms.service.admin.VOMSAdminService.getVOMSAdmin</definition>
+        <argsstring>()</argsstring>
+        <name>getVOMSAdmin</name>
+        <reimplementedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator_1a2ed7cc83a0ba2ed7d65aa7a97eebe4fd">getVOMSAdmin</reimplementedby>
+        <exceptions> throws javax.xml.rpc.ServiceException</exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminService.java" line="13"/>
+      </memberdef>
+      <memberdef kind="function" id="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminService_1a1c71525ec982f1d3928310edc1b46405" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdmin" kindref="compound">org.glite.security.voms.service.admin.VOMSAdmin</ref></type>
+        <definition>org.glite.security.voms.service.admin.VOMSAdmin org.glite.security.voms.service.admin.VOMSAdminService.getVOMSAdmin</definition>
+        <argsstring>(java.net.URL portAddress)</argsstring>
+        <name>getVOMSAdmin</name>
+        <reimplementedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator_1af9230883ddc8118ab6ea6960b3d3b370">getVOMSAdmin</reimplementedby>
+        <param>
+          <type>java.net.URL</type>
+          <declname>portAddress</declname>
+        </param>
+        <exceptions> throws javax.xml.rpc.ServiceException</exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminService.java" line="15"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="677">
+        <label>org.glite.security.voms.service.admin.VOMSAdminServiceLocator</label>
+        <link refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator"/>
+        <childnode refid="676" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="676">
+        <label>org.glite.security.voms.service.admin.VOMSAdminService</label>
+        <link refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminService"/>
+      </node>
+    </inheritancegraph>
+    <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminService.java" line="10" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/admin/VOMSAdminService.java" bodystart="10" bodyend="16"/>
+    <listofallmembers>
+      <member refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminService_1a3a21cfa1a638a583606607085ae65092" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::admin::VOMSAdminService</scope><name>getVOMSAdmin</name></member>
+      <member refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminService_1a1c71525ec982f1d3928310edc1b46405" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::admin::VOMSAdminService</scope><name>getVOMSAdmin</name></member>
+      <member refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminService_1aa6954ab207748588e65b1d3acb342cbe" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::admin::VOMSAdminService</scope><name>getVOMSAdminAddress</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

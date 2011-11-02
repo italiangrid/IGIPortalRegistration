@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="classportal_1_1registration_1_1utils_1_1VOMSTest" kind="class" prot="public">
+    <compoundname>portal::registration::utils::VOMSTest</compoundname>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classportal_1_1registration_1_1utils_1_1VOMSTest_1a5b50cacf533113b01ca54e44682993bf" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void portal.registration.utils.VOMSTest.main</definition>
+        <argsstring>(String[] args)</argsstring>
+        <name>main</name>
+        <param>
+          <type>String[]</type>
+          <declname>args</declname>
+        </param>
+        <exceptions> throws <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">VOMSException</ref>, MalformedURLException, RemoteException, ServiceException </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/utils/VOMSTest.java" line="12" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/utils/VOMSTest.java" bodystart="12" bodyend="22"/>
+        <references refid="classportal_1_1registration_1_1utils_1_1VOMSAdminCallOut_1ac7248574c47f256fe524dfcb82059304" compoundref="VOMSAdminCallOut_8java" startline="18" endline="50">portal.registration.utils.VOMSAdminCallOut::getUserFQANs</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/utils/VOMSTest.java" line="10" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/utils/VOMSTest.java" bodystart="10" bodyend="24"/>
+    <listofallmembers>
+      <member refid="classportal_1_1registration_1_1utils_1_1VOMSTest_1a5b50cacf533113b01ca54e44682993bf" prot="public" virt="non-virtual"><scope>portal::registration::utils::VOMSTest</scope><name>main</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,565 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="classportal_1_1registration_1_1domain_1_1Certificate" kind="class" prot="public">
+    <compoundname>portal::registration::domain::Certificate</compoundname>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classportal_1_1registration_1_1domain_1_1Certificate_1a7bc0118d146f99aa265f3b026fff8b4b" prot="private" static="yes" mutable="no">
+        <type>final long</type>
+        <definition>final long portal.registration.domain.Certificate.serialVersionUID</definition>
+        <argsstring></argsstring>
+        <name>serialVersionUID</name>
+        <initializer> -4219251531396625106L</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Certificate.java" line="28" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Certificate.java" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classportal_1_1registration_1_1domain_1_1Certificate_1a0861b0203d5d1924de38adf80ecde323" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int portal.registration.domain.Certificate.idCert</definition>
+        <argsstring></argsstring>
+        <name>idCert</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Certificate.java" line="29" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Certificate.java" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classportal_1_1registration_1_1domain_1_1Certificate_1a17f801286e01e02c092b9a92b3220b13" prot="private" static="no" mutable="no">
+        <type><ref refid="classportal_1_1registration_1_1domain_1_1UserInfo" kindref="compound">UserInfo</ref></type>
+        <definition>UserInfo portal.registration.domain.Certificate.userInfo</definition>
+        <argsstring></argsstring>
+        <name>userInfo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Certificate.java" line="30" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Certificate.java" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classportal_1_1registration_1_1domain_1_1Certificate_1aa5e1b492240c17ca0b863da96627855f" prot="private" static="no" mutable="no">
+        <type>String</type>
+        <definition>String portal.registration.domain.Certificate.subject</definition>
+        <argsstring></argsstring>
+        <name>subject</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Certificate.java" line="31" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Certificate.java" bodystart="31" bodyend="-1"/>
+        <referencedby refid="classportal_1_1registration_1_1domain_1_1Certificate_1ab1b7623aaf7364f3b30f8b612e887353" compoundref="Certificate_8java" startline="129" endline="134">portal.registration.domain.Certificate::equals</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classportal_1_1registration_1_1domain_1_1Certificate_1a059decff874c0a7667aee9122d9e7815" prot="private" static="no" mutable="no">
+        <type>Date</type>
+        <definition>Date portal.registration.domain.Certificate.expirationDate</definition>
+        <argsstring></argsstring>
+        <name>expirationDate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Certificate.java" line="32" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Certificate.java" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classportal_1_1registration_1_1domain_1_1Certificate_1ad1d84a6be3973282fb57b0aee10a61e2" prot="private" static="no" mutable="no">
+        <type>String</type>
+        <definition>String portal.registration.domain.Certificate.caonline</definition>
+        <argsstring></argsstring>
+        <name>caonline</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Certificate.java" line="33" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Certificate.java" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classportal_1_1registration_1_1domain_1_1Certificate_1a3a4632cbb077929d70538d0d4a07e1bd" prot="private" static="no" mutable="no">
+        <type>String</type>
+        <definition>String portal.registration.domain.Certificate.primaryCert</definition>
+        <argsstring></argsstring>
+        <name>primaryCert</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Certificate.java" line="34" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Certificate.java" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classportal_1_1registration_1_1domain_1_1Certificate_1a3d2cd307e97c90342894a007fb235d0c" prot="private" static="no" mutable="no">
+        <type>String</type>
+        <definition>String portal.registration.domain.Certificate.issuer</definition>
+        <argsstring></argsstring>
+        <name>issuer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Certificate.java" line="35" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Certificate.java" bodystart="35" bodyend="-1"/>
+        <referencedby refid="classportal_1_1registration_1_1domain_1_1Certificate_1ab1b7623aaf7364f3b30f8b612e887353" compoundref="Certificate_8java" startline="129" endline="134">portal.registration.domain.Certificate::equals</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classportal_1_1registration_1_1domain_1_1Certificate_1a27dd5145ea35c206c000e87485841d50" prot="private" static="no" mutable="no">
+        <type>String</type>
+        <definition>String portal.registration.domain.Certificate.usernameCert</definition>
+        <argsstring></argsstring>
+        <name>usernameCert</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Certificate.java" line="36" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Certificate.java" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1Certificate_1aeb6b7ca93801f3769301ae53af1ea164" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>portal.registration.domain.Certificate.Certificate</definition>
+        <argsstring>()</argsstring>
+        <name>Certificate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Certificate.java" line="38" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Certificate.java" bodystart="38" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1Certificate_1a905bb73644c06de9da6d440b88c89cdb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>portal.registration.domain.Certificate.Certificate</definition>
+        <argsstring>(UserInfo userInfo, String subject, Date expirationDate, String caonline, String primaryCert, String issuer, String usernameCert)</argsstring>
+        <name>Certificate</name>
+        <param>
+          <type><ref refid="classportal_1_1registration_1_1domain_1_1UserInfo" kindref="compound">UserInfo</ref></type>
+          <declname>userInfo</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>subject</declname>
+        </param>
+        <param>
+          <type>Date</type>
+          <declname>expirationDate</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>caonline</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>primaryCert</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>issuer</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>usernameCert</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Certificate.java" line="43" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Certificate.java" bodystart="41" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1Certificate_1ab8b18d7c1b63efd645a8b505d62339f6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int portal.registration.domain.Certificate.getIdCert</definition>
+        <argsstring>()</argsstring>
+        <name>getIdCert</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Certificate.java" line="56" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Certificate.java" bodystart="56" bodyend="58"/>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1CertificateDAOImpl_1a4baa20618a158327206b303a62b469e7" compoundref="CertificateDAOImpl_8java" startline="83" endline="105">portal.registration.dao.CertificateDAOImpl::edit</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1services_1_1CertificateServiceImpl_1a592df743c12b9a43db06dbae92db23c2" compoundref="CertificateServiceImpl_8java" startline="59" endline="88">portal.registration.services.CertificateServiceImpl::save</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1Certificate_1ae9ef0dd089f716d4cb52890c629ebd79" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void portal.registration.domain.Certificate.setIdCert</definition>
+        <argsstring>(int idCert)</argsstring>
+        <name>setIdCert</name>
+        <param>
+          <type>int</type>
+          <declname>idCert</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Certificate.java" line="60" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Certificate.java" bodystart="60" bodyend="62"/>
+        <referencedby refid="classportal_1_1registration_1_1controller_1_1UploadCertController_1aabfea247d5dc60c807432e5c7d097b88" compoundref="UploadCertController_8java" startline="61" endline="292">portal.registration.controller.UploadCertController::uploadCert</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1Certificate_1a363b5e2296e1a83e916fac2cbe39cf42" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classportal_1_1registration_1_1domain_1_1UserInfo" kindref="compound">UserInfo</ref></type>
+        <definition>UserInfo portal.registration.domain.Certificate.getUserInfo</definition>
+        <argsstring>()</argsstring>
+        <name>getUserInfo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Certificate.java" line="66" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Certificate.java" bodystart="66" bodyend="68"/>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1CertificateDAOImpl_1a4baa20618a158327206b303a62b469e7" compoundref="CertificateDAOImpl_8java" startline="83" endline="105">portal.registration.dao.CertificateDAOImpl::edit</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1Certificate_1a664deb85df4be4d81fcb3990a959b989" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void portal.registration.domain.Certificate.setUserInfo</definition>
+        <argsstring>(UserInfo userInfo)</argsstring>
+        <name>setUserInfo</name>
+        <param>
+          <type><ref refid="classportal_1_1registration_1_1domain_1_1UserInfo" kindref="compound">UserInfo</ref></type>
+          <declname>userInfo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Certificate.java" line="70" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Certificate.java" bodystart="70" bodyend="72"/>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1CertificateDAOImpl_1a4baa20618a158327206b303a62b469e7" compoundref="CertificateDAOImpl_8java" startline="83" endline="105">portal.registration.dao.CertificateDAOImpl::edit</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1services_1_1CertificateServiceImpl_1a592df743c12b9a43db06dbae92db23c2" compoundref="CertificateServiceImpl_8java" startline="59" endline="88">portal.registration.services.CertificateServiceImpl::save</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1Certificate_1a0fb0e7b1607351ee8b07eef328e45e76" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String portal.registration.domain.Certificate.getSubject</definition>
+        <argsstring>()</argsstring>
+        <name>getSubject</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Certificate.java" line="75" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Certificate.java" bodystart="75" bodyend="77"/>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1CertificateDAOImpl_1a4baa20618a158327206b303a62b469e7" compoundref="CertificateDAOImpl_8java" startline="83" endline="105">portal.registration.dao.CertificateDAOImpl::edit</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1Certificate_1a6f285c68c3095c89f9432e42b4f4dc37" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void portal.registration.domain.Certificate.setSubject</definition>
+        <argsstring>(String subject)</argsstring>
+        <name>setSubject</name>
+        <param>
+          <type>String</type>
+          <declname>subject</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Certificate.java" line="79" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Certificate.java" bodystart="79" bodyend="81"/>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1CertificateDAOImpl_1a4baa20618a158327206b303a62b469e7" compoundref="CertificateDAOImpl_8java" startline="83" endline="105">portal.registration.dao.CertificateDAOImpl::edit</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1controller_1_1UploadCertController_1aabfea247d5dc60c807432e5c7d097b88" compoundref="UploadCertController_8java" startline="61" endline="292">portal.registration.controller.UploadCertController::uploadCert</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1Certificate_1a46c6cc759643e1725dee2e1b55b7f75f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Date</type>
+        <definition>Date portal.registration.domain.Certificate.getExpirationDate</definition>
+        <argsstring>()</argsstring>
+        <name>getExpirationDate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Certificate.java" line="85" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Certificate.java" bodystart="85" bodyend="87"/>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1CertificateDAOImpl_1a4baa20618a158327206b303a62b469e7" compoundref="CertificateDAOImpl_8java" startline="83" endline="105">portal.registration.dao.CertificateDAOImpl::edit</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1Certificate_1a5be4ee6795b3c26252c099c98218479f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void portal.registration.domain.Certificate.setExpirationDate</definition>
+        <argsstring>(Date expirationDate)</argsstring>
+        <name>setExpirationDate</name>
+        <param>
+          <type>Date</type>
+          <declname>expirationDate</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Certificate.java" line="89" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Certificate.java" bodystart="89" bodyend="91"/>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1CertificateDAOImpl_1a4baa20618a158327206b303a62b469e7" compoundref="CertificateDAOImpl_8java" startline="83" endline="105">portal.registration.dao.CertificateDAOImpl::edit</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1controller_1_1UploadCertController_1aabfea247d5dc60c807432e5c7d097b88" compoundref="UploadCertController_8java" startline="61" endline="292">portal.registration.controller.UploadCertController::uploadCert</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1Certificate_1a44521ac962555b7f5b60f5fe604666e2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String portal.registration.domain.Certificate.getCaonline</definition>
+        <argsstring>()</argsstring>
+        <name>getCaonline</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Certificate.java" line="94" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Certificate.java" bodystart="94" bodyend="96"/>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1CertificateDAOImpl_1a4baa20618a158327206b303a62b469e7" compoundref="CertificateDAOImpl_8java" startline="83" endline="105">portal.registration.dao.CertificateDAOImpl::edit</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1Certificate_1a1768dd3798008b6e1bf3c80c2cfb4885" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void portal.registration.domain.Certificate.setCaonline</definition>
+        <argsstring>(String caonline)</argsstring>
+        <name>setCaonline</name>
+        <param>
+          <type>String</type>
+          <declname>caonline</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Certificate.java" line="98" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Certificate.java" bodystart="98" bodyend="100"/>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1CertificateDAOImpl_1a4baa20618a158327206b303a62b469e7" compoundref="CertificateDAOImpl_8java" startline="83" endline="105">portal.registration.dao.CertificateDAOImpl::edit</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1controller_1_1UploadCertController_1aabfea247d5dc60c807432e5c7d097b88" compoundref="UploadCertController_8java" startline="61" endline="292">portal.registration.controller.UploadCertController::uploadCert</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1Certificate_1a1bd3514654fcf5151f11033ff135de03" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String portal.registration.domain.Certificate.getPrimaryCert</definition>
+        <argsstring>()</argsstring>
+        <name>getPrimaryCert</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Certificate.java" line="103" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Certificate.java" bodystart="103" bodyend="105"/>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1CertificateDAOImpl_1a4baa20618a158327206b303a62b469e7" compoundref="CertificateDAOImpl_8java" startline="83" endline="105">portal.registration.dao.CertificateDAOImpl::edit</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1services_1_1CertificateServiceImpl_1a592df743c12b9a43db06dbae92db23c2" compoundref="CertificateServiceImpl_8java" startline="59" endline="88">portal.registration.services.CertificateServiceImpl::save</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1services_1_1CertificateServiceImpl_1abac3e70bf6b1f63ca1d96e0829365f5c" compoundref="CertificateServiceImpl_8java" startline="97" endline="120">portal.registration.services.CertificateServiceImpl::setDefault</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1Certificate_1a265b7255aabb51902882c5d7c12c122e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void portal.registration.domain.Certificate.setPrimaryCert</definition>
+        <argsstring>(String primaryCert)</argsstring>
+        <name>setPrimaryCert</name>
+        <param>
+          <type>String</type>
+          <declname>primaryCert</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Certificate.java" line="107" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Certificate.java" bodystart="107" bodyend="109"/>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1CertificateDAOImpl_1a4baa20618a158327206b303a62b469e7" compoundref="CertificateDAOImpl_8java" startline="83" endline="105">portal.registration.dao.CertificateDAOImpl::edit</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1services_1_1CertificateServiceImpl_1a592df743c12b9a43db06dbae92db23c2" compoundref="CertificateServiceImpl_8java" startline="59" endline="88">portal.registration.services.CertificateServiceImpl::save</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1services_1_1CertificateServiceImpl_1abac3e70bf6b1f63ca1d96e0829365f5c" compoundref="CertificateServiceImpl_8java" startline="97" endline="120">portal.registration.services.CertificateServiceImpl::setDefault</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1controller_1_1UploadCertController_1aabfea247d5dc60c807432e5c7d097b88" compoundref="UploadCertController_8java" startline="61" endline="292">portal.registration.controller.UploadCertController::uploadCert</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1Certificate_1a7ab9a48236680e0482a0588ae4d677f7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String portal.registration.domain.Certificate.getIssuer</definition>
+        <argsstring>()</argsstring>
+        <name>getIssuer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Certificate.java" line="112" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Certificate.java" bodystart="112" bodyend="114"/>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1CertificateDAOImpl_1a4baa20618a158327206b303a62b469e7" compoundref="CertificateDAOImpl_8java" startline="83" endline="105">portal.registration.dao.CertificateDAOImpl::edit</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1Certificate_1aa469f1b297ff231d37b56cf926774365" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void portal.registration.domain.Certificate.setIssuer</definition>
+        <argsstring>(String issuer)</argsstring>
+        <name>setIssuer</name>
+        <param>
+          <type>String</type>
+          <declname>issuer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Certificate.java" line="116" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Certificate.java" bodystart="116" bodyend="118"/>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1CertificateDAOImpl_1a4baa20618a158327206b303a62b469e7" compoundref="CertificateDAOImpl_8java" startline="83" endline="105">portal.registration.dao.CertificateDAOImpl::edit</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1controller_1_1UploadCertController_1aabfea247d5dc60c807432e5c7d097b88" compoundref="UploadCertController_8java" startline="61" endline="292">portal.registration.controller.UploadCertController::uploadCert</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1Certificate_1a523b5944db11a39de56b45f233227fd2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String portal.registration.domain.Certificate.getUsernameCert</definition>
+        <argsstring>()</argsstring>
+        <name>getUsernameCert</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Certificate.java" line="121" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Certificate.java" bodystart="121" bodyend="123"/>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1CertificateDAOImpl_1a4baa20618a158327206b303a62b469e7" compoundref="CertificateDAOImpl_8java" startline="83" endline="105">portal.registration.dao.CertificateDAOImpl::edit</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1Certificate_1a004787ddffdd6f50f5f38accee3155d5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void portal.registration.domain.Certificate.setUsernameCert</definition>
+        <argsstring>(String usernameCert)</argsstring>
+        <name>setUsernameCert</name>
+        <param>
+          <type>String</type>
+          <declname>usernameCert</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Certificate.java" line="125" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Certificate.java" bodystart="125" bodyend="127"/>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1CertificateDAOImpl_1a4baa20618a158327206b303a62b469e7" compoundref="CertificateDAOImpl_8java" startline="83" endline="105">portal.registration.dao.CertificateDAOImpl::edit</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1services_1_1CertificateServiceImpl_1a592df743c12b9a43db06dbae92db23c2" compoundref="CertificateServiceImpl_8java" startline="59" endline="88">portal.registration.services.CertificateServiceImpl::save</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1Certificate_1ab1b7623aaf7364f3b30f8b612e887353" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean portal.registration.domain.Certificate.equals</definition>
+        <argsstring>(Certificate cert)</argsstring>
+        <name>equals</name>
+        <param>
+          <type><ref refid="classportal_1_1registration_1_1domain_1_1Certificate" kindref="compound">Certificate</ref></type>
+          <declname>cert</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Certificate.java" line="129" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Certificate.java" bodystart="129" bodyend="134"/>
+        <references refid="classportal_1_1registration_1_1domain_1_1Certificate_1a3d2cd307e97c90342894a007fb235d0c" compoundref="Certificate_8java" startline="35">portal.registration.domain.Certificate::issuer</references>
+        <references refid="classportal_1_1registration_1_1domain_1_1Certificate_1aa5e1b492240c17ca0b863da96627855f" compoundref="Certificate_8java" startline="31">portal.registration.domain.Certificate::subject</references>
+        <referencedby refid="classportal_1_1registration_1_1controller_1_1UploadCertController_1aabfea247d5dc60c807432e5c7d097b88" compoundref="UploadCertController_8java" startline="61" endline="292">portal.registration.controller.UploadCertController::uploadCert</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="classportal_1_1registration_1_1domain_1_1Certificate" kindref="compound">Certificate</ref> generated by hbm2java </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="446">
+        <label>portal.registration.domain.UserInfo</label>
+        <link refid="classportal_1_1registration_1_1domain_1_1UserInfo"/>
+        <childnode refid="447" relation="usage">
+          <edgelabel>userToVos</edgelabel>
+        </childnode>
+        <childnode refid="449" relation="usage">
+          <edgelabel>certificates</edgelabel>
+        </childnode>
+        <childnode refid="450" relation="usage">
+          <edgelabel>idp</edgelabel>
+        </childnode>
+      </node>
+      <node id="445">
+        <label>portal.registration.domain.Certificate</label>
+        <link refid="classportal_1_1registration_1_1domain_1_1Certificate"/>
+        <childnode refid="446" relation="usage">
+          <edgelabel>userInfo</edgelabel>
+        </childnode>
+        <childnode refid="452" relation="usage">
+          <edgelabel>expirationDate</edgelabel>
+        </childnode>
+      </node>
+      <node id="452">
+        <label>Date</label>
+      </node>
+      <node id="451">
+        <label>Set&lt; UserInfo &gt;</label>
+        <childnode refid="448" relation="template-instance">
+          <edgelabel>&lt; UserInfo &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="450">
+        <label>portal.registration.domain.Idp</label>
+        <link refid="classportal_1_1registration_1_1domain_1_1Idp"/>
+        <childnode refid="451" relation="usage">
+          <edgelabel>userInfos</edgelabel>
+        </childnode>
+      </node>
+      <node id="447">
+        <label>Set&lt; UserToVo &gt;</label>
+        <childnode refid="448" relation="template-instance">
+          <edgelabel>&lt; UserToVo &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="448">
+        <label>Set</label>
+      </node>
+      <node id="449">
+        <label>Set&lt; Certificate &gt;</label>
+        <childnode refid="448" relation="template-instance">
+          <edgelabel>&lt; Certificate &gt;</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Certificate.java" line="23" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Certificate.java" bodystart="23" bodyend="136"/>
+    <listofallmembers>
+      <member refid="classportal_1_1registration_1_1domain_1_1Certificate_1ad1d84a6be3973282fb57b0aee10a61e2" prot="private" virt="non-virtual"><scope>portal::registration::domain::Certificate</scope><name>caonline</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Certificate_1aeb6b7ca93801f3769301ae53af1ea164" prot="public" virt="non-virtual"><scope>portal::registration::domain::Certificate</scope><name>Certificate</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Certificate_1a905bb73644c06de9da6d440b88c89cdb" prot="public" virt="non-virtual"><scope>portal::registration::domain::Certificate</scope><name>Certificate</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Certificate_1ab1b7623aaf7364f3b30f8b612e887353" prot="public" virt="non-virtual"><scope>portal::registration::domain::Certificate</scope><name>equals</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Certificate_1a059decff874c0a7667aee9122d9e7815" prot="private" virt="non-virtual"><scope>portal::registration::domain::Certificate</scope><name>expirationDate</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Certificate_1a44521ac962555b7f5b60f5fe604666e2" prot="public" virt="non-virtual"><scope>portal::registration::domain::Certificate</scope><name>getCaonline</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Certificate_1a46c6cc759643e1725dee2e1b55b7f75f" prot="public" virt="non-virtual"><scope>portal::registration::domain::Certificate</scope><name>getExpirationDate</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Certificate_1ab8b18d7c1b63efd645a8b505d62339f6" prot="public" virt="non-virtual"><scope>portal::registration::domain::Certificate</scope><name>getIdCert</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Certificate_1a7ab9a48236680e0482a0588ae4d677f7" prot="public" virt="non-virtual"><scope>portal::registration::domain::Certificate</scope><name>getIssuer</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Certificate_1a1bd3514654fcf5151f11033ff135de03" prot="public" virt="non-virtual"><scope>portal::registration::domain::Certificate</scope><name>getPrimaryCert</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Certificate_1a0fb0e7b1607351ee8b07eef328e45e76" prot="public" virt="non-virtual"><scope>portal::registration::domain::Certificate</scope><name>getSubject</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Certificate_1a363b5e2296e1a83e916fac2cbe39cf42" prot="public" virt="non-virtual"><scope>portal::registration::domain::Certificate</scope><name>getUserInfo</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Certificate_1a523b5944db11a39de56b45f233227fd2" prot="public" virt="non-virtual"><scope>portal::registration::domain::Certificate</scope><name>getUsernameCert</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Certificate_1a0861b0203d5d1924de38adf80ecde323" prot="private" virt="non-virtual"><scope>portal::registration::domain::Certificate</scope><name>idCert</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Certificate_1a3d2cd307e97c90342894a007fb235d0c" prot="private" virt="non-virtual"><scope>portal::registration::domain::Certificate</scope><name>issuer</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Certificate_1a3a4632cbb077929d70538d0d4a07e1bd" prot="private" virt="non-virtual"><scope>portal::registration::domain::Certificate</scope><name>primaryCert</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Certificate_1a7bc0118d146f99aa265f3b026fff8b4b" prot="private" virt="non-virtual"><scope>portal::registration::domain::Certificate</scope><name>serialVersionUID</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Certificate_1a1768dd3798008b6e1bf3c80c2cfb4885" prot="public" virt="non-virtual"><scope>portal::registration::domain::Certificate</scope><name>setCaonline</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Certificate_1a5be4ee6795b3c26252c099c98218479f" prot="public" virt="non-virtual"><scope>portal::registration::domain::Certificate</scope><name>setExpirationDate</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Certificate_1ae9ef0dd089f716d4cb52890c629ebd79" prot="public" virt="non-virtual"><scope>portal::registration::domain::Certificate</scope><name>setIdCert</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Certificate_1aa469f1b297ff231d37b56cf926774365" prot="public" virt="non-virtual"><scope>portal::registration::domain::Certificate</scope><name>setIssuer</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Certificate_1a265b7255aabb51902882c5d7c12c122e" prot="public" virt="non-virtual"><scope>portal::registration::domain::Certificate</scope><name>setPrimaryCert</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Certificate_1a6f285c68c3095c89f9432e42b4f4dc37" prot="public" virt="non-virtual"><scope>portal::registration::domain::Certificate</scope><name>setSubject</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Certificate_1a664deb85df4be4d81fcb3990a959b989" prot="public" virt="non-virtual"><scope>portal::registration::domain::Certificate</scope><name>setUserInfo</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Certificate_1a004787ddffdd6f50f5f38accee3155d5" prot="public" virt="non-virtual"><scope>portal::registration::domain::Certificate</scope><name>setUsernameCert</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Certificate_1aa5e1b492240c17ca0b863da96627855f" prot="private" virt="non-virtual"><scope>portal::registration::domain::Certificate</scope><name>subject</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Certificate_1a17f801286e01e02c092b9a92b3220b13" prot="private" virt="non-virtual"><scope>portal::registration::domain::Certificate</scope><name>userInfo</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Certificate_1a27dd5145ea35c206c000e87485841d50" prot="private" virt="non-virtual"><scope>portal::registration::domain::Certificate</scope><name>usernameCert</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

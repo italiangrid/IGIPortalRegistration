@@ -1,0 +1,139 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="interfaceportal_1_1registration_1_1services_1_1FqanService" kind="interface" prot="public">
+    <compoundname>portal::registration::services::FqanService</compoundname>
+    <derivedcompoundref refid="classportal_1_1registration_1_1services_1_1FqanServiceImpl" prot="public" virt="non-virtual">portal.registration.services.FqanServiceImpl</derivedcompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="interfaceportal_1_1registration_1_1services_1_1FqanService_1a6822964f5c5661b9cdf75d15305ae18a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void portal.registration.services.FqanService.save</definition>
+        <argsstring>(Fqan transientInstance)</argsstring>
+        <name>save</name>
+        <reimplementedby refid="classportal_1_1registration_1_1services_1_1FqanServiceImpl_1aa664ef0629c5e47dcb92136ecee98a83">save</reimplementedby>
+        <param>
+          <type><ref refid="classportal_1_1registration_1_1domain_1_1Fqan" kindref="compound">Fqan</ref></type>
+          <declname>transientInstance</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/services/FqanService.java" line="9"/>
+      </memberdef>
+      <memberdef kind="function" id="interfaceportal_1_1registration_1_1services_1_1FqanService_1a849fc3641487314786688c18f557c200" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void portal.registration.services.FqanService.delete</definition>
+        <argsstring>(Fqan persistentInstance)</argsstring>
+        <name>delete</name>
+        <reimplementedby refid="classportal_1_1registration_1_1services_1_1FqanServiceImpl_1a455a630259e41689cd64eb3e7d7eaaed">delete</reimplementedby>
+        <param>
+          <type><ref refid="classportal_1_1registration_1_1domain_1_1Fqan" kindref="compound">Fqan</ref></type>
+          <declname>persistentInstance</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/services/FqanService.java" line="11"/>
+      </memberdef>
+      <memberdef kind="function" id="interfaceportal_1_1registration_1_1services_1_1FqanService_1a269c9faedfbb13d6ecaa783554b61ea6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classportal_1_1registration_1_1domain_1_1Fqan" kindref="compound">Fqan</ref></type>
+        <definition>Fqan portal.registration.services.FqanService.findById</definition>
+        <argsstring>(Integer id)</argsstring>
+        <name>findById</name>
+        <reimplementedby refid="classportal_1_1registration_1_1services_1_1FqanServiceImpl_1a148941aec6f375b090347c890dbf2c85">findById</reimplementedby>
+        <param>
+          <type>Integer</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/services/FqanService.java" line="13"/>
+      </memberdef>
+      <memberdef kind="function" id="interfaceportal_1_1registration_1_1services_1_1FqanService_1a1564bbe8c7c83582432ca37840265cdb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>String</type>
+        <definition>String portal.registration.services.FqanService.findByFqan</definition>
+        <argsstring>(Fqan fqan)</argsstring>
+        <name>findByFqan</name>
+        <reimplementedby refid="classportal_1_1registration_1_1services_1_1FqanServiceImpl_1a6c43b5b8e616412c1f6d3080922ab9eb">findByFqan</reimplementedby>
+        <param>
+          <type><ref refid="classportal_1_1registration_1_1domain_1_1Fqan" kindref="compound">Fqan</ref></type>
+          <declname>fqan</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/services/FqanService.java" line="15"/>
+      </memberdef>
+      <memberdef kind="function" id="interfaceportal_1_1registration_1_1services_1_1FqanService_1abf80debc909bda6634a7ca2a0c046643" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>List&lt; <ref refid="classportal_1_1registration_1_1domain_1_1Fqan" kindref="compound">Fqan</ref> &gt;</type>
+        <definition>List&lt;Fqan&gt; portal.registration.services.FqanService.getAllFqan</definition>
+        <argsstring>()</argsstring>
+        <name>getAllFqan</name>
+        <reimplementedby refid="classportal_1_1registration_1_1services_1_1FqanServiceImpl_1afec97151c0eedda16e0874293761211b">getAllFqan</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/services/FqanService.java" line="17"/>
+      </memberdef>
+      <memberdef kind="function" id="interfaceportal_1_1registration_1_1services_1_1FqanService_1aca0e7fff1b64885dc7d1454fa9451d04" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>List&lt; <ref refid="classportal_1_1registration_1_1domain_1_1Fqan" kindref="compound">Fqan</ref> &gt;</type>
+        <definition>List&lt;Fqan&gt; portal.registration.services.FqanService.findByIdVo</definition>
+        <argsstring>(int idVo)</argsstring>
+        <name>findByIdVo</name>
+        <reimplementedby refid="classportal_1_1registration_1_1services_1_1FqanServiceImpl_1a8dc7b93d3f2b0e59f247a01ce92e3828">findByIdVo</reimplementedby>
+        <param>
+          <type>int</type>
+          <declname>idVo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/services/FqanService.java" line="19"/>
+        <referencedby refid="classportal_1_1registration_1_1controller_1_1EditUserToVoController_1a4f02e82cbea1050780b3cf7e020f6a4d" compoundref="EditUserToVoController_8java" startline="75" endline="77">portal.registration.controller.EditUserToVoController::getFqans</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="500">
+        <label>portal.registration.services.FqanService</label>
+        <link refid="interfaceportal_1_1registration_1_1services_1_1FqanService"/>
+      </node>
+      <node id="501">
+        <label>portal.registration.services.FqanServiceImpl</label>
+        <link refid="classportal_1_1registration_1_1services_1_1FqanServiceImpl"/>
+        <childnode refid="500" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/services/FqanService.java" line="7" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/services/FqanService.java" bodystart="7" bodyend="21"/>
+    <listofallmembers>
+      <member refid="interfaceportal_1_1registration_1_1services_1_1FqanService_1a849fc3641487314786688c18f557c200" prot="public" virt="non-virtual"><scope>portal::registration::services::FqanService</scope><name>delete</name></member>
+      <member refid="interfaceportal_1_1registration_1_1services_1_1FqanService_1a1564bbe8c7c83582432ca37840265cdb" prot="public" virt="non-virtual"><scope>portal::registration::services::FqanService</scope><name>findByFqan</name></member>
+      <member refid="interfaceportal_1_1registration_1_1services_1_1FqanService_1a269c9faedfbb13d6ecaa783554b61ea6" prot="public" virt="non-virtual"><scope>portal::registration::services::FqanService</scope><name>findById</name></member>
+      <member refid="interfaceportal_1_1registration_1_1services_1_1FqanService_1aca0e7fff1b64885dc7d1454fa9451d04" prot="public" virt="non-virtual"><scope>portal::registration::services::FqanService</scope><name>findByIdVo</name></member>
+      <member refid="interfaceportal_1_1registration_1_1services_1_1FqanService_1abf80debc909bda6634a7ca2a0c046643" prot="public" virt="non-virtual"><scope>portal::registration::services::FqanService</scope><name>getAllFqan</name></member>
+      <member refid="interfaceportal_1_1registration_1_1services_1_1FqanService_1a6822964f5c5661b9cdf75d15305ae18a" prot="public" virt="non-virtual"><scope>portal::registration::services::FqanService</scope><name>save</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

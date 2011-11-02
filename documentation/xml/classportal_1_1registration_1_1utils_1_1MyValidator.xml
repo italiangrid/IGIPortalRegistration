@@ -1,0 +1,134 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="classportal_1_1registration_1_1utils_1_1MyValidator" kind="class" prot="public">
+    <compoundname>portal::registration::utils::MyValidator</compoundname>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classportal_1_1registration_1_1utils_1_1MyValidator_1ac3007a0c35777d54f57ea95450baef66" prot="private" static="yes" mutable="no">
+        <type>final Logger</type>
+        <definition>final Logger portal.registration.utils.MyValidator.log</definition>
+        <argsstring></argsstring>
+        <name>log</name>
+        <initializer> Logger.getLogger(MyValidator.class)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/utils/MyValidator.java" line="15" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/utils/MyValidator.java" bodystart="15" bodyend="-1"/>
+        <referencedby refid="classportal_1_1registration_1_1utils_1_1MyValidator_1acdf993cfac49201b241d31284851e165" compoundref="MyValidator_8java" startline="17" endline="86">portal.registration.utils.MyValidator::validate</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1utils_1_1MyValidator_1aeee5050b9c941e448aae3c399bec3da5" compoundref="MyValidator_8java" startline="88" endline="117">portal.registration.utils.MyValidator::validateCert</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1utils_1_1MyValidator_1a6a9bff1eb67d2322fadae0eba39e1c22" compoundref="MyValidator_8java" startline="119" endline="178">portal.registration.utils.MyValidator::validateUpdate</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classportal_1_1registration_1_1utils_1_1MyValidator_1acdf993cfac49201b241d31284851e165" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>boolean</type>
+        <definition>static boolean portal.registration.utils.MyValidator.validate</definition>
+        <argsstring>(UserInfo target, List&lt; String &gt; errors)</argsstring>
+        <name>validate</name>
+        <param>
+          <type><ref refid="classportal_1_1registration_1_1domain_1_1UserInfo" kindref="compound">UserInfo</ref></type>
+          <declname>target</declname>
+        </param>
+        <param>
+          <type>List&lt; String &gt;</type>
+          <declname>errors</declname>
+        </param>
+        <exceptions> throws SystemException </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/utils/MyValidator.java" line="18" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/utils/MyValidator.java" bodystart="17" bodyend="86"/>
+        <references refid="classportal_1_1registration_1_1utils_1_1MyValidator_1ac3007a0c35777d54f57ea95450baef66" compoundref="MyValidator_8java" startline="15">portal.registration.utils.MyValidator::log</references>
+        <referencedby refid="classportal_1_1registration_1_1controller_1_1AddUserInfoController_1a2750658abc595b838f458b87464e51fe" compoundref="AddUserInfoController_8java" startline="74" endline="212">portal.registration.controller.AddUserInfoController::addUserInfo</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1utils_1_1MyValidator_1aeee5050b9c941e448aae3c399bec3da5" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>boolean</type>
+        <definition>static boolean portal.registration.utils.MyValidator.validateCert</definition>
+        <argsstring>(String pwd, String pwd1, String pwd2, List&lt; String &gt; errors)</argsstring>
+        <name>validateCert</name>
+        <param>
+          <type>String</type>
+          <declname>pwd</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>pwd1</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>pwd2</declname>
+        </param>
+        <param>
+          <type>List&lt; String &gt;</type>
+          <declname>errors</declname>
+        </param>
+        <exceptions> throws SystemException </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/utils/MyValidator.java" line="89" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/utils/MyValidator.java" bodystart="88" bodyend="117"/>
+        <references refid="classportal_1_1registration_1_1utils_1_1MyValidator_1ac3007a0c35777d54f57ea95450baef66" compoundref="MyValidator_8java" startline="15">portal.registration.utils.MyValidator::log</references>
+        <referencedby refid="classportal_1_1registration_1_1controller_1_1UploadCertController_1aabfea247d5dc60c807432e5c7d097b88" compoundref="UploadCertController_8java" startline="61" endline="292">portal.registration.controller.UploadCertController::uploadCert</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1utils_1_1MyValidator_1a6a9bff1eb67d2322fadae0eba39e1c22" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>boolean</type>
+        <definition>static boolean portal.registration.utils.MyValidator.validateUpdate</definition>
+        <argsstring>(UserInfo target, UserInfo check, List&lt; String &gt; errors)</argsstring>
+        <name>validateUpdate</name>
+        <param>
+          <type><ref refid="classportal_1_1registration_1_1domain_1_1UserInfo" kindref="compound">UserInfo</ref></type>
+          <declname>target</declname>
+        </param>
+        <param>
+          <type><ref refid="classportal_1_1registration_1_1domain_1_1UserInfo" kindref="compound">UserInfo</ref></type>
+          <declname>check</declname>
+        </param>
+        <param>
+          <type>List&lt; String &gt;</type>
+          <declname>errors</declname>
+        </param>
+        <exceptions> throws SystemException </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/utils/MyValidator.java" line="120" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/utils/MyValidator.java" bodystart="119" bodyend="178"/>
+        <references refid="classportal_1_1registration_1_1utils_1_1MyValidator_1ac3007a0c35777d54f57ea95450baef66" compoundref="MyValidator_8java" startline="15">portal.registration.utils.MyValidator::log</references>
+        <referencedby refid="classportal_1_1registration_1_1controller_1_1EditUserInfoController_1af4b8f77882febac15cb98813ad8b89da" compoundref="EditUserInfoController_8java" startline="95" endline="143">portal.registration.controller.EditUserInfoController::editUserInfo</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="536">
+        <label>portal.registration.utils.MyValidator</label>
+        <link refid="classportal_1_1registration_1_1utils_1_1MyValidator"/>
+        <childnode refid="537" relation="usage">
+          <edgelabel>log</edgelabel>
+        </childnode>
+      </node>
+      <node id="537">
+        <label>Logger</label>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/utils/MyValidator.java" line="13" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/utils/MyValidator.java" bodystart="13" bodyend="179"/>
+    <listofallmembers>
+      <member refid="classportal_1_1registration_1_1utils_1_1MyValidator_1ac3007a0c35777d54f57ea95450baef66" prot="private" virt="non-virtual"><scope>portal::registration::utils::MyValidator</scope><name>log</name></member>
+      <member refid="classportal_1_1registration_1_1utils_1_1MyValidator_1acdf993cfac49201b241d31284851e165" prot="public" virt="non-virtual"><scope>portal::registration::utils::MyValidator</scope><name>validate</name></member>
+      <member refid="classportal_1_1registration_1_1utils_1_1MyValidator_1aeee5050b9c941e448aae3c399bec3da5" prot="public" virt="non-virtual"><scope>portal::registration::utils::MyValidator</scope><name>validateCert</name></member>
+      <member refid="classportal_1_1registration_1_1utils_1_1MyValidator_1a6a9bff1eb67d2322fadae0eba39e1c22" prot="public" virt="non-virtual"><scope>portal::registration::utils::MyValidator</scope><name>validateUpdate</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

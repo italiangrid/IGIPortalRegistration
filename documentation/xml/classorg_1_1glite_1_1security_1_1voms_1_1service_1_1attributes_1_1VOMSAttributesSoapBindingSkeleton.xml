@@ -1,0 +1,700 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton" kind="class" prot="public">
+    <compoundname>org::glite::security::voms::service::attributes::VOMSAttributesSoapBindingSkeleton</compoundname>
+    <basecompoundref refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes" prot="public" virt="non-virtual">org.glite.security.voms.service.attributes.VOMSAttributes</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a21e3c265df9eb028b0565ed1ed449a85" prot="private" static="no" mutable="no">
+        <type><ref refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes" kindref="compound">org.glite.security.voms.service.attributes.VOMSAttributes</ref></type>
+        <definition>org.glite.security.voms.service.attributes.VOMSAttributes org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.impl</definition>
+        <argsstring></argsstring>
+        <name>impl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingSkeleton.java" line="11" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingSkeleton.java" bodystart="11" bodyend="-1"/>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a4f892d85b75dbfe73809e40274702b4e" compoundref="VOMSAttributesSoapBindingSkeleton_8java" startline="402" endline="405">org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton::createAttributeClass</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a7e2d03eb60af98e7e7f45896181dac96" compoundref="VOMSAttributesSoapBindingSkeleton_8java" startline="428" endline="431">org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton::deleteAttributeClass</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1ada7b88369156ea23fc61e40c254f6228" compoundref="VOMSAttributesSoapBindingSkeleton_8java" startline="470" endline="473">org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton::deleteGroupAttribute</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a28bf7b1838eb05b99712d195f0e23b7b" compoundref="VOMSAttributesSoapBindingSkeleton_8java" startline="491" endline="494">org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton::deleteRoleAttribute</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a79a76c866aee7cf8ed7660eec54f4045" compoundref="VOMSAttributesSoapBindingSkeleton_8java" startline="455" endline="458">org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton::deleteUserAttribute</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1abc0e9a3e03317219cca370ba1217802e" compoundref="VOMSAttributesSoapBindingSkeleton_8java" startline="417" endline="421">org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton::getAttributeClass</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a3e032fc86cd41cf0bb3fa929bef306b7" compoundref="VOMSAttributesSoapBindingSkeleton_8java" startline="438" endline="442">org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton::listAttributeClasses</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a6f6550302d3b00bcc871812ea9e142fa" compoundref="VOMSAttributesSoapBindingSkeleton_8java" startline="480" endline="484">org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton::listGroupAttributes</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a6f1023d99ff8c0a9f8466e0c66b02533" compoundref="VOMSAttributesSoapBindingSkeleton_8java" startline="501" endline="505">org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton::listRoleAttributes</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a9355e1ed7ea4f837375072417730957c" compoundref="VOMSAttributesSoapBindingSkeleton_8java" startline="444" endline="448">org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton::listUserAttributes</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a7c97fc0456f9dcb5467197d54f414cb0" compoundref="VOMSAttributesSoapBindingSkeleton_8java" startline="423" endline="426">org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton::saveAttributeClass</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a5780ef9aa0fbca687dbccf2af17f9a0b" compoundref="VOMSAttributesSoapBindingSkeleton_8java" startline="465" endline="468">org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton::setGroupAttribute</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1abe960bf6368ac106e4b308f895e81428" compoundref="VOMSAttributesSoapBindingSkeleton_8java" startline="486" endline="489">org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton::setRoleAttribute</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a3c36b51ff5a1b7f56c3c4fb3ec2e5311" compoundref="VOMSAttributesSoapBindingSkeleton_8java" startline="450" endline="453">org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton::setUserAttribute</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1af5bfa69f1e00d4085dbc6a831fadfb91" compoundref="VOMSAttributesSoapBindingSkeleton_8java" startline="395" endline="397">org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton::VOMSAttributesSoapBindingSkeleton</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1ac28e4ef27165a9283f9e3b07fdbab7af" prot="private" static="yes" mutable="no">
+        <type>java.util.Map</type>
+        <definition>java.util.Map org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton._myOperations</definition>
+        <argsstring></argsstring>
+        <name>_myOperations</name>
+        <initializer> new java.util.Hashtable()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingSkeleton.java" line="12" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingSkeleton.java" bodystart="12" bodyend="-1"/>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a95a9bf2668becabebed72ac95519ceb8" compoundref="VOMSAttributesSoapBindingSkeleton_8java" startline="18" endline="20">org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton::getOperationDescByName</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a73e65e04742c0895b1b0e8957c98675d" prot="private" static="yes" mutable="no">
+        <type>java.util.Collection</type>
+        <definition>java.util.Collection org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton._myOperationsList</definition>
+        <argsstring></argsstring>
+        <name>_myOperationsList</name>
+        <initializer> new java.util.ArrayList()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingSkeleton.java" line="13" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingSkeleton.java" bodystart="13" bodyend="-1"/>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1ac9c84ce8f554948d811dfcf3838cbcd1" compoundref="VOMSAttributesSoapBindingSkeleton_8java" startline="25" endline="27">org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton::getOperationDescs</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a95a9bf2668becabebed72ac95519ceb8" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>java.util.List</type>
+        <definition>static java.util.List org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.getOperationDescByName</definition>
+        <argsstring>(java.lang.String methodName)</argsstring>
+        <name>getOperationDescByName</name>
+        <param>
+          <type>java.lang.String</type>
+          <declname>methodName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns List of OperationDesc objects with this name </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingSkeleton.java" line="18" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingSkeleton.java" bodystart="18" bodyend="20"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1ac28e4ef27165a9283f9e3b07fdbab7af" compoundref="VOMSAttributesSoapBindingSkeleton_8java" startline="12">org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton::_myOperations</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1ac9c84ce8f554948d811dfcf3838cbcd1" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>java.util.Collection</type>
+        <definition>static java.util.Collection org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.getOperationDescs</definition>
+        <argsstring>()</argsstring>
+        <name>getOperationDescs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns Collection of OperationDescs </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingSkeleton.java" line="25" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingSkeleton.java" bodystart="25" bodyend="27"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a73e65e04742c0895b1b0e8957c98675d" compoundref="VOMSAttributesSoapBindingSkeleton_8java" startline="13">org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton::_myOperationsList</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="package-static-func">
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a57f9001f190d557349d4d78b7613d590" prot="package" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.[static initializer]</definition>
+        <argsstring></argsstring>
+        <name>[static initializer]</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingSkeleton.java" line="29"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1af5bfa69f1e00d4085dbc6a831fadfb91" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.VOMSAttributesSoapBindingSkeleton</definition>
+        <argsstring>()</argsstring>
+        <name>VOMSAttributesSoapBindingSkeleton</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingSkeleton.java" line="395" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingSkeleton.java" bodystart="395" bodyend="397"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a21e3c265df9eb028b0565ed1ed449a85" compoundref="VOMSAttributesSoapBindingSkeleton_8java" startline="11">org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton::impl</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a7e803371559b00537c16c00f1fa8253a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.VOMSAttributesSoapBindingSkeleton</definition>
+        <argsstring>(org.glite.security.voms.service.attributes.VOMSAttributes impl)</argsstring>
+        <name>VOMSAttributesSoapBindingSkeleton</name>
+        <param>
+          <type><ref refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes" kindref="compound">org.glite.security.voms.service.attributes.VOMSAttributes</ref></type>
+          <declname>impl</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingSkeleton.java" line="399" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingSkeleton.java" bodystart="399" bodyend="401"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a21e3c265df9eb028b0565ed1ed449a85" compoundref="VOMSAttributesSoapBindingSkeleton_8java" startline="11">org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton::impl</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a4f892d85b75dbfe73809e40274702b4e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.createAttributeClass</definition>
+        <argsstring>(java.lang.String in0, java.lang.String in1, boolean in2)</argsstring>
+        <name>createAttributeClass</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes_1ada20938c0dd05bda033b92f9acbc7327">createAttributeClass</reimplements>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in0</declname>
+        </param>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in1</declname>
+        </param>
+        <param>
+          <type>boolean</type>
+          <declname>in2</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref>     </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingSkeleton.java" line="403" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingSkeleton.java" bodystart="402" bodyend="405"/>
+        <references refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes_1ada20938c0dd05bda033b92f9acbc7327">org.glite.security.voms.service.attributes.VOMSAttributes::createAttributeClass</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a21e3c265df9eb028b0565ed1ed449a85" compoundref="VOMSAttributesSoapBindingSkeleton_8java" startline="11">org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton::impl</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1aa07a85c09bfd6df5e46116890ed1fe60" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.createAttributeClass</definition>
+        <argsstring>(java.lang.String in0, java.lang.String in1)</argsstring>
+        <name>createAttributeClass</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes_1a12ce930632954c17add22c27010d2dd0">createAttributeClass</reimplements>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in0</declname>
+        </param>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in1</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref>     </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingSkeleton.java" line="408" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingSkeleton.java" bodystart="407" bodyend="410"/>
+        <references refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes_1ada20938c0dd05bda033b92f9acbc7327">org.glite.security.voms.service.attributes.VOMSAttributes::createAttributeClass</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a21e3c265df9eb028b0565ed1ed449a85" compoundref="VOMSAttributesSoapBindingSkeleton_8java" startline="11">org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton::impl</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a9bcc9983a1c3e6e54c27bc832decaa16" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.createAttributeClass</definition>
+        <argsstring>(java.lang.String in0)</argsstring>
+        <name>createAttributeClass</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes_1a337139200084137cc80ddc3a34dd112c">createAttributeClass</reimplements>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in0</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref>     </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingSkeleton.java" line="413" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingSkeleton.java" bodystart="412" bodyend="415"/>
+        <references refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes_1ada20938c0dd05bda033b92f9acbc7327">org.glite.security.voms.service.attributes.VOMSAttributes::createAttributeClass</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a21e3c265df9eb028b0565ed1ed449a85" compoundref="VOMSAttributesSoapBindingSkeleton_8java" startline="11">org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton::impl</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1abc0e9a3e03317219cca370ba1217802e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeClass" kindref="compound">org.glite.security.voms.service.attributes.AttributeClass</ref></type>
+        <definition>org.glite.security.voms.service.attributes.AttributeClass org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.getAttributeClass</definition>
+        <argsstring>(java.lang.String in0)</argsstring>
+        <name>getAttributeClass</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes_1a2ca8ea4a72ec550c8eeed74858b2490e">getAttributeClass</reimplements>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in0</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref>     </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingSkeleton.java" line="418" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingSkeleton.java" bodystart="417" bodyend="421"/>
+        <references refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes_1a2ca8ea4a72ec550c8eeed74858b2490e">org.glite.security.voms.service.attributes.VOMSAttributes::getAttributeClass</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a21e3c265df9eb028b0565ed1ed449a85" compoundref="VOMSAttributesSoapBindingSkeleton_8java" startline="11">org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton::impl</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a7c97fc0456f9dcb5467197d54f414cb0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.saveAttributeClass</definition>
+        <argsstring>(org.glite.security.voms.service.attributes.AttributeClass in0)</argsstring>
+        <name>saveAttributeClass</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes_1a96cefd9ceb19a203542d719614e588ea">saveAttributeClass</reimplements>
+        <param>
+          <type><ref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeClass" kindref="compound">org.glite.security.voms.service.attributes.AttributeClass</ref></type>
+          <declname>in0</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref>     </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingSkeleton.java" line="424" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingSkeleton.java" bodystart="423" bodyend="426"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a21e3c265df9eb028b0565ed1ed449a85" compoundref="VOMSAttributesSoapBindingSkeleton_8java" startline="11">org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton::impl</references>
+        <references refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes_1a96cefd9ceb19a203542d719614e588ea">org.glite.security.voms.service.attributes.VOMSAttributes::saveAttributeClass</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a7e2d03eb60af98e7e7f45896181dac96" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.deleteAttributeClass</definition>
+        <argsstring>(java.lang.String in0)</argsstring>
+        <name>deleteAttributeClass</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes_1af624fb5081b5a062dfb3f77464025c72">deleteAttributeClass</reimplements>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in0</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref>     </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingSkeleton.java" line="429" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingSkeleton.java" bodystart="428" bodyend="431"/>
+        <references refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes_1af624fb5081b5a062dfb3f77464025c72">org.glite.security.voms.service.attributes.VOMSAttributes::deleteAttributeClass</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a21e3c265df9eb028b0565ed1ed449a85" compoundref="VOMSAttributesSoapBindingSkeleton_8java" startline="11">org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton::impl</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1ac16139dce71cf10dcaf56b9671cf9e37" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.deleteAttributeClass</definition>
+        <argsstring>(org.glite.security.voms.service.attributes.AttributeClass in0)</argsstring>
+        <name>deleteAttributeClass</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes_1a1e39cc4132d43da6354c8f7ea8bff77b">deleteAttributeClass</reimplements>
+        <param>
+          <type><ref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeClass" kindref="compound">org.glite.security.voms.service.attributes.AttributeClass</ref></type>
+          <declname>in0</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref>     </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingSkeleton.java" line="434" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingSkeleton.java" bodystart="433" bodyend="436"/>
+        <references refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes_1af624fb5081b5a062dfb3f77464025c72">org.glite.security.voms.service.attributes.VOMSAttributes::deleteAttributeClass</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a21e3c265df9eb028b0565ed1ed449a85" compoundref="VOMSAttributesSoapBindingSkeleton_8java" startline="11">org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton::impl</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a3e032fc86cd41cf0bb3fa929bef306b7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeClass" kindref="compound">org.glite.security.voms.service.attributes.AttributeClass</ref>[]</type>
+        <definition>org.glite.security.voms.service.attributes.AttributeClass [] org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.listAttributeClasses</definition>
+        <argsstring>()</argsstring>
+        <name>listAttributeClasses</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes_1ae7d702ccb9aae9e2467e4d433efbb250">listAttributeClasses</reimplements>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref>     </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingSkeleton.java" line="439" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingSkeleton.java" bodystart="438" bodyend="442"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a21e3c265df9eb028b0565ed1ed449a85" compoundref="VOMSAttributesSoapBindingSkeleton_8java" startline="11">org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton::impl</references>
+        <references refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes_1ae7d702ccb9aae9e2467e4d433efbb250">org.glite.security.voms.service.attributes.VOMSAttributes::listAttributeClasses</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a9355e1ed7ea4f837375072417730957c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue" kindref="compound">org.glite.security.voms.service.attributes.AttributeValue</ref>[]</type>
+        <definition>org.glite.security.voms.service.attributes.AttributeValue [] org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.listUserAttributes</definition>
+        <argsstring>(org.glite.security.voms.User in0)</argsstring>
+        <name>listUserAttributes</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes_1a8fee5d85ad4b2fb8c37c844319eb2727">listUserAttributes</reimplements>
+        <param>
+          <type><ref refid="classorg_1_1glite_1_1security_1_1voms_1_1User" kindref="compound">org.glite.security.voms.User</ref></type>
+          <declname>in0</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref>     </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingSkeleton.java" line="445" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingSkeleton.java" bodystart="444" bodyend="448"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a21e3c265df9eb028b0565ed1ed449a85" compoundref="VOMSAttributesSoapBindingSkeleton_8java" startline="11">org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton::impl</references>
+        <references refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes_1a8fee5d85ad4b2fb8c37c844319eb2727">org.glite.security.voms.service.attributes.VOMSAttributes::listUserAttributes</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a3c36b51ff5a1b7f56c3c4fb3ec2e5311" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.setUserAttribute</definition>
+        <argsstring>(org.glite.security.voms.User in0, org.glite.security.voms.service.attributes.AttributeValue in1)</argsstring>
+        <name>setUserAttribute</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes_1a755b5d37541db7a0c0bdbe33b2e850ec">setUserAttribute</reimplements>
+        <param>
+          <type><ref refid="classorg_1_1glite_1_1security_1_1voms_1_1User" kindref="compound">org.glite.security.voms.User</ref></type>
+          <declname>in0</declname>
+        </param>
+        <param>
+          <type><ref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue" kindref="compound">org.glite.security.voms.service.attributes.AttributeValue</ref></type>
+          <declname>in1</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref>     </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingSkeleton.java" line="451" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingSkeleton.java" bodystart="450" bodyend="453"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a21e3c265df9eb028b0565ed1ed449a85" compoundref="VOMSAttributesSoapBindingSkeleton_8java" startline="11">org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton::impl</references>
+        <references refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes_1a755b5d37541db7a0c0bdbe33b2e850ec">org.glite.security.voms.service.attributes.VOMSAttributes::setUserAttribute</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a79a76c866aee7cf8ed7660eec54f4045" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.deleteUserAttribute</definition>
+        <argsstring>(org.glite.security.voms.User in0, java.lang.String in1)</argsstring>
+        <name>deleteUserAttribute</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes_1a85c08333fea913f9eb05ff1da01e49c2">deleteUserAttribute</reimplements>
+        <param>
+          <type><ref refid="classorg_1_1glite_1_1security_1_1voms_1_1User" kindref="compound">org.glite.security.voms.User</ref></type>
+          <declname>in0</declname>
+        </param>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in1</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref>     </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingSkeleton.java" line="456" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingSkeleton.java" bodystart="455" bodyend="458"/>
+        <references refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes_1a85c08333fea913f9eb05ff1da01e49c2">org.glite.security.voms.service.attributes.VOMSAttributes::deleteUserAttribute</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a21e3c265df9eb028b0565ed1ed449a85" compoundref="VOMSAttributesSoapBindingSkeleton_8java" startline="11">org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton::impl</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1ae5ca84f893db851e845f82b901a9f08b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.deleteUserAttribute</definition>
+        <argsstring>(org.glite.security.voms.User in0, org.glite.security.voms.service.attributes.AttributeValue in1)</argsstring>
+        <name>deleteUserAttribute</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes_1aaf63aef7fc1eafcc0a263be2b2eca5f9">deleteUserAttribute</reimplements>
+        <param>
+          <type><ref refid="classorg_1_1glite_1_1security_1_1voms_1_1User" kindref="compound">org.glite.security.voms.User</ref></type>
+          <declname>in0</declname>
+        </param>
+        <param>
+          <type><ref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue" kindref="compound">org.glite.security.voms.service.attributes.AttributeValue</ref></type>
+          <declname>in1</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref>     </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingSkeleton.java" line="461" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingSkeleton.java" bodystart="460" bodyend="463"/>
+        <references refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes_1a85c08333fea913f9eb05ff1da01e49c2">org.glite.security.voms.service.attributes.VOMSAttributes::deleteUserAttribute</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a21e3c265df9eb028b0565ed1ed449a85" compoundref="VOMSAttributesSoapBindingSkeleton_8java" startline="11">org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton::impl</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a5780ef9aa0fbca687dbccf2af17f9a0b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.setGroupAttribute</definition>
+        <argsstring>(java.lang.String in0, org.glite.security.voms.service.attributes.AttributeValue in1)</argsstring>
+        <name>setGroupAttribute</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes_1aea6d585cbe26db3f11f15cc2b017fb03">setGroupAttribute</reimplements>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in0</declname>
+        </param>
+        <param>
+          <type><ref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue" kindref="compound">org.glite.security.voms.service.attributes.AttributeValue</ref></type>
+          <declname>in1</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref>     </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingSkeleton.java" line="466" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingSkeleton.java" bodystart="465" bodyend="468"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a21e3c265df9eb028b0565ed1ed449a85" compoundref="VOMSAttributesSoapBindingSkeleton_8java" startline="11">org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton::impl</references>
+        <references refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes_1aea6d585cbe26db3f11f15cc2b017fb03">org.glite.security.voms.service.attributes.VOMSAttributes::setGroupAttribute</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1ada7b88369156ea23fc61e40c254f6228" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.deleteGroupAttribute</definition>
+        <argsstring>(java.lang.String in0, java.lang.String in1)</argsstring>
+        <name>deleteGroupAttribute</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes_1a21b03cab1701c30952181ad405e2e368">deleteGroupAttribute</reimplements>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in0</declname>
+        </param>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in1</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref>     </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingSkeleton.java" line="471" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingSkeleton.java" bodystart="470" bodyend="473"/>
+        <references refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes_1a21b03cab1701c30952181ad405e2e368">org.glite.security.voms.service.attributes.VOMSAttributes::deleteGroupAttribute</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a21e3c265df9eb028b0565ed1ed449a85" compoundref="VOMSAttributesSoapBindingSkeleton_8java" startline="11">org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton::impl</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1ab34227e9e1a0dc4049a820558c9d4058" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.deleteGroupAttribute</definition>
+        <argsstring>(java.lang.String in0, org.glite.security.voms.service.attributes.AttributeValue in1)</argsstring>
+        <name>deleteGroupAttribute</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes_1a5564060b855e3a2eeb79ce98b5d74e4c">deleteGroupAttribute</reimplements>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in0</declname>
+        </param>
+        <param>
+          <type><ref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue" kindref="compound">org.glite.security.voms.service.attributes.AttributeValue</ref></type>
+          <declname>in1</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref>     </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingSkeleton.java" line="476" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingSkeleton.java" bodystart="475" bodyend="478"/>
+        <references refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes_1a21b03cab1701c30952181ad405e2e368">org.glite.security.voms.service.attributes.VOMSAttributes::deleteGroupAttribute</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a21e3c265df9eb028b0565ed1ed449a85" compoundref="VOMSAttributesSoapBindingSkeleton_8java" startline="11">org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton::impl</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a6f6550302d3b00bcc871812ea9e142fa" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue" kindref="compound">org.glite.security.voms.service.attributes.AttributeValue</ref>[]</type>
+        <definition>org.glite.security.voms.service.attributes.AttributeValue [] org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.listGroupAttributes</definition>
+        <argsstring>(java.lang.String in0)</argsstring>
+        <name>listGroupAttributes</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes_1a1b781f52a2662f8cf68c602f5be65d72">listGroupAttributes</reimplements>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in0</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref>     </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingSkeleton.java" line="481" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingSkeleton.java" bodystart="480" bodyend="484"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a21e3c265df9eb028b0565ed1ed449a85" compoundref="VOMSAttributesSoapBindingSkeleton_8java" startline="11">org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton::impl</references>
+        <references refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes_1a1b781f52a2662f8cf68c602f5be65d72">org.glite.security.voms.service.attributes.VOMSAttributes::listGroupAttributes</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1abe960bf6368ac106e4b308f895e81428" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.setRoleAttribute</definition>
+        <argsstring>(java.lang.String in0, java.lang.String in1, org.glite.security.voms.service.attributes.AttributeValue in2)</argsstring>
+        <name>setRoleAttribute</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes_1a7ac38a7f4c61afcb966abc3854a65831">setRoleAttribute</reimplements>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in0</declname>
+        </param>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in1</declname>
+        </param>
+        <param>
+          <type><ref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue" kindref="compound">org.glite.security.voms.service.attributes.AttributeValue</ref></type>
+          <declname>in2</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref>     </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingSkeleton.java" line="487" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingSkeleton.java" bodystart="486" bodyend="489"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a21e3c265df9eb028b0565ed1ed449a85" compoundref="VOMSAttributesSoapBindingSkeleton_8java" startline="11">org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton::impl</references>
+        <references refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes_1a7ac38a7f4c61afcb966abc3854a65831">org.glite.security.voms.service.attributes.VOMSAttributes::setRoleAttribute</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a28bf7b1838eb05b99712d195f0e23b7b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.deleteRoleAttribute</definition>
+        <argsstring>(java.lang.String in0, java.lang.String in1, java.lang.String in2)</argsstring>
+        <name>deleteRoleAttribute</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes_1a10e8d9e56da612471f8f2ce5972d755f">deleteRoleAttribute</reimplements>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in0</declname>
+        </param>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in1</declname>
+        </param>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in2</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref>     </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingSkeleton.java" line="492" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingSkeleton.java" bodystart="491" bodyend="494"/>
+        <references refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes_1a10e8d9e56da612471f8f2ce5972d755f">org.glite.security.voms.service.attributes.VOMSAttributes::deleteRoleAttribute</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a21e3c265df9eb028b0565ed1ed449a85" compoundref="VOMSAttributesSoapBindingSkeleton_8java" startline="11">org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton::impl</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1af583d124d9496f5c619ffd2e0681a9b5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.deleteRoleAttribute</definition>
+        <argsstring>(java.lang.String in0, java.lang.String in1, org.glite.security.voms.service.attributes.AttributeValue in2)</argsstring>
+        <name>deleteRoleAttribute</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes_1aa728f2ded931b28c408c9e6e19752317">deleteRoleAttribute</reimplements>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in0</declname>
+        </param>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in1</declname>
+        </param>
+        <param>
+          <type><ref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue" kindref="compound">org.glite.security.voms.service.attributes.AttributeValue</ref></type>
+          <declname>in2</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref>     </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingSkeleton.java" line="497" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingSkeleton.java" bodystart="496" bodyend="499"/>
+        <references refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes_1a10e8d9e56da612471f8f2ce5972d755f">org.glite.security.voms.service.attributes.VOMSAttributes::deleteRoleAttribute</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a21e3c265df9eb028b0565ed1ed449a85" compoundref="VOMSAttributesSoapBindingSkeleton_8java" startline="11">org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton::impl</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a6f1023d99ff8c0a9f8466e0c66b02533" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue" kindref="compound">org.glite.security.voms.service.attributes.AttributeValue</ref>[]</type>
+        <definition>org.glite.security.voms.service.attributes.AttributeValue [] org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.listRoleAttributes</definition>
+        <argsstring>(java.lang.String in0, java.lang.String in1)</argsstring>
+        <name>listRoleAttributes</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes_1aeb3efd918efd7c9b131d1f2d1fe2ca4b">listRoleAttributes</reimplements>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in0</declname>
+        </param>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in1</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref>     </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingSkeleton.java" line="502" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingSkeleton.java" bodystart="501" bodyend="505"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a21e3c265df9eb028b0565ed1ed449a85" compoundref="VOMSAttributesSoapBindingSkeleton_8java" startline="11">org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton::impl</references>
+        <references refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes_1aeb3efd918efd7c9b131d1f2d1fe2ca4b">org.glite.security.voms.service.attributes.VOMSAttributes::listRoleAttributes</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="714">
+        <label>org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton</label>
+        <link refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton"/>
+        <childnode refid="715" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="715">
+        <label>org.glite.security.voms.service.attributes.VOMSAttributes</label>
+        <link refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="716">
+        <label>org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton</label>
+        <link refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton"/>
+        <childnode refid="717" relation="public-inheritance">
+        </childnode>
+        <childnode refid="718" relation="usage">
+          <edgelabel>_myOperations</edgelabel>
+        </childnode>
+        <childnode refid="717" relation="usage">
+          <edgelabel>impl</edgelabel>
+        </childnode>
+      </node>
+      <node id="718">
+        <label>Map</label>
+      </node>
+      <node id="717">
+        <label>org.glite.security.voms.service.attributes.VOMSAttributes</label>
+        <link refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes"/>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingSkeleton.java" line="10" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingSkeleton.java" bodystart="10" bodyend="507"/>
+    <listofallmembers>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a57f9001f190d557349d4d78b7613d590" prot="package" virt="non-virtual"><scope>org::glite::security::voms::service::attributes::VOMSAttributesSoapBindingSkeleton</scope><name>[static initializer]</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1ac28e4ef27165a9283f9e3b07fdbab7af" prot="private" virt="non-virtual"><scope>org::glite::security::voms::service::attributes::VOMSAttributesSoapBindingSkeleton</scope><name>_myOperations</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a73e65e04742c0895b1b0e8957c98675d" prot="private" virt="non-virtual"><scope>org::glite::security::voms::service::attributes::VOMSAttributesSoapBindingSkeleton</scope><name>_myOperationsList</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a4f892d85b75dbfe73809e40274702b4e" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::attributes::VOMSAttributesSoapBindingSkeleton</scope><name>createAttributeClass</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1aa07a85c09bfd6df5e46116890ed1fe60" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::attributes::VOMSAttributesSoapBindingSkeleton</scope><name>createAttributeClass</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a9bcc9983a1c3e6e54c27bc832decaa16" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::attributes::VOMSAttributesSoapBindingSkeleton</scope><name>createAttributeClass</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a7e2d03eb60af98e7e7f45896181dac96" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::attributes::VOMSAttributesSoapBindingSkeleton</scope><name>deleteAttributeClass</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1ac16139dce71cf10dcaf56b9671cf9e37" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::attributes::VOMSAttributesSoapBindingSkeleton</scope><name>deleteAttributeClass</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1ada7b88369156ea23fc61e40c254f6228" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::attributes::VOMSAttributesSoapBindingSkeleton</scope><name>deleteGroupAttribute</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1ab34227e9e1a0dc4049a820558c9d4058" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::attributes::VOMSAttributesSoapBindingSkeleton</scope><name>deleteGroupAttribute</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a28bf7b1838eb05b99712d195f0e23b7b" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::attributes::VOMSAttributesSoapBindingSkeleton</scope><name>deleteRoleAttribute</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1af583d124d9496f5c619ffd2e0681a9b5" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::attributes::VOMSAttributesSoapBindingSkeleton</scope><name>deleteRoleAttribute</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a79a76c866aee7cf8ed7660eec54f4045" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::attributes::VOMSAttributesSoapBindingSkeleton</scope><name>deleteUserAttribute</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1ae5ca84f893db851e845f82b901a9f08b" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::attributes::VOMSAttributesSoapBindingSkeleton</scope><name>deleteUserAttribute</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1abc0e9a3e03317219cca370ba1217802e" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::attributes::VOMSAttributesSoapBindingSkeleton</scope><name>getAttributeClass</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a95a9bf2668becabebed72ac95519ceb8" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::attributes::VOMSAttributesSoapBindingSkeleton</scope><name>getOperationDescByName</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1ac9c84ce8f554948d811dfcf3838cbcd1" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::attributes::VOMSAttributesSoapBindingSkeleton</scope><name>getOperationDescs</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a21e3c265df9eb028b0565ed1ed449a85" prot="private" virt="non-virtual"><scope>org::glite::security::voms::service::attributes::VOMSAttributesSoapBindingSkeleton</scope><name>impl</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a3e032fc86cd41cf0bb3fa929bef306b7" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::attributes::VOMSAttributesSoapBindingSkeleton</scope><name>listAttributeClasses</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a6f6550302d3b00bcc871812ea9e142fa" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::attributes::VOMSAttributesSoapBindingSkeleton</scope><name>listGroupAttributes</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a6f1023d99ff8c0a9f8466e0c66b02533" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::attributes::VOMSAttributesSoapBindingSkeleton</scope><name>listRoleAttributes</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a9355e1ed7ea4f837375072417730957c" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::attributes::VOMSAttributesSoapBindingSkeleton</scope><name>listUserAttributes</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a7c97fc0456f9dcb5467197d54f414cb0" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::attributes::VOMSAttributesSoapBindingSkeleton</scope><name>saveAttributeClass</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a5780ef9aa0fbca687dbccf2af17f9a0b" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::attributes::VOMSAttributesSoapBindingSkeleton</scope><name>setGroupAttribute</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1abe960bf6368ac106e4b308f895e81428" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::attributes::VOMSAttributesSoapBindingSkeleton</scope><name>setRoleAttribute</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a3c36b51ff5a1b7f56c3c4fb3ec2e5311" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::attributes::VOMSAttributesSoapBindingSkeleton</scope><name>setUserAttribute</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1af5bfa69f1e00d4085dbc6a831fadfb91" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::attributes::VOMSAttributesSoapBindingSkeleton</scope><name>VOMSAttributesSoapBindingSkeleton</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton_1a7e803371559b00537c16c00f1fa8253a" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::attributes::VOMSAttributesSoapBindingSkeleton</scope><name>VOMSAttributesSoapBindingSkeleton</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

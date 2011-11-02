@@ -1,0 +1,470 @@
+.TH "portal::registration::controller::AddUserToVOController" 3 "Wed Jul 13 2011" "Version 4" "Registration" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+portal::registration::controller::AddUserToVOController \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBUserInfo\fP \fBgetCommandObject\fP ()"
+.br
+.ti -1c
+.RI "String \fBshowUserInfoForm\fP (RenderResponse response)"
+.br
+.ti -1c
+.RI "void \fBaddUserToVo\fP (ActionRequest request, ActionResponse response, SessionStatus sessionStatus)  throws PortalException, 			SystemException "
+.br
+.ti -1c
+.RI "List< \fBVo\fP > \fBgetVos\fP ()"
+.br
+.ti -1c
+.RI "List< String > \fBgetDisciplines\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetDefaultUserToVo\fP (ActionRequest request, ActionResponse response, SessionStatus sessionStatus)"
+.br
+.ti -1c
+.RI "void \fBremoveUserToVo\fP (ActionRequest request, ActionResponse response, SessionStatus sessionStatus)"
+.br
+.ti -1c
+.RI "void \fBsetDefaultUserToVoEdit\fP (ActionRequest request, ActionResponse response, SessionStatus sessionStatus)"
+.br
+.ti -1c
+.RI "void \fBremoveUserToVoEdit\fP (ActionRequest request, ActionResponse response, SessionStatus sessionStatus)"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBactivateUser\fP (\fBUserInfo\fP userInfo, ActionRequest request, ArrayList< String > errors)"
+.br
+.ti -1c
+.RI "boolean \fBcheckVO\fP (int idVo, int userId, List< String > errors)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBCertificateService\fP \fBcertificateService\fP"
+.br
+.ti -1c
+.RI "\fBVoService\fP \fBvoService\fP"
+.br
+.ti -1c
+.RI "\fBUserToVoService\fP \fBuserToVoService\fP"
+.br
+.ti -1c
+.RI "\fBUserInfoService\fP \fBuserInfoService\fP"
+.br
+.in -1c
+.SS "Static Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "static final Logger \fBlog\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 42 of file AddUserToVOController.java.
+.SH "Member Function Documentation"
+.PP 
+.SS "void portal.registration.controller.AddUserToVOController.activateUser (\fBUserInfo\fPuserInfo, ActionRequestrequest, ArrayList< String >errors)\fC [private]\fP"
+.PP
+Definition at line 144 of file AddUserToVOController.java.
+.PP
+References portal.registration.services.UserInfoService.edit(), portal.registration.domain.UserInfo.getUsername(), and portal.registration.domain.UserInfo.setRegistrationComplete().
+.PP
+.nf
+                                                  {
+
+                String username = userInfo.getUsername();
+
+                long companyId = PortalUtil.getCompanyId(request);
+
+                User user;
+                try {
+                        user = UserLocalServiceUtil
+                                        .getUserByScreenName(companyId, username);
+
+                        long[] users = { user.getUserId() };
+
+                        UserLocalServiceUtil.setRoleUsers((long) 10140, users);
+
+                        userInfo.setRegistrationComplete('true');
+
+                        userInfoService.edit(userInfo);
+
+                        SessionMessages.add(request, 'user-activate');
+
+                } catch (PortalException e) {
+                        errors.add('exception-activation-user');
+                        e.printStackTrace();
+                } catch (SystemException e) {
+                        errors.add('exception-activation-user');
+                        e.printStackTrace();
+                }
+
+        }
+.fi
+.SS "void portal.registration.controller.AddUserToVOController.addUserToVo (ActionRequestrequest, ActionResponseresponse, SessionStatussessionStatus)  throws PortalException, 			SystemException "
+.PP
+Definition at line 70 of file AddUserToVOController.java.
+.PP
+References portal.registration.services.UserInfoService.findById(), portal.registration.domain.UserInfo.getRegistrationComplete(), and portal.registration.services.UserToVoService.save().
+.PP
+.nf
+                                        {
+
+                log.info('sono dentro');
+
+                ArrayList<String> errors = new ArrayList<String>();
+                boolean allOk = true;
+
+                int userId = Integer.parseInt(request.getParameter('userId'));
+                log.info('Valore passato userId ' + userId);
+
+                if (request.getParameterValues('VOids') != null) {
+                        log.info('recupero idVo');
+                        int idVo = Integer.parseInt(request.getParameter('VOids'));
+                        if (idVo != 0) {
+
+                                if (checkVO(idVo, userId, errors)) {
+                                        log.info('Salvo sul DB la Vo ' + idVo);
+
+                                        UserInfo ui = userInfoService.findById(userId);
+                                        if (ui.getRegistrationComplete().equals('false')) {
+                                                activateUser(ui, request, errors);
+                                        }
+                                        userToVoService.save(userId, idVo);
+                                        log.info('Salvato sul DB ');
+                                } else {
+                                        allOk = false;
+                                }
+                        }
+
+                } else {
+                        allOk = false;
+                        errors.add('user-vo-list-empty');
+                }
+
+                if (allOk) {
+
+                        SessionMessages.add(request, 'userToVo-adding-success');
+
+                        if (request.getParameter('firstReg').equals('true')) {
+                                response.setRenderParameter('myaction',
+                                                'showAddUserToVoPresents');
+                        } else {
+                                response.setRenderParameter('myaction', 'editUserInfoForm');
+                        }
+                        response.setRenderParameter('userId', Integer.toString(userId));
+                        request.setAttribute('userId', userId);
+                        sessionStatus.setComplete();
+
+                } else {
+
+                        errors.add('error-saving-registration');
+
+                        for (String error : errors) {
+                                log.info('Errore: ' + error);
+                                SessionErrors.add(request, error);
+                        }
+
+                        log.info('Errori in userToVO');
+
+                        if (request.getParameter('firstReg').equals('true')) {
+                                response.setRenderParameter('myaction',
+                                                'showAddUserToVoPresents');
+                        } else {
+                                response.setRenderParameter('myaction', 'editUserInfoForm');
+                        }
+                        response.setRenderParameter('userId', Integer.toString(userId));
+                        request.setAttribute('userId', userId);
+
+                }
+
+        }
+.fi
+.SS "boolean portal.registration.controller.AddUserToVOController.checkVO (intidVo, intuserId, List< String >errors)\fC [private]\fP"
+.PP
+Definition at line 186 of file AddUserToVOController.java.
+.PP
+References portal.registration.services.UserToVoService.findById(), portal.registration.services.CertificateService.findById(), portal.registration.services.VoService.findById(), portal.registration.domain.Vo.getHost(), and portal.registration.domain.Vo.getVo().
+.PP
+.nf
+                                                                           {
+                boolean result = false;
+
+                Vo vo = voService.findById(idVo);
+
+                List<Certificate> certs = certificateService.findById(userId);
+
+                if (certs.size() == 0) {
+                        errors.add('no-cert-for-user');
+                        return false;
+                }
+
+                if (userToVoService.findById(userId, idVo) != null) {
+                        errors.add('userToVo-already-exists');
+                        return false;
+                }
+
+                try {
+
+                        FileOutputStream file = new FileOutputStream(
+                                        '/upload_files/edg-mkgridmap.' + vo.getVo() + '.conf');
+                        PrintStream conf = new PrintStream(file);
+                        conf.println('group vomss://' + vo.getHost() + '?/' + vo.getVo()
+                                        + ' .' + vo.getVo());
+
+                        for (int i = 0; i < certs.size(); i++) {
+                                String subject = certs.get(i).getSubject();
+                                subject = subject.replaceAll(' ', '\\ ');
+                                String cmdCheck = '/opt/edg/sbin/edg-mkgridmap  --conf=/upload_files/edg-mkgridmap.'
+                                                + vo.getVo() + '.conf';
+                                log.info('cmdCheck = ' + cmdCheck);
+                                Process pCheck = Runtime.getRuntime().exec(cmdCheck);
+                                InputStream stdout = pCheck.getInputStream();
+                                InputStream stderr = pCheck.getErrorStream();
+
+                                BufferedReader output = new BufferedReader(
+                                                new InputStreamReader(stdout));
+                                String line = null;
+
+                                log.info('Ricerca questo: ' + '\'' + subject + '\' .'
+                                                + vo.getVo());
+
+                                while ((line = output.readLine()) != null) {
+                                        log.info('[Stdout] ' + line);
+                                        if (line.equals('\'' + subject + '\' .' + vo.getVo())) {
+                                                log.info('*********************************************************');
+                                                result = true;
+                                        }
+
+                                }
+                                output.close();
+
+                                BufferedReader brCleanUp = new BufferedReader(
+                                                new InputStreamReader(stderr));
+                                while ((line = brCleanUp.readLine()) != null) {
+                                        errors.add('edg-mkgridmap-problem');
+                                        log.info('[Stderr] ' + line);
+                                        result = false;
+                                }
+                                brCleanUp.close();
+                        }
+
+                } catch (IOException e) {
+                        result = false;
+                        errors.add('edg-mkgridmap-exception');
+                        e.printStackTrace();
+                }
+
+                if (!result)
+                        errors.add('no-user-found-in-VO');
+
+                return result;
+        }
+.fi
+.SS "\fBUserInfo\fP portal.registration.controller.AddUserToVOController.getCommandObject ()"
+.PP
+Definition at line 60 of file AddUserToVOController.java.
+.PP
+.nf
+                                           {
+                return new UserInfo();
+        }
+.fi
+.SS "List<String> portal.registration.controller.AddUserToVOController.getDisciplines ()"
+.PP
+Definition at line 182 of file AddUserToVOController.java.
+.PP
+References portal.registration.services.VoService.getAllDiscplines().
+.PP
+.nf
+                                             {
+                return voService.getAllDiscplines();
+        }
+.fi
+.SS "List<\fBVo\fP> portal.registration.controller.AddUserToVOController.getVos ()"
+.PP
+Definition at line 177 of file AddUserToVOController.java.
+.PP
+References portal.registration.services.VoService.getAllVo().
+.PP
+.nf
+                                 {
+                return voService.getAllVo();
+        }
+.fi
+.SS "void portal.registration.controller.AddUserToVOController.removeUserToVo (ActionRequestrequest, ActionResponseresponse, SessionStatussessionStatus)"
+.PP
+Definition at line 289 of file AddUserToVOController.java.
+.PP
+References portal.registration.services.UserToVoService.delete().
+.PP
+.nf
+                                                     {
+
+                int userId = Integer.parseInt(request.getParameter('userId'));
+                int idVo = Integer.parseInt(request.getParameter('idVo'));
+
+                try {
+                        log.info('Sto per cancellare il userToVo con userId = ' + userId
+                                        + 'e idVo = ' + idVo);
+                        userToVoService.delete(userId, idVo);
+                        log.info('userTo Vo cancellato');
+
+                        SessionMessages.add(request, 'userToVo-deleted-successufully');
+
+                } catch (Exception e) {
+                        SessionErrors.add(request, 'error-deleting-userToVo');
+                }
+
+                response.setRenderParameter('myaction', 'showAddUserToVoPresents');
+                response.setRenderParameter('userId', Integer.toString(userId));
+                request.setAttribute('firstReg', request.getParameter('firstReg'));
+                sessionStatus.setComplete();
+
+        }
+.fi
+.SS "void portal.registration.controller.AddUserToVOController.removeUserToVoEdit (ActionRequestrequest, ActionResponseresponse, SessionStatussessionStatus)"
+.PP
+Definition at line 343 of file AddUserToVOController.java.
+.PP
+References portal.registration.services.UserToVoService.delete(), and portal.registration.services.UserToVoService.findVoByUserId().
+.PP
+.nf
+                                                                              {
+
+                int userId = Integer.parseInt(request.getParameter('userId'));
+                int idVo = Integer.parseInt(request.getParameter('idVo'));
+
+                try {
+                        log.info('Sto per cancellare il userToVo con userId = ' + userId
+                                        + 'e idVo = ' + idVo);
+                        userToVoService.delete(userId, idVo);
+                        log.info('userTo Vo cancellato');
+
+                        SessionMessages.add(request, 'userToVo-deleted-successufully');
+                        userToVoService.findVoByUserId(userId);
+
+                } catch (Exception e) {
+                        SessionErrors.add(request, 'error-deleting-userToVo');
+                }
+
+                response.setRenderParameter('myaction', 'editUserInfoForm');
+                response.setRenderParameter('userId', Integer.toString(userId));
+                request.setAttribute('firstReg', request.getParameter('firstReg'));
+                sessionStatus.setComplete();
+
+        }
+.fi
+.SS "void portal.registration.controller.AddUserToVOController.setDefaultUserToVo (ActionRequestrequest, ActionResponseresponse, SessionStatussessionStatus)"
+.PP
+Definition at line 261 of file AddUserToVOController.java.
+.PP
+References portal.registration.services.UserToVoService.findVoByUserId(), and portal.registration.services.UserToVoService.setDefault().
+.PP
+.nf
+                                                                              {
+
+                int userId = Integer.parseInt(request.getParameter('userId'));
+                int idVo = Integer.parseInt(request.getParameter('idVo'));
+
+                try {
+                        log.info('Sto per settarea default il userToVo con userId = '
+                                        + userId + 'e idVo = ' + idVo);
+                        if (userToVoService.setDefault(userId, idVo))
+                                SessionMessages.add(request, 'userToVo-updated-successufully');
+                        else
+                                SessionErrors.add(request, 'error-default-userToVo');
+                        log.info('UserToVoSettato');
+                        userToVoService.findVoByUserId(userId);
+
+                } catch (Exception e) {
+                        SessionErrors.add(request, 'error-updating-certificate');
+                }
+
+                response.setRenderParameter('myaction', 'showAddUserToVoPresents');
+                response.setRenderParameter('userId', Integer.toString(userId));
+                request.setAttribute('firstReg', request.getParameter('firstReg'));
+                sessionStatus.setComplete();
+
+        }
+.fi
+.SS "void portal.registration.controller.AddUserToVOController.setDefaultUserToVoEdit (ActionRequestrequest, ActionResponseresponse, SessionStatussessionStatus)"
+.PP
+Definition at line 315 of file AddUserToVOController.java.
+.PP
+References portal.registration.services.UserToVoService.findVoByUserId(), and portal.registration.services.UserToVoService.setDefault().
+.PP
+.nf
+                                                                              {
+
+                int userId = Integer.parseInt(request.getParameter('userId'));
+                int idVo = Integer.parseInt(request.getParameter('idVo'));
+
+                try {
+                        log.info('Sto per settarea default il userToVo con userId = '
+                                        + userId + 'e idVo = ' + idVo);
+                        if (userToVoService.setDefault(userId, idVo))
+                                SessionMessages.add(request, 'userToVo-updated-successufully');
+                        else
+                                SessionErrors.add(request, 'error-default-userToVo');
+                        log.info('UserToVoSettato');
+                        userToVoService.findVoByUserId(userId);
+
+                } catch (Exception e) {
+                        SessionErrors.add(request, 'error-updating-certificate');
+                }
+
+                response.setRenderParameter('myaction', 'editUserInfoForm');
+                response.setRenderParameter('userId', Integer.toString(userId));
+                request.setAttribute('firstReg', request.getParameter('firstReg'));
+                sessionStatus.setComplete();
+
+        }
+.fi
+.SS "String portal.registration.controller.AddUserToVOController.showUserInfoForm (RenderResponseresponse)"
+.PP
+Definition at line 65 of file AddUserToVOController.java.
+.PP
+.nf
+                                                                {
+                return 'addUserToVOForm';
+        }
+.fi
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBCertificateService\fP \fBportal.registration.controller.AddUserToVOController.certificateService\fP\fC [private]\fP"
+.PP
+Definition at line 48 of file AddUserToVOController.java.
+.SS "final Logger \fBportal.registration.controller.AddUserToVOController.log\fP\fC [static, private]\fP"\fBInitial value:\fP
+.PP
+.nf
+ Logger
+                        .getLogger(AddUserToVOController.class)
+.fi
+.PP
+Definition at line 44 of file AddUserToVOController.java.
+.SS "\fBUserInfoService\fP \fBportal.registration.controller.AddUserToVOController.userInfoService\fP\fC [private]\fP"
+.PP
+Definition at line 57 of file AddUserToVOController.java.
+.SS "\fBUserToVoService\fP \fBportal.registration.controller.AddUserToVOController.userToVoService\fP\fC [private]\fP"
+.PP
+Definition at line 54 of file AddUserToVOController.java.
+.SS "\fBVoService\fP \fBportal.registration.controller.AddUserToVOController.voService\fP\fC [private]\fP"
+.PP
+Definition at line 51 of file AddUserToVOController.java.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Registration from the source code.

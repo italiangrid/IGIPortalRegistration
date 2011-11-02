@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="classportal_1_1registration_1_1controller_1_1VOListController" kind="class" prot="public">
+    <compoundname>portal::registration::controller::VOListController</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classportal_1_1registration_1_1controller_1_1VOListController_1a8bae931aec8ab793ebbd739ce4211171" prot="private" static="no" mutable="no">
+        <type><ref refid="interfaceportal_1_1registration_1_1services_1_1VoService" kindref="compound">VoService</ref></type>
+        <definition>VoService portal.registration.controller.VOListController.voService</definition>
+        <argsstring></argsstring>
+        <name>voService</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/VOListController.java" line="20" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/VOListController.java" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classportal_1_1registration_1_1controller_1_1VOListController_1a2190dd57ef91af84c36317c941ccec4f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String portal.registration.controller.VOListController.showUserInfoForm</definition>
+        <argsstring>(RenderResponse response)</argsstring>
+        <name>showUserInfoForm</name>
+        <param>
+          <type>RenderResponse</type>
+          <declname>response</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/VOListController.java" line="23" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/VOListController.java" bodystart="23" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1controller_1_1VOListController_1ab3008c4ba7e69cf6fd5d291c59d27a73" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>List&lt; <ref refid="classportal_1_1registration_1_1domain_1_1Vo" kindref="compound">Vo</ref> &gt;</type>
+        <definition>List&lt;Vo&gt; portal.registration.controller.VOListController.getVos</definition>
+        <argsstring>()</argsstring>
+        <name>getVos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/VOListController.java" line="28" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/VOListController.java" bodystart="28" bodyend="30"/>
+        <references refid="interfaceportal_1_1registration_1_1services_1_1VoService_1aa153862b17e17380ca3a8bf64558b070">portal.registration.services.VoService::getAllVo</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="641">
+        <label>portal.registration.services.VoService</label>
+        <link refid="interfaceportal_1_1registration_1_1services_1_1VoService"/>
+      </node>
+      <node id="640">
+        <label>portal.registration.controller.VOListController</label>
+        <link refid="classportal_1_1registration_1_1controller_1_1VOListController"/>
+        <childnode refid="641" relation="usage">
+          <edgelabel>voService</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/VOListController.java" line="17" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/VOListController.java" bodystart="17" bodyend="32"/>
+    <listofallmembers>
+      <member refid="classportal_1_1registration_1_1controller_1_1VOListController_1ab3008c4ba7e69cf6fd5d291c59d27a73" prot="public" virt="non-virtual"><scope>portal::registration::controller::VOListController</scope><name>getVos</name></member>
+      <member refid="classportal_1_1registration_1_1controller_1_1VOListController_1a2190dd57ef91af84c36317c941ccec4f" prot="public" virt="non-virtual"><scope>portal::registration::controller::VOListController</scope><name>showUserInfoForm</name></member>
+      <member refid="classportal_1_1registration_1_1controller_1_1VOListController_1a8bae931aec8ab793ebbd739ce4211171" prot="private" virt="non-virtual"><scope>portal::registration::controller::VOListController</scope><name>voService</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="namespaceportal_1_1registration_1_1domain" kind="namespace">
+    <compoundname>portal::registration::domain</compoundname>
+    <innerclass refid="classportal_1_1registration_1_1domain_1_1Certificate" prot="public">portal::registration::domain::Certificate</innerclass>
+    <innerclass refid="classportal_1_1registration_1_1domain_1_1Fqan" prot="public">portal::registration::domain::Fqan</innerclass>
+    <innerclass refid="classportal_1_1registration_1_1domain_1_1Idp" prot="public">portal::registration::domain::Idp</innerclass>
+    <innerclass refid="classportal_1_1registration_1_1domain_1_1UserInfo" prot="public">portal::registration::domain::UserInfo</innerclass>
+    <innerclass refid="classportal_1_1registration_1_1domain_1_1UserToVo" prot="public">portal::registration::domain::UserToVo</innerclass>
+    <innerclass refid="classportal_1_1registration_1_1domain_1_1UserToVoId" prot="public">portal::registration::domain::UserToVoId</innerclass>
+    <innerclass refid="classportal_1_1registration_1_1domain_1_1Vo" prot="public">portal::registration::domain::Vo</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Certificate.java" line="1"/>
+  </compounddef>
+</doxygen>

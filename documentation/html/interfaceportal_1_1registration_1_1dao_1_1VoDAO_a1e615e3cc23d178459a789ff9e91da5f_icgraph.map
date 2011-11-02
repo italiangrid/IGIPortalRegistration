@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classportal_1_1registration_1_1services_1_1VoServiceImpl.html#a033d10a34bb55d383d9c9fbf8e06934d" title="portal.registration.services.VoServiceImpl.findById" alt="" coords="316,4,604,31"/>
+<area shape="rect" id="node5" href="$classportal_1_1registration_1_1services_1_1VoServiceImpl.html#ae34d214263258edd26540c6931c89f4a" title="portal.registration.services.VoServiceImpl.findByVo" alt="" coords="314,55,606,81"/>
+<area shape="rect" id="node7" href="$classportal_1_1registration_1_1services_1_1UserToVoServiceImpl.html#ab382e547c2d550b82c1b7d6288f7d4df" title="portal.registration.services.UserToVoServiceImpl.findDefaultVo" alt="" coords="283,105,637,132"/>
+<area shape="rect" id="node9" href="$classportal_1_1registration_1_1services_1_1UserToVoServiceImpl.html#a9c646018122c3e1132c8741f522ad388" title="portal.registration.services.UserToVoServiceImpl.save" alt="" coords="306,156,614,183"/>
+</map>

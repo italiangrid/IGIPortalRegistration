@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+	<type-mapping>
+		<sql-type jdbc-type="DATE" hibernate-type="date" length="10"
+			not-null="true">
+		</sql-type>
+		<sql-type jdbc-type="CHAR" hibernate-type="string" length="5"
+			not-null="true">
+		</sql-type>
+		<sql-type jdbc-type="INTEGER" hibernate-type="int"
+			not-null="true">
+		</sql-type>
+		<sql-type jdbc-type="TIMESTAMP" hibernate-type="java.sql.Timestamp">
+        </sql-type>
+		<sql-type jdbc-type="VARCHAR" hibernate-type="string"
+			length="75" not-null="true">
+		</sql-type>
+	</type-mapping>
+
+	<table-filter match-schema="PortalUser3" match-name=".*" />
+	<table-filter match-catalog="PortalUser3" match-name="IDP" />
+	<table-filter match-catalog="PortalUser3" match-name="VO" />
+	<table-filter match-catalog="PortalUser3" match-name="certificate" />
+	<table-filter match-catalog="PortalUser3" match-name="userInfo" />
+	<table-filter match-catalog="PortalUser3" match-name="userToVO" />
+	<table catalog="PortalUser3" name="userToVO">
+		<column name="userId"></column>
+		<column name="idVO"></column>
+		<column name="isDefault"></column>
+	</table>
+	<table catalog="PortalUser3" name="IDP">
+		<column name="idIDP"></column>
+		<column name="IDPName"></column>
+		<column name="IDPAddress"></column>
+		<column name="IDPLoginAddress"></column>
+		<column name="IDPParameterRequest"></column>
+		<column name="IDPAttributeRequest"></column>
+		<column name="IDPDescription"></column>
+	</table>
+	<table catalog="PortalUser3" name="userInfo">
+		<column name="userId"></column>
+		<column name="firstName"></column>
+		<column name="lastName"></column>
+		<column name="institute"></column>
+		<column name="phone"></column>
+		<column name="mail"></column>
+		<column name="idp"></column>
+		<column name="username"></column>
+	</table>
+	<table catalog="PortalUser3" name="certificate">
+		<column name="idCert"></column>
+		<column name="suject"></column>
+		<column name="expirationDate"></column>
+		<column name="CAonline"></column>
+		<column name="primaryCert"></column>
+		<column name="userId"></column>
+		<column name="issuer"></column>
+	</table>
+	<table catalog="PortalUser" name="VO">
+		<column name="idVO"></column>
+		<column name="VOname"></column>
+		<column name="Host"></column>
+		<column name="Description"></column>
+		<column name="VoManagerMail"></column>
+		<column name="EnrollementURL"></column>
+		<column name="Discipline"></column>
+		<column name="Long_Discipline"></column>
+		<column name="Insert_Time"></column>
+		<column name="AUP"></column>
+	</table>
+</hibernate-reverse-engineering>

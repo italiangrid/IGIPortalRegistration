@@ -1,0 +1,64 @@
+.TH "portal::registration::utils::LongNumberEditor" 3 "Wed Jul 13 2011" "Version 4" "Registration" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+portal::registration::utils::LongNumberEditor \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits PropertyEditorSupport.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "String \fBgetAsText\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetAsText\fP (String text)  throws IllegalArgumentException "
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Property editor for Long type properties.
+.PP
+\fBAuthor:\fP
+.RS 4
+asarin 
+.RE
+.PP
+
+.PP
+Definition at line 10 of file LongNumberEditor.java.
+.SH "Member Function Documentation"
+.PP 
+.SS "String portal.registration.utils.LongNumberEditor.getAsText ()"
+.PP
+Definition at line 12 of file LongNumberEditor.java.
+.PP
+.nf
+                                  {
+                String returnVal = '';
+                if (getValue() instanceof Long) {
+                        returnVal = String.valueOf((Long) getValue());
+                }
+                if (getValue() != null && getValue() instanceof String[]) {
+                        returnVal = ((String[]) getValue())[0];
+                }
+                return returnVal;
+        }
+.fi
+.SS "void portal.registration.utils.LongNumberEditor.setAsText (Stringtext)  throws IllegalArgumentException "
+.PP
+Definition at line 24 of file LongNumberEditor.java.
+.PP
+.nf
+                                                                           {
+                setValue(Long.valueOf(text));
+        }
+.fi
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Registration from the source code.

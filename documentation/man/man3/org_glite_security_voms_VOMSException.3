@@ -1,0 +1,115 @@
+.TH "org::glite::security::voms::VOMSException" 3 "Wed Jul 13 2011" "Version 4" "Registration" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+org::glite::security::voms::VOMSException \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBVOMSException\fP ()"
+.br
+.ti -1c
+.RI "synchronized boolean \fBequals\fP (java.lang.Object obj)"
+.br
+.ti -1c
+.RI "synchronized int \fBhashCode\fP ()"
+.br
+.ti -1c
+.RI "void \fBwriteDetails\fP (javax.xml.namespace.QName qname, org.apache.axis.encoding.SerializationContext context)  throws java.io.IOException "
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "java.lang.Object \fB__equalsCalc\fP = null"
+.br
+.ti -1c
+.RI "boolean \fB__hashCodeCalc\fP = false"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 10 of file VOMSException.java.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "org.glite.security.voms.VOMSException.VOMSException ()"
+.PP
+Definition at line 11 of file VOMSException.java.
+.PP
+Referenced by org.glite.security.voms.VOMSException.equals().
+.PP
+.nf
+                           {
+    }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "synchronized boolean org.glite.security.voms.VOMSException.equals (java.lang.Objectobj)"
+.PP
+Definition at line 15 of file VOMSException.java.
+.PP
+References org.glite.security.voms.VOMSException.__equalsCalc, and org.glite.security.voms.VOMSException.VOMSException().
+.PP
+.nf
+                                                             {
+        if (!(obj instanceof VOMSException)) return false;
+        VOMSException other = (VOMSException) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true;
+        __equalsCalc = null;
+        return _equals;
+    }
+.fi
+.SS "synchronized int org.glite.security.voms.VOMSException.hashCode ()"
+.PP
+Definition at line 31 of file VOMSException.java.
+.PP
+References org.glite.security.voms.VOMSException.__hashCodeCalc.
+.PP
+.nf
+                                       {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+.fi
+.SS "void org.glite.security.voms.VOMSException.writeDetails (javax.xml.namespace.QNameqname, org.apache.axis.encoding.SerializationContextcontext)  throws java.io.IOException "Writes the exception data to the faultDetails 
+.PP
+Definition at line 45 of file VOMSException.java.
+.PP
+.nf
+                                                                                                                                                {
+        context.serialize(qname, null, this);
+    }
+.fi
+.SH "Member Data Documentation"
+.PP 
+.SS "java.lang.Object \fBorg.glite.security.voms.VOMSException.__equalsCalc\fP = null\fC [private]\fP"
+.PP
+Definition at line 14 of file VOMSException.java.
+.PP
+Referenced by org.glite.security.voms.VOMSException.equals().
+.SS "boolean \fBorg.glite.security.voms.VOMSException.__hashCodeCalc\fP = false\fC [private]\fP"
+.PP
+Definition at line 30 of file VOMSException.java.
+.PP
+Referenced by org.glite.security.voms.VOMSException.hashCode().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Registration from the source code.

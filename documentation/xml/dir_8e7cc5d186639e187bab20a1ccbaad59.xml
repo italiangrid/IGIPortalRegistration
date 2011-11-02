@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="dir_8e7cc5d186639e187bab20a1ccbaad59" kind="dir">
+    <compoundname>/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/</compoundname>
+    <innerfile refid="AttributeClass_8java">AttributeClass.java</innerfile>
+    <innerfile refid="AttributeClass__Helper_8java">AttributeClass_Helper.java</innerfile>
+    <innerfile refid="AttributeValue_8java">AttributeValue.java</innerfile>
+    <innerfile refid="AttributeValue__Helper_8java">AttributeValue_Helper.java</innerfile>
+    <innerfile refid="VOMSAttributes_8java">VOMSAttributes.java</innerfile>
+    <innerfile refid="VOMSAttributesService_8java">VOMSAttributesService.java</innerfile>
+    <innerfile refid="VOMSAttributesServiceLocator_8java">VOMSAttributesServiceLocator.java</innerfile>
+    <innerfile refid="VOMSAttributesSoapBindingImpl_8java">VOMSAttributesSoapBindingImpl.java</innerfile>
+    <innerfile refid="VOMSAttributesSoapBindingSkeleton_8java">VOMSAttributesSoapBindingSkeleton.java</innerfile>
+    <innerfile refid="VOMSAttributesSoapBindingStub_8java">VOMSAttributesSoapBindingStub.java</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,42 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from VOMSRegistrationService WSDL service -->
+
+  <service name="VOMSRegistration" provider="java:RPC" style="rpc" use="encoded">
+      <parameter name="wsdlTargetNamespace" value="http://glite.org/wsdl/services/org.glite.security.voms.service.registration"/>
+      <parameter name="wsdlServiceElement" value="VOMSRegistrationService"/>
+      <parameter name="schemaUnqualified" value="http://glite.org/wsdl/services/org.glite.security.voms.service.registration,http://glite.org/wsdl/services/org.glite.security.voms"/>
+      <parameter name="wsdlServicePort" value="VOMSRegistration"/>
+      <parameter name="className" value="org.glite.security.voms.service.registration.VOMSRegistrationSoapBindingSkeleton"/>
+      <parameter name="wsdlPortType" value="VOMSRegistration"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <parameter name="allowedMethods" value="*"/>
+
+      <typeMapping
+        xmlns:ns="http://glite.org/wsdl/services/org.glite.security.voms.service.registration"
+        qname="ns:RegistrationRequest"
+        type="java:org.glite.security.voms.service.registration.RegistrationRequest"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://glite.org/wsdl/services/org.glite.security.voms"
+        qname="ns:VOMSException"
+        type="java:org.glite.security.voms.VOMSException"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+  </service>
+</deployment>

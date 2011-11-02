@@ -1,0 +1,437 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="classportal_1_1registration_1_1domain_1_1UserToVo" kind="class" prot="public">
+    <compoundname>portal::registration::domain::UserToVo</compoundname>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classportal_1_1registration_1_1domain_1_1UserToVo_1a35d5b34b5032388d5ce601ff51b0d6b2" prot="private" static="yes" mutable="no">
+        <type>final long</type>
+        <definition>final long portal.registration.domain.UserToVo.serialVersionUID</definition>
+        <argsstring></argsstring>
+        <name>serialVersionUID</name>
+        <initializer> -5434829959406617889L</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserToVo.java" line="25" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserToVo.java" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classportal_1_1registration_1_1domain_1_1UserToVo_1a246bd26e853d70c296f69df06aacea00" prot="private" static="no" mutable="no">
+        <type><ref refid="classportal_1_1registration_1_1domain_1_1UserToVoId" kindref="compound">UserToVoId</ref></type>
+        <definition>UserToVoId portal.registration.domain.UserToVo.id</definition>
+        <argsstring></argsstring>
+        <name>id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserToVo.java" line="26" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserToVo.java" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classportal_1_1registration_1_1domain_1_1UserToVo_1ad229709d89c14b6517530399c1c5c1e8" prot="private" static="no" mutable="no">
+        <type><ref refid="classportal_1_1registration_1_1domain_1_1Vo" kindref="compound">Vo</ref></type>
+        <definition>Vo portal.registration.domain.UserToVo.vo</definition>
+        <argsstring></argsstring>
+        <name>vo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserToVo.java" line="27" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserToVo.java" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classportal_1_1registration_1_1domain_1_1UserToVo_1a9584de18496e8a8c2105ece810c4452a" prot="private" static="no" mutable="no">
+        <type><ref refid="classportal_1_1registration_1_1domain_1_1UserInfo" kindref="compound">UserInfo</ref></type>
+        <definition>UserInfo portal.registration.domain.UserToVo.userInfo</definition>
+        <argsstring></argsstring>
+        <name>userInfo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserToVo.java" line="28" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserToVo.java" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classportal_1_1registration_1_1domain_1_1UserToVo_1a27cc1b5973f31bc34b6710a0c33243d2" prot="private" static="no" mutable="no">
+        <type>String</type>
+        <definition>String portal.registration.domain.UserToVo.isDefault</definition>
+        <argsstring></argsstring>
+        <name>isDefault</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserToVo.java" line="29" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserToVo.java" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classportal_1_1registration_1_1domain_1_1UserToVo_1a77009c03c4ac817e12c5d470fdd2695e" prot="private" static="no" mutable="no">
+        <type>String</type>
+        <definition>String portal.registration.domain.UserToVo.fqans</definition>
+        <argsstring></argsstring>
+        <name>fqans</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserToVo.java" line="30" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserToVo.java" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1UserToVo_1abdefd554130610c03e29c5ae7755b3a3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>portal.registration.domain.UserToVo.UserToVo</definition>
+        <argsstring>()</argsstring>
+        <name>UserToVo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserToVo.java" line="32" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserToVo.java" bodystart="32" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1UserToVo_1a6659c208b1cad46ddf701a9e12dddf15" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>portal.registration.domain.UserToVo.UserToVo</definition>
+        <argsstring>(UserToVoId id, Vo vo, UserInfo userInfo)</argsstring>
+        <name>UserToVo</name>
+        <param>
+          <type><ref refid="classportal_1_1registration_1_1domain_1_1UserToVoId" kindref="compound">UserToVoId</ref></type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type><ref refid="classportal_1_1registration_1_1domain_1_1Vo" kindref="compound">Vo</ref></type>
+          <declname>vo</declname>
+        </param>
+        <param>
+          <type><ref refid="classportal_1_1registration_1_1domain_1_1UserInfo" kindref="compound">UserInfo</ref></type>
+          <declname>userInfo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserToVo.java" line="35" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserToVo.java" bodystart="35" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1UserToVo_1a473e4ff30fb29afec4bf67aa443a7445" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>portal.registration.domain.UserToVo.UserToVo</definition>
+        <argsstring>(UserToVoId id, Vo vo, UserInfo userInfo, String isDefault, String fqans)</argsstring>
+        <name>UserToVo</name>
+        <param>
+          <type><ref refid="classportal_1_1registration_1_1domain_1_1UserToVoId" kindref="compound">UserToVoId</ref></type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type><ref refid="classportal_1_1registration_1_1domain_1_1Vo" kindref="compound">Vo</ref></type>
+          <declname>vo</declname>
+        </param>
+        <param>
+          <type><ref refid="classportal_1_1registration_1_1domain_1_1UserInfo" kindref="compound">UserInfo</ref></type>
+          <declname>userInfo</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>isDefault</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>fqans</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserToVo.java" line="42" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserToVo.java" bodystart="41" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1UserToVo_1a4dcfae82ecdd91e35c4807e0cc915598" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classportal_1_1registration_1_1domain_1_1UserToVoId" kindref="compound">UserToVoId</ref></type>
+        <definition>UserToVoId portal.registration.domain.UserToVo.getId</definition>
+        <argsstring>()</argsstring>
+        <name>getId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserToVo.java" line="54" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserToVo.java" bodystart="54" bodyend="56"/>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1UserToVoDAOImpl_1a99367cb6fd9ecb12d6cd1da21d216a1c" compoundref="UserToVoDAOImpl_8java" startline="109" endline="129">portal.registration.dao.UserToVoDAOImpl::update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1UserToVo_1ae49ca744a5c797153043c8e03c6258d1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void portal.registration.domain.UserToVo.setId</definition>
+        <argsstring>(UserToVoId id)</argsstring>
+        <name>setId</name>
+        <param>
+          <type><ref refid="classportal_1_1registration_1_1domain_1_1UserToVoId" kindref="compound">UserToVoId</ref></type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserToVo.java" line="58" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserToVo.java" bodystart="58" bodyend="60"/>
+        <referencedby refid="classportal_1_1registration_1_1services_1_1UserToVoServiceImpl_1a9c646018122c3e1132c8741f522ad388" compoundref="UserToVoServiceImpl_8java" startline="53" endline="72">portal.registration.services.UserToVoServiceImpl::save</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1UserToVo_1a4bca19ba0d45676731c5dfef2c0607ce" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classportal_1_1registration_1_1domain_1_1Vo" kindref="compound">Vo</ref></type>
+        <definition>Vo portal.registration.domain.UserToVo.getVo</definition>
+        <argsstring>()</argsstring>
+        <name>getVo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserToVo.java" line="64" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserToVo.java" bodystart="64" bodyend="66"/>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1UserToVoDAOImpl_1ace46933eb9117d6aee1739da9dd90a34" compoundref="UserToVoDAOImpl_8java" startline="60" endline="72">portal.registration.dao.UserToVoDAOImpl::getVoByUserToVo</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1UserToVoDAOImpl_1a99367cb6fd9ecb12d6cd1da21d216a1c" compoundref="UserToVoDAOImpl_8java" startline="109" endline="129">portal.registration.dao.UserToVoDAOImpl::update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1UserToVo_1a3466e57b88a3c1aa2a850d5f9c3cf058" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void portal.registration.domain.UserToVo.setVo</definition>
+        <argsstring>(Vo vo)</argsstring>
+        <name>setVo</name>
+        <param>
+          <type><ref refid="classportal_1_1registration_1_1domain_1_1Vo" kindref="compound">Vo</ref></type>
+          <declname>vo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserToVo.java" line="68" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserToVo.java" bodystart="68" bodyend="70"/>
+        <referencedby refid="classportal_1_1registration_1_1services_1_1UserToVoServiceImpl_1a9c646018122c3e1132c8741f522ad388" compoundref="UserToVoServiceImpl_8java" startline="53" endline="72">portal.registration.services.UserToVoServiceImpl::save</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1UserToVoDAOImpl_1a99367cb6fd9ecb12d6cd1da21d216a1c" compoundref="UserToVoDAOImpl_8java" startline="109" endline="129">portal.registration.dao.UserToVoDAOImpl::update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1UserToVo_1ac1840f3519466d9126e8793e47fe700b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classportal_1_1registration_1_1domain_1_1UserInfo" kindref="compound">UserInfo</ref></type>
+        <definition>UserInfo portal.registration.domain.UserToVo.getUserInfo</definition>
+        <argsstring>()</argsstring>
+        <name>getUserInfo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserToVo.java" line="74" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserToVo.java" bodystart="74" bodyend="76"/>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1UserToVoDAOImpl_1a99367cb6fd9ecb12d6cd1da21d216a1c" compoundref="UserToVoDAOImpl_8java" startline="109" endline="129">portal.registration.dao.UserToVoDAOImpl::update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1UserToVo_1a775e683f5e2a6f48d82fe52c30c2c4a4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void portal.registration.domain.UserToVo.setUserInfo</definition>
+        <argsstring>(UserInfo userInfo)</argsstring>
+        <name>setUserInfo</name>
+        <param>
+          <type><ref refid="classportal_1_1registration_1_1domain_1_1UserInfo" kindref="compound">UserInfo</ref></type>
+          <declname>userInfo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserToVo.java" line="78" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserToVo.java" bodystart="78" bodyend="80"/>
+        <referencedby refid="classportal_1_1registration_1_1services_1_1UserToVoServiceImpl_1a9c646018122c3e1132c8741f522ad388" compoundref="UserToVoServiceImpl_8java" startline="53" endline="72">portal.registration.services.UserToVoServiceImpl::save</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1UserToVoDAOImpl_1a99367cb6fd9ecb12d6cd1da21d216a1c" compoundref="UserToVoDAOImpl_8java" startline="109" endline="129">portal.registration.dao.UserToVoDAOImpl::update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1UserToVo_1a9e9d57a592ee11683175c491e1f1ff72" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String portal.registration.domain.UserToVo.getIsDefault</definition>
+        <argsstring>()</argsstring>
+        <name>getIsDefault</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserToVo.java" line="83" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserToVo.java" bodystart="83" bodyend="85"/>
+        <referencedby refid="classportal_1_1registration_1_1services_1_1UserToVoServiceImpl_1a656d4b59616282ee08ff0b82112dae72" compoundref="UserToVoServiceImpl_8java" startline="105" endline="129">portal.registration.services.UserToVoServiceImpl::setDefault</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1UserToVoDAOImpl_1a99367cb6fd9ecb12d6cd1da21d216a1c" compoundref="UserToVoDAOImpl_8java" startline="109" endline="129">portal.registration.dao.UserToVoDAOImpl::update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1UserToVo_1a11470a7079520429ff32a26f4fe506dc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void portal.registration.domain.UserToVo.setIsDefault</definition>
+        <argsstring>(String isDefault)</argsstring>
+        <name>setIsDefault</name>
+        <param>
+          <type>String</type>
+          <declname>isDefault</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserToVo.java" line="87" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserToVo.java" bodystart="87" bodyend="89"/>
+        <referencedby refid="classportal_1_1registration_1_1services_1_1UserToVoServiceImpl_1a9c646018122c3e1132c8741f522ad388" compoundref="UserToVoServiceImpl_8java" startline="53" endline="72">portal.registration.services.UserToVoServiceImpl::save</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1services_1_1UserToVoServiceImpl_1a656d4b59616282ee08ff0b82112dae72" compoundref="UserToVoServiceImpl_8java" startline="105" endline="129">portal.registration.services.UserToVoServiceImpl::setDefault</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1UserToVoDAOImpl_1a99367cb6fd9ecb12d6cd1da21d216a1c" compoundref="UserToVoDAOImpl_8java" startline="109" endline="129">portal.registration.dao.UserToVoDAOImpl::update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1UserToVo_1a107678e5be7bddf3823011596e94ff5c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String portal.registration.domain.UserToVo.getFqans</definition>
+        <argsstring>()</argsstring>
+        <name>getFqans</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserToVo.java" line="92" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserToVo.java" bodystart="92" bodyend="94"/>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1UserToVoDAOImpl_1a99367cb6fd9ecb12d6cd1da21d216a1c" compoundref="UserToVoDAOImpl_8java" startline="109" endline="129">portal.registration.dao.UserToVoDAOImpl::update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1UserToVo_1ab43dc78a2cd554718276387fd0b98ca7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void portal.registration.domain.UserToVo.setFqans</definition>
+        <argsstring>(String fqans)</argsstring>
+        <name>setFqans</name>
+        <param>
+          <type>String</type>
+          <declname>fqans</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserToVo.java" line="96" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserToVo.java" bodystart="96" bodyend="98"/>
+        <referencedby refid="classportal_1_1registration_1_1controller_1_1EditUserToVoController_1aeb87d1e842bf381602343632f23f58e2" compoundref="EditUserToVoController_8java" startline="80" endline="114">portal.registration.controller.EditUserToVoController::addUserToVo</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1UserToVoDAOImpl_1a99367cb6fd9ecb12d6cd1da21d216a1c" compoundref="UserToVoDAOImpl_8java" startline="109" endline="129">portal.registration.dao.UserToVoDAOImpl::update</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="classportal_1_1registration_1_1domain_1_1UserToVo" kindref="compound">UserToVo</ref> generated by hbm2java </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="592">
+        <label>portal.registration.domain.UserInfo</label>
+        <link refid="classportal_1_1registration_1_1domain_1_1UserInfo"/>
+        <childnode refid="593" relation="usage">
+          <edgelabel>userToVos</edgelabel>
+        </childnode>
+        <childnode refid="595" relation="usage">
+          <edgelabel>certificates</edgelabel>
+        </childnode>
+        <childnode refid="596" relation="usage">
+          <edgelabel>idp</edgelabel>
+        </childnode>
+      </node>
+      <node id="601">
+        <label>portal.registration.domain.UserToVoId</label>
+        <link refid="classportal_1_1registration_1_1domain_1_1UserToVoId"/>
+      </node>
+      <node id="599">
+        <label>Set&lt; Fqan &gt;</label>
+        <childnode refid="594" relation="template-instance">
+          <edgelabel>&lt; Fqan &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="598">
+        <label>portal.registration.domain.Vo</label>
+        <link refid="classportal_1_1registration_1_1domain_1_1Vo"/>
+        <childnode refid="593" relation="usage">
+          <edgelabel>userToVos</edgelabel>
+        </childnode>
+        <childnode refid="599" relation="usage">
+          <edgelabel>fqans</edgelabel>
+        </childnode>
+        <childnode refid="600" relation="usage">
+          <edgelabel>insertTime</edgelabel>
+        </childnode>
+      </node>
+      <node id="600">
+        <label>Date</label>
+      </node>
+      <node id="597">
+        <label>Set&lt; UserInfo &gt;</label>
+        <childnode refid="594" relation="template-instance">
+          <edgelabel>&lt; UserInfo &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="596">
+        <label>portal.registration.domain.Idp</label>
+        <link refid="classportal_1_1registration_1_1domain_1_1Idp"/>
+        <childnode refid="597" relation="usage">
+          <edgelabel>userInfos</edgelabel>
+        </childnode>
+      </node>
+      <node id="593">
+        <label>Set&lt; UserToVo &gt;</label>
+        <childnode refid="594" relation="template-instance">
+          <edgelabel>&lt; UserToVo &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="594">
+        <label>Set</label>
+      </node>
+      <node id="591">
+        <label>portal.registration.domain.UserToVo</label>
+        <link refid="classportal_1_1registration_1_1domain_1_1UserToVo"/>
+        <childnode refid="592" relation="usage">
+          <edgelabel>userInfo</edgelabel>
+        </childnode>
+        <childnode refid="598" relation="usage">
+          <edgelabel>vo</edgelabel>
+        </childnode>
+        <childnode refid="601" relation="usage">
+          <edgelabel>id</edgelabel>
+        </childnode>
+      </node>
+      <node id="595">
+        <label>Set&lt; Certificate &gt;</label>
+        <childnode refid="594" relation="template-instance">
+          <edgelabel>&lt; Certificate &gt;</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserToVo.java" line="20" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/UserToVo.java" bodystart="20" bodyend="100"/>
+    <listofallmembers>
+      <member refid="classportal_1_1registration_1_1domain_1_1UserToVo_1a77009c03c4ac817e12c5d470fdd2695e" prot="private" virt="non-virtual"><scope>portal::registration::domain::UserToVo</scope><name>fqans</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1UserToVo_1a107678e5be7bddf3823011596e94ff5c" prot="public" virt="non-virtual"><scope>portal::registration::domain::UserToVo</scope><name>getFqans</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1UserToVo_1a4dcfae82ecdd91e35c4807e0cc915598" prot="public" virt="non-virtual"><scope>portal::registration::domain::UserToVo</scope><name>getId</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1UserToVo_1a9e9d57a592ee11683175c491e1f1ff72" prot="public" virt="non-virtual"><scope>portal::registration::domain::UserToVo</scope><name>getIsDefault</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1UserToVo_1ac1840f3519466d9126e8793e47fe700b" prot="public" virt="non-virtual"><scope>portal::registration::domain::UserToVo</scope><name>getUserInfo</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1UserToVo_1a4bca19ba0d45676731c5dfef2c0607ce" prot="public" virt="non-virtual"><scope>portal::registration::domain::UserToVo</scope><name>getVo</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1UserToVo_1a246bd26e853d70c296f69df06aacea00" prot="private" virt="non-virtual"><scope>portal::registration::domain::UserToVo</scope><name>id</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1UserToVo_1a27cc1b5973f31bc34b6710a0c33243d2" prot="private" virt="non-virtual"><scope>portal::registration::domain::UserToVo</scope><name>isDefault</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1UserToVo_1a35d5b34b5032388d5ce601ff51b0d6b2" prot="private" virt="non-virtual"><scope>portal::registration::domain::UserToVo</scope><name>serialVersionUID</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1UserToVo_1ab43dc78a2cd554718276387fd0b98ca7" prot="public" virt="non-virtual"><scope>portal::registration::domain::UserToVo</scope><name>setFqans</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1UserToVo_1ae49ca744a5c797153043c8e03c6258d1" prot="public" virt="non-virtual"><scope>portal::registration::domain::UserToVo</scope><name>setId</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1UserToVo_1a11470a7079520429ff32a26f4fe506dc" prot="public" virt="non-virtual"><scope>portal::registration::domain::UserToVo</scope><name>setIsDefault</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1UserToVo_1a775e683f5e2a6f48d82fe52c30c2c4a4" prot="public" virt="non-virtual"><scope>portal::registration::domain::UserToVo</scope><name>setUserInfo</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1UserToVo_1a3466e57b88a3c1aa2a850d5f9c3cf058" prot="public" virt="non-virtual"><scope>portal::registration::domain::UserToVo</scope><name>setVo</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1UserToVo_1a9584de18496e8a8c2105ece810c4452a" prot="private" virt="non-virtual"><scope>portal::registration::domain::UserToVo</scope><name>userInfo</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1UserToVo_1abdefd554130610c03e29c5ae7755b3a3" prot="public" virt="non-virtual"><scope>portal::registration::domain::UserToVo</scope><name>UserToVo</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1UserToVo_1a6659c208b1cad46ddf701a9e12dddf15" prot="public" virt="non-virtual"><scope>portal::registration::domain::UserToVo</scope><name>UserToVo</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1UserToVo_1a473e4ff30fb29afec4bf67aa443a7445" prot="public" virt="non-virtual"><scope>portal::registration::domain::UserToVo</scope><name>UserToVo</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1UserToVo_1ad229709d89c14b6517530399c1c5c1e8" prot="private" virt="non-virtual"><scope>portal::registration::domain::UserToVo</scope><name>vo</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

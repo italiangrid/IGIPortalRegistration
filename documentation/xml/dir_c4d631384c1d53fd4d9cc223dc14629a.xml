@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="dir_c4d631384c1d53fd4d9cc223dc14629a" kind="dir">
+    <compoundname>/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/</compoundname>
+    <innerfile refid="VOMSCertificates_8java">VOMSCertificates.java</innerfile>
+    <innerfile refid="VOMSCertificatesService_8java">VOMSCertificatesService.java</innerfile>
+    <innerfile refid="VOMSCertificatesServiceLocator_8java">VOMSCertificatesServiceLocator.java</innerfile>
+    <innerfile refid="VOMSCertificatesSoapBindingImpl_8java">VOMSCertificatesSoapBindingImpl.java</innerfile>
+    <innerfile refid="VOMSCertificatesSoapBindingSkeleton_8java">VOMSCertificatesSoapBindingSkeleton.java</innerfile>
+    <innerfile refid="VOMSCertificatesSoapBindingStub_8java">VOMSCertificatesSoapBindingStub.java</innerfile>
+    <innerfile refid="X509Certificate_8java">X509Certificate.java</innerfile>
+    <innerfile refid="X509Certificate__Helper_8java">X509Certificate_Helper.java</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,449 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="classportal_1_1registration_1_1domain_1_1Fqan" kind="class" prot="public">
+    <compoundname>portal::registration::domain::Fqan</compoundname>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classportal_1_1registration_1_1domain_1_1Fqan_1a0b9b4848dc758619b3bfca40e4f6edd5" prot="private" static="yes" mutable="no">
+        <type>final long</type>
+        <definition>final long portal.registration.domain.Fqan.serialVersionUID</definition>
+        <argsstring></argsstring>
+        <name>serialVersionUID</name>
+        <initializer> 1L</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Fqan.java" line="25" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Fqan.java" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classportal_1_1registration_1_1domain_1_1Fqan_1ad84508e79770bdb6de564d288f498ac6" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int portal.registration.domain.Fqan.idFqan</definition>
+        <argsstring></argsstring>
+        <name>idFqan</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Fqan.java" line="26" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Fqan.java" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classportal_1_1registration_1_1domain_1_1Fqan_1a8e4e4b03f04876190df45dc42f536a83" prot="private" static="no" mutable="no">
+        <type><ref refid="classportal_1_1registration_1_1domain_1_1Vo" kindref="compound">Vo</ref></type>
+        <definition>Vo portal.registration.domain.Fqan.vo</definition>
+        <argsstring></argsstring>
+        <name>vo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Fqan.java" line="27" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Fqan.java" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classportal_1_1registration_1_1domain_1_1Fqan_1a18a759a4901fefe12b28418fd4fc054c" prot="private" static="no" mutable="no">
+        <type>String</type>
+        <definition>String portal.registration.domain.Fqan.isGroupUsed</definition>
+        <argsstring></argsstring>
+        <name>isGroupUsed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Fqan.java" line="28" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Fqan.java" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classportal_1_1registration_1_1domain_1_1Fqan_1ab172b872fc284fb1f5c0ebb198a5c98a" prot="private" static="no" mutable="no">
+        <type>String</type>
+        <definition>String portal.registration.domain.Fqan.groupType</definition>
+        <argsstring></argsstring>
+        <name>groupType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Fqan.java" line="29" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Fqan.java" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classportal_1_1registration_1_1domain_1_1Fqan_1a8fee3ab195a29cf4e56f5b7ea9226e3a" prot="private" static="no" mutable="no">
+        <type>String</type>
+        <definition>String portal.registration.domain.Fqan.fqanExpr</definition>
+        <argsstring></argsstring>
+        <name>fqanExpr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Fqan.java" line="30" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Fqan.java" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classportal_1_1registration_1_1domain_1_1Fqan_1a75b560547e2591fb42c279e8b1bcc782" prot="private" static="no" mutable="no">
+        <type>String</type>
+        <definition>String portal.registration.domain.Fqan.description</definition>
+        <argsstring></argsstring>
+        <name>description</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Fqan.java" line="31" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Fqan.java" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classportal_1_1registration_1_1domain_1_1Fqan_1a05ebf08182a037b4cbb4b27053e76ebc" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int portal.registration.domain.Fqan.computingShare</definition>
+        <argsstring></argsstring>
+        <name>computingShare</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Fqan.java" line="32" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Fqan.java" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1Fqan_1a57ba44619c0501b932a3a021e01e986a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>portal.registration.domain.Fqan.Fqan</definition>
+        <argsstring>()</argsstring>
+        <name>Fqan</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Fqan.java" line="34" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Fqan.java" bodystart="34" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1Fqan_1a3bdacc907ca5bc2e51d15c7f1aea8107" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>portal.registration.domain.Fqan.Fqan</definition>
+        <argsstring>(Vo vo, String isGroupUsed, String groupType, String fqanExpr, String description, int computingShare)</argsstring>
+        <name>Fqan</name>
+        <param>
+          <type><ref refid="classportal_1_1registration_1_1domain_1_1Vo" kindref="compound">Vo</ref></type>
+          <declname>vo</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>isGroupUsed</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>groupType</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>fqanExpr</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>description</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>computingShare</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Fqan.java" line="38" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Fqan.java" bodystart="37" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1Fqan_1a548a2e9c3aa2c48e08301cfcb9fe002c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int portal.registration.domain.Fqan.getIdFqan</definition>
+        <argsstring>()</argsstring>
+        <name>getIdFqan</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Fqan.java" line="50" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Fqan.java" bodystart="50" bodyend="52"/>
+        <referencedby refid="classportal_1_1registration_1_1services_1_1FqanServiceImpl_1a6c43b5b8e616412c1f6d3080922ab9eb" compoundref="FqanServiceImpl_8java" startline="41" endline="44">portal.registration.services.FqanServiceImpl::findByFqan</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1Fqan_1a131983a7e7509b35880c37cb7f558d29" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void portal.registration.domain.Fqan.setIdFqan</definition>
+        <argsstring>(int idFqan)</argsstring>
+        <name>setIdFqan</name>
+        <param>
+          <type>int</type>
+          <declname>idFqan</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Fqan.java" line="54" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Fqan.java" bodystart="54" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1Fqan_1a5016f7a27dd312be0d64e5657cac1ef2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classportal_1_1registration_1_1domain_1_1Vo" kindref="compound">Vo</ref></type>
+        <definition>Vo portal.registration.domain.Fqan.getVo</definition>
+        <argsstring>()</argsstring>
+        <name>getVo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Fqan.java" line="60" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Fqan.java" bodystart="60" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1Fqan_1a09109e1d4254bd8a804bf84fe11dc134" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void portal.registration.domain.Fqan.setVo</definition>
+        <argsstring>(Vo vo)</argsstring>
+        <name>setVo</name>
+        <param>
+          <type><ref refid="classportal_1_1registration_1_1domain_1_1Vo" kindref="compound">Vo</ref></type>
+          <declname>vo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Fqan.java" line="64" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Fqan.java" bodystart="64" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1Fqan_1ad26b2ea359dbbe832dfdf4d1cbf4e00e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String portal.registration.domain.Fqan.getIsGroupUsed</definition>
+        <argsstring>()</argsstring>
+        <name>getIsGroupUsed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Fqan.java" line="69" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Fqan.java" bodystart="69" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1Fqan_1ae956b314820c7eb5b7c5ad4ef9e285fa" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void portal.registration.domain.Fqan.setIsGroupUsed</definition>
+        <argsstring>(String isGroupUsed)</argsstring>
+        <name>setIsGroupUsed</name>
+        <param>
+          <type>String</type>
+          <declname>isGroupUsed</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Fqan.java" line="73" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Fqan.java" bodystart="73" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1Fqan_1a3e60acf2bec9aaf194b804bcc4b09f60" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String portal.registration.domain.Fqan.getGroupType</definition>
+        <argsstring>()</argsstring>
+        <name>getGroupType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Fqan.java" line="78" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Fqan.java" bodystart="78" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1Fqan_1a26979568db4068d1eec3ef4a041b3306" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void portal.registration.domain.Fqan.setGroupType</definition>
+        <argsstring>(String groupType)</argsstring>
+        <name>setGroupType</name>
+        <param>
+          <type>String</type>
+          <declname>groupType</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Fqan.java" line="82" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Fqan.java" bodystart="82" bodyend="84"/>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1Fqan_1af304fd20c77c23d5823d8c7aa2f11b7c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String portal.registration.domain.Fqan.getFqanExpr</definition>
+        <argsstring>()</argsstring>
+        <name>getFqanExpr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Fqan.java" line="87" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Fqan.java" bodystart="87" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1Fqan_1a20a8c757a8140ba4cc58577fc930b558" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void portal.registration.domain.Fqan.setFqanExpr</definition>
+        <argsstring>(String fqanExpr)</argsstring>
+        <name>setFqanExpr</name>
+        <param>
+          <type>String</type>
+          <declname>fqanExpr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Fqan.java" line="91" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Fqan.java" bodystart="91" bodyend="93"/>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1Fqan_1a0119bdaedcd4bef972a7ae28672dcc1f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String portal.registration.domain.Fqan.getDescription</definition>
+        <argsstring>()</argsstring>
+        <name>getDescription</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Fqan.java" line="96" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Fqan.java" bodystart="96" bodyend="98"/>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1Fqan_1ab1f252b20a538884260605af476154eb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void portal.registration.domain.Fqan.setDescription</definition>
+        <argsstring>(String description)</argsstring>
+        <name>setDescription</name>
+        <param>
+          <type>String</type>
+          <declname>description</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Fqan.java" line="100" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Fqan.java" bodystart="100" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1Fqan_1aee6b31ad41b4c61c2a74dd5a2c08c386" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int portal.registration.domain.Fqan.getComputingShare</definition>
+        <argsstring>()</argsstring>
+        <name>getComputingShare</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Fqan.java" line="105" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Fqan.java" bodystart="105" bodyend="107"/>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1domain_1_1Fqan_1a150fcca5af17a5c0f0d47b985789806a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void portal.registration.domain.Fqan.setComputingShare</definition>
+        <argsstring>(int computingShare)</argsstring>
+        <name>setComputingShare</name>
+        <param>
+          <type>int</type>
+          <declname>computingShare</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Fqan.java" line="109" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Fqan.java" bodystart="109" bodyend="111"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="classportal_1_1registration_1_1domain_1_1Fqan" kindref="compound">Fqan</ref> generated by hbm2java </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="489">
+        <label>Set&lt; Fqan &gt;</label>
+        <childnode refid="488" relation="template-instance">
+          <edgelabel>&lt; Fqan &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="486">
+        <label>portal.registration.domain.Vo</label>
+        <link refid="classportal_1_1registration_1_1domain_1_1Vo"/>
+        <childnode refid="487" relation="usage">
+          <edgelabel>userToVos</edgelabel>
+        </childnode>
+        <childnode refid="489" relation="usage">
+          <edgelabel>fqans</edgelabel>
+        </childnode>
+        <childnode refid="490" relation="usage">
+          <edgelabel>insertTime</edgelabel>
+        </childnode>
+      </node>
+      <node id="490">
+        <label>Date</label>
+      </node>
+      <node id="485">
+        <label>portal.registration.domain.Fqan</label>
+        <link refid="classportal_1_1registration_1_1domain_1_1Fqan"/>
+        <childnode refid="486" relation="usage">
+          <edgelabel>vo</edgelabel>
+        </childnode>
+      </node>
+      <node id="487">
+        <label>Set&lt; UserToVo &gt;</label>
+        <childnode refid="488" relation="template-instance">
+          <edgelabel>&lt; UserToVo &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="488">
+        <label>Set</label>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Fqan.java" line="20" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/domain/Fqan.java" bodystart="20" bodyend="113"/>
+    <listofallmembers>
+      <member refid="classportal_1_1registration_1_1domain_1_1Fqan_1a05ebf08182a037b4cbb4b27053e76ebc" prot="private" virt="non-virtual"><scope>portal::registration::domain::Fqan</scope><name>computingShare</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Fqan_1a75b560547e2591fb42c279e8b1bcc782" prot="private" virt="non-virtual"><scope>portal::registration::domain::Fqan</scope><name>description</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Fqan_1a57ba44619c0501b932a3a021e01e986a" prot="public" virt="non-virtual"><scope>portal::registration::domain::Fqan</scope><name>Fqan</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Fqan_1a3bdacc907ca5bc2e51d15c7f1aea8107" prot="public" virt="non-virtual"><scope>portal::registration::domain::Fqan</scope><name>Fqan</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Fqan_1a8fee3ab195a29cf4e56f5b7ea9226e3a" prot="private" virt="non-virtual"><scope>portal::registration::domain::Fqan</scope><name>fqanExpr</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Fqan_1aee6b31ad41b4c61c2a74dd5a2c08c386" prot="public" virt="non-virtual"><scope>portal::registration::domain::Fqan</scope><name>getComputingShare</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Fqan_1a0119bdaedcd4bef972a7ae28672dcc1f" prot="public" virt="non-virtual"><scope>portal::registration::domain::Fqan</scope><name>getDescription</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Fqan_1af304fd20c77c23d5823d8c7aa2f11b7c" prot="public" virt="non-virtual"><scope>portal::registration::domain::Fqan</scope><name>getFqanExpr</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Fqan_1a3e60acf2bec9aaf194b804bcc4b09f60" prot="public" virt="non-virtual"><scope>portal::registration::domain::Fqan</scope><name>getGroupType</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Fqan_1a548a2e9c3aa2c48e08301cfcb9fe002c" prot="public" virt="non-virtual"><scope>portal::registration::domain::Fqan</scope><name>getIdFqan</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Fqan_1ad26b2ea359dbbe832dfdf4d1cbf4e00e" prot="public" virt="non-virtual"><scope>portal::registration::domain::Fqan</scope><name>getIsGroupUsed</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Fqan_1a5016f7a27dd312be0d64e5657cac1ef2" prot="public" virt="non-virtual"><scope>portal::registration::domain::Fqan</scope><name>getVo</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Fqan_1ab172b872fc284fb1f5c0ebb198a5c98a" prot="private" virt="non-virtual"><scope>portal::registration::domain::Fqan</scope><name>groupType</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Fqan_1ad84508e79770bdb6de564d288f498ac6" prot="private" virt="non-virtual"><scope>portal::registration::domain::Fqan</scope><name>idFqan</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Fqan_1a18a759a4901fefe12b28418fd4fc054c" prot="private" virt="non-virtual"><scope>portal::registration::domain::Fqan</scope><name>isGroupUsed</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Fqan_1a0b9b4848dc758619b3bfca40e4f6edd5" prot="private" virt="non-virtual"><scope>portal::registration::domain::Fqan</scope><name>serialVersionUID</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Fqan_1a150fcca5af17a5c0f0d47b985789806a" prot="public" virt="non-virtual"><scope>portal::registration::domain::Fqan</scope><name>setComputingShare</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Fqan_1ab1f252b20a538884260605af476154eb" prot="public" virt="non-virtual"><scope>portal::registration::domain::Fqan</scope><name>setDescription</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Fqan_1a20a8c757a8140ba4cc58577fc930b558" prot="public" virt="non-virtual"><scope>portal::registration::domain::Fqan</scope><name>setFqanExpr</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Fqan_1a26979568db4068d1eec3ef4a041b3306" prot="public" virt="non-virtual"><scope>portal::registration::domain::Fqan</scope><name>setGroupType</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Fqan_1a131983a7e7509b35880c37cb7f558d29" prot="public" virt="non-virtual"><scope>portal::registration::domain::Fqan</scope><name>setIdFqan</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Fqan_1ae956b314820c7eb5b7c5ad4ef9e285fa" prot="public" virt="non-virtual"><scope>portal::registration::domain::Fqan</scope><name>setIsGroupUsed</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Fqan_1a09109e1d4254bd8a804bf84fe11dc134" prot="public" virt="non-virtual"><scope>portal::registration::domain::Fqan</scope><name>setVo</name></member>
+      <member refid="classportal_1_1registration_1_1domain_1_1Fqan_1a8e4e4b03f04876190df45dc42f536a83" prot="private" virt="non-virtual"><scope>portal::registration::domain::Fqan</scope><name>vo</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

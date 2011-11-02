@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1acl_1_1VOMSACLService" kind="interface" prot="public">
+    <compoundname>org::glite::security::voms::service::acl::VOMSACLService</compoundname>
+    <derivedcompoundref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1acl_1_1VOMSACLServiceLocator" prot="public" virt="non-virtual">org.glite.security.voms.service.acl.VOMSACLServiceLocator</derivedcompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1acl_1_1VOMSACLService_1a2a0e8df418da68888043fa3e0bdbb9d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>java.lang.String</type>
+        <definition>java.lang.String org.glite.security.voms.service.acl.VOMSACLService.getVOMSACLAddress</definition>
+        <argsstring>()</argsstring>
+        <name>getVOMSACLAddress</name>
+        <reimplementedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1acl_1_1VOMSACLServiceLocator_1a76361c71c6ba78f1eb3b20f0ab6bceca">getVOMSACLAddress</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/acl/VOMSACLService.java" line="11"/>
+      </memberdef>
+      <memberdef kind="function" id="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1acl_1_1VOMSACLService_1ac3f85bdf403cfe158482ae3f0adf9795" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1acl_1_1VOMSACL" kindref="compound">org.glite.security.voms.service.acl.VOMSACL</ref></type>
+        <definition>org.glite.security.voms.service.acl.VOMSACL org.glite.security.voms.service.acl.VOMSACLService.getVOMSACL</definition>
+        <argsstring>()</argsstring>
+        <name>getVOMSACL</name>
+        <reimplementedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1acl_1_1VOMSACLServiceLocator_1a502c55a13b4f26d05a46f9c4c0a20e13">getVOMSACL</reimplementedby>
+        <exceptions> throws javax.xml.rpc.ServiceException</exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/acl/VOMSACLService.java" line="13"/>
+      </memberdef>
+      <memberdef kind="function" id="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1acl_1_1VOMSACLService_1a5a8854a9d194fba2df791591033b8560" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1acl_1_1VOMSACL" kindref="compound">org.glite.security.voms.service.acl.VOMSACL</ref></type>
+        <definition>org.glite.security.voms.service.acl.VOMSACL org.glite.security.voms.service.acl.VOMSACLService.getVOMSACL</definition>
+        <argsstring>(java.net.URL portAddress)</argsstring>
+        <name>getVOMSACL</name>
+        <reimplementedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1acl_1_1VOMSACLServiceLocator_1a833a3a621f36b1247c1cfc9448df558c">getVOMSACL</reimplementedby>
+        <param>
+          <type>java.net.URL</type>
+          <declname>portAddress</declname>
+        </param>
+        <exceptions> throws javax.xml.rpc.ServiceException</exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/acl/VOMSACLService.java" line="15"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="647">
+        <label>org.glite.security.voms.service.acl.VOMSACLService</label>
+        <link refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1acl_1_1VOMSACLService"/>
+      </node>
+      <node id="648">
+        <label>org.glite.security.voms.service.acl.VOMSACLServiceLocator</label>
+        <link refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1acl_1_1VOMSACLServiceLocator"/>
+        <childnode refid="647" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/acl/VOMSACLService.java" line="10" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/acl/VOMSACLService.java" bodystart="10" bodyend="16"/>
+    <listofallmembers>
+      <member refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1acl_1_1VOMSACLService_1ac3f85bdf403cfe158482ae3f0adf9795" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::acl::VOMSACLService</scope><name>getVOMSACL</name></member>
+      <member refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1acl_1_1VOMSACLService_1a5a8854a9d194fba2df791591033b8560" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::acl::VOMSACLService</scope><name>getVOMSACL</name></member>
+      <member refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1acl_1_1VOMSACLService_1a2a0e8df418da68888043fa3e0bdbb9d9" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::acl::VOMSACLService</scope><name>getVOMSACLAddress</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

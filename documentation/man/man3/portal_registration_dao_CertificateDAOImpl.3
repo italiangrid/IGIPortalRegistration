@@ -1,0 +1,196 @@
+.TH "portal::registration::dao::CertificateDAOImpl" 3 "Wed Jul 13 2011" "Version 4" "Registration" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+portal::registration::dao::CertificateDAOImpl \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBportal.registration.dao.CertificateDAO\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "Integer \fBsave\fP (\fBCertificate\fP transientInstance)"
+.br
+.ti -1c
+.RI "void \fBdelete\fP (\fBCertificate\fP persistentInstance)"
+.br
+.ti -1c
+.RI "\fBCertificate\fP \fBfindById\fP (Integer id)"
+.br
+.ti -1c
+.RI "List< \fBCertificate\fP > \fBfindById\fP (\fBUserInfo\fP userInfo)"
+.br
+.ti -1c
+.RI "void \fBedit\fP (\fBCertificate\fP certificate)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "SessionFactory \fBsessionFactory\fP"
+.br
+.in -1c
+.SS "Static Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "static final Logger \fBlog\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 16 of file CertificateDAOImpl.java.
+.SH "Member Function Documentation"
+.PP 
+.SS "void portal.registration.dao.CertificateDAOImpl.delete (\fBCertificate\fPpersistentInstance)"
+.PP
+Implements \fBportal.registration.dao.CertificateDAO\fP.
+.PP
+Definition at line 37 of file CertificateDAOImpl.java.
+.PP
+References portal.registration.dao.CertificateDAOImpl.log, and portal.registration.dao.CertificateDAOImpl.sessionFactory.
+.PP
+.nf
+                                                           {
+                log.debug('removing UserInfo instance');
+                try {
+                        Session session = sessionFactory.getCurrentSession();
+                        session.delete(persistentInstance);
+                        log.debug('remove successful');
+                } catch (RuntimeException re) {
+                        log.error('remove failed', re);
+                        throw re;
+                }
+        }
+.fi
+.SS "void portal.registration.dao.CertificateDAOImpl.edit (\fBCertificate\fPcertificate)"
+.PP
+Implements \fBportal.registration.dao.CertificateDAO\fP.
+.PP
+Definition at line 83 of file CertificateDAOImpl.java.
+.PP
+References portal.registration.domain.Certificate.getCaonline(), portal.registration.domain.Certificate.getExpirationDate(), portal.registration.domain.Certificate.getIdCert(), portal.registration.domain.Certificate.getIssuer(), portal.registration.domain.Certificate.getPrimaryCert(), portal.registration.domain.Certificate.getSubject(), portal.registration.domain.Certificate.getUserInfo(), portal.registration.domain.Certificate.getUsernameCert(), portal.registration.dao.CertificateDAOImpl.log, portal.registration.dao.CertificateDAOImpl.sessionFactory, portal.registration.domain.Certificate.setCaonline(), portal.registration.domain.Certificate.setExpirationDate(), portal.registration.domain.Certificate.setIssuer(), portal.registration.domain.Certificate.setPrimaryCert(), portal.registration.domain.Certificate.setSubject(), portal.registration.domain.Certificate.setUserInfo(), and portal.registration.domain.Certificate.setUsernameCert().
+.PP
+.nf
+                                                  {
+                log.debug('Editing existing certificate');
+
+                // Retrieve session from Hibernate
+                Session session = sessionFactory.getCurrentSession();
+
+                // Retrieve existing userInfo via id
+                Certificate existingCertificate = (Certificate) session.get(
+                                Certificate.class, certificate.getIdCert());
+
+                // Assign updated values to this userInfo
+                existingCertificate.setCaonline(certificate.getCaonline());
+                existingCertificate.setExpirationDate(certificate.getExpirationDate());
+                existingCertificate.setIssuer(certificate.getIssuer());
+                existingCertificate.setPrimaryCert(certificate.getPrimaryCert());
+                existingCertificate.setSubject(certificate.getSubject());
+                existingCertificate.setUserInfo(certificate.getUserInfo());
+                existingCertificate.setUsernameCert(certificate.getUsernameCert());
+
+                // Save updates
+                session.save(existingCertificate);
+
+        }
+.fi
+.SS "List<\fBCertificate\fP> portal.registration.dao.CertificateDAOImpl.findById (\fBUserInfo\fPuserInfo)"
+.PP
+Implements \fBportal.registration.dao.CertificateDAO\fP.
+.PP
+Definition at line 64 of file CertificateDAOImpl.java.
+.PP
+References portal.registration.dao.CertificateDAOImpl.log, and portal.registration.dao.CertificateDAOImpl.sessionFactory.
+.PP
+.nf
+                                                             {
+                log.debug('getting all Certificate instance of user');
+                try {
+
+                        Session session = sessionFactory.getCurrentSession();
+
+                        // Create a Hibernate query (HQL)
+                        Query query = session
+                                        .createQuery('FROM  Certificate WHERE userId = '
+                                                        + userInfo.getUserId());
+
+                        // Retrieve all
+                        return query.list();
+                } catch (RuntimeException re) {
+                        log.error('get failed', re);
+                        throw re;
+                }
+        }
+.fi
+.SS "\fBCertificate\fP portal.registration.dao.CertificateDAOImpl.findById (Integerid)"
+.PP
+Implements \fBportal.registration.dao.CertificateDAO\fP.
+.PP
+Definition at line 49 of file CertificateDAOImpl.java.
+.PP
+References portal.registration.dao.CertificateDAOImpl.log, and portal.registration.dao.CertificateDAOImpl.sessionFactory.
+.PP
+.nf
+                                                {
+                log.debug('getting Certificate instance with id: ' + id);
+                try {
+                        Session session = sessionFactory.getCurrentSession();
+                        Certificate instance = (Certificate) session.get(Certificate.class,
+                                        id);
+                        log.debug('get successful');
+                        return instance;
+                } catch (RuntimeException re) {
+                        log.error('get failed', re);
+                        throw re;
+                }
+        }
+.fi
+.SS "Integer portal.registration.dao.CertificateDAOImpl.save (\fBCertificate\fPtransientInstance)"
+.PP
+Implements \fBportal.registration.dao.CertificateDAO\fP.
+.PP
+Definition at line 24 of file CertificateDAOImpl.java.
+.PP
+References portal.registration.dao.CertificateDAOImpl.log, and portal.registration.dao.CertificateDAOImpl.sessionFactory.
+.PP
+.nf
+                                                           {
+                log.debug('persisting UserInfo instance');
+                try {
+                        Session session = sessionFactory.getCurrentSession();
+                        int id = (Integer) session.save(transientInstance);
+                        log.debug('persist successful');
+                        return id;
+                } catch (RuntimeException re) {
+                        log.error('persist failed', re);
+                        throw re;
+                }
+        }
+.fi
+.SH "Member Data Documentation"
+.PP 
+.SS "final Logger \fBportal.registration.dao.CertificateDAOImpl.log\fP\fC [static, private]\fP"\fBInitial value:\fP
+.PP
+.nf
+ Logger
+                        .getLogger(CertificateDAOImpl.class)
+.fi
+.PP
+Definition at line 18 of file CertificateDAOImpl.java.
+.PP
+Referenced by portal.registration.dao.CertificateDAOImpl.delete(), portal.registration.dao.CertificateDAOImpl.edit(), portal.registration.dao.CertificateDAOImpl.findById(), and portal.registration.dao.CertificateDAOImpl.save().
+.SS "SessionFactory \fBportal.registration.dao.CertificateDAOImpl.sessionFactory\fP\fC [private]\fP"
+.PP
+Definition at line 22 of file CertificateDAOImpl.java.
+.PP
+Referenced by portal.registration.dao.CertificateDAOImpl.delete(), portal.registration.dao.CertificateDAOImpl.edit(), portal.registration.dao.CertificateDAOImpl.findById(), and portal.registration.dao.CertificateDAOImpl.save().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Registration from the source code.

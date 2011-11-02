@@ -1,0 +1,278 @@
+\hypertarget{classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl}{
+\section{portal.registration.dao.UserInfoDAOImpl Class Reference}
+\label{classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl}\index{portal::registration::dao::UserInfoDAOImpl@{portal::registration::dao::UserInfoDAOImpl}}
+}
+
+
+Inheritance diagram for portal.registration.dao.UserInfoDAOImpl:
+
+
+Collaboration diagram for portal.registration.dao.UserInfoDAOImpl:
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Integer \hyperlink{classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_a3f31f85a673a72d80ac5fa47455c9fe2}{save} (\hyperlink{classportal_1_1registration_1_1domain_1_1UserInfo}{UserInfo} transientInstance)
+\item 
+void \hyperlink{classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_ab4b1070c7b7aa5dc7603998d387f9bff}{delete} (\hyperlink{classportal_1_1registration_1_1domain_1_1UserInfo}{UserInfo} persistentInstance)
+\item 
+\hyperlink{classportal_1_1registration_1_1domain_1_1UserInfo}{UserInfo} \hyperlink{classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_a30e4af0130b4f3f275cf0f7d75380975}{findById} (Integer id)
+\item 
+List$<$ \hyperlink{classportal_1_1registration_1_1domain_1_1UserInfo}{UserInfo} $>$ \hyperlink{classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_a0eaa3d897fdf2c63c4a18c03e6089c95}{getAllUserInfo} ()
+\item 
+void \hyperlink{classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_aee85fd8c887f40d7d6e0ebcb51ba68e2}{edit} (\hyperlink{classportal_1_1registration_1_1domain_1_1UserInfo}{UserInfo} userInfo)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+SessionFactory \hyperlink{classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_adf05657df384ecaac7c13700eae7fd9e}{sessionFactory}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static final Logger \hyperlink{classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_a8538048dabb08e33db0ab72827bb0e9a}{log} = Logger.getLogger(UserInfoDAOImpl.class)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 15 of file UserInfoDAOImpl.java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_ab4b1070c7b7aa5dc7603998d387f9bff}{
+\index{portal::registration::dao::UserInfoDAOImpl@{portal::registration::dao::UserInfoDAOImpl}!delete@{delete}}
+\index{delete@{delete}!portal::registration::dao::UserInfoDAOImpl@{portal::registration::dao::UserInfoDAOImpl}}
+\subsubsection[{delete}]{\setlength{\rightskip}{0pt plus 5cm}void portal.registration.dao.UserInfoDAOImpl.delete (
+\begin{DoxyParamCaption}
+\item[{{\bf UserInfo}}]{persistentInstance}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_ab4b1070c7b7aa5dc7603998d387f9bff}
+
+
+Implements \hyperlink{interfaceportal_1_1registration_1_1dao_1_1UserInfoDAO_a06a993e6dc5cfa6e0ea1e6e89236172f}{portal.registration.dao.UserInfoDAO}.
+
+
+
+Definition at line 35 of file UserInfoDAOImpl.java.
+
+
+
+References portal.registration.dao.UserInfoDAOImpl.log, and portal.registration.dao.UserInfoDAOImpl.sessionFactory.
+
+
+\begin{DoxyCode}
+                                                        {
+                log.debug("removing UserInfo instance");
+                try {
+                        Session session = sessionFactory.getCurrentSession();
+                        session.delete(persistentInstance);
+                        log.debug("remove successful");
+                } catch (RuntimeException re) {
+                        log.error("remove failed", re);
+                        throw re;
+                }
+        }
+\end{DoxyCode}
+\hypertarget{classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_aee85fd8c887f40d7d6e0ebcb51ba68e2}{
+\index{portal::registration::dao::UserInfoDAOImpl@{portal::registration::dao::UserInfoDAOImpl}!edit@{edit}}
+\index{edit@{edit}!portal::registration::dao::UserInfoDAOImpl@{portal::registration::dao::UserInfoDAOImpl}}
+\subsubsection[{edit}]{\setlength{\rightskip}{0pt plus 5cm}void portal.registration.dao.UserInfoDAOImpl.edit (
+\begin{DoxyParamCaption}
+\item[{{\bf UserInfo}}]{userInfo}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_aee85fd8c887f40d7d6e0ebcb51ba68e2}
+
+
+Implements \hyperlink{interfaceportal_1_1registration_1_1dao_1_1UserInfoDAO_a498f8f18418dfe7969424259454efb71}{portal.registration.dao.UserInfoDAO}.
+
+
+
+Definition at line 78 of file UserInfoDAOImpl.java.
+
+
+
+References portal.registration.domain.UserInfo.getFirstName(), portal.registration.domain.UserInfo.getInstitute(), portal.registration.domain.UserInfo.getLastName(), portal.registration.domain.UserInfo.getMail(), portal.registration.domain.UserInfo.getPhone(), portal.registration.domain.UserInfo.getUserId(), portal.registration.domain.UserInfo.getUsername(), portal.registration.dao.UserInfoDAOImpl.log, portal.registration.dao.UserInfoDAOImpl.sessionFactory, portal.registration.domain.UserInfo.setFirstName(), portal.registration.domain.UserInfo.setInstitute(), portal.registration.domain.UserInfo.setLastName(), portal.registration.domain.UserInfo.setMail(), portal.registration.domain.UserInfo.setPhone(), portal.registration.domain.UserInfo.setRegistrationComplete(), and portal.registration.domain.UserInfo.setUsername().
+
+
+\begin{DoxyCode}
+                                            {
+                log.debug("Editing existing userInfo");
+
+                // Retrieve session from Hibernate
+                Session session = sessionFactory.getCurrentSession();
+
+                // Retrieve existing userInfo via id
+                UserInfo existingUserInfo = (UserInfo) session.get(UserInfo.class
+      ,
+                                userInfo.getUserId());
+
+                // Assign updated values to this userInfo
+                existingUserInfo.setFirstName(userInfo.getFirstName());
+                existingUserInfo.setLastName(userInfo.getLastName());
+                existingUserInfo.setInstitute(userInfo.getInstitute());
+                existingUserInfo.setPhone(userInfo.getPhone());
+                existingUserInfo.setMail(userInfo.getMail());
+                existingUserInfo.setUsername(userInfo.getUsername());
+                existingUserInfo.setRegistrationComplete(userInfo
+                                .getRegistrationComplete());
+
+                // Save updates
+                session.save(existingUserInfo);
+        }
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+
+
+\hypertarget{classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_a30e4af0130b4f3f275cf0f7d75380975}{
+\index{portal::registration::dao::UserInfoDAOImpl@{portal::registration::dao::UserInfoDAOImpl}!findById@{findById}}
+\index{findById@{findById}!portal::registration::dao::UserInfoDAOImpl@{portal::registration::dao::UserInfoDAOImpl}}
+\subsubsection[{findById}]{\setlength{\rightskip}{0pt plus 5cm}{\bf UserInfo} portal.registration.dao.UserInfoDAOImpl.findById (
+\begin{DoxyParamCaption}
+\item[{Integer}]{id}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_a30e4af0130b4f3f275cf0f7d75380975}
+
+
+Implements \hyperlink{interfaceportal_1_1registration_1_1dao_1_1UserInfoDAO_a6ae6399cb2791e189e16ab3633df360e}{portal.registration.dao.UserInfoDAO}.
+
+
+
+Definition at line 47 of file UserInfoDAOImpl.java.
+
+
+
+References portal.registration.dao.UserInfoDAOImpl.log, and portal.registration.dao.UserInfoDAOImpl.sessionFactory.
+
+
+\begin{DoxyCode}
+                                             {
+                log.debug("getting UserInfo instance with id: " + id);
+                try {
+                        Session session = sessionFactory.getCurrentSession();
+                        UserInfo instance = (UserInfo) session.get(UserInfo.class
+      , id);
+                        log.debug("get successful");
+                        return instance;
+                } catch (RuntimeException re) {
+                        log.error("get failed", re);
+                        throw re;
+                }
+        }
+\end{DoxyCode}
+\hypertarget{classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_a0eaa3d897fdf2c63c4a18c03e6089c95}{
+\index{portal::registration::dao::UserInfoDAOImpl@{portal::registration::dao::UserInfoDAOImpl}!getAllUserInfo@{getAllUserInfo}}
+\index{getAllUserInfo@{getAllUserInfo}!portal::registration::dao::UserInfoDAOImpl@{portal::registration::dao::UserInfoDAOImpl}}
+\subsubsection[{getAllUserInfo}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf UserInfo}$>$ portal.registration.dao.UserInfoDAOImpl.getAllUserInfo (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_a0eaa3d897fdf2c63c4a18c03e6089c95}
+
+
+Implements \hyperlink{interfaceportal_1_1registration_1_1dao_1_1UserInfoDAO_a6645e9b35b21d5ccd5f3f5baea8a5b27}{portal.registration.dao.UserInfoDAO}.
+
+
+
+Definition at line 61 of file UserInfoDAOImpl.java.
+
+
+
+References portal.registration.dao.UserInfoDAOImpl.log, and portal.registration.dao.UserInfoDAOImpl.sessionFactory.
+
+
+\begin{DoxyCode}
+                                               {
+                log.debug("getting all UserInfo instance");
+                try {
+
+                        Session session = sessionFactory.getCurrentSession();
+
+                        // Create a Hibernate query (HQL)
+                        Query query = session.createQuery("FROM  UserInfo");
+
+                        // Retrieve all
+                        return query.list();
+                } catch (RuntimeException re) {
+                        log.error("get failed", re);
+                        throw re;
+                }
+        }
+\end{DoxyCode}
+\hypertarget{classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_a3f31f85a673a72d80ac5fa47455c9fe2}{
+\index{portal::registration::dao::UserInfoDAOImpl@{portal::registration::dao::UserInfoDAOImpl}!save@{save}}
+\index{save@{save}!portal::registration::dao::UserInfoDAOImpl@{portal::registration::dao::UserInfoDAOImpl}}
+\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}Integer portal.registration.dao.UserInfoDAOImpl.save (
+\begin{DoxyParamCaption}
+\item[{{\bf UserInfo}}]{transientInstance}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_a3f31f85a673a72d80ac5fa47455c9fe2}
+
+
+Implements \hyperlink{interfaceportal_1_1registration_1_1dao_1_1UserInfoDAO_ab4af4547afb3bd184da2de4bfefdc47b}{portal.registration.dao.UserInfoDAO}.
+
+
+
+Definition at line 22 of file UserInfoDAOImpl.java.
+
+
+
+References portal.registration.dao.UserInfoDAOImpl.log, and portal.registration.dao.UserInfoDAOImpl.sessionFactory.
+
+
+\begin{DoxyCode}
+                                                        {
+                log.debug("persisting UserInfo instance");
+                try {
+                        Session session = sessionFactory.getCurrentSession();
+                        int id = (Integer) session.save(transientInstance);
+                        log.debug("persist successful");
+                        return id;
+                } catch (RuntimeException re) {
+                        log.error("persist failed", re);
+                        throw re;
+                }
+        }
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_a8538048dabb08e33db0ab72827bb0e9a}{
+\index{portal::registration::dao::UserInfoDAOImpl@{portal::registration::dao::UserInfoDAOImpl}!log@{log}}
+\index{log@{log}!portal::registration::dao::UserInfoDAOImpl@{portal::registration::dao::UserInfoDAOImpl}}
+\subsubsection[{log}]{\setlength{\rightskip}{0pt plus 5cm}final Logger {\bf portal.registration.dao.UserInfoDAOImpl.log} = Logger.getLogger(UserInfoDAOImpl.class)\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_a8538048dabb08e33db0ab72827bb0e9a}
+
+
+Definition at line 17 of file UserInfoDAOImpl.java.
+
+
+
+Referenced by portal.registration.dao.UserInfoDAOImpl.delete(), portal.registration.dao.UserInfoDAOImpl.edit(), portal.registration.dao.UserInfoDAOImpl.findById(), portal.registration.dao.UserInfoDAOImpl.getAllUserInfo(), and portal.registration.dao.UserInfoDAOImpl.save().
+
+\hypertarget{classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_adf05657df384ecaac7c13700eae7fd9e}{
+\index{portal::registration::dao::UserInfoDAOImpl@{portal::registration::dao::UserInfoDAOImpl}!sessionFactory@{sessionFactory}}
+\index{sessionFactory@{sessionFactory}!portal::registration::dao::UserInfoDAOImpl@{portal::registration::dao::UserInfoDAOImpl}}
+\subsubsection[{sessionFactory}]{\setlength{\rightskip}{0pt plus 5cm}SessionFactory {\bf portal.registration.dao.UserInfoDAOImpl.sessionFactory}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_adf05657df384ecaac7c13700eae7fd9e}
+
+
+Definition at line 20 of file UserInfoDAOImpl.java.
+
+
+
+Referenced by portal.registration.dao.UserInfoDAOImpl.delete(), portal.registration.dao.UserInfoDAOImpl.edit(), portal.registration.dao.UserInfoDAOImpl.findById(), portal.registration.dao.UserInfoDAOImpl.getAllUserInfo(), and portal.registration.dao.UserInfoDAOImpl.save().
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/dao/\hyperlink{UserInfoDAOImpl_8java}{UserInfoDAOImpl.java}\end{DoxyCompactItemize}

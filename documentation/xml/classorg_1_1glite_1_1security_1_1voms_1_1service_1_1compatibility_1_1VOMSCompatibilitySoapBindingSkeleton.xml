@@ -1,0 +1,284 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilitySoapBindingSkeleton" kind="class" prot="public">
+    <compoundname>org::glite::security::voms::service::compatibility::VOMSCompatibilitySoapBindingSkeleton</compoundname>
+    <basecompoundref refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibility" prot="public" virt="non-virtual">org.glite.security.voms.service.compatibility.VOMSCompatibility</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilitySoapBindingSkeleton_1a36ff3050b5c95f7655bd883de30eaaca" prot="private" static="no" mutable="no">
+        <type><ref refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibility" kindref="compound">org.glite.security.voms.service.compatibility.VOMSCompatibility</ref></type>
+        <definition>org.glite.security.voms.service.compatibility.VOMSCompatibility org.glite.security.voms.service.compatibility.VOMSCompatibilitySoapBindingSkeleton.impl</definition>
+        <argsstring></argsstring>
+        <name>impl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/compatibility/VOMSCompatibilitySoapBindingSkeleton.java" line="11" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/compatibility/VOMSCompatibilitySoapBindingSkeleton.java" bodystart="11" bodyend="-1"/>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilitySoapBindingSkeleton_1a81810a865aecfeda9f03f3d79a937b04" compoundref="VOMSCompatibilitySoapBindingSkeleton_8java" startline="128" endline="132">org.glite.security.voms.service.compatibility.VOMSCompatibilitySoapBindingSkeleton::getGridmapUsers</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilitySoapBindingSkeleton_1a7a8549ce72ec15b323f2648ae3b1853e" compoundref="VOMSCompatibilitySoapBindingSkeleton_8java" startline="110" endline="114">org.glite.security.voms.service.compatibility.VOMSCompatibilitySoapBindingSkeleton::getMajorVersionNumber</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilitySoapBindingSkeleton_1ac97f2c8961f2adfeb6a537a044174656" compoundref="VOMSCompatibilitySoapBindingSkeleton_8java" startline="116" endline="120">org.glite.security.voms.service.compatibility.VOMSCompatibilitySoapBindingSkeleton::getMinorVersionNumber</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilitySoapBindingSkeleton_1a3f3241b77d95d0eb0d7e7043f9a6502f" compoundref="VOMSCompatibilitySoapBindingSkeleton_8java" startline="122" endline="126">org.glite.security.voms.service.compatibility.VOMSCompatibilitySoapBindingSkeleton::getPatchVersionNumber</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilitySoapBindingSkeleton_1a49acf4746f43aa53a43c6427bb950417" compoundref="VOMSCompatibilitySoapBindingSkeleton_8java" startline="103" endline="105">org.glite.security.voms.service.compatibility.VOMSCompatibilitySoapBindingSkeleton::VOMSCompatibilitySoapBindingSkeleton</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilitySoapBindingSkeleton_1a64389624da6e025d110bdf5b8494820b" prot="private" static="yes" mutable="no">
+        <type>java.util.Map</type>
+        <definition>java.util.Map org.glite.security.voms.service.compatibility.VOMSCompatibilitySoapBindingSkeleton._myOperations</definition>
+        <argsstring></argsstring>
+        <name>_myOperations</name>
+        <initializer> new java.util.Hashtable()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/compatibility/VOMSCompatibilitySoapBindingSkeleton.java" line="12" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/compatibility/VOMSCompatibilitySoapBindingSkeleton.java" bodystart="12" bodyend="-1"/>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilitySoapBindingSkeleton_1afb681a779abae3604d374419e7fba672" compoundref="VOMSCompatibilitySoapBindingSkeleton_8java" startline="18" endline="20">org.glite.security.voms.service.compatibility.VOMSCompatibilitySoapBindingSkeleton::getOperationDescByName</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilitySoapBindingSkeleton_1ac973db4cd89cadbb48c3fd8179b575c4" prot="private" static="yes" mutable="no">
+        <type>java.util.Collection</type>
+        <definition>java.util.Collection org.glite.security.voms.service.compatibility.VOMSCompatibilitySoapBindingSkeleton._myOperationsList</definition>
+        <argsstring></argsstring>
+        <name>_myOperationsList</name>
+        <initializer> new java.util.ArrayList()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/compatibility/VOMSCompatibilitySoapBindingSkeleton.java" line="13" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/compatibility/VOMSCompatibilitySoapBindingSkeleton.java" bodystart="13" bodyend="-1"/>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilitySoapBindingSkeleton_1aa144d5583f0d8b7e0e64ad2af8008061" compoundref="VOMSCompatibilitySoapBindingSkeleton_8java" startline="25" endline="27">org.glite.security.voms.service.compatibility.VOMSCompatibilitySoapBindingSkeleton::getOperationDescs</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilitySoapBindingSkeleton_1afb681a779abae3604d374419e7fba672" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>java.util.List</type>
+        <definition>static java.util.List org.glite.security.voms.service.compatibility.VOMSCompatibilitySoapBindingSkeleton.getOperationDescByName</definition>
+        <argsstring>(java.lang.String methodName)</argsstring>
+        <name>getOperationDescByName</name>
+        <param>
+          <type>java.lang.String</type>
+          <declname>methodName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns List of OperationDesc objects with this name </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/compatibility/VOMSCompatibilitySoapBindingSkeleton.java" line="18" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/compatibility/VOMSCompatibilitySoapBindingSkeleton.java" bodystart="18" bodyend="20"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilitySoapBindingSkeleton_1a64389624da6e025d110bdf5b8494820b" compoundref="VOMSCompatibilitySoapBindingSkeleton_8java" startline="12">org.glite.security.voms.service.compatibility.VOMSCompatibilitySoapBindingSkeleton::_myOperations</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilitySoapBindingSkeleton_1aa144d5583f0d8b7e0e64ad2af8008061" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>java.util.Collection</type>
+        <definition>static java.util.Collection org.glite.security.voms.service.compatibility.VOMSCompatibilitySoapBindingSkeleton.getOperationDescs</definition>
+        <argsstring>()</argsstring>
+        <name>getOperationDescs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns Collection of OperationDescs </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/compatibility/VOMSCompatibilitySoapBindingSkeleton.java" line="25" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/compatibility/VOMSCompatibilitySoapBindingSkeleton.java" bodystart="25" bodyend="27"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilitySoapBindingSkeleton_1ac973db4cd89cadbb48c3fd8179b575c4" compoundref="VOMSCompatibilitySoapBindingSkeleton_8java" startline="13">org.glite.security.voms.service.compatibility.VOMSCompatibilitySoapBindingSkeleton::_myOperationsList</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="package-static-func">
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilitySoapBindingSkeleton_1a2e0c826c513bc12f8b338ea3e2ad7473" prot="package" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>org.glite.security.voms.service.compatibility.VOMSCompatibilitySoapBindingSkeleton.[static initializer]</definition>
+        <argsstring></argsstring>
+        <name>[static initializer]</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/compatibility/VOMSCompatibilitySoapBindingSkeleton.java" line="29"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilitySoapBindingSkeleton_1a49acf4746f43aa53a43c6427bb950417" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>org.glite.security.voms.service.compatibility.VOMSCompatibilitySoapBindingSkeleton.VOMSCompatibilitySoapBindingSkeleton</definition>
+        <argsstring>()</argsstring>
+        <name>VOMSCompatibilitySoapBindingSkeleton</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/compatibility/VOMSCompatibilitySoapBindingSkeleton.java" line="103" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/compatibility/VOMSCompatibilitySoapBindingSkeleton.java" bodystart="103" bodyend="105"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilitySoapBindingSkeleton_1a36ff3050b5c95f7655bd883de30eaaca" compoundref="VOMSCompatibilitySoapBindingSkeleton_8java" startline="11">org.glite.security.voms.service.compatibility.VOMSCompatibilitySoapBindingSkeleton::impl</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilitySoapBindingSkeleton_1a3270d154b58ade976e267c54c891abf3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>org.glite.security.voms.service.compatibility.VOMSCompatibilitySoapBindingSkeleton.VOMSCompatibilitySoapBindingSkeleton</definition>
+        <argsstring>(org.glite.security.voms.service.compatibility.VOMSCompatibility impl)</argsstring>
+        <name>VOMSCompatibilitySoapBindingSkeleton</name>
+        <param>
+          <type><ref refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibility" kindref="compound">org.glite.security.voms.service.compatibility.VOMSCompatibility</ref></type>
+          <declname>impl</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/compatibility/VOMSCompatibilitySoapBindingSkeleton.java" line="107" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/compatibility/VOMSCompatibilitySoapBindingSkeleton.java" bodystart="107" bodyend="109"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilitySoapBindingSkeleton_1a36ff3050b5c95f7655bd883de30eaaca" compoundref="VOMSCompatibilitySoapBindingSkeleton_8java" startline="11">org.glite.security.voms.service.compatibility.VOMSCompatibilitySoapBindingSkeleton::impl</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilitySoapBindingSkeleton_1a7a8549ce72ec15b323f2648ae3b1853e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int org.glite.security.voms.service.compatibility.VOMSCompatibilitySoapBindingSkeleton.getMajorVersionNumber</definition>
+        <argsstring>()</argsstring>
+        <name>getMajorVersionNumber</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibility_1ad866bec0d64199b35c2ecb629fe8134b">getMajorVersionNumber</reimplements>
+        <exceptions> throws java.rmi.RemoteException     </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/compatibility/VOMSCompatibilitySoapBindingSkeleton.java" line="111" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/compatibility/VOMSCompatibilitySoapBindingSkeleton.java" bodystart="110" bodyend="114"/>
+        <references refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibility_1ad866bec0d64199b35c2ecb629fe8134b">org.glite.security.voms.service.compatibility.VOMSCompatibility::getMajorVersionNumber</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilitySoapBindingSkeleton_1a36ff3050b5c95f7655bd883de30eaaca" compoundref="VOMSCompatibilitySoapBindingSkeleton_8java" startline="11">org.glite.security.voms.service.compatibility.VOMSCompatibilitySoapBindingSkeleton::impl</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilitySoapBindingSkeleton_1ac97f2c8961f2adfeb6a537a044174656" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int org.glite.security.voms.service.compatibility.VOMSCompatibilitySoapBindingSkeleton.getMinorVersionNumber</definition>
+        <argsstring>()</argsstring>
+        <name>getMinorVersionNumber</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibility_1a2759a869cf27dfdf9b475d95c3b001c8">getMinorVersionNumber</reimplements>
+        <exceptions> throws java.rmi.RemoteException     </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/compatibility/VOMSCompatibilitySoapBindingSkeleton.java" line="117" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/compatibility/VOMSCompatibilitySoapBindingSkeleton.java" bodystart="116" bodyend="120"/>
+        <references refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibility_1a2759a869cf27dfdf9b475d95c3b001c8">org.glite.security.voms.service.compatibility.VOMSCompatibility::getMinorVersionNumber</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilitySoapBindingSkeleton_1a36ff3050b5c95f7655bd883de30eaaca" compoundref="VOMSCompatibilitySoapBindingSkeleton_8java" startline="11">org.glite.security.voms.service.compatibility.VOMSCompatibilitySoapBindingSkeleton::impl</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilitySoapBindingSkeleton_1a3f3241b77d95d0eb0d7e7043f9a6502f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int org.glite.security.voms.service.compatibility.VOMSCompatibilitySoapBindingSkeleton.getPatchVersionNumber</definition>
+        <argsstring>()</argsstring>
+        <name>getPatchVersionNumber</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibility_1ae44bf014fa2a1f2a6b1aabb29e393a04">getPatchVersionNumber</reimplements>
+        <exceptions> throws java.rmi.RemoteException     </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/compatibility/VOMSCompatibilitySoapBindingSkeleton.java" line="123" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/compatibility/VOMSCompatibilitySoapBindingSkeleton.java" bodystart="122" bodyend="126"/>
+        <references refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibility_1ae44bf014fa2a1f2a6b1aabb29e393a04">org.glite.security.voms.service.compatibility.VOMSCompatibility::getPatchVersionNumber</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilitySoapBindingSkeleton_1a36ff3050b5c95f7655bd883de30eaaca" compoundref="VOMSCompatibilitySoapBindingSkeleton_8java" startline="11">org.glite.security.voms.service.compatibility.VOMSCompatibilitySoapBindingSkeleton::impl</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilitySoapBindingSkeleton_1a81810a865aecfeda9f03f3d79a937b04" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>java.lang.String[]</type>
+        <definition>java.lang.String [] org.glite.security.voms.service.compatibility.VOMSCompatibilitySoapBindingSkeleton.getGridmapUsers</definition>
+        <argsstring>()</argsstring>
+        <name>getGridmapUsers</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibility_1a5785760300214415198b4821a543a2a6">getGridmapUsers</reimplements>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref>     </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/compatibility/VOMSCompatibilitySoapBindingSkeleton.java" line="129" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/compatibility/VOMSCompatibilitySoapBindingSkeleton.java" bodystart="128" bodyend="132"/>
+        <references refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibility_1a5785760300214415198b4821a543a2a6">org.glite.security.voms.service.compatibility.VOMSCompatibility::getGridmapUsers</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilitySoapBindingSkeleton_1a36ff3050b5c95f7655bd883de30eaaca" compoundref="VOMSCompatibilitySoapBindingSkeleton_8java" startline="11">org.glite.security.voms.service.compatibility.VOMSCompatibilitySoapBindingSkeleton::impl</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilitySoapBindingSkeleton_1a3f14aac54dbfe5b8fb196abe51891231" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>java.lang.String[]</type>
+        <definition>java.lang.String [] org.glite.security.voms.service.compatibility.VOMSCompatibilitySoapBindingSkeleton.getGridmapUsers</definition>
+        <argsstring>(java.lang.String in0)</argsstring>
+        <name>getGridmapUsers</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibility_1ade2796b915bb691c9a5e137e8a590b50">getGridmapUsers</reimplements>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in0</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref>     </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/compatibility/VOMSCompatibilitySoapBindingSkeleton.java" line="135" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/compatibility/VOMSCompatibilitySoapBindingSkeleton.java" bodystart="134" bodyend="138"/>
+        <references refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibility_1a5785760300214415198b4821a543a2a6">org.glite.security.voms.service.compatibility.VOMSCompatibility::getGridmapUsers</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilitySoapBindingSkeleton_1a36ff3050b5c95f7655bd883de30eaaca" compoundref="VOMSCompatibilitySoapBindingSkeleton_8java" startline="11">org.glite.security.voms.service.compatibility.VOMSCompatibilitySoapBindingSkeleton::impl</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="767">
+        <label>org.glite.security.voms.service.compatibility.VOMSCompatibility</label>
+        <link refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibility"/>
+      </node>
+      <node id="766">
+        <label>org.glite.security.voms.service.compatibility.VOMSCompatibilitySoapBindingSkeleton</label>
+        <link refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilitySoapBindingSkeleton"/>
+        <childnode refid="767" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="769">
+        <label>org.glite.security.voms.service.compatibility.VOMSCompatibility</label>
+        <link refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibility"/>
+      </node>
+      <node id="770">
+        <label>Map</label>
+      </node>
+      <node id="768">
+        <label>org.glite.security.voms.service.compatibility.VOMSCompatibilitySoapBindingSkeleton</label>
+        <link refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilitySoapBindingSkeleton"/>
+        <childnode refid="769" relation="public-inheritance">
+        </childnode>
+        <childnode refid="769" relation="usage">
+          <edgelabel>impl</edgelabel>
+        </childnode>
+        <childnode refid="770" relation="usage">
+          <edgelabel>_myOperations</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/compatibility/VOMSCompatibilitySoapBindingSkeleton.java" line="10" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/compatibility/VOMSCompatibilitySoapBindingSkeleton.java" bodystart="10" bodyend="140"/>
+    <listofallmembers>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilitySoapBindingSkeleton_1a2e0c826c513bc12f8b338ea3e2ad7473" prot="package" virt="non-virtual"><scope>org::glite::security::voms::service::compatibility::VOMSCompatibilitySoapBindingSkeleton</scope><name>[static initializer]</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilitySoapBindingSkeleton_1a64389624da6e025d110bdf5b8494820b" prot="private" virt="non-virtual"><scope>org::glite::security::voms::service::compatibility::VOMSCompatibilitySoapBindingSkeleton</scope><name>_myOperations</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilitySoapBindingSkeleton_1ac973db4cd89cadbb48c3fd8179b575c4" prot="private" virt="non-virtual"><scope>org::glite::security::voms::service::compatibility::VOMSCompatibilitySoapBindingSkeleton</scope><name>_myOperationsList</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilitySoapBindingSkeleton_1a81810a865aecfeda9f03f3d79a937b04" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::compatibility::VOMSCompatibilitySoapBindingSkeleton</scope><name>getGridmapUsers</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilitySoapBindingSkeleton_1a3f14aac54dbfe5b8fb196abe51891231" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::compatibility::VOMSCompatibilitySoapBindingSkeleton</scope><name>getGridmapUsers</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilitySoapBindingSkeleton_1a7a8549ce72ec15b323f2648ae3b1853e" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::compatibility::VOMSCompatibilitySoapBindingSkeleton</scope><name>getMajorVersionNumber</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilitySoapBindingSkeleton_1ac97f2c8961f2adfeb6a537a044174656" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::compatibility::VOMSCompatibilitySoapBindingSkeleton</scope><name>getMinorVersionNumber</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilitySoapBindingSkeleton_1afb681a779abae3604d374419e7fba672" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::compatibility::VOMSCompatibilitySoapBindingSkeleton</scope><name>getOperationDescByName</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilitySoapBindingSkeleton_1aa144d5583f0d8b7e0e64ad2af8008061" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::compatibility::VOMSCompatibilitySoapBindingSkeleton</scope><name>getOperationDescs</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilitySoapBindingSkeleton_1a3f3241b77d95d0eb0d7e7043f9a6502f" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::compatibility::VOMSCompatibilitySoapBindingSkeleton</scope><name>getPatchVersionNumber</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilitySoapBindingSkeleton_1a36ff3050b5c95f7655bd883de30eaaca" prot="private" virt="non-virtual"><scope>org::glite::security::voms::service::compatibility::VOMSCompatibilitySoapBindingSkeleton</scope><name>impl</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilitySoapBindingSkeleton_1a49acf4746f43aa53a43c6427bb950417" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::compatibility::VOMSCompatibilitySoapBindingSkeleton</scope><name>VOMSCompatibilitySoapBindingSkeleton</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilitySoapBindingSkeleton_1a3270d154b58ade976e267c54c891abf3" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::compatibility::VOMSCompatibilitySoapBindingSkeleton</scope><name>VOMSCompatibilitySoapBindingSkeleton</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

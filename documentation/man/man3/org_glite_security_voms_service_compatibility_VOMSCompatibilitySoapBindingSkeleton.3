@@ -1,0 +1,212 @@
+.TH "org::glite::security::voms::service::compatibility::VOMSCompatibilitySoapBindingSkeleton" 3 "Wed Jul 13 2011" "Version 4" "Registration" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+org::glite::security::voms::service::compatibility::VOMSCompatibilitySoapBindingSkeleton \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBorg.glite.security.voms.service.compatibility.VOMSCompatibility\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBVOMSCompatibilitySoapBindingSkeleton\fP ()"
+.br
+.ti -1c
+.RI "\fBVOMSCompatibilitySoapBindingSkeleton\fP (\fBorg.glite.security.voms.service.compatibility.VOMSCompatibility\fP \fBimpl\fP)"
+.br
+.ti -1c
+.RI "int \fBgetMajorVersionNumber\fP ()  throws java.rmi.RemoteException     "
+.br
+.ti -1c
+.RI "int \fBgetMinorVersionNumber\fP ()  throws java.rmi.RemoteException     "
+.br
+.ti -1c
+.RI "int \fBgetPatchVersionNumber\fP ()  throws java.rmi.RemoteException     "
+.br
+.ti -1c
+.RI "java.lang.String[] \fBgetGridmapUsers\fP ()  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException     "
+.br
+.ti -1c
+.RI "java.lang.String[] \fBgetGridmapUsers\fP (java.lang.String in0)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException     "
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static java.util.List \fBgetOperationDescByName\fP (java.lang.String methodName)"
+.br
+.ti -1c
+.RI "static java.util.Collection \fBgetOperationDescs\fP ()"
+.br
+.in -1c
+.SS "Static Package Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB[static initializer]\fP"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBorg.glite.security.voms.service.compatibility.VOMSCompatibility\fP \fBimpl\fP"
+.br
+.in -1c
+.SS "Static Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "static java.util.Map \fB_myOperations\fP = new java.util.Hashtable()"
+.br
+.ti -1c
+.RI "static java.util.Collection \fB_myOperationsList\fP = new java.util.ArrayList()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 10 of file VOMSCompatibilitySoapBindingSkeleton.java.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "org.glite.security.voms.service.compatibility.VOMSCompatibilitySoapBindingSkeleton.VOMSCompatibilitySoapBindingSkeleton ()"
+.PP
+Definition at line 103 of file VOMSCompatibilitySoapBindingSkeleton.java.
+.PP
+References org.glite.security.voms.service.compatibility.VOMSCompatibilitySoapBindingSkeleton.impl.
+.PP
+.nf
+                                                  {
+        this.impl = new org.glite.security.voms.service.compatibility.VOMSCompatibilitySoapBindingImpl();
+    }
+.fi
+.SS "org.glite.security.voms.service.compatibility.VOMSCompatibilitySoapBindingSkeleton.VOMSCompatibilitySoapBindingSkeleton (\fBorg.glite.security.voms.service.compatibility.VOMSCompatibility\fPimpl)"
+.PP
+Definition at line 107 of file VOMSCompatibilitySoapBindingSkeleton.java.
+.PP
+References org.glite.security.voms.service.compatibility.VOMSCompatibilitySoapBindingSkeleton.impl.
+.PP
+.nf
+                                                                                                                      {
+        this.impl = impl;
+    }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "org.glite.security.voms.service.compatibility.VOMSCompatibilitySoapBindingSkeleton.[static initializer] ()\fC [static, package]\fP"
+.SS "java.lang.String [] org.glite.security.voms.service.compatibility.VOMSCompatibilitySoapBindingSkeleton.getGridmapUsers (java.lang.Stringin0)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP     "
+.PP
+Implements \fBorg.glite.security.voms.service.compatibility.VOMSCompatibility\fP.
+.PP
+Definition at line 134 of file VOMSCompatibilitySoapBindingSkeleton.java.
+.PP
+References org.glite.security.voms.service.compatibility.VOMSCompatibility.getGridmapUsers(), and org.glite.security.voms.service.compatibility.VOMSCompatibilitySoapBindingSkeleton.impl.
+.PP
+.nf
+    {
+        java.lang.String[] ret = impl.getGridmapUsers(in0);
+        return ret;
+    }
+.fi
+.SS "java.lang.String [] org.glite.security.voms.service.compatibility.VOMSCompatibilitySoapBindingSkeleton.getGridmapUsers ()  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP     "
+.PP
+Implements \fBorg.glite.security.voms.service.compatibility.VOMSCompatibility\fP.
+.PP
+Definition at line 128 of file VOMSCompatibilitySoapBindingSkeleton.java.
+.PP
+References org.glite.security.voms.service.compatibility.VOMSCompatibility.getGridmapUsers(), and org.glite.security.voms.service.compatibility.VOMSCompatibilitySoapBindingSkeleton.impl.
+.PP
+.nf
+    {
+        java.lang.String[] ret = impl.getGridmapUsers();
+        return ret;
+    }
+.fi
+.SS "int org.glite.security.voms.service.compatibility.VOMSCompatibilitySoapBindingSkeleton.getMajorVersionNumber ()  throws java.rmi.RemoteException     "
+.PP
+Implements \fBorg.glite.security.voms.service.compatibility.VOMSCompatibility\fP.
+.PP
+Definition at line 110 of file VOMSCompatibilitySoapBindingSkeleton.java.
+.PP
+References org.glite.security.voms.service.compatibility.VOMSCompatibility.getMajorVersionNumber(), and org.glite.security.voms.service.compatibility.VOMSCompatibilitySoapBindingSkeleton.impl.
+.PP
+.nf
+    {
+        int ret = impl.getMajorVersionNumber();
+        return ret;
+    }
+.fi
+.SS "int org.glite.security.voms.service.compatibility.VOMSCompatibilitySoapBindingSkeleton.getMinorVersionNumber ()  throws java.rmi.RemoteException     "
+.PP
+Implements \fBorg.glite.security.voms.service.compatibility.VOMSCompatibility\fP.
+.PP
+Definition at line 116 of file VOMSCompatibilitySoapBindingSkeleton.java.
+.PP
+References org.glite.security.voms.service.compatibility.VOMSCompatibility.getMinorVersionNumber(), and org.glite.security.voms.service.compatibility.VOMSCompatibilitySoapBindingSkeleton.impl.
+.PP
+.nf
+    {
+        int ret = impl.getMinorVersionNumber();
+        return ret;
+    }
+.fi
+.SS "static java.util.List org.glite.security.voms.service.compatibility.VOMSCompatibilitySoapBindingSkeleton.getOperationDescByName (java.lang.StringmethodName)\fC [static]\fP"Returns List of OperationDesc objects with this name 
+.PP
+Definition at line 18 of file VOMSCompatibilitySoapBindingSkeleton.java.
+.PP
+References org.glite.security.voms.service.compatibility.VOMSCompatibilitySoapBindingSkeleton._myOperations.
+.PP
+.nf
+                                                                                     {
+        return (java.util.List)_myOperations.get(methodName);
+    }
+.fi
+.SS "static java.util.Collection org.glite.security.voms.service.compatibility.VOMSCompatibilitySoapBindingSkeleton.getOperationDescs ()\fC [static]\fP"Returns Collection of OperationDescs 
+.PP
+Definition at line 25 of file VOMSCompatibilitySoapBindingSkeleton.java.
+.PP
+References org.glite.security.voms.service.compatibility.VOMSCompatibilitySoapBindingSkeleton._myOperationsList.
+.PP
+.nf
+                                                           {
+        return _myOperationsList;
+    }
+.fi
+.SS "int org.glite.security.voms.service.compatibility.VOMSCompatibilitySoapBindingSkeleton.getPatchVersionNumber ()  throws java.rmi.RemoteException     "
+.PP
+Implements \fBorg.glite.security.voms.service.compatibility.VOMSCompatibility\fP.
+.PP
+Definition at line 122 of file VOMSCompatibilitySoapBindingSkeleton.java.
+.PP
+References org.glite.security.voms.service.compatibility.VOMSCompatibility.getPatchVersionNumber(), and org.glite.security.voms.service.compatibility.VOMSCompatibilitySoapBindingSkeleton.impl.
+.PP
+.nf
+    {
+        int ret = impl.getPatchVersionNumber();
+        return ret;
+    }
+.fi
+.SH "Member Data Documentation"
+.PP 
+.SS "java.util.Map \fBorg.glite.security.voms.service.compatibility.VOMSCompatibilitySoapBindingSkeleton._myOperations\fP = new java.util.Hashtable()\fC [static, private]\fP"
+.PP
+Definition at line 12 of file VOMSCompatibilitySoapBindingSkeleton.java.
+.PP
+Referenced by org.glite.security.voms.service.compatibility.VOMSCompatibilitySoapBindingSkeleton.getOperationDescByName().
+.SS "java.util.Collection \fBorg.glite.security.voms.service.compatibility.VOMSCompatibilitySoapBindingSkeleton._myOperationsList\fP = new java.util.ArrayList()\fC [static, private]\fP"
+.PP
+Definition at line 13 of file VOMSCompatibilitySoapBindingSkeleton.java.
+.PP
+Referenced by org.glite.security.voms.service.compatibility.VOMSCompatibilitySoapBindingSkeleton.getOperationDescs().
+.SS "\fBorg.glite.security.voms.service.compatibility.VOMSCompatibility\fP \fBorg.glite.security.voms.service.compatibility.VOMSCompatibilitySoapBindingSkeleton.impl\fP\fC [private]\fP"
+.PP
+Definition at line 11 of file VOMSCompatibilitySoapBindingSkeleton.java.
+.PP
+Referenced by org.glite.security.voms.service.compatibility.VOMSCompatibilitySoapBindingSkeleton.getGridmapUsers(), org.glite.security.voms.service.compatibility.VOMSCompatibilitySoapBindingSkeleton.getMajorVersionNumber(), org.glite.security.voms.service.compatibility.VOMSCompatibilitySoapBindingSkeleton.getMinorVersionNumber(), org.glite.security.voms.service.compatibility.VOMSCompatibilitySoapBindingSkeleton.getPatchVersionNumber(), and org.glite.security.voms.service.compatibility.VOMSCompatibilitySoapBindingSkeleton.VOMSCompatibilitySoapBindingSkeleton().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Registration from the source code.

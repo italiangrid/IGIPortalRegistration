@@ -1,0 +1,196 @@
+\hypertarget{classportal_1_1registration_1_1dao_1_1VoDAOImpl}{
+\section{portal.registration.dao.VoDAOImpl Class Reference}
+\label{classportal_1_1registration_1_1dao_1_1VoDAOImpl}\index{portal::registration::dao::VoDAOImpl@{portal::registration::dao::VoDAOImpl}}
+}
+
+
+Inheritance diagram for portal.registration.dao.VoDAOImpl:
+
+
+Collaboration diagram for portal.registration.dao.VoDAOImpl:
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \hyperlink{classportal_1_1registration_1_1domain_1_1Vo}{Vo} $>$ \hyperlink{classportal_1_1registration_1_1dao_1_1VoDAOImpl_af31fcf85409b93ccae3745d57844d4e3}{getAllVo} ()
+\item 
+\hyperlink{classportal_1_1registration_1_1domain_1_1Vo}{Vo} \hyperlink{classportal_1_1registration_1_1dao_1_1VoDAOImpl_ad7e3ba1a2bb558ac86421cd941332fde}{findById} (Integer id)
+\item 
+List$<$ String $>$ \hyperlink{classportal_1_1registration_1_1dao_1_1VoDAOImpl_a835ab0538757bee251c57acf0ff1d606}{getAllDiscipline} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+SessionFactory \hyperlink{classportal_1_1registration_1_1dao_1_1VoDAOImpl_ac5ec3502e9e6c89e2545a21c355d5b9d}{sessionFactory}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static final Logger \hyperlink{classportal_1_1registration_1_1dao_1_1VoDAOImpl_aabbe1e1ee26e5a1a2b13c6d49b77449f}{log}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 16 of file VoDAOImpl.java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classportal_1_1registration_1_1dao_1_1VoDAOImpl_ad7e3ba1a2bb558ac86421cd941332fde}{
+\index{portal::registration::dao::VoDAOImpl@{portal::registration::dao::VoDAOImpl}!findById@{findById}}
+\index{findById@{findById}!portal::registration::dao::VoDAOImpl@{portal::registration::dao::VoDAOImpl}}
+\subsubsection[{findById}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vo} portal.registration.dao.VoDAOImpl.findById (
+\begin{DoxyParamCaption}
+\item[{Integer}]{id}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1dao_1_1VoDAOImpl_ad7e3ba1a2bb558ac86421cd941332fde}
+
+
+Implements \hyperlink{interfaceportal_1_1registration_1_1dao_1_1VoDAO_a1e615e3cc23d178459a789ff9e91da5f}{portal.registration.dao.VoDAO}.
+
+
+
+Definition at line 42 of file VoDAOImpl.java.
+
+
+
+References portal.registration.dao.VoDAOImpl.log, and portal.registration.dao.VoDAOImpl.sessionFactory.
+
+
+\begin{DoxyCode}
+                                       {
+                log.debug("getting UserInfo instance with id: " + id);
+                try {
+                        Session session = sessionFactory.getCurrentSession();
+                        Vo instance = (Vo) session.get(Vo.class, id);
+                        log.debug("get successful");
+                        return instance;
+                } catch (RuntimeException re) {
+                        log.error("get failed", re);
+                        throw re;
+                }
+        }
+\end{DoxyCode}
+\hypertarget{classportal_1_1registration_1_1dao_1_1VoDAOImpl_a835ab0538757bee251c57acf0ff1d606}{
+\index{portal::registration::dao::VoDAOImpl@{portal::registration::dao::VoDAOImpl}!getAllDiscipline@{getAllDiscipline}}
+\index{getAllDiscipline@{getAllDiscipline}!portal::registration::dao::VoDAOImpl@{portal::registration::dao::VoDAOImpl}}
+\subsubsection[{getAllDiscipline}]{\setlength{\rightskip}{0pt plus 5cm}List$<$String$>$ portal.registration.dao.VoDAOImpl.getAllDiscipline (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1dao_1_1VoDAOImpl_a835ab0538757bee251c57acf0ff1d606}
+
+
+Implements \hyperlink{interfaceportal_1_1registration_1_1dao_1_1VoDAO_aa8dde2c7f1a71332033c97f2729e18fb}{portal.registration.dao.VoDAO}.
+
+
+
+Definition at line 56 of file VoDAOImpl.java.
+
+
+
+References portal.registration.dao.VoDAOImpl.log, and portal.registration.dao.VoDAOImpl.sessionFactory.
+
+
+\begin{DoxyCode}
+                                               {
+                log.debug("getting all Vo instance");
+                try {
+
+                        Session session = sessionFactory.getCurrentSession();
+
+                        // Create a Hibernate query (HQL)
+                        Query query = session
+                                        .createSQLQuery("SELECT DISTINCT Discipli
+      ne FROM  VO");
+
+                        // Retrieve all
+                        return query.list();
+                } catch (RuntimeException re) {
+                        log.error("get failed", re);
+                        throw re;
+                }
+        }
+\end{DoxyCode}
+\hypertarget{classportal_1_1registration_1_1dao_1_1VoDAOImpl_af31fcf85409b93ccae3745d57844d4e3}{
+\index{portal::registration::dao::VoDAOImpl@{portal::registration::dao::VoDAOImpl}!getAllVo@{getAllVo}}
+\index{getAllVo@{getAllVo}!portal::registration::dao::VoDAOImpl@{portal::registration::dao::VoDAOImpl}}
+\subsubsection[{getAllVo}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Vo}$>$ portal.registration.dao.VoDAOImpl.getAllVo (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1dao_1_1VoDAOImpl_af31fcf85409b93ccae3745d57844d4e3}
+
+
+Implements \hyperlink{interfaceportal_1_1registration_1_1dao_1_1VoDAO_a86370596aa8198130e009f25f9fbb191}{portal.registration.dao.VoDAO}.
+
+
+
+Definition at line 25 of file VoDAOImpl.java.
+
+
+
+References portal.registration.dao.VoDAOImpl.log, and portal.registration.dao.VoDAOImpl.sessionFactory.
+
+
+\begin{DoxyCode}
+                                   {
+                log.debug("getting all Vo instance");
+                try {
+
+                        Session session = sessionFactory.getCurrentSession();
+
+                        // Create a Hibernate query (HQL)
+                        Query query = session.createQuery("FROM  Vo");
+
+                        // Retrieve all
+                        return query.list();
+                } catch (RuntimeException re) {
+                        log.error("get failed", re);
+                        throw re;
+                }
+        }
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classportal_1_1registration_1_1dao_1_1VoDAOImpl_aabbe1e1ee26e5a1a2b13c6d49b77449f}{
+\index{portal::registration::dao::VoDAOImpl@{portal::registration::dao::VoDAOImpl}!log@{log}}
+\index{log@{log}!portal::registration::dao::VoDAOImpl@{portal::registration::dao::VoDAOImpl}}
+\subsubsection[{log}]{\setlength{\rightskip}{0pt plus 5cm}final Logger {\bf portal.registration.dao.VoDAOImpl.log}\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{classportal_1_1registration_1_1dao_1_1VoDAOImpl_aabbe1e1ee26e5a1a2b13c6d49b77449f}
+{\bfseries Initial value:}
+\begin{DoxyCode}
+ Logger
+                        .getLogger(UserInfoServiceImpl.class)
+\end{DoxyCode}
+
+
+Definition at line 18 of file VoDAOImpl.java.
+
+
+
+Referenced by portal.registration.dao.VoDAOImpl.findById(), portal.registration.dao.VoDAOImpl.getAllDiscipline(), and portal.registration.dao.VoDAOImpl.getAllVo().
+
+\hypertarget{classportal_1_1registration_1_1dao_1_1VoDAOImpl_ac5ec3502e9e6c89e2545a21c355d5b9d}{
+\index{portal::registration::dao::VoDAOImpl@{portal::registration::dao::VoDAOImpl}!sessionFactory@{sessionFactory}}
+\index{sessionFactory@{sessionFactory}!portal::registration::dao::VoDAOImpl@{portal::registration::dao::VoDAOImpl}}
+\subsubsection[{sessionFactory}]{\setlength{\rightskip}{0pt plus 5cm}SessionFactory {\bf portal.registration.dao.VoDAOImpl.sessionFactory}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classportal_1_1registration_1_1dao_1_1VoDAOImpl_ac5ec3502e9e6c89e2545a21c355d5b9d}
+
+
+Definition at line 22 of file VoDAOImpl.java.
+
+
+
+Referenced by portal.registration.dao.VoDAOImpl.findById(), portal.registration.dao.VoDAOImpl.getAllDiscipline(), and portal.registration.dao.VoDAOImpl.getAllVo().
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/dao/\hyperlink{VoDAOImpl_8java}{VoDAOImpl.java}\end{DoxyCompactItemize}

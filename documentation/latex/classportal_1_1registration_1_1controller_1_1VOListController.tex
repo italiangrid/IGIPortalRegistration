@@ -1,0 +1,93 @@
+\hypertarget{classportal_1_1registration_1_1controller_1_1VOListController}{
+\section{portal.registration.controller.VOListController Class Reference}
+\label{classportal_1_1registration_1_1controller_1_1VOListController}\index{portal::registration::controller::VOListController@{portal::registration::controller::VOListController}}
+}
+
+
+Collaboration diagram for portal.registration.controller.VOListController:
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+String \hyperlink{classportal_1_1registration_1_1controller_1_1VOListController_a2190dd57ef91af84c36317c941ccec4f}{showUserInfoForm} (RenderResponse response)
+\item 
+List$<$ \hyperlink{classportal_1_1registration_1_1domain_1_1Vo}{Vo} $>$ \hyperlink{classportal_1_1registration_1_1controller_1_1VOListController_ab3008c4ba7e69cf6fd5d291c59d27a73}{getVos} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{interfaceportal_1_1registration_1_1services_1_1VoService}{VoService} \hyperlink{classportal_1_1registration_1_1controller_1_1VOListController_a8bae931aec8ab793ebbd739ce4211171}{voService}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 17 of file VOListController.java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classportal_1_1registration_1_1controller_1_1VOListController_ab3008c4ba7e69cf6fd5d291c59d27a73}{
+\index{portal::registration::controller::VOListController@{portal::registration::controller::VOListController}!getVos@{getVos}}
+\index{getVos@{getVos}!portal::registration::controller::VOListController@{portal::registration::controller::VOListController}}
+\subsubsection[{getVos}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Vo}$>$ portal.registration.controller.VOListController.getVos (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1controller_1_1VOListController_ab3008c4ba7e69cf6fd5d291c59d27a73}
+
+
+Definition at line 28 of file VOListController.java.
+
+
+
+References portal.registration.services.VoService.getAllVo().
+
+
+\begin{DoxyCode}
+                                 {
+                return voService.getAllVo();
+        }
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+
+
+\hypertarget{classportal_1_1registration_1_1controller_1_1VOListController_a2190dd57ef91af84c36317c941ccec4f}{
+\index{portal::registration::controller::VOListController@{portal::registration::controller::VOListController}!showUserInfoForm@{showUserInfoForm}}
+\index{showUserInfoForm@{showUserInfoForm}!portal::registration::controller::VOListController@{portal::registration::controller::VOListController}}
+\subsubsection[{showUserInfoForm}]{\setlength{\rightskip}{0pt plus 5cm}String portal.registration.controller.VOListController.showUserInfoForm (
+\begin{DoxyParamCaption}
+\item[{RenderResponse}]{response}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1controller_1_1VOListController_a2190dd57ef91af84c36317c941ccec4f}
+
+
+Definition at line 23 of file VOListController.java.
+
+
+\begin{DoxyCode}
+                                                                {
+                return "VOList";
+        }
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classportal_1_1registration_1_1controller_1_1VOListController_a8bae931aec8ab793ebbd739ce4211171}{
+\index{portal::registration::controller::VOListController@{portal::registration::controller::VOListController}!voService@{voService}}
+\index{voService@{voService}!portal::registration::controller::VOListController@{portal::registration::controller::VOListController}}
+\subsubsection[{voService}]{\setlength{\rightskip}{0pt plus 5cm}{\bf VoService} {\bf portal.registration.controller.VOListController.voService}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classportal_1_1registration_1_1controller_1_1VOListController_a8bae931aec8ab793ebbd739ce4211171}
+
+
+Definition at line 20 of file VOListController.java.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/\hyperlink{VOListController_8java}{VOListController.java}\end{DoxyCompactItemize}

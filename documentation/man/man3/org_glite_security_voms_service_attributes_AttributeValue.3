@@ -1,0 +1,293 @@
+.TH "org::glite::security::voms::service::attributes::AttributeValue" 3 "Wed Jul 13 2011" "Version 4" "Registration" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+org::glite::security::voms::service::attributes::AttributeValue \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAttributeValue\fP ()"
+.br
+.ti -1c
+.RI "\fBAttributeValue\fP (\fBorg.glite.security.voms.service.attributes.AttributeClass\fP \fBattributeClass\fP, java.lang.String \fBcontext\fP, java.lang.String \fBvalue\fP)"
+.br
+.ti -1c
+.RI "\fBorg.glite.security.voms.service.attributes.AttributeClass\fP \fBgetAttributeClass\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetAttributeClass\fP (\fBorg.glite.security.voms.service.attributes.AttributeClass\fP \fBattributeClass\fP)"
+.br
+.ti -1c
+.RI "java.lang.String \fBgetContext\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetContext\fP (java.lang.String \fBcontext\fP)"
+.br
+.ti -1c
+.RI "java.lang.String \fBgetValue\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetValue\fP (java.lang.String \fBvalue\fP)"
+.br
+.ti -1c
+.RI "synchronized boolean \fBequals\fP (java.lang.Object obj)"
+.br
+.ti -1c
+.RI "synchronized int \fBhashCode\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBorg.glite.security.voms.service.attributes.AttributeClass\fP \fBattributeClass\fP"
+.br
+.ti -1c
+.RI "java.lang.String \fBcontext\fP"
+.br
+.ti -1c
+.RI "java.lang.String \fBvalue\fP"
+.br
+.ti -1c
+.RI "java.lang.Object \fB__equalsCalc\fP = null"
+.br
+.ti -1c
+.RI "boolean \fB__hashCodeCalc\fP = false"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 10 of file AttributeValue.java.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "org.glite.security.voms.service.attributes.AttributeValue.AttributeValue ()"
+.PP
+Definition at line 17 of file AttributeValue.java.
+.PP
+Referenced by org.glite.security.voms.service.attributes.AttributeValue.equals().
+.PP
+.nf
+                            {
+    }
+.fi
+.SS "org.glite.security.voms.service.attributes.AttributeValue.AttributeValue (\fBorg.glite.security.voms.service.attributes.AttributeClass\fPattributeClass, java.lang.Stringcontext, java.lang.Stringvalue)"
+.PP
+Definition at line 20 of file AttributeValue.java.
+.PP
+References org.glite.security.voms.service.attributes.AttributeValue.attributeClass, org.glite.security.voms.service.attributes.AttributeValue.context, and org.glite.security.voms.service.attributes.AttributeValue.value.
+.PP
+.nf
+                                   {
+           this.attributeClass = attributeClass;
+           this.context = context;
+           this.value = value;
+    }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "synchronized boolean org.glite.security.voms.service.attributes.AttributeValue.equals (java.lang.Objectobj)"
+.PP
+Definition at line 90 of file AttributeValue.java.
+.PP
+References org.glite.security.voms.service.attributes.AttributeValue.__equalsCalc, org.glite.security.voms.service.attributes.AttributeValue.attributeClass, org.glite.security.voms.service.attributes.AttributeValue.AttributeValue(), org.glite.security.voms.service.attributes.AttributeValue.context, org.glite.security.voms.service.attributes.AttributeClass.equals(), org.glite.security.voms.service.attributes.AttributeValue.getAttributeClass(), org.glite.security.voms.service.attributes.AttributeValue.getContext(), org.glite.security.voms.service.attributes.AttributeValue.getValue(), and org.glite.security.voms.service.attributes.AttributeValue.value.
+.PP
+.nf
+                                                             {
+        if (!(obj instanceof AttributeValue)) return false;
+        AttributeValue other = (AttributeValue) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.attributeClass==null && other.getAttributeClass()==null) || 
+             (this.attributeClass!=null &&
+              this.attributeClass.equals(other.getAttributeClass()))) &&
+            ((this.context==null && other.getContext()==null) || 
+             (this.context!=null &&
+              this.context.equals(other.getContext()))) &&
+            ((this.value==null && other.getValue()==null) || 
+             (this.value!=null &&
+              this.value.equals(other.getValue())));
+        __equalsCalc = null;
+        return _equals;
+    }
+.fi
+.SS "\fBorg.glite.security.voms.service.attributes.AttributeClass\fP org.glite.security.voms.service.attributes.AttributeValue.getAttributeClass ()"Gets the attributeClass value for this \fBAttributeValue\fP.
+.PP
+\fBReturns:\fP
+.RS 4
+attributeClass 
+.RE
+.PP
+
+.PP
+Definition at line 35 of file AttributeValue.java.
+.PP
+References org.glite.security.voms.service.attributes.AttributeValue.attributeClass.
+.PP
+Referenced by org.glite.security.voms.service.attributes.AttributeValue.equals(), and org.glite.security.voms.service.attributes.AttributeValue.hashCode().
+.PP
+.nf
+                                                                                         {
+        return attributeClass;
+    }
+.fi
+.SS "java.lang.String org.glite.security.voms.service.attributes.AttributeValue.getContext ()"Gets the context value for this \fBAttributeValue\fP.
+.PP
+\fBReturns:\fP
+.RS 4
+context 
+.RE
+.PP
+
+.PP
+Definition at line 55 of file AttributeValue.java.
+.PP
+References org.glite.security.voms.service.attributes.AttributeValue.context.
+.PP
+Referenced by org.glite.security.voms.service.attributes.AttributeValue.equals(), and org.glite.security.voms.service.attributes.AttributeValue.hashCode().
+.PP
+.nf
+                                         {
+        return context;
+    }
+.fi
+.SS "java.lang.String org.glite.security.voms.service.attributes.AttributeValue.getValue ()"Gets the value value for this \fBAttributeValue\fP.
+.PP
+\fBReturns:\fP
+.RS 4
+value 
+.RE
+.PP
+
+.PP
+Definition at line 75 of file AttributeValue.java.
+.PP
+References org.glite.security.voms.service.attributes.AttributeValue.value.
+.PP
+Referenced by org.glite.security.voms.service.attributes.AttributeValue.equals(), and org.glite.security.voms.service.attributes.AttributeValue.hashCode().
+.PP
+.nf
+                                       {
+        return value;
+    }
+.fi
+.SS "synchronized int org.glite.security.voms.service.attributes.AttributeValue.hashCode ()"
+.PP
+Definition at line 115 of file AttributeValue.java.
+.PP
+References org.glite.security.voms.service.attributes.AttributeValue.__hashCodeCalc, org.glite.security.voms.service.attributes.AttributeValue.getAttributeClass(), org.glite.security.voms.service.attributes.AttributeValue.getContext(), org.glite.security.voms.service.attributes.AttributeValue.getValue(), and org.glite.security.voms.service.attributes.AttributeClass.hashCode().
+.PP
+.nf
+                                       {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getAttributeClass() != null) {
+            _hashCode += getAttributeClass().hashCode();
+        }
+        if (getContext() != null) {
+            _hashCode += getContext().hashCode();
+        }
+        if (getValue() != null) {
+            _hashCode += getValue().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+.fi
+.SS "void org.glite.security.voms.service.attributes.AttributeValue.setAttributeClass (\fBorg.glite.security.voms.service.attributes.AttributeClass\fPattributeClass)"Sets the attributeClass value for this \fBAttributeValue\fP.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIattributeClass\fP 
+.RE
+.PP
+
+.PP
+Definition at line 45 of file AttributeValue.java.
+.PP
+References org.glite.security.voms.service.attributes.AttributeValue.attributeClass.
+.PP
+.nf
+                                                                                                            {
+        this.attributeClass = attributeClass;
+    }
+.fi
+.SS "void org.glite.security.voms.service.attributes.AttributeValue.setContext (java.lang.Stringcontext)"Sets the context value for this \fBAttributeValue\fP.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcontext\fP 
+.RE
+.PP
+
+.PP
+Definition at line 65 of file AttributeValue.java.
+.PP
+References org.glite.security.voms.service.attributes.AttributeValue.context.
+.PP
+.nf
+                                                     {
+        this.context = context;
+    }
+.fi
+.SS "void org.glite.security.voms.service.attributes.AttributeValue.setValue (java.lang.Stringvalue)"Sets the value value for this \fBAttributeValue\fP.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvalue\fP 
+.RE
+.PP
+
+.PP
+Definition at line 85 of file AttributeValue.java.
+.PP
+References org.glite.security.voms.service.attributes.AttributeValue.value.
+.PP
+.nf
+                                                 {
+        this.value = value;
+    }
+.fi
+.SH "Member Data Documentation"
+.PP 
+.SS "java.lang.Object \fBorg.glite.security.voms.service.attributes.AttributeValue.__equalsCalc\fP = null\fC [private]\fP"
+.PP
+Definition at line 89 of file AttributeValue.java.
+.PP
+Referenced by org.glite.security.voms.service.attributes.AttributeValue.equals().
+.SS "boolean \fBorg.glite.security.voms.service.attributes.AttributeValue.__hashCodeCalc\fP = false\fC [private]\fP"
+.PP
+Definition at line 114 of file AttributeValue.java.
+.PP
+Referenced by org.glite.security.voms.service.attributes.AttributeValue.hashCode().
+.SS "\fBorg.glite.security.voms.service.attributes.AttributeClass\fP \fBorg.glite.security.voms.service.attributes.AttributeValue.attributeClass\fP\fC [private]\fP"
+.PP
+Definition at line 11 of file AttributeValue.java.
+.PP
+Referenced by org.glite.security.voms.service.attributes.AttributeValue.AttributeValue(), org.glite.security.voms.service.attributes.AttributeValue.equals(), org.glite.security.voms.service.attributes.AttributeValue.getAttributeClass(), and org.glite.security.voms.service.attributes.AttributeValue.setAttributeClass().
+.SS "java.lang.String \fBorg.glite.security.voms.service.attributes.AttributeValue.context\fP\fC [private]\fP"
+.PP
+Definition at line 13 of file AttributeValue.java.
+.PP
+Referenced by org.glite.security.voms.service.attributes.AttributeValue.AttributeValue(), org.glite.security.voms.service.attributes.AttributeValue.equals(), org.glite.security.voms.service.attributes.AttributeValue.getContext(), and org.glite.security.voms.service.attributes.AttributeValue.setContext().
+.SS "java.lang.String \fBorg.glite.security.voms.service.attributes.AttributeValue.value\fP\fC [private]\fP"
+.PP
+Definition at line 15 of file AttributeValue.java.
+.PP
+Referenced by org.glite.security.voms.service.attributes.AttributeValue.AttributeValue(), org.glite.security.voms.service.attributes.AttributeValue.equals(), org.glite.security.voms.service.attributes.AttributeValue.getValue(), and org.glite.security.voms.service.attributes.AttributeValue.setValue().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Registration from the source code.

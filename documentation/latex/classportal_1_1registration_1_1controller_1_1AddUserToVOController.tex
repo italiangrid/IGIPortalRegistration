@@ -1,0 +1,707 @@
+\hypertarget{classportal_1_1registration_1_1controller_1_1AddUserToVOController}{
+\section{portal.registration.controller.AddUserToVOController Class Reference}
+\label{classportal_1_1registration_1_1controller_1_1AddUserToVOController}\index{portal::registration::controller::AddUserToVOController@{portal::registration::controller::AddUserToVOController}}
+}
+
+
+Collaboration diagram for portal.registration.controller.AddUserToVOController:
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classportal_1_1registration_1_1domain_1_1UserInfo}{UserInfo} \hyperlink{classportal_1_1registration_1_1controller_1_1AddUserToVOController_ada7bd669356fb2275d4d55a041d4c62b}{getCommandObject} ()
+\item 
+String \hyperlink{classportal_1_1registration_1_1controller_1_1AddUserToVOController_a295f242a6ecc2499f190de9566233cbd}{showUserInfoForm} (RenderResponse response)
+\item 
+void \hyperlink{classportal_1_1registration_1_1controller_1_1AddUserToVOController_a299d78081b72ac80a2adba3f33c7970c}{addUserToVo} (ActionRequest request, ActionResponse response, SessionStatus sessionStatus)  throws PortalException, 			SystemException 
+\item 
+List$<$ \hyperlink{classportal_1_1registration_1_1domain_1_1Vo}{Vo} $>$ \hyperlink{classportal_1_1registration_1_1controller_1_1AddUserToVOController_a2d973344b8dd050056ca0eb6577d3129}{getVos} ()
+\item 
+List$<$ String $>$ \hyperlink{classportal_1_1registration_1_1controller_1_1AddUserToVOController_a29a2dc59f8d0b0f2abc5e2bc1ff00d0b}{getDisciplines} ()
+\item 
+void \hyperlink{classportal_1_1registration_1_1controller_1_1AddUserToVOController_a57a44676aa98d8f479812586e40b0d29}{setDefaultUserToVo} (ActionRequest request, ActionResponse response, SessionStatus sessionStatus)
+\item 
+void \hyperlink{classportal_1_1registration_1_1controller_1_1AddUserToVOController_ac000f6bd6a7d3feb815b0df00d919e79}{removeUserToVo} (ActionRequest request, ActionResponse response, SessionStatus sessionStatus)
+\item 
+void \hyperlink{classportal_1_1registration_1_1controller_1_1AddUserToVOController_aeeb052d81e475bcbdc3b8cfce49cb819}{setDefaultUserToVoEdit} (ActionRequest request, ActionResponse response, SessionStatus sessionStatus)
+\item 
+void \hyperlink{classportal_1_1registration_1_1controller_1_1AddUserToVOController_a99b8d1de74cee992c19354ae506e6e1f}{removeUserToVoEdit} (ActionRequest request, ActionResponse response, SessionStatus sessionStatus)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classportal_1_1registration_1_1controller_1_1AddUserToVOController_abd142c68f2e74216087976e202ab1eae}{activateUser} (\hyperlink{classportal_1_1registration_1_1domain_1_1UserInfo}{UserInfo} userInfo, ActionRequest request, ArrayList$<$ String $>$ errors)
+\item 
+boolean \hyperlink{classportal_1_1registration_1_1controller_1_1AddUserToVOController_a31c8971c1e53637d1d8b26e660f77397}{checkVO} (int idVo, int userId, List$<$ String $>$ errors)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{interfaceportal_1_1registration_1_1services_1_1CertificateService}{CertificateService} \hyperlink{classportal_1_1registration_1_1controller_1_1AddUserToVOController_a2361af71b8bfdc3c7e61edbfda6bf0fa}{certificateService}
+\item 
+\hyperlink{interfaceportal_1_1registration_1_1services_1_1VoService}{VoService} \hyperlink{classportal_1_1registration_1_1controller_1_1AddUserToVOController_a066b9dc1ebc1bed7b1a339b08a2f1b63}{voService}
+\item 
+\hyperlink{interfaceportal_1_1registration_1_1services_1_1UserToVoService}{UserToVoService} \hyperlink{classportal_1_1registration_1_1controller_1_1AddUserToVOController_ae77dbacf0a44558167aacd12ad393c4a}{userToVoService}
+\item 
+\hyperlink{interfaceportal_1_1registration_1_1services_1_1UserInfoService}{UserInfoService} \hyperlink{classportal_1_1registration_1_1controller_1_1AddUserToVOController_a49a22ec138007745c8173f2f3da096a0}{userInfoService}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static final Logger \hyperlink{classportal_1_1registration_1_1controller_1_1AddUserToVOController_a133f4ebcf54552effe4fbca418cb7e18}{log}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 42 of file AddUserToVOController.java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classportal_1_1registration_1_1controller_1_1AddUserToVOController_abd142c68f2e74216087976e202ab1eae}{
+\index{portal::registration::controller::AddUserToVOController@{portal::registration::controller::AddUserToVOController}!activateUser@{activateUser}}
+\index{activateUser@{activateUser}!portal::registration::controller::AddUserToVOController@{portal::registration::controller::AddUserToVOController}}
+\subsubsection[{activateUser}]{\setlength{\rightskip}{0pt plus 5cm}void portal.registration.controller.AddUserToVOController.activateUser (
+\begin{DoxyParamCaption}
+\item[{{\bf UserInfo}}]{userInfo, }
+\item[{ActionRequest}]{request, }
+\item[{ArrayList$<$ String $>$}]{errors}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classportal_1_1registration_1_1controller_1_1AddUserToVOController_abd142c68f2e74216087976e202ab1eae}
+
+
+Definition at line 144 of file AddUserToVOController.java.
+
+
+
+References portal.registration.services.UserInfoService.edit(), portal.registration.domain.UserInfo.getUsername(), and portal.registration.domain.UserInfo.setRegistrationComplete().
+
+
+\begin{DoxyCode}
+                                                  {
+
+                String username = userInfo.getUsername();
+
+                long companyId = PortalUtil.getCompanyId(request);
+
+                User user;
+                try {
+                        user = UserLocalServiceUtil
+                                        .getUserByScreenName(companyId, username)
+      ;
+
+                        long[] users = { user.getUserId() };
+
+                        UserLocalServiceUtil.setRoleUsers((long) 10140, users);
+
+                        userInfo.setRegistrationComplete("true");
+
+                        userInfoService.edit(userInfo);
+
+                        SessionMessages.add(request, "user-activate");
+
+                } catch (PortalException e) {
+                        errors.add("exception-activation-user");
+                        e.printStackTrace();
+                } catch (SystemException e) {
+                        errors.add("exception-activation-user");
+                        e.printStackTrace();
+                }
+
+        }
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+
+
+\hypertarget{classportal_1_1registration_1_1controller_1_1AddUserToVOController_a299d78081b72ac80a2adba3f33c7970c}{
+\index{portal::registration::controller::AddUserToVOController@{portal::registration::controller::AddUserToVOController}!addUserToVo@{addUserToVo}}
+\index{addUserToVo@{addUserToVo}!portal::registration::controller::AddUserToVOController@{portal::registration::controller::AddUserToVOController}}
+\subsubsection[{addUserToVo}]{\setlength{\rightskip}{0pt plus 5cm}void portal.registration.controller.AddUserToVOController.addUserToVo (
+\begin{DoxyParamCaption}
+\item[{ActionRequest}]{request, }
+\item[{ActionResponse}]{response, }
+\item[{SessionStatus}]{sessionStatus}
+\end{DoxyParamCaption}
+)  throws PortalException, 			SystemException }}
+\label{classportal_1_1registration_1_1controller_1_1AddUserToVOController_a299d78081b72ac80a2adba3f33c7970c}
+
+
+Definition at line 70 of file AddUserToVOController.java.
+
+
+
+References portal.registration.services.UserInfoService.findById(), portal.registration.domain.UserInfo.getRegistrationComplete(), and portal.registration.services.UserToVoService.save().
+
+
+\begin{DoxyCode}
+                                        {
+
+                log.info("sono dentro");
+
+                ArrayList<String> errors = new ArrayList<String>();
+                boolean allOk = true;
+
+                int userId = Integer.parseInt(request.getParameter("userId"));
+                log.info("Valore passato userId " + userId);
+
+                if (request.getParameterValues("VOids") != null) {
+                        log.info("recupero idVo");
+                        int idVo = Integer.parseInt(request.getParameter("VOids")
+      );
+                        if (idVo != 0) {
+
+                                if (checkVO(idVo, userId, errors)) {
+                                        log.info("Salvo sul DB la Vo " + idVo);
+
+                                        UserInfo ui = userInfoService.findById(us
+      erId);
+                                        if (ui.getRegistrationComplete().equals("
+      false")) {
+                                                activateUser(ui, request, errors)
+      ;
+                                        }
+                                        userToVoService.save(userId, idVo);
+                                        log.info("Salvato sul DB ");
+                                } else {
+                                        allOk = false;
+                                }
+                        }
+
+                } else {
+                        allOk = false;
+                        errors.add("user-vo-list-empty");
+                }
+
+                if (allOk) {
+
+                        SessionMessages.add(request, "userToVo-adding-success");
+
+                        if (request.getParameter("firstReg").equals("true")) {
+                                response.setRenderParameter("myaction",
+                                                "showAddUserToVoPresents");
+                        } else {
+                                response.setRenderParameter("myaction", "editUser
+      InfoForm");
+                        }
+                        response.setRenderParameter("userId", Integer.toString(us
+      erId));
+                        request.setAttribute("userId", userId);
+                        sessionStatus.setComplete();
+
+                } else {
+
+                        errors.add("error-saving-registration");
+
+                        for (String error : errors) {
+                                log.info("Errore: " + error);
+                                SessionErrors.add(request, error);
+                        }
+
+                        log.info("Errori in userToVO");
+
+                        if (request.getParameter("firstReg").equals("true")) {
+                                response.setRenderParameter("myaction",
+                                                "showAddUserToVoPresents");
+                        } else {
+                                response.setRenderParameter("myaction", "editUser
+      InfoForm");
+                        }
+                        response.setRenderParameter("userId", Integer.toString(us
+      erId));
+                        request.setAttribute("userId", userId);
+
+                }
+
+        }
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+
+
+\hypertarget{classportal_1_1registration_1_1controller_1_1AddUserToVOController_a31c8971c1e53637d1d8b26e660f77397}{
+\index{portal::registration::controller::AddUserToVOController@{portal::registration::controller::AddUserToVOController}!checkVO@{checkVO}}
+\index{checkVO@{checkVO}!portal::registration::controller::AddUserToVOController@{portal::registration::controller::AddUserToVOController}}
+\subsubsection[{checkVO}]{\setlength{\rightskip}{0pt plus 5cm}boolean portal.registration.controller.AddUserToVOController.checkVO (
+\begin{DoxyParamCaption}
+\item[{int}]{idVo, }
+\item[{int}]{userId, }
+\item[{List$<$ String $>$}]{errors}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classportal_1_1registration_1_1controller_1_1AddUserToVOController_a31c8971c1e53637d1d8b26e660f77397}
+
+
+Definition at line 186 of file AddUserToVOController.java.
+
+
+
+References portal.registration.services.UserToVoService.findById(), portal.registration.services.CertificateService.findById(), portal.registration.services.VoService.findById(), portal.registration.domain.Vo.getHost(), and portal.registration.domain.Vo.getVo().
+
+
+\begin{DoxyCode}
+                                                                           {
+                boolean result = false;
+
+                Vo vo = voService.findById(idVo);
+
+                List<Certificate> certs = certificateService.findById(userId);
+
+                if (certs.size() == 0) {
+                        errors.add("no-cert-for-user");
+                        return false;
+                }
+
+                if (userToVoService.findById(userId, idVo) != null) {
+                        errors.add("userToVo-already-exists");
+                        return false;
+                }
+
+                try {
+
+                        FileOutputStream file = new FileOutputStream(
+                                        "/upload_files/edg-mkgridmap." + vo.getVo
+      () + ".conf");
+                        PrintStream conf = new PrintStream(file);
+                        conf.println("group vomss://" + vo.getHost() + "?/" + vo.
+      getVo()
+                                        + " ." + vo.getVo());
+
+                        for (int i = 0; i < certs.size(); i++) {
+                                String subject = certs.get(i).getSubject();
+                                subject = subject.replaceAll(" ", "\\ ");
+                                String cmdCheck = "/opt/edg/sbin/edg-mkgridmap  -
+      -conf=/upload_files/edg-mkgridmap."
+                                                + vo.getVo() + ".conf";
+                                log.info("cmdCheck = " + cmdCheck);
+                                Process pCheck = Runtime.getRuntime().exec(cmdChe
+      ck);
+                                InputStream stdout = pCheck.getInputStream();
+                                InputStream stderr = pCheck.getErrorStream();
+
+                                BufferedReader output = new BufferedReader(
+                                                new InputStreamReader(stdout));
+                                String line = null;
+
+                                log.info("Ricerca questo: " + "\"" + subject + "\
+      " ."
+                                                + vo.getVo());
+
+                                while ((line = output.readLine()) != null) {
+                                        log.info("[Stdout] " + line);
+                                        if (line.equals("\"" + subject + "\" ." +
+       vo.getVo())) {
+                                                log.info("***********************
+      **********************************");
+                                                result = true;
+                                        }
+
+                                }
+                                output.close();
+
+                                BufferedReader brCleanUp = new BufferedReader(
+                                                new InputStreamReader(stderr));
+                                while ((line = brCleanUp.readLine()) != null) {
+                                        errors.add("edg-mkgridmap-problem");
+                                        log.info("[Stderr] " + line);
+                                        result = false;
+                                }
+                                brCleanUp.close();
+                        }
+
+                } catch (IOException e) {
+                        result = false;
+                        errors.add("edg-mkgridmap-exception");
+                        e.printStackTrace();
+                }
+
+                if (!result)
+                        errors.add("no-user-found-in-VO");
+
+                return result;
+        }
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+
+
+\hypertarget{classportal_1_1registration_1_1controller_1_1AddUserToVOController_ada7bd669356fb2275d4d55a041d4c62b}{
+\index{portal::registration::controller::AddUserToVOController@{portal::registration::controller::AddUserToVOController}!getCommandObject@{getCommandObject}}
+\index{getCommandObject@{getCommandObject}!portal::registration::controller::AddUserToVOController@{portal::registration::controller::AddUserToVOController}}
+\subsubsection[{getCommandObject}]{\setlength{\rightskip}{0pt plus 5cm}{\bf UserInfo} portal.registration.controller.AddUserToVOController.getCommandObject (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1controller_1_1AddUserToVOController_ada7bd669356fb2275d4d55a041d4c62b}
+
+
+Definition at line 60 of file AddUserToVOController.java.
+
+
+\begin{DoxyCode}
+                                           {
+                return new UserInfo();
+        }
+\end{DoxyCode}
+\hypertarget{classportal_1_1registration_1_1controller_1_1AddUserToVOController_a29a2dc59f8d0b0f2abc5e2bc1ff00d0b}{
+\index{portal::registration::controller::AddUserToVOController@{portal::registration::controller::AddUserToVOController}!getDisciplines@{getDisciplines}}
+\index{getDisciplines@{getDisciplines}!portal::registration::controller::AddUserToVOController@{portal::registration::controller::AddUserToVOController}}
+\subsubsection[{getDisciplines}]{\setlength{\rightskip}{0pt plus 5cm}List$<$String$>$ portal.registration.controller.AddUserToVOController.getDisciplines (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1controller_1_1AddUserToVOController_a29a2dc59f8d0b0f2abc5e2bc1ff00d0b}
+
+
+Definition at line 182 of file AddUserToVOController.java.
+
+
+
+References portal.registration.services.VoService.getAllDiscplines().
+
+
+\begin{DoxyCode}
+                                             {
+                return voService.getAllDiscplines();
+        }
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+
+
+\hypertarget{classportal_1_1registration_1_1controller_1_1AddUserToVOController_a2d973344b8dd050056ca0eb6577d3129}{
+\index{portal::registration::controller::AddUserToVOController@{portal::registration::controller::AddUserToVOController}!getVos@{getVos}}
+\index{getVos@{getVos}!portal::registration::controller::AddUserToVOController@{portal::registration::controller::AddUserToVOController}}
+\subsubsection[{getVos}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Vo}$>$ portal.registration.controller.AddUserToVOController.getVos (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1controller_1_1AddUserToVOController_a2d973344b8dd050056ca0eb6577d3129}
+
+
+Definition at line 177 of file AddUserToVOController.java.
+
+
+
+References portal.registration.services.VoService.getAllVo().
+
+
+\begin{DoxyCode}
+                                 {
+                return voService.getAllVo();
+        }
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+
+
+\hypertarget{classportal_1_1registration_1_1controller_1_1AddUserToVOController_ac000f6bd6a7d3feb815b0df00d919e79}{
+\index{portal::registration::controller::AddUserToVOController@{portal::registration::controller::AddUserToVOController}!removeUserToVo@{removeUserToVo}}
+\index{removeUserToVo@{removeUserToVo}!portal::registration::controller::AddUserToVOController@{portal::registration::controller::AddUserToVOController}}
+\subsubsection[{removeUserToVo}]{\setlength{\rightskip}{0pt plus 5cm}void portal.registration.controller.AddUserToVOController.removeUserToVo (
+\begin{DoxyParamCaption}
+\item[{ActionRequest}]{request, }
+\item[{ActionResponse}]{response, }
+\item[{SessionStatus}]{sessionStatus}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1controller_1_1AddUserToVOController_ac000f6bd6a7d3feb815b0df00d919e79}
+
+
+Definition at line 289 of file AddUserToVOController.java.
+
+
+
+References portal.registration.services.UserToVoService.delete().
+
+
+\begin{DoxyCode}
+                                                     {
+
+                int userId = Integer.parseInt(request.getParameter("userId"));
+                int idVo = Integer.parseInt(request.getParameter("idVo"));
+
+                try {
+                        log.info("Sto per cancellare il userToVo con userId = " +
+       userId
+                                        + "e idVo = " + idVo);
+                        userToVoService.delete(userId, idVo);
+                        log.info("userTo Vo cancellato");
+
+                        SessionMessages.add(request, "userToVo-deleted-successufu
+      lly");
+
+                } catch (Exception e) {
+                        SessionErrors.add(request, "error-deleting-userToVo");
+                }
+
+                response.setRenderParameter("myaction", "showAddUserToVoPresents"
+      );
+                response.setRenderParameter("userId", Integer.toString(userId));
+                request.setAttribute("firstReg", request.getParameter("firstReg")
+      );
+                sessionStatus.setComplete();
+
+        }
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+
+
+\hypertarget{classportal_1_1registration_1_1controller_1_1AddUserToVOController_a99b8d1de74cee992c19354ae506e6e1f}{
+\index{portal::registration::controller::AddUserToVOController@{portal::registration::controller::AddUserToVOController}!removeUserToVoEdit@{removeUserToVoEdit}}
+\index{removeUserToVoEdit@{removeUserToVoEdit}!portal::registration::controller::AddUserToVOController@{portal::registration::controller::AddUserToVOController}}
+\subsubsection[{removeUserToVoEdit}]{\setlength{\rightskip}{0pt plus 5cm}void portal.registration.controller.AddUserToVOController.removeUserToVoEdit (
+\begin{DoxyParamCaption}
+\item[{ActionRequest}]{request, }
+\item[{ActionResponse}]{response, }
+\item[{SessionStatus}]{sessionStatus}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1controller_1_1AddUserToVOController_a99b8d1de74cee992c19354ae506e6e1f}
+
+
+Definition at line 343 of file AddUserToVOController.java.
+
+
+
+References portal.registration.services.UserToVoService.delete(), and portal.registration.services.UserToVoService.findVoByUserId().
+
+
+\begin{DoxyCode}
+                                                                              {
+
+                int userId = Integer.parseInt(request.getParameter("userId"));
+                int idVo = Integer.parseInt(request.getParameter("idVo"));
+
+                try {
+                        log.info("Sto per cancellare il userToVo con userId = " +
+       userId
+                                        + "e idVo = " + idVo);
+                        userToVoService.delete(userId, idVo);
+                        log.info("userTo Vo cancellato");
+
+                        SessionMessages.add(request, "userToVo-deleted-successufu
+      lly");
+                        userToVoService.findVoByUserId(userId);
+
+                } catch (Exception e) {
+                        SessionErrors.add(request, "error-deleting-userToVo");
+                }
+
+                response.setRenderParameter("myaction", "editUserInfoForm");
+                response.setRenderParameter("userId", Integer.toString(userId));
+                request.setAttribute("firstReg", request.getParameter("firstReg")
+      );
+                sessionStatus.setComplete();
+
+        }
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+
+
+\hypertarget{classportal_1_1registration_1_1controller_1_1AddUserToVOController_a57a44676aa98d8f479812586e40b0d29}{
+\index{portal::registration::controller::AddUserToVOController@{portal::registration::controller::AddUserToVOController}!setDefaultUserToVo@{setDefaultUserToVo}}
+\index{setDefaultUserToVo@{setDefaultUserToVo}!portal::registration::controller::AddUserToVOController@{portal::registration::controller::AddUserToVOController}}
+\subsubsection[{setDefaultUserToVo}]{\setlength{\rightskip}{0pt plus 5cm}void portal.registration.controller.AddUserToVOController.setDefaultUserToVo (
+\begin{DoxyParamCaption}
+\item[{ActionRequest}]{request, }
+\item[{ActionResponse}]{response, }
+\item[{SessionStatus}]{sessionStatus}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1controller_1_1AddUserToVOController_a57a44676aa98d8f479812586e40b0d29}
+
+
+Definition at line 261 of file AddUserToVOController.java.
+
+
+
+References portal.registration.services.UserToVoService.findVoByUserId(), and portal.registration.services.UserToVoService.setDefault().
+
+
+\begin{DoxyCode}
+                                                                              {
+
+                int userId = Integer.parseInt(request.getParameter("userId"));
+                int idVo = Integer.parseInt(request.getParameter("idVo"));
+
+                try {
+                        log.info("Sto per settarea default il userToVo con userId
+       = "
+                                        + userId + "e idVo = " + idVo);
+                        if (userToVoService.setDefault(userId, idVo))
+                                SessionMessages.add(request, "userToVo-updated-su
+      ccessufully");
+                        else
+                                SessionErrors.add(request, "error-default-userToV
+      o");
+                        log.info("UserToVoSettato");
+                        userToVoService.findVoByUserId(userId);
+
+                } catch (Exception e) {
+                        SessionErrors.add(request, "error-updating-certificate");
+      
+                }
+
+                response.setRenderParameter("myaction", "showAddUserToVoPresents"
+      );
+                response.setRenderParameter("userId", Integer.toString(userId));
+                request.setAttribute("firstReg", request.getParameter("firstReg")
+      );
+                sessionStatus.setComplete();
+
+        }
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+
+
+\hypertarget{classportal_1_1registration_1_1controller_1_1AddUserToVOController_aeeb052d81e475bcbdc3b8cfce49cb819}{
+\index{portal::registration::controller::AddUserToVOController@{portal::registration::controller::AddUserToVOController}!setDefaultUserToVoEdit@{setDefaultUserToVoEdit}}
+\index{setDefaultUserToVoEdit@{setDefaultUserToVoEdit}!portal::registration::controller::AddUserToVOController@{portal::registration::controller::AddUserToVOController}}
+\subsubsection[{setDefaultUserToVoEdit}]{\setlength{\rightskip}{0pt plus 5cm}void portal.registration.controller.AddUserToVOController.setDefaultUserToVoEdit (
+\begin{DoxyParamCaption}
+\item[{ActionRequest}]{request, }
+\item[{ActionResponse}]{response, }
+\item[{SessionStatus}]{sessionStatus}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1controller_1_1AddUserToVOController_aeeb052d81e475bcbdc3b8cfce49cb819}
+
+
+Definition at line 315 of file AddUserToVOController.java.
+
+
+
+References portal.registration.services.UserToVoService.findVoByUserId(), and portal.registration.services.UserToVoService.setDefault().
+
+
+\begin{DoxyCode}
+                                                                              {
+
+                int userId = Integer.parseInt(request.getParameter("userId"));
+                int idVo = Integer.parseInt(request.getParameter("idVo"));
+
+                try {
+                        log.info("Sto per settarea default il userToVo con userId
+       = "
+                                        + userId + "e idVo = " + idVo);
+                        if (userToVoService.setDefault(userId, idVo))
+                                SessionMessages.add(request, "userToVo-updated-su
+      ccessufully");
+                        else
+                                SessionErrors.add(request, "error-default-userToV
+      o");
+                        log.info("UserToVoSettato");
+                        userToVoService.findVoByUserId(userId);
+
+                } catch (Exception e) {
+                        SessionErrors.add(request, "error-updating-certificate");
+      
+                }
+
+                response.setRenderParameter("myaction", "editUserInfoForm");
+                response.setRenderParameter("userId", Integer.toString(userId));
+                request.setAttribute("firstReg", request.getParameter("firstReg")
+      );
+                sessionStatus.setComplete();
+
+        }
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+
+
+\hypertarget{classportal_1_1registration_1_1controller_1_1AddUserToVOController_a295f242a6ecc2499f190de9566233cbd}{
+\index{portal::registration::controller::AddUserToVOController@{portal::registration::controller::AddUserToVOController}!showUserInfoForm@{showUserInfoForm}}
+\index{showUserInfoForm@{showUserInfoForm}!portal::registration::controller::AddUserToVOController@{portal::registration::controller::AddUserToVOController}}
+\subsubsection[{showUserInfoForm}]{\setlength{\rightskip}{0pt plus 5cm}String portal.registration.controller.AddUserToVOController.showUserInfoForm (
+\begin{DoxyParamCaption}
+\item[{RenderResponse}]{response}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1controller_1_1AddUserToVOController_a295f242a6ecc2499f190de9566233cbd}
+
+
+Definition at line 65 of file AddUserToVOController.java.
+
+
+\begin{DoxyCode}
+                                                                {
+                return "addUserToVOForm";
+        }
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classportal_1_1registration_1_1controller_1_1AddUserToVOController_a2361af71b8bfdc3c7e61edbfda6bf0fa}{
+\index{portal::registration::controller::AddUserToVOController@{portal::registration::controller::AddUserToVOController}!certificateService@{certificateService}}
+\index{certificateService@{certificateService}!portal::registration::controller::AddUserToVOController@{portal::registration::controller::AddUserToVOController}}
+\subsubsection[{certificateService}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CertificateService} {\bf portal.registration.controller.AddUserToVOController.certificateService}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classportal_1_1registration_1_1controller_1_1AddUserToVOController_a2361af71b8bfdc3c7e61edbfda6bf0fa}
+
+
+Definition at line 48 of file AddUserToVOController.java.
+
+\hypertarget{classportal_1_1registration_1_1controller_1_1AddUserToVOController_a133f4ebcf54552effe4fbca418cb7e18}{
+\index{portal::registration::controller::AddUserToVOController@{portal::registration::controller::AddUserToVOController}!log@{log}}
+\index{log@{log}!portal::registration::controller::AddUserToVOController@{portal::registration::controller::AddUserToVOController}}
+\subsubsection[{log}]{\setlength{\rightskip}{0pt plus 5cm}final Logger {\bf portal.registration.controller.AddUserToVOController.log}\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{classportal_1_1registration_1_1controller_1_1AddUserToVOController_a133f4ebcf54552effe4fbca418cb7e18}
+{\bfseries Initial value:}
+\begin{DoxyCode}
+ Logger
+                        .getLogger(AddUserToVOController.class)
+\end{DoxyCode}
+
+
+Definition at line 44 of file AddUserToVOController.java.
+
+\hypertarget{classportal_1_1registration_1_1controller_1_1AddUserToVOController_a49a22ec138007745c8173f2f3da096a0}{
+\index{portal::registration::controller::AddUserToVOController@{portal::registration::controller::AddUserToVOController}!userInfoService@{userInfoService}}
+\index{userInfoService@{userInfoService}!portal::registration::controller::AddUserToVOController@{portal::registration::controller::AddUserToVOController}}
+\subsubsection[{userInfoService}]{\setlength{\rightskip}{0pt plus 5cm}{\bf UserInfoService} {\bf portal.registration.controller.AddUserToVOController.userInfoService}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classportal_1_1registration_1_1controller_1_1AddUserToVOController_a49a22ec138007745c8173f2f3da096a0}
+
+
+Definition at line 57 of file AddUserToVOController.java.
+
+\hypertarget{classportal_1_1registration_1_1controller_1_1AddUserToVOController_ae77dbacf0a44558167aacd12ad393c4a}{
+\index{portal::registration::controller::AddUserToVOController@{portal::registration::controller::AddUserToVOController}!userToVoService@{userToVoService}}
+\index{userToVoService@{userToVoService}!portal::registration::controller::AddUserToVOController@{portal::registration::controller::AddUserToVOController}}
+\subsubsection[{userToVoService}]{\setlength{\rightskip}{0pt plus 5cm}{\bf UserToVoService} {\bf portal.registration.controller.AddUserToVOController.userToVoService}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classportal_1_1registration_1_1controller_1_1AddUserToVOController_ae77dbacf0a44558167aacd12ad393c4a}
+
+
+Definition at line 54 of file AddUserToVOController.java.
+
+\hypertarget{classportal_1_1registration_1_1controller_1_1AddUserToVOController_a066b9dc1ebc1bed7b1a339b08a2f1b63}{
+\index{portal::registration::controller::AddUserToVOController@{portal::registration::controller::AddUserToVOController}!voService@{voService}}
+\index{voService@{voService}!portal::registration::controller::AddUserToVOController@{portal::registration::controller::AddUserToVOController}}
+\subsubsection[{voService}]{\setlength{\rightskip}{0pt plus 5cm}{\bf VoService} {\bf portal.registration.controller.AddUserToVOController.voService}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classportal_1_1registration_1_1controller_1_1AddUserToVOController_a066b9dc1ebc1bed7b1a339b08a2f1b63}
+
+
+Definition at line 51 of file AddUserToVOController.java.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/\hyperlink{AddUserToVOController_8java}{AddUserToVOController.java}\end{DoxyCompactItemize}

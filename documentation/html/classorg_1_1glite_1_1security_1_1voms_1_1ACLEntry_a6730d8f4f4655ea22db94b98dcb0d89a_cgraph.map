@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classorg_1_1glite_1_1security_1_1voms_1_1ACLEntry.html#a5d60444b264f5f6b0c7f264d7b47387a" title="org.glite.security.voms.ACLEntry.ACLEntry" alt="" coords="311,4,559,31"/>
+<area shape="rect" id="node5" href="$classorg_1_1glite_1_1security_1_1voms_1_1ACLEntry.html#aaec4209fed8e2f9b754c8245d5d974a8" title="org.glite.security.voms.ACLEntry.getAdminCA" alt="" coords="303,55,567,81"/>
+<area shape="rect" id="node7" href="$classorg_1_1glite_1_1security_1_1voms_1_1ACLEntry.html#a1616b1b87e85b38798aa0859dd58400e" title="org.glite.security.voms.ACLEntry.getAdminDN" alt="" coords="302,105,567,132"/>
+<area shape="rect" id="node9" href="$classorg_1_1glite_1_1security_1_1voms_1_1ACLEntry.html#a153534d0ae93a576795367020dfaf44c" title="org.glite.security.voms.ACLEntry.getOperationName" alt="" coords="285,156,584,183"/>
+<area shape="rect" id="node11" href="$classorg_1_1glite_1_1security_1_1voms_1_1ACLEntry.html#a7465eed80b69b74988a9100cc49036e7" title="org.glite.security.voms.ACLEntry.isAllow" alt="" coords="318,207,552,233"/>
+</map>

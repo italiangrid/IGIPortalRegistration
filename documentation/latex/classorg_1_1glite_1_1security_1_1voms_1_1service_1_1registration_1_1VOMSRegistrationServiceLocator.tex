@@ -1,0 +1,590 @@
+\hypertarget{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator}{
+\section{org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator Class Reference}
+\label{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator}\index{org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator@{org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator}}
+}
+
+
+Inheritance diagram for org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator:
+
+
+Collaboration diagram for org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator:
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_addf31979358c4e54d4a7d88184e84731}{VOMSRegistrationServiceLocator} ()
+\item 
+\hyperlink{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_a84fd1e657e3a15d0aa8203b5002aefac}{VOMSRegistrationServiceLocator} (org.apache.axis.EngineConfiguration config)
+\item 
+\hyperlink{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_aee36664ca3d55f369b49d9923c2c2e5d}{VOMSRegistrationServiceLocator} (java.lang.String wsdlLoc, javax.xml.namespace.QName sName)  throws javax.xml.rpc.ServiceException 
+\item 
+java.lang.String \hyperlink{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_aff49dcfa180e773dc87a5c559b9e9fed}{getVOMSRegistrationAddress} ()
+\item 
+java.lang.String \hyperlink{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_a253149d8117eb6e99fe661b010a39d14}{getVOMSRegistrationWSDDServiceName} ()
+\item 
+void \hyperlink{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_a51ec327cdaa76980982ce67d04b0318d}{setVOMSRegistrationWSDDServiceName} (java.lang.String name)
+\item 
+\hyperlink{interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistration}{org.glite.security.voms.service.registration.VOMSRegistration} \hyperlink{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_ae0102259b68be98cc8fd174a50b19e4c}{getVOMSRegistration} ()  throws javax.xml.rpc.ServiceException 
+\item 
+\hyperlink{interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistration}{org.glite.security.voms.service.registration.VOMSRegistration} \hyperlink{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_a878febd9facfc250a8ee7485322e10ef}{getVOMSRegistration} (java.net.URL portAddress)  throws javax.xml.rpc.ServiceException 
+\item 
+void \hyperlink{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_a027076b3679899b742d499429827f488}{setVOMSRegistrationEndpointAddress} (java.lang.String address)
+\item 
+java.rmi.Remote \hyperlink{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_ac0d38d86947d56afe47bd4042eaf2dbd}{getPort} (Class serviceEndpointInterface)  throws javax.xml.rpc.ServiceException 
+\item 
+java.rmi.Remote \hyperlink{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_a138e62089c2450c8eacf2b94718d07cb}{getPort} (javax.xml.namespace.QName portName, Class serviceEndpointInterface)  throws javax.xml.rpc.ServiceException 
+\item 
+namespace::QName \hyperlink{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_a7f4a3a45a9d544e0ee85ec1f456039fd}{getServiceName} ()
+\item 
+java.util.Iterator \hyperlink{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_a4b23f185f25c87b26b1ce2d7f7be22b4}{getPorts} ()
+\item 
+void \hyperlink{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_a682393f3ee2ac6cc3b0be395e46ae802}{setEndpointAddress} (java.lang.String portName, java.lang.String address)  throws javax.xml.rpc.ServiceException 
+\item 
+void \hyperlink{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_acbaf26806a09fa835fe373b8a00ea630}{setEndpointAddress} (javax.xml.namespace.QName portName, java.lang.String address)  throws javax.xml.rpc.ServiceException 
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+java.lang.String \hyperlink{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_a8b1d238baa33c02d1366768aac9fb7bc}{VOMSRegistration\_\-address} = \char`\"{}https://localhost:8443/glite-\/security-\/voms-\/admin-\/interface/\hyperlink{interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistration}{VOMSRegistration}\char`\"{}
+\item 
+java.lang.String \hyperlink{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_a37abee409465b82c58014954c0b576e9}{VOMSRegistrationWSDDServiceName} = \char`\"{}VOMSRegistration\char`\"{}
+\item 
+java.util.HashSet \hyperlink{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_afe50260789264526462a9fe86fbd1a4f}{ports} = null
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 10 of file VOMSRegistrationServiceLocator.java.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_addf31979358c4e54d4a7d88184e84731}{
+\index{org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator@{org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator}!VOMSRegistrationServiceLocator@{VOMSRegistrationServiceLocator}}
+\index{VOMSRegistrationServiceLocator@{VOMSRegistrationServiceLocator}!org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator@{org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator}}
+\subsubsection[{VOMSRegistrationServiceLocator}]{\setlength{\rightskip}{0pt plus 5cm}org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.VOMSRegistrationServiceLocator (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_addf31979358c4e54d4a7d88184e84731}
+
+
+Definition at line 12 of file VOMSRegistrationServiceLocator.java.
+
+
+\begin{DoxyCode}
+                                            {
+    }
+\end{DoxyCode}
+\hypertarget{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_a84fd1e657e3a15d0aa8203b5002aefac}{
+\index{org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator@{org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator}!VOMSRegistrationServiceLocator@{VOMSRegistrationServiceLocator}}
+\index{VOMSRegistrationServiceLocator@{VOMSRegistrationServiceLocator}!org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator@{org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator}}
+\subsubsection[{VOMSRegistrationServiceLocator}]{\setlength{\rightskip}{0pt plus 5cm}org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.VOMSRegistrationServiceLocator (
+\begin{DoxyParamCaption}
+\item[{org.apache.axis.EngineConfiguration}]{config}
+\end{DoxyParamCaption}
+)}}
+\label{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_a84fd1e657e3a15d0aa8203b5002aefac}
+
+
+Definition at line 16 of file VOMSRegistrationServiceLocator.java.
+
+
+\begin{DoxyCode}
+                                                                                 
+           {
+        super(config);
+    }
+\end{DoxyCode}
+\hypertarget{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_aee36664ca3d55f369b49d9923c2c2e5d}{
+\index{org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator@{org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator}!VOMSRegistrationServiceLocator@{VOMSRegistrationServiceLocator}}
+\index{VOMSRegistrationServiceLocator@{VOMSRegistrationServiceLocator}!org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator@{org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator}}
+\subsubsection[{VOMSRegistrationServiceLocator}]{\setlength{\rightskip}{0pt plus 5cm}org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.VOMSRegistrationServiceLocator (
+\begin{DoxyParamCaption}
+\item[{java.lang.String}]{wsdlLoc, }
+\item[{javax.xml.namespace.QName}]{sName}
+\end{DoxyParamCaption}
+)  throws javax.xml.rpc.ServiceException }}
+\label{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_aee36664ca3d55f369b49d9923c2c2e5d}
+
+
+Definition at line 20 of file VOMSRegistrationServiceLocator.java.
+
+
+\begin{DoxyCode}
+                                                                                 
+                                                                {
+        super(wsdlLoc, sName);
+    }
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_ac0d38d86947d56afe47bd4042eaf2dbd}{
+\index{org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator@{org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator}!getPort@{getPort}}
+\index{getPort@{getPort}!org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator@{org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator}}
+\subsubsection[{getPort}]{\setlength{\rightskip}{0pt plus 5cm}java.rmi.Remote org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.getPort (
+\begin{DoxyParamCaption}
+\item[{Class}]{serviceEndpointInterface}
+\end{DoxyParamCaption}
+)  throws javax.xml.rpc.ServiceException }}
+\label{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_ac0d38d86947d56afe47bd4042eaf2dbd}
+For the given interface, get the stub implementation. If this service has no port for the given interface, then ServiceException is thrown. 
+
+Definition at line 73 of file VOMSRegistrationServiceLocator.java.
+
+
+
+References org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.getVOMSRegistrationWSDDServiceName(), and org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.VOMSRegistration\_\-address.
+
+
+
+Referenced by org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.getPort().
+
+
+\begin{DoxyCode}
+                                                                                 
+                              {
+        try {
+            if (org.glite.security.voms.service.registration.VOMSRegistration.cla
+      ss.isAssignableFrom(serviceEndpointInterface)) {
+                org.glite.security.voms.service.registration.VOMSRegistrationSoap
+      BindingStub _stub = new org.glite.security.voms.service.registration.VOMSRegistra
+      tionSoapBindingStub(new java.net.URL(VOMSRegistration_address), this);
+                _stub.setPortName(getVOMSRegistrationWSDDServiceName());
+                return _stub;
+            }
+        }
+        catch (java.lang.Throwable t) {
+            throw new javax.xml.rpc.ServiceException(t);
+        }
+        throw new javax.xml.rpc.ServiceException("There is no stub implementation
+       for the interface:  " + (serviceEndpointInterface == null ? "null" : serviceEndp
+      ointInterface.getName()));
+    }
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+
+
+
+
+Here is the caller graph for this function:
+
+
+\hypertarget{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_a138e62089c2450c8eacf2b94718d07cb}{
+\index{org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator@{org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator}!getPort@{getPort}}
+\index{getPort@{getPort}!org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator@{org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator}}
+\subsubsection[{getPort}]{\setlength{\rightskip}{0pt plus 5cm}java.rmi.Remote org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.getPort (
+\begin{DoxyParamCaption}
+\item[{javax.xml.namespace.QName}]{portName, }
+\item[{Class}]{serviceEndpointInterface}
+\end{DoxyParamCaption}
+)  throws javax.xml.rpc.ServiceException }}
+\label{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_a138e62089c2450c8eacf2b94718d07cb}
+For the given interface, get the stub implementation. If this service has no port for the given interface, then ServiceException is thrown. 
+
+Definition at line 92 of file VOMSRegistrationServiceLocator.java.
+
+
+
+References org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.getPort(), and org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.getVOMSRegistration().
+
+
+\begin{DoxyCode}
+                                                                                 
+                                                                  {
+        if (portName == null) {
+            return getPort(serviceEndpointInterface);
+        }
+        java.lang.String inputPortName = portName.getLocalPart();
+        if ("VOMSRegistration".equals(inputPortName)) {
+            return getVOMSRegistration();
+        }
+        else  {
+            java.rmi.Remote _stub = getPort(serviceEndpointInterface);
+            ((org.apache.axis.client.Stub) _stub).setPortName(portName);
+            return _stub;
+        }
+    }
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+
+
+\hypertarget{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_a4b23f185f25c87b26b1ce2d7f7be22b4}{
+\index{org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator@{org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator}!getPorts@{getPorts}}
+\index{getPorts@{getPorts}!org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator@{org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator}}
+\subsubsection[{getPorts}]{\setlength{\rightskip}{0pt plus 5cm}java.util.Iterator org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.getPorts (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_a4b23f185f25c87b26b1ce2d7f7be22b4}
+
+
+Definition at line 113 of file VOMSRegistrationServiceLocator.java.
+
+
+
+References org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.ports.
+
+
+\begin{DoxyCode}
+                                         {
+        if (ports == null) {
+            ports = new java.util.HashSet();
+            ports.add(new javax.xml.namespace.QName("http://glite.org/wsdl/servic
+      es/org.glite.security.voms.service.registration", "VOMSRegistration"));
+        }
+        return ports.iterator();
+    }
+\end{DoxyCode}
+\hypertarget{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_a7f4a3a45a9d544e0ee85ec1f456039fd}{
+\index{org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator@{org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator}!getServiceName@{getServiceName}}
+\index{getServiceName@{getServiceName}!org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator@{org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator}}
+\subsubsection[{getServiceName}]{\setlength{\rightskip}{0pt plus 5cm}namespace ::QName org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.getServiceName (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_a7f4a3a45a9d544e0ee85ec1f456039fd}
+
+
+Definition at line 107 of file VOMSRegistrationServiceLocator.java.
+
+
+\begin{DoxyCode}
+                                                      {
+        return new javax.xml.namespace.QName("http://glite.org/wsdl/services/org.
+      glite.security.voms.service.registration", "VOMSRegistrationService");
+    }
+\end{DoxyCode}
+\hypertarget{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_a878febd9facfc250a8ee7485322e10ef}{
+\index{org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator@{org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator}!getVOMSRegistration@{getVOMSRegistration}}
+\index{getVOMSRegistration@{getVOMSRegistration}!org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator@{org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator}}
+\subsubsection[{getVOMSRegistration}]{\setlength{\rightskip}{0pt plus 5cm}{\bf org.glite.security.voms.service.registration.VOMSRegistration} org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.getVOMSRegistration (
+\begin{DoxyParamCaption}
+\item[{java.net.URL}]{portAddress}
+\end{DoxyParamCaption}
+)  throws javax.xml.rpc.ServiceException }}
+\label{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_a878febd9facfc250a8ee7485322e10ef}
+
+
+Implements \hyperlink{interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationService_a0833a75c9bcd4ff1f3d392f1fe82991c}{org.glite.security.voms.service.registration.VOMSRegistrationService}.
+
+
+
+Definition at line 53 of file VOMSRegistrationServiceLocator.java.
+
+
+
+References org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.getVOMSRegistrationWSDDServiceName().
+
+
+\begin{DoxyCode}
+                                                                                 
+                                                                                  {
+        try {
+            org.glite.security.voms.service.registration.VOMSRegistrationSoapBind
+      ingStub _stub = new org.glite.security.voms.service.registration.VOMSRegistration
+      SoapBindingStub(portAddress, this);
+            _stub.setPortName(getVOMSRegistrationWSDDServiceName());
+            return _stub;
+        }
+        catch (org.apache.axis.AxisFault e) {
+            return null;
+        }
+    }
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+
+
+\hypertarget{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_ae0102259b68be98cc8fd174a50b19e4c}{
+\index{org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator@{org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator}!getVOMSRegistration@{getVOMSRegistration}}
+\index{getVOMSRegistration@{getVOMSRegistration}!org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator@{org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator}}
+\subsubsection[{getVOMSRegistration}]{\setlength{\rightskip}{0pt plus 5cm}{\bf org.glite.security.voms.service.registration.VOMSRegistration} org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.getVOMSRegistration (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)  throws javax.xml.rpc.ServiceException }}
+\label{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_ae0102259b68be98cc8fd174a50b19e4c}
+
+
+Implements \hyperlink{interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationService_a57d3ef89895c9fe44c48a1a27fb7a9c0}{org.glite.security.voms.service.registration.VOMSRegistrationService}.
+
+
+
+Definition at line 42 of file VOMSRegistrationServiceLocator.java.
+
+
+
+References org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.VOMSRegistration\_\-address.
+
+
+
+Referenced by org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.getPort().
+
+
+\begin{DoxyCode}
+                                                                                 
+                                                          {
+       java.net.URL endpoint;
+        try {
+            endpoint = new java.net.URL(VOMSRegistration_address);
+        }
+        catch (java.net.MalformedURLException e) {
+            throw new javax.xml.rpc.ServiceException(e);
+        }
+        return getVOMSRegistration(endpoint);
+    }
+\end{DoxyCode}
+
+
+Here is the caller graph for this function:
+
+
+\hypertarget{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_aff49dcfa180e773dc87a5c559b9e9fed}{
+\index{org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator@{org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator}!getVOMSRegistrationAddress@{getVOMSRegistrationAddress}}
+\index{getVOMSRegistrationAddress@{getVOMSRegistrationAddress}!org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator@{org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator}}
+\subsubsection[{getVOMSRegistrationAddress}]{\setlength{\rightskip}{0pt plus 5cm}java.lang.String org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.getVOMSRegistrationAddress (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_aff49dcfa180e773dc87a5c559b9e9fed}
+
+
+Implements \hyperlink{interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationService_ac5e74e6684713b9880a717da20478e80}{org.glite.security.voms.service.registration.VOMSRegistrationService}.
+
+
+
+Definition at line 27 of file VOMSRegistrationServiceLocator.java.
+
+
+
+References org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.VOMSRegistration\_\-address.
+
+
+\begin{DoxyCode}
+                                                         {
+        return VOMSRegistration_address;
+    }
+\end{DoxyCode}
+\hypertarget{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_a253149d8117eb6e99fe661b010a39d14}{
+\index{org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator@{org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator}!getVOMSRegistrationWSDDServiceName@{getVOMSRegistrationWSDDServiceName}}
+\index{getVOMSRegistrationWSDDServiceName@{getVOMSRegistrationWSDDServiceName}!org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator@{org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator}}
+\subsubsection[{getVOMSRegistrationWSDDServiceName}]{\setlength{\rightskip}{0pt plus 5cm}java.lang.String org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.getVOMSRegistrationWSDDServiceName (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_a253149d8117eb6e99fe661b010a39d14}
+
+
+Definition at line 34 of file VOMSRegistrationServiceLocator.java.
+
+
+
+References org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.VOMSRegistrationWSDDServiceName.
+
+
+
+Referenced by org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.getPort(), and org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.getVOMSRegistration().
+
+
+\begin{DoxyCode}
+                                                                 {
+        return VOMSRegistrationWSDDServiceName;
+    }
+\end{DoxyCode}
+
+
+Here is the caller graph for this function:
+
+
+\hypertarget{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_a682393f3ee2ac6cc3b0be395e46ae802}{
+\index{org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator@{org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator}!setEndpointAddress@{setEndpointAddress}}
+\index{setEndpointAddress@{setEndpointAddress}!org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator@{org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator}}
+\subsubsection[{setEndpointAddress}]{\setlength{\rightskip}{0pt plus 5cm}void org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.setEndpointAddress (
+\begin{DoxyParamCaption}
+\item[{java.lang.String}]{portName, }
+\item[{java.lang.String}]{address}
+\end{DoxyParamCaption}
+)  throws javax.xml.rpc.ServiceException }}
+\label{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_a682393f3ee2ac6cc3b0be395e46ae802}
+Set the endpoint address for the specified port name. 
+
+Definition at line 124 of file VOMSRegistrationServiceLocator.java.
+
+
+
+References org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.setVOMSRegistrationEndpointAddress().
+
+
+
+Referenced by org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.setEndpointAddress().
+
+
+\begin{DoxyCode}
+                                                                                 
+                                                   {
+        
+if ("VOMSRegistration".equals(portName)) {
+            setVOMSRegistrationEndpointAddress(address);
+        }
+        else 
+{ // Unknown Port Name
+            throw new javax.xml.rpc.ServiceException(" Cannot set Endpoint Addres
+      s for Unknown Port" + portName);
+        }
+    }
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+
+
+
+
+Here is the caller graph for this function:
+
+
+\hypertarget{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_acbaf26806a09fa835fe373b8a00ea630}{
+\index{org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator@{org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator}!setEndpointAddress@{setEndpointAddress}}
+\index{setEndpointAddress@{setEndpointAddress}!org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator@{org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator}}
+\subsubsection[{setEndpointAddress}]{\setlength{\rightskip}{0pt plus 5cm}void org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.setEndpointAddress (
+\begin{DoxyParamCaption}
+\item[{javax.xml.namespace.QName}]{portName, }
+\item[{java.lang.String}]{address}
+\end{DoxyParamCaption}
+)  throws javax.xml.rpc.ServiceException }}
+\label{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_acbaf26806a09fa835fe373b8a00ea630}
+Set the endpoint address for the specified port name. 
+
+Definition at line 138 of file VOMSRegistrationServiceLocator.java.
+
+
+
+References org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.setEndpointAddress().
+
+
+\begin{DoxyCode}
+                                                                                 
+                                                            {
+        setEndpointAddress(portName.getLocalPart(), address);
+    }
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+
+
+\hypertarget{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_a027076b3679899b742d499429827f488}{
+\index{org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator@{org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator}!setVOMSRegistrationEndpointAddress@{setVOMSRegistrationEndpointAddress}}
+\index{setVOMSRegistrationEndpointAddress@{setVOMSRegistrationEndpointAddress}!org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator@{org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator}}
+\subsubsection[{setVOMSRegistrationEndpointAddress}]{\setlength{\rightskip}{0pt plus 5cm}void org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.setVOMSRegistrationEndpointAddress (
+\begin{DoxyParamCaption}
+\item[{java.lang.String}]{address}
+\end{DoxyParamCaption}
+)}}
+\label{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_a027076b3679899b742d499429827f488}
+
+
+Definition at line 64 of file VOMSRegistrationServiceLocator.java.
+
+
+
+References org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.VOMSRegistration\_\-address.
+
+
+
+Referenced by org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.setEndpointAddress().
+
+
+\begin{DoxyCode}
+                                                                             {
+        VOMSRegistration_address = address;
+    }
+\end{DoxyCode}
+
+
+Here is the caller graph for this function:
+
+
+\hypertarget{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_a51ec327cdaa76980982ce67d04b0318d}{
+\index{org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator@{org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator}!setVOMSRegistrationWSDDServiceName@{setVOMSRegistrationWSDDServiceName}}
+\index{setVOMSRegistrationWSDDServiceName@{setVOMSRegistrationWSDDServiceName}!org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator@{org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator}}
+\subsubsection[{setVOMSRegistrationWSDDServiceName}]{\setlength{\rightskip}{0pt plus 5cm}void org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.setVOMSRegistrationWSDDServiceName (
+\begin{DoxyParamCaption}
+\item[{java.lang.String}]{name}
+\end{DoxyParamCaption}
+)}}
+\label{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_a51ec327cdaa76980982ce67d04b0318d}
+
+
+Definition at line 38 of file VOMSRegistrationServiceLocator.java.
+
+
+
+References org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.VOMSRegistrationWSDDServiceName.
+
+
+\begin{DoxyCode}
+                                                                          {
+        VOMSRegistrationWSDDServiceName = name;
+    }
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_afe50260789264526462a9fe86fbd1a4f}{
+\index{org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator@{org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator}!ports@{ports}}
+\index{ports@{ports}!org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator@{org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator}}
+\subsubsection[{ports}]{\setlength{\rightskip}{0pt plus 5cm}java.util.HashSet {\bf org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.ports} = null\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_afe50260789264526462a9fe86fbd1a4f}
+
+
+Definition at line 111 of file VOMSRegistrationServiceLocator.java.
+
+
+
+Referenced by org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.getPorts().
+
+\hypertarget{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_a8b1d238baa33c02d1366768aac9fb7bc}{
+\index{org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator@{org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator}!VOMSRegistration\_\-address@{VOMSRegistration\_\-address}}
+\index{VOMSRegistration\_\-address@{VOMSRegistration\_\-address}!org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator@{org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator}}
+\subsubsection[{VOMSRegistration\_\-address}]{\setlength{\rightskip}{0pt plus 5cm}java.lang.String {\bf org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.VOMSRegistration\_\-address} = \char`\"{}https://localhost:8443/glite-\/security-\/voms-\/admin-\/interface/{\bf VOMSRegistration}\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_a8b1d238baa33c02d1366768aac9fb7bc}
+
+
+Definition at line 25 of file VOMSRegistrationServiceLocator.java.
+
+
+
+Referenced by org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.getPort(), org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.getVOMSRegistration(), org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.getVOMSRegistrationAddress(), and org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.setVOMSRegistrationEndpointAddress().
+
+\hypertarget{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_a37abee409465b82c58014954c0b576e9}{
+\index{org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator@{org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator}!VOMSRegistrationWSDDServiceName@{VOMSRegistrationWSDDServiceName}}
+\index{VOMSRegistrationWSDDServiceName@{VOMSRegistrationWSDDServiceName}!org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator@{org::glite::security::voms::service::registration::VOMSRegistrationServiceLocator}}
+\subsubsection[{VOMSRegistrationWSDDServiceName}]{\setlength{\rightskip}{0pt plus 5cm}java.lang.String {\bf org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.VOMSRegistrationWSDDServiceName} = \char`\"{}VOMSRegistration\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator_a37abee409465b82c58014954c0b576e9}
+
+
+Definition at line 32 of file VOMSRegistrationServiceLocator.java.
+
+
+
+Referenced by org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.getVOMSRegistrationWSDDServiceName(), and org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.setVOMSRegistrationWSDDServiceName().
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/\hyperlink{VOMSRegistrationServiceLocator_8java}{VOMSRegistrationServiceLocator.java}\end{DoxyCompactItemize}

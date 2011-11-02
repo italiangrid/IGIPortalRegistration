@@ -1,0 +1,305 @@
+\hypertarget{classportal_1_1registration_1_1utils_1_1MyValidator}{
+\section{portal.registration.utils.MyValidator Class Reference}
+\label{classportal_1_1registration_1_1utils_1_1MyValidator}\index{portal::registration::utils::MyValidator@{portal::registration::utils::MyValidator}}
+}
+
+
+Collaboration diagram for portal.registration.utils.MyValidator:
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static boolean \hyperlink{classportal_1_1registration_1_1utils_1_1MyValidator_acdf993cfac49201b241d31284851e165}{validate} (\hyperlink{classportal_1_1registration_1_1domain_1_1UserInfo}{UserInfo} target, List$<$ String $>$ errors)  throws SystemException 
+\item 
+static boolean \hyperlink{classportal_1_1registration_1_1utils_1_1MyValidator_aeee5050b9c941e448aae3c399bec3da5}{validateCert} (String pwd, String pwd1, String pwd2, List$<$ String $>$ errors)  throws SystemException 
+\item 
+static boolean \hyperlink{classportal_1_1registration_1_1utils_1_1MyValidator_a6a9bff1eb67d2322fadae0eba39e1c22}{validateUpdate} (\hyperlink{classportal_1_1registration_1_1domain_1_1UserInfo}{UserInfo} target, \hyperlink{classportal_1_1registration_1_1domain_1_1UserInfo}{UserInfo} check, List$<$ String $>$ errors)  throws SystemException 
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static final Logger \hyperlink{classportal_1_1registration_1_1utils_1_1MyValidator_ac3007a0c35777d54f57ea95450baef66}{log} = Logger.getLogger(MyValidator.class)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 13 of file MyValidator.java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classportal_1_1registration_1_1utils_1_1MyValidator_acdf993cfac49201b241d31284851e165}{
+\index{portal::registration::utils::MyValidator@{portal::registration::utils::MyValidator}!validate@{validate}}
+\index{validate@{validate}!portal::registration::utils::MyValidator@{portal::registration::utils::MyValidator}}
+\subsubsection[{validate}]{\setlength{\rightskip}{0pt plus 5cm}static boolean portal.registration.utils.MyValidator.validate (
+\begin{DoxyParamCaption}
+\item[{{\bf UserInfo}}]{target, }
+\item[{List$<$ String $>$}]{errors}
+\end{DoxyParamCaption}
+)  throws SystemException \hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classportal_1_1registration_1_1utils_1_1MyValidator_acdf993cfac49201b241d31284851e165}
+
+
+Definition at line 17 of file MyValidator.java.
+
+
+
+References portal.registration.utils.MyValidator.log.
+
+
+
+Referenced by portal.registration.controller.AddUserInfoController.addUserInfo().
+
+
+\begin{DoxyCode}
+                                               {
+                boolean result = true;
+
+                if (Validator.isNull(target.getFirstName())) {
+                        errors.add("user-first-name-required");
+                        result = false;
+                        log.info("nome sbagliato");
+                }
+
+                if (Validator.isNull(target.getLastName())) {
+                        errors.add("user-last-name-required");
+                        result = false;
+                        log.info("cognome sbagliato");
+                }
+
+                if (Validator.isNull(target.getInstitute())) {
+                        errors.add("user-institute-required");
+                        result = false;
+                        log.info("istituto sbagliato");
+                }
+
+                if (Validator.isNull(target.getMail())) {
+                        errors.add("user-mail-required");
+                        result = false;
+                        log.info("mail sbagliato");
+                }
+
+                if (Validator.isNotNull(target.getMail())) {
+                        if (!Validator.isEmailAddress(target.getMail())) {
+                                errors.add("user-valid-mail-required");
+                                result = false;
+                                log.info("mail invalida sbagliato");
+                        }
+                }
+
+                if (Validator.isNull(target.getUsername())) {
+                        errors.add("user-username-required");
+                        result = false;
+                        log.info("usename vuoto sbagliato");
+                }
+
+                if (Validator.isNotNull(target.getPhone())) {
+                        if (!Validator.isPhoneNumber(target.getPhone())) {
+                                errors.add("user-phone-valid");
+                                result = false;
+                                log.info("telefono sbagliato");
+                        }
+                }
+
+                List<User> liferayUsers = UserLocalServiceUtil.getUsers(0,
+                                UserLocalServiceUtil.getUsersCount());
+
+                for (int i = 0; i < UserLocalServiceUtil.getUsersCount(); i++) {
+                        if (liferayUsers.get(i).getScreenName()
+                                        .equals(target.getUsername())) {
+                                errors.add("user-username-duplicate");
+                                result = false;
+                                log.info("username duplicato sbagliato");
+                        }
+                        if (liferayUsers.get(i).getEmailAddress().equals(target.g
+      etMail())) {
+                                errors.add("user-mail-duplicate");
+                                result = false;
+                                log.info("mail duplicato sbagliato " + target.get
+      Mail() + " = "
+                                                + liferayUsers.get(i).getEmailAdd
+      ress());
+                        }
+                }
+
+                return result;
+        }
+\end{DoxyCode}
+
+
+Here is the caller graph for this function:
+
+
+\hypertarget{classportal_1_1registration_1_1utils_1_1MyValidator_aeee5050b9c941e448aae3c399bec3da5}{
+\index{portal::registration::utils::MyValidator@{portal::registration::utils::MyValidator}!validateCert@{validateCert}}
+\index{validateCert@{validateCert}!portal::registration::utils::MyValidator@{portal::registration::utils::MyValidator}}
+\subsubsection[{validateCert}]{\setlength{\rightskip}{0pt plus 5cm}static boolean portal.registration.utils.MyValidator.validateCert (
+\begin{DoxyParamCaption}
+\item[{String}]{pwd, }
+\item[{String}]{pwd1, }
+\item[{String}]{pwd2, }
+\item[{List$<$ String $>$}]{errors}
+\end{DoxyParamCaption}
+)  throws SystemException \hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classportal_1_1registration_1_1utils_1_1MyValidator_aeee5050b9c941e448aae3c399bec3da5}
+
+
+Definition at line 88 of file MyValidator.java.
+
+
+
+References portal.registration.utils.MyValidator.log.
+
+
+
+Referenced by portal.registration.controller.UploadCertController.uploadCert().
+
+
+\begin{DoxyCode}
+                                                                    {
+                boolean result = true;
+
+                if (!pwd1.equals(pwd2)) {
+                        errors.add("cert-password-incorrect");
+                        result = false;
+                        log.info("Le Password devono essere uguali");
+                }
+
+                if (Validator.isNull(pwd)) {
+                        errors.add("key-pass-required");
+                        result = false;
+                        log.info("Inserire Password");
+                }
+
+                if (Validator.isNull(pwd1)) {
+                        errors.add("cert-pass1-required");
+                        result = false;
+                        log.info("Inserire Password");
+                }
+
+                if (Validator.isNull(pwd2)) {
+                        errors.add("cert-pass2-required");
+                        result = false;
+                        log.info("Inserire Password di controllo");
+                }
+
+                return result;
+        }
+\end{DoxyCode}
+
+
+Here is the caller graph for this function:
+
+
+\hypertarget{classportal_1_1registration_1_1utils_1_1MyValidator_a6a9bff1eb67d2322fadae0eba39e1c22}{
+\index{portal::registration::utils::MyValidator@{portal::registration::utils::MyValidator}!validateUpdate@{validateUpdate}}
+\index{validateUpdate@{validateUpdate}!portal::registration::utils::MyValidator@{portal::registration::utils::MyValidator}}
+\subsubsection[{validateUpdate}]{\setlength{\rightskip}{0pt plus 5cm}static boolean portal.registration.utils.MyValidator.validateUpdate (
+\begin{DoxyParamCaption}
+\item[{{\bf UserInfo}}]{target, }
+\item[{{\bf UserInfo}}]{check, }
+\item[{List$<$ String $>$}]{errors}
+\end{DoxyParamCaption}
+)  throws SystemException \hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classportal_1_1registration_1_1utils_1_1MyValidator_a6a9bff1eb67d2322fadae0eba39e1c22}
+
+
+Definition at line 119 of file MyValidator.java.
+
+
+
+References portal.registration.utils.MyValidator.log.
+
+
+
+Referenced by portal.registration.controller.EditUserInfoController.editUserInfo().
+
+
+\begin{DoxyCode}
+                                                                    {
+                boolean result = true;
+
+                if (Validator.isNull(target.getFirstName())) {
+                        errors.add("user-first-name-required");
+                        result = false;
+                        log.info("nome sbagliato");
+                }
+
+                if (Validator.isNull(target.getLastName())) {
+                        errors.add("user-last-name-required");
+                        result = false;
+                        log.info("cognome sbagliato");
+                }
+
+                if (Validator.isNull(target.getInstitute())) {
+                        errors.add("user-institute-required");
+                        result = false;
+                        log.info("istituto sbagliato");
+                }
+
+                if (Validator.isNull(target.getMail())) {
+                        errors.add("user-mail-required");
+                        result = false;
+                        log.info("mail sbagliato");
+                }
+                if (!target.getMail().equals(check.getMail())) {
+                        result = false;
+                        errors.add("user-mail-must-same");
+                }
+
+                if (Validator.isNotNull(target.getMail())) {
+                        if (!Validator.isEmailAddress(target.getMail())) {
+                                errors.add("user-valid-mail-required");
+                                result = false;
+                                log.info("mail invalida sbagliato");
+                        }
+                }
+
+                if (Validator.isNull(target.getUsername())) {
+                        errors.add("user-username-required");
+                        result = false;
+                        log.info("usename vuoto sbagliato");
+                }
+                if (!target.getUsername().equals(check.getUsername())) {
+                        result = false;
+                        errors.add("user-username-must-same");
+                }
+
+                if (Validator.isNotNull(target.getPhone())) {
+                        if (!Validator.isPhoneNumber(target.getPhone())) {
+                                errors.add("user-phone-valid");
+                                result = false;
+                                log.info("telefono sbagliato");
+                        }
+                }
+
+                return result;
+        }
+\end{DoxyCode}
+
+
+Here is the caller graph for this function:
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classportal_1_1registration_1_1utils_1_1MyValidator_ac3007a0c35777d54f57ea95450baef66}{
+\index{portal::registration::utils::MyValidator@{portal::registration::utils::MyValidator}!log@{log}}
+\index{log@{log}!portal::registration::utils::MyValidator@{portal::registration::utils::MyValidator}}
+\subsubsection[{log}]{\setlength{\rightskip}{0pt plus 5cm}final Logger {\bf portal.registration.utils.MyValidator.log} = Logger.getLogger(MyValidator.class)\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{classportal_1_1registration_1_1utils_1_1MyValidator_ac3007a0c35777d54f57ea95450baef66}
+
+
+Definition at line 15 of file MyValidator.java.
+
+
+
+Referenced by portal.registration.utils.MyValidator.validate(), portal.registration.utils.MyValidator.validateCert(), and portal.registration.utils.MyValidator.validateUpdate().
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/utils/\hyperlink{MyValidator_8java}{MyValidator.java}\end{DoxyCompactItemize}

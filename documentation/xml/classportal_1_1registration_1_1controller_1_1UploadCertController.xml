@@ -1,0 +1,223 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="classportal_1_1registration_1_1controller_1_1UploadCertController" kind="class" prot="public">
+    <compoundname>portal::registration::controller::UploadCertController</compoundname>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classportal_1_1registration_1_1controller_1_1UploadCertController_1ad52031d20516c6accce86ff8e44526d1" prot="private" static="yes" mutable="no">
+        <type>final Logger</type>
+        <definition>final Logger portal.registration.controller.UploadCertController.log</definition>
+        <argsstring></argsstring>
+        <name>log</name>
+        <initializer> Logger
+			.getLogger(UploadCertController.class)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/UploadCertController.java" line="50" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/UploadCertController.java" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classportal_1_1registration_1_1controller_1_1UploadCertController_1a3e02549430f2fa9c54b2d8d620ac1166" prot="private" static="no" mutable="no">
+        <type><ref refid="interfaceportal_1_1registration_1_1services_1_1CertificateService" kindref="compound">CertificateService</ref></type>
+        <definition>CertificateService portal.registration.controller.UploadCertController.certificateService</definition>
+        <argsstring></argsstring>
+        <name>certificateService</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/UploadCertController.java" line="53" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/UploadCertController.java" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classportal_1_1registration_1_1controller_1_1UploadCertController_1ac913a3594756b96ed7f0fcd84554db1d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String portal.registration.controller.UploadCertController.showUploadCert</definition>
+        <argsstring>(RenderResponse response)</argsstring>
+        <name>showUploadCert</name>
+        <param>
+          <type>RenderResponse</type>
+          <declname>response</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/UploadCertController.java" line="56" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/UploadCertController.java" bodystart="56" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1controller_1_1UploadCertController_1aabfea247d5dc60c807432e5c7d097b88" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void portal.registration.controller.UploadCertController.uploadCert</definition>
+        <argsstring>(ActionRequest request, ActionResponse response, SessionStatus sessionStatus)</argsstring>
+        <name>uploadCert</name>
+        <param>
+          <type>ActionRequest</type>
+          <declname>request</declname>
+        </param>
+        <param>
+          <type>ActionResponse</type>
+          <declname>response</declname>
+        </param>
+        <param>
+          <type>SessionStatus</type>
+          <declname>sessionStatus</declname>
+        </param>
+        <exceptions> throws PortalException, 			SystemException </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/UploadCertController.java" line="63" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/UploadCertController.java" bodystart="61" bodyend="292"/>
+        <references refid="classportal_1_1registration_1_1domain_1_1Certificate_1ab1b7623aaf7364f3b30f8b612e887353" compoundref="Certificate_8java" startline="129" endline="134">portal.registration.domain.Certificate::equals</references>
+        <references refid="interfaceportal_1_1registration_1_1services_1_1CertificateService_1a6e2ec6680c5fe99c57210c58567e5df1">portal.registration.services.CertificateService::findById</references>
+        <references refid="interfaceportal_1_1registration_1_1services_1_1CertificateService_1a83013e7c634e5103c7bc21e961243b91">portal.registration.services.CertificateService::save</references>
+        <references refid="classportal_1_1registration_1_1domain_1_1Certificate_1a1768dd3798008b6e1bf3c80c2cfb4885" compoundref="Certificate_8java" startline="98" endline="100">portal.registration.domain.Certificate::setCaonline</references>
+        <references refid="classportal_1_1registration_1_1domain_1_1Certificate_1a5be4ee6795b3c26252c099c98218479f" compoundref="Certificate_8java" startline="89" endline="91">portal.registration.domain.Certificate::setExpirationDate</references>
+        <references refid="classportal_1_1registration_1_1domain_1_1Certificate_1ae9ef0dd089f716d4cb52890c629ebd79" compoundref="Certificate_8java" startline="60" endline="62">portal.registration.domain.Certificate::setIdCert</references>
+        <references refid="classportal_1_1registration_1_1domain_1_1Certificate_1aa469f1b297ff231d37b56cf926774365" compoundref="Certificate_8java" startline="116" endline="118">portal.registration.domain.Certificate::setIssuer</references>
+        <references refid="classportal_1_1registration_1_1domain_1_1Certificate_1a265b7255aabb51902882c5d7c12c122e" compoundref="Certificate_8java" startline="107" endline="109">portal.registration.domain.Certificate::setPrimaryCert</references>
+        <references refid="classportal_1_1registration_1_1domain_1_1Certificate_1a6f285c68c3095c89f9432e42b4f4dc37" compoundref="Certificate_8java" startline="79" endline="81">portal.registration.domain.Certificate::setSubject</references>
+        <references refid="classportal_1_1registration_1_1utils_1_1MyValidator_1aeee5050b9c941e448aae3c399bec3da5" compoundref="MyValidator_8java" startline="88" endline="117">portal.registration.utils.MyValidator::validateCert</references>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1controller_1_1UploadCertController_1ae16df287c878b7a8539deca62dae4fa0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void portal.registration.controller.UploadCertController.setDefaultCert</definition>
+        <argsstring>(ActionRequest request, ActionResponse response, SessionStatus sessionStatus)</argsstring>
+        <name>setDefaultCert</name>
+        <param>
+          <type>ActionRequest</type>
+          <declname>request</declname>
+        </param>
+        <param>
+          <type>ActionResponse</type>
+          <declname>response</declname>
+        </param>
+        <param>
+          <type>SessionStatus</type>
+          <declname>sessionStatus</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/UploadCertController.java" line="341" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/UploadCertController.java" bodystart="340" bodyend="363"/>
+        <references refid="interfaceportal_1_1registration_1_1services_1_1CertificateService_1a31323ccb59ca777ac0bc7341454cbb07">portal.registration.services.CertificateService::setDefault</references>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1controller_1_1UploadCertController_1a93445bb06f7dc882972b7ca3f77cb152" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void portal.registration.controller.UploadCertController.removeCert</definition>
+        <argsstring>(ActionRequest request, ActionResponse response, SessionStatus sessionStatus)</argsstring>
+        <name>removeCert</name>
+        <param>
+          <type>ActionRequest</type>
+          <declname>request</declname>
+        </param>
+        <param>
+          <type>ActionResponse</type>
+          <declname>response</declname>
+        </param>
+        <param>
+          <type>SessionStatus</type>
+          <declname>sessionStatus</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/UploadCertController.java" line="367" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/UploadCertController.java" bodystart="366" bodyend="387"/>
+        <references refid="interfaceportal_1_1registration_1_1services_1_1CertificateService_1a38c935159bdcb93abdb8ae5f37a72b82">portal.registration.services.CertificateService::delete</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classportal_1_1registration_1_1controller_1_1UploadCertController_1aee6346cc2b1fde64774735838e5f3011" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String portal.registration.controller.UploadCertController.myOpenssl</definition>
+        <argsstring>(String opt, String filename, ArrayList&lt; String &gt; errors)</argsstring>
+        <name>myOpenssl</name>
+        <param>
+          <type>String</type>
+          <declname>opt</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>filename</declname>
+        </param>
+        <param>
+          <type>ArrayList&lt; String &gt;</type>
+          <declname>errors</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/UploadCertController.java" line="295" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/UploadCertController.java" bodystart="294" bodyend="337"/>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1controller_1_1UploadCertController_1a527883177a6f0d3525c6fe54bd41d323" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void portal.registration.controller.UploadCertController.deleteUploadedFile</definition>
+        <argsstring>(ArrayList&lt; String &gt; files)</argsstring>
+        <name>deleteUploadedFile</name>
+        <param>
+          <type>ArrayList&lt; String &gt;</type>
+          <declname>files</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/UploadCertController.java" line="389" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/UploadCertController.java" bodystart="389" bodyend="400"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="554">
+        <label>Logger</label>
+      </node>
+      <node id="555">
+        <label>portal.registration.services.CertificateService</label>
+        <link refid="interfaceportal_1_1registration_1_1services_1_1CertificateService"/>
+      </node>
+      <node id="553">
+        <label>portal.registration.controller.UploadCertController</label>
+        <link refid="classportal_1_1registration_1_1controller_1_1UploadCertController"/>
+        <childnode refid="554" relation="usage">
+          <edgelabel>log</edgelabel>
+        </childnode>
+        <childnode refid="555" relation="usage">
+          <edgelabel>certificateService</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/UploadCertController.java" line="47" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/UploadCertController.java" bodystart="47" bodyend="401"/>
+    <listofallmembers>
+      <member refid="classportal_1_1registration_1_1controller_1_1UploadCertController_1a3e02549430f2fa9c54b2d8d620ac1166" prot="private" virt="non-virtual"><scope>portal::registration::controller::UploadCertController</scope><name>certificateService</name></member>
+      <member refid="classportal_1_1registration_1_1controller_1_1UploadCertController_1a527883177a6f0d3525c6fe54bd41d323" prot="private" virt="non-virtual"><scope>portal::registration::controller::UploadCertController</scope><name>deleteUploadedFile</name></member>
+      <member refid="classportal_1_1registration_1_1controller_1_1UploadCertController_1ad52031d20516c6accce86ff8e44526d1" prot="private" virt="non-virtual"><scope>portal::registration::controller::UploadCertController</scope><name>log</name></member>
+      <member refid="classportal_1_1registration_1_1controller_1_1UploadCertController_1aee6346cc2b1fde64774735838e5f3011" prot="private" virt="non-virtual"><scope>portal::registration::controller::UploadCertController</scope><name>myOpenssl</name></member>
+      <member refid="classportal_1_1registration_1_1controller_1_1UploadCertController_1a93445bb06f7dc882972b7ca3f77cb152" prot="public" virt="non-virtual"><scope>portal::registration::controller::UploadCertController</scope><name>removeCert</name></member>
+      <member refid="classportal_1_1registration_1_1controller_1_1UploadCertController_1ae16df287c878b7a8539deca62dae4fa0" prot="public" virt="non-virtual"><scope>portal::registration::controller::UploadCertController</scope><name>setDefaultCert</name></member>
+      <member refid="classportal_1_1registration_1_1controller_1_1UploadCertController_1ac913a3594756b96ed7f0fcd84554db1d" prot="public" virt="non-virtual"><scope>portal::registration::controller::UploadCertController</scope><name>showUploadCert</name></member>
+      <member refid="classportal_1_1registration_1_1controller_1_1UploadCertController_1aabfea247d5dc60c807432e5c7d097b88" prot="public" virt="non-virtual"><scope>portal::registration::controller::UploadCertController</scope><name>uploadCert</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

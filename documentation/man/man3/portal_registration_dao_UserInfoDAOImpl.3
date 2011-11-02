@@ -1,0 +1,188 @@
+.TH "portal::registration::dao::UserInfoDAOImpl" 3 "Wed Jul 13 2011" "Version 4" "Registration" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+portal::registration::dao::UserInfoDAOImpl \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBportal.registration.dao.UserInfoDAO\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "Integer \fBsave\fP (\fBUserInfo\fP transientInstance)"
+.br
+.ti -1c
+.RI "void \fBdelete\fP (\fBUserInfo\fP persistentInstance)"
+.br
+.ti -1c
+.RI "\fBUserInfo\fP \fBfindById\fP (Integer id)"
+.br
+.ti -1c
+.RI "List< \fBUserInfo\fP > \fBgetAllUserInfo\fP ()"
+.br
+.ti -1c
+.RI "void \fBedit\fP (\fBUserInfo\fP userInfo)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "SessionFactory \fBsessionFactory\fP"
+.br
+.in -1c
+.SS "Static Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "static final Logger \fBlog\fP = Logger.getLogger(UserInfoDAOImpl.class)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 15 of file UserInfoDAOImpl.java.
+.SH "Member Function Documentation"
+.PP 
+.SS "void portal.registration.dao.UserInfoDAOImpl.delete (\fBUserInfo\fPpersistentInstance)"
+.PP
+Implements \fBportal.registration.dao.UserInfoDAO\fP.
+.PP
+Definition at line 35 of file UserInfoDAOImpl.java.
+.PP
+References portal.registration.dao.UserInfoDAOImpl.log, and portal.registration.dao.UserInfoDAOImpl.sessionFactory.
+.PP
+.nf
+                                                        {
+                log.debug('removing UserInfo instance');
+                try {
+                        Session session = sessionFactory.getCurrentSession();
+                        session.delete(persistentInstance);
+                        log.debug('remove successful');
+                } catch (RuntimeException re) {
+                        log.error('remove failed', re);
+                        throw re;
+                }
+        }
+.fi
+.SS "void portal.registration.dao.UserInfoDAOImpl.edit (\fBUserInfo\fPuserInfo)"
+.PP
+Implements \fBportal.registration.dao.UserInfoDAO\fP.
+.PP
+Definition at line 78 of file UserInfoDAOImpl.java.
+.PP
+References portal.registration.domain.UserInfo.getFirstName(), portal.registration.domain.UserInfo.getInstitute(), portal.registration.domain.UserInfo.getLastName(), portal.registration.domain.UserInfo.getMail(), portal.registration.domain.UserInfo.getPhone(), portal.registration.domain.UserInfo.getUserId(), portal.registration.domain.UserInfo.getUsername(), portal.registration.dao.UserInfoDAOImpl.log, portal.registration.dao.UserInfoDAOImpl.sessionFactory, portal.registration.domain.UserInfo.setFirstName(), portal.registration.domain.UserInfo.setInstitute(), portal.registration.domain.UserInfo.setLastName(), portal.registration.domain.UserInfo.setMail(), portal.registration.domain.UserInfo.setPhone(), portal.registration.domain.UserInfo.setRegistrationComplete(), and portal.registration.domain.UserInfo.setUsername().
+.PP
+.nf
+                                            {
+                log.debug('Editing existing userInfo');
+
+                // Retrieve session from Hibernate
+                Session session = sessionFactory.getCurrentSession();
+
+                // Retrieve existing userInfo via id
+                UserInfo existingUserInfo = (UserInfo) session.get(UserInfo.class,
+                                userInfo.getUserId());
+
+                // Assign updated values to this userInfo
+                existingUserInfo.setFirstName(userInfo.getFirstName());
+                existingUserInfo.setLastName(userInfo.getLastName());
+                existingUserInfo.setInstitute(userInfo.getInstitute());
+                existingUserInfo.setPhone(userInfo.getPhone());
+                existingUserInfo.setMail(userInfo.getMail());
+                existingUserInfo.setUsername(userInfo.getUsername());
+                existingUserInfo.setRegistrationComplete(userInfo
+                                .getRegistrationComplete());
+
+                // Save updates
+                session.save(existingUserInfo);
+        }
+.fi
+.SS "\fBUserInfo\fP portal.registration.dao.UserInfoDAOImpl.findById (Integerid)"
+.PP
+Implements \fBportal.registration.dao.UserInfoDAO\fP.
+.PP
+Definition at line 47 of file UserInfoDAOImpl.java.
+.PP
+References portal.registration.dao.UserInfoDAOImpl.log, and portal.registration.dao.UserInfoDAOImpl.sessionFactory.
+.PP
+.nf
+                                             {
+                log.debug('getting UserInfo instance with id: ' + id);
+                try {
+                        Session session = sessionFactory.getCurrentSession();
+                        UserInfo instance = (UserInfo) session.get(UserInfo.class, id);
+                        log.debug('get successful');
+                        return instance;
+                } catch (RuntimeException re) {
+                        log.error('get failed', re);
+                        throw re;
+                }
+        }
+.fi
+.SS "List<\fBUserInfo\fP> portal.registration.dao.UserInfoDAOImpl.getAllUserInfo ()"
+.PP
+Implements \fBportal.registration.dao.UserInfoDAO\fP.
+.PP
+Definition at line 61 of file UserInfoDAOImpl.java.
+.PP
+References portal.registration.dao.UserInfoDAOImpl.log, and portal.registration.dao.UserInfoDAOImpl.sessionFactory.
+.PP
+.nf
+                                               {
+                log.debug('getting all UserInfo instance');
+                try {
+
+                        Session session = sessionFactory.getCurrentSession();
+
+                        // Create a Hibernate query (HQL)
+                        Query query = session.createQuery('FROM  UserInfo');
+
+                        // Retrieve all
+                        return query.list();
+                } catch (RuntimeException re) {
+                        log.error('get failed', re);
+                        throw re;
+                }
+        }
+.fi
+.SS "Integer portal.registration.dao.UserInfoDAOImpl.save (\fBUserInfo\fPtransientInstance)"
+.PP
+Implements \fBportal.registration.dao.UserInfoDAO\fP.
+.PP
+Definition at line 22 of file UserInfoDAOImpl.java.
+.PP
+References portal.registration.dao.UserInfoDAOImpl.log, and portal.registration.dao.UserInfoDAOImpl.sessionFactory.
+.PP
+.nf
+                                                        {
+                log.debug('persisting UserInfo instance');
+                try {
+                        Session session = sessionFactory.getCurrentSession();
+                        int id = (Integer) session.save(transientInstance);
+                        log.debug('persist successful');
+                        return id;
+                } catch (RuntimeException re) {
+                        log.error('persist failed', re);
+                        throw re;
+                }
+        }
+.fi
+.SH "Member Data Documentation"
+.PP 
+.SS "final Logger \fBportal.registration.dao.UserInfoDAOImpl.log\fP = Logger.getLogger(UserInfoDAOImpl.class)\fC [static, private]\fP"
+.PP
+Definition at line 17 of file UserInfoDAOImpl.java.
+.PP
+Referenced by portal.registration.dao.UserInfoDAOImpl.delete(), portal.registration.dao.UserInfoDAOImpl.edit(), portal.registration.dao.UserInfoDAOImpl.findById(), portal.registration.dao.UserInfoDAOImpl.getAllUserInfo(), and portal.registration.dao.UserInfoDAOImpl.save().
+.SS "SessionFactory \fBportal.registration.dao.UserInfoDAOImpl.sessionFactory\fP\fC [private]\fP"
+.PP
+Definition at line 20 of file UserInfoDAOImpl.java.
+.PP
+Referenced by portal.registration.dao.UserInfoDAOImpl.delete(), portal.registration.dao.UserInfoDAOImpl.edit(), portal.registration.dao.UserInfoDAOImpl.findById(), portal.registration.dao.UserInfoDAOImpl.getAllUserInfo(), and portal.registration.dao.UserInfoDAOImpl.save().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Registration from the source code.

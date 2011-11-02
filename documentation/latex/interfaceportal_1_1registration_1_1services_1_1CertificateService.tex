@@ -1,0 +1,152 @@
+\hypertarget{interfaceportal_1_1registration_1_1services_1_1CertificateService}{
+\section{portal.registration.services.CertificateService Interface Reference}
+\label{interfaceportal_1_1registration_1_1services_1_1CertificateService}\index{portal::registration::services::CertificateService@{portal::registration::services::CertificateService}}
+}
+
+
+Inheritance diagram for portal.registration.services.CertificateService:
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Integer \hyperlink{interfaceportal_1_1registration_1_1services_1_1CertificateService_a83013e7c634e5103c7bc21e961243b91}{save} (\hyperlink{classportal_1_1registration_1_1domain_1_1Certificate}{Certificate} transientInstance)
+\item 
+void \hyperlink{interfaceportal_1_1registration_1_1services_1_1CertificateService_a38c935159bdcb93abdb8ae5f37a72b82}{delete} (\hyperlink{classportal_1_1registration_1_1domain_1_1Certificate}{Certificate} persistentInstance)
+\item 
+int \hyperlink{interfaceportal_1_1registration_1_1services_1_1CertificateService_a3108e28c65788d0157a991abf6a4adc7}{save} (\hyperlink{classportal_1_1registration_1_1domain_1_1Certificate}{Certificate} certificate, int userId)
+\item 
+List$<$ \hyperlink{classportal_1_1registration_1_1domain_1_1Certificate}{Certificate} $>$ \hyperlink{interfaceportal_1_1registration_1_1services_1_1CertificateService_a6e2ec6680c5fe99c57210c58567e5df1}{findById} (int userId)
+\item 
+void \hyperlink{interfaceportal_1_1registration_1_1services_1_1CertificateService_a630898254fc5fe77e4b959ebb4fa0e6e}{delete} (int idCert)
+\item 
+boolean \hyperlink{interfaceportal_1_1registration_1_1services_1_1CertificateService_a31323ccb59ca777ac0bc7341454cbb07}{setDefault} (int idCert)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 7 of file CertificateService.java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{interfaceportal_1_1registration_1_1services_1_1CertificateService_a38c935159bdcb93abdb8ae5f37a72b82}{
+\index{portal::registration::services::CertificateService@{portal::registration::services::CertificateService}!delete@{delete}}
+\index{delete@{delete}!portal::registration::services::CertificateService@{portal::registration::services::CertificateService}}
+\subsubsection[{delete}]{\setlength{\rightskip}{0pt plus 5cm}void portal.registration.services.CertificateService.delete (
+\begin{DoxyParamCaption}
+\item[{{\bf Certificate}}]{persistentInstance}
+\end{DoxyParamCaption}
+)}}
+\label{interfaceportal_1_1registration_1_1services_1_1CertificateService_a38c935159bdcb93abdb8ae5f37a72b82}
+
+
+Implemented in \hyperlink{classportal_1_1registration_1_1services_1_1CertificateServiceImpl_a304c2968bab9d2c97a7aa10863c8dd48}{portal.registration.services.CertificateServiceImpl}.
+
+
+
+Referenced by portal.registration.controller.UploadCertController.removeCert().
+
+
+
+Here is the caller graph for this function:
+
+
+\hypertarget{interfaceportal_1_1registration_1_1services_1_1CertificateService_a630898254fc5fe77e4b959ebb4fa0e6e}{
+\index{portal::registration::services::CertificateService@{portal::registration::services::CertificateService}!delete@{delete}}
+\index{delete@{delete}!portal::registration::services::CertificateService@{portal::registration::services::CertificateService}}
+\subsubsection[{delete}]{\setlength{\rightskip}{0pt plus 5cm}void portal.registration.services.CertificateService.delete (
+\begin{DoxyParamCaption}
+\item[{int}]{idCert}
+\end{DoxyParamCaption}
+)}}
+\label{interfaceportal_1_1registration_1_1services_1_1CertificateService_a630898254fc5fe77e4b959ebb4fa0e6e}
+
+
+Implemented in \hyperlink{classportal_1_1registration_1_1services_1_1CertificateServiceImpl_a8c82de27eb589083a94bd6c34bde7247}{portal.registration.services.CertificateServiceImpl}.
+
+\hypertarget{interfaceportal_1_1registration_1_1services_1_1CertificateService_a6e2ec6680c5fe99c57210c58567e5df1}{
+\index{portal::registration::services::CertificateService@{portal::registration::services::CertificateService}!findById@{findById}}
+\index{findById@{findById}!portal::registration::services::CertificateService@{portal::registration::services::CertificateService}}
+\subsubsection[{findById}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Certificate}$>$ portal.registration.services.CertificateService.findById (
+\begin{DoxyParamCaption}
+\item[{int}]{userId}
+\end{DoxyParamCaption}
+)}}
+\label{interfaceportal_1_1registration_1_1services_1_1CertificateService_a6e2ec6680c5fe99c57210c58567e5df1}
+
+
+Implemented in \hyperlink{classportal_1_1registration_1_1services_1_1CertificateServiceImpl_aa262a9afdd7f565552e4f6b273a97c8c}{portal.registration.services.CertificateServiceImpl}.
+
+
+
+Referenced by portal.registration.controller.AddUserToVOController.checkVO(), portal.registration.controller.EditUserInfoController.getListCert(), and portal.registration.controller.UploadCertController.uploadCert().
+
+
+
+Here is the caller graph for this function:
+
+
+\hypertarget{interfaceportal_1_1registration_1_1services_1_1CertificateService_a83013e7c634e5103c7bc21e961243b91}{
+\index{portal::registration::services::CertificateService@{portal::registration::services::CertificateService}!save@{save}}
+\index{save@{save}!portal::registration::services::CertificateService@{portal::registration::services::CertificateService}}
+\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}Integer portal.registration.services.CertificateService.save (
+\begin{DoxyParamCaption}
+\item[{{\bf Certificate}}]{transientInstance}
+\end{DoxyParamCaption}
+)}}
+\label{interfaceportal_1_1registration_1_1services_1_1CertificateService_a83013e7c634e5103c7bc21e961243b91}
+
+
+Implemented in \hyperlink{classportal_1_1registration_1_1services_1_1CertificateServiceImpl_a50956067a79a48c6957e422c33b73f56}{portal.registration.services.CertificateServiceImpl}.
+
+
+
+Referenced by portal.registration.controller.UploadCertController.uploadCert().
+
+
+
+Here is the caller graph for this function:
+
+
+\hypertarget{interfaceportal_1_1registration_1_1services_1_1CertificateService_a3108e28c65788d0157a991abf6a4adc7}{
+\index{portal::registration::services::CertificateService@{portal::registration::services::CertificateService}!save@{save}}
+\index{save@{save}!portal::registration::services::CertificateService@{portal::registration::services::CertificateService}}
+\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}int portal.registration.services.CertificateService.save (
+\begin{DoxyParamCaption}
+\item[{{\bf Certificate}}]{certificate, }
+\item[{int}]{userId}
+\end{DoxyParamCaption}
+)}}
+\label{interfaceportal_1_1registration_1_1services_1_1CertificateService_a3108e28c65788d0157a991abf6a4adc7}
+
+
+Implemented in \hyperlink{classportal_1_1registration_1_1services_1_1CertificateServiceImpl_a592df743c12b9a43db06dbae92db23c2}{portal.registration.services.CertificateServiceImpl}.
+
+\hypertarget{interfaceportal_1_1registration_1_1services_1_1CertificateService_a31323ccb59ca777ac0bc7341454cbb07}{
+\index{portal::registration::services::CertificateService@{portal::registration::services::CertificateService}!setDefault@{setDefault}}
+\index{setDefault@{setDefault}!portal::registration::services::CertificateService@{portal::registration::services::CertificateService}}
+\subsubsection[{setDefault}]{\setlength{\rightskip}{0pt plus 5cm}boolean portal.registration.services.CertificateService.setDefault (
+\begin{DoxyParamCaption}
+\item[{int}]{idCert}
+\end{DoxyParamCaption}
+)}}
+\label{interfaceportal_1_1registration_1_1services_1_1CertificateService_a31323ccb59ca777ac0bc7341454cbb07}
+
+
+Implemented in \hyperlink{classportal_1_1registration_1_1services_1_1CertificateServiceImpl_abac3e70bf6b1f63ca1d96e0829365f5c}{portal.registration.services.CertificateServiceImpl}.
+
+
+
+Referenced by portal.registration.controller.UploadCertController.setDefaultCert().
+
+
+
+Here is the caller graph for this function:
+
+
+
+
+The documentation for this interface was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/services/\hyperlink{CertificateService_8java}{CertificateService.java}\end{DoxyCompactItemize}

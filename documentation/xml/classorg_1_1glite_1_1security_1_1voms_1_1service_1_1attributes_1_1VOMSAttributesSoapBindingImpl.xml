@@ -1,0 +1,500 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingImpl" kind="class" prot="public">
+    <compoundname>org::glite::security::voms::service::attributes::VOMSAttributesSoapBindingImpl</compoundname>
+    <basecompoundref refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes" prot="public" virt="non-virtual">org.glite.security.voms.service.attributes.VOMSAttributes</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingImpl_1afc8f61606f7f4cd380a094782cfac304" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingImpl.createAttributeClass</definition>
+        <argsstring>(java.lang.String in0, java.lang.String in1, boolean in2)</argsstring>
+        <name>createAttributeClass</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes_1ada20938c0dd05bda033b92f9acbc7327">createAttributeClass</reimplements>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in0</declname>
+        </param>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in1</declname>
+        </param>
+        <param>
+          <type>boolean</type>
+          <declname>in2</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref> </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingImpl.java" line="11" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingImpl.java" bodystart="11" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingImpl_1a49bdb2e77df4960a58e046dcca70e758" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingImpl.createAttributeClass</definition>
+        <argsstring>(java.lang.String in0, java.lang.String in1)</argsstring>
+        <name>createAttributeClass</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes_1a12ce930632954c17add22c27010d2dd0">createAttributeClass</reimplements>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in0</declname>
+        </param>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in1</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref> </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingImpl.java" line="14" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingImpl.java" bodystart="14" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingImpl_1a02af2e477ca75c60141db68f8756e031" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingImpl.createAttributeClass</definition>
+        <argsstring>(java.lang.String in0)</argsstring>
+        <name>createAttributeClass</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes_1a337139200084137cc80ddc3a34dd112c">createAttributeClass</reimplements>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in0</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref> </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingImpl.java" line="17" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingImpl.java" bodystart="17" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingImpl_1a18ee29036449eb8219c18be0f1e53685" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeClass" kindref="compound">org.glite.security.voms.service.attributes.AttributeClass</ref></type>
+        <definition>org.glite.security.voms.service.attributes.AttributeClass org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingImpl.getAttributeClass</definition>
+        <argsstring>(java.lang.String in0)</argsstring>
+        <name>getAttributeClass</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes_1a2ca8ea4a72ec550c8eeed74858b2490e">getAttributeClass</reimplements>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in0</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref> </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingImpl.java" line="20" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingImpl.java" bodystart="20" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingImpl_1a2c7c104f129390ff1cf425872383a901" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingImpl.saveAttributeClass</definition>
+        <argsstring>(org.glite.security.voms.service.attributes.AttributeClass in0)</argsstring>
+        <name>saveAttributeClass</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes_1a96cefd9ceb19a203542d719614e588ea">saveAttributeClass</reimplements>
+        <param>
+          <type><ref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeClass" kindref="compound">org.glite.security.voms.service.attributes.AttributeClass</ref></type>
+          <declname>in0</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref> </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingImpl.java" line="24" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingImpl.java" bodystart="24" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingImpl_1ab846175bfd7186f388c5e3667255d7b3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingImpl.deleteAttributeClass</definition>
+        <argsstring>(java.lang.String in0)</argsstring>
+        <name>deleteAttributeClass</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes_1af624fb5081b5a062dfb3f77464025c72">deleteAttributeClass</reimplements>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in0</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref> </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingImpl.java" line="27" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingImpl.java" bodystart="27" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingImpl_1a5456d2ea35f23d25d5e79c64552c4539" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingImpl.deleteAttributeClass</definition>
+        <argsstring>(org.glite.security.voms.service.attributes.AttributeClass in0)</argsstring>
+        <name>deleteAttributeClass</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes_1a1e39cc4132d43da6354c8f7ea8bff77b">deleteAttributeClass</reimplements>
+        <param>
+          <type><ref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeClass" kindref="compound">org.glite.security.voms.service.attributes.AttributeClass</ref></type>
+          <declname>in0</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref> </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingImpl.java" line="30" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingImpl.java" bodystart="30" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingImpl_1a1526875bc28a0ddd7825b489ac726ec5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeClass" kindref="compound">org.glite.security.voms.service.attributes.AttributeClass</ref>[]</type>
+        <definition>org.glite.security.voms.service.attributes.AttributeClass [] org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingImpl.listAttributeClasses</definition>
+        <argsstring>()</argsstring>
+        <name>listAttributeClasses</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes_1ae7d702ccb9aae9e2467e4d433efbb250">listAttributeClasses</reimplements>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref> </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingImpl.java" line="33" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingImpl.java" bodystart="33" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingImpl_1a16cb882de5b780ca09b5561b901c5bec" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue" kindref="compound">org.glite.security.voms.service.attributes.AttributeValue</ref>[]</type>
+        <definition>org.glite.security.voms.service.attributes.AttributeValue [] org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingImpl.listUserAttributes</definition>
+        <argsstring>(org.glite.security.voms.User in0)</argsstring>
+        <name>listUserAttributes</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes_1a8fee5d85ad4b2fb8c37c844319eb2727">listUserAttributes</reimplements>
+        <param>
+          <type><ref refid="classorg_1_1glite_1_1security_1_1voms_1_1User" kindref="compound">org.glite.security.voms.User</ref></type>
+          <declname>in0</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref> </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingImpl.java" line="37" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingImpl.java" bodystart="37" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingImpl_1abd46ad9091223c225ca1ff57ec2c6fb6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingImpl.setUserAttribute</definition>
+        <argsstring>(org.glite.security.voms.User in0, org.glite.security.voms.service.attributes.AttributeValue in1)</argsstring>
+        <name>setUserAttribute</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes_1a755b5d37541db7a0c0bdbe33b2e850ec">setUserAttribute</reimplements>
+        <param>
+          <type><ref refid="classorg_1_1glite_1_1security_1_1voms_1_1User" kindref="compound">org.glite.security.voms.User</ref></type>
+          <declname>in0</declname>
+        </param>
+        <param>
+          <type><ref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue" kindref="compound">org.glite.security.voms.service.attributes.AttributeValue</ref></type>
+          <declname>in1</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref> </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingImpl.java" line="41" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingImpl.java" bodystart="41" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingImpl_1a3f5a947c66c7f86b56bde2cb1d5827b0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingImpl.deleteUserAttribute</definition>
+        <argsstring>(org.glite.security.voms.User in0, java.lang.String in1)</argsstring>
+        <name>deleteUserAttribute</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes_1a85c08333fea913f9eb05ff1da01e49c2">deleteUserAttribute</reimplements>
+        <param>
+          <type><ref refid="classorg_1_1glite_1_1security_1_1voms_1_1User" kindref="compound">org.glite.security.voms.User</ref></type>
+          <declname>in0</declname>
+        </param>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in1</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref> </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingImpl.java" line="44" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingImpl.java" bodystart="44" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingImpl_1ac7fe2ce22582538594d8a4e8ad6801a2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingImpl.deleteUserAttribute</definition>
+        <argsstring>(org.glite.security.voms.User in0, org.glite.security.voms.service.attributes.AttributeValue in1)</argsstring>
+        <name>deleteUserAttribute</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes_1aaf63aef7fc1eafcc0a263be2b2eca5f9">deleteUserAttribute</reimplements>
+        <param>
+          <type><ref refid="classorg_1_1glite_1_1security_1_1voms_1_1User" kindref="compound">org.glite.security.voms.User</ref></type>
+          <declname>in0</declname>
+        </param>
+        <param>
+          <type><ref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue" kindref="compound">org.glite.security.voms.service.attributes.AttributeValue</ref></type>
+          <declname>in1</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref> </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingImpl.java" line="47" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingImpl.java" bodystart="47" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingImpl_1a826e63ff83a5492d3e3c569734ce70d4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingImpl.setGroupAttribute</definition>
+        <argsstring>(java.lang.String in0, org.glite.security.voms.service.attributes.AttributeValue in1)</argsstring>
+        <name>setGroupAttribute</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes_1aea6d585cbe26db3f11f15cc2b017fb03">setGroupAttribute</reimplements>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in0</declname>
+        </param>
+        <param>
+          <type><ref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue" kindref="compound">org.glite.security.voms.service.attributes.AttributeValue</ref></type>
+          <declname>in1</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref> </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingImpl.java" line="50" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingImpl.java" bodystart="50" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingImpl_1a1084c612b6fdfed4a455485436daa601" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingImpl.deleteGroupAttribute</definition>
+        <argsstring>(java.lang.String in0, java.lang.String in1)</argsstring>
+        <name>deleteGroupAttribute</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes_1a21b03cab1701c30952181ad405e2e368">deleteGroupAttribute</reimplements>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in0</declname>
+        </param>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in1</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref> </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingImpl.java" line="53" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingImpl.java" bodystart="53" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingImpl_1a64a781b2ff6b51c82274bd51d50c8c44" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingImpl.deleteGroupAttribute</definition>
+        <argsstring>(java.lang.String in0, org.glite.security.voms.service.attributes.AttributeValue in1)</argsstring>
+        <name>deleteGroupAttribute</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes_1a5564060b855e3a2eeb79ce98b5d74e4c">deleteGroupAttribute</reimplements>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in0</declname>
+        </param>
+        <param>
+          <type><ref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue" kindref="compound">org.glite.security.voms.service.attributes.AttributeValue</ref></type>
+          <declname>in1</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref> </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingImpl.java" line="56" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingImpl.java" bodystart="56" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingImpl_1a3b15cf4aa7f4258fd13754fdb1233b3e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue" kindref="compound">org.glite.security.voms.service.attributes.AttributeValue</ref>[]</type>
+        <definition>org.glite.security.voms.service.attributes.AttributeValue [] org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingImpl.listGroupAttributes</definition>
+        <argsstring>(java.lang.String in0)</argsstring>
+        <name>listGroupAttributes</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes_1a1b781f52a2662f8cf68c602f5be65d72">listGroupAttributes</reimplements>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in0</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref> </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingImpl.java" line="59" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingImpl.java" bodystart="59" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingImpl_1a7e1e971b29677f9ae6418ad57e347748" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingImpl.setRoleAttribute</definition>
+        <argsstring>(java.lang.String in0, java.lang.String in1, org.glite.security.voms.service.attributes.AttributeValue in2)</argsstring>
+        <name>setRoleAttribute</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes_1a7ac38a7f4c61afcb966abc3854a65831">setRoleAttribute</reimplements>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in0</declname>
+        </param>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in1</declname>
+        </param>
+        <param>
+          <type><ref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue" kindref="compound">org.glite.security.voms.service.attributes.AttributeValue</ref></type>
+          <declname>in2</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref> </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingImpl.java" line="63" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingImpl.java" bodystart="63" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingImpl_1a9a1d8cdbfc1c77f634ba1b34a974fcf1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingImpl.deleteRoleAttribute</definition>
+        <argsstring>(java.lang.String in0, java.lang.String in1, java.lang.String in2)</argsstring>
+        <name>deleteRoleAttribute</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes_1a10e8d9e56da612471f8f2ce5972d755f">deleteRoleAttribute</reimplements>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in0</declname>
+        </param>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in1</declname>
+        </param>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in2</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref> </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingImpl.java" line="66" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingImpl.java" bodystart="66" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingImpl_1a2f89b924ae171cdc05cef27ea04e0f2c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingImpl.deleteRoleAttribute</definition>
+        <argsstring>(java.lang.String in0, java.lang.String in1, org.glite.security.voms.service.attributes.AttributeValue in2)</argsstring>
+        <name>deleteRoleAttribute</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes_1aa728f2ded931b28c408c9e6e19752317">deleteRoleAttribute</reimplements>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in0</declname>
+        </param>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in1</declname>
+        </param>
+        <param>
+          <type><ref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue" kindref="compound">org.glite.security.voms.service.attributes.AttributeValue</ref></type>
+          <declname>in2</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref> </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingImpl.java" line="69" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingImpl.java" bodystart="69" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingImpl_1a38dfa2facee366ff6875b94e85503a40" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue" kindref="compound">org.glite.security.voms.service.attributes.AttributeValue</ref>[]</type>
+        <definition>org.glite.security.voms.service.attributes.AttributeValue [] org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingImpl.listRoleAttributes</definition>
+        <argsstring>(java.lang.String in0, java.lang.String in1)</argsstring>
+        <name>listRoleAttributes</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes_1aeb3efd918efd7c9b131d1f2d1fe2ca4b">listRoleAttributes</reimplements>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in0</declname>
+        </param>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in1</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref> </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingImpl.java" line="72" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingImpl.java" bodystart="72" bodyend="74"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="710">
+        <label>org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingImpl</label>
+        <link refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingImpl"/>
+        <childnode refid="711" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="711">
+        <label>org.glite.security.voms.service.attributes.VOMSAttributes</label>
+        <link refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="712">
+        <label>org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingImpl</label>
+        <link refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingImpl"/>
+        <childnode refid="713" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="713">
+        <label>org.glite.security.voms.service.attributes.VOMSAttributes</label>
+        <link refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes"/>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingImpl.java" line="10" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/VOMSAttributesSoapBindingImpl.java" bodystart="10" bodyend="76"/>
+    <listofallmembers>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingImpl_1afc8f61606f7f4cd380a094782cfac304" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::attributes::VOMSAttributesSoapBindingImpl</scope><name>createAttributeClass</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingImpl_1a49bdb2e77df4960a58e046dcca70e758" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::attributes::VOMSAttributesSoapBindingImpl</scope><name>createAttributeClass</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingImpl_1a02af2e477ca75c60141db68f8756e031" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::attributes::VOMSAttributesSoapBindingImpl</scope><name>createAttributeClass</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingImpl_1ab846175bfd7186f388c5e3667255d7b3" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::attributes::VOMSAttributesSoapBindingImpl</scope><name>deleteAttributeClass</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingImpl_1a5456d2ea35f23d25d5e79c64552c4539" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::attributes::VOMSAttributesSoapBindingImpl</scope><name>deleteAttributeClass</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingImpl_1a1084c612b6fdfed4a455485436daa601" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::attributes::VOMSAttributesSoapBindingImpl</scope><name>deleteGroupAttribute</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingImpl_1a64a781b2ff6b51c82274bd51d50c8c44" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::attributes::VOMSAttributesSoapBindingImpl</scope><name>deleteGroupAttribute</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingImpl_1a9a1d8cdbfc1c77f634ba1b34a974fcf1" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::attributes::VOMSAttributesSoapBindingImpl</scope><name>deleteRoleAttribute</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingImpl_1a2f89b924ae171cdc05cef27ea04e0f2c" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::attributes::VOMSAttributesSoapBindingImpl</scope><name>deleteRoleAttribute</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingImpl_1a3f5a947c66c7f86b56bde2cb1d5827b0" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::attributes::VOMSAttributesSoapBindingImpl</scope><name>deleteUserAttribute</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingImpl_1ac7fe2ce22582538594d8a4e8ad6801a2" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::attributes::VOMSAttributesSoapBindingImpl</scope><name>deleteUserAttribute</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingImpl_1a18ee29036449eb8219c18be0f1e53685" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::attributes::VOMSAttributesSoapBindingImpl</scope><name>getAttributeClass</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingImpl_1a1526875bc28a0ddd7825b489ac726ec5" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::attributes::VOMSAttributesSoapBindingImpl</scope><name>listAttributeClasses</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingImpl_1a3b15cf4aa7f4258fd13754fdb1233b3e" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::attributes::VOMSAttributesSoapBindingImpl</scope><name>listGroupAttributes</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingImpl_1a38dfa2facee366ff6875b94e85503a40" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::attributes::VOMSAttributesSoapBindingImpl</scope><name>listRoleAttributes</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingImpl_1a16cb882de5b780ca09b5561b901c5bec" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::attributes::VOMSAttributesSoapBindingImpl</scope><name>listUserAttributes</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingImpl_1a2c7c104f129390ff1cf425872383a901" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::attributes::VOMSAttributesSoapBindingImpl</scope><name>saveAttributeClass</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingImpl_1a826e63ff83a5492d3e3c569734ce70d4" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::attributes::VOMSAttributesSoapBindingImpl</scope><name>setGroupAttribute</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingImpl_1a7e1e971b29677f9ae6418ad57e347748" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::attributes::VOMSAttributesSoapBindingImpl</scope><name>setRoleAttribute</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingImpl_1abd46ad9091223c225ca1ff57ec2c6fb6" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::attributes::VOMSAttributesSoapBindingImpl</scope><name>setUserAttribute</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

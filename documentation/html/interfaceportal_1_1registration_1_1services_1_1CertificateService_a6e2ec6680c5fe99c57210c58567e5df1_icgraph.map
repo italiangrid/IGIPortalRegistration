@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classportal_1_1registration_1_1controller_1_1AddUserToVOController.html#a31c8971c1e53637d1d8b26e660f77397" title="portal.registration.controller.AddUserToVOController.checkVO" alt="" coords="360,4,709,31"/>
+<area shape="rect" id="node5" href="$classportal_1_1registration_1_1controller_1_1EditUserInfoController.html#ac6fa84cda72409ea5928359f60c6cf7c" title="portal.registration.controller.EditUserInfoController.getListCert" alt="" coords="361,55,709,81"/>
+<area shape="rect" id="node7" href="$classportal_1_1registration_1_1controller_1_1UploadCertController.html#aabfea247d5dc60c807432e5c7d097b88" title="portal.registration.controller.UploadCertController.uploadCert" alt="" coords="363,105,706,132"/>
+</map>

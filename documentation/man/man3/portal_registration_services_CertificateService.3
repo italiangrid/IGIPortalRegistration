@@ -1,0 +1,67 @@
+.TH "portal::registration::services::CertificateService" 3 "Wed Jul 13 2011" "Version 4" "Registration" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+portal::registration::services::CertificateService \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBportal.registration.services.CertificateServiceImpl\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "Integer \fBsave\fP (\fBCertificate\fP transientInstance)"
+.br
+.ti -1c
+.RI "void \fBdelete\fP (\fBCertificate\fP persistentInstance)"
+.br
+.ti -1c
+.RI "int \fBsave\fP (\fBCertificate\fP certificate, int userId)"
+.br
+.ti -1c
+.RI "List< \fBCertificate\fP > \fBfindById\fP (int userId)"
+.br
+.ti -1c
+.RI "void \fBdelete\fP (int idCert)"
+.br
+.ti -1c
+.RI "boolean \fBsetDefault\fP (int idCert)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 7 of file CertificateService.java.
+.SH "Member Function Documentation"
+.PP 
+.SS "void portal.registration.services.CertificateService.delete (\fBCertificate\fPpersistentInstance)"
+.PP
+Implemented in \fBportal.registration.services.CertificateServiceImpl\fP.
+.PP
+Referenced by portal.registration.controller.UploadCertController.removeCert().
+.SS "void portal.registration.services.CertificateService.delete (intidCert)"
+.PP
+Implemented in \fBportal.registration.services.CertificateServiceImpl\fP.
+.SS "List<\fBCertificate\fP> portal.registration.services.CertificateService.findById (intuserId)"
+.PP
+Implemented in \fBportal.registration.services.CertificateServiceImpl\fP.
+.PP
+Referenced by portal.registration.controller.AddUserToVOController.checkVO(), portal.registration.controller.EditUserInfoController.getListCert(), and portal.registration.controller.UploadCertController.uploadCert().
+.SS "Integer portal.registration.services.CertificateService.save (\fBCertificate\fPtransientInstance)"
+.PP
+Implemented in \fBportal.registration.services.CertificateServiceImpl\fP.
+.PP
+Referenced by portal.registration.controller.UploadCertController.uploadCert().
+.SS "int portal.registration.services.CertificateService.save (\fBCertificate\fPcertificate, intuserId)"
+.PP
+Implemented in \fBportal.registration.services.CertificateServiceImpl\fP.
+.SS "boolean portal.registration.services.CertificateService.setDefault (intidCert)"
+.PP
+Implemented in \fBportal.registration.services.CertificateServiceImpl\fP.
+.PP
+Referenced by portal.registration.controller.UploadCertController.setDefaultCert().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Registration from the source code.

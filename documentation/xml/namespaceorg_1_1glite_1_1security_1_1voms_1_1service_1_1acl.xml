@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="namespaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1acl" kind="namespace">
+    <compoundname>org::glite::security::voms::service::acl</compoundname>
+    <innerclass refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1acl_1_1ACLEntry" prot="public">org::glite::security::voms::service::acl::ACLEntry</innerclass>
+    <innerclass refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1acl_1_1ACLEntry__Helper" prot="public">org::glite::security::voms::service::acl::ACLEntry_Helper</innerclass>
+    <innerclass refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1acl_1_1VOMSACL" prot="public">org::glite::security::voms::service::acl::VOMSACL</innerclass>
+    <innerclass refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1acl_1_1VOMSACLService" prot="public">org::glite::security::voms::service::acl::VOMSACLService</innerclass>
+    <innerclass refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1acl_1_1VOMSACLServiceLocator" prot="public">org::glite::security::voms::service::acl::VOMSACLServiceLocator</innerclass>
+    <innerclass refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1acl_1_1VOMSACLSoapBindingImpl" prot="public">org::glite::security::voms::service::acl::VOMSACLSoapBindingImpl</innerclass>
+    <innerclass refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1acl_1_1VOMSACLSoapBindingSkeleton" prot="public">org::glite::security::voms::service::acl::VOMSACLSoapBindingSkeleton</innerclass>
+    <innerclass refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1acl_1_1VOMSACLSoapBindingStub" prot="public">org::glite::security::voms::service::acl::VOMSACLSoapBindingStub</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>ACLEntry.java</para><para>This file was auto-generated from WSDL by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.</para><para>ACLEntry_Helper.java</para><para>This file was auto-generated from WSDL by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.</para><para><ref refid="VOMSACL_8java" kindref="compound">VOMSACL.java</ref></para><para>This file was auto-generated from WSDL by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.</para><para><ref refid="VOMSACLService_8java" kindref="compound">VOMSACLService.java</ref></para><para>This file was auto-generated from WSDL by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.</para><para><ref refid="VOMSACLServiceLocator_8java" kindref="compound">VOMSACLServiceLocator.java</ref></para><para>This file was auto-generated from WSDL by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.</para><para><ref refid="VOMSACLSoapBindingImpl_8java" kindref="compound">VOMSACLSoapBindingImpl.java</ref></para><para>This file was auto-generated from WSDL by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.</para><para><ref refid="VOMSACLSoapBindingSkeleton_8java" kindref="compound">VOMSACLSoapBindingSkeleton.java</ref></para><para>This file was auto-generated from WSDL by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.</para><para><ref refid="VOMSACLSoapBindingStub_8java" kindref="compound">VOMSACLSoapBindingStub.java</ref></para><para>This file was auto-generated from WSDL by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter. </para>    </detaileddescription>
+    <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/acl/ACLEntry.java" line="8"/>
+  </compounddef>
+</doxygen>

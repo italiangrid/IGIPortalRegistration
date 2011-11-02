@@ -1,0 +1,195 @@
+\hypertarget{classportal_1_1registration_1_1server_1_1PortalContextListener}{
+\section{portal.registration.server.PortalContextListener Class Reference}
+\label{classportal_1_1registration_1_1server_1_1PortalContextListener}\index{portal::registration::server::PortalContextListener@{portal::registration::server::PortalContextListener}}
+}
+
+
+Inheritance diagram for portal.registration.server.PortalContextListener:
+
+
+Collaboration diagram for portal.registration.server.PortalContextListener:
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classportal_1_1registration_1_1server_1_1PortalContextListener_a907dff159c77a949be09f9742f14377c}{contextDestroyed} (ServletContextEvent arg0)
+\item 
+void \hyperlink{classportal_1_1registration_1_1server_1_1PortalContextListener_a6d812a29045e6847a17e3213865d9351}{contextInitialized} (ServletContextEvent arg0)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classportal_1_1registration_1_1server_1_1PortalContextListener_aac92d42095e98923e9680f1837a46468}{initializeAxisProperties} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static final Logger \hyperlink{classportal_1_1registration_1_1server_1_1PortalContextListener_a456018b93684d7862baf2345b0e02da5}{log} = Logger.getLogger(PortalContextListener.class)
+\item 
+static final String \hyperlink{classportal_1_1registration_1_1server_1_1PortalContextListener_a3fbced411701333a0264f0ea12a1b0f3}{DEFAULT\_\-SSL\_\-CERT\_\-FILE} = \char`\"{}/etc/grid-\/security/hostcert.pem\char`\"{}
+\item 
+static final String \hyperlink{classportal_1_1registration_1_1server_1_1PortalContextListener_a88510b32b342fcacfe0f48d5fb1b17e9}{DEFAULT\_\-SSL\_\-KEY} = \char`\"{}/etc/grid-\/security/hostkey.pem\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 13 of file PortalContextListener.java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classportal_1_1registration_1_1server_1_1PortalContextListener_a907dff159c77a949be09f9742f14377c}{
+\index{portal::registration::server::PortalContextListener@{portal::registration::server::PortalContextListener}!contextDestroyed@{contextDestroyed}}
+\index{contextDestroyed@{contextDestroyed}!portal::registration::server::PortalContextListener@{portal::registration::server::PortalContextListener}}
+\subsubsection[{contextDestroyed}]{\setlength{\rightskip}{0pt plus 5cm}void portal.registration.server.PortalContextListener.contextDestroyed (
+\begin{DoxyParamCaption}
+\item[{ServletContextEvent}]{arg0}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1server_1_1PortalContextListener_a907dff159c77a949be09f9742f14377c}
+
+
+Definition at line 19 of file PortalContextListener.java.
+
+
+
+References portal.registration.server.PortalContextListener.log.
+
+
+\begin{DoxyCode}
+                                                               {
+                // TODO Auto-generated method stub
+                log.info("Registration Shutdown");
+        }
+\end{DoxyCode}
+\hypertarget{classportal_1_1registration_1_1server_1_1PortalContextListener_a6d812a29045e6847a17e3213865d9351}{
+\index{portal::registration::server::PortalContextListener@{portal::registration::server::PortalContextListener}!contextInitialized@{contextInitialized}}
+\index{contextInitialized@{contextInitialized}!portal::registration::server::PortalContextListener@{portal::registration::server::PortalContextListener}}
+\subsubsection[{contextInitialized}]{\setlength{\rightskip}{0pt plus 5cm}void portal.registration.server.PortalContextListener.contextInitialized (
+\begin{DoxyParamCaption}
+\item[{ServletContextEvent}]{arg0}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1server_1_1PortalContextListener_a6d812a29045e6847a17e3213865d9351}
+
+
+Definition at line 24 of file PortalContextListener.java.
+
+
+
+References portal.registration.server.PortalContextListener.initializeAxisProperties(), and portal.registration.server.PortalContextListener.log.
+
+
+\begin{DoxyCode}
+                                                                 {
+                // TODO Auto-generated method stub
+                log.info("Registration Startup");
+                initializeAxisProperties();
+
+        }
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+
+
+\hypertarget{classportal_1_1registration_1_1server_1_1PortalContextListener_aac92d42095e98923e9680f1837a46468}{
+\index{portal::registration::server::PortalContextListener@{portal::registration::server::PortalContextListener}!initializeAxisProperties@{initializeAxisProperties}}
+\index{initializeAxisProperties@{initializeAxisProperties}!portal::registration::server::PortalContextListener@{portal::registration::server::PortalContextListener}}
+\subsubsection[{initializeAxisProperties}]{\setlength{\rightskip}{0pt plus 5cm}void portal.registration.server.PortalContextListener.initializeAxisProperties (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classportal_1_1registration_1_1server_1_1PortalContextListener_aac92d42095e98923e9680f1837a46468}
+
+
+Definition at line 31 of file PortalContextListener.java.
+
+
+
+References portal.registration.server.PortalContextListener.DEFAULT\_\-SSL\_\-CERT\_\-FILE, and portal.registration.server.PortalContextListener.DEFAULT\_\-SSL\_\-KEY.
+
+
+
+Referenced by portal.registration.server.PortalContextListener.contextInitialized().
+
+
+\begin{DoxyCode}
+                                                  {
+
+                AxisProperties.setProperty("axis.socketSecureFactory",
+                                "org.glite.security.trustmanager.axis.AXISSocketF
+      actory");
+
+                // need to pass property to AXISSocketFactory
+                Properties properties = AXISSocketFactory.getCurrentProperties();
+      
+
+                // TODO will get cert and key from the configuration, with those 
+      as
+                // default
+
+                properties.setProperty("sslCertFile", DEFAULT_SSL_CERT_FILE); // 
+      hostcert.pem
+
+                properties.setProperty("sslKey", DEFAULT_SSL_KEY); // hostkey.pem
+      
+
+                AXISSocketFactory.setCurrentProperties(properties);
+                System.setProperties(properties);
+        }
+\end{DoxyCode}
+
+
+Here is the caller graph for this function:
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classportal_1_1registration_1_1server_1_1PortalContextListener_a3fbced411701333a0264f0ea12a1b0f3}{
+\index{portal::registration::server::PortalContextListener@{portal::registration::server::PortalContextListener}!DEFAULT\_\-SSL\_\-CERT\_\-FILE@{DEFAULT\_\-SSL\_\-CERT\_\-FILE}}
+\index{DEFAULT\_\-SSL\_\-CERT\_\-FILE@{DEFAULT\_\-SSL\_\-CERT\_\-FILE}!portal::registration::server::PortalContextListener@{portal::registration::server::PortalContextListener}}
+\subsubsection[{DEFAULT\_\-SSL\_\-CERT\_\-FILE}]{\setlength{\rightskip}{0pt plus 5cm}final String {\bf portal.registration.server.PortalContextListener.DEFAULT\_\-SSL\_\-CERT\_\-FILE} = \char`\"{}/etc/grid-\/security/hostcert.pem\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{classportal_1_1registration_1_1server_1_1PortalContextListener_a3fbced411701333a0264f0ea12a1b0f3}
+
+
+Definition at line 16 of file PortalContextListener.java.
+
+
+
+Referenced by portal.registration.server.PortalContextListener.initializeAxisProperties().
+
+\hypertarget{classportal_1_1registration_1_1server_1_1PortalContextListener_a88510b32b342fcacfe0f48d5fb1b17e9}{
+\index{portal::registration::server::PortalContextListener@{portal::registration::server::PortalContextListener}!DEFAULT\_\-SSL\_\-KEY@{DEFAULT\_\-SSL\_\-KEY}}
+\index{DEFAULT\_\-SSL\_\-KEY@{DEFAULT\_\-SSL\_\-KEY}!portal::registration::server::PortalContextListener@{portal::registration::server::PortalContextListener}}
+\subsubsection[{DEFAULT\_\-SSL\_\-KEY}]{\setlength{\rightskip}{0pt plus 5cm}final String {\bf portal.registration.server.PortalContextListener.DEFAULT\_\-SSL\_\-KEY} = \char`\"{}/etc/grid-\/security/hostkey.pem\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{classportal_1_1registration_1_1server_1_1PortalContextListener_a88510b32b342fcacfe0f48d5fb1b17e9}
+
+
+Definition at line 17 of file PortalContextListener.java.
+
+
+
+Referenced by portal.registration.server.PortalContextListener.initializeAxisProperties().
+
+\hypertarget{classportal_1_1registration_1_1server_1_1PortalContextListener_a456018b93684d7862baf2345b0e02da5}{
+\index{portal::registration::server::PortalContextListener@{portal::registration::server::PortalContextListener}!log@{log}}
+\index{log@{log}!portal::registration::server::PortalContextListener@{portal::registration::server::PortalContextListener}}
+\subsubsection[{log}]{\setlength{\rightskip}{0pt plus 5cm}final Logger {\bf portal.registration.server.PortalContextListener.log} = Logger.getLogger(PortalContextListener.class)\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{classportal_1_1registration_1_1server_1_1PortalContextListener_a456018b93684d7862baf2345b0e02da5}
+
+
+Definition at line 15 of file PortalContextListener.java.
+
+
+
+Referenced by portal.registration.server.PortalContextListener.contextDestroyed(), and portal.registration.server.PortalContextListener.contextInitialized().
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/server/\hyperlink{PortalContextListener_8java}{PortalContextListener.java}\end{DoxyCompactItemize}

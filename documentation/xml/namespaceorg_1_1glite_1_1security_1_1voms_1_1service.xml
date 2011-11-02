@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="namespaceorg_1_1glite_1_1security_1_1voms_1_1service" kind="namespace">
+    <compoundname>org::glite::security::voms::service</compoundname>
+    <innernamespace refid="namespaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1acl">org::glite::security::voms::service::acl</innernamespace>
+    <innernamespace refid="namespaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin">org::glite::security::voms::service::admin</innernamespace>
+    <innernamespace refid="namespaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes">org::glite::security::voms::service::attributes</innernamespace>
+    <innernamespace refid="namespaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates">org::glite::security::voms::service::certificates</innernamespace>
+    <innernamespace refid="namespaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility">org::glite::security::voms::service::compatibility</innernamespace>
+    <innernamespace refid="namespaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration">org::glite::security::voms::service::registration</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="[generated]" line="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,468 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest" kind="class" prot="public">
+    <compoundname>org::glite::security::voms::service::registration::RegistrationRequest</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1aa17781ebf05d8a324058b9c77b6f13db" prot="private" static="no" mutable="no">
+        <type>boolean</type>
+        <definition>boolean org.glite.security.voms.service.registration.RegistrationRequest.aupAccepted</definition>
+        <argsstring></argsstring>
+        <name>aupAccepted</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/RegistrationRequest.java" line="11" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/RegistrationRequest.java" bodystart="11" bodyend="-1"/>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a1bcfc84525bf36b756843a5f9c3b83c3" compoundref="RegistrationRequest_8java" startline="138" endline="164">org.glite.security.voms.service.registration.RegistrationRequest::equals</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1af9e72e0f27fdac2732286c323848fc95" compoundref="RegistrationRequest_8java" startline="43" endline="45">org.glite.security.voms.service.registration.RegistrationRequest::isAupAccepted</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a45184e8161cfcf5cb06fa4e0c6a3ebce" compoundref="RegistrationRequest_8java" startline="24" endline="35">org.glite.security.voms.service.registration.RegistrationRequest::RegistrationRequest</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a225795e90fc7e855fa0744736f0c0522" compoundref="RegistrationRequest_8java" startline="53" endline="55">org.glite.security.voms.service.registration.RegistrationRequest::setAupAccepted</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1adcb05eaf70616f61ffb34f4813c53ed1" prot="private" static="no" mutable="no">
+        <type>java.lang.String</type>
+        <definition>java.lang.String org.glite.security.voms.service.registration.RegistrationRequest.comments</definition>
+        <argsstring></argsstring>
+        <name>comments</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/RegistrationRequest.java" line="13" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/RegistrationRequest.java" bodystart="13" bodyend="-1"/>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a1bcfc84525bf36b756843a5f9c3b83c3" compoundref="RegistrationRequest_8java" startline="138" endline="164">org.glite.security.voms.service.registration.RegistrationRequest::equals</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a13cdd311fe94c0ecf08ad7c37528650c" compoundref="RegistrationRequest_8java" startline="63" endline="65">org.glite.security.voms.service.registration.RegistrationRequest::getComments</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a45184e8161cfcf5cb06fa4e0c6a3ebce" compoundref="RegistrationRequest_8java" startline="24" endline="35">org.glite.security.voms.service.registration.RegistrationRequest::RegistrationRequest</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a53fb95dcb289717a3c7c73e719087168" compoundref="RegistrationRequest_8java" startline="73" endline="75">org.glite.security.voms.service.registration.RegistrationRequest::setComments</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a365a6cdc781170ea227509e1cc204f3c" prot="private" static="no" mutable="no">
+        <type>java.lang.String</type>
+        <definition>java.lang.String org.glite.security.voms.service.registration.RegistrationRequest.emailAddress</definition>
+        <argsstring></argsstring>
+        <name>emailAddress</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/RegistrationRequest.java" line="15" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/RegistrationRequest.java" bodystart="15" bodyend="-1"/>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a1bcfc84525bf36b756843a5f9c3b83c3" compoundref="RegistrationRequest_8java" startline="138" endline="164">org.glite.security.voms.service.registration.RegistrationRequest::equals</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a8747a09df024d42c56563b5b22843409" compoundref="RegistrationRequest_8java" startline="83" endline="85">org.glite.security.voms.service.registration.RegistrationRequest::getEmailAddress</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a45184e8161cfcf5cb06fa4e0c6a3ebce" compoundref="RegistrationRequest_8java" startline="24" endline="35">org.glite.security.voms.service.registration.RegistrationRequest::RegistrationRequest</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a49a0b4e0d8a1db31aea90d31f572b82e" compoundref="RegistrationRequest_8java" startline="93" endline="95">org.glite.security.voms.service.registration.RegistrationRequest::setEmailAddress</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a67d3f7cb40f1659a7181aca6cefbdcb9" prot="private" static="no" mutable="no">
+        <type>java.lang.String</type>
+        <definition>java.lang.String org.glite.security.voms.service.registration.RegistrationRequest.institute</definition>
+        <argsstring></argsstring>
+        <name>institute</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/RegistrationRequest.java" line="17" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/RegistrationRequest.java" bodystart="17" bodyend="-1"/>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a1bcfc84525bf36b756843a5f9c3b83c3" compoundref="RegistrationRequest_8java" startline="138" endline="164">org.glite.security.voms.service.registration.RegistrationRequest::equals</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1af4ed2cb8f7413e5dafcd21725a09a74f" compoundref="RegistrationRequest_8java" startline="103" endline="105">org.glite.security.voms.service.registration.RegistrationRequest::getInstitute</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a45184e8161cfcf5cb06fa4e0c6a3ebce" compoundref="RegistrationRequest_8java" startline="24" endline="35">org.glite.security.voms.service.registration.RegistrationRequest::RegistrationRequest</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a84645ad4ff9348a6a639696637393a11" compoundref="RegistrationRequest_8java" startline="113" endline="115">org.glite.security.voms.service.registration.RegistrationRequest::setInstitute</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a052a5ee4feedb9e29f23cc324067c0a4" prot="private" static="no" mutable="no">
+        <type>java.lang.String</type>
+        <definition>java.lang.String org.glite.security.voms.service.registration.RegistrationRequest.phoneNumber</definition>
+        <argsstring></argsstring>
+        <name>phoneNumber</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/RegistrationRequest.java" line="19" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/RegistrationRequest.java" bodystart="19" bodyend="-1"/>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a1bcfc84525bf36b756843a5f9c3b83c3" compoundref="RegistrationRequest_8java" startline="138" endline="164">org.glite.security.voms.service.registration.RegistrationRequest::equals</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1ad3819e6ca5fadaf39bed60c33ba2d386" compoundref="RegistrationRequest_8java" startline="123" endline="125">org.glite.security.voms.service.registration.RegistrationRequest::getPhoneNumber</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a45184e8161cfcf5cb06fa4e0c6a3ebce" compoundref="RegistrationRequest_8java" startline="24" endline="35">org.glite.security.voms.service.registration.RegistrationRequest::RegistrationRequest</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1af78bb036e176a55f1a0f4d4bbee27609" compoundref="RegistrationRequest_8java" startline="133" endline="135">org.glite.security.voms.service.registration.RegistrationRequest::setPhoneNumber</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a9057fc307dd8f0dce02029640539d4a8" prot="private" static="no" mutable="no">
+        <type>java.lang.Object</type>
+        <definition>java.lang.Object org.glite.security.voms.service.registration.RegistrationRequest.__equalsCalc</definition>
+        <argsstring></argsstring>
+        <name>__equalsCalc</name>
+        <initializer> null</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/RegistrationRequest.java" line="137" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/RegistrationRequest.java" bodystart="137" bodyend="-1"/>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a1bcfc84525bf36b756843a5f9c3b83c3" compoundref="RegistrationRequest_8java" startline="138" endline="164">org.glite.security.voms.service.registration.RegistrationRequest::equals</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a1afca46aec9466b1762789d7b7fce8ca" prot="private" static="no" mutable="no">
+        <type>boolean</type>
+        <definition>boolean org.glite.security.voms.service.registration.RegistrationRequest.__hashCodeCalc</definition>
+        <argsstring></argsstring>
+        <name>__hashCodeCalc</name>
+        <initializer> false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/RegistrationRequest.java" line="166" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/RegistrationRequest.java" bodystart="166" bodyend="-1"/>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a7f783419b85f08474d91d56979cf6055" compoundref="RegistrationRequest_8java" startline="167" endline="188">org.glite.security.voms.service.registration.RegistrationRequest::hashCode</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1ad1ae0fe437e84f09fa214721913dfb80" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>org.glite.security.voms.service.registration.RegistrationRequest.RegistrationRequest</definition>
+        <argsstring>()</argsstring>
+        <name>RegistrationRequest</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/RegistrationRequest.java" line="21" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/RegistrationRequest.java" bodystart="21" bodyend="22"/>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a1bcfc84525bf36b756843a5f9c3b83c3" compoundref="RegistrationRequest_8java" startline="138" endline="164">org.glite.security.voms.service.registration.RegistrationRequest::equals</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a45184e8161cfcf5cb06fa4e0c6a3ebce" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>org.glite.security.voms.service.registration.RegistrationRequest.RegistrationRequest</definition>
+        <argsstring>(boolean aupAccepted, java.lang.String comments, java.lang.String emailAddress, java.lang.String institute, java.lang.String phoneNumber)</argsstring>
+        <name>RegistrationRequest</name>
+        <param>
+          <type>boolean</type>
+          <declname>aupAccepted</declname>
+        </param>
+        <param>
+          <type>java.lang.String</type>
+          <declname>comments</declname>
+        </param>
+        <param>
+          <type>java.lang.String</type>
+          <declname>emailAddress</declname>
+        </param>
+        <param>
+          <type>java.lang.String</type>
+          <declname>institute</declname>
+        </param>
+        <param>
+          <type>java.lang.String</type>
+          <declname>phoneNumber</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/RegistrationRequest.java" line="29" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/RegistrationRequest.java" bodystart="24" bodyend="35"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1aa17781ebf05d8a324058b9c77b6f13db" compoundref="RegistrationRequest_8java" startline="11">org.glite.security.voms.service.registration.RegistrationRequest::aupAccepted</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1adcb05eaf70616f61ffb34f4813c53ed1" compoundref="RegistrationRequest_8java" startline="13">org.glite.security.voms.service.registration.RegistrationRequest::comments</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a365a6cdc781170ea227509e1cc204f3c" compoundref="RegistrationRequest_8java" startline="15">org.glite.security.voms.service.registration.RegistrationRequest::emailAddress</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a67d3f7cb40f1659a7181aca6cefbdcb9" compoundref="RegistrationRequest_8java" startline="17">org.glite.security.voms.service.registration.RegistrationRequest::institute</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a052a5ee4feedb9e29f23cc324067c0a4" compoundref="RegistrationRequest_8java" startline="19">org.glite.security.voms.service.registration.RegistrationRequest::phoneNumber</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1af9e72e0f27fdac2732286c323848fc95" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean org.glite.security.voms.service.registration.RegistrationRequest.isAupAccepted</definition>
+        <argsstring>()</argsstring>
+        <name>isAupAccepted</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets the aupAccepted value for this <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest" kindref="compound">RegistrationRequest</ref>.</para><para><simplesect kind="return"><para>aupAccepted </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/RegistrationRequest.java" line="43" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/RegistrationRequest.java" bodystart="43" bodyend="45"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1aa17781ebf05d8a324058b9c77b6f13db" compoundref="RegistrationRequest_8java" startline="11">org.glite.security.voms.service.registration.RegistrationRequest::aupAccepted</references>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a1bcfc84525bf36b756843a5f9c3b83c3" compoundref="RegistrationRequest_8java" startline="138" endline="164">org.glite.security.voms.service.registration.RegistrationRequest::equals</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a7f783419b85f08474d91d56979cf6055" compoundref="RegistrationRequest_8java" startline="167" endline="188">org.glite.security.voms.service.registration.RegistrationRequest::hashCode</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a225795e90fc7e855fa0744736f0c0522" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.registration.RegistrationRequest.setAupAccepted</definition>
+        <argsstring>(boolean aupAccepted)</argsstring>
+        <name>setAupAccepted</name>
+        <param>
+          <type>boolean</type>
+          <declname>aupAccepted</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the aupAccepted value for this <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest" kindref="compound">RegistrationRequest</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aupAccepted</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/RegistrationRequest.java" line="53" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/RegistrationRequest.java" bodystart="53" bodyend="55"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1aa17781ebf05d8a324058b9c77b6f13db" compoundref="RegistrationRequest_8java" startline="11">org.glite.security.voms.service.registration.RegistrationRequest::aupAccepted</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a13cdd311fe94c0ecf08ad7c37528650c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>java.lang.String</type>
+        <definition>java.lang.String org.glite.security.voms.service.registration.RegistrationRequest.getComments</definition>
+        <argsstring>()</argsstring>
+        <name>getComments</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets the comments value for this <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest" kindref="compound">RegistrationRequest</ref>.</para><para><simplesect kind="return"><para>comments </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/RegistrationRequest.java" line="63" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/RegistrationRequest.java" bodystart="63" bodyend="65"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1adcb05eaf70616f61ffb34f4813c53ed1" compoundref="RegistrationRequest_8java" startline="13">org.glite.security.voms.service.registration.RegistrationRequest::comments</references>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a1bcfc84525bf36b756843a5f9c3b83c3" compoundref="RegistrationRequest_8java" startline="138" endline="164">org.glite.security.voms.service.registration.RegistrationRequest::equals</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a7f783419b85f08474d91d56979cf6055" compoundref="RegistrationRequest_8java" startline="167" endline="188">org.glite.security.voms.service.registration.RegistrationRequest::hashCode</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a53fb95dcb289717a3c7c73e719087168" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.registration.RegistrationRequest.setComments</definition>
+        <argsstring>(java.lang.String comments)</argsstring>
+        <name>setComments</name>
+        <param>
+          <type>java.lang.String</type>
+          <declname>comments</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the comments value for this <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest" kindref="compound">RegistrationRequest</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>comments</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/RegistrationRequest.java" line="73" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/RegistrationRequest.java" bodystart="73" bodyend="75"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1adcb05eaf70616f61ffb34f4813c53ed1" compoundref="RegistrationRequest_8java" startline="13">org.glite.security.voms.service.registration.RegistrationRequest::comments</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a8747a09df024d42c56563b5b22843409" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>java.lang.String</type>
+        <definition>java.lang.String org.glite.security.voms.service.registration.RegistrationRequest.getEmailAddress</definition>
+        <argsstring>()</argsstring>
+        <name>getEmailAddress</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets the emailAddress value for this <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest" kindref="compound">RegistrationRequest</ref>.</para><para><simplesect kind="return"><para>emailAddress </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/RegistrationRequest.java" line="83" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/RegistrationRequest.java" bodystart="83" bodyend="85"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a365a6cdc781170ea227509e1cc204f3c" compoundref="RegistrationRequest_8java" startline="15">org.glite.security.voms.service.registration.RegistrationRequest::emailAddress</references>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a1bcfc84525bf36b756843a5f9c3b83c3" compoundref="RegistrationRequest_8java" startline="138" endline="164">org.glite.security.voms.service.registration.RegistrationRequest::equals</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a7f783419b85f08474d91d56979cf6055" compoundref="RegistrationRequest_8java" startline="167" endline="188">org.glite.security.voms.service.registration.RegistrationRequest::hashCode</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a49a0b4e0d8a1db31aea90d31f572b82e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.registration.RegistrationRequest.setEmailAddress</definition>
+        <argsstring>(java.lang.String emailAddress)</argsstring>
+        <name>setEmailAddress</name>
+        <param>
+          <type>java.lang.String</type>
+          <declname>emailAddress</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the emailAddress value for this <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest" kindref="compound">RegistrationRequest</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>emailAddress</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/RegistrationRequest.java" line="93" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/RegistrationRequest.java" bodystart="93" bodyend="95"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a365a6cdc781170ea227509e1cc204f3c" compoundref="RegistrationRequest_8java" startline="15">org.glite.security.voms.service.registration.RegistrationRequest::emailAddress</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1af4ed2cb8f7413e5dafcd21725a09a74f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>java.lang.String</type>
+        <definition>java.lang.String org.glite.security.voms.service.registration.RegistrationRequest.getInstitute</definition>
+        <argsstring>()</argsstring>
+        <name>getInstitute</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets the institute value for this <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest" kindref="compound">RegistrationRequest</ref>.</para><para><simplesect kind="return"><para>institute </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/RegistrationRequest.java" line="103" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/RegistrationRequest.java" bodystart="103" bodyend="105"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a67d3f7cb40f1659a7181aca6cefbdcb9" compoundref="RegistrationRequest_8java" startline="17">org.glite.security.voms.service.registration.RegistrationRequest::institute</references>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a1bcfc84525bf36b756843a5f9c3b83c3" compoundref="RegistrationRequest_8java" startline="138" endline="164">org.glite.security.voms.service.registration.RegistrationRequest::equals</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a7f783419b85f08474d91d56979cf6055" compoundref="RegistrationRequest_8java" startline="167" endline="188">org.glite.security.voms.service.registration.RegistrationRequest::hashCode</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a84645ad4ff9348a6a639696637393a11" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.registration.RegistrationRequest.setInstitute</definition>
+        <argsstring>(java.lang.String institute)</argsstring>
+        <name>setInstitute</name>
+        <param>
+          <type>java.lang.String</type>
+          <declname>institute</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the institute value for this <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest" kindref="compound">RegistrationRequest</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>institute</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/RegistrationRequest.java" line="113" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/RegistrationRequest.java" bodystart="113" bodyend="115"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a67d3f7cb40f1659a7181aca6cefbdcb9" compoundref="RegistrationRequest_8java" startline="17">org.glite.security.voms.service.registration.RegistrationRequest::institute</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1ad3819e6ca5fadaf39bed60c33ba2d386" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>java.lang.String</type>
+        <definition>java.lang.String org.glite.security.voms.service.registration.RegistrationRequest.getPhoneNumber</definition>
+        <argsstring>()</argsstring>
+        <name>getPhoneNumber</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets the phoneNumber value for this <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest" kindref="compound">RegistrationRequest</ref>.</para><para><simplesect kind="return"><para>phoneNumber </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/RegistrationRequest.java" line="123" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/RegistrationRequest.java" bodystart="123" bodyend="125"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a052a5ee4feedb9e29f23cc324067c0a4" compoundref="RegistrationRequest_8java" startline="19">org.glite.security.voms.service.registration.RegistrationRequest::phoneNumber</references>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a1bcfc84525bf36b756843a5f9c3b83c3" compoundref="RegistrationRequest_8java" startline="138" endline="164">org.glite.security.voms.service.registration.RegistrationRequest::equals</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a7f783419b85f08474d91d56979cf6055" compoundref="RegistrationRequest_8java" startline="167" endline="188">org.glite.security.voms.service.registration.RegistrationRequest::hashCode</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1af78bb036e176a55f1a0f4d4bbee27609" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.registration.RegistrationRequest.setPhoneNumber</definition>
+        <argsstring>(java.lang.String phoneNumber)</argsstring>
+        <name>setPhoneNumber</name>
+        <param>
+          <type>java.lang.String</type>
+          <declname>phoneNumber</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the phoneNumber value for this <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest" kindref="compound">RegistrationRequest</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>phoneNumber</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/RegistrationRequest.java" line="133" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/RegistrationRequest.java" bodystart="133" bodyend="135"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a052a5ee4feedb9e29f23cc324067c0a4" compoundref="RegistrationRequest_8java" startline="19">org.glite.security.voms.service.registration.RegistrationRequest::phoneNumber</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a1bcfc84525bf36b756843a5f9c3b83c3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>synchronized boolean</type>
+        <definition>synchronized boolean org.glite.security.voms.service.registration.RegistrationRequest.equals</definition>
+        <argsstring>(java.lang.Object obj)</argsstring>
+        <name>equals</name>
+        <param>
+          <type>java.lang.Object</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/RegistrationRequest.java" line="138" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/RegistrationRequest.java" bodystart="138" bodyend="164"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a9057fc307dd8f0dce02029640539d4a8" compoundref="RegistrationRequest_8java" startline="137">org.glite.security.voms.service.registration.RegistrationRequest::__equalsCalc</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1aa17781ebf05d8a324058b9c77b6f13db" compoundref="RegistrationRequest_8java" startline="11">org.glite.security.voms.service.registration.RegistrationRequest::aupAccepted</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1adcb05eaf70616f61ffb34f4813c53ed1" compoundref="RegistrationRequest_8java" startline="13">org.glite.security.voms.service.registration.RegistrationRequest::comments</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a365a6cdc781170ea227509e1cc204f3c" compoundref="RegistrationRequest_8java" startline="15">org.glite.security.voms.service.registration.RegistrationRequest::emailAddress</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a13cdd311fe94c0ecf08ad7c37528650c" compoundref="RegistrationRequest_8java" startline="63" endline="65">org.glite.security.voms.service.registration.RegistrationRequest::getComments</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a8747a09df024d42c56563b5b22843409" compoundref="RegistrationRequest_8java" startline="83" endline="85">org.glite.security.voms.service.registration.RegistrationRequest::getEmailAddress</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1af4ed2cb8f7413e5dafcd21725a09a74f" compoundref="RegistrationRequest_8java" startline="103" endline="105">org.glite.security.voms.service.registration.RegistrationRequest::getInstitute</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1ad3819e6ca5fadaf39bed60c33ba2d386" compoundref="RegistrationRequest_8java" startline="123" endline="125">org.glite.security.voms.service.registration.RegistrationRequest::getPhoneNumber</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a67d3f7cb40f1659a7181aca6cefbdcb9" compoundref="RegistrationRequest_8java" startline="17">org.glite.security.voms.service.registration.RegistrationRequest::institute</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1af9e72e0f27fdac2732286c323848fc95" compoundref="RegistrationRequest_8java" startline="43" endline="45">org.glite.security.voms.service.registration.RegistrationRequest::isAupAccepted</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a052a5ee4feedb9e29f23cc324067c0a4" compoundref="RegistrationRequest_8java" startline="19">org.glite.security.voms.service.registration.RegistrationRequest::phoneNumber</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1ad1ae0fe437e84f09fa214721913dfb80" compoundref="RegistrationRequest_8java" startline="21" endline="22">org.glite.security.voms.service.registration.RegistrationRequest::RegistrationRequest</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a7f783419b85f08474d91d56979cf6055" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>synchronized int</type>
+        <definition>synchronized int org.glite.security.voms.service.registration.RegistrationRequest.hashCode</definition>
+        <argsstring>()</argsstring>
+        <name>hashCode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/RegistrationRequest.java" line="167" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/RegistrationRequest.java" bodystart="167" bodyend="188"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a1afca46aec9466b1762789d7b7fce8ca" compoundref="RegistrationRequest_8java" startline="166">org.glite.security.voms.service.registration.RegistrationRequest::__hashCodeCalc</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a13cdd311fe94c0ecf08ad7c37528650c" compoundref="RegistrationRequest_8java" startline="63" endline="65">org.glite.security.voms.service.registration.RegistrationRequest::getComments</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a8747a09df024d42c56563b5b22843409" compoundref="RegistrationRequest_8java" startline="83" endline="85">org.glite.security.voms.service.registration.RegistrationRequest::getEmailAddress</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1af4ed2cb8f7413e5dafcd21725a09a74f" compoundref="RegistrationRequest_8java" startline="103" endline="105">org.glite.security.voms.service.registration.RegistrationRequest::getInstitute</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1ad3819e6ca5fadaf39bed60c33ba2d386" compoundref="RegistrationRequest_8java" startline="123" endline="125">org.glite.security.voms.service.registration.RegistrationRequest::getPhoneNumber</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1af9e72e0f27fdac2732286c323848fc95" compoundref="RegistrationRequest_8java" startline="43" endline="45">org.glite.security.voms.service.registration.RegistrationRequest::isAupAccepted</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/RegistrationRequest.java" line="10" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/RegistrationRequest.java" bodystart="10" bodyend="190"/>
+    <listofallmembers>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a9057fc307dd8f0dce02029640539d4a8" prot="private" virt="non-virtual"><scope>org::glite::security::voms::service::registration::RegistrationRequest</scope><name>__equalsCalc</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a1afca46aec9466b1762789d7b7fce8ca" prot="private" virt="non-virtual"><scope>org::glite::security::voms::service::registration::RegistrationRequest</scope><name>__hashCodeCalc</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1aa17781ebf05d8a324058b9c77b6f13db" prot="private" virt="non-virtual"><scope>org::glite::security::voms::service::registration::RegistrationRequest</scope><name>aupAccepted</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1adcb05eaf70616f61ffb34f4813c53ed1" prot="private" virt="non-virtual"><scope>org::glite::security::voms::service::registration::RegistrationRequest</scope><name>comments</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a365a6cdc781170ea227509e1cc204f3c" prot="private" virt="non-virtual"><scope>org::glite::security::voms::service::registration::RegistrationRequest</scope><name>emailAddress</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a1bcfc84525bf36b756843a5f9c3b83c3" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::registration::RegistrationRequest</scope><name>equals</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a13cdd311fe94c0ecf08ad7c37528650c" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::registration::RegistrationRequest</scope><name>getComments</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a8747a09df024d42c56563b5b22843409" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::registration::RegistrationRequest</scope><name>getEmailAddress</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1af4ed2cb8f7413e5dafcd21725a09a74f" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::registration::RegistrationRequest</scope><name>getInstitute</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1ad3819e6ca5fadaf39bed60c33ba2d386" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::registration::RegistrationRequest</scope><name>getPhoneNumber</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a7f783419b85f08474d91d56979cf6055" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::registration::RegistrationRequest</scope><name>hashCode</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a67d3f7cb40f1659a7181aca6cefbdcb9" prot="private" virt="non-virtual"><scope>org::glite::security::voms::service::registration::RegistrationRequest</scope><name>institute</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1af9e72e0f27fdac2732286c323848fc95" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::registration::RegistrationRequest</scope><name>isAupAccepted</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a052a5ee4feedb9e29f23cc324067c0a4" prot="private" virt="non-virtual"><scope>org::glite::security::voms::service::registration::RegistrationRequest</scope><name>phoneNumber</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1ad1ae0fe437e84f09fa214721913dfb80" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::registration::RegistrationRequest</scope><name>RegistrationRequest</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a45184e8161cfcf5cb06fa4e0c6a3ebce" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::registration::RegistrationRequest</scope><name>RegistrationRequest</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a225795e90fc7e855fa0744736f0c0522" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::registration::RegistrationRequest</scope><name>setAupAccepted</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a53fb95dcb289717a3c7c73e719087168" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::registration::RegistrationRequest</scope><name>setComments</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a49a0b4e0d8a1db31aea90d31f572b82e" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::registration::RegistrationRequest</scope><name>setEmailAddress</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1a84645ad4ff9348a6a639696637393a11" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::registration::RegistrationRequest</scope><name>setInstitute</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest_1af78bb036e176a55f1a0f4d4bbee27609" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::registration::RegistrationRequest</scope><name>setPhoneNumber</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

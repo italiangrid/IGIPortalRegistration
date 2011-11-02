@@ -1,0 +1,120 @@
+.TH "portal::registration::server::PortalContextListener" 3 "Wed Jul 13 2011" "Version 4" "Registration" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+portal::registration::server::PortalContextListener \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits ServletContextListener.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBcontextDestroyed\fP (ServletContextEvent arg0)"
+.br
+.ti -1c
+.RI "void \fBcontextInitialized\fP (ServletContextEvent arg0)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBinitializeAxisProperties\fP ()"
+.br
+.in -1c
+.SS "Static Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "static final Logger \fBlog\fP = Logger.getLogger(PortalContextListener.class)"
+.br
+.ti -1c
+.RI "static final String \fBDEFAULT_SSL_CERT_FILE\fP = '/etc/grid-security/hostcert.pem'"
+.br
+.ti -1c
+.RI "static final String \fBDEFAULT_SSL_KEY\fP = '/etc/grid-security/hostkey.pem'"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 13 of file PortalContextListener.java.
+.SH "Member Function Documentation"
+.PP 
+.SS "void portal.registration.server.PortalContextListener.contextDestroyed (ServletContextEventarg0)"
+.PP
+Definition at line 19 of file PortalContextListener.java.
+.PP
+References portal.registration.server.PortalContextListener.log.
+.PP
+.nf
+                                                               {
+                // TODO Auto-generated method stub
+                log.info('Registration Shutdown');
+        }
+.fi
+.SS "void portal.registration.server.PortalContextListener.contextInitialized (ServletContextEventarg0)"
+.PP
+Definition at line 24 of file PortalContextListener.java.
+.PP
+References portal.registration.server.PortalContextListener.initializeAxisProperties(), and portal.registration.server.PortalContextListener.log.
+.PP
+.nf
+                                                                 {
+                // TODO Auto-generated method stub
+                log.info('Registration Startup');
+                initializeAxisProperties();
+
+        }
+.fi
+.SS "void portal.registration.server.PortalContextListener.initializeAxisProperties ()\fC [protected]\fP"
+.PP
+Definition at line 31 of file PortalContextListener.java.
+.PP
+References portal.registration.server.PortalContextListener.DEFAULT_SSL_CERT_FILE, and portal.registration.server.PortalContextListener.DEFAULT_SSL_KEY.
+.PP
+Referenced by portal.registration.server.PortalContextListener.contextInitialized().
+.PP
+.nf
+                                                  {
+
+                AxisProperties.setProperty('axis.socketSecureFactory',
+                                'org.glite.security.trustmanager.axis.AXISSocketFactory');
+
+                // need to pass property to AXISSocketFactory
+                Properties properties = AXISSocketFactory.getCurrentProperties();
+
+                // TODO will get cert and key from the configuration, with those as
+                // default
+
+                properties.setProperty('sslCertFile', DEFAULT_SSL_CERT_FILE); // hostcert.pem
+
+                properties.setProperty('sslKey', DEFAULT_SSL_KEY); // hostkey.pem
+
+                AXISSocketFactory.setCurrentProperties(properties);
+                System.setProperties(properties);
+        }
+.fi
+.SH "Member Data Documentation"
+.PP 
+.SS "final String \fBportal.registration.server.PortalContextListener.DEFAULT_SSL_CERT_FILE\fP = '/etc/grid-security/hostcert.pem'\fC [static, private]\fP"
+.PP
+Definition at line 16 of file PortalContextListener.java.
+.PP
+Referenced by portal.registration.server.PortalContextListener.initializeAxisProperties().
+.SS "final String \fBportal.registration.server.PortalContextListener.DEFAULT_SSL_KEY\fP = '/etc/grid-security/hostkey.pem'\fC [static, private]\fP"
+.PP
+Definition at line 17 of file PortalContextListener.java.
+.PP
+Referenced by portal.registration.server.PortalContextListener.initializeAxisProperties().
+.SS "final Logger \fBportal.registration.server.PortalContextListener.log\fP = Logger.getLogger(PortalContextListener.class)\fC [static, private]\fP"
+.PP
+Definition at line 15 of file PortalContextListener.java.
+.PP
+Referenced by portal.registration.server.PortalContextListener.contextDestroyed(), and portal.registration.server.PortalContextListener.contextInitialized().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Registration from the source code.

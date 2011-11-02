@@ -1,0 +1,122 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kind="class" prot="public">
+    <compoundname>org::glite::security::voms::VOMSException</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException_1ab6440c26ca2767f73c23cf7f7762bd8f" prot="private" static="no" mutable="no">
+        <type>java.lang.Object</type>
+        <definition>java.lang.Object org.glite.security.voms.VOMSException.__equalsCalc</definition>
+        <argsstring></argsstring>
+        <name>__equalsCalc</name>
+        <initializer> null</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/VOMSException.java" line="14" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/VOMSException.java" bodystart="14" bodyend="-1"/>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException_1a6e0d3355c36952510f2d2bde6ac598ab" compoundref="VOMSException_8java" startline="15" endline="28">org.glite.security.voms.VOMSException::equals</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException_1a7e4179821de4dcaab56ecd6d4ee0babb" prot="private" static="no" mutable="no">
+        <type>boolean</type>
+        <definition>boolean org.glite.security.voms.VOMSException.__hashCodeCalc</definition>
+        <argsstring></argsstring>
+        <name>__hashCodeCalc</name>
+        <initializer> false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/VOMSException.java" line="30" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/VOMSException.java" bodystart="30" bodyend="-1"/>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException_1a8f9da552e68282e94c8a7167c52bea7f" compoundref="VOMSException_8java" startline="31" endline="39">org.glite.security.voms.VOMSException::hashCode</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException_1a00d28bd5e41c3f05dc93a6a30111c5a9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>org.glite.security.voms.VOMSException.VOMSException</definition>
+        <argsstring>()</argsstring>
+        <name>VOMSException</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/VOMSException.java" line="11" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/VOMSException.java" bodystart="11" bodyend="12"/>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException_1a6e0d3355c36952510f2d2bde6ac598ab" compoundref="VOMSException_8java" startline="15" endline="28">org.glite.security.voms.VOMSException::equals</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException_1a6e0d3355c36952510f2d2bde6ac598ab" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>synchronized boolean</type>
+        <definition>synchronized boolean org.glite.security.voms.VOMSException.equals</definition>
+        <argsstring>(java.lang.Object obj)</argsstring>
+        <name>equals</name>
+        <param>
+          <type>java.lang.Object</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/VOMSException.java" line="15" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/VOMSException.java" bodystart="15" bodyend="28"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException_1ab6440c26ca2767f73c23cf7f7762bd8f" compoundref="VOMSException_8java" startline="14">org.glite.security.voms.VOMSException::__equalsCalc</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException_1a00d28bd5e41c3f05dc93a6a30111c5a9" compoundref="VOMSException_8java" startline="11" endline="12">org.glite.security.voms.VOMSException::VOMSException</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException_1a8f9da552e68282e94c8a7167c52bea7f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>synchronized int</type>
+        <definition>synchronized int org.glite.security.voms.VOMSException.hashCode</definition>
+        <argsstring>()</argsstring>
+        <name>hashCode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/VOMSException.java" line="31" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/VOMSException.java" bodystart="31" bodyend="39"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException_1a7e4179821de4dcaab56ecd6d4ee0babb" compoundref="VOMSException_8java" startline="30">org.glite.security.voms.VOMSException::__hashCodeCalc</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException_1a1f0e7b3d87b5817394ca0b53a1f97d00" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.VOMSException.writeDetails</definition>
+        <argsstring>(javax.xml.namespace.QName qname, org.apache.axis.encoding.SerializationContext context)</argsstring>
+        <name>writeDetails</name>
+        <param>
+          <type>javax.xml.namespace.QName</type>
+          <declname>qname</declname>
+        </param>
+        <param>
+          <type>org.apache.axis.encoding.SerializationContext</type>
+          <declname>context</declname>
+        </param>
+        <exceptions> throws java.io.IOException </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Writes the exception data to the faultDetails </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/VOMSException.java" line="45" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/VOMSException.java" bodystart="45" bodyend="47"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/VOMSException.java" line="10" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/VOMSException.java" bodystart="10" bodyend="48"/>
+    <listofallmembers>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException_1ab6440c26ca2767f73c23cf7f7762bd8f" prot="private" virt="non-virtual"><scope>org::glite::security::voms::VOMSException</scope><name>__equalsCalc</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException_1a7e4179821de4dcaab56ecd6d4ee0babb" prot="private" virt="non-virtual"><scope>org::glite::security::voms::VOMSException</scope><name>__hashCodeCalc</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException_1a6e0d3355c36952510f2d2bde6ac598ab" prot="public" virt="non-virtual"><scope>org::glite::security::voms::VOMSException</scope><name>equals</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException_1a8f9da552e68282e94c8a7167c52bea7f" prot="public" virt="non-virtual"><scope>org::glite::security::voms::VOMSException</scope><name>hashCode</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException_1a00d28bd5e41c3f05dc93a6a30111c5a9" prot="public" virt="non-virtual"><scope>org::glite::security::voms::VOMSException</scope><name>VOMSException</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException_1a1f0e7b3d87b5817394ca0b53a1f97d00" prot="public" virt="non-virtual"><scope>org::glite::security::voms::VOMSException</scope><name>writeDetails</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,467 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate" kind="class" prot="public">
+    <compoundname>org::glite::security::voms::service::certificates::X509Certificate</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1a633565ab1518573f1ccd3aafac7c025d" prot="private" static="no" mutable="no">
+        <type>byte[]</type>
+        <definition>byte [] org.glite.security.voms.service.certificates.X509Certificate.bytes</definition>
+        <argsstring></argsstring>
+        <name>bytes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/X509Certificate.java" line="11" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/X509Certificate.java" bodystart="11" bodyend="-1"/>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1aab1b22e27033d64e655c434b0ece89a2" compoundref="X509Certificate_8java" startline="138" endline="164">org.glite.security.voms.service.certificates.X509Certificate::equals</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1aa790f47b89f5e2258ca0fd2f612ba0e7" compoundref="X509Certificate_8java" startline="43" endline="45">org.glite.security.voms.service.certificates.X509Certificate::getBytes</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1a2c15110e4af16cdb0e50417972a1a530" compoundref="X509Certificate_8java" startline="53" endline="55">org.glite.security.voms.service.certificates.X509Certificate::setBytes</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1ac6ad0b74bbe585a199a2997fb53d69e2" compoundref="X509Certificate_8java" startline="24" endline="35">org.glite.security.voms.service.certificates.X509Certificate::X509Certificate</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1adb9d391bfa7d8329d3231f75ee989264" prot="private" static="no" mutable="no">
+        <type>long</type>
+        <definition>long org.glite.security.voms.service.certificates.X509Certificate.id</definition>
+        <argsstring></argsstring>
+        <name>id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/X509Certificate.java" line="13" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/X509Certificate.java" bodystart="13" bodyend="-1"/>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1adc841e53e98fd4e31d9a94a9ad4261e9" compoundref="X509Certificate_8java" startline="63" endline="65">org.glite.security.voms.service.certificates.X509Certificate::getId</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1ab3618ad6bb3d771e58d68f28ff881689" compoundref="X509Certificate_8java" startline="73" endline="75">org.glite.security.voms.service.certificates.X509Certificate::setId</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1ac6ad0b74bbe585a199a2997fb53d69e2" compoundref="X509Certificate_8java" startline="24" endline="35">org.glite.security.voms.service.certificates.X509Certificate::X509Certificate</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1a77330c6d98cf740cd9bc094b386c4247" prot="private" static="no" mutable="no">
+        <type>java.lang.String</type>
+        <definition>java.lang.String org.glite.security.voms.service.certificates.X509Certificate.issuer</definition>
+        <argsstring></argsstring>
+        <name>issuer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/X509Certificate.java" line="15" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/X509Certificate.java" bodystart="15" bodyend="-1"/>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1aab1b22e27033d64e655c434b0ece89a2" compoundref="X509Certificate_8java" startline="138" endline="164">org.glite.security.voms.service.certificates.X509Certificate::equals</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1a418fbda27885364707f3ae1be43cf2ce" compoundref="X509Certificate_8java" startline="83" endline="85">org.glite.security.voms.service.certificates.X509Certificate::getIssuer</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1a4fc445e44ac82457210258806610c054" compoundref="X509Certificate_8java" startline="93" endline="95">org.glite.security.voms.service.certificates.X509Certificate::setIssuer</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1ac6ad0b74bbe585a199a2997fb53d69e2" compoundref="X509Certificate_8java" startline="24" endline="35">org.glite.security.voms.service.certificates.X509Certificate::X509Certificate</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1aef72b7697d657017ee1ab929089cfd0a" prot="private" static="no" mutable="no">
+        <type>java.lang.String</type>
+        <definition>java.lang.String org.glite.security.voms.service.certificates.X509Certificate.notAfter</definition>
+        <argsstring></argsstring>
+        <name>notAfter</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/X509Certificate.java" line="17" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/X509Certificate.java" bodystart="17" bodyend="-1"/>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1aab1b22e27033d64e655c434b0ece89a2" compoundref="X509Certificate_8java" startline="138" endline="164">org.glite.security.voms.service.certificates.X509Certificate::equals</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1afcb0f4c85f108ae427cd501218280c70" compoundref="X509Certificate_8java" startline="103" endline="105">org.glite.security.voms.service.certificates.X509Certificate::getNotAfter</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1a468e7e37433d5913d5c37db6bcee2912" compoundref="X509Certificate_8java" startline="113" endline="115">org.glite.security.voms.service.certificates.X509Certificate::setNotAfter</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1ac6ad0b74bbe585a199a2997fb53d69e2" compoundref="X509Certificate_8java" startline="24" endline="35">org.glite.security.voms.service.certificates.X509Certificate::X509Certificate</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1a36270b55a287194a45068375ad65723e" prot="private" static="no" mutable="no">
+        <type>java.lang.String</type>
+        <definition>java.lang.String org.glite.security.voms.service.certificates.X509Certificate.subject</definition>
+        <argsstring></argsstring>
+        <name>subject</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/X509Certificate.java" line="19" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/X509Certificate.java" bodystart="19" bodyend="-1"/>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1aab1b22e27033d64e655c434b0ece89a2" compoundref="X509Certificate_8java" startline="138" endline="164">org.glite.security.voms.service.certificates.X509Certificate::equals</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1aee28263c71c7e311f2b60aeed58ea04e" compoundref="X509Certificate_8java" startline="123" endline="125">org.glite.security.voms.service.certificates.X509Certificate::getSubject</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1a0f0b1e57cac598c1132c4735a90de78e" compoundref="X509Certificate_8java" startline="133" endline="135">org.glite.security.voms.service.certificates.X509Certificate::setSubject</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1ac6ad0b74bbe585a199a2997fb53d69e2" compoundref="X509Certificate_8java" startline="24" endline="35">org.glite.security.voms.service.certificates.X509Certificate::X509Certificate</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1aee6fef67193ba4fe895cc785946a3e02" prot="private" static="no" mutable="no">
+        <type>java.lang.Object</type>
+        <definition>java.lang.Object org.glite.security.voms.service.certificates.X509Certificate.__equalsCalc</definition>
+        <argsstring></argsstring>
+        <name>__equalsCalc</name>
+        <initializer> null</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/X509Certificate.java" line="137" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/X509Certificate.java" bodystart="137" bodyend="-1"/>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1aab1b22e27033d64e655c434b0ece89a2" compoundref="X509Certificate_8java" startline="138" endline="164">org.glite.security.voms.service.certificates.X509Certificate::equals</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1ab83c16c95a2a9bdf0414b14dfddae230" prot="private" static="no" mutable="no">
+        <type>boolean</type>
+        <definition>boolean org.glite.security.voms.service.certificates.X509Certificate.__hashCodeCalc</definition>
+        <argsstring></argsstring>
+        <name>__hashCodeCalc</name>
+        <initializer> false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/X509Certificate.java" line="166" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/X509Certificate.java" bodystart="166" bodyend="-1"/>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1a0b2c573b9122200deca67435a9601edf" compoundref="X509Certificate_8java" startline="167" endline="196">org.glite.security.voms.service.certificates.X509Certificate::hashCode</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1ab2dff550edcf0827cce6120f5ceca6ff" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>org.glite.security.voms.service.certificates.X509Certificate.X509Certificate</definition>
+        <argsstring>()</argsstring>
+        <name>X509Certificate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/X509Certificate.java" line="21" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/X509Certificate.java" bodystart="21" bodyend="22"/>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1aab1b22e27033d64e655c434b0ece89a2" compoundref="X509Certificate_8java" startline="138" endline="164">org.glite.security.voms.service.certificates.X509Certificate::equals</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesSoapBindingSkeleton_1a6a97f05ced20cebedabf41dfc912155d" compoundref="VOMSCertificatesSoapBindingSkeleton_8java" startline="139" endline="143">org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingSkeleton::getCertificates</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1ac6ad0b74bbe585a199a2997fb53d69e2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>org.glite.security.voms.service.certificates.X509Certificate.X509Certificate</definition>
+        <argsstring>(byte[] bytes, long id, java.lang.String issuer, java.lang.String notAfter, java.lang.String subject)</argsstring>
+        <name>X509Certificate</name>
+        <param>
+          <type>byte[]</type>
+          <declname>bytes</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>java.lang.String</type>
+          <declname>issuer</declname>
+        </param>
+        <param>
+          <type>java.lang.String</type>
+          <declname>notAfter</declname>
+        </param>
+        <param>
+          <type>java.lang.String</type>
+          <declname>subject</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/X509Certificate.java" line="29" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/X509Certificate.java" bodystart="24" bodyend="35"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1a633565ab1518573f1ccd3aafac7c025d" compoundref="X509Certificate_8java" startline="11">org.glite.security.voms.service.certificates.X509Certificate::bytes</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1adb9d391bfa7d8329d3231f75ee989264" compoundref="X509Certificate_8java" startline="13">org.glite.security.voms.service.certificates.X509Certificate::id</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1a77330c6d98cf740cd9bc094b386c4247" compoundref="X509Certificate_8java" startline="15">org.glite.security.voms.service.certificates.X509Certificate::issuer</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1aef72b7697d657017ee1ab929089cfd0a" compoundref="X509Certificate_8java" startline="17">org.glite.security.voms.service.certificates.X509Certificate::notAfter</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1a36270b55a287194a45068375ad65723e" compoundref="X509Certificate_8java" startline="19">org.glite.security.voms.service.certificates.X509Certificate::subject</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1aa790f47b89f5e2258ca0fd2f612ba0e7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>byte[]</type>
+        <definition>byte [] org.glite.security.voms.service.certificates.X509Certificate.getBytes</definition>
+        <argsstring>()</argsstring>
+        <name>getBytes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets the bytes value for this <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate" kindref="compound">X509Certificate</ref>.</para><para><simplesect kind="return"><para>bytes </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/X509Certificate.java" line="43" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/X509Certificate.java" bodystart="43" bodyend="45"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1a633565ab1518573f1ccd3aafac7c025d" compoundref="X509Certificate_8java" startline="11">org.glite.security.voms.service.certificates.X509Certificate::bytes</references>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1aab1b22e27033d64e655c434b0ece89a2" compoundref="X509Certificate_8java" startline="138" endline="164">org.glite.security.voms.service.certificates.X509Certificate::equals</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1a0b2c573b9122200deca67435a9601edf" compoundref="X509Certificate_8java" startline="167" endline="196">org.glite.security.voms.service.certificates.X509Certificate::hashCode</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1a2c15110e4af16cdb0e50417972a1a530" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.certificates.X509Certificate.setBytes</definition>
+        <argsstring>(byte[] bytes)</argsstring>
+        <name>setBytes</name>
+        <param>
+          <type>byte[]</type>
+          <declname>bytes</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the bytes value for this <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate" kindref="compound">X509Certificate</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>bytes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/X509Certificate.java" line="53" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/X509Certificate.java" bodystart="53" bodyend="55"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1a633565ab1518573f1ccd3aafac7c025d" compoundref="X509Certificate_8java" startline="11">org.glite.security.voms.service.certificates.X509Certificate::bytes</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1adc841e53e98fd4e31d9a94a9ad4261e9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>long</type>
+        <definition>long org.glite.security.voms.service.certificates.X509Certificate.getId</definition>
+        <argsstring>()</argsstring>
+        <name>getId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets the id value for this <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate" kindref="compound">X509Certificate</ref>.</para><para><simplesect kind="return"><para>id </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/X509Certificate.java" line="63" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/X509Certificate.java" bodystart="63" bodyend="65"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1adb9d391bfa7d8329d3231f75ee989264" compoundref="X509Certificate_8java" startline="13">org.glite.security.voms.service.certificates.X509Certificate::id</references>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1aab1b22e27033d64e655c434b0ece89a2" compoundref="X509Certificate_8java" startline="138" endline="164">org.glite.security.voms.service.certificates.X509Certificate::equals</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1a0b2c573b9122200deca67435a9601edf" compoundref="X509Certificate_8java" startline="167" endline="196">org.glite.security.voms.service.certificates.X509Certificate::hashCode</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1ab3618ad6bb3d771e58d68f28ff881689" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.certificates.X509Certificate.setId</definition>
+        <argsstring>(long id)</argsstring>
+        <name>setId</name>
+        <param>
+          <type>long</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the id value for this <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate" kindref="compound">X509Certificate</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/X509Certificate.java" line="73" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/X509Certificate.java" bodystart="73" bodyend="75"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1adb9d391bfa7d8329d3231f75ee989264" compoundref="X509Certificate_8java" startline="13">org.glite.security.voms.service.certificates.X509Certificate::id</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1a418fbda27885364707f3ae1be43cf2ce" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>java.lang.String</type>
+        <definition>java.lang.String org.glite.security.voms.service.certificates.X509Certificate.getIssuer</definition>
+        <argsstring>()</argsstring>
+        <name>getIssuer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets the issuer value for this <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate" kindref="compound">X509Certificate</ref>.</para><para><simplesect kind="return"><para>issuer </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/X509Certificate.java" line="83" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/X509Certificate.java" bodystart="83" bodyend="85"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1a77330c6d98cf740cd9bc094b386c4247" compoundref="X509Certificate_8java" startline="15">org.glite.security.voms.service.certificates.X509Certificate::issuer</references>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1aab1b22e27033d64e655c434b0ece89a2" compoundref="X509Certificate_8java" startline="138" endline="164">org.glite.security.voms.service.certificates.X509Certificate::equals</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1a0b2c573b9122200deca67435a9601edf" compoundref="X509Certificate_8java" startline="167" endline="196">org.glite.security.voms.service.certificates.X509Certificate::hashCode</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1a4fc445e44ac82457210258806610c054" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.certificates.X509Certificate.setIssuer</definition>
+        <argsstring>(java.lang.String issuer)</argsstring>
+        <name>setIssuer</name>
+        <param>
+          <type>java.lang.String</type>
+          <declname>issuer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the issuer value for this <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate" kindref="compound">X509Certificate</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>issuer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/X509Certificate.java" line="93" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/X509Certificate.java" bodystart="93" bodyend="95"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1a77330c6d98cf740cd9bc094b386c4247" compoundref="X509Certificate_8java" startline="15">org.glite.security.voms.service.certificates.X509Certificate::issuer</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1afcb0f4c85f108ae427cd501218280c70" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>java.lang.String</type>
+        <definition>java.lang.String org.glite.security.voms.service.certificates.X509Certificate.getNotAfter</definition>
+        <argsstring>()</argsstring>
+        <name>getNotAfter</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets the notAfter value for this <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate" kindref="compound">X509Certificate</ref>.</para><para><simplesect kind="return"><para>notAfter </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/X509Certificate.java" line="103" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/X509Certificate.java" bodystart="103" bodyend="105"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1aef72b7697d657017ee1ab929089cfd0a" compoundref="X509Certificate_8java" startline="17">org.glite.security.voms.service.certificates.X509Certificate::notAfter</references>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1aab1b22e27033d64e655c434b0ece89a2" compoundref="X509Certificate_8java" startline="138" endline="164">org.glite.security.voms.service.certificates.X509Certificate::equals</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1a0b2c573b9122200deca67435a9601edf" compoundref="X509Certificate_8java" startline="167" endline="196">org.glite.security.voms.service.certificates.X509Certificate::hashCode</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1a468e7e37433d5913d5c37db6bcee2912" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.certificates.X509Certificate.setNotAfter</definition>
+        <argsstring>(java.lang.String notAfter)</argsstring>
+        <name>setNotAfter</name>
+        <param>
+          <type>java.lang.String</type>
+          <declname>notAfter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the notAfter value for this <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate" kindref="compound">X509Certificate</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>notAfter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/X509Certificate.java" line="113" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/X509Certificate.java" bodystart="113" bodyend="115"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1aef72b7697d657017ee1ab929089cfd0a" compoundref="X509Certificate_8java" startline="17">org.glite.security.voms.service.certificates.X509Certificate::notAfter</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1aee28263c71c7e311f2b60aeed58ea04e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>java.lang.String</type>
+        <definition>java.lang.String org.glite.security.voms.service.certificates.X509Certificate.getSubject</definition>
+        <argsstring>()</argsstring>
+        <name>getSubject</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets the subject value for this <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate" kindref="compound">X509Certificate</ref>.</para><para><simplesect kind="return"><para>subject </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/X509Certificate.java" line="123" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/X509Certificate.java" bodystart="123" bodyend="125"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1a36270b55a287194a45068375ad65723e" compoundref="X509Certificate_8java" startline="19">org.glite.security.voms.service.certificates.X509Certificate::subject</references>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1aab1b22e27033d64e655c434b0ece89a2" compoundref="X509Certificate_8java" startline="138" endline="164">org.glite.security.voms.service.certificates.X509Certificate::equals</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1a0b2c573b9122200deca67435a9601edf" compoundref="X509Certificate_8java" startline="167" endline="196">org.glite.security.voms.service.certificates.X509Certificate::hashCode</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1a0f0b1e57cac598c1132c4735a90de78e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.certificates.X509Certificate.setSubject</definition>
+        <argsstring>(java.lang.String subject)</argsstring>
+        <name>setSubject</name>
+        <param>
+          <type>java.lang.String</type>
+          <declname>subject</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the subject value for this <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate" kindref="compound">X509Certificate</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>subject</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/X509Certificate.java" line="133" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/X509Certificate.java" bodystart="133" bodyend="135"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1a36270b55a287194a45068375ad65723e" compoundref="X509Certificate_8java" startline="19">org.glite.security.voms.service.certificates.X509Certificate::subject</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1aab1b22e27033d64e655c434b0ece89a2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>synchronized boolean</type>
+        <definition>synchronized boolean org.glite.security.voms.service.certificates.X509Certificate.equals</definition>
+        <argsstring>(java.lang.Object obj)</argsstring>
+        <name>equals</name>
+        <param>
+          <type>java.lang.Object</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/X509Certificate.java" line="138" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/X509Certificate.java" bodystart="138" bodyend="164"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1aee6fef67193ba4fe895cc785946a3e02" compoundref="X509Certificate_8java" startline="137">org.glite.security.voms.service.certificates.X509Certificate::__equalsCalc</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1a633565ab1518573f1ccd3aafac7c025d" compoundref="X509Certificate_8java" startline="11">org.glite.security.voms.service.certificates.X509Certificate::bytes</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1aa790f47b89f5e2258ca0fd2f612ba0e7" compoundref="X509Certificate_8java" startline="43" endline="45">org.glite.security.voms.service.certificates.X509Certificate::getBytes</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1adc841e53e98fd4e31d9a94a9ad4261e9" compoundref="X509Certificate_8java" startline="63" endline="65">org.glite.security.voms.service.certificates.X509Certificate::getId</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1a418fbda27885364707f3ae1be43cf2ce" compoundref="X509Certificate_8java" startline="83" endline="85">org.glite.security.voms.service.certificates.X509Certificate::getIssuer</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1afcb0f4c85f108ae427cd501218280c70" compoundref="X509Certificate_8java" startline="103" endline="105">org.glite.security.voms.service.certificates.X509Certificate::getNotAfter</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1aee28263c71c7e311f2b60aeed58ea04e" compoundref="X509Certificate_8java" startline="123" endline="125">org.glite.security.voms.service.certificates.X509Certificate::getSubject</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1a77330c6d98cf740cd9bc094b386c4247" compoundref="X509Certificate_8java" startline="15">org.glite.security.voms.service.certificates.X509Certificate::issuer</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1aef72b7697d657017ee1ab929089cfd0a" compoundref="X509Certificate_8java" startline="17">org.glite.security.voms.service.certificates.X509Certificate::notAfter</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1a36270b55a287194a45068375ad65723e" compoundref="X509Certificate_8java" startline="19">org.glite.security.voms.service.certificates.X509Certificate::subject</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1ab2dff550edcf0827cce6120f5ceca6ff" compoundref="X509Certificate_8java" startline="21" endline="22">org.glite.security.voms.service.certificates.X509Certificate::X509Certificate</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1a0b2c573b9122200deca67435a9601edf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>synchronized int</type>
+        <definition>synchronized int org.glite.security.voms.service.certificates.X509Certificate.hashCode</definition>
+        <argsstring>()</argsstring>
+        <name>hashCode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/X509Certificate.java" line="167" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/X509Certificate.java" bodystart="167" bodyend="196"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1ab83c16c95a2a9bdf0414b14dfddae230" compoundref="X509Certificate_8java" startline="166">org.glite.security.voms.service.certificates.X509Certificate::__hashCodeCalc</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1aa790f47b89f5e2258ca0fd2f612ba0e7" compoundref="X509Certificate_8java" startline="43" endline="45">org.glite.security.voms.service.certificates.X509Certificate::getBytes</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1adc841e53e98fd4e31d9a94a9ad4261e9" compoundref="X509Certificate_8java" startline="63" endline="65">org.glite.security.voms.service.certificates.X509Certificate::getId</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1a418fbda27885364707f3ae1be43cf2ce" compoundref="X509Certificate_8java" startline="83" endline="85">org.glite.security.voms.service.certificates.X509Certificate::getIssuer</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1afcb0f4c85f108ae427cd501218280c70" compoundref="X509Certificate_8java" startline="103" endline="105">org.glite.security.voms.service.certificates.X509Certificate::getNotAfter</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1aee28263c71c7e311f2b60aeed58ea04e" compoundref="X509Certificate_8java" startline="123" endline="125">org.glite.security.voms.service.certificates.X509Certificate::getSubject</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/X509Certificate.java" line="10" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/X509Certificate.java" bodystart="10" bodyend="198"/>
+    <listofallmembers>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1aee6fef67193ba4fe895cc785946a3e02" prot="private" virt="non-virtual"><scope>org::glite::security::voms::service::certificates::X509Certificate</scope><name>__equalsCalc</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1ab83c16c95a2a9bdf0414b14dfddae230" prot="private" virt="non-virtual"><scope>org::glite::security::voms::service::certificates::X509Certificate</scope><name>__hashCodeCalc</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1a633565ab1518573f1ccd3aafac7c025d" prot="private" virt="non-virtual"><scope>org::glite::security::voms::service::certificates::X509Certificate</scope><name>bytes</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1aab1b22e27033d64e655c434b0ece89a2" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::certificates::X509Certificate</scope><name>equals</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1aa790f47b89f5e2258ca0fd2f612ba0e7" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::certificates::X509Certificate</scope><name>getBytes</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1adc841e53e98fd4e31d9a94a9ad4261e9" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::certificates::X509Certificate</scope><name>getId</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1a418fbda27885364707f3ae1be43cf2ce" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::certificates::X509Certificate</scope><name>getIssuer</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1afcb0f4c85f108ae427cd501218280c70" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::certificates::X509Certificate</scope><name>getNotAfter</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1aee28263c71c7e311f2b60aeed58ea04e" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::certificates::X509Certificate</scope><name>getSubject</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1a0b2c573b9122200deca67435a9601edf" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::certificates::X509Certificate</scope><name>hashCode</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1adb9d391bfa7d8329d3231f75ee989264" prot="private" virt="non-virtual"><scope>org::glite::security::voms::service::certificates::X509Certificate</scope><name>id</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1a77330c6d98cf740cd9bc094b386c4247" prot="private" virt="non-virtual"><scope>org::glite::security::voms::service::certificates::X509Certificate</scope><name>issuer</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1aef72b7697d657017ee1ab929089cfd0a" prot="private" virt="non-virtual"><scope>org::glite::security::voms::service::certificates::X509Certificate</scope><name>notAfter</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1a2c15110e4af16cdb0e50417972a1a530" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::certificates::X509Certificate</scope><name>setBytes</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1ab3618ad6bb3d771e58d68f28ff881689" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::certificates::X509Certificate</scope><name>setId</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1a4fc445e44ac82457210258806610c054" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::certificates::X509Certificate</scope><name>setIssuer</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1a468e7e37433d5913d5c37db6bcee2912" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::certificates::X509Certificate</scope><name>setNotAfter</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1a0f0b1e57cac598c1132c4735a90de78e" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::certificates::X509Certificate</scope><name>setSubject</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1a36270b55a287194a45068375ad65723e" prot="private" virt="non-virtual"><scope>org::glite::security::voms::service::certificates::X509Certificate</scope><name>subject</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1ab2dff550edcf0827cce6120f5ceca6ff" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::certificates::X509Certificate</scope><name>X509Certificate</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1X509Certificate_1ac6ad0b74bbe585a199a2997fb53d69e2" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::certificates::X509Certificate</scope><name>X509Certificate</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

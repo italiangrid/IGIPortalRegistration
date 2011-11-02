@@ -1,0 +1,71 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from VOMSAdminService WSDL service -->
+
+  <service name="VOMSAdmin" provider="java:RPC" style="rpc" use="encoded">
+      <parameter name="wsdlTargetNamespace" value="http://glite.org/wsdl/services/org.glite.security.voms.service.admin"/>
+      <parameter name="wsdlServiceElement" value="VOMSAdminService"/>
+      <parameter name="schemaUnqualified" value="http://glite.org/wsdl/services/org.glite.security.voms,http://glite.org/wsdl/services/org.glite.security.voms.service.admin"/>
+      <parameter name="wsdlServicePort" value="VOMSAdmin"/>
+      <parameter name="className" value="org.glite.security.voms.service.admin.VOMSAdminSoapBindingSkeleton"/>
+      <parameter name="wsdlPortType" value="VOMSAdmin"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <parameter name="allowedMethods" value="*"/>
+
+      <typeMapping
+        xmlns:ns="http://glite.org/wsdl/services/org.glite.security.voms"
+        qname="ns:User"
+        type="java:org.glite.security.voms.User"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://glite.org/wsdl/services/org.glite.security.voms"
+        qname="ns:VOMSException"
+        type="java:org.glite.security.voms.VOMSException"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <arrayMapping
+        xmlns:ns="http://glite.org/wsdl/services/org.glite.security.voms.service.admin"
+        qname="ns:ArrayOf_tns1_User"
+        type="java:org.glite.security.voms.User[]"
+        innerType="cmp-ns:User" xmlns:cmp-ns="http://glite.org/wsdl/services/org.glite.security.voms"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://glite.org/wsdl/services/org.glite.security.voms"
+        qname="ns:ACLEntry"
+        type="java:org.glite.security.voms.ACLEntry"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <arrayMapping
+        xmlns:ns="http://glite.org/wsdl/services/org.glite.security.voms.service.admin"
+        qname="ns:ArrayOf_soapenc_string"
+        type="java:java.lang.String[]"
+        innerType="cmp-ns:string" xmlns:cmp-ns="http://schemas.xmlsoap.org/soap/encoding/"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <arrayMapping
+        xmlns:ns="http://glite.org/wsdl/services/org.glite.security.voms.service.admin"
+        qname="ns:ArrayOf_tns1_ACLEntry"
+        type="java:org.glite.security.voms.ACLEntry[]"
+        innerType="cmp-ns:ACLEntry" xmlns:cmp-ns="http://glite.org/wsdl/services/org.glite.security.voms"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+  </service>
+</deployment>

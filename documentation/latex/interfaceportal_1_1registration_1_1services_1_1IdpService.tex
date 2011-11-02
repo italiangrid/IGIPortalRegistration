@@ -1,0 +1,127 @@
+\hypertarget{interfaceportal_1_1registration_1_1services_1_1IdpService}{
+\section{portal.registration.services.IdpService Interface Reference}
+\label{interfaceportal_1_1registration_1_1services_1_1IdpService}\index{portal::registration::services::IdpService@{portal::registration::services::IdpService}}
+}
+
+
+Inheritance diagram for portal.registration.services.IdpService:
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{interfaceportal_1_1registration_1_1services_1_1IdpService_a9580d378bcabcb2937fe25d864cebfad}{save} (\hyperlink{classportal_1_1registration_1_1domain_1_1Idp}{Idp} transientInstance)
+\item 
+void \hyperlink{interfaceportal_1_1registration_1_1services_1_1IdpService_acae983320a6d563924da831b37688d3e}{delete} (\hyperlink{classportal_1_1registration_1_1domain_1_1Idp}{Idp} persistentInstance)
+\item 
+\hyperlink{classportal_1_1registration_1_1domain_1_1Idp}{Idp} \hyperlink{interfaceportal_1_1registration_1_1services_1_1IdpService_a86683b14e9bb0cbedc41bf0aea7f6b66}{findById} (Integer id)
+\item 
+String \hyperlink{interfaceportal_1_1registration_1_1services_1_1IdpService_ab0052670b9f95e31d046e7bf43c432b8}{findByIdp} (\hyperlink{classportal_1_1registration_1_1domain_1_1Idp}{Idp} idp)
+\item 
+List$<$ \hyperlink{classportal_1_1registration_1_1domain_1_1Idp}{Idp} $>$ \hyperlink{interfaceportal_1_1registration_1_1services_1_1IdpService_a960ddec4986911fa1588e72c9cc10c0f}{getAllIdp} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 7 of file IdpService.java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{interfaceportal_1_1registration_1_1services_1_1IdpService_acae983320a6d563924da831b37688d3e}{
+\index{portal::registration::services::IdpService@{portal::registration::services::IdpService}!delete@{delete}}
+\index{delete@{delete}!portal::registration::services::IdpService@{portal::registration::services::IdpService}}
+\subsubsection[{delete}]{\setlength{\rightskip}{0pt plus 5cm}void portal.registration.services.IdpService.delete (
+\begin{DoxyParamCaption}
+\item[{{\bf Idp}}]{persistentInstance}
+\end{DoxyParamCaption}
+)}}
+\label{interfaceportal_1_1registration_1_1services_1_1IdpService_acae983320a6d563924da831b37688d3e}
+
+
+Implemented in \hyperlink{classportal_1_1registration_1_1services_1_1IdpServiceImpl_ae56e8d3a6e827ab559294bff8f68f3cb}{portal.registration.services.IdpServiceImpl}.
+
+\hypertarget{interfaceportal_1_1registration_1_1services_1_1IdpService_a86683b14e9bb0cbedc41bf0aea7f6b66}{
+\index{portal::registration::services::IdpService@{portal::registration::services::IdpService}!findById@{findById}}
+\index{findById@{findById}!portal::registration::services::IdpService@{portal::registration::services::IdpService}}
+\subsubsection[{findById}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Idp} portal.registration.services.IdpService.findById (
+\begin{DoxyParamCaption}
+\item[{Integer}]{id}
+\end{DoxyParamCaption}
+)}}
+\label{interfaceportal_1_1registration_1_1services_1_1IdpService_a86683b14e9bb0cbedc41bf0aea7f6b66}
+
+
+Implemented in \hyperlink{classportal_1_1registration_1_1services_1_1IdpServiceImpl_a019ee67c777bd792515072a59c32e1e9}{portal.registration.services.IdpServiceImpl}.
+
+
+
+Referenced by portal.registration.controller.AddUserInfoController.addUserInfo().
+
+
+
+Here is the caller graph for this function:
+
+
+\hypertarget{interfaceportal_1_1registration_1_1services_1_1IdpService_ab0052670b9f95e31d046e7bf43c432b8}{
+\index{portal::registration::services::IdpService@{portal::registration::services::IdpService}!findByIdp@{findByIdp}}
+\index{findByIdp@{findByIdp}!portal::registration::services::IdpService@{portal::registration::services::IdpService}}
+\subsubsection[{findByIdp}]{\setlength{\rightskip}{0pt plus 5cm}String portal.registration.services.IdpService.findByIdp (
+\begin{DoxyParamCaption}
+\item[{{\bf Idp}}]{idp}
+\end{DoxyParamCaption}
+)}}
+\label{interfaceportal_1_1registration_1_1services_1_1IdpService_ab0052670b9f95e31d046e7bf43c432b8}
+
+
+Implemented in \hyperlink{classportal_1_1registration_1_1services_1_1IdpServiceImpl_a06dd428d0f1451712432d8cc63091aa1}{portal.registration.services.IdpServiceImpl}.
+
+
+
+Referenced by portal.registration.controller.UserInfoController.getIdpsName().
+
+
+
+Here is the caller graph for this function:
+
+
+\hypertarget{interfaceportal_1_1registration_1_1services_1_1IdpService_a960ddec4986911fa1588e72c9cc10c0f}{
+\index{portal::registration::services::IdpService@{portal::registration::services::IdpService}!getAllIdp@{getAllIdp}}
+\index{getAllIdp@{getAllIdp}!portal::registration::services::IdpService@{portal::registration::services::IdpService}}
+\subsubsection[{getAllIdp}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Idp}$>$ portal.registration.services.IdpService.getAllIdp (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{interfaceportal_1_1registration_1_1services_1_1IdpService_a960ddec4986911fa1588e72c9cc10c0f}
+
+
+Implemented in \hyperlink{classportal_1_1registration_1_1services_1_1IdpServiceImpl_a1ef0bbe03c964c5074dccdb1d9709957}{portal.registration.services.IdpServiceImpl}.
+
+
+
+Referenced by portal.registration.controller.UserInfoController.getIdps(), and portal.registration.controller.AddUserInfoController.getIdps().
+
+
+
+Here is the caller graph for this function:
+
+
+\hypertarget{interfaceportal_1_1registration_1_1services_1_1IdpService_a9580d378bcabcb2937fe25d864cebfad}{
+\index{portal::registration::services::IdpService@{portal::registration::services::IdpService}!save@{save}}
+\index{save@{save}!portal::registration::services::IdpService@{portal::registration::services::IdpService}}
+\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}void portal.registration.services.IdpService.save (
+\begin{DoxyParamCaption}
+\item[{{\bf Idp}}]{transientInstance}
+\end{DoxyParamCaption}
+)}}
+\label{interfaceportal_1_1registration_1_1services_1_1IdpService_a9580d378bcabcb2937fe25d864cebfad}
+
+
+Implemented in \hyperlink{classportal_1_1registration_1_1services_1_1IdpServiceImpl_ae5a32bff76d7cfacf83a1211ddc79cc6}{portal.registration.services.IdpServiceImpl}.
+
+
+
+The documentation for this interface was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/services/\hyperlink{IdpService_8java}{IdpService.java}\end{DoxyCompactItemize}

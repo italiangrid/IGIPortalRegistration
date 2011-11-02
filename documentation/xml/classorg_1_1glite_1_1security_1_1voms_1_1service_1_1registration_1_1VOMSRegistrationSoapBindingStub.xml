@@ -1,0 +1,294 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationSoapBindingStub" kind="class" prot="public">
+    <compoundname>org::glite::security::voms::service::registration::VOMSRegistrationSoapBindingStub</compoundname>
+    <basecompoundref refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistration" prot="public" virt="non-virtual">org.glite.security.voms.service.registration.VOMSRegistration</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationSoapBindingStub_1aa0c5282023851e965b10603c10b5e264" prot="private" static="no" mutable="no">
+        <type>java.util.Vector</type>
+        <definition>java.util.Vector org.glite.security.voms.service.registration.VOMSRegistrationSoapBindingStub.cachedSerClasses</definition>
+        <argsstring></argsstring>
+        <name>cachedSerClasses</name>
+        <initializer> new java.util.Vector()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/VOMSRegistrationSoapBindingStub.java" line="11" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/VOMSRegistrationSoapBindingStub.java" bodystart="11" bodyend="-1"/>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationSoapBindingStub_1addf0b4461bdac5b9452e6be446a67d42" compoundref="VOMSRegistrationSoapBindingStub_8java" startline="107" endline="170">org.glite.security.voms.service.registration.VOMSRegistrationSoapBindingStub::createCall</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationSoapBindingStub_1a4a9e28d9238173977e98e934b3453899" compoundref="VOMSRegistrationSoapBindingStub_8java" startline="71" endline="105">org.glite.security.voms.service.registration.VOMSRegistrationSoapBindingStub::VOMSRegistrationSoapBindingStub</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationSoapBindingStub_1a4953a1c3677ea5b54b41eae757248ebe" prot="private" static="no" mutable="no">
+        <type>java.util.Vector</type>
+        <definition>java.util.Vector org.glite.security.voms.service.registration.VOMSRegistrationSoapBindingStub.cachedSerQNames</definition>
+        <argsstring></argsstring>
+        <name>cachedSerQNames</name>
+        <initializer> new java.util.Vector()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/VOMSRegistrationSoapBindingStub.java" line="12" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/VOMSRegistrationSoapBindingStub.java" bodystart="12" bodyend="-1"/>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationSoapBindingStub_1addf0b4461bdac5b9452e6be446a67d42" compoundref="VOMSRegistrationSoapBindingStub_8java" startline="107" endline="170">org.glite.security.voms.service.registration.VOMSRegistrationSoapBindingStub::createCall</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationSoapBindingStub_1a4a9e28d9238173977e98e934b3453899" compoundref="VOMSRegistrationSoapBindingStub_8java" startline="71" endline="105">org.glite.security.voms.service.registration.VOMSRegistrationSoapBindingStub::VOMSRegistrationSoapBindingStub</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationSoapBindingStub_1ac4a0a6e826976bc480281b1cb5f22996" prot="private" static="no" mutable="no">
+        <type>java.util.Vector</type>
+        <definition>java.util.Vector org.glite.security.voms.service.registration.VOMSRegistrationSoapBindingStub.cachedSerFactories</definition>
+        <argsstring></argsstring>
+        <name>cachedSerFactories</name>
+        <initializer> new java.util.Vector()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/VOMSRegistrationSoapBindingStub.java" line="13" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/VOMSRegistrationSoapBindingStub.java" bodystart="13" bodyend="-1"/>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationSoapBindingStub_1addf0b4461bdac5b9452e6be446a67d42" compoundref="VOMSRegistrationSoapBindingStub_8java" startline="107" endline="170">org.glite.security.voms.service.registration.VOMSRegistrationSoapBindingStub::createCall</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationSoapBindingStub_1a4a9e28d9238173977e98e934b3453899" compoundref="VOMSRegistrationSoapBindingStub_8java" startline="71" endline="105">org.glite.security.voms.service.registration.VOMSRegistrationSoapBindingStub::VOMSRegistrationSoapBindingStub</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationSoapBindingStub_1aca02be7dafd84f17d14e36a7ad1ecda2" prot="private" static="no" mutable="no">
+        <type>java.util.Vector</type>
+        <definition>java.util.Vector org.glite.security.voms.service.registration.VOMSRegistrationSoapBindingStub.cachedDeserFactories</definition>
+        <argsstring></argsstring>
+        <name>cachedDeserFactories</name>
+        <initializer> new java.util.Vector()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/VOMSRegistrationSoapBindingStub.java" line="14" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/VOMSRegistrationSoapBindingStub.java" bodystart="14" bodyend="-1"/>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationSoapBindingStub_1addf0b4461bdac5b9452e6be446a67d42" compoundref="VOMSRegistrationSoapBindingStub_8java" startline="107" endline="170">org.glite.security.voms.service.registration.VOMSRegistrationSoapBindingStub::createCall</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationSoapBindingStub_1a4a9e28d9238173977e98e934b3453899" compoundref="VOMSRegistrationSoapBindingStub_8java" startline="71" endline="105">org.glite.security.voms.service.registration.VOMSRegistrationSoapBindingStub::VOMSRegistrationSoapBindingStub</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="package-static-attrib">
+      <memberdef kind="variable" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationSoapBindingStub_1a990be83cb6e1a3679a41ff685fe1f1bc" prot="package" static="yes" mutable="no">
+        <type>org.apache.axis.description.OperationDesc[]</type>
+        <definition>org.apache.axis.description.OperationDesc [] org.glite.security.voms.service.registration.VOMSRegistrationSoapBindingStub._operations</definition>
+        <argsstring></argsstring>
+        <name>_operations</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/VOMSRegistrationSoapBindingStub.java" line="16" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/VOMSRegistrationSoapBindingStub.java" bodystart="16" bodyend="-1"/>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationSoapBindingStub_1a927458a354240b0c968cc318b4fe5bb3" compoundref="VOMSRegistrationSoapBindingStub_8java" startline="23" endline="60">org.glite.security.voms.service.registration.VOMSRegistrationSoapBindingStub::_initOperationDesc1</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationSoapBindingStub_1a33bfa5eb8f7b9cac6ea186788f047ced" compoundref="VOMSRegistrationSoapBindingStub_8java" startline="172" endline="202">org.glite.security.voms.service.registration.VOMSRegistrationSoapBindingStub::submitRegistrationRequest</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="package-static-func">
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationSoapBindingStub_1a67bd147ed226899047da8400bf88b775" prot="package" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>org.glite.security.voms.service.registration.VOMSRegistrationSoapBindingStub.[static initializer]</definition>
+        <argsstring></argsstring>
+        <name>[static initializer]</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/VOMSRegistrationSoapBindingStub.java" line="18"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationSoapBindingStub_1a927458a354240b0c968cc318b4fe5bb3" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void org.glite.security.voms.service.registration.VOMSRegistrationSoapBindingStub._initOperationDesc1</definition>
+        <argsstring>()</argsstring>
+        <name>_initOperationDesc1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/VOMSRegistrationSoapBindingStub.java" line="23" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/VOMSRegistrationSoapBindingStub.java" bodystart="23" bodyend="60"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationSoapBindingStub_1a990be83cb6e1a3679a41ff685fe1f1bc" compoundref="VOMSRegistrationSoapBindingStub_8java" startline="16">org.glite.security.voms.service.registration.VOMSRegistrationSoapBindingStub::_operations</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationSoapBindingStub_1ad8e2e83362c26eeed1bd37ad7ccbe9a3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>org.glite.security.voms.service.registration.VOMSRegistrationSoapBindingStub.VOMSRegistrationSoapBindingStub</definition>
+        <argsstring>()</argsstring>
+        <name>VOMSRegistrationSoapBindingStub</name>
+        <exceptions> throws org.apache.axis.AxisFault </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/VOMSRegistrationSoapBindingStub.java" line="62" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/VOMSRegistrationSoapBindingStub.java" bodystart="62" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationSoapBindingStub_1a2e1cda669537f726c5195eab57f632bd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>org.glite.security.voms.service.registration.VOMSRegistrationSoapBindingStub.VOMSRegistrationSoapBindingStub</definition>
+        <argsstring>(java.net.URL endpointURL, javax.xml.rpc.Service service)</argsstring>
+        <name>VOMSRegistrationSoapBindingStub</name>
+        <param>
+          <type>java.net.URL</type>
+          <declname>endpointURL</declname>
+        </param>
+        <param>
+          <type>javax.xml.rpc.Service</type>
+          <declname>service</declname>
+        </param>
+        <exceptions> throws org.apache.axis.AxisFault </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/VOMSRegistrationSoapBindingStub.java" line="66" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/VOMSRegistrationSoapBindingStub.java" bodystart="66" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationSoapBindingStub_1a4a9e28d9238173977e98e934b3453899" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>org.glite.security.voms.service.registration.VOMSRegistrationSoapBindingStub.VOMSRegistrationSoapBindingStub</definition>
+        <argsstring>(javax.xml.rpc.Service service)</argsstring>
+        <name>VOMSRegistrationSoapBindingStub</name>
+        <param>
+          <type>javax.xml.rpc.Service</type>
+          <declname>service</declname>
+        </param>
+        <exceptions> throws org.apache.axis.AxisFault </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/VOMSRegistrationSoapBindingStub.java" line="71" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/VOMSRegistrationSoapBindingStub.java" bodystart="71" bodyend="105"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationSoapBindingStub_1aca02be7dafd84f17d14e36a7ad1ecda2" compoundref="VOMSRegistrationSoapBindingStub_8java" startline="14">org.glite.security.voms.service.registration.VOMSRegistrationSoapBindingStub::cachedDeserFactories</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationSoapBindingStub_1aa0c5282023851e965b10603c10b5e264" compoundref="VOMSRegistrationSoapBindingStub_8java" startline="11">org.glite.security.voms.service.registration.VOMSRegistrationSoapBindingStub::cachedSerClasses</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationSoapBindingStub_1ac4a0a6e826976bc480281b1cb5f22996" compoundref="VOMSRegistrationSoapBindingStub_8java" startline="13">org.glite.security.voms.service.registration.VOMSRegistrationSoapBindingStub::cachedSerFactories</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationSoapBindingStub_1a4953a1c3677ea5b54b41eae757248ebe" compoundref="VOMSRegistrationSoapBindingStub_8java" startline="12">org.glite.security.voms.service.registration.VOMSRegistrationSoapBindingStub::cachedSerQNames</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationSoapBindingStub_1a33bfa5eb8f7b9cac6ea186788f047ced" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.registration.VOMSRegistrationSoapBindingStub.submitRegistrationRequest</definition>
+        <argsstring>(org.glite.security.voms.service.registration.RegistrationRequest in0)</argsstring>
+        <name>submitRegistrationRequest</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistration_1ab3530210d4ef583ecae5683dd274c363">submitRegistrationRequest</reimplements>
+        <param>
+          <type><ref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest" kindref="compound">org.glite.security.voms.service.registration.RegistrationRequest</ref></type>
+          <declname>in0</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref> </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/VOMSRegistrationSoapBindingStub.java" line="172" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/VOMSRegistrationSoapBindingStub.java" bodystart="172" bodyend="202"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationSoapBindingStub_1a990be83cb6e1a3679a41ff685fe1f1bc" compoundref="VOMSRegistrationSoapBindingStub_8java" startline="16">org.glite.security.voms.service.registration.VOMSRegistrationSoapBindingStub::_operations</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationSoapBindingStub_1addf0b4461bdac5b9452e6be446a67d42" compoundref="VOMSRegistrationSoapBindingStub_8java" startline="107" endline="170">org.glite.security.voms.service.registration.VOMSRegistrationSoapBindingStub::createCall</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationSoapBindingStub_1a317c0e341f3dbc7e3384801c4468f9e6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.glite.security.voms.service.registration.VOMSRegistrationSoapBindingStub.submitRegistrationRequestForUser</definition>
+        <argsstring>(java.lang.String in0, java.lang.String in1, org.glite.security.voms.service.registration.RegistrationRequest in2)</argsstring>
+        <name>submitRegistrationRequestForUser</name>
+        <reimplements refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistration_1acc10317e3e73477164a5d8db06f37a13">submitRegistrationRequestForUser</reimplements>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in0</declname>
+        </param>
+        <param>
+          <type>java.lang.String</type>
+          <declname>in1</declname>
+        </param>
+        <param>
+          <type><ref refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest" kindref="compound">org.glite.security.voms.service.registration.RegistrationRequest</ref></type>
+          <declname>in2</declname>
+        </param>
+        <exceptions> throws java.rmi.RemoteException, <ref refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" kindref="compound">org.glite.security.voms.VOMSException</ref> </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/VOMSRegistrationSoapBindingStub.java" line="204" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/VOMSRegistrationSoapBindingStub.java" bodystart="204" bodyend="234"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationSoapBindingStub_1addf0b4461bdac5b9452e6be446a67d42" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>org.apache.axis.client.Call</type>
+        <definition>org.apache.axis.client.Call org.glite.security.voms.service.registration.VOMSRegistrationSoapBindingStub.createCall</definition>
+        <argsstring>()</argsstring>
+        <name>createCall</name>
+        <exceptions> throws java.rmi.RemoteException </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/VOMSRegistrationSoapBindingStub.java" line="107" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/VOMSRegistrationSoapBindingStub.java" bodystart="107" bodyend="170"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationSoapBindingStub_1aca02be7dafd84f17d14e36a7ad1ecda2" compoundref="VOMSRegistrationSoapBindingStub_8java" startline="14">org.glite.security.voms.service.registration.VOMSRegistrationSoapBindingStub::cachedDeserFactories</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationSoapBindingStub_1aa0c5282023851e965b10603c10b5e264" compoundref="VOMSRegistrationSoapBindingStub_8java" startline="11">org.glite.security.voms.service.registration.VOMSRegistrationSoapBindingStub::cachedSerClasses</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationSoapBindingStub_1ac4a0a6e826976bc480281b1cb5f22996" compoundref="VOMSRegistrationSoapBindingStub_8java" startline="13">org.glite.security.voms.service.registration.VOMSRegistrationSoapBindingStub::cachedSerFactories</references>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationSoapBindingStub_1a4953a1c3677ea5b54b41eae757248ebe" compoundref="VOMSRegistrationSoapBindingStub_8java" startline="12">org.glite.security.voms.service.registration.VOMSRegistrationSoapBindingStub::cachedSerQNames</references>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationSoapBindingStub_1a33bfa5eb8f7b9cac6ea186788f047ced" compoundref="VOMSRegistrationSoapBindingStub_8java" startline="172" endline="202">org.glite.security.voms.service.registration.VOMSRegistrationSoapBindingStub::submitRegistrationRequest</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="801">
+        <label>org.glite.security.voms.service.registration.VOMSRegistrationSoapBindingStub</label>
+        <link refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationSoapBindingStub"/>
+        <childnode refid="802" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="802">
+        <label>org.glite.security.voms.service.registration.VOMSRegistration</label>
+        <link refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistration"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="803">
+        <label>org.glite.security.voms.service.registration.VOMSRegistrationSoapBindingStub</label>
+        <link refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationSoapBindingStub"/>
+        <childnode refid="804" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="804">
+        <label>org.glite.security.voms.service.registration.VOMSRegistration</label>
+        <link refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistration"/>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/VOMSRegistrationSoapBindingStub.java" line="10" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/registration/VOMSRegistrationSoapBindingStub.java" bodystart="10" bodyend="236"/>
+    <listofallmembers>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationSoapBindingStub_1a67bd147ed226899047da8400bf88b775" prot="package" virt="non-virtual"><scope>org::glite::security::voms::service::registration::VOMSRegistrationSoapBindingStub</scope><name>[static initializer]</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationSoapBindingStub_1a927458a354240b0c968cc318b4fe5bb3" prot="private" virt="non-virtual"><scope>org::glite::security::voms::service::registration::VOMSRegistrationSoapBindingStub</scope><name>_initOperationDesc1</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationSoapBindingStub_1a990be83cb6e1a3679a41ff685fe1f1bc" prot="package" virt="non-virtual"><scope>org::glite::security::voms::service::registration::VOMSRegistrationSoapBindingStub</scope><name>_operations</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationSoapBindingStub_1aca02be7dafd84f17d14e36a7ad1ecda2" prot="private" virt="non-virtual"><scope>org::glite::security::voms::service::registration::VOMSRegistrationSoapBindingStub</scope><name>cachedDeserFactories</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationSoapBindingStub_1aa0c5282023851e965b10603c10b5e264" prot="private" virt="non-virtual"><scope>org::glite::security::voms::service::registration::VOMSRegistrationSoapBindingStub</scope><name>cachedSerClasses</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationSoapBindingStub_1ac4a0a6e826976bc480281b1cb5f22996" prot="private" virt="non-virtual"><scope>org::glite::security::voms::service::registration::VOMSRegistrationSoapBindingStub</scope><name>cachedSerFactories</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationSoapBindingStub_1a4953a1c3677ea5b54b41eae757248ebe" prot="private" virt="non-virtual"><scope>org::glite::security::voms::service::registration::VOMSRegistrationSoapBindingStub</scope><name>cachedSerQNames</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationSoapBindingStub_1addf0b4461bdac5b9452e6be446a67d42" prot="protected" virt="non-virtual"><scope>org::glite::security::voms::service::registration::VOMSRegistrationSoapBindingStub</scope><name>createCall</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationSoapBindingStub_1a33bfa5eb8f7b9cac6ea186788f047ced" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::registration::VOMSRegistrationSoapBindingStub</scope><name>submitRegistrationRequest</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationSoapBindingStub_1a317c0e341f3dbc7e3384801c4468f9e6" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::registration::VOMSRegistrationSoapBindingStub</scope><name>submitRegistrationRequestForUser</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationSoapBindingStub_1ad8e2e83362c26eeed1bd37ad7ccbe9a3" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::registration::VOMSRegistrationSoapBindingStub</scope><name>VOMSRegistrationSoapBindingStub</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationSoapBindingStub_1a2e1cda669537f726c5195eab57f632bd" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::registration::VOMSRegistrationSoapBindingStub</scope><name>VOMSRegistrationSoapBindingStub</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationSoapBindingStub_1a4a9e28d9238173977e98e934b3453899" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::registration::VOMSRegistrationSoapBindingStub</scope><name>VOMSRegistrationSoapBindingStub</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

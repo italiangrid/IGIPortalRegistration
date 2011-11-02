@@ -1,0 +1,59 @@
+.TH "portal::registration::controller::VOListController" 3 "Wed Jul 13 2011" "Version 4" "Registration" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+portal::registration::controller::VOListController \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "String \fBshowUserInfoForm\fP (RenderResponse response)"
+.br
+.ti -1c
+.RI "List< \fBVo\fP > \fBgetVos\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBVoService\fP \fBvoService\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 17 of file VOListController.java.
+.SH "Member Function Documentation"
+.PP 
+.SS "List<\fBVo\fP> portal.registration.controller.VOListController.getVos ()"
+.PP
+Definition at line 28 of file VOListController.java.
+.PP
+References portal.registration.services.VoService.getAllVo().
+.PP
+.nf
+                                 {
+                return voService.getAllVo();
+        }
+.fi
+.SS "String portal.registration.controller.VOListController.showUserInfoForm (RenderResponseresponse)"
+.PP
+Definition at line 23 of file VOListController.java.
+.PP
+.nf
+                                                                {
+                return 'VOList';
+        }
+.fi
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBVoService\fP \fBportal.registration.controller.VOListController.voService\fP\fC [private]\fP"
+.PP
+Definition at line 20 of file VOListController.java.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Registration from the source code.

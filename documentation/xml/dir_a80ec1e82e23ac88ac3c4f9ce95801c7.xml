@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="dir_a80ec1e82e23ac88ac3c4f9ce95801c7" kind="dir">
+    <compoundname>/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/</compoundname>
+    <innerdir refid="dir_9e09e61fced6b7f991331e2f280e5d08">/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/"/>
+  </compounddef>
+</doxygen>

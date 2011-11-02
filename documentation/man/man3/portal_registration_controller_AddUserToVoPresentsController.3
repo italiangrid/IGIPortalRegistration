@@ -1,0 +1,187 @@
+.TH "portal::registration::controller::AddUserToVoPresentsController" 3 "Wed Jul 13 2011" "Version 4" "Registration" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+portal::registration::controller::AddUserToVoPresentsController \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBUserInfo\fP \fBgetCommandObject\fP ()"
+.br
+.ti -1c
+.RI "List< \fBVo\fP > \fBgetUserToVoList\fP (@RequestParam int userId)"
+.br
+.ti -1c
+.RI "String \fBshowUserInfoForm\fP (@RequestParam int userId, RenderRequest request)"
+.br
+.ti -1c
+.RI "void \fBgoToAddUserToVOForm\fP (ActionRequest request, ActionResponse response, SessionStatus sessionStatus)"
+.br
+.ti -1c
+.RI "List< \fBVo\fP > \fBgetVos\fP ()"
+.br
+.ti -1c
+.RI "void \fBuserToVoComplete\fP (ActionResponse response, SessionStatus sessionStatus)"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBdeactivateUser\fP (int userId, RenderRequest request)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBVoService\fP \fBvoService\fP"
+.br
+.ti -1c
+.RI "\fBUserToVoService\fP \fBuserToVoService\fP"
+.br
+.ti -1c
+.RI "\fBUserInfoService\fP \fBuserInfoService\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 32 of file AddUserToVoPresentsController.java.
+.SH "Member Function Documentation"
+.PP 
+.SS "void portal.registration.controller.AddUserToVoPresentsController.deactivateUser (intuserId, RenderRequestrequest)\fC [private]\fP"
+.PP
+Definition at line 65 of file AddUserToVoPresentsController.java.
+.PP
+References portal.registration.services.UserInfoService.edit(), portal.registration.services.UserInfoService.findById(), portal.registration.domain.UserInfo.getRegistrationComplete(), portal.registration.domain.UserInfo.getUsername(), and portal.registration.domain.UserInfo.setRegistrationComplete().
+.PP
+.nf
+                                                                       {
+
+                UserInfo userInfo = userInfoService.findById(userId);
+
+                if (userInfo.getRegistrationComplete().equals('true')) {
+                        String username = userInfo.getUsername();
+
+                        long companyId = PortalUtil.getCompanyId(request);
+
+                        User user;
+                        try {
+                                user = UserLocalServiceUtil.getUserByScreenName(companyId,
+                                                username);
+
+                                UserLocalServiceUtil.deleteRoleUser((long) 10140,
+                                                user.getUserId());
+
+                                userInfo.setRegistrationComplete('false');
+
+                                userInfoService.edit(userInfo);
+
+                        } catch (PortalException e) {
+                                SessionErrors.add(request, 'exception-deactivation-user');
+                                e.printStackTrace();
+                        } catch (SystemException e) {
+                                SessionErrors.add(request, 'exception-deactivation-user');
+                                e.printStackTrace();
+                        }
+                }
+
+        }
+.fi
+.SS "\fBUserInfo\fP portal.registration.controller.AddUserToVoPresentsController.getCommandObject ()"
+.PP
+Definition at line 44 of file AddUserToVoPresentsController.java.
+.PP
+.nf
+                                           {
+                return new UserInfo();
+        }
+.fi
+.SS "List<\fBVo\fP> portal.registration.controller.AddUserToVoPresentsController.getUserToVoList (@RequestParam intuserId)"
+.PP
+Definition at line 49 of file AddUserToVoPresentsController.java.
+.PP
+References portal.registration.services.UserToVoService.findVoByUserId().
+.PP
+.nf
+                                                                  {
+
+                return userToVoService.findVoByUserId(userId);
+        }
+.fi
+.SS "List<\fBVo\fP> portal.registration.controller.AddUserToVoPresentsController.getVos ()"
+.PP
+Definition at line 114 of file AddUserToVoPresentsController.java.
+.PP
+References portal.registration.services.VoService.getAllVo().
+.PP
+.nf
+                                 {
+                return voService.getAllVo();
+        }
+.fi
+.SS "void portal.registration.controller.AddUserToVoPresentsController.goToAddUserToVOForm (ActionRequestrequest, ActionResponseresponse, SessionStatussessionStatus)"
+.PP
+Definition at line 99 of file AddUserToVoPresentsController.java.
+.PP
+.nf
+                                                                              {
+
+                int userId = Integer.parseInt(request.getParameter('userId'));
+                response.setRenderParameter('myaction', 'showAddUserToVO');
+                response.setRenderParameter('userId', Integer.toString(userId));
+                // log.info('firstReg = ' +
+                // ((request.getParameter('firstReg')==null)?'null':request.getParameter('firstReg')));
+
+                request.setAttribute('firstReg', request.getParameter('firstReg'));
+                sessionStatus.setComplete();
+
+        }
+.fi
+.SS "String portal.registration.controller.AddUserToVoPresentsController.showUserInfoForm (@RequestParam intuserId, RenderRequestrequest)"
+.PP
+Definition at line 55 of file AddUserToVoPresentsController.java.
+.PP
+References portal.registration.services.UserToVoService.findById().
+.PP
+.nf
+                                               {
+
+                if (userToVoService.findById(userId).size() == 0) {
+                        deactivateUser(userId, request);
+                        SessionMessages.add(request, 'user-deactivate');
+                }
+                return 'addUserToVoPresents';
+        }
+.fi
+.SS "void portal.registration.controller.AddUserToVoPresentsController.userToVoComplete (ActionResponseresponse, SessionStatussessionStatus)"
+.PP
+Definition at line 119 of file AddUserToVoPresentsController.java.
+.PP
+.nf
+                                                     {
+
+                response.setRenderParameter('myaction', 'userInfos');
+                sessionStatus.setComplete();
+
+        }
+.fi
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBUserInfoService\fP \fBportal.registration.controller.AddUserToVoPresentsController.userInfoService\fP\fC [private]\fP"
+.PP
+Definition at line 41 of file AddUserToVoPresentsController.java.
+.SS "\fBUserToVoService\fP \fBportal.registration.controller.AddUserToVoPresentsController.userToVoService\fP\fC [private]\fP"
+.PP
+Definition at line 38 of file AddUserToVoPresentsController.java.
+.SS "\fBVoService\fP \fBportal.registration.controller.AddUserToVoPresentsController.voService\fP\fC [private]\fP"
+.PP
+Definition at line 35 of file AddUserToVoPresentsController.java.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Registration from the source code.

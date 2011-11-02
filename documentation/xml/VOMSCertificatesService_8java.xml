@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="VOMSCertificatesService_8java" kind="file">
+    <compoundname>VOMSCertificatesService.java</compoundname>
+    <innerclass refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesService" prot="public">org::glite::security::voms::service::certificates::VOMSCertificatesService</innerclass>
+    <innernamespace refid="namespaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates">org::glite::security::voms::service::certificates</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="8"><highlight class="keyword">package<sp/></highlight><highlight class="normal">org.glite.security.voms.service.certificates;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10" refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesService" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>interface<sp/><ref refid="interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesService" kindref="compound">VOMSCertificatesService</ref><sp/>extends<sp/>javax.xml.rpc.Service<sp/>{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>java.lang.String<sp/>getVOMSCertificatesAddress();</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>org.glite.security.voms.service.certificates.VOMSCertificates<sp/>getVOMSCertificates()<sp/></highlight><highlight class="keywordflow">throws</highlight><highlight class="normal"><sp/>javax.xml.rpc.ServiceException;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>org.glite.security.voms.service.certificates.VOMSCertificates<sp/>getVOMSCertificates(java.net.URL<sp/>portAddress)<sp/></highlight><highlight class="keywordflow">throws</highlight><highlight class="normal"><sp/>javax.xml.rpc.ServiceException;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/certificates/VOMSCertificatesService.java"/>
+  </compounddef>
+</doxygen>

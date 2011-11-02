@@ -1,0 +1,599 @@
+\hypertarget{classportal_1_1registration_1_1services_1_1UserToVoServiceImpl}{
+\section{portal.registration.services.UserToVoServiceImpl Class Reference}
+\label{classportal_1_1registration_1_1services_1_1UserToVoServiceImpl}\index{portal::registration::services::UserToVoServiceImpl@{portal::registration::services::UserToVoServiceImpl}}
+}
+
+
+Inheritance diagram for portal.registration.services.UserToVoServiceImpl:
+
+
+Collaboration diagram for portal.registration.services.UserToVoServiceImpl:
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classportal_1_1registration_1_1services_1_1UserToVoServiceImpl_aa7a3cabdec85ce841c11b0ddaf5f3b49}{UserToVoServiceImpl} ()
+\item 
+void \hyperlink{classportal_1_1registration_1_1services_1_1UserToVoServiceImpl_a91b600d1ca86d198b56d8a33289f38ef}{save} (\hyperlink{classportal_1_1registration_1_1domain_1_1UserToVo}{UserToVo} transientInstance)
+\item 
+void \hyperlink{classportal_1_1registration_1_1services_1_1UserToVoServiceImpl_a9c646018122c3e1132c8741f522ad388}{save} (int userId, int idVo)
+\item 
+List$<$ \hyperlink{classportal_1_1registration_1_1domain_1_1UserToVo}{UserToVo} $>$ \hyperlink{classportal_1_1registration_1_1services_1_1UserToVoServiceImpl_a796051a87541708958b985fadf65527b}{findById} (int userId)
+\item 
+List$<$ \hyperlink{classportal_1_1registration_1_1domain_1_1Vo}{Vo} $>$ \hyperlink{classportal_1_1registration_1_1services_1_1UserToVoServiceImpl_a93fe581a43664c8779a19515b28800ce}{findVoByUserId} (int userId)
+\item 
+void \hyperlink{classportal_1_1registration_1_1services_1_1UserToVoServiceImpl_a09630303455a897a321e1b03c7871370}{delete} (int userId, int idVo)
+\item 
+boolean \hyperlink{classportal_1_1registration_1_1services_1_1UserToVoServiceImpl_a656d4b59616282ee08ff0b82112dae72}{setDefault} (int userId, int idVo)
+\item 
+\hyperlink{classportal_1_1registration_1_1domain_1_1UserToVo}{UserToVo} \hyperlink{classportal_1_1registration_1_1services_1_1UserToVoServiceImpl_a9568abc4c331eea96873cf2ec307c5c7}{findById} (int userId, int idVo)
+\item 
+void \hyperlink{classportal_1_1registration_1_1services_1_1UserToVoServiceImpl_ae8ee85dc02aa3dac9b40f6eaf1e164ed}{update} (\hyperlink{classportal_1_1registration_1_1domain_1_1UserToVo}{UserToVo} utv)
+\item 
+String \hyperlink{classportal_1_1registration_1_1services_1_1UserToVoServiceImpl_ab382e547c2d550b82c1b7d6288f7d4df}{findDefaultVo} (int userId)
+\item 
+String \hyperlink{classportal_1_1registration_1_1services_1_1UserToVoServiceImpl_a59b213edbc6dde1a2276bcfdccf961cd}{getDefaultFqan} (int userId)
+\item 
+int \hyperlink{classportal_1_1registration_1_1services_1_1UserToVoServiceImpl_a3234ac9c5a6d12008564625b9ecc0d6e}{getNumberOfUserToVo} (int userId)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{interfaceportal_1_1registration_1_1dao_1_1UserToVoDAO}{UserToVoDAO} \hyperlink{classportal_1_1registration_1_1services_1_1UserToVoServiceImpl_a2601e092ad2cd9e5ace07ec16db395bd}{userToVoDAO}
+\item 
+\hyperlink{interfaceportal_1_1registration_1_1dao_1_1UserInfoDAO}{UserInfoDAO} \hyperlink{classportal_1_1registration_1_1services_1_1UserToVoServiceImpl_a4009afa6dfdcd91350d08ccf127eb334}{userInfoDAO}
+\item 
+\hyperlink{interfaceportal_1_1registration_1_1dao_1_1VoDAO}{VoDAO} \hyperlink{classportal_1_1registration_1_1services_1_1UserToVoServiceImpl_a0eb772d6b45bde5ccc9b55dc1638eafa}{voDAO}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static final Logger \hyperlink{classportal_1_1registration_1_1services_1_1UserToVoServiceImpl_aedf6cd2507a03895aa381ef754e906a5}{log}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Home object for domain model class UserToVo.
+
+\begin{DoxySeeAlso}{See also}
+portal.registration.services.UserToVo 
+\end{DoxySeeAlso}
+\begin{DoxyAuthor}{Author}
+Hibernate Tools 
+\end{DoxyAuthor}
+
+
+Definition at line 28 of file UserToVoServiceImpl.java.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classportal_1_1registration_1_1services_1_1UserToVoServiceImpl_aa7a3cabdec85ce841c11b0ddaf5f3b49}{
+\index{portal::registration::services::UserToVoServiceImpl@{portal::registration::services::UserToVoServiceImpl}!UserToVoServiceImpl@{UserToVoServiceImpl}}
+\index{UserToVoServiceImpl@{UserToVoServiceImpl}!portal::registration::services::UserToVoServiceImpl@{portal::registration::services::UserToVoServiceImpl}}
+\subsubsection[{UserToVoServiceImpl}]{\setlength{\rightskip}{0pt plus 5cm}portal.registration.services.UserToVoServiceImpl.UserToVoServiceImpl (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1services_1_1UserToVoServiceImpl_aa7a3cabdec85ce841c11b0ddaf5f3b49}
+
+
+Definition at line 42 of file UserToVoServiceImpl.java.
+
+
+\begin{DoxyCode}
+                                     {
+
+        }
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classportal_1_1registration_1_1services_1_1UserToVoServiceImpl_a09630303455a897a321e1b03c7871370}{
+\index{portal::registration::services::UserToVoServiceImpl@{portal::registration::services::UserToVoServiceImpl}!delete@{delete}}
+\index{delete@{delete}!portal::registration::services::UserToVoServiceImpl@{portal::registration::services::UserToVoServiceImpl}}
+\subsubsection[{delete}]{\setlength{\rightskip}{0pt plus 5cm}void portal.registration.services.UserToVoServiceImpl.delete (
+\begin{DoxyParamCaption}
+\item[{int}]{userId, }
+\item[{int}]{idVo}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1services_1_1UserToVoServiceImpl_a09630303455a897a321e1b03c7871370}
+
+
+Implements \hyperlink{interfaceportal_1_1registration_1_1services_1_1UserToVoService_a0cc57837f0e7dcf3bd50eb9e6160e1a0}{portal.registration.services.UserToVoService}.
+
+
+
+Definition at line 98 of file UserToVoServiceImpl.java.
+
+
+
+References portal.registration.dao.UserToVoDAO.delete(), and portal.registration.services.UserToVoServiceImpl.userToVoDAO.
+
+
+\begin{DoxyCode}
+                                                 {
+
+                userToVoDAO.delete(userId, idVo);
+
+        }
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+
+
+\hypertarget{classportal_1_1registration_1_1services_1_1UserToVoServiceImpl_a796051a87541708958b985fadf65527b}{
+\index{portal::registration::services::UserToVoServiceImpl@{portal::registration::services::UserToVoServiceImpl}!findById@{findById}}
+\index{findById@{findById}!portal::registration::services::UserToVoServiceImpl@{portal::registration::services::UserToVoServiceImpl}}
+\subsubsection[{findById}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf UserToVo}$>$ portal.registration.services.UserToVoServiceImpl.findById (
+\begin{DoxyParamCaption}
+\item[{int}]{userId}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1services_1_1UserToVoServiceImpl_a796051a87541708958b985fadf65527b}
+
+
+Implements \hyperlink{interfaceportal_1_1registration_1_1services_1_1UserToVoService_ab5f5da32c585f0fcd1eac1ac0302b733}{portal.registration.services.UserToVoService}.
+
+
+
+Definition at line 75 of file UserToVoServiceImpl.java.
+
+
+
+References portal.registration.dao.UserToVoDAO.findById(), portal.registration.dao.UserInfoDAO.findById(), portal.registration.services.UserToVoServiceImpl.userInfoDAO, and portal.registration.services.UserToVoServiceImpl.userToVoDAO.
+
+
+
+Referenced by portal.registration.services.UserToVoServiceImpl.findDefaultVo(), and portal.registration.services.UserToVoServiceImpl.getDefaultFqan().
+
+
+\begin{DoxyCode}
+                                                   {
+                UserInfo userInfo = userInfoDAO.findById(userId);
+                return userToVoDAO.findById(userInfo);
+        }
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+
+
+
+
+Here is the caller graph for this function:
+
+
+\hypertarget{classportal_1_1registration_1_1services_1_1UserToVoServiceImpl_a9568abc4c331eea96873cf2ec307c5c7}{
+\index{portal::registration::services::UserToVoServiceImpl@{portal::registration::services::UserToVoServiceImpl}!findById@{findById}}
+\index{findById@{findById}!portal::registration::services::UserToVoServiceImpl@{portal::registration::services::UserToVoServiceImpl}}
+\subsubsection[{findById}]{\setlength{\rightskip}{0pt plus 5cm}{\bf UserToVo} portal.registration.services.UserToVoServiceImpl.findById (
+\begin{DoxyParamCaption}
+\item[{int}]{userId, }
+\item[{int}]{idVo}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1services_1_1UserToVoServiceImpl_a9568abc4c331eea96873cf2ec307c5c7}
+
+
+Implements \hyperlink{interfaceportal_1_1registration_1_1services_1_1UserToVoService_ab215f16831a5396fc33cbf61ad09d7cd}{portal.registration.services.UserToVoService}.
+
+
+
+Definition at line 132 of file UserToVoServiceImpl.java.
+
+
+
+References portal.registration.dao.UserToVoDAO.findByIds(), and portal.registration.services.UserToVoServiceImpl.userToVoDAO.
+
+
+\begin{DoxyCode}
+                                                       {
+                return userToVoDAO.findByIds(userId, idVo);
+        }
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+
+
+\hypertarget{classportal_1_1registration_1_1services_1_1UserToVoServiceImpl_ab382e547c2d550b82c1b7d6288f7d4df}{
+\index{portal::registration::services::UserToVoServiceImpl@{portal::registration::services::UserToVoServiceImpl}!findDefaultVo@{findDefaultVo}}
+\index{findDefaultVo@{findDefaultVo}!portal::registration::services::UserToVoServiceImpl@{portal::registration::services::UserToVoServiceImpl}}
+\subsubsection[{findDefaultVo}]{\setlength{\rightskip}{0pt plus 5cm}String portal.registration.services.UserToVoServiceImpl.findDefaultVo (
+\begin{DoxyParamCaption}
+\item[{int}]{userId}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1services_1_1UserToVoServiceImpl_ab382e547c2d550b82c1b7d6288f7d4df}
+
+
+Implements \hyperlink{interfaceportal_1_1registration_1_1services_1_1UserToVoService_a5043e049fe2c30db59896ea2f285f6a8}{portal.registration.services.UserToVoService}.
+
+
+
+Definition at line 143 of file UserToVoServiceImpl.java.
+
+
+
+References portal.registration.dao.VoDAO.findById(), portal.registration.services.UserToVoServiceImpl.findById(), portal.registration.domain.UserToVoId.getIdVo(), portal.registration.domain.Vo.getVo(), and portal.registration.services.UserToVoServiceImpl.voDAO.
+
+
+\begin{DoxyCode}
+                                                {
+                List<UserToVo> utvs = findById(userId);
+                UserToVoId utvId = null;
+                Vo vo = null;
+                String voName = null;
+                for (int i = 0; i < utvs.size(); i++) {
+                        if (utvs.get(i).getIsDefault().equals("true")) {
+                                utvId = utvs.get(i).getId();
+                                vo = voDAO.findById(utvId.getIdVo());
+                                voName = vo.getVo();
+                                break;
+                        }
+                }
+                return voName;
+        }
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+
+
+\hypertarget{classportal_1_1registration_1_1services_1_1UserToVoServiceImpl_a93fe581a43664c8779a19515b28800ce}{
+\index{portal::registration::services::UserToVoServiceImpl@{portal::registration::services::UserToVoServiceImpl}!findVoByUserId@{findVoByUserId}}
+\index{findVoByUserId@{findVoByUserId}!portal::registration::services::UserToVoServiceImpl@{portal::registration::services::UserToVoServiceImpl}}
+\subsubsection[{findVoByUserId}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Vo}$>$ portal.registration.services.UserToVoServiceImpl.findVoByUserId (
+\begin{DoxyParamCaption}
+\item[{int}]{userId}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1services_1_1UserToVoServiceImpl_a93fe581a43664c8779a19515b28800ce}
+
+
+Implements \hyperlink{interfaceportal_1_1registration_1_1services_1_1UserToVoService_a1e8049121c67ba84866e0ed608077200}{portal.registration.services.UserToVoService}.
+
+
+
+Definition at line 81 of file UserToVoServiceImpl.java.
+
+
+
+References portal.registration.dao.UserToVoDAO.findById(), portal.registration.dao.UserInfoDAO.findById(), portal.registration.dao.UserToVoDAO.getVoByUserToVo(), portal.registration.services.UserToVoServiceImpl.userInfoDAO, and portal.registration.services.UserToVoServiceImpl.userToVoDAO.
+
+
+\begin{DoxyCode}
+                                                   {
+
+                UserInfo userInfo = userInfoDAO.findById(userId);
+                List<UserToVo> utvs = userToVoDAO.findById(userInfo);
+
+                List<Vo> vos = new ArrayList<Vo>();
+
+                for (int i = 0; i < utvs.size(); i++) {
+
+                        vos.add(userToVoDAO.getVoByUserToVo(utvs.get(i)));
+
+                }
+
+                return vos;
+        }
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+
+
+\hypertarget{classportal_1_1registration_1_1services_1_1UserToVoServiceImpl_a59b213edbc6dde1a2276bcfdccf961cd}{
+\index{portal::registration::services::UserToVoServiceImpl@{portal::registration::services::UserToVoServiceImpl}!getDefaultFqan@{getDefaultFqan}}
+\index{getDefaultFqan@{getDefaultFqan}!portal::registration::services::UserToVoServiceImpl@{portal::registration::services::UserToVoServiceImpl}}
+\subsubsection[{getDefaultFqan}]{\setlength{\rightskip}{0pt plus 5cm}String portal.registration.services.UserToVoServiceImpl.getDefaultFqan (
+\begin{DoxyParamCaption}
+\item[{int}]{userId}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1services_1_1UserToVoServiceImpl_a59b213edbc6dde1a2276bcfdccf961cd}
+
+
+Implements \hyperlink{interfaceportal_1_1registration_1_1services_1_1UserToVoService_ac292212be624e2b7209bf3808154870b}{portal.registration.services.UserToVoService}.
+
+
+
+Definition at line 160 of file UserToVoServiceImpl.java.
+
+
+
+References portal.registration.services.UserToVoServiceImpl.findById().
+
+
+\begin{DoxyCode}
+                                                 {
+                List<UserToVo> utvs = findById(userId);
+                String fqan = null;
+                for (int i = 0; i < utvs.size(); i++) {
+                        if (utvs.get(i).getIsDefault().equals("true")) {
+
+                                fqan = utvs.get(i).getFqans();
+                                break;
+                        }
+                }
+                return fqan;
+        }
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+
+
+\hypertarget{classportal_1_1registration_1_1services_1_1UserToVoServiceImpl_a3234ac9c5a6d12008564625b9ecc0d6e}{
+\index{portal::registration::services::UserToVoServiceImpl@{portal::registration::services::UserToVoServiceImpl}!getNumberOfUserToVo@{getNumberOfUserToVo}}
+\index{getNumberOfUserToVo@{getNumberOfUserToVo}!portal::registration::services::UserToVoServiceImpl@{portal::registration::services::UserToVoServiceImpl}}
+\subsubsection[{getNumberOfUserToVo}]{\setlength{\rightskip}{0pt plus 5cm}int portal.registration.services.UserToVoServiceImpl.getNumberOfUserToVo (
+\begin{DoxyParamCaption}
+\item[{int}]{userId}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1services_1_1UserToVoServiceImpl_a3234ac9c5a6d12008564625b9ecc0d6e}
+
+
+Implements \hyperlink{interfaceportal_1_1registration_1_1services_1_1UserToVoService_a4ddfa9a3d1f9fc980b62b22c5d2c0ad3}{portal.registration.services.UserToVoService}.
+
+
+
+Definition at line 174 of file UserToVoServiceImpl.java.
+
+
+
+References portal.registration.dao.UserToVoDAO.getNumberOfUserToVo(), and portal.registration.services.UserToVoServiceImpl.userToVoDAO.
+
+
+\begin{DoxyCode}
+                                                   {
+
+                return userToVoDAO.getNumberOfUserToVo(userId);
+        }
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+
+
+\hypertarget{classportal_1_1registration_1_1services_1_1UserToVoServiceImpl_a9c646018122c3e1132c8741f522ad388}{
+\index{portal::registration::services::UserToVoServiceImpl@{portal::registration::services::UserToVoServiceImpl}!save@{save}}
+\index{save@{save}!portal::registration::services::UserToVoServiceImpl@{portal::registration::services::UserToVoServiceImpl}}
+\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}void portal.registration.services.UserToVoServiceImpl.save (
+\begin{DoxyParamCaption}
+\item[{int}]{userId, }
+\item[{int}]{idVo}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1services_1_1UserToVoServiceImpl_a9c646018122c3e1132c8741f522ad388}
+
+
+Implements \hyperlink{interfaceportal_1_1registration_1_1services_1_1UserToVoService_a016c1201361d43d24ee4cc1a6ea9d249}{portal.registration.services.UserToVoService}.
+
+
+
+Definition at line 53 of file UserToVoServiceImpl.java.
+
+
+
+References portal.registration.dao.VoDAO.findById(), portal.registration.dao.UserInfoDAO.findById(), portal.registration.services.UserToVoServiceImpl.log, portal.registration.dao.UserToVoDAO.save(), portal.registration.domain.UserToVo.setId(), portal.registration.domain.UserToVo.setIsDefault(), portal.registration.domain.UserToVo.setUserInfo(), portal.registration.domain.UserToVo.setVo(), portal.registration.services.UserToVoServiceImpl.userInfoDAO, portal.registration.services.UserToVoServiceImpl.userToVoDAO, and portal.registration.services.UserToVoServiceImpl.voDAO.
+
+
+\begin{DoxyCode}
+                                               {
+                log.debug("persisting UserToVoService instance");
+
+                UserToVo transientInstance = new UserToVo();
+
+                UserToVoId utvid = new UserToVoId(userId, idVo);
+
+                transientInstance.setId(utvid);
+
+                UserInfo userInfo = userInfoDAO.findById(userId);
+                Vo vo = voDAO.findById(idVo);
+
+                transientInstance.setUserInfo(userInfo);
+                transientInstance.setVo(vo);
+
+                transientInstance.setIsDefault("false");
+
+                userToVoDAO.save(transientInstance);
+
+        }
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+
+
+\hypertarget{classportal_1_1registration_1_1services_1_1UserToVoServiceImpl_a91b600d1ca86d198b56d8a33289f38ef}{
+\index{portal::registration::services::UserToVoServiceImpl@{portal::registration::services::UserToVoServiceImpl}!save@{save}}
+\index{save@{save}!portal::registration::services::UserToVoServiceImpl@{portal::registration::services::UserToVoServiceImpl}}
+\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}void portal.registration.services.UserToVoServiceImpl.save (
+\begin{DoxyParamCaption}
+\item[{{\bf UserToVo}}]{transientInstance}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1services_1_1UserToVoServiceImpl_a91b600d1ca86d198b56d8a33289f38ef}
+
+
+Implements \hyperlink{interfaceportal_1_1registration_1_1services_1_1UserToVoService_a870ad36a4e9095735c8f0dfd65fdc960}{portal.registration.services.UserToVoService}.
+
+
+
+Definition at line 47 of file UserToVoServiceImpl.java.
+
+
+
+References portal.registration.services.UserToVoServiceImpl.log, portal.registration.dao.UserToVoDAO.save(), and portal.registration.services.UserToVoServiceImpl.userToVoDAO.
+
+
+\begin{DoxyCode}
+                                                     {
+                log.debug("persisting UserToVoService instance");
+                userToVoDAO.save(transientInstance);
+        }
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+
+
+\hypertarget{classportal_1_1registration_1_1services_1_1UserToVoServiceImpl_a656d4b59616282ee08ff0b82112dae72}{
+\index{portal::registration::services::UserToVoServiceImpl@{portal::registration::services::UserToVoServiceImpl}!setDefault@{setDefault}}
+\index{setDefault@{setDefault}!portal::registration::services::UserToVoServiceImpl@{portal::registration::services::UserToVoServiceImpl}}
+\subsubsection[{setDefault}]{\setlength{\rightskip}{0pt plus 5cm}boolean portal.registration.services.UserToVoServiceImpl.setDefault (
+\begin{DoxyParamCaption}
+\item[{int}]{userId, }
+\item[{int}]{idVo}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1services_1_1UserToVoServiceImpl_a656d4b59616282ee08ff0b82112dae72}
+
+
+Implements \hyperlink{interfaceportal_1_1registration_1_1services_1_1UserToVoService_af8f698d8e1d75635d5347f37fb9a9ab1}{portal.registration.services.UserToVoService}.
+
+
+
+Definition at line 105 of file UserToVoServiceImpl.java.
+
+
+
+References portal.registration.dao.UserToVoDAO.findById(), portal.registration.dao.UserInfoDAO.findById(), portal.registration.dao.UserToVoDAO.findByIds(), portal.registration.domain.UserToVo.getIsDefault(), portal.registration.domain.UserToVo.setIsDefault(), portal.registration.dao.UserToVoDAO.update(), portal.registration.services.UserToVoServiceImpl.userInfoDAO, and portal.registration.services.UserToVoServiceImpl.userToVoDAO.
+
+
+\begin{DoxyCode}
+                                                        {
+
+                UserToVo toUpdate = userToVoDAO.findByIds(userId, idVo);
+
+                if (!toUpdate.getIsDefault().equals("true")) {
+
+                        UserInfo userInfo = userInfoDAO.findById(userId);
+
+                        List<UserToVo> utvs = userToVoDAO.findById(userInfo);
+
+                        UserToVo temp = null;
+
+                        for (int i = 0; i < utvs.size(); i++) {
+                                temp = utvs.get(i);
+                                temp.setIsDefault("false");
+                                userToVoDAO.update(temp);
+                        }
+
+                        toUpdate.setIsDefault("true");
+                        userToVoDAO.update(temp);
+
+                        return true;
+                }
+                return false;
+        }
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+
+
+\hypertarget{classportal_1_1registration_1_1services_1_1UserToVoServiceImpl_ae8ee85dc02aa3dac9b40f6eaf1e164ed}{
+\index{portal::registration::services::UserToVoServiceImpl@{portal::registration::services::UserToVoServiceImpl}!update@{update}}
+\index{update@{update}!portal::registration::services::UserToVoServiceImpl@{portal::registration::services::UserToVoServiceImpl}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void portal.registration.services.UserToVoServiceImpl.update (
+\begin{DoxyParamCaption}
+\item[{{\bf UserToVo}}]{utv}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1services_1_1UserToVoServiceImpl_ae8ee85dc02aa3dac9b40f6eaf1e164ed}
+
+
+Implements \hyperlink{interfaceportal_1_1registration_1_1services_1_1UserToVoService_a085c0254ca3f91556da0c51b19ffbdac}{portal.registration.services.UserToVoService}.
+
+
+
+Definition at line 137 of file UserToVoServiceImpl.java.
+
+
+
+References portal.registration.dao.UserToVoDAO.update(), and portal.registration.services.UserToVoServiceImpl.userToVoDAO.
+
+
+\begin{DoxyCode}
+                                         {
+                userToVoDAO.update(utv);
+
+        }
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classportal_1_1registration_1_1services_1_1UserToVoServiceImpl_aedf6cd2507a03895aa381ef754e906a5}{
+\index{portal::registration::services::UserToVoServiceImpl@{portal::registration::services::UserToVoServiceImpl}!log@{log}}
+\index{log@{log}!portal::registration::services::UserToVoServiceImpl@{portal::registration::services::UserToVoServiceImpl}}
+\subsubsection[{log}]{\setlength{\rightskip}{0pt plus 5cm}final Logger {\bf portal.registration.services.UserToVoServiceImpl.log}\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{classportal_1_1registration_1_1services_1_1UserToVoServiceImpl_aedf6cd2507a03895aa381ef754e906a5}
+{\bfseries Initial value:}
+\begin{DoxyCode}
+ Logger
+                        .getLogger(UserInfoServiceImpl.class)
+\end{DoxyCode}
+
+
+Definition at line 30 of file UserToVoServiceImpl.java.
+
+
+
+Referenced by portal.registration.services.UserToVoServiceImpl.save().
+
+\hypertarget{classportal_1_1registration_1_1services_1_1UserToVoServiceImpl_a4009afa6dfdcd91350d08ccf127eb334}{
+\index{portal::registration::services::UserToVoServiceImpl@{portal::registration::services::UserToVoServiceImpl}!userInfoDAO@{userInfoDAO}}
+\index{userInfoDAO@{userInfoDAO}!portal::registration::services::UserToVoServiceImpl@{portal::registration::services::UserToVoServiceImpl}}
+\subsubsection[{userInfoDAO}]{\setlength{\rightskip}{0pt plus 5cm}{\bf UserInfoDAO} {\bf portal.registration.services.UserToVoServiceImpl.userInfoDAO}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classportal_1_1registration_1_1services_1_1UserToVoServiceImpl_a4009afa6dfdcd91350d08ccf127eb334}
+
+
+Definition at line 37 of file UserToVoServiceImpl.java.
+
+
+
+Referenced by portal.registration.services.UserToVoServiceImpl.findById(), portal.registration.services.UserToVoServiceImpl.findVoByUserId(), portal.registration.services.UserToVoServiceImpl.save(), and portal.registration.services.UserToVoServiceImpl.setDefault().
+
+\hypertarget{classportal_1_1registration_1_1services_1_1UserToVoServiceImpl_a2601e092ad2cd9e5ace07ec16db395bd}{
+\index{portal::registration::services::UserToVoServiceImpl@{portal::registration::services::UserToVoServiceImpl}!userToVoDAO@{userToVoDAO}}
+\index{userToVoDAO@{userToVoDAO}!portal::registration::services::UserToVoServiceImpl@{portal::registration::services::UserToVoServiceImpl}}
+\subsubsection[{userToVoDAO}]{\setlength{\rightskip}{0pt plus 5cm}{\bf UserToVoDAO} {\bf portal.registration.services.UserToVoServiceImpl.userToVoDAO}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classportal_1_1registration_1_1services_1_1UserToVoServiceImpl_a2601e092ad2cd9e5ace07ec16db395bd}
+
+
+Definition at line 34 of file UserToVoServiceImpl.java.
+
+
+
+Referenced by portal.registration.services.UserToVoServiceImpl.delete(), portal.registration.services.UserToVoServiceImpl.findById(), portal.registration.services.UserToVoServiceImpl.findVoByUserId(), portal.registration.services.UserToVoServiceImpl.getNumberOfUserToVo(), portal.registration.services.UserToVoServiceImpl.save(), portal.registration.services.UserToVoServiceImpl.setDefault(), and portal.registration.services.UserToVoServiceImpl.update().
+
+\hypertarget{classportal_1_1registration_1_1services_1_1UserToVoServiceImpl_a0eb772d6b45bde5ccc9b55dc1638eafa}{
+\index{portal::registration::services::UserToVoServiceImpl@{portal::registration::services::UserToVoServiceImpl}!voDAO@{voDAO}}
+\index{voDAO@{voDAO}!portal::registration::services::UserToVoServiceImpl@{portal::registration::services::UserToVoServiceImpl}}
+\subsubsection[{voDAO}]{\setlength{\rightskip}{0pt plus 5cm}{\bf VoDAO} {\bf portal.registration.services.UserToVoServiceImpl.voDAO}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classportal_1_1registration_1_1services_1_1UserToVoServiceImpl_a0eb772d6b45bde5ccc9b55dc1638eafa}
+
+
+Definition at line 40 of file UserToVoServiceImpl.java.
+
+
+
+Referenced by portal.registration.services.UserToVoServiceImpl.findDefaultVo(), and portal.registration.services.UserToVoServiceImpl.save().
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/services/\hyperlink{UserToVoServiceImpl_8java}{UserToVoServiceImpl.java}\end{DoxyCompactItemize}

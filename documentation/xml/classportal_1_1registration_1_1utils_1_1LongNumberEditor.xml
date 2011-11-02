@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="classportal_1_1registration_1_1utils_1_1LongNumberEditor" kind="class" prot="public">
+    <compoundname>portal::registration::utils::LongNumberEditor</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">PropertyEditorSupport</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classportal_1_1registration_1_1utils_1_1LongNumberEditor_1acc39114b566b4ac8d81a2a5fe408c50e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String portal.registration.utils.LongNumberEditor.getAsText</definition>
+        <argsstring>()</argsstring>
+        <name>getAsText</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/utils/LongNumberEditor.java" line="12" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/utils/LongNumberEditor.java" bodystart="12" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1utils_1_1LongNumberEditor_1a5f1525e7895a603c537e2aadc35359aa" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void portal.registration.utils.LongNumberEditor.setAsText</definition>
+        <argsstring>(String text)</argsstring>
+        <name>setAsText</name>
+        <param>
+          <type>String</type>
+          <declname>text</declname>
+        </param>
+        <exceptions> throws IllegalArgumentException </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/utils/LongNumberEditor.java" line="24" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/utils/LongNumberEditor.java" bodystart="24" bodyend="26"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Property editor for Long type properties.</para><para><simplesect kind="author"><para>asarin </para></simplesect>
+</para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="531">
+        <label>portal.registration.utils.LongNumberEditor</label>
+        <link refid="classportal_1_1registration_1_1utils_1_1LongNumberEditor"/>
+        <childnode refid="532" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="532">
+        <label>PropertyEditorSupport</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="533">
+        <label>portal.registration.utils.LongNumberEditor</label>
+        <link refid="classportal_1_1registration_1_1utils_1_1LongNumberEditor"/>
+        <childnode refid="534" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="534">
+        <label>PropertyEditorSupport</label>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/utils/LongNumberEditor.java" line="10" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/utils/LongNumberEditor.java" bodystart="10" bodyend="27"/>
+    <listofallmembers>
+      <member refid="classportal_1_1registration_1_1utils_1_1LongNumberEditor_1acc39114b566b4ac8d81a2a5fe408c50e" prot="public" virt="non-virtual"><scope>portal::registration::utils::LongNumberEditor</scope><name>getAsText</name></member>
+      <member refid="classportal_1_1registration_1_1utils_1_1LongNumberEditor_1a5f1525e7895a603c537e2aadc35359aa" prot="public" virt="non-virtual"><scope>portal::registration::utils::LongNumberEditor</scope><name>setAsText</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

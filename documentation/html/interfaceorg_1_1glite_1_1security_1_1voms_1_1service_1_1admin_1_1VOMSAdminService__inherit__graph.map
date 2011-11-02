@@ -1,0 +1,3 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator.html" title="{org.glite.security.voms.service.admin.VOMSAdminServiceLocator\n|&#45; VOMSAdmin_address\l&#45; VOMSAdminWSDDServiceName\l&#45; ports\l|+ VOMSAdminServiceLocator()\l+ VOMSAdminServiceLocator()\l+ VOMSAdminServiceLocator()\l+ getVOMSAdminAddress()\l+ getVOMSAdminWSDDServiceName()\l+ setVOMSAdminWSDDServiceName()\l+ getVOMSAdmin()\l+ getVOMSAdmin()\l+ setVOMSAdminEndpointAddress()\l+ getPort()\l+ getPort()\l+ getServiceName()\l+ getPorts()\l+ setEndpointAddress()\l+ setEndpointAddress()\l}" alt="" coords="4,160,373,467"/>
+</map>

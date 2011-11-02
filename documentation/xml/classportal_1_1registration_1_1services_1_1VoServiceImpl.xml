@@ -1,0 +1,174 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="classportal_1_1registration_1_1services_1_1VoServiceImpl" kind="class" prot="public">
+    <compoundname>portal::registration::services::VoServiceImpl</compoundname>
+    <basecompoundref refid="interfaceportal_1_1registration_1_1services_1_1VoService" prot="public" virt="non-virtual">portal.registration.services.VoService</basecompoundref>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classportal_1_1registration_1_1services_1_1VoServiceImpl_1a9213c0db1eb0f44559f7e4c2ec13e0cf" prot="private" static="yes" mutable="no">
+        <type>final Logger</type>
+        <definition>final Logger portal.registration.services.VoServiceImpl.log</definition>
+        <argsstring></argsstring>
+        <name>log</name>
+        <initializer> Logger
+			.getLogger(UserInfoServiceImpl.class)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/services/VoServiceImpl.java" line="17" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/services/VoServiceImpl.java" bodystart="16" bodyend="-1"/>
+        <referencedby refid="classportal_1_1registration_1_1services_1_1VoServiceImpl_1a033d10a34bb55d383d9c9fbf8e06934d" compoundref="VoServiceImpl_8java" startline="29" endline="32">portal.registration.services.VoServiceImpl::findById</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1services_1_1VoServiceImpl_1ae34d214263258edd26540c6931c89f4a" compoundref="VoServiceImpl_8java" startline="35" endline="38">portal.registration.services.VoServiceImpl::findByVo</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1services_1_1VoServiceImpl_1aa5774cef8f51f0d1fa3db99fb52b5089" compoundref="VoServiceImpl_8java" startline="23" endline="26">portal.registration.services.VoServiceImpl::getAllVo</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classportal_1_1registration_1_1services_1_1VoServiceImpl_1a92aa539f17eb130f099f970cf9f408c1" prot="private" static="no" mutable="no">
+        <type><ref refid="interfaceportal_1_1registration_1_1dao_1_1VoDAO" kindref="compound">VoDAO</ref></type>
+        <definition>VoDAO portal.registration.services.VoServiceImpl.voDAO</definition>
+        <argsstring></argsstring>
+        <name>voDAO</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/services/VoServiceImpl.java" line="20" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/services/VoServiceImpl.java" bodystart="20" bodyend="-1"/>
+        <referencedby refid="classportal_1_1registration_1_1services_1_1VoServiceImpl_1a033d10a34bb55d383d9c9fbf8e06934d" compoundref="VoServiceImpl_8java" startline="29" endline="32">portal.registration.services.VoServiceImpl::findById</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1services_1_1VoServiceImpl_1ae34d214263258edd26540c6931c89f4a" compoundref="VoServiceImpl_8java" startline="35" endline="38">portal.registration.services.VoServiceImpl::findByVo</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1services_1_1VoServiceImpl_1a524d75940e34418e48a3d50a521490f5" compoundref="VoServiceImpl_8java" startline="41" endline="43">portal.registration.services.VoServiceImpl::getAllDiscplines</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1services_1_1VoServiceImpl_1aa5774cef8f51f0d1fa3db99fb52b5089" compoundref="VoServiceImpl_8java" startline="23" endline="26">portal.registration.services.VoServiceImpl::getAllVo</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classportal_1_1registration_1_1services_1_1VoServiceImpl_1aa5774cef8f51f0d1fa3db99fb52b5089" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>List&lt; <ref refid="classportal_1_1registration_1_1domain_1_1Vo" kindref="compound">Vo</ref> &gt;</type>
+        <definition>List&lt;Vo&gt; portal.registration.services.VoServiceImpl.getAllVo</definition>
+        <argsstring>()</argsstring>
+        <name>getAllVo</name>
+        <reimplements refid="interfaceportal_1_1registration_1_1services_1_1VoService_1aa153862b17e17380ca3a8bf64558b070">getAllVo</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/services/VoServiceImpl.java" line="23" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/services/VoServiceImpl.java" bodystart="23" bodyend="26"/>
+        <references refid="interfaceportal_1_1registration_1_1dao_1_1VoDAO_1a86370596aa8198130e009f25f9fbb191">portal.registration.dao.VoDAO::getAllVo</references>
+        <references refid="classportal_1_1registration_1_1services_1_1VoServiceImpl_1a9213c0db1eb0f44559f7e4c2ec13e0cf" compoundref="VoServiceImpl_8java" startline="16">portal.registration.services.VoServiceImpl::log</references>
+        <references refid="classportal_1_1registration_1_1services_1_1VoServiceImpl_1a92aa539f17eb130f099f970cf9f408c1" compoundref="VoServiceImpl_8java" startline="20">portal.registration.services.VoServiceImpl::voDAO</references>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1services_1_1VoServiceImpl_1a033d10a34bb55d383d9c9fbf8e06934d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classportal_1_1registration_1_1domain_1_1Vo" kindref="compound">Vo</ref></type>
+        <definition>Vo portal.registration.services.VoServiceImpl.findById</definition>
+        <argsstring>(Integer id)</argsstring>
+        <name>findById</name>
+        <reimplements refid="interfaceportal_1_1registration_1_1services_1_1VoService_1ade41c70e67fa304a7e4bea814b454b3e">findById</reimplements>
+        <param>
+          <type>Integer</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/services/VoServiceImpl.java" line="29" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/services/VoServiceImpl.java" bodystart="29" bodyend="32"/>
+        <references refid="interfaceportal_1_1registration_1_1dao_1_1VoDAO_1a1e615e3cc23d178459a789ff9e91da5f">portal.registration.dao.VoDAO::findById</references>
+        <references refid="classportal_1_1registration_1_1services_1_1VoServiceImpl_1a9213c0db1eb0f44559f7e4c2ec13e0cf" compoundref="VoServiceImpl_8java" startline="16">portal.registration.services.VoServiceImpl::log</references>
+        <references refid="classportal_1_1registration_1_1services_1_1VoServiceImpl_1a92aa539f17eb130f099f970cf9f408c1" compoundref="VoServiceImpl_8java" startline="20">portal.registration.services.VoServiceImpl::voDAO</references>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1services_1_1VoServiceImpl_1ae34d214263258edd26540c6931c89f4a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String portal.registration.services.VoServiceImpl.findByVo</definition>
+        <argsstring>(Vo vo)</argsstring>
+        <name>findByVo</name>
+        <reimplements refid="interfaceportal_1_1registration_1_1services_1_1VoService_1ab8c2f110a7529b44a3c56c292fac20b8">findByVo</reimplements>
+        <param>
+          <type><ref refid="classportal_1_1registration_1_1domain_1_1Vo" kindref="compound">Vo</ref></type>
+          <declname>vo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/services/VoServiceImpl.java" line="35" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/services/VoServiceImpl.java" bodystart="35" bodyend="38"/>
+        <references refid="interfaceportal_1_1registration_1_1dao_1_1VoDAO_1a1e615e3cc23d178459a789ff9e91da5f">portal.registration.dao.VoDAO::findById</references>
+        <references refid="classportal_1_1registration_1_1domain_1_1Vo_1a59af74dbc7ed8e2d030851b21fa7f173" compoundref="Vo_8java" startline="78" endline="80">portal.registration.domain.Vo::getIdVo</references>
+        <references refid="classportal_1_1registration_1_1services_1_1VoServiceImpl_1a9213c0db1eb0f44559f7e4c2ec13e0cf" compoundref="VoServiceImpl_8java" startline="16">portal.registration.services.VoServiceImpl::log</references>
+        <references refid="classportal_1_1registration_1_1services_1_1VoServiceImpl_1a92aa539f17eb130f099f970cf9f408c1" compoundref="VoServiceImpl_8java" startline="20">portal.registration.services.VoServiceImpl::voDAO</references>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1services_1_1VoServiceImpl_1a524d75940e34418e48a3d50a521490f5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>List&lt; String &gt;</type>
+        <definition>List&lt;String&gt; portal.registration.services.VoServiceImpl.getAllDiscplines</definition>
+        <argsstring>()</argsstring>
+        <name>getAllDiscplines</name>
+        <reimplements refid="interfaceportal_1_1registration_1_1services_1_1VoService_1a7b58b5a1cfad32b0c4697c5f37eb432e">getAllDiscplines</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/services/VoServiceImpl.java" line="41" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/services/VoServiceImpl.java" bodystart="41" bodyend="43"/>
+        <references refid="interfaceportal_1_1registration_1_1dao_1_1VoDAO_1aa8dde2c7f1a71332033c97f2729e18fb">portal.registration.dao.VoDAO::getAllDiscipline</references>
+        <references refid="classportal_1_1registration_1_1services_1_1VoServiceImpl_1a92aa539f17eb130f099f970cf9f408c1" compoundref="VoServiceImpl_8java" startline="20">portal.registration.services.VoServiceImpl::voDAO</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="810">
+        <label>portal.registration.services.VoServiceImpl</label>
+        <link refid="classportal_1_1registration_1_1services_1_1VoServiceImpl"/>
+        <childnode refid="811" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="811">
+        <label>portal.registration.services.VoService</label>
+        <link refid="interfaceportal_1_1registration_1_1services_1_1VoService"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="812">
+        <label>portal.registration.services.VoServiceImpl</label>
+        <link refid="classportal_1_1registration_1_1services_1_1VoServiceImpl"/>
+        <childnode refid="813" relation="public-inheritance">
+        </childnode>
+        <childnode refid="814" relation="usage">
+          <edgelabel>log</edgelabel>
+        </childnode>
+        <childnode refid="815" relation="usage">
+          <edgelabel>voDAO</edgelabel>
+        </childnode>
+      </node>
+      <node id="815">
+        <label>portal.registration.dao.VoDAO</label>
+        <link refid="interfaceportal_1_1registration_1_1dao_1_1VoDAO"/>
+      </node>
+      <node id="813">
+        <label>portal.registration.services.VoService</label>
+        <link refid="interfaceportal_1_1registration_1_1services_1_1VoService"/>
+      </node>
+      <node id="814">
+        <label>Logger</label>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/services/VoServiceImpl.java" line="14" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/services/VoServiceImpl.java" bodystart="14" bodyend="45"/>
+    <listofallmembers>
+      <member refid="classportal_1_1registration_1_1services_1_1VoServiceImpl_1a033d10a34bb55d383d9c9fbf8e06934d" prot="public" virt="non-virtual"><scope>portal::registration::services::VoServiceImpl</scope><name>findById</name></member>
+      <member refid="classportal_1_1registration_1_1services_1_1VoServiceImpl_1ae34d214263258edd26540c6931c89f4a" prot="public" virt="non-virtual"><scope>portal::registration::services::VoServiceImpl</scope><name>findByVo</name></member>
+      <member refid="classportal_1_1registration_1_1services_1_1VoServiceImpl_1a524d75940e34418e48a3d50a521490f5" prot="public" virt="non-virtual"><scope>portal::registration::services::VoServiceImpl</scope><name>getAllDiscplines</name></member>
+      <member refid="classportal_1_1registration_1_1services_1_1VoServiceImpl_1aa5774cef8f51f0d1fa3db99fb52b5089" prot="public" virt="non-virtual"><scope>portal::registration::services::VoServiceImpl</scope><name>getAllVo</name></member>
+      <member refid="classportal_1_1registration_1_1services_1_1VoServiceImpl_1a9213c0db1eb0f44559f7e4c2ec13e0cf" prot="private" virt="non-virtual"><scope>portal::registration::services::VoServiceImpl</scope><name>log</name></member>
+      <member refid="classportal_1_1registration_1_1services_1_1VoServiceImpl_1a92aa539f17eb130f099f970cf9f408c1" prot="private" virt="non-virtual"><scope>portal::registration::services::VoServiceImpl</scope><name>voDAO</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

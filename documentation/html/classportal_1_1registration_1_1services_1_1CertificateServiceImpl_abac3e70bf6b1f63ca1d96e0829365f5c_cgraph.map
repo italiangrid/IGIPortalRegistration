@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$interfaceportal_1_1registration_1_1dao_1_1CertificateDAO.html#ab538437429b4b6b2065affa7b2742f45" title="portal.registration.dao.CertificateDAO.edit" alt="" coords="420,4,663,31"/>
+<area shape="rect" id="node5" href="$interfaceportal_1_1registration_1_1dao_1_1CertificateDAO.html#a1a1782267b60378309ca30ce76528fd4" title="portal.registration.dao.CertificateDAO.findById" alt="" coords="408,55,675,81"/>
+<area shape="rect" id="node7" href="$classportal_1_1registration_1_1domain_1_1Certificate.html#a1bd3514654fcf5151f11033ff135de03" title="portal.registration.domain.Certificate.getPrimaryCert" alt="" coords="392,105,690,132"/>
+<area shape="rect" id="node9" href="$classportal_1_1registration_1_1domain_1_1Certificate.html#a265b7255aabb51902882c5d7c12c122e" title="portal.registration.domain.Certificate.setPrimaryCert" alt="" coords="393,156,690,183"/>
+</map>

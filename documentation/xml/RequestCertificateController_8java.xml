@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="RequestCertificateController_8java" kind="file">
+    <compoundname>RequestCertificateController.java</compoundname>
+    <innerclass refid="classportal_1_1registration_1_1controller_1_1RequestCertificateController" prot="public">portal::registration::controller::RequestCertificateController</innerclass>
+    <innernamespace refid="namespaceportal_1_1registration_1_1controller">portal::registration::controller</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">package<sp/></highlight><highlight class="normal">portal.registration.controller;</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>javax.portlet.RenderResponse;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>org.springframework.stereotype.Controller;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>org.springframework.web.bind.annotation.RequestMapping;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>org.springframework.web.portlet.bind.annotation.RenderMapping;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal">@Controller(value<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;showRequestCertificateController&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="10"><highlight class="normal">@RequestMapping(value<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;VIEW&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="11" refid="classportal_1_1registration_1_1controller_1_1RequestCertificateController" refkind="compound"><highlight class="normal">public<sp/>class<sp/><ref refid="classportal_1_1registration_1_1controller_1_1RequestCertificateController" kindref="compound">RequestCertificateController</ref><sp/>{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>@RenderMapping(params<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;myaction=showRequestCertificate&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="14" refid="classportal_1_1registration_1_1controller_1_1RequestCertificateController_1a16f3159eb2616c8b9363d0155f2f0b5e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>public<sp/>String<sp/>showUserInfoForm(RenderResponse<sp/>response)<sp/>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;requestCertificate&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/RequestCertificateController.java"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,293 @@
+.TH "org::glite::security::voms::service::attributes::AttributeClass" 3 "Wed Jul 13 2011" "Version 4" "Registration" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+org::glite::security::voms::service::attributes::AttributeClass \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAttributeClass\fP ()"
+.br
+.ti -1c
+.RI "\fBAttributeClass\fP (java.lang.String \fBdescription\fP, java.lang.String \fBname\fP, boolean \fBuniquenessChecked\fP)"
+.br
+.ti -1c
+.RI "java.lang.String \fBgetDescription\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetDescription\fP (java.lang.String \fBdescription\fP)"
+.br
+.ti -1c
+.RI "java.lang.String \fBgetName\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetName\fP (java.lang.String \fBname\fP)"
+.br
+.ti -1c
+.RI "boolean \fBisUniquenessChecked\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetUniquenessChecked\fP (boolean \fBuniquenessChecked\fP)"
+.br
+.ti -1c
+.RI "synchronized boolean \fBequals\fP (java.lang.Object obj)"
+.br
+.ti -1c
+.RI "synchronized int \fBhashCode\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "java.lang.String \fBdescription\fP"
+.br
+.ti -1c
+.RI "java.lang.String \fBname\fP"
+.br
+.ti -1c
+.RI "boolean \fBuniquenessChecked\fP"
+.br
+.ti -1c
+.RI "java.lang.Object \fB__equalsCalc\fP = null"
+.br
+.ti -1c
+.RI "boolean \fB__hashCodeCalc\fP = false"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 10 of file AttributeClass.java.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "org.glite.security.voms.service.attributes.AttributeClass.AttributeClass ()"
+.PP
+Definition at line 17 of file AttributeClass.java.
+.PP
+Referenced by org.glite.security.voms.service.attributes.AttributeClass.equals().
+.PP
+.nf
+                            {
+    }
+.fi
+.SS "org.glite.security.voms.service.attributes.AttributeClass.AttributeClass (java.lang.Stringdescription, java.lang.Stringname, booleanuniquenessChecked)"
+.PP
+Definition at line 20 of file AttributeClass.java.
+.PP
+References org.glite.security.voms.service.attributes.AttributeClass.description, org.glite.security.voms.service.attributes.AttributeClass.name, and org.glite.security.voms.service.attributes.AttributeClass.uniquenessChecked.
+.PP
+.nf
+                                      {
+           this.description = description;
+           this.name = name;
+           this.uniquenessChecked = uniquenessChecked;
+    }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "synchronized boolean org.glite.security.voms.service.attributes.AttributeClass.equals (java.lang.Objectobj)"
+.PP
+Definition at line 90 of file AttributeClass.java.
+.PP
+References org.glite.security.voms.service.attributes.AttributeClass.__equalsCalc, org.glite.security.voms.service.attributes.AttributeClass.AttributeClass(), org.glite.security.voms.service.attributes.AttributeClass.description, org.glite.security.voms.service.attributes.AttributeClass.getDescription(), org.glite.security.voms.service.attributes.AttributeClass.getName(), org.glite.security.voms.service.attributes.AttributeClass.isUniquenessChecked(), org.glite.security.voms.service.attributes.AttributeClass.name, and org.glite.security.voms.service.attributes.AttributeClass.uniquenessChecked.
+.PP
+Referenced by org.glite.security.voms.service.attributes.AttributeValue.equals().
+.PP
+.nf
+                                                             {
+        if (!(obj instanceof AttributeClass)) return false;
+        AttributeClass other = (AttributeClass) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.description==null && other.getDescription()==null) || 
+             (this.description!=null &&
+              this.description.equals(other.getDescription()))) &&
+            ((this.name==null && other.getName()==null) || 
+             (this.name!=null &&
+              this.name.equals(other.getName()))) &&
+            this.uniquenessChecked == other.isUniquenessChecked();
+        __equalsCalc = null;
+        return _equals;
+    }
+.fi
+.SS "java.lang.String org.glite.security.voms.service.attributes.AttributeClass.getDescription ()"Gets the description value for this \fBAttributeClass\fP.
+.PP
+\fBReturns:\fP
+.RS 4
+description 
+.RE
+.PP
+
+.PP
+Definition at line 35 of file AttributeClass.java.
+.PP
+References org.glite.security.voms.service.attributes.AttributeClass.description.
+.PP
+Referenced by org.glite.security.voms.service.attributes.AttributeClass.equals(), and org.glite.security.voms.service.attributes.AttributeClass.hashCode().
+.PP
+.nf
+                                             {
+        return description;
+    }
+.fi
+.SS "java.lang.String org.glite.security.voms.service.attributes.AttributeClass.getName ()"Gets the name value for this \fBAttributeClass\fP.
+.PP
+\fBReturns:\fP
+.RS 4
+name 
+.RE
+.PP
+
+.PP
+Definition at line 55 of file AttributeClass.java.
+.PP
+References org.glite.security.voms.service.attributes.AttributeClass.name.
+.PP
+Referenced by org.glite.security.voms.service.attributes.AttributeClass.equals(), and org.glite.security.voms.service.attributes.AttributeClass.hashCode().
+.PP
+.nf
+                                      {
+        return name;
+    }
+.fi
+.SS "synchronized int org.glite.security.voms.service.attributes.AttributeClass.hashCode ()"
+.PP
+Definition at line 113 of file AttributeClass.java.
+.PP
+References org.glite.security.voms.service.attributes.AttributeClass.__hashCodeCalc, org.glite.security.voms.service.attributes.AttributeClass.getDescription(), org.glite.security.voms.service.attributes.AttributeClass.getName(), and org.glite.security.voms.service.attributes.AttributeClass.isUniquenessChecked().
+.PP
+Referenced by org.glite.security.voms.service.attributes.AttributeValue.hashCode().
+.PP
+.nf
+                                       {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getDescription() != null) {
+            _hashCode += getDescription().hashCode();
+        }
+        if (getName() != null) {
+            _hashCode += getName().hashCode();
+        }
+        _hashCode += (isUniquenessChecked() ? Boolean.TRUE : Boolean.FALSE).hashCode();
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+.fi
+.SS "boolean org.glite.security.voms.service.attributes.AttributeClass.isUniquenessChecked ()"Gets the uniquenessChecked value for this \fBAttributeClass\fP.
+.PP
+\fBReturns:\fP
+.RS 4
+uniquenessChecked 
+.RE
+.PP
+
+.PP
+Definition at line 75 of file AttributeClass.java.
+.PP
+References org.glite.security.voms.service.attributes.AttributeClass.uniquenessChecked.
+.PP
+Referenced by org.glite.security.voms.service.attributes.AttributeClass.equals(), and org.glite.security.voms.service.attributes.AttributeClass.hashCode().
+.PP
+.nf
+                                         {
+        return uniquenessChecked;
+    }
+.fi
+.SS "void org.glite.security.voms.service.attributes.AttributeClass.setDescription (java.lang.Stringdescription)"Sets the description value for this \fBAttributeClass\fP.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdescription\fP 
+.RE
+.PP
+
+.PP
+Definition at line 45 of file AttributeClass.java.
+.PP
+References org.glite.security.voms.service.attributes.AttributeClass.description.
+.PP
+.nf
+                                                             {
+        this.description = description;
+    }
+.fi
+.SS "void org.glite.security.voms.service.attributes.AttributeClass.setName (java.lang.Stringname)"Sets the name value for this \fBAttributeClass\fP.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP 
+.RE
+.PP
+
+.PP
+Definition at line 65 of file AttributeClass.java.
+.PP
+References org.glite.security.voms.service.attributes.AttributeClass.name.
+.PP
+.nf
+                                               {
+        this.name = name;
+    }
+.fi
+.SS "void org.glite.security.voms.service.attributes.AttributeClass.setUniquenessChecked (booleanuniquenessChecked)"Sets the uniquenessChecked value for this \fBAttributeClass\fP.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIuniquenessChecked\fP 
+.RE
+.PP
+
+.PP
+Definition at line 85 of file AttributeClass.java.
+.PP
+References org.glite.security.voms.service.attributes.AttributeClass.uniquenessChecked.
+.PP
+.nf
+                                                                {
+        this.uniquenessChecked = uniquenessChecked;
+    }
+.fi
+.SH "Member Data Documentation"
+.PP 
+.SS "java.lang.Object \fBorg.glite.security.voms.service.attributes.AttributeClass.__equalsCalc\fP = null\fC [private]\fP"
+.PP
+Definition at line 89 of file AttributeClass.java.
+.PP
+Referenced by org.glite.security.voms.service.attributes.AttributeClass.equals().
+.SS "boolean \fBorg.glite.security.voms.service.attributes.AttributeClass.__hashCodeCalc\fP = false\fC [private]\fP"
+.PP
+Definition at line 112 of file AttributeClass.java.
+.PP
+Referenced by org.glite.security.voms.service.attributes.AttributeClass.hashCode().
+.SS "java.lang.String \fBorg.glite.security.voms.service.attributes.AttributeClass.description\fP\fC [private]\fP"
+.PP
+Definition at line 11 of file AttributeClass.java.
+.PP
+Referenced by org.glite.security.voms.service.attributes.AttributeClass.AttributeClass(), org.glite.security.voms.service.attributes.AttributeClass.equals(), org.glite.security.voms.service.attributes.AttributeClass.getDescription(), and org.glite.security.voms.service.attributes.AttributeClass.setDescription().
+.SS "java.lang.String \fBorg.glite.security.voms.service.attributes.AttributeClass.name\fP\fC [private]\fP"
+.PP
+Definition at line 13 of file AttributeClass.java.
+.PP
+Referenced by org.glite.security.voms.service.attributes.AttributeClass.AttributeClass(), org.glite.security.voms.service.attributes.AttributeClass.equals(), org.glite.security.voms.service.attributes.AttributeClass.getName(), and org.glite.security.voms.service.attributes.AttributeClass.setName().
+.SS "boolean \fBorg.glite.security.voms.service.attributes.AttributeClass.uniquenessChecked\fP\fC [private]\fP"
+.PP
+Definition at line 15 of file AttributeClass.java.
+.PP
+Referenced by org.glite.security.voms.service.attributes.AttributeClass.AttributeClass(), org.glite.security.voms.service.attributes.AttributeClass.equals(), org.glite.security.voms.service.attributes.AttributeClass.isUniquenessChecked(), and org.glite.security.voms.service.attributes.AttributeClass.setUniquenessChecked().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Registration from the source code.

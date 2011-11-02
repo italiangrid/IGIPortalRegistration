@@ -1,0 +1,210 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl" kind="class" prot="public">
+    <compoundname>portal::registration::dao::UserInfoDAOImpl</compoundname>
+    <basecompoundref refid="interfaceportal_1_1registration_1_1dao_1_1UserInfoDAO" prot="public" virt="non-virtual">portal.registration.dao.UserInfoDAO</basecompoundref>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_1a8538048dabb08e33db0ab72827bb0e9a" prot="private" static="yes" mutable="no">
+        <type>final Logger</type>
+        <definition>final Logger portal.registration.dao.UserInfoDAOImpl.log</definition>
+        <argsstring></argsstring>
+        <name>log</name>
+        <initializer> Logger.getLogger(UserInfoDAOImpl.class)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/dao/UserInfoDAOImpl.java" line="17" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/dao/UserInfoDAOImpl.java" bodystart="17" bodyend="-1"/>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_1ab4b1070c7b7aa5dc7603998d387f9bff" compoundref="UserInfoDAOImpl_8java" startline="35" endline="45">portal.registration.dao.UserInfoDAOImpl::delete</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_1aee85fd8c887f40d7d6e0ebcb51ba68e2" compoundref="UserInfoDAOImpl_8java" startline="78" endline="100">portal.registration.dao.UserInfoDAOImpl::edit</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_1a30e4af0130b4f3f275cf0f7d75380975" compoundref="UserInfoDAOImpl_8java" startline="47" endline="58">portal.registration.dao.UserInfoDAOImpl::findById</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_1a0eaa3d897fdf2c63c4a18c03e6089c95" compoundref="UserInfoDAOImpl_8java" startline="61" endline="76">portal.registration.dao.UserInfoDAOImpl::getAllUserInfo</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_1a3f31f85a673a72d80ac5fa47455c9fe2" compoundref="UserInfoDAOImpl_8java" startline="22" endline="33">portal.registration.dao.UserInfoDAOImpl::save</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_1adf05657df384ecaac7c13700eae7fd9e" prot="private" static="no" mutable="no">
+        <type>SessionFactory</type>
+        <definition>SessionFactory portal.registration.dao.UserInfoDAOImpl.sessionFactory</definition>
+        <argsstring></argsstring>
+        <name>sessionFactory</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/dao/UserInfoDAOImpl.java" line="20" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/dao/UserInfoDAOImpl.java" bodystart="20" bodyend="-1"/>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_1ab4b1070c7b7aa5dc7603998d387f9bff" compoundref="UserInfoDAOImpl_8java" startline="35" endline="45">portal.registration.dao.UserInfoDAOImpl::delete</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_1aee85fd8c887f40d7d6e0ebcb51ba68e2" compoundref="UserInfoDAOImpl_8java" startline="78" endline="100">portal.registration.dao.UserInfoDAOImpl::edit</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_1a30e4af0130b4f3f275cf0f7d75380975" compoundref="UserInfoDAOImpl_8java" startline="47" endline="58">portal.registration.dao.UserInfoDAOImpl::findById</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_1a0eaa3d897fdf2c63c4a18c03e6089c95" compoundref="UserInfoDAOImpl_8java" startline="61" endline="76">portal.registration.dao.UserInfoDAOImpl::getAllUserInfo</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_1a3f31f85a673a72d80ac5fa47455c9fe2" compoundref="UserInfoDAOImpl_8java" startline="22" endline="33">portal.registration.dao.UserInfoDAOImpl::save</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_1a3f31f85a673a72d80ac5fa47455c9fe2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Integer</type>
+        <definition>Integer portal.registration.dao.UserInfoDAOImpl.save</definition>
+        <argsstring>(UserInfo transientInstance)</argsstring>
+        <name>save</name>
+        <reimplements refid="interfaceportal_1_1registration_1_1dao_1_1UserInfoDAO_1ab4af4547afb3bd184da2de4bfefdc47b">save</reimplements>
+        <param>
+          <type><ref refid="classportal_1_1registration_1_1domain_1_1UserInfo" kindref="compound">UserInfo</ref></type>
+          <declname>transientInstance</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/dao/UserInfoDAOImpl.java" line="22" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/dao/UserInfoDAOImpl.java" bodystart="22" bodyend="33"/>
+        <references refid="classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_1a8538048dabb08e33db0ab72827bb0e9a" compoundref="UserInfoDAOImpl_8java" startline="17">portal.registration.dao.UserInfoDAOImpl::log</references>
+        <references refid="classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_1adf05657df384ecaac7c13700eae7fd9e" compoundref="UserInfoDAOImpl_8java" startline="20">portal.registration.dao.UserInfoDAOImpl::sessionFactory</references>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_1ab4b1070c7b7aa5dc7603998d387f9bff" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void portal.registration.dao.UserInfoDAOImpl.delete</definition>
+        <argsstring>(UserInfo persistentInstance)</argsstring>
+        <name>delete</name>
+        <reimplements refid="interfaceportal_1_1registration_1_1dao_1_1UserInfoDAO_1a06a993e6dc5cfa6e0ea1e6e89236172f">delete</reimplements>
+        <param>
+          <type><ref refid="classportal_1_1registration_1_1domain_1_1UserInfo" kindref="compound">UserInfo</ref></type>
+          <declname>persistentInstance</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/dao/UserInfoDAOImpl.java" line="35" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/dao/UserInfoDAOImpl.java" bodystart="35" bodyend="45"/>
+        <references refid="classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_1a8538048dabb08e33db0ab72827bb0e9a" compoundref="UserInfoDAOImpl_8java" startline="17">portal.registration.dao.UserInfoDAOImpl::log</references>
+        <references refid="classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_1adf05657df384ecaac7c13700eae7fd9e" compoundref="UserInfoDAOImpl_8java" startline="20">portal.registration.dao.UserInfoDAOImpl::sessionFactory</references>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_1a30e4af0130b4f3f275cf0f7d75380975" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classportal_1_1registration_1_1domain_1_1UserInfo" kindref="compound">UserInfo</ref></type>
+        <definition>UserInfo portal.registration.dao.UserInfoDAOImpl.findById</definition>
+        <argsstring>(Integer id)</argsstring>
+        <name>findById</name>
+        <reimplements refid="interfaceportal_1_1registration_1_1dao_1_1UserInfoDAO_1a6ae6399cb2791e189e16ab3633df360e">findById</reimplements>
+        <param>
+          <type>Integer</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/dao/UserInfoDAOImpl.java" line="47" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/dao/UserInfoDAOImpl.java" bodystart="47" bodyend="58"/>
+        <references refid="classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_1a8538048dabb08e33db0ab72827bb0e9a" compoundref="UserInfoDAOImpl_8java" startline="17">portal.registration.dao.UserInfoDAOImpl::log</references>
+        <references refid="classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_1adf05657df384ecaac7c13700eae7fd9e" compoundref="UserInfoDAOImpl_8java" startline="20">portal.registration.dao.UserInfoDAOImpl::sessionFactory</references>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_1a0eaa3d897fdf2c63c4a18c03e6089c95" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>List&lt; <ref refid="classportal_1_1registration_1_1domain_1_1UserInfo" kindref="compound">UserInfo</ref> &gt;</type>
+        <definition>List&lt;UserInfo&gt; portal.registration.dao.UserInfoDAOImpl.getAllUserInfo</definition>
+        <argsstring>()</argsstring>
+        <name>getAllUserInfo</name>
+        <reimplements refid="interfaceportal_1_1registration_1_1dao_1_1UserInfoDAO_1a6645e9b35b21d5ccd5f3f5baea8a5b27">getAllUserInfo</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/dao/UserInfoDAOImpl.java" line="61" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/dao/UserInfoDAOImpl.java" bodystart="61" bodyend="76"/>
+        <references refid="classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_1a8538048dabb08e33db0ab72827bb0e9a" compoundref="UserInfoDAOImpl_8java" startline="17">portal.registration.dao.UserInfoDAOImpl::log</references>
+        <references refid="classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_1adf05657df384ecaac7c13700eae7fd9e" compoundref="UserInfoDAOImpl_8java" startline="20">portal.registration.dao.UserInfoDAOImpl::sessionFactory</references>
+      </memberdef>
+      <memberdef kind="function" id="classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_1aee85fd8c887f40d7d6e0ebcb51ba68e2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void portal.registration.dao.UserInfoDAOImpl.edit</definition>
+        <argsstring>(UserInfo userInfo)</argsstring>
+        <name>edit</name>
+        <reimplements refid="interfaceportal_1_1registration_1_1dao_1_1UserInfoDAO_1a498f8f18418dfe7969424259454efb71">edit</reimplements>
+        <param>
+          <type><ref refid="classportal_1_1registration_1_1domain_1_1UserInfo" kindref="compound">UserInfo</ref></type>
+          <declname>userInfo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/dao/UserInfoDAOImpl.java" line="78" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/dao/UserInfoDAOImpl.java" bodystart="78" bodyend="100"/>
+        <references refid="classportal_1_1registration_1_1domain_1_1UserInfo_1a1626a0c995db599481eae8538dced879" compoundref="UserInfo_8java" startline="90" endline="92">portal.registration.domain.UserInfo::getFirstName</references>
+        <references refid="classportal_1_1registration_1_1domain_1_1UserInfo_1a6e91d15bce496b1d5980803d344710a4" compoundref="UserInfo_8java" startline="108" endline="110">portal.registration.domain.UserInfo::getInstitute</references>
+        <references refid="classportal_1_1registration_1_1domain_1_1UserInfo_1a515a516db97a054a8f8074ebeac4d645" compoundref="UserInfo_8java" startline="99" endline="101">portal.registration.domain.UserInfo::getLastName</references>
+        <references refid="classportal_1_1registration_1_1domain_1_1UserInfo_1ab6dea2bfa58260b955cd40c7990f6755" compoundref="UserInfo_8java" startline="126" endline="128">portal.registration.domain.UserInfo::getMail</references>
+        <references refid="classportal_1_1registration_1_1domain_1_1UserInfo_1abc3f4b70068a3c48d4570f89d4526cd5" compoundref="UserInfo_8java" startline="117" endline="119">portal.registration.domain.UserInfo::getPhone</references>
+        <references refid="classportal_1_1registration_1_1domain_1_1UserInfo_1a48077c9afd126dac031566c4f4f7ef39" compoundref="UserInfo_8java" startline="71" endline="73">portal.registration.domain.UserInfo::getUserId</references>
+        <references refid="classportal_1_1registration_1_1domain_1_1UserInfo_1a929f371c5886ad09e6d4c068490d5299" compoundref="UserInfo_8java" startline="135" endline="137">portal.registration.domain.UserInfo::getUsername</references>
+        <references refid="classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_1a8538048dabb08e33db0ab72827bb0e9a" compoundref="UserInfoDAOImpl_8java" startline="17">portal.registration.dao.UserInfoDAOImpl::log</references>
+        <references refid="classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_1adf05657df384ecaac7c13700eae7fd9e" compoundref="UserInfoDAOImpl_8java" startline="20">portal.registration.dao.UserInfoDAOImpl::sessionFactory</references>
+        <references refid="classportal_1_1registration_1_1domain_1_1UserInfo_1a2b5087901b31b751400f47a1e64dd913" compoundref="UserInfo_8java" startline="94" endline="96">portal.registration.domain.UserInfo::setFirstName</references>
+        <references refid="classportal_1_1registration_1_1domain_1_1UserInfo_1a734241ba2b19ba148375017bb3cad0b2" compoundref="UserInfo_8java" startline="112" endline="114">portal.registration.domain.UserInfo::setInstitute</references>
+        <references refid="classportal_1_1registration_1_1domain_1_1UserInfo_1a0b40b46fc03b4c1c38ed1abce4f621ca" compoundref="UserInfo_8java" startline="103" endline="105">portal.registration.domain.UserInfo::setLastName</references>
+        <references refid="classportal_1_1registration_1_1domain_1_1UserInfo_1acdda421b0770953b2e37fa17651b4287" compoundref="UserInfo_8java" startline="130" endline="132">portal.registration.domain.UserInfo::setMail</references>
+        <references refid="classportal_1_1registration_1_1domain_1_1UserInfo_1a3080c8f1b99d67bdd5b5e7b3b8301bfb" compoundref="UserInfo_8java" startline="121" endline="123">portal.registration.domain.UserInfo::setPhone</references>
+        <references refid="classportal_1_1registration_1_1domain_1_1UserInfo_1a0faf57dfd8593ff7fd523793bc20d5a1" compoundref="UserInfo_8java" startline="148" endline="150">portal.registration.domain.UserInfo::setRegistrationComplete</references>
+        <references refid="classportal_1_1registration_1_1domain_1_1UserInfo_1afc1777958910500eab3a8b604c3a9f57" compoundref="UserInfo_8java" startline="139" endline="141">portal.registration.domain.UserInfo::setUsername</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="575">
+        <label>portal.registration.dao.UserInfoDAO</label>
+        <link refid="interfaceportal_1_1registration_1_1dao_1_1UserInfoDAO"/>
+      </node>
+      <node id="574">
+        <label>portal.registration.dao.UserInfoDAOImpl</label>
+        <link refid="classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl"/>
+        <childnode refid="575" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="577">
+        <label>portal.registration.dao.UserInfoDAO</label>
+        <link refid="interfaceportal_1_1registration_1_1dao_1_1UserInfoDAO"/>
+      </node>
+      <node id="576">
+        <label>portal.registration.dao.UserInfoDAOImpl</label>
+        <link refid="classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl"/>
+        <childnode refid="577" relation="public-inheritance">
+        </childnode>
+        <childnode refid="578" relation="usage">
+          <edgelabel>log</edgelabel>
+        </childnode>
+        <childnode refid="579" relation="usage">
+          <edgelabel>sessionFactory</edgelabel>
+        </childnode>
+      </node>
+      <node id="579">
+        <label>SessionFactory</label>
+      </node>
+      <node id="578">
+        <label>Logger</label>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/dao/UserInfoDAOImpl.java" line="15" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/dao/UserInfoDAOImpl.java" bodystart="15" bodyend="102"/>
+    <listofallmembers>
+      <member refid="classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_1ab4b1070c7b7aa5dc7603998d387f9bff" prot="public" virt="non-virtual"><scope>portal::registration::dao::UserInfoDAOImpl</scope><name>delete</name></member>
+      <member refid="classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_1aee85fd8c887f40d7d6e0ebcb51ba68e2" prot="public" virt="non-virtual"><scope>portal::registration::dao::UserInfoDAOImpl</scope><name>edit</name></member>
+      <member refid="classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_1a30e4af0130b4f3f275cf0f7d75380975" prot="public" virt="non-virtual"><scope>portal::registration::dao::UserInfoDAOImpl</scope><name>findById</name></member>
+      <member refid="classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_1a0eaa3d897fdf2c63c4a18c03e6089c95" prot="public" virt="non-virtual"><scope>portal::registration::dao::UserInfoDAOImpl</scope><name>getAllUserInfo</name></member>
+      <member refid="classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_1a8538048dabb08e33db0ab72827bb0e9a" prot="private" virt="non-virtual"><scope>portal::registration::dao::UserInfoDAOImpl</scope><name>log</name></member>
+      <member refid="classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_1a3f31f85a673a72d80ac5fa47455c9fe2" prot="public" virt="non-virtual"><scope>portal::registration::dao::UserInfoDAOImpl</scope><name>save</name></member>
+      <member refid="classportal_1_1registration_1_1dao_1_1UserInfoDAOImpl_1adf05657df384ecaac7c13700eae7fd9e" prot="private" virt="non-virtual"><scope>portal::registration::dao::UserInfoDAOImpl</scope><name>sessionFactory</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

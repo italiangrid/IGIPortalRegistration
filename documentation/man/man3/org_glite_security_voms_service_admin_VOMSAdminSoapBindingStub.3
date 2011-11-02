@@ -1,0 +1,2718 @@
+.TH "org::glite::security::voms::service::admin::VOMSAdminSoapBindingStub" 3 "Wed Jul 13 2011" "Version 4" "Registration" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+org::glite::security::voms::service::admin::VOMSAdminSoapBindingStub \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBorg.glite.security.voms.service.admin.VOMSAdmin\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBVOMSAdminSoapBindingStub\fP ()  throws org.apache.axis.AxisFault "
+.br
+.ti -1c
+.RI "\fBVOMSAdminSoapBindingStub\fP (java.net.URL endpointURL, javax.xml.rpc.Service service)  throws org.apache.axis.AxisFault "
+.br
+.ti -1c
+.RI "\fBVOMSAdminSoapBindingStub\fP (javax.xml.rpc.Service service)  throws org.apache.axis.AxisFault "
+.br
+.ti -1c
+.RI "void \fBcreateGroup\fP (java.lang.String in0, java.lang.String in1)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException "
+.br
+.ti -1c
+.RI "\fBorg.glite.security.voms.User\fP \fBgetUser\fP (java.lang.String in0, java.lang.String in1)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException "
+.br
+.ti -1c
+.RI "void \fBsetUser\fP (\fBorg.glite.security.voms.User\fP in0)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException "
+.br
+.ti -1c
+.RI "int \fBgetMajorVersionNumber\fP ()  throws java.rmi.RemoteException "
+.br
+.ti -1c
+.RI "java.lang.String \fBgetVOName\fP ()  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException "
+.br
+.ti -1c
+.RI "void \fBcreateUser\fP (\fBorg.glite.security.voms.User\fP in0)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException "
+.br
+.ti -1c
+.RI "void \fBdeleteUser\fP (java.lang.String in0, java.lang.String in1)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException "
+.br
+.ti -1c
+.RI "void \fBdeleteGroup\fP (java.lang.String in0)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException "
+.br
+.ti -1c
+.RI "void \fBcreateRole\fP (java.lang.String in0)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException "
+.br
+.ti -1c
+.RI "void \fBdeleteRole\fP (java.lang.String in0)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException "
+.br
+.ti -1c
+.RI "void \fBcreateCapability\fP (java.lang.String in0)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException "
+.br
+.ti -1c
+.RI "void \fBdeleteCapability\fP (java.lang.String in0)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException "
+.br
+.ti -1c
+.RI "void \fBaddMember\fP (java.lang.String in0, java.lang.String in1, java.lang.String in2)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException "
+.br
+.ti -1c
+.RI "void \fBremoveMember\fP (java.lang.String in0, java.lang.String in1, java.lang.String in2)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException "
+.br
+.ti -1c
+.RI "void \fBassignRole\fP (java.lang.String in0, java.lang.String in1, java.lang.String in2, java.lang.String in3)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException "
+.br
+.ti -1c
+.RI "void \fBdismissRole\fP (java.lang.String in0, java.lang.String in1, java.lang.String in2, java.lang.String in3)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException "
+.br
+.ti -1c
+.RI "void \fBassignCapability\fP (java.lang.String in0, java.lang.String in1, java.lang.String in2)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException "
+.br
+.ti -1c
+.RI "void \fBdismissCapability\fP (java.lang.String in0, java.lang.String in1, java.lang.String in2)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException "
+.br
+.ti -1c
+.RI "\fBorg.glite.security.voms.User\fP[] \fBlistMembers\fP (java.lang.String in0)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException "
+.br
+.ti -1c
+.RI "\fBorg.glite.security.voms.User\fP[] \fBlistUsersWithRole\fP (java.lang.String in0, java.lang.String in1)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException "
+.br
+.ti -1c
+.RI "\fBorg.glite.security.voms.User\fP[] \fBlistUsersWithCapability\fP (java.lang.String in0)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException "
+.br
+.ti -1c
+.RI "java.lang.String[] \fBgetGroupPath\fP (java.lang.String in0)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException "
+.br
+.ti -1c
+.RI "java.lang.String[] \fBlistSubGroups\fP (java.lang.String in0)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException "
+.br
+.ti -1c
+.RI "java.lang.String[] \fBlistGroups\fP (java.lang.String in0, java.lang.String in1)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException "
+.br
+.ti -1c
+.RI "java.lang.String[] \fBlistRoles\fP ()  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException "
+.br
+.ti -1c
+.RI "java.lang.String[] \fBlistRoles\fP (java.lang.String in0, java.lang.String in1)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException "
+.br
+.ti -1c
+.RI "java.lang.String[] \fBlistCapabilities\fP ()  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException "
+.br
+.ti -1c
+.RI "java.lang.String[] \fBlistCapabilities\fP (java.lang.String in0, java.lang.String in1)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException "
+.br
+.ti -1c
+.RI "java.lang.String[] \fBlistCAs\fP ()  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException "
+.br
+.ti -1c
+.RI "\fBorg.glite.security.voms.ACLEntry\fP[] \fBgetACL\fP (java.lang.String in0)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException "
+.br
+.ti -1c
+.RI "void \fBsetACL\fP (java.lang.String in0, \fBorg.glite.security.voms.ACLEntry\fP[] in1)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException "
+.br
+.ti -1c
+.RI "void \fBaddACLEntry\fP (java.lang.String in0, \fBorg.glite.security.voms.ACLEntry\fP in1)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException "
+.br
+.ti -1c
+.RI "void \fBremoveACLEntry\fP (java.lang.String in0, \fBorg.glite.security.voms.ACLEntry\fP in1)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException "
+.br
+.ti -1c
+.RI "\fBorg.glite.security.voms.ACLEntry\fP[] \fBgetDefaultACL\fP (java.lang.String in0)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException "
+.br
+.ti -1c
+.RI "void \fBsetDefaultACL\fP (java.lang.String in0, \fBorg.glite.security.voms.ACLEntry\fP[] in1)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException "
+.br
+.ti -1c
+.RI "void \fBaddDefaultACLEntry\fP (java.lang.String in0, \fBorg.glite.security.voms.ACLEntry\fP in1)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException "
+.br
+.ti -1c
+.RI "void \fBremoveDefaultACLEntry\fP (java.lang.String in0, \fBorg.glite.security.voms.ACLEntry\fP in1)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException "
+.br
+.ti -1c
+.RI "int \fBgetMinorVersionNumber\fP ()  throws java.rmi.RemoteException "
+.br
+.ti -1c
+.RI "int \fBgetPatchVersionNumber\fP ()  throws java.rmi.RemoteException "
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "org.apache.axis.client.Call \fBcreateCall\fP ()  throws java.rmi.RemoteException "
+.br
+.in -1c
+.SS "Static Package Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB[static initializer]\fP"
+.br
+.in -1c
+.SS "Static Package Attributes"
+
+.in +1c
+.ti -1c
+.RI "static org.apache.axis.description.OperationDesc[] \fB_operations\fP"
+.br
+.in -1c
+.SS "Static Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fB_initOperationDesc1\fP ()"
+.br
+.ti -1c
+.RI "static void \fB_initOperationDesc2\fP ()"
+.br
+.ti -1c
+.RI "static void \fB_initOperationDesc3\fP ()"
+.br
+.ti -1c
+.RI "static void \fB_initOperationDesc4\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "java.util.Vector \fBcachedSerClasses\fP = new java.util.Vector()"
+.br
+.ti -1c
+.RI "java.util.Vector \fBcachedSerQNames\fP = new java.util.Vector()"
+.br
+.ti -1c
+.RI "java.util.Vector \fBcachedSerFactories\fP = new java.util.Vector()"
+.br
+.ti -1c
+.RI "java.util.Vector \fBcachedDeserFactories\fP = new java.util.Vector()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 10 of file VOMSAdminSoapBindingStub.java.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.VOMSAdminSoapBindingStub ()  throws org.apache.axis.AxisFault "
+.PP
+Definition at line 689 of file VOMSAdminSoapBindingStub.java.
+.PP
+.nf
+                                                                       {
+         this(null);
+    }
+.fi
+.SS "org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.VOMSAdminSoapBindingStub (java.net.URLendpointURL, javax.xml.rpc.Serviceservice)  throws org.apache.axis.AxisFault "
+.PP
+Definition at line 693 of file VOMSAdminSoapBindingStub.java.
+.PP
+.nf
+                                                                                                                              {
+         this(service);
+         super.cachedEndpoint = endpointURL;
+    }
+.fi
+.SS "org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.VOMSAdminSoapBindingStub (javax.xml.rpc.Serviceservice)  throws org.apache.axis.AxisFault "
+.PP
+Definition at line 698 of file VOMSAdminSoapBindingStub.java.
+.PP
+References org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.cachedDeserFactories, org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.cachedSerClasses, org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.cachedSerFactories, and org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.cachedSerQNames.
+.PP
+.nf
+                                                                                                    {
+        if (service == null) {
+            super.service = new org.apache.axis.client.Service();
+        } else {
+            super.service = service;
+        }
+        ((org.apache.axis.client.Service)super.service).setTypeMappingVersion('1.2');
+            java.lang.Class cls;
+            javax.xml.namespace.QName qName;
+            javax.xml.namespace.QName qName2;
+            java.lang.Class beansf = org.apache.axis.encoding.ser.BeanSerializerFactory.class;
+            java.lang.Class beandf = org.apache.axis.encoding.ser.BeanDeserializerFactory.class;
+            java.lang.Class enumsf = org.apache.axis.encoding.ser.EnumSerializerFactory.class;
+            java.lang.Class enumdf = org.apache.axis.encoding.ser.EnumDeserializerFactory.class;
+            java.lang.Class arraysf = org.apache.axis.encoding.ser.ArraySerializerFactory.class;
+            java.lang.Class arraydf = org.apache.axis.encoding.ser.ArrayDeserializerFactory.class;
+            java.lang.Class simplesf = org.apache.axis.encoding.ser.SimpleSerializerFactory.class;
+            java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
+            java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
+            java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
+            qName = new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'ArrayOf_soapenc_string');
+            cachedSerQNames.add(qName);
+            cls = java.lang.String[].class;
+            cachedSerClasses.add(cls);
+            qName = new javax.xml.namespace.QName('http://schemas.xmlsoap.org/soap/encoding/', 'string');
+            qName2 = null;
+            cachedSerFactories.add(new org.apache.axis.encoding.ser.ArraySerializerFactory(qName, qName2));
+            cachedDeserFactories.add(new org.apache.axis.encoding.ser.ArrayDeserializerFactory());
+
+            qName = new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'ArrayOf_tns1_ACLEntry');
+            cachedSerQNames.add(qName);
+            cls = org.glite.security.voms.ACLEntry[].class;
+            cachedSerClasses.add(cls);
+            qName = new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms', 'ACLEntry');
+            qName2 = null;
+            cachedSerFactories.add(new org.apache.axis.encoding.ser.ArraySerializerFactory(qName, qName2));
+            cachedDeserFactories.add(new org.apache.axis.encoding.ser.ArrayDeserializerFactory());
+
+            qName = new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'ArrayOf_tns1_User');
+            cachedSerQNames.add(qName);
+            cls = org.glite.security.voms.User[].class;
+            cachedSerClasses.add(cls);
+            qName = new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms', 'User');
+            qName2 = null;
+            cachedSerFactories.add(new org.apache.axis.encoding.ser.ArraySerializerFactory(qName, qName2));
+            cachedDeserFactories.add(new org.apache.axis.encoding.ser.ArrayDeserializerFactory());
+
+            qName = new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms', 'ACLEntry');
+            cachedSerQNames.add(qName);
+            cls = org.glite.security.voms.ACLEntry.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms', 'User');
+            cachedSerQNames.add(qName);
+            cls = org.glite.security.voms.User.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms', 'VOMSException');
+            cachedSerQNames.add(qName);
+            cls = org.glite.security.voms.VOMSException.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+    }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.[static initializer] ()\fC [static, package]\fP"
+.SS "static void org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub._initOperationDesc1 ()\fC [static, private]\fP"
+.PP
+Definition at line 26 of file VOMSAdminSoapBindingStub.java.
+.PP
+References org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub._operations.
+.PP
+.nf
+                                             {
+        org.apache.axis.description.OperationDesc oper;
+        org.apache.axis.description.ParameterDesc param;
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName('createGroup');
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName('', 'in0'), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName('http://schemas.xmlsoap.org/soap/encoding/', 'string'), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName('', 'in1'), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName('http://schemas.xmlsoap.org/soap/encoding/', 'string'), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        oper.addFault(new org.apache.axis.description.FaultDesc(
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'fault'),
+                      'org.glite.security.voms.VOMSException',
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms', 'VOMSException'), 
+                      true
+                     ));
+        _operations[0] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName('getUser');
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName('', 'in0'), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName('http://schemas.xmlsoap.org/soap/encoding/', 'string'), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName('', 'in1'), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName('http://schemas.xmlsoap.org/soap/encoding/', 'string'), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms', 'User'));
+        oper.setReturnClass(org.glite.security.voms.User.class);
+        oper.setReturnQName(new javax.xml.namespace.QName('', 'getUserReturn'));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        oper.addFault(new org.apache.axis.description.FaultDesc(
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'fault'),
+                      'org.glite.security.voms.VOMSException',
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms', 'VOMSException'), 
+                      true
+                     ));
+        _operations[1] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName('setUser');
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName('', 'in0'), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms', 'User'), org.glite.security.voms.User.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        oper.addFault(new org.apache.axis.description.FaultDesc(
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'fault'),
+                      'org.glite.security.voms.VOMSException',
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms', 'VOMSException'), 
+                      true
+                     ));
+        _operations[2] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName('getMajorVersionNumber');
+        oper.setReturnType(new javax.xml.namespace.QName('http://www.w3.org/2001/XMLSchema', 'int'));
+        oper.setReturnClass(int.class);
+        oper.setReturnQName(new javax.xml.namespace.QName('', 'getMajorVersionNumberReturn'));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[3] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName('getVOName');
+        oper.setReturnType(new javax.xml.namespace.QName('http://schemas.xmlsoap.org/soap/encoding/', 'string'));
+        oper.setReturnClass(java.lang.String.class);
+        oper.setReturnQName(new javax.xml.namespace.QName('', 'getVONameReturn'));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        oper.addFault(new org.apache.axis.description.FaultDesc(
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'fault'),
+                      'org.glite.security.voms.VOMSException',
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms', 'VOMSException'), 
+                      true
+                     ));
+        _operations[4] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName('createUser');
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName('', 'in0'), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms', 'User'), org.glite.security.voms.User.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        oper.addFault(new org.apache.axis.description.FaultDesc(
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'fault'),
+                      'org.glite.security.voms.VOMSException',
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms', 'VOMSException'), 
+                      true
+                     ));
+        _operations[5] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName('deleteUser');
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName('', 'in0'), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName('http://schemas.xmlsoap.org/soap/encoding/', 'string'), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName('', 'in1'), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName('http://schemas.xmlsoap.org/soap/encoding/', 'string'), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        oper.addFault(new org.apache.axis.description.FaultDesc(
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'fault'),
+                      'org.glite.security.voms.VOMSException',
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms', 'VOMSException'), 
+                      true
+                     ));
+        _operations[6] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName('deleteGroup');
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName('', 'in0'), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName('http://schemas.xmlsoap.org/soap/encoding/', 'string'), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        oper.addFault(new org.apache.axis.description.FaultDesc(
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'fault'),
+                      'org.glite.security.voms.VOMSException',
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms', 'VOMSException'), 
+                      true
+                     ));
+        _operations[7] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName('createRole');
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName('', 'in0'), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName('http://schemas.xmlsoap.org/soap/encoding/', 'string'), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        oper.addFault(new org.apache.axis.description.FaultDesc(
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'fault'),
+                      'org.glite.security.voms.VOMSException',
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms', 'VOMSException'), 
+                      true
+                     ));
+        _operations[8] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName('deleteRole');
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName('', 'in0'), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName('http://schemas.xmlsoap.org/soap/encoding/', 'string'), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        oper.addFault(new org.apache.axis.description.FaultDesc(
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'fault'),
+                      'org.glite.security.voms.VOMSException',
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms', 'VOMSException'), 
+                      true
+                     ));
+        _operations[9] = oper;
+
+    }
+.fi
+.SS "static void org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub._initOperationDesc2 ()\fC [static, private]\fP"
+.PP
+Definition at line 183 of file VOMSAdminSoapBindingStub.java.
+.PP
+References org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub._operations.
+.PP
+.nf
+                                             {
+        org.apache.axis.description.OperationDesc oper;
+        org.apache.axis.description.ParameterDesc param;
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName('createCapability');
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName('', 'in0'), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName('http://schemas.xmlsoap.org/soap/encoding/', 'string'), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        oper.addFault(new org.apache.axis.description.FaultDesc(
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'fault'),
+                      'org.glite.security.voms.VOMSException',
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms', 'VOMSException'), 
+                      true
+                     ));
+        _operations[10] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName('deleteCapability');
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName('', 'in0'), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName('http://schemas.xmlsoap.org/soap/encoding/', 'string'), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        oper.addFault(new org.apache.axis.description.FaultDesc(
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'fault'),
+                      'org.glite.security.voms.VOMSException',
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms', 'VOMSException'), 
+                      true
+                     ));
+        _operations[11] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName('addMember');
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName('', 'in0'), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName('http://schemas.xmlsoap.org/soap/encoding/', 'string'), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName('', 'in1'), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName('http://schemas.xmlsoap.org/soap/encoding/', 'string'), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName('', 'in2'), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName('http://schemas.xmlsoap.org/soap/encoding/', 'string'), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        oper.addFault(new org.apache.axis.description.FaultDesc(
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'fault'),
+                      'org.glite.security.voms.VOMSException',
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms', 'VOMSException'), 
+                      true
+                     ));
+        _operations[12] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName('removeMember');
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName('', 'in0'), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName('http://schemas.xmlsoap.org/soap/encoding/', 'string'), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName('', 'in1'), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName('http://schemas.xmlsoap.org/soap/encoding/', 'string'), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName('', 'in2'), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName('http://schemas.xmlsoap.org/soap/encoding/', 'string'), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        oper.addFault(new org.apache.axis.description.FaultDesc(
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'fault'),
+                      'org.glite.security.voms.VOMSException',
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms', 'VOMSException'), 
+                      true
+                     ));
+        _operations[13] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName('assignRole');
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName('', 'in0'), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName('http://schemas.xmlsoap.org/soap/encoding/', 'string'), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName('', 'in1'), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName('http://schemas.xmlsoap.org/soap/encoding/', 'string'), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName('', 'in2'), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName('http://schemas.xmlsoap.org/soap/encoding/', 'string'), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName('', 'in3'), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName('http://schemas.xmlsoap.org/soap/encoding/', 'string'), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        oper.addFault(new org.apache.axis.description.FaultDesc(
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'fault'),
+                      'org.glite.security.voms.VOMSException',
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms', 'VOMSException'), 
+                      true
+                     ));
+        _operations[14] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName('dismissRole');
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName('', 'in0'), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName('http://schemas.xmlsoap.org/soap/encoding/', 'string'), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName('', 'in1'), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName('http://schemas.xmlsoap.org/soap/encoding/', 'string'), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName('', 'in2'), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName('http://schemas.xmlsoap.org/soap/encoding/', 'string'), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName('', 'in3'), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName('http://schemas.xmlsoap.org/soap/encoding/', 'string'), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        oper.addFault(new org.apache.axis.description.FaultDesc(
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'fault'),
+                      'org.glite.security.voms.VOMSException',
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms', 'VOMSException'), 
+                      true
+                     ));
+        _operations[15] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName('assignCapability');
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName('', 'in0'), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName('http://schemas.xmlsoap.org/soap/encoding/', 'string'), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName('', 'in1'), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName('http://schemas.xmlsoap.org/soap/encoding/', 'string'), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName('', 'in2'), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName('http://schemas.xmlsoap.org/soap/encoding/', 'string'), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        oper.addFault(new org.apache.axis.description.FaultDesc(
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'fault'),
+                      'org.glite.security.voms.VOMSException',
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms', 'VOMSException'), 
+                      true
+                     ));
+        _operations[16] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName('dismissCapability');
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName('', 'in0'), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName('http://schemas.xmlsoap.org/soap/encoding/', 'string'), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName('', 'in1'), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName('http://schemas.xmlsoap.org/soap/encoding/', 'string'), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName('', 'in2'), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName('http://schemas.xmlsoap.org/soap/encoding/', 'string'), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        oper.addFault(new org.apache.axis.description.FaultDesc(
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'fault'),
+                      'org.glite.security.voms.VOMSException',
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms', 'VOMSException'), 
+                      true
+                     ));
+        _operations[17] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName('listMembers');
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName('', 'in0'), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName('http://schemas.xmlsoap.org/soap/encoding/', 'string'), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'ArrayOf_tns1_User'));
+        oper.setReturnClass(org.glite.security.voms.User[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName('', 'listMembersReturn'));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        oper.addFault(new org.apache.axis.description.FaultDesc(
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'fault'),
+                      'org.glite.security.voms.VOMSException',
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms', 'VOMSException'), 
+                      true
+                     ));
+        _operations[18] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName('listUsersWithRole');
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName('', 'in0'), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName('http://schemas.xmlsoap.org/soap/encoding/', 'string'), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName('', 'in1'), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName('http://schemas.xmlsoap.org/soap/encoding/', 'string'), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'ArrayOf_tns1_User'));
+        oper.setReturnClass(org.glite.security.voms.User[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName('', 'listUsersWithRoleReturn'));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        oper.addFault(new org.apache.axis.description.FaultDesc(
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'fault'),
+                      'org.glite.security.voms.VOMSException',
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms', 'VOMSException'), 
+                      true
+                     ));
+        _operations[19] = oper;
+
+    }
+.fi
+.SS "static void org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub._initOperationDesc3 ()\fC [static, private]\fP"
+.PP
+Definition at line 372 of file VOMSAdminSoapBindingStub.java.
+.PP
+References org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub._operations.
+.PP
+.nf
+                                             {
+        org.apache.axis.description.OperationDesc oper;
+        org.apache.axis.description.ParameterDesc param;
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName('listUsersWithCapability');
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName('', 'in0'), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName('http://schemas.xmlsoap.org/soap/encoding/', 'string'), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'ArrayOf_tns1_User'));
+        oper.setReturnClass(org.glite.security.voms.User[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName('', 'listUsersWithCapabilityReturn'));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        oper.addFault(new org.apache.axis.description.FaultDesc(
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'fault'),
+                      'org.glite.security.voms.VOMSException',
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms', 'VOMSException'), 
+                      true
+                     ));
+        _operations[20] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName('getGroupPath');
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName('', 'in0'), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName('http://schemas.xmlsoap.org/soap/encoding/', 'string'), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'ArrayOf_soapenc_string'));
+        oper.setReturnClass(java.lang.String[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName('', 'getGroupPathReturn'));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        oper.addFault(new org.apache.axis.description.FaultDesc(
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'fault'),
+                      'org.glite.security.voms.VOMSException',
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms', 'VOMSException'), 
+                      true
+                     ));
+        _operations[21] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName('listSubGroups');
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName('', 'in0'), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName('http://schemas.xmlsoap.org/soap/encoding/', 'string'), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'ArrayOf_soapenc_string'));
+        oper.setReturnClass(java.lang.String[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName('', 'listSubGroupsReturn'));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        oper.addFault(new org.apache.axis.description.FaultDesc(
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'fault'),
+                      'org.glite.security.voms.VOMSException',
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms', 'VOMSException'), 
+                      true
+                     ));
+        _operations[22] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName('listGroups');
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName('', 'in0'), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName('http://schemas.xmlsoap.org/soap/encoding/', 'string'), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName('', 'in1'), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName('http://schemas.xmlsoap.org/soap/encoding/', 'string'), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'ArrayOf_soapenc_string'));
+        oper.setReturnClass(java.lang.String[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName('', 'listGroupsReturn'));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        oper.addFault(new org.apache.axis.description.FaultDesc(
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'fault'),
+                      'org.glite.security.voms.VOMSException',
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms', 'VOMSException'), 
+                      true
+                     ));
+        _operations[23] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName('listRoles');
+        oper.setReturnType(new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'ArrayOf_soapenc_string'));
+        oper.setReturnClass(java.lang.String[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName('', 'listRolesReturn'));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        oper.addFault(new org.apache.axis.description.FaultDesc(
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'fault'),
+                      'org.glite.security.voms.VOMSException',
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms', 'VOMSException'), 
+                      true
+                     ));
+        _operations[24] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName('listRoles');
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName('', 'in0'), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName('http://schemas.xmlsoap.org/soap/encoding/', 'string'), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName('', 'in1'), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName('http://schemas.xmlsoap.org/soap/encoding/', 'string'), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'ArrayOf_soapenc_string'));
+        oper.setReturnClass(java.lang.String[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName('', 'listRolesReturn'));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        oper.addFault(new org.apache.axis.description.FaultDesc(
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'fault'),
+                      'org.glite.security.voms.VOMSException',
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms', 'VOMSException'), 
+                      true
+                     ));
+        _operations[25] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName('listCapabilities');
+        oper.setReturnType(new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'ArrayOf_soapenc_string'));
+        oper.setReturnClass(java.lang.String[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName('', 'listCapabilitiesReturn'));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        oper.addFault(new org.apache.axis.description.FaultDesc(
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'fault'),
+                      'org.glite.security.voms.VOMSException',
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms', 'VOMSException'), 
+                      true
+                     ));
+        _operations[26] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName('listCapabilities');
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName('', 'in0'), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName('http://schemas.xmlsoap.org/soap/encoding/', 'string'), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName('', 'in1'), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName('http://schemas.xmlsoap.org/soap/encoding/', 'string'), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'ArrayOf_soapenc_string'));
+        oper.setReturnClass(java.lang.String[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName('', 'listCapabilitiesReturn'));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        oper.addFault(new org.apache.axis.description.FaultDesc(
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'fault'),
+                      'org.glite.security.voms.VOMSException',
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms', 'VOMSException'), 
+                      true
+                     ));
+        _operations[27] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName('listCAs');
+        oper.setReturnType(new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'ArrayOf_soapenc_string'));
+        oper.setReturnClass(java.lang.String[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName('', 'listCAsReturn'));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        oper.addFault(new org.apache.axis.description.FaultDesc(
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'fault'),
+                      'org.glite.security.voms.VOMSException',
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms', 'VOMSException'), 
+                      true
+                     ));
+        _operations[28] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName('getACL');
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName('', 'in0'), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName('http://schemas.xmlsoap.org/soap/encoding/', 'string'), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'ArrayOf_tns1_ACLEntry'));
+        oper.setReturnClass(org.glite.security.voms.ACLEntry[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName('', 'getACLReturn'));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        oper.addFault(new org.apache.axis.description.FaultDesc(
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'fault'),
+                      'org.glite.security.voms.VOMSException',
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms', 'VOMSException'), 
+                      true
+                     ));
+        _operations[29] = oper;
+
+    }
+.fi
+.SS "static void org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub._initOperationDesc4 ()\fC [static, private]\fP"
+.PP
+Definition at line 547 of file VOMSAdminSoapBindingStub.java.
+.PP
+References org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub._operations.
+.PP
+.nf
+                                             {
+        org.apache.axis.description.OperationDesc oper;
+        org.apache.axis.description.ParameterDesc param;
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName('setACL');
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName('', 'in0'), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName('http://schemas.xmlsoap.org/soap/encoding/', 'string'), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName('', 'in1'), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'ArrayOf_tns1_ACLEntry'), org.glite.security.voms.ACLEntry[].class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        oper.addFault(new org.apache.axis.description.FaultDesc(
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'fault'),
+                      'org.glite.security.voms.VOMSException',
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms', 'VOMSException'), 
+                      true
+                     ));
+        _operations[30] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName('addACLEntry');
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName('', 'in0'), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName('http://schemas.xmlsoap.org/soap/encoding/', 'string'), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName('', 'in1'), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms', 'ACLEntry'), org.glite.security.voms.ACLEntry.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        oper.addFault(new org.apache.axis.description.FaultDesc(
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'fault'),
+                      'org.glite.security.voms.VOMSException',
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms', 'VOMSException'), 
+                      true
+                     ));
+        _operations[31] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName('removeACLEntry');
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName('', 'in0'), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName('http://schemas.xmlsoap.org/soap/encoding/', 'string'), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName('', 'in1'), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms', 'ACLEntry'), org.glite.security.voms.ACLEntry.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        oper.addFault(new org.apache.axis.description.FaultDesc(
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'fault'),
+                      'org.glite.security.voms.VOMSException',
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms', 'VOMSException'), 
+                      true
+                     ));
+        _operations[32] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName('getDefaultACL');
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName('', 'in0'), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName('http://schemas.xmlsoap.org/soap/encoding/', 'string'), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'ArrayOf_tns1_ACLEntry'));
+        oper.setReturnClass(org.glite.security.voms.ACLEntry[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName('', 'getDefaultACLReturn'));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        oper.addFault(new org.apache.axis.description.FaultDesc(
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'fault'),
+                      'org.glite.security.voms.VOMSException',
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms', 'VOMSException'), 
+                      true
+                     ));
+        _operations[33] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName('setDefaultACL');
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName('', 'in0'), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName('http://schemas.xmlsoap.org/soap/encoding/', 'string'), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName('', 'in1'), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'ArrayOf_tns1_ACLEntry'), org.glite.security.voms.ACLEntry[].class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        oper.addFault(new org.apache.axis.description.FaultDesc(
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'fault'),
+                      'org.glite.security.voms.VOMSException',
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms', 'VOMSException'), 
+                      true
+                     ));
+        _operations[34] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName('addDefaultACLEntry');
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName('', 'in0'), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName('http://schemas.xmlsoap.org/soap/encoding/', 'string'), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName('', 'in1'), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms', 'ACLEntry'), org.glite.security.voms.ACLEntry.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        oper.addFault(new org.apache.axis.description.FaultDesc(
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'fault'),
+                      'org.glite.security.voms.VOMSException',
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms', 'VOMSException'), 
+                      true
+                     ));
+        _operations[35] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName('removeDefaultACLEntry');
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName('', 'in0'), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName('http://schemas.xmlsoap.org/soap/encoding/', 'string'), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName('', 'in1'), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms', 'ACLEntry'), org.glite.security.voms.ACLEntry.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        oper.addFault(new org.apache.axis.description.FaultDesc(
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'fault'),
+                      'org.glite.security.voms.VOMSException',
+                      new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms', 'VOMSException'), 
+                      true
+                     ));
+        _operations[36] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName('getMinorVersionNumber');
+        oper.setReturnType(new javax.xml.namespace.QName('http://www.w3.org/2001/XMLSchema', 'int'));
+        oper.setReturnClass(int.class);
+        oper.setReturnQName(new javax.xml.namespace.QName('', 'getMinorVersionNumberReturn'));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[37] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName('getPatchVersionNumber');
+        oper.setReturnType(new javax.xml.namespace.QName('http://www.w3.org/2001/XMLSchema', 'int'));
+        oper.setReturnClass(int.class);
+        oper.setReturnQName(new javax.xml.namespace.QName('', 'getPatchVersionNumberReturn'));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[38] = oper;
+
+    }
+.fi
+.SS "void org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.addACLEntry (java.lang.Stringin0, \fBorg.glite.security.voms.ACLEntry\fPin1)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP "
+.PP
+Implements \fBorg.glite.security.voms.service.admin.VOMSAdmin\fP.
+.PP
+Definition at line 1922 of file VOMSAdminSoapBindingStub.java.
+.PP
+.nf
+                                                                                                                                                               {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[31]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI('');
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'addACLEntry'));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {in0, in1});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        extractAttachments(_call);
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+    if (axisFaultException.detail != null) {
+        if (axisFaultException.detail instanceof java.rmi.RemoteException) {
+              throw (java.rmi.RemoteException) axisFaultException.detail;
+         }
+        if (axisFaultException.detail instanceof org.glite.security.voms.VOMSException) {
+              throw (org.glite.security.voms.VOMSException) axisFaultException.detail;
+         }
+   }
+  throw axisFaultException;
+}
+    }
+.fi
+.SS "void org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.addDefaultACLEntry (java.lang.Stringin0, \fBorg.glite.security.voms.ACLEntry\fPin1)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP "
+.PP
+Implements \fBorg.glite.security.voms.service.admin.VOMSAdmin\fP.
+.PP
+Definition at line 2057 of file VOMSAdminSoapBindingStub.java.
+.PP
+.nf
+                                                                                                                                                                      {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[35]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI('');
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'addDefaultACLEntry'));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {in0, in1});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        extractAttachments(_call);
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+    if (axisFaultException.detail != null) {
+        if (axisFaultException.detail instanceof java.rmi.RemoteException) {
+              throw (java.rmi.RemoteException) axisFaultException.detail;
+         }
+        if (axisFaultException.detail instanceof org.glite.security.voms.VOMSException) {
+              throw (org.glite.security.voms.VOMSException) axisFaultException.detail;
+         }
+   }
+  throw axisFaultException;
+}
+    }
+.fi
+.SS "void org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.addMember (java.lang.Stringin0, java.lang.Stringin1, java.lang.Stringin2)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP "
+.PP
+Implements \fBorg.glite.security.voms.service.admin.VOMSAdmin\fP.
+.PP
+Definition at line 1230 of file VOMSAdminSoapBindingStub.java.
+.PP
+.nf
+                                                                                                                                                                   {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[12]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI('');
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'addMember'));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {in0, in1, in2});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        extractAttachments(_call);
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+    if (axisFaultException.detail != null) {
+        if (axisFaultException.detail instanceof java.rmi.RemoteException) {
+              throw (java.rmi.RemoteException) axisFaultException.detail;
+         }
+        if (axisFaultException.detail instanceof org.glite.security.voms.VOMSException) {
+              throw (org.glite.security.voms.VOMSException) axisFaultException.detail;
+         }
+   }
+  throw axisFaultException;
+}
+    }
+.fi
+.SS "void org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.assignCapability (java.lang.Stringin0, java.lang.Stringin1, java.lang.Stringin2)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP "
+.PP
+Implements \fBorg.glite.security.voms.service.admin.VOMSAdmin\fP.
+.PP
+Definition at line 1358 of file VOMSAdminSoapBindingStub.java.
+.PP
+.nf
+                                                                                                                                                                          {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[16]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI('');
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'assignCapability'));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {in0, in1, in2});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        extractAttachments(_call);
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+    if (axisFaultException.detail != null) {
+        if (axisFaultException.detail instanceof java.rmi.RemoteException) {
+              throw (java.rmi.RemoteException) axisFaultException.detail;
+         }
+        if (axisFaultException.detail instanceof org.glite.security.voms.VOMSException) {
+              throw (org.glite.security.voms.VOMSException) axisFaultException.detail;
+         }
+   }
+  throw axisFaultException;
+}
+    }
+.fi
+.SS "void org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.assignRole (java.lang.Stringin0, java.lang.Stringin1, java.lang.Stringin2, java.lang.Stringin3)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP "
+.PP
+Implements \fBorg.glite.security.voms.service.admin.VOMSAdmin\fP.
+.PP
+Definition at line 1294 of file VOMSAdminSoapBindingStub.java.
+.PP
+.nf
+                                                                                                                                                                                          {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[14]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI('');
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'assignRole'));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {in0, in1, in2, in3});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        extractAttachments(_call);
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+    if (axisFaultException.detail != null) {
+        if (axisFaultException.detail instanceof java.rmi.RemoteException) {
+              throw (java.rmi.RemoteException) axisFaultException.detail;
+         }
+        if (axisFaultException.detail instanceof org.glite.security.voms.VOMSException) {
+              throw (org.glite.security.voms.VOMSException) axisFaultException.detail;
+         }
+   }
+  throw axisFaultException;
+}
+    }
+.fi
+.SS "org.apache.axis.client.Call org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.createCall ()  throws java.rmi.RemoteException \fC [protected]\fP"
+.PP
+Definition at line 768 of file VOMSAdminSoapBindingStub.java.
+.PP
+References org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.cachedDeserFactories, org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.cachedSerClasses, org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.cachedSerFactories, and org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.cachedSerQNames.
+.PP
+Referenced by org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.createGroup().
+.PP
+.nf
+                                                                                       {
+        try {
+            org.apache.axis.client.Call _call = super._createCall();
+            if (super.maintainSessionSet) {
+                _call.setMaintainSession(super.maintainSession);
+            }
+            if (super.cachedUsername != null) {
+                _call.setUsername(super.cachedUsername);
+            }
+            if (super.cachedPassword != null) {
+                _call.setPassword(super.cachedPassword);
+            }
+            if (super.cachedEndpoint != null) {
+                _call.setTargetEndpointAddress(super.cachedEndpoint);
+            }
+            if (super.cachedTimeout != null) {
+                _call.setTimeout(super.cachedTimeout);
+            }
+            if (super.cachedPortName != null) {
+                _call.setPortName(super.cachedPortName);
+            }
+            java.util.Enumeration keys = super.cachedProperties.keys();
+            while (keys.hasMoreElements()) {
+                java.lang.String key = (java.lang.String) keys.nextElement();
+                _call.setProperty(key, super.cachedProperties.get(key));
+            }
+            // All the type mapping information is registered
+            // when the first call is made.
+            // The type mapping information is actually registered in
+            // the TypeMappingRegistry of the service, which
+            // is the reason why registration is only needed for the first call.
+            synchronized (this) {
+                if (firstCall()) {
+                    // must set encoding style before registering serializers
+                    _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+                    _call.setEncodingStyle(org.apache.axis.Constants.URI_SOAP11_ENC);
+                    for (int i = 0; i < cachedSerFactories.size(); ++i) {
+                        java.lang.Class cls = (java.lang.Class) cachedSerClasses.get(i);
+                        javax.xml.namespace.QName qName =
+                                (javax.xml.namespace.QName) cachedSerQNames.get(i);
+                        java.lang.Object x = cachedSerFactories.get(i);
+                        if (x instanceof Class) {
+                            java.lang.Class sf = (java.lang.Class)
+                                 cachedSerFactories.get(i);
+                            java.lang.Class df = (java.lang.Class)
+                                 cachedDeserFactories.get(i);
+                            _call.registerTypeMapping(cls, qName, sf, df, false);
+                        }
+                        else if (x instanceof javax.xml.rpc.encoding.SerializerFactory) {
+                            org.apache.axis.encoding.SerializerFactory sf = (org.apache.axis.encoding.SerializerFactory)
+                                 cachedSerFactories.get(i);
+                            org.apache.axis.encoding.DeserializerFactory df = (org.apache.axis.encoding.DeserializerFactory)
+                                 cachedDeserFactories.get(i);
+                            _call.registerTypeMapping(cls, qName, sf, df, false);
+                        }
+                    }
+                }
+            }
+            return _call;
+        }
+        catch (java.lang.Throwable _t) {
+            throw new org.apache.axis.AxisFault('Failure trying to get the Call object', _t);
+        }
+    }
+.fi
+.SS "void org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.createCapability (java.lang.Stringin0)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP "
+.PP
+Implements \fBorg.glite.security.voms.service.admin.VOMSAdmin\fP.
+.PP
+Definition at line 1166 of file VOMSAdminSoapBindingStub.java.
+.PP
+.nf
+                                                                                                                              {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[10]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI('');
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'createCapability'));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {in0});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        extractAttachments(_call);
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+    if (axisFaultException.detail != null) {
+        if (axisFaultException.detail instanceof java.rmi.RemoteException) {
+              throw (java.rmi.RemoteException) axisFaultException.detail;
+         }
+        if (axisFaultException.detail instanceof org.glite.security.voms.VOMSException) {
+              throw (org.glite.security.voms.VOMSException) axisFaultException.detail;
+         }
+   }
+  throw axisFaultException;
+}
+    }
+.fi
+.SS "void org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.createGroup (java.lang.Stringin0, java.lang.Stringin1)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP "
+.PP
+Implements \fBorg.glite.security.voms.service.admin.VOMSAdmin\fP.
+.PP
+Definition at line 833 of file VOMSAdminSoapBindingStub.java.
+.PP
+References org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub._operations, and org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.createCall().
+.PP
+.nf
+                                                                                                                                               {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[0]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI('');
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'createGroup'));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {in0, in1});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        extractAttachments(_call);
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+    if (axisFaultException.detail != null) {
+        if (axisFaultException.detail instanceof java.rmi.RemoteException) {
+              throw (java.rmi.RemoteException) axisFaultException.detail;
+         }
+        if (axisFaultException.detail instanceof org.glite.security.voms.VOMSException) {
+              throw (org.glite.security.voms.VOMSException) axisFaultException.detail;
+         }
+   }
+  throw axisFaultException;
+}
+    }
+.fi
+.SS "void org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.createRole (java.lang.Stringin0)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP "
+.PP
+Implements \fBorg.glite.security.voms.service.admin.VOMSAdmin\fP.
+.PP
+Definition at line 1102 of file VOMSAdminSoapBindingStub.java.
+.PP
+.nf
+                                                                                                                        {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[8]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI('');
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'createRole'));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {in0});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        extractAttachments(_call);
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+    if (axisFaultException.detail != null) {
+        if (axisFaultException.detail instanceof java.rmi.RemoteException) {
+              throw (java.rmi.RemoteException) axisFaultException.detail;
+         }
+        if (axisFaultException.detail instanceof org.glite.security.voms.VOMSException) {
+              throw (org.glite.security.voms.VOMSException) axisFaultException.detail;
+         }
+   }
+  throw axisFaultException;
+}
+    }
+.fi
+.SS "void org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.createUser (\fBorg.glite.security.voms.User\fPin0)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP "
+.PP
+Implements \fBorg.glite.security.voms.service.admin.VOMSAdmin\fP.
+.PP
+Definition at line 1006 of file VOMSAdminSoapBindingStub.java.
+.PP
+.nf
+                                                                                                                                    {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[5]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI('');
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'createUser'));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {in0});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        extractAttachments(_call);
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+    if (axisFaultException.detail != null) {
+        if (axisFaultException.detail instanceof java.rmi.RemoteException) {
+              throw (java.rmi.RemoteException) axisFaultException.detail;
+         }
+        if (axisFaultException.detail instanceof org.glite.security.voms.VOMSException) {
+              throw (org.glite.security.voms.VOMSException) axisFaultException.detail;
+         }
+   }
+  throw axisFaultException;
+}
+    }
+.fi
+.SS "void org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.deleteCapability (java.lang.Stringin0)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP "
+.PP
+Implements \fBorg.glite.security.voms.service.admin.VOMSAdmin\fP.
+.PP
+Definition at line 1198 of file VOMSAdminSoapBindingStub.java.
+.PP
+.nf
+                                                                                                                              {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[11]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI('');
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'deleteCapability'));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {in0});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        extractAttachments(_call);
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+    if (axisFaultException.detail != null) {
+        if (axisFaultException.detail instanceof java.rmi.RemoteException) {
+              throw (java.rmi.RemoteException) axisFaultException.detail;
+         }
+        if (axisFaultException.detail instanceof org.glite.security.voms.VOMSException) {
+              throw (org.glite.security.voms.VOMSException) axisFaultException.detail;
+         }
+   }
+  throw axisFaultException;
+}
+    }
+.fi
+.SS "void org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.deleteGroup (java.lang.Stringin0)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP "
+.PP
+Implements \fBorg.glite.security.voms.service.admin.VOMSAdmin\fP.
+.PP
+Definition at line 1070 of file VOMSAdminSoapBindingStub.java.
+.PP
+.nf
+                                                                                                                         {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[7]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI('');
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'deleteGroup'));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {in0});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        extractAttachments(_call);
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+    if (axisFaultException.detail != null) {
+        if (axisFaultException.detail instanceof java.rmi.RemoteException) {
+              throw (java.rmi.RemoteException) axisFaultException.detail;
+         }
+        if (axisFaultException.detail instanceof org.glite.security.voms.VOMSException) {
+              throw (org.glite.security.voms.VOMSException) axisFaultException.detail;
+         }
+   }
+  throw axisFaultException;
+}
+    }
+.fi
+.SS "void org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.deleteRole (java.lang.Stringin0)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP "
+.PP
+Implements \fBorg.glite.security.voms.service.admin.VOMSAdmin\fP.
+.PP
+Definition at line 1134 of file VOMSAdminSoapBindingStub.java.
+.PP
+.nf
+                                                                                                                        {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[9]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI('');
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'deleteRole'));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {in0});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        extractAttachments(_call);
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+    if (axisFaultException.detail != null) {
+        if (axisFaultException.detail instanceof java.rmi.RemoteException) {
+              throw (java.rmi.RemoteException) axisFaultException.detail;
+         }
+        if (axisFaultException.detail instanceof org.glite.security.voms.VOMSException) {
+              throw (org.glite.security.voms.VOMSException) axisFaultException.detail;
+         }
+   }
+  throw axisFaultException;
+}
+    }
+.fi
+.SS "void org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.deleteUser (java.lang.Stringin0, java.lang.Stringin1)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP "
+.PP
+Implements \fBorg.glite.security.voms.service.admin.VOMSAdmin\fP.
+.PP
+Definition at line 1038 of file VOMSAdminSoapBindingStub.java.
+.PP
+.nf
+                                                                                                                                              {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[6]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI('');
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'deleteUser'));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {in0, in1});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        extractAttachments(_call);
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+    if (axisFaultException.detail != null) {
+        if (axisFaultException.detail instanceof java.rmi.RemoteException) {
+              throw (java.rmi.RemoteException) axisFaultException.detail;
+         }
+        if (axisFaultException.detail instanceof org.glite.security.voms.VOMSException) {
+              throw (org.glite.security.voms.VOMSException) axisFaultException.detail;
+         }
+   }
+  throw axisFaultException;
+}
+    }
+.fi
+.SS "void org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.dismissCapability (java.lang.Stringin0, java.lang.Stringin1, java.lang.Stringin2)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP "
+.PP
+Implements \fBorg.glite.security.voms.service.admin.VOMSAdmin\fP.
+.PP
+Definition at line 1390 of file VOMSAdminSoapBindingStub.java.
+.PP
+.nf
+                                                                                                                                                                           {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[17]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI('');
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'dismissCapability'));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {in0, in1, in2});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        extractAttachments(_call);
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+    if (axisFaultException.detail != null) {
+        if (axisFaultException.detail instanceof java.rmi.RemoteException) {
+              throw (java.rmi.RemoteException) axisFaultException.detail;
+         }
+        if (axisFaultException.detail instanceof org.glite.security.voms.VOMSException) {
+              throw (org.glite.security.voms.VOMSException) axisFaultException.detail;
+         }
+   }
+  throw axisFaultException;
+}
+    }
+.fi
+.SS "void org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.dismissRole (java.lang.Stringin0, java.lang.Stringin1, java.lang.Stringin2, java.lang.Stringin3)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP "
+.PP
+Implements \fBorg.glite.security.voms.service.admin.VOMSAdmin\fP.
+.PP
+Definition at line 1326 of file VOMSAdminSoapBindingStub.java.
+.PP
+.nf
+                                                                                                                                                                                           {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[15]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI('');
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'dismissRole'));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {in0, in1, in2, in3});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        extractAttachments(_call);
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+    if (axisFaultException.detail != null) {
+        if (axisFaultException.detail instanceof java.rmi.RemoteException) {
+              throw (java.rmi.RemoteException) axisFaultException.detail;
+         }
+        if (axisFaultException.detail instanceof org.glite.security.voms.VOMSException) {
+              throw (org.glite.security.voms.VOMSException) axisFaultException.detail;
+         }
+   }
+  throw axisFaultException;
+}
+    }
+.fi
+.SS "\fBorg.glite.security.voms.ACLEntry\fP [] org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.getACL (java.lang.Stringin0)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP "
+.PP
+Implements \fBorg.glite.security.voms.service.admin.VOMSAdmin\fP.
+.PP
+Definition at line 1851 of file VOMSAdminSoapBindingStub.java.
+.PP
+.nf
+                                                                                                                                                  {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[29]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI('');
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'getACL'));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {in0});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (org.glite.security.voms.ACLEntry[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (org.glite.security.voms.ACLEntry[]) org.apache.axis.utils.JavaUtils.convert(_resp, org.glite.security.voms.ACLEntry[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+    if (axisFaultException.detail != null) {
+        if (axisFaultException.detail instanceof java.rmi.RemoteException) {
+              throw (java.rmi.RemoteException) axisFaultException.detail;
+         }
+        if (axisFaultException.detail instanceof org.glite.security.voms.VOMSException) {
+              throw (org.glite.security.voms.VOMSException) axisFaultException.detail;
+         }
+   }
+  throw axisFaultException;
+}
+    }
+.fi
+.SS "\fBorg.glite.security.voms.ACLEntry\fP [] org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.getDefaultACL (java.lang.Stringin0)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP "
+.PP
+Implements \fBorg.glite.security.voms.service.admin.VOMSAdmin\fP.
+.PP
+Definition at line 1986 of file VOMSAdminSoapBindingStub.java.
+.PP
+.nf
+                                                                                                                                                         {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[33]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI('');
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'getDefaultACL'));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {in0});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (org.glite.security.voms.ACLEntry[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (org.glite.security.voms.ACLEntry[]) org.apache.axis.utils.JavaUtils.convert(_resp, org.glite.security.voms.ACLEntry[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+    if (axisFaultException.detail != null) {
+        if (axisFaultException.detail instanceof java.rmi.RemoteException) {
+              throw (java.rmi.RemoteException) axisFaultException.detail;
+         }
+        if (axisFaultException.detail instanceof org.glite.security.voms.VOMSException) {
+              throw (org.glite.security.voms.VOMSException) axisFaultException.detail;
+         }
+   }
+  throw axisFaultException;
+}
+    }
+.fi
+.SS "java.lang.String [] org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.getGroupPath (java.lang.Stringin0)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP "
+.PP
+Implements \fBorg.glite.security.voms.service.admin.VOMSAdmin\fP.
+.PP
+Definition at line 1539 of file VOMSAdminSoapBindingStub.java.
+.PP
+.nf
+                                                                                                                                        {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[21]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI('');
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'getGroupPath'));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {in0});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.lang.String[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.lang.String[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.lang.String[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+    if (axisFaultException.detail != null) {
+        if (axisFaultException.detail instanceof java.rmi.RemoteException) {
+              throw (java.rmi.RemoteException) axisFaultException.detail;
+         }
+        if (axisFaultException.detail instanceof org.glite.security.voms.VOMSException) {
+              throw (org.glite.security.voms.VOMSException) axisFaultException.detail;
+         }
+   }
+  throw axisFaultException;
+}
+    }
+.fi
+.SS "int org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.getMajorVersionNumber ()  throws java.rmi.RemoteException "
+.PP
+Implements \fBorg.glite.security.voms.service.admin.VOMSAdmin\fP.
+.PP
+Definition at line 936 of file VOMSAdminSoapBindingStub.java.
+.PP
+.nf
+                                                                       {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[3]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI('');
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'getMajorVersionNumber'));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return ((java.lang.Integer) _resp).intValue();
+            } catch (java.lang.Exception _exception) {
+                return ((java.lang.Integer) org.apache.axis.utils.JavaUtils.convert(_resp, int.class)).intValue();
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+.fi
+.SS "int org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.getMinorVersionNumber ()  throws java.rmi.RemoteException "
+.PP
+Implements \fBorg.glite.security.voms.service.admin.VOMSAdmin\fP.
+.PP
+Definition at line 2121 of file VOMSAdminSoapBindingStub.java.
+.PP
+.nf
+                                                                       {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[37]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI('');
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'getMinorVersionNumber'));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return ((java.lang.Integer) _resp).intValue();
+            } catch (java.lang.Exception _exception) {
+                return ((java.lang.Integer) org.apache.axis.utils.JavaUtils.convert(_resp, int.class)).intValue();
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+.fi
+.SS "int org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.getPatchVersionNumber ()  throws java.rmi.RemoteException "
+.PP
+Implements \fBorg.glite.security.voms.service.admin.VOMSAdmin\fP.
+.PP
+Definition at line 2152 of file VOMSAdminSoapBindingStub.java.
+.PP
+.nf
+                                                                       {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[38]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI('');
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'getPatchVersionNumber'));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return ((java.lang.Integer) _resp).intValue();
+            } catch (java.lang.Exception _exception) {
+                return ((java.lang.Integer) org.apache.axis.utils.JavaUtils.convert(_resp, int.class)).intValue();
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+.fi
+.SS "\fBorg.glite.security.voms.User\fP org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.getUser (java.lang.Stringin0, java.lang.Stringin1)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP "
+.PP
+Implements \fBorg.glite.security.voms.service.admin.VOMSAdmin\fP.
+.PP
+Definition at line 865 of file VOMSAdminSoapBindingStub.java.
+.PP
+.nf
+                                                                                                                                                                   {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[1]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI('');
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'getUser'));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {in0, in1});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (org.glite.security.voms.User) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (org.glite.security.voms.User) org.apache.axis.utils.JavaUtils.convert(_resp, org.glite.security.voms.User.class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+    if (axisFaultException.detail != null) {
+        if (axisFaultException.detail instanceof java.rmi.RemoteException) {
+              throw (java.rmi.RemoteException) axisFaultException.detail;
+         }
+        if (axisFaultException.detail instanceof org.glite.security.voms.VOMSException) {
+              throw (org.glite.security.voms.VOMSException) axisFaultException.detail;
+         }
+   }
+  throw axisFaultException;
+}
+    }
+.fi
+.SS "java.lang.String org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.getVOName ()  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP "
+.PP
+Implements \fBorg.glite.security.voms.service.admin.VOMSAdmin\fP.
+.PP
+Definition at line 967 of file VOMSAdminSoapBindingStub.java.
+.PP
+.nf
+                                                                                                               {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[4]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI('');
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'getVOName'));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.lang.String) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.lang.String) org.apache.axis.utils.JavaUtils.convert(_resp, java.lang.String.class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+    if (axisFaultException.detail != null) {
+        if (axisFaultException.detail instanceof java.rmi.RemoteException) {
+              throw (java.rmi.RemoteException) axisFaultException.detail;
+         }
+        if (axisFaultException.detail instanceof org.glite.security.voms.VOMSException) {
+              throw (org.glite.security.voms.VOMSException) axisFaultException.detail;
+         }
+   }
+  throw axisFaultException;
+}
+    }
+.fi
+.SS "java.lang.String [] org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.listCapabilities ()  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP "
+.PP
+Implements \fBorg.glite.security.voms.service.admin.VOMSAdmin\fP.
+.PP
+Definition at line 1734 of file VOMSAdminSoapBindingStub.java.
+.PP
+.nf
+                                                                                                                        {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[26]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI('');
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'listCapabilities'));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.lang.String[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.lang.String[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.lang.String[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+    if (axisFaultException.detail != null) {
+        if (axisFaultException.detail instanceof java.rmi.RemoteException) {
+              throw (java.rmi.RemoteException) axisFaultException.detail;
+         }
+        if (axisFaultException.detail instanceof org.glite.security.voms.VOMSException) {
+              throw (org.glite.security.voms.VOMSException) axisFaultException.detail;
+         }
+   }
+  throw axisFaultException;
+}
+    }
+.fi
+.SS "java.lang.String [] org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.listCapabilities (java.lang.Stringin0, java.lang.Stringin1)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP "
+.PP
+Implements \fBorg.glite.security.voms.service.admin.VOMSAdmin\fP.
+.PP
+Definition at line 1773 of file VOMSAdminSoapBindingStub.java.
+.PP
+.nf
+                                                                                                                                                                  {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[27]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI('');
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'listCapabilities'));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {in0, in1});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.lang.String[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.lang.String[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.lang.String[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+    if (axisFaultException.detail != null) {
+        if (axisFaultException.detail instanceof java.rmi.RemoteException) {
+              throw (java.rmi.RemoteException) axisFaultException.detail;
+         }
+        if (axisFaultException.detail instanceof org.glite.security.voms.VOMSException) {
+              throw (org.glite.security.voms.VOMSException) axisFaultException.detail;
+         }
+   }
+  throw axisFaultException;
+}
+    }
+.fi
+.SS "java.lang.String [] org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.listCAs ()  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP "
+.PP
+Implements \fBorg.glite.security.voms.service.admin.VOMSAdmin\fP.
+.PP
+Definition at line 1812 of file VOMSAdminSoapBindingStub.java.
+.PP
+.nf
+                                                                                                               {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[28]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI('');
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'listCAs'));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.lang.String[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.lang.String[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.lang.String[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+    if (axisFaultException.detail != null) {
+        if (axisFaultException.detail instanceof java.rmi.RemoteException) {
+              throw (java.rmi.RemoteException) axisFaultException.detail;
+         }
+        if (axisFaultException.detail instanceof org.glite.security.voms.VOMSException) {
+              throw (org.glite.security.voms.VOMSException) axisFaultException.detail;
+         }
+   }
+  throw axisFaultException;
+}
+    }
+.fi
+.SS "java.lang.String [] org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.listGroups (java.lang.Stringin0, java.lang.Stringin1)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP "
+.PP
+Implements \fBorg.glite.security.voms.service.admin.VOMSAdmin\fP.
+.PP
+Definition at line 1617 of file VOMSAdminSoapBindingStub.java.
+.PP
+.nf
+                                                                                                                                                            {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[23]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI('');
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'listGroups'));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {in0, in1});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.lang.String[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.lang.String[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.lang.String[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+    if (axisFaultException.detail != null) {
+        if (axisFaultException.detail instanceof java.rmi.RemoteException) {
+              throw (java.rmi.RemoteException) axisFaultException.detail;
+         }
+        if (axisFaultException.detail instanceof org.glite.security.voms.VOMSException) {
+              throw (org.glite.security.voms.VOMSException) axisFaultException.detail;
+         }
+   }
+  throw axisFaultException;
+}
+    }
+.fi
+.SS "\fBorg.glite.security.voms.User\fP [] org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.listMembers (java.lang.Stringin0)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP "
+.PP
+Implements \fBorg.glite.security.voms.service.admin.VOMSAdmin\fP.
+.PP
+Definition at line 1422 of file VOMSAdminSoapBindingStub.java.
+.PP
+.nf
+                                                                                                                                                   {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[18]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI('');
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'listMembers'));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {in0});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (org.glite.security.voms.User[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (org.glite.security.voms.User[]) org.apache.axis.utils.JavaUtils.convert(_resp, org.glite.security.voms.User[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+    if (axisFaultException.detail != null) {
+        if (axisFaultException.detail instanceof java.rmi.RemoteException) {
+              throw (java.rmi.RemoteException) axisFaultException.detail;
+         }
+        if (axisFaultException.detail instanceof org.glite.security.voms.VOMSException) {
+              throw (org.glite.security.voms.VOMSException) axisFaultException.detail;
+         }
+   }
+  throw axisFaultException;
+}
+    }
+.fi
+.SS "java.lang.String [] org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.listRoles ()  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP "
+.PP
+Implements \fBorg.glite.security.voms.service.admin.VOMSAdmin\fP.
+.PP
+Definition at line 1656 of file VOMSAdminSoapBindingStub.java.
+.PP
+.nf
+                                                                                                                 {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[24]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI('');
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'listRoles'));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.lang.String[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.lang.String[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.lang.String[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+    if (axisFaultException.detail != null) {
+        if (axisFaultException.detail instanceof java.rmi.RemoteException) {
+              throw (java.rmi.RemoteException) axisFaultException.detail;
+         }
+        if (axisFaultException.detail instanceof org.glite.security.voms.VOMSException) {
+              throw (org.glite.security.voms.VOMSException) axisFaultException.detail;
+         }
+   }
+  throw axisFaultException;
+}
+    }
+.fi
+.SS "java.lang.String [] org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.listRoles (java.lang.Stringin0, java.lang.Stringin1)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP "
+.PP
+Implements \fBorg.glite.security.voms.service.admin.VOMSAdmin\fP.
+.PP
+Definition at line 1695 of file VOMSAdminSoapBindingStub.java.
+.PP
+.nf
+                                                                                                                                                           {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[25]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI('');
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'listRoles'));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {in0, in1});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.lang.String[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.lang.String[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.lang.String[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+    if (axisFaultException.detail != null) {
+        if (axisFaultException.detail instanceof java.rmi.RemoteException) {
+              throw (java.rmi.RemoteException) axisFaultException.detail;
+         }
+        if (axisFaultException.detail instanceof org.glite.security.voms.VOMSException) {
+              throw (org.glite.security.voms.VOMSException) axisFaultException.detail;
+         }
+   }
+  throw axisFaultException;
+}
+    }
+.fi
+.SS "java.lang.String [] org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.listSubGroups (java.lang.Stringin0)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP "
+.PP
+Implements \fBorg.glite.security.voms.service.admin.VOMSAdmin\fP.
+.PP
+Definition at line 1578 of file VOMSAdminSoapBindingStub.java.
+.PP
+.nf
+                                                                                                                                         {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[22]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI('');
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'listSubGroups'));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {in0});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.lang.String[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.lang.String[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.lang.String[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+    if (axisFaultException.detail != null) {
+        if (axisFaultException.detail instanceof java.rmi.RemoteException) {
+              throw (java.rmi.RemoteException) axisFaultException.detail;
+         }
+        if (axisFaultException.detail instanceof org.glite.security.voms.VOMSException) {
+              throw (org.glite.security.voms.VOMSException) axisFaultException.detail;
+         }
+   }
+  throw axisFaultException;
+}
+    }
+.fi
+.SS "\fBorg.glite.security.voms.User\fP [] org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.listUsersWithCapability (java.lang.Stringin0)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP "
+.PP
+Implements \fBorg.glite.security.voms.service.admin.VOMSAdmin\fP.
+.PP
+Definition at line 1500 of file VOMSAdminSoapBindingStub.java.
+.PP
+.nf
+                                                                                                                                                               {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[20]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI('');
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'listUsersWithCapability'));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {in0});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (org.glite.security.voms.User[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (org.glite.security.voms.User[]) org.apache.axis.utils.JavaUtils.convert(_resp, org.glite.security.voms.User[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+    if (axisFaultException.detail != null) {
+        if (axisFaultException.detail instanceof java.rmi.RemoteException) {
+              throw (java.rmi.RemoteException) axisFaultException.detail;
+         }
+        if (axisFaultException.detail instanceof org.glite.security.voms.VOMSException) {
+              throw (org.glite.security.voms.VOMSException) axisFaultException.detail;
+         }
+   }
+  throw axisFaultException;
+}
+    }
+.fi
+.SS "\fBorg.glite.security.voms.User\fP [] org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.listUsersWithRole (java.lang.Stringin0, java.lang.Stringin1)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP "
+.PP
+Implements \fBorg.glite.security.voms.service.admin.VOMSAdmin\fP.
+.PP
+Definition at line 1461 of file VOMSAdminSoapBindingStub.java.
+.PP
+.nf
+                                                                                                                                                                               {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[19]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI('');
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'listUsersWithRole'));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {in0, in1});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (org.glite.security.voms.User[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (org.glite.security.voms.User[]) org.apache.axis.utils.JavaUtils.convert(_resp, org.glite.security.voms.User[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+    if (axisFaultException.detail != null) {
+        if (axisFaultException.detail instanceof java.rmi.RemoteException) {
+              throw (java.rmi.RemoteException) axisFaultException.detail;
+         }
+        if (axisFaultException.detail instanceof org.glite.security.voms.VOMSException) {
+              throw (org.glite.security.voms.VOMSException) axisFaultException.detail;
+         }
+   }
+  throw axisFaultException;
+}
+    }
+.fi
+.SS "void org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.removeACLEntry (java.lang.Stringin0, \fBorg.glite.security.voms.ACLEntry\fPin1)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP "
+.PP
+Implements \fBorg.glite.security.voms.service.admin.VOMSAdmin\fP.
+.PP
+Definition at line 1954 of file VOMSAdminSoapBindingStub.java.
+.PP
+.nf
+                                                                                                                                                                  {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[32]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI('');
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'removeACLEntry'));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {in0, in1});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        extractAttachments(_call);
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+    if (axisFaultException.detail != null) {
+        if (axisFaultException.detail instanceof java.rmi.RemoteException) {
+              throw (java.rmi.RemoteException) axisFaultException.detail;
+         }
+        if (axisFaultException.detail instanceof org.glite.security.voms.VOMSException) {
+              throw (org.glite.security.voms.VOMSException) axisFaultException.detail;
+         }
+   }
+  throw axisFaultException;
+}
+    }
+.fi
+.SS "void org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.removeDefaultACLEntry (java.lang.Stringin0, \fBorg.glite.security.voms.ACLEntry\fPin1)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP "
+.PP
+Implements \fBorg.glite.security.voms.service.admin.VOMSAdmin\fP.
+.PP
+Definition at line 2089 of file VOMSAdminSoapBindingStub.java.
+.PP
+.nf
+                                                                                                                                                                         {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[36]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI('');
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'removeDefaultACLEntry'));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {in0, in1});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        extractAttachments(_call);
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+    if (axisFaultException.detail != null) {
+        if (axisFaultException.detail instanceof java.rmi.RemoteException) {
+              throw (java.rmi.RemoteException) axisFaultException.detail;
+         }
+        if (axisFaultException.detail instanceof org.glite.security.voms.VOMSException) {
+              throw (org.glite.security.voms.VOMSException) axisFaultException.detail;
+         }
+   }
+  throw axisFaultException;
+}
+    }
+.fi
+.SS "void org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.removeMember (java.lang.Stringin0, java.lang.Stringin1, java.lang.Stringin2)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP "
+.PP
+Implements \fBorg.glite.security.voms.service.admin.VOMSAdmin\fP.
+.PP
+Definition at line 1262 of file VOMSAdminSoapBindingStub.java.
+.PP
+.nf
+                                                                                                                                                                      {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[13]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI('');
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'removeMember'));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {in0, in1, in2});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        extractAttachments(_call);
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+    if (axisFaultException.detail != null) {
+        if (axisFaultException.detail instanceof java.rmi.RemoteException) {
+              throw (java.rmi.RemoteException) axisFaultException.detail;
+         }
+        if (axisFaultException.detail instanceof org.glite.security.voms.VOMSException) {
+              throw (org.glite.security.voms.VOMSException) axisFaultException.detail;
+         }
+   }
+  throw axisFaultException;
+}
+    }
+.fi
+.SS "void org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.setACL (java.lang.Stringin0, \fBorg.glite.security.voms.ACLEntry\fP[]in1)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP "
+.PP
+Implements \fBorg.glite.security.voms.service.admin.VOMSAdmin\fP.
+.PP
+Definition at line 1890 of file VOMSAdminSoapBindingStub.java.
+.PP
+.nf
+                                                                                                                                                            {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[30]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI('');
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'setACL'));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {in0, in1});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        extractAttachments(_call);
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+    if (axisFaultException.detail != null) {
+        if (axisFaultException.detail instanceof java.rmi.RemoteException) {
+              throw (java.rmi.RemoteException) axisFaultException.detail;
+         }
+        if (axisFaultException.detail instanceof org.glite.security.voms.VOMSException) {
+              throw (org.glite.security.voms.VOMSException) axisFaultException.detail;
+         }
+   }
+  throw axisFaultException;
+}
+    }
+.fi
+.SS "void org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.setDefaultACL (java.lang.Stringin0, \fBorg.glite.security.voms.ACLEntry\fP[]in1)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP "
+.PP
+Implements \fBorg.glite.security.voms.service.admin.VOMSAdmin\fP.
+.PP
+Definition at line 2025 of file VOMSAdminSoapBindingStub.java.
+.PP
+.nf
+                                                                                                                                                                   {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[34]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI('');
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'setDefaultACL'));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {in0, in1});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        extractAttachments(_call);
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+    if (axisFaultException.detail != null) {
+        if (axisFaultException.detail instanceof java.rmi.RemoteException) {
+              throw (java.rmi.RemoteException) axisFaultException.detail;
+         }
+        if (axisFaultException.detail instanceof org.glite.security.voms.VOMSException) {
+              throw (org.glite.security.voms.VOMSException) axisFaultException.detail;
+         }
+   }
+  throw axisFaultException;
+}
+    }
+.fi
+.SS "void org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.setUser (\fBorg.glite.security.voms.User\fPin0)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP "
+.PP
+Implements \fBorg.glite.security.voms.service.admin.VOMSAdmin\fP.
+.PP
+Definition at line 904 of file VOMSAdminSoapBindingStub.java.
+.PP
+.nf
+                                                                                                                                 {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[2]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI('');
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName('http://glite.org/wsdl/services/org.glite.security.voms.service.admin', 'setUser'));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {in0});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        extractAttachments(_call);
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+    if (axisFaultException.detail != null) {
+        if (axisFaultException.detail instanceof java.rmi.RemoteException) {
+              throw (java.rmi.RemoteException) axisFaultException.detail;
+         }
+        if (axisFaultException.detail instanceof org.glite.security.voms.VOMSException) {
+              throw (org.glite.security.voms.VOMSException) axisFaultException.detail;
+         }
+   }
+  throw axisFaultException;
+}
+    }
+.fi
+.SH "Member Data Documentation"
+.PP 
+.SS "org.apache.axis.description.OperationDesc [] \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingStub._operations\fP\fC [static, package]\fP"
+.PP
+Definition at line 16 of file VOMSAdminSoapBindingStub.java.
+.PP
+Referenced by org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub._initOperationDesc1(), org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub._initOperationDesc2(), org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub._initOperationDesc3(), org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub._initOperationDesc4(), and org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.createGroup().
+.SS "java.util.Vector \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.cachedDeserFactories\fP = new java.util.Vector()\fC [private]\fP"
+.PP
+Definition at line 14 of file VOMSAdminSoapBindingStub.java.
+.PP
+Referenced by org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.createCall(), and org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.VOMSAdminSoapBindingStub().
+.SS "java.util.Vector \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.cachedSerClasses\fP = new java.util.Vector()\fC [private]\fP"
+.PP
+Definition at line 11 of file VOMSAdminSoapBindingStub.java.
+.PP
+Referenced by org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.createCall(), and org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.VOMSAdminSoapBindingStub().
+.SS "java.util.Vector \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.cachedSerFactories\fP = new java.util.Vector()\fC [private]\fP"
+.PP
+Definition at line 13 of file VOMSAdminSoapBindingStub.java.
+.PP
+Referenced by org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.createCall(), and org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.VOMSAdminSoapBindingStub().
+.SS "java.util.Vector \fBorg.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.cachedSerQNames\fP = new java.util.Vector()\fC [private]\fP"
+.PP
+Definition at line 12 of file VOMSAdminSoapBindingStub.java.
+.PP
+Referenced by org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.createCall(), and org.glite.security.voms.service.admin.VOMSAdminSoapBindingStub.VOMSAdminSoapBindingStub().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Registration from the source code.

@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="namespaceportal_1_1registration_1_1server" kind="namespace">
+    <compoundname>portal::registration::server</compoundname>
+    <innerclass refid="classportal_1_1registration_1_1server_1_1PortalContextListener" prot="public">portal::registration::server::PortalContextListener</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/server/PortalContextListener.java" line="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,94 @@
+.TH "org::glite::security::voms::service::registration::RegistrationRequest_Helper" 3 "Wed Jul 13 2011" "Version 4" "Registration" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+org::glite::security::voms::service::registration::RegistrationRequest_Helper \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static org.apache.axis.description.TypeDesc \fBgetTypeDesc\fP ()"
+.br
+.ti -1c
+.RI "static org.apache.axis.encoding.Serializer \fBgetSerializer\fP (java.lang.String mechType, java.lang.Class _javaType, javax.xml.namespace.QName _xmlType)"
+.br
+.ti -1c
+.RI "static org.apache.axis.encoding.Deserializer \fBgetDeserializer\fP (java.lang.String mechType, java.lang.Class _javaType, javax.xml.namespace.QName _xmlType)"
+.br
+.in -1c
+.SS "Static Package Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB[static initializer]\fP"
+.br
+.in -1c
+.SS "Static Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "static org.apache.axis.description.TypeDesc \fBtypeDesc\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 10 of file RegistrationRequest_Helper.java.
+.SH "Member Function Documentation"
+.PP 
+.SS "org.glite.security.voms.service.registration.RegistrationRequest_Helper.[static initializer] ()\fC [static, package]\fP"
+.SS "static org.apache.axis.encoding.Deserializer org.glite.security.voms.service.registration.RegistrationRequest_Helper.getDeserializer (java.lang.StringmechType, java.lang.Class_javaType, javax.xml.namespace.QName_xmlType)\fC [static]\fP"Get Custom Deserializer 
+.PP
+Definition at line 71 of file RegistrationRequest_Helper.java.
+.PP
+References org.glite.security.voms.service.registration.RegistrationRequest_Helper.typeDesc.
+.PP
+.nf
+                                               {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
+    }
+.fi
+.SS "static org.apache.axis.encoding.Serializer org.glite.security.voms.service.registration.RegistrationRequest_Helper.getSerializer (java.lang.StringmechType, java.lang.Class_javaType, javax.xml.namespace.QName_xmlType)\fC [static]\fP"Get Custom Serializer 
+.PP
+Definition at line 59 of file RegistrationRequest_Helper.java.
+.PP
+References org.glite.security.voms.service.registration.RegistrationRequest_Helper.typeDesc.
+.PP
+.nf
+                                               {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+.fi
+.SS "static org.apache.axis.description.TypeDesc org.glite.security.voms.service.registration.RegistrationRequest_Helper.getTypeDesc ()\fC [static]\fP"Return type metadata object 
+.PP
+Definition at line 52 of file RegistrationRequest_Helper.java.
+.PP
+References org.glite.security.voms.service.registration.RegistrationRequest_Helper.typeDesc.
+.PP
+.nf
+                                                                     {
+        return typeDesc;
+    }
+.fi
+.SH "Member Data Documentation"
+.PP 
+.SS "org.apache.axis.description.TypeDesc \fBorg.glite.security.voms.service.registration.RegistrationRequest_Helper.typeDesc\fP\fC [static, private]\fP"\fBInitial value:\fP
+.PP
+.nf
+
+        new org.apache.axis.description.TypeDesc(RegistrationRequest.class, true)
+.fi
+.PP
+Definition at line 12 of file RegistrationRequest_Helper.java.
+.PP
+Referenced by org.glite.security.voms.service.registration.RegistrationRequest_Helper.getDeserializer(), org.glite.security.voms.service.registration.RegistrationRequest_Helper.getSerializer(), and org.glite.security.voms.service.registration.RegistrationRequest_Helper.getTypeDesc().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Registration from the source code.

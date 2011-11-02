@@ -1,0 +1,145 @@
+\hypertarget{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue__Helper}{
+\section{org.glite.security.voms.service.attributes.AttributeValue\_\-Helper Class Reference}
+\label{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue__Helper}\index{org::glite::security::voms::service::attributes::AttributeValue\_\-Helper@{org::glite::security::voms::service::attributes::AttributeValue\_\-Helper}}
+}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static org.apache.axis.description.TypeDesc \hyperlink{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue__Helper_a916de60420a97cb761cada694400e850}{getTypeDesc} ()
+\item 
+static org.apache.axis.encoding.Serializer \hyperlink{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue__Helper_ab87e7362c9c2411a099a790a908a7c6b}{getSerializer} (java.lang.String mechType, java.lang.Class \_\-javaType, javax.xml.namespace.QName \_\-xmlType)
+\item 
+static org.apache.axis.encoding.Deserializer \hyperlink{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue__Helper_a7ea7706d815f083db718063578f9160d}{getDeserializer} (java.lang.String mechType, java.lang.Class \_\-javaType, javax.xml.namespace.QName \_\-xmlType)
+\end{DoxyCompactItemize}
+\subsection*{Static Package Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue__Helper_af93a04341e9201f92dd88bd94cfc9e14}{\mbox{[}static initializer\mbox{]}}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static org.apache.axis.description.TypeDesc \hyperlink{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue__Helper_a03972bb93f35dd2eb4a562d9ee45fe30}{typeDesc}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 10 of file AttributeValue\_\-Helper.java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue__Helper_af93a04341e9201f92dd88bd94cfc9e14}{
+\index{org::glite::security::voms::service::attributes::AttributeValue\_\-Helper@{org::glite::security::voms::service::attributes::AttributeValue\_\-Helper}!\mbox{[}static initializer\mbox{]}@{[static initializer]}}
+\index{\mbox{[}static initializer\mbox{]}@{[static initializer]}!org::glite::security::voms::service::attributes::AttributeValue_Helper@{org::glite::security::voms::service::attributes::AttributeValue\_\-Helper}}
+\subsubsection[{[static initializer]}]{\setlength{\rightskip}{0pt plus 5cm}org.glite.security.voms.service.attributes.AttributeValue\_\-Helper.\mbox{[}static initializer\mbox{]} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static, package\mbox{]}}}}
+\label{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue__Helper_af93a04341e9201f92dd88bd94cfc9e14}
+\hypertarget{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue__Helper_a7ea7706d815f083db718063578f9160d}{
+\index{org::glite::security::voms::service::attributes::AttributeValue\_\-Helper@{org::glite::security::voms::service::attributes::AttributeValue\_\-Helper}!getDeserializer@{getDeserializer}}
+\index{getDeserializer@{getDeserializer}!org::glite::security::voms::service::attributes::AttributeValue_Helper@{org::glite::security::voms::service::attributes::AttributeValue\_\-Helper}}
+\subsubsection[{getDeserializer}]{\setlength{\rightskip}{0pt plus 5cm}static org.apache.axis.encoding.Deserializer org.glite.security.voms.service.attributes.AttributeValue\_\-Helper.getDeserializer (
+\begin{DoxyParamCaption}
+\item[{java.lang.String}]{mechType, }
+\item[{java.lang.Class}]{\_\-javaType, }
+\item[{javax.xml.namespace.QName}]{\_\-xmlType}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue__Helper_a7ea7706d815f083db718063578f9160d}
+Get Custom Deserializer 
+
+Definition at line 59 of file AttributeValue\_\-Helper.java.
+
+
+
+References org.glite.security.voms.service.attributes.AttributeValue\_\-Helper.typeDesc.
+
+
+\begin{DoxyCode}
+                                               {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
+    }
+\end{DoxyCode}
+\hypertarget{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue__Helper_ab87e7362c9c2411a099a790a908a7c6b}{
+\index{org::glite::security::voms::service::attributes::AttributeValue\_\-Helper@{org::glite::security::voms::service::attributes::AttributeValue\_\-Helper}!getSerializer@{getSerializer}}
+\index{getSerializer@{getSerializer}!org::glite::security::voms::service::attributes::AttributeValue_Helper@{org::glite::security::voms::service::attributes::AttributeValue\_\-Helper}}
+\subsubsection[{getSerializer}]{\setlength{\rightskip}{0pt plus 5cm}static org.apache.axis.encoding.Serializer org.glite.security.voms.service.attributes.AttributeValue\_\-Helper.getSerializer (
+\begin{DoxyParamCaption}
+\item[{java.lang.String}]{mechType, }
+\item[{java.lang.Class}]{\_\-javaType, }
+\item[{javax.xml.namespace.QName}]{\_\-xmlType}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue__Helper_ab87e7362c9c2411a099a790a908a7c6b}
+Get Custom Serializer 
+
+Definition at line 47 of file AttributeValue\_\-Helper.java.
+
+
+
+References org.glite.security.voms.service.attributes.AttributeValue\_\-Helper.typeDesc.
+
+
+\begin{DoxyCode}
+                                               {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+\end{DoxyCode}
+\hypertarget{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue__Helper_a916de60420a97cb761cada694400e850}{
+\index{org::glite::security::voms::service::attributes::AttributeValue\_\-Helper@{org::glite::security::voms::service::attributes::AttributeValue\_\-Helper}!getTypeDesc@{getTypeDesc}}
+\index{getTypeDesc@{getTypeDesc}!org::glite::security::voms::service::attributes::AttributeValue_Helper@{org::glite::security::voms::service::attributes::AttributeValue\_\-Helper}}
+\subsubsection[{getTypeDesc}]{\setlength{\rightskip}{0pt plus 5cm}static org.apache.axis.description.TypeDesc org.glite.security.voms.service.attributes.AttributeValue\_\-Helper.getTypeDesc (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue__Helper_a916de60420a97cb761cada694400e850}
+Return type metadata object 
+
+Definition at line 40 of file AttributeValue\_\-Helper.java.
+
+
+
+References org.glite.security.voms.service.attributes.AttributeValue\_\-Helper.typeDesc.
+
+
+\begin{DoxyCode}
+                                                                     {
+        return typeDesc;
+    }
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue__Helper_a03972bb93f35dd2eb4a562d9ee45fe30}{
+\index{org::glite::security::voms::service::attributes::AttributeValue\_\-Helper@{org::glite::security::voms::service::attributes::AttributeValue\_\-Helper}!typeDesc@{typeDesc}}
+\index{typeDesc@{typeDesc}!org::glite::security::voms::service::attributes::AttributeValue_Helper@{org::glite::security::voms::service::attributes::AttributeValue\_\-Helper}}
+\subsubsection[{typeDesc}]{\setlength{\rightskip}{0pt plus 5cm}org.apache.axis.description.TypeDesc {\bf org.glite.security.voms.service.attributes.AttributeValue\_\-Helper.typeDesc}\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeValue__Helper_a03972bb93f35dd2eb4a562d9ee45fe30}
+{\bfseries Initial value:}
+\begin{DoxyCode}
+
+        new org.apache.axis.description.TypeDesc(AttributeValue.class, true)
+\end{DoxyCode}
+
+
+Definition at line 12 of file AttributeValue\_\-Helper.java.
+
+
+
+Referenced by org.glite.security.voms.service.attributes.AttributeValue\_\-Helper.getDeserializer(), org.glite.security.voms.service.attributes.AttributeValue\_\-Helper.getSerializer(), and org.glite.security.voms.service.attributes.AttributeValue\_\-Helper.getTypeDesc().
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/attributes/\hyperlink{AttributeValue__Helper_8java}{AttributeValue\_\-Helper.java}\end{DoxyCompactItemize}

@@ -1,0 +1,92 @@
+\hypertarget{classportal_1_1registration_1_1controller_1_1RemoveUserInfoController}{
+\section{portal.registration.controller.RemoveUserInfoController Class Reference}
+\label{classportal_1_1registration_1_1controller_1_1RemoveUserInfoController}\index{portal::registration::controller::RemoveUserInfoController@{portal::registration::controller::RemoveUserInfoController}}
+}
+
+
+Collaboration diagram for portal.registration.controller.RemoveUserInfoController:
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classportal_1_1registration_1_1controller_1_1RemoveUserInfoController_a7bb13ed82ea190f5c33820b30876c33f}{removeUserInfo} (@RequestParam int userId, ActionRequest request)  throws PortalException, SystemException 
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{interfaceportal_1_1registration_1_1services_1_1UserInfoService}{UserInfoService} \hyperlink{classportal_1_1registration_1_1controller_1_1RemoveUserInfoController_aa47f9e167dfc7634fd39928b21c05390}{userInfoService}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classportal_1_1registration_1_1controller_1_1RemoveUserInfoController}{RemoveUserInfoController} handles removal of UserInfo from the Catalog.
+
+\begin{DoxyAuthor}{Author}
+asarin 
+\end{DoxyAuthor}
+
+
+Definition at line 29 of file RemoveUserInfoController.java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classportal_1_1registration_1_1controller_1_1RemoveUserInfoController_a7bb13ed82ea190f5c33820b30876c33f}{
+\index{portal::registration::controller::RemoveUserInfoController@{portal::registration::controller::RemoveUserInfoController}!removeUserInfo@{removeUserInfo}}
+\index{removeUserInfo@{removeUserInfo}!portal::registration::controller::RemoveUserInfoController@{portal::registration::controller::RemoveUserInfoController}}
+\subsubsection[{removeUserInfo}]{\setlength{\rightskip}{0pt plus 5cm}void portal.registration.controller.RemoveUserInfoController.removeUserInfo (
+\begin{DoxyParamCaption}
+\item[{@RequestParam int}]{userId, }
+\item[{ActionRequest}]{request}
+\end{DoxyParamCaption}
+)  throws PortalException, SystemException }}
+\label{classportal_1_1registration_1_1controller_1_1RemoveUserInfoController_a7bb13ed82ea190f5c33820b30876c33f}
+
+
+Definition at line 35 of file RemoveUserInfoController.java.
+
+
+
+References portal.registration.services.UserInfoService.delete(), portal.registration.services.UserInfoService.findById(), and portal.registration.domain.UserInfo.getUsername().
+
+
+\begin{DoxyCode}
+                                                                                 
+                                                 {
+                
+                UserInfo userInfo = userInfoService.findById(userId);
+                String username = userInfo.getUsername();
+                
+                long companyId = PortalUtil.getCompanyId(request);
+                
+                User user = UserLocalServiceUtil.getUserByScreenName(companyId,
+                                username);
+                
+                UserLocalServiceUtil.deleteUser(user);
+        
+                userInfoService.delete(userId);
+                
+                SessionMessages.add(request, "user-delated-successufully");
+        }
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classportal_1_1registration_1_1controller_1_1RemoveUserInfoController_aa47f9e167dfc7634fd39928b21c05390}{
+\index{portal::registration::controller::RemoveUserInfoController@{portal::registration::controller::RemoveUserInfoController}!userInfoService@{userInfoService}}
+\index{userInfoService@{userInfoService}!portal::registration::controller::RemoveUserInfoController@{portal::registration::controller::RemoveUserInfoController}}
+\subsubsection[{userInfoService}]{\setlength{\rightskip}{0pt plus 5cm}{\bf UserInfoService} {\bf portal.registration.controller.RemoveUserInfoController.userInfoService}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classportal_1_1registration_1_1controller_1_1RemoveUserInfoController_aa47f9e167dfc7634fd39928b21c05390}
+
+
+Definition at line 32 of file RemoveUserInfoController.java.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/controller/\hyperlink{RemoveUserInfoController_8java}{RemoveUserInfoController.java}\end{DoxyCompactItemize}

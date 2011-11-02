@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1acl_1_1ACLEntry__Helper" kind="class" prot="public">
+    <compoundname>org::glite::security::voms::service::acl::ACLEntry_Helper</compoundname>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1acl_1_1ACLEntry__Helper_1ab8674c22678411d9692af37ad4c9b01f" prot="private" static="yes" mutable="no">
+        <type>org.apache.axis.description.TypeDesc</type>
+        <definition>org.apache.axis.description.TypeDesc org.glite.security.voms.service.acl.ACLEntry_Helper.typeDesc</definition>
+        <argsstring></argsstring>
+        <name>typeDesc</name>
+        <initializer>
+        new org.apache.axis.description.TypeDesc(ACLEntry.class, true)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/acl/ACLEntry_Helper.java" line="13" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/acl/ACLEntry_Helper.java" bodystart="12" bodyend="-1"/>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1acl_1_1ACLEntry__Helper_1a47a80087d9d2328fc6d6d67edafb8ed2" compoundref="service_2acl_2ACLEntry__Helper_8java" startline="59" endline="66">org.glite.security.voms.service.acl.ACLEntry_Helper::getDeserializer</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1acl_1_1ACLEntry__Helper_1a4c9bf5b1efb38d33d467204b4b4cc842" compoundref="service_2acl_2ACLEntry__Helper_8java" startline="47" endline="54">org.glite.security.voms.service.acl.ACLEntry_Helper::getSerializer</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1acl_1_1ACLEntry__Helper_1a53c9824ad44ef0cbc42cd5c32d63c6fb" compoundref="service_2acl_2ACLEntry__Helper_8java" startline="40" endline="42">org.glite.security.voms.service.acl.ACLEntry_Helper::getTypeDesc</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="package-static-func">
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1acl_1_1ACLEntry__Helper_1ae791be7052f4292cdb9dd3e61c1ca342" prot="package" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>org.glite.security.voms.service.acl.ACLEntry_Helper.[static initializer]</definition>
+        <argsstring></argsstring>
+        <name>[static initializer]</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/acl/ACLEntry_Helper.java" line="15"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1acl_1_1ACLEntry__Helper_1a53c9824ad44ef0cbc42cd5c32d63c6fb" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>org.apache.axis.description.TypeDesc</type>
+        <definition>static org.apache.axis.description.TypeDesc org.glite.security.voms.service.acl.ACLEntry_Helper.getTypeDesc</definition>
+        <argsstring>()</argsstring>
+        <name>getTypeDesc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return type metadata object </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/acl/ACLEntry_Helper.java" line="40" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/acl/ACLEntry_Helper.java" bodystart="40" bodyend="42"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1acl_1_1ACLEntry__Helper_1ab8674c22678411d9692af37ad4c9b01f" compoundref="service_2acl_2ACLEntry__Helper_8java" startline="12">org.glite.security.voms.service.acl.ACLEntry_Helper::typeDesc</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1acl_1_1ACLEntry__Helper_1a4c9bf5b1efb38d33d467204b4b4cc842" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>org.apache.axis.encoding.Serializer</type>
+        <definition>static org.apache.axis.encoding.Serializer org.glite.security.voms.service.acl.ACLEntry_Helper.getSerializer</definition>
+        <argsstring>(java.lang.String mechType, java.lang.Class _javaType, javax.xml.namespace.QName _xmlType)</argsstring>
+        <name>getSerializer</name>
+        <param>
+          <type>java.lang.String</type>
+          <declname>mechType</declname>
+        </param>
+        <param>
+          <type>java.lang.Class</type>
+          <declname>_javaType</declname>
+        </param>
+        <param>
+          <type>javax.xml.namespace.QName</type>
+          <declname>_xmlType</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get Custom Serializer </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/acl/ACLEntry_Helper.java" line="50" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/acl/ACLEntry_Helper.java" bodystart="47" bodyend="54"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1acl_1_1ACLEntry__Helper_1ab8674c22678411d9692af37ad4c9b01f" compoundref="service_2acl_2ACLEntry__Helper_8java" startline="12">org.glite.security.voms.service.acl.ACLEntry_Helper::typeDesc</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1acl_1_1ACLEntry__Helper_1a47a80087d9d2328fc6d6d67edafb8ed2" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>org.apache.axis.encoding.Deserializer</type>
+        <definition>static org.apache.axis.encoding.Deserializer org.glite.security.voms.service.acl.ACLEntry_Helper.getDeserializer</definition>
+        <argsstring>(java.lang.String mechType, java.lang.Class _javaType, javax.xml.namespace.QName _xmlType)</argsstring>
+        <name>getDeserializer</name>
+        <param>
+          <type>java.lang.String</type>
+          <declname>mechType</declname>
+        </param>
+        <param>
+          <type>java.lang.Class</type>
+          <declname>_javaType</declname>
+        </param>
+        <param>
+          <type>javax.xml.namespace.QName</type>
+          <declname>_xmlType</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get Custom Deserializer </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/acl/ACLEntry_Helper.java" line="62" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/acl/ACLEntry_Helper.java" bodystart="59" bodyend="66"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1acl_1_1ACLEntry__Helper_1ab8674c22678411d9692af37ad4c9b01f" compoundref="service_2acl_2ACLEntry__Helper_8java" startline="12">org.glite.security.voms.service.acl.ACLEntry_Helper::typeDesc</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/acl/ACLEntry_Helper.java" line="10" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/acl/ACLEntry_Helper.java" bodystart="10" bodyend="68"/>
+    <listofallmembers>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1acl_1_1ACLEntry__Helper_1ae791be7052f4292cdb9dd3e61c1ca342" prot="package" virt="non-virtual"><scope>org::glite::security::voms::service::acl::ACLEntry_Helper</scope><name>[static initializer]</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1acl_1_1ACLEntry__Helper_1a47a80087d9d2328fc6d6d67edafb8ed2" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::acl::ACLEntry_Helper</scope><name>getDeserializer</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1acl_1_1ACLEntry__Helper_1a4c9bf5b1efb38d33d467204b4b4cc842" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::acl::ACLEntry_Helper</scope><name>getSerializer</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1acl_1_1ACLEntry__Helper_1a53c9824ad44ef0cbc42cd5c32d63c6fb" prot="public" virt="non-virtual"><scope>org::glite::security::voms::service::acl::ACLEntry_Helper</scope><name>getTypeDesc</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1service_1_1acl_1_1ACLEntry__Helper_1ab8674c22678411d9692af37ad4c9b01f" prot="private" virt="non-virtual"><scope>org::glite::security::voms::service::acl::ACLEntry_Helper</scope><name>typeDesc</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

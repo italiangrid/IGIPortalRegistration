@@ -1,0 +1,271 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="interfaceportal_1_1registration_1_1services_1_1UserToVoService" kind="interface" prot="public">
+    <compoundname>portal::registration::services::UserToVoService</compoundname>
+    <derivedcompoundref refid="classportal_1_1registration_1_1services_1_1UserToVoServiceImpl" prot="public" virt="non-virtual">portal.registration.services.UserToVoServiceImpl</derivedcompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="interfaceportal_1_1registration_1_1services_1_1UserToVoService_1a870ad36a4e9095735c8f0dfd65fdc960" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void portal.registration.services.UserToVoService.save</definition>
+        <argsstring>(UserToVo transientInstance)</argsstring>
+        <name>save</name>
+        <reimplementedby refid="classportal_1_1registration_1_1services_1_1UserToVoServiceImpl_1a91b600d1ca86d198b56d8a33289f38ef">save</reimplementedby>
+        <param>
+          <type><ref refid="classportal_1_1registration_1_1domain_1_1UserToVo" kindref="compound">UserToVo</ref></type>
+          <declname>transientInstance</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/services/UserToVoService.java" line="10"/>
+        <referencedby refid="classportal_1_1registration_1_1controller_1_1AddUserToVOController_1a299d78081b72ac80a2adba3f33c7970c" compoundref="AddUserToVOController_8java" startline="70" endline="142">portal.registration.controller.AddUserToVOController::addUserToVo</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="interfaceportal_1_1registration_1_1services_1_1UserToVoService_1a016c1201361d43d24ee4cc1a6ea9d249" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void portal.registration.services.UserToVoService.save</definition>
+        <argsstring>(int userId, int idVo)</argsstring>
+        <name>save</name>
+        <reimplementedby refid="classportal_1_1registration_1_1services_1_1UserToVoServiceImpl_1a9c646018122c3e1132c8741f522ad388">save</reimplementedby>
+        <param>
+          <type>int</type>
+          <declname>userId</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>idVo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/services/UserToVoService.java" line="12"/>
+      </memberdef>
+      <memberdef kind="function" id="interfaceportal_1_1registration_1_1services_1_1UserToVoService_1ab5f5da32c585f0fcd1eac1ac0302b733" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>List&lt; <ref refid="classportal_1_1registration_1_1domain_1_1UserToVo" kindref="compound">UserToVo</ref> &gt;</type>
+        <definition>List&lt;UserToVo&gt; portal.registration.services.UserToVoService.findById</definition>
+        <argsstring>(int userId)</argsstring>
+        <name>findById</name>
+        <reimplementedby refid="classportal_1_1registration_1_1services_1_1UserToVoServiceImpl_1a796051a87541708958b985fadf65527b">findById</reimplementedby>
+        <param>
+          <type>int</type>
+          <declname>userId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/services/UserToVoService.java" line="14"/>
+        <referencedby refid="classportal_1_1registration_1_1controller_1_1EditUserToVoController_1aeb87d1e842bf381602343632f23f58e2" compoundref="EditUserToVoController_8java" startline="80" endline="114">portal.registration.controller.EditUserToVoController::addUserToVo</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1controller_1_1AddUserToVOController_1a31c8971c1e53637d1d8b26e660f77397" compoundref="AddUserToVOController_8java" startline="186" endline="258">portal.registration.controller.AddUserToVOController::checkVO</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1controller_1_1EditUserToVoController_1ab5f3b0f3201e6fead40534252c9f6836" compoundref="EditUserToVoController_8java" startline="59" endline="61">portal.registration.controller.EditUserToVoController::getUserToVo</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1controller_1_1EditUserInfoController_1a09ee8e90312405588fd950063bb797e4" compoundref="EditUserInfoController_8java" startline="51" endline="60">portal.registration.controller.EditUserInfoController::showEditUserInfoForm</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1controller_1_1AddUserToVoPresentsController_1a648d1bc4409c6d066c845d26eeef8549" compoundref="AddUserToVoPresentsController_8java" startline="55" endline="63">portal.registration.controller.AddUserToVoPresentsController::showUserInfoForm</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="interfaceportal_1_1registration_1_1services_1_1UserToVoService_1a1e8049121c67ba84866e0ed608077200" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>List&lt; <ref refid="classportal_1_1registration_1_1domain_1_1Vo" kindref="compound">Vo</ref> &gt;</type>
+        <definition>List&lt;Vo&gt; portal.registration.services.UserToVoService.findVoByUserId</definition>
+        <argsstring>(int userId)</argsstring>
+        <name>findVoByUserId</name>
+        <reimplementedby refid="classportal_1_1registration_1_1services_1_1UserToVoServiceImpl_1a93fe581a43664c8779a19515b28800ce">findVoByUserId</reimplementedby>
+        <param>
+          <type>int</type>
+          <declname>userId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/services/UserToVoService.java" line="16"/>
+        <referencedby refid="classportal_1_1registration_1_1controller_1_1EditUserInfoController_1a1b6482d97146c7f03383907df1ff7513" compoundref="EditUserInfoController_8java" startline="166" endline="169">portal.registration.controller.EditUserInfoController::getUserToVoList</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1controller_1_1AddUserToVoPresentsController_1a66e34d894781132d66af5df698ceca93" compoundref="AddUserToVoPresentsController_8java" startline="49" endline="52">portal.registration.controller.AddUserToVoPresentsController::getUserToVoList</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1controller_1_1AddUserToVOController_1a99b8d1de74cee992c19354ae506e6e1f" compoundref="AddUserToVOController_8java" startline="343" endline="367">portal.registration.controller.AddUserToVOController::removeUserToVoEdit</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1controller_1_1AddUserToVOController_1a57a44676aa98d8f479812586e40b0d29" compoundref="AddUserToVOController_8java" startline="261" endline="286">portal.registration.controller.AddUserToVOController::setDefaultUserToVo</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1controller_1_1AddUserToVOController_1aeeb052d81e475bcbdc3b8cfce49cb819" compoundref="AddUserToVOController_8java" startline="315" endline="340">portal.registration.controller.AddUserToVOController::setDefaultUserToVoEdit</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="interfaceportal_1_1registration_1_1services_1_1UserToVoService_1a0cc57837f0e7dcf3bd50eb9e6160e1a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void portal.registration.services.UserToVoService.delete</definition>
+        <argsstring>(int userId, int idVo)</argsstring>
+        <name>delete</name>
+        <reimplementedby refid="classportal_1_1registration_1_1services_1_1UserToVoServiceImpl_1a09630303455a897a321e1b03c7871370">delete</reimplementedby>
+        <param>
+          <type>int</type>
+          <declname>userId</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>idVo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/services/UserToVoService.java" line="18"/>
+        <referencedby refid="classportal_1_1registration_1_1controller_1_1AddUserToVOController_1ac000f6bd6a7d3feb815b0df00d919e79" compoundref="AddUserToVOController_8java" startline="289" endline="312">portal.registration.controller.AddUserToVOController::removeUserToVo</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1controller_1_1AddUserToVOController_1a99b8d1de74cee992c19354ae506e6e1f" compoundref="AddUserToVOController_8java" startline="343" endline="367">portal.registration.controller.AddUserToVOController::removeUserToVoEdit</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="interfaceportal_1_1registration_1_1services_1_1UserToVoService_1af8f698d8e1d75635d5347f37fb9a9ab1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean portal.registration.services.UserToVoService.setDefault</definition>
+        <argsstring>(int userId, int idVo)</argsstring>
+        <name>setDefault</name>
+        <reimplementedby refid="classportal_1_1registration_1_1services_1_1UserToVoServiceImpl_1a656d4b59616282ee08ff0b82112dae72">setDefault</reimplementedby>
+        <param>
+          <type>int</type>
+          <declname>userId</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>idVo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/services/UserToVoService.java" line="20"/>
+        <referencedby refid="classportal_1_1registration_1_1controller_1_1AddUserToVOController_1a57a44676aa98d8f479812586e40b0d29" compoundref="AddUserToVOController_8java" startline="261" endline="286">portal.registration.controller.AddUserToVOController::setDefaultUserToVo</referencedby>
+        <referencedby refid="classportal_1_1registration_1_1controller_1_1AddUserToVOController_1aeeb052d81e475bcbdc3b8cfce49cb819" compoundref="AddUserToVOController_8java" startline="315" endline="340">portal.registration.controller.AddUserToVOController::setDefaultUserToVoEdit</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="interfaceportal_1_1registration_1_1services_1_1UserToVoService_1ab215f16831a5396fc33cbf61ad09d7cd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classportal_1_1registration_1_1domain_1_1UserToVo" kindref="compound">UserToVo</ref></type>
+        <definition>UserToVo portal.registration.services.UserToVoService.findById</definition>
+        <argsstring>(int userId, int idVo)</argsstring>
+        <name>findById</name>
+        <reimplementedby refid="classportal_1_1registration_1_1services_1_1UserToVoServiceImpl_1a9568abc4c331eea96873cf2ec307c5c7">findById</reimplementedby>
+        <param>
+          <type>int</type>
+          <declname>userId</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>idVo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/services/UserToVoService.java" line="22"/>
+      </memberdef>
+      <memberdef kind="function" id="interfaceportal_1_1registration_1_1services_1_1UserToVoService_1a085c0254ca3f91556da0c51b19ffbdac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void portal.registration.services.UserToVoService.update</definition>
+        <argsstring>(UserToVo utv)</argsstring>
+        <name>update</name>
+        <reimplementedby refid="classportal_1_1registration_1_1services_1_1UserToVoServiceImpl_1ae8ee85dc02aa3dac9b40f6eaf1e164ed">update</reimplementedby>
+        <param>
+          <type><ref refid="classportal_1_1registration_1_1domain_1_1UserToVo" kindref="compound">UserToVo</ref></type>
+          <declname>utv</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/services/UserToVoService.java" line="24"/>
+        <referencedby refid="classportal_1_1registration_1_1controller_1_1EditUserToVoController_1aeb87d1e842bf381602343632f23f58e2" compoundref="EditUserToVoController_8java" startline="80" endline="114">portal.registration.controller.EditUserToVoController::addUserToVo</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="interfaceportal_1_1registration_1_1services_1_1UserToVoService_1a5043e049fe2c30db59896ea2f285f6a8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>String</type>
+        <definition>String portal.registration.services.UserToVoService.findDefaultVo</definition>
+        <argsstring>(int userId)</argsstring>
+        <name>findDefaultVo</name>
+        <reimplementedby refid="classportal_1_1registration_1_1services_1_1UserToVoServiceImpl_1ab382e547c2d550b82c1b7d6288f7d4df">findDefaultVo</reimplementedby>
+        <param>
+          <type>int</type>
+          <declname>userId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/services/UserToVoService.java" line="26"/>
+        <referencedby refid="classportal_1_1registration_1_1controller_1_1EditUserInfoController_1a4c6f1ba65b8e273d4d797460dc4ccfe0" compoundref="EditUserInfoController_8java" startline="146" endline="148">portal.registration.controller.EditUserInfoController::getDefaultVo</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="interfaceportal_1_1registration_1_1services_1_1UserToVoService_1ac292212be624e2b7209bf3808154870b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>String</type>
+        <definition>String portal.registration.services.UserToVoService.getDefaultFqan</definition>
+        <argsstring>(int userId)</argsstring>
+        <name>getDefaultFqan</name>
+        <reimplementedby refid="classportal_1_1registration_1_1services_1_1UserToVoServiceImpl_1a59b213edbc6dde1a2276bcfdccf961cd">getDefaultFqan</reimplementedby>
+        <param>
+          <type>int</type>
+          <declname>userId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/services/UserToVoService.java" line="28"/>
+        <referencedby refid="classportal_1_1registration_1_1controller_1_1EditUserInfoController_1a1b09df477dad855f216695324332048e" compoundref="EditUserInfoController_8java" startline="151" endline="153">portal.registration.controller.EditUserInfoController::getDefaultFqan</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="interfaceportal_1_1registration_1_1services_1_1UserToVoService_1a4ddfa9a3d1f9fc980b62b22c5d2c0ad3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int portal.registration.services.UserToVoService.getNumberOfUserToVo</definition>
+        <argsstring>(int userId)</argsstring>
+        <name>getNumberOfUserToVo</name>
+        <reimplementedby refid="classportal_1_1registration_1_1services_1_1UserToVoServiceImpl_1a3234ac9c5a6d12008564625b9ecc0d6e">getNumberOfUserToVo</reimplementedby>
+        <param>
+          <type>int</type>
+          <declname>userId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/services/UserToVoService.java" line="30"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="613">
+        <label>portal.registration.services.UserToVoService</label>
+        <link refid="interfaceportal_1_1registration_1_1services_1_1UserToVoService"/>
+      </node>
+      <node id="614">
+        <label>portal.registration.services.UserToVoServiceImpl</label>
+        <link refid="classportal_1_1registration_1_1services_1_1UserToVoServiceImpl"/>
+        <childnode refid="613" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/services/UserToVoService.java" line="8" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/services/UserToVoService.java" bodystart="8" bodyend="32"/>
+    <listofallmembers>
+      <member refid="interfaceportal_1_1registration_1_1services_1_1UserToVoService_1a0cc57837f0e7dcf3bd50eb9e6160e1a0" prot="public" virt="non-virtual"><scope>portal::registration::services::UserToVoService</scope><name>delete</name></member>
+      <member refid="interfaceportal_1_1registration_1_1services_1_1UserToVoService_1ab5f5da32c585f0fcd1eac1ac0302b733" prot="public" virt="non-virtual"><scope>portal::registration::services::UserToVoService</scope><name>findById</name></member>
+      <member refid="interfaceportal_1_1registration_1_1services_1_1UserToVoService_1ab215f16831a5396fc33cbf61ad09d7cd" prot="public" virt="non-virtual"><scope>portal::registration::services::UserToVoService</scope><name>findById</name></member>
+      <member refid="interfaceportal_1_1registration_1_1services_1_1UserToVoService_1a5043e049fe2c30db59896ea2f285f6a8" prot="public" virt="non-virtual"><scope>portal::registration::services::UserToVoService</scope><name>findDefaultVo</name></member>
+      <member refid="interfaceportal_1_1registration_1_1services_1_1UserToVoService_1a1e8049121c67ba84866e0ed608077200" prot="public" virt="non-virtual"><scope>portal::registration::services::UserToVoService</scope><name>findVoByUserId</name></member>
+      <member refid="interfaceportal_1_1registration_1_1services_1_1UserToVoService_1ac292212be624e2b7209bf3808154870b" prot="public" virt="non-virtual"><scope>portal::registration::services::UserToVoService</scope><name>getDefaultFqan</name></member>
+      <member refid="interfaceportal_1_1registration_1_1services_1_1UserToVoService_1a4ddfa9a3d1f9fc980b62b22c5d2c0ad3" prot="public" virt="non-virtual"><scope>portal::registration::services::UserToVoService</scope><name>getNumberOfUserToVo</name></member>
+      <member refid="interfaceportal_1_1registration_1_1services_1_1UserToVoService_1a870ad36a4e9095735c8f0dfd65fdc960" prot="public" virt="non-virtual"><scope>portal::registration::services::UserToVoService</scope><name>save</name></member>
+      <member refid="interfaceportal_1_1registration_1_1services_1_1UserToVoService_1a016c1201361d43d24ee4cc1a6ea9d249" prot="public" virt="non-virtual"><scope>portal::registration::services::UserToVoService</scope><name>save</name></member>
+      <member refid="interfaceportal_1_1registration_1_1services_1_1UserToVoService_1af8f698d8e1d75635d5347f37fb9a9ab1" prot="public" virt="non-virtual"><scope>portal::registration::services::UserToVoService</scope><name>setDefault</name></member>
+      <member refid="interfaceportal_1_1registration_1_1services_1_1UserToVoService_1a085c0254ca3f91556da0c51b19ffbdac" prot="public" virt="non-virtual"><scope>portal::registration::services::UserToVoService</scope><name>update</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

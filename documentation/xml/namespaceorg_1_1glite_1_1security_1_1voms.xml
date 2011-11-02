@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="namespaceorg_1_1glite_1_1security_1_1voms" kind="namespace">
+    <compoundname>org::glite::security::voms</compoundname>
+    <innerclass refid="classorg_1_1glite_1_1security_1_1voms_1_1ACLEntry" prot="public">org::glite::security::voms::ACLEntry</innerclass>
+    <innerclass refid="classorg_1_1glite_1_1security_1_1voms_1_1ACLEntry__Helper" prot="public">org::glite::security::voms::ACLEntry_Helper</innerclass>
+    <innerclass refid="classorg_1_1glite_1_1security_1_1voms_1_1User" prot="public">org::glite::security::voms::User</innerclass>
+    <innerclass refid="classorg_1_1glite_1_1security_1_1voms_1_1User__Helper" prot="public">org::glite::security::voms::User_Helper</innerclass>
+    <innerclass refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException" prot="public">org::glite::security::voms::VOMSException</innerclass>
+    <innerclass refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException__Helper" prot="public">org::glite::security::voms::VOMSException_Helper</innerclass>
+    <innernamespace refid="namespaceorg_1_1glite_1_1security_1_1voms_1_1service">org::glite::security::voms::service</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>ACLEntry.java</para><para>This file was auto-generated from WSDL by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.</para><para>ACLEntry_Helper.java</para><para>This file was auto-generated from WSDL by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.</para><para><ref refid="User_8java" kindref="compound">User.java</ref></para><para>This file was auto-generated from WSDL by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.</para><para><ref refid="User__Helper_8java" kindref="compound">User_Helper.java</ref></para><para>This file was auto-generated from WSDL by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.</para><para><ref refid="VOMSException_8java" kindref="compound">VOMSException.java</ref></para><para>This file was auto-generated from WSDL by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.</para><para><ref refid="VOMSException__Helper_8java" kindref="compound">VOMSException_Helper.java</ref></para><para>This file was auto-generated from WSDL by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter. </para>    </detaileddescription>
+    <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/ACLEntry.java" line="8"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node1" href="$interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes.html" title="org.glite.security.voms.service.attributes.VOMSAttributes" alt="" coords="5,55,328,81"/>
+<area shape="rect" id="node3" href="$classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingImpl.html" title="org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingImpl" alt="" coords="388,4,802,31"/>
+<area shape="rect" id="node5" href="$classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingSkeleton.html" title="org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton" alt="" coords="376,55,814,81"/>
+<area shape="rect" id="node7" href="$classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesSoapBindingStub.html" title="org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingStub" alt="" coords="387,105,803,132"/>
+</map>

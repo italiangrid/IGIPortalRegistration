@@ -1,0 +1,590 @@
+\hypertarget{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilityServiceLocator}{
+\section{org.glite.security.voms.service.compatibility.VOMSCompatibilityServiceLocator Class Reference}
+\label{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilityServiceLocator}\index{org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator@{org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator}}
+}
+
+
+Inheritance diagram for org.glite.security.voms.service.compatibility.VOMSCompatibilityServiceLocator:
+
+
+Collaboration diagram for org.glite.security.voms.service.compatibility.VOMSCompatibilityServiceLocator:
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilityServiceLocator_aaa3f7cb92b4e7f5a76bf5b0879f3163a}{VOMSCompatibilityServiceLocator} ()
+\item 
+\hyperlink{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilityServiceLocator_a21caafafe58edb8bb46c3689620e1314}{VOMSCompatibilityServiceLocator} (org.apache.axis.EngineConfiguration config)
+\item 
+\hyperlink{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilityServiceLocator_a391a207bac9fa7fd864d462b8cc604fc}{VOMSCompatibilityServiceLocator} (java.lang.String wsdlLoc, javax.xml.namespace.QName sName)  throws javax.xml.rpc.ServiceException 
+\item 
+java.lang.String \hyperlink{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilityServiceLocator_a6ae0e7b0000df21f3907e4a5ad195c0b}{getVOMSCompatibilityAddress} ()
+\item 
+java.lang.String \hyperlink{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilityServiceLocator_ab20dc68744a55b30dcaa10caf7d6d0f3}{getVOMSCompatibilityWSDDServiceName} ()
+\item 
+void \hyperlink{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilityServiceLocator_a48d0be26d969caccb7701500f3877cc6}{setVOMSCompatibilityWSDDServiceName} (java.lang.String name)
+\item 
+\hyperlink{interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibility}{org.glite.security.voms.service.compatibility.VOMSCompatibility} \hyperlink{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilityServiceLocator_ae6382603bd094e24a9206cdc31f1f906}{getVOMSCompatibility} ()  throws javax.xml.rpc.ServiceException 
+\item 
+\hyperlink{interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibility}{org.glite.security.voms.service.compatibility.VOMSCompatibility} \hyperlink{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilityServiceLocator_a002deaf23830d35f3e1b711e54b51f2e}{getVOMSCompatibility} (java.net.URL portAddress)  throws javax.xml.rpc.ServiceException 
+\item 
+void \hyperlink{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilityServiceLocator_a55522eb8c45fc41e2818243f89e7b798}{setVOMSCompatibilityEndpointAddress} (java.lang.String address)
+\item 
+java.rmi.Remote \hyperlink{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilityServiceLocator_a493ba898a7ac580d765db792726c212a}{getPort} (Class serviceEndpointInterface)  throws javax.xml.rpc.ServiceException 
+\item 
+java.rmi.Remote \hyperlink{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilityServiceLocator_a043c4f0f53ebd2a929b36e469c440b0b}{getPort} (javax.xml.namespace.QName portName, Class serviceEndpointInterface)  throws javax.xml.rpc.ServiceException 
+\item 
+namespace::QName \hyperlink{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilityServiceLocator_aee212f56af4ef41b33cd5d2fef7059b2}{getServiceName} ()
+\item 
+java.util.Iterator \hyperlink{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilityServiceLocator_aa8efc072c7b3090f70426c98a232f646}{getPorts} ()
+\item 
+void \hyperlink{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilityServiceLocator_a6b33d464f58b25b09387ac85cd72f880}{setEndpointAddress} (java.lang.String portName, java.lang.String address)  throws javax.xml.rpc.ServiceException 
+\item 
+void \hyperlink{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilityServiceLocator_ad72ee1dfe54210cf6c72e45dafbfdba1}{setEndpointAddress} (javax.xml.namespace.QName portName, java.lang.String address)  throws javax.xml.rpc.ServiceException 
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+java.lang.String \hyperlink{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilityServiceLocator_a1ce23128367b21c3f65ae5f30ca92795}{VOMSCompatibility\_\-address} = \char`\"{}https://localhost:8443/glite-\/security-\/voms-\/admin-\/interface/\hyperlink{interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibility}{VOMSCompatibility}\char`\"{}
+\item 
+java.lang.String \hyperlink{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilityServiceLocator_a7e668f5502e13d2b520cab0b1b8f30b4}{VOMSCompatibilityWSDDServiceName} = \char`\"{}VOMSCompatibility\char`\"{}
+\item 
+java.util.HashSet \hyperlink{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilityServiceLocator_a335d56852056cb54d1eed2d21d3cd8ce}{ports} = null
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 10 of file VOMSCompatibilityServiceLocator.java.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilityServiceLocator_aaa3f7cb92b4e7f5a76bf5b0879f3163a}{
+\index{org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator@{org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator}!VOMSCompatibilityServiceLocator@{VOMSCompatibilityServiceLocator}}
+\index{VOMSCompatibilityServiceLocator@{VOMSCompatibilityServiceLocator}!org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator@{org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator}}
+\subsubsection[{VOMSCompatibilityServiceLocator}]{\setlength{\rightskip}{0pt plus 5cm}org.glite.security.voms.service.compatibility.VOMSCompatibilityServiceLocator.VOMSCompatibilityServiceLocator (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilityServiceLocator_aaa3f7cb92b4e7f5a76bf5b0879f3163a}
+
+
+Definition at line 12 of file VOMSCompatibilityServiceLocator.java.
+
+
+\begin{DoxyCode}
+                                             {
+    }
+\end{DoxyCode}
+\hypertarget{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilityServiceLocator_a21caafafe58edb8bb46c3689620e1314}{
+\index{org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator@{org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator}!VOMSCompatibilityServiceLocator@{VOMSCompatibilityServiceLocator}}
+\index{VOMSCompatibilityServiceLocator@{VOMSCompatibilityServiceLocator}!org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator@{org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator}}
+\subsubsection[{VOMSCompatibilityServiceLocator}]{\setlength{\rightskip}{0pt plus 5cm}org.glite.security.voms.service.compatibility.VOMSCompatibilityServiceLocator.VOMSCompatibilityServiceLocator (
+\begin{DoxyParamCaption}
+\item[{org.apache.axis.EngineConfiguration}]{config}
+\end{DoxyParamCaption}
+)}}
+\label{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilityServiceLocator_a21caafafe58edb8bb46c3689620e1314}
+
+
+Definition at line 16 of file VOMSCompatibilityServiceLocator.java.
+
+
+\begin{DoxyCode}
+                                                                                 
+            {
+        super(config);
+    }
+\end{DoxyCode}
+\hypertarget{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilityServiceLocator_a391a207bac9fa7fd864d462b8cc604fc}{
+\index{org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator@{org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator}!VOMSCompatibilityServiceLocator@{VOMSCompatibilityServiceLocator}}
+\index{VOMSCompatibilityServiceLocator@{VOMSCompatibilityServiceLocator}!org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator@{org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator}}
+\subsubsection[{VOMSCompatibilityServiceLocator}]{\setlength{\rightskip}{0pt plus 5cm}org.glite.security.voms.service.compatibility.VOMSCompatibilityServiceLocator.VOMSCompatibilityServiceLocator (
+\begin{DoxyParamCaption}
+\item[{java.lang.String}]{wsdlLoc, }
+\item[{javax.xml.namespace.QName}]{sName}
+\end{DoxyParamCaption}
+)  throws javax.xml.rpc.ServiceException }}
+\label{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilityServiceLocator_a391a207bac9fa7fd864d462b8cc604fc}
+
+
+Definition at line 20 of file VOMSCompatibilityServiceLocator.java.
+
+
+\begin{DoxyCode}
+                                                                                 
+                                                                 {
+        super(wsdlLoc, sName);
+    }
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilityServiceLocator_a493ba898a7ac580d765db792726c212a}{
+\index{org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator@{org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator}!getPort@{getPort}}
+\index{getPort@{getPort}!org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator@{org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator}}
+\subsubsection[{getPort}]{\setlength{\rightskip}{0pt plus 5cm}java.rmi.Remote org.glite.security.voms.service.compatibility.VOMSCompatibilityServiceLocator.getPort (
+\begin{DoxyParamCaption}
+\item[{Class}]{serviceEndpointInterface}
+\end{DoxyParamCaption}
+)  throws javax.xml.rpc.ServiceException }}
+\label{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilityServiceLocator_a493ba898a7ac580d765db792726c212a}
+For the given interface, get the stub implementation. If this service has no port for the given interface, then ServiceException is thrown. 
+
+Definition at line 73 of file VOMSCompatibilityServiceLocator.java.
+
+
+
+References org.glite.security.voms.service.compatibility.VOMSCompatibilityServiceLocator.getVOMSCompatibilityWSDDServiceName(), and org.glite.security.voms.service.compatibility.VOMSCompatibilityServiceLocator.VOMSCompatibility\_\-address.
+
+
+
+Referenced by org.glite.security.voms.service.compatibility.VOMSCompatibilityServiceLocator.getPort().
+
+
+\begin{DoxyCode}
+                                                                                 
+                              {
+        try {
+            if (org.glite.security.voms.service.compatibility.VOMSCompatibility.c
+      lass.isAssignableFrom(serviceEndpointInterface)) {
+                org.glite.security.voms.service.compatibility.VOMSCompatibilitySo
+      apBindingStub _stub = new org.glite.security.voms.service.compatibility.VOMSCompa
+      tibilitySoapBindingStub(new java.net.URL(VOMSCompatibility_address), this);
+                _stub.setPortName(getVOMSCompatibilityWSDDServiceName());
+                return _stub;
+            }
+        }
+        catch (java.lang.Throwable t) {
+            throw new javax.xml.rpc.ServiceException(t);
+        }
+        throw new javax.xml.rpc.ServiceException("There is no stub implementation
+       for the interface:  " + (serviceEndpointInterface == null ? "null" : serviceEndp
+      ointInterface.getName()));
+    }
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+
+
+
+
+Here is the caller graph for this function:
+
+
+\hypertarget{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilityServiceLocator_a043c4f0f53ebd2a929b36e469c440b0b}{
+\index{org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator@{org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator}!getPort@{getPort}}
+\index{getPort@{getPort}!org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator@{org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator}}
+\subsubsection[{getPort}]{\setlength{\rightskip}{0pt plus 5cm}java.rmi.Remote org.glite.security.voms.service.compatibility.VOMSCompatibilityServiceLocator.getPort (
+\begin{DoxyParamCaption}
+\item[{javax.xml.namespace.QName}]{portName, }
+\item[{Class}]{serviceEndpointInterface}
+\end{DoxyParamCaption}
+)  throws javax.xml.rpc.ServiceException }}
+\label{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilityServiceLocator_a043c4f0f53ebd2a929b36e469c440b0b}
+For the given interface, get the stub implementation. If this service has no port for the given interface, then ServiceException is thrown. 
+
+Definition at line 92 of file VOMSCompatibilityServiceLocator.java.
+
+
+
+References org.glite.security.voms.service.compatibility.VOMSCompatibilityServiceLocator.getPort(), and org.glite.security.voms.service.compatibility.VOMSCompatibilityServiceLocator.getVOMSCompatibility().
+
+
+\begin{DoxyCode}
+                                                                                 
+                                                                  {
+        if (portName == null) {
+            return getPort(serviceEndpointInterface);
+        }
+        java.lang.String inputPortName = portName.getLocalPart();
+        if ("VOMSCompatibility".equals(inputPortName)) {
+            return getVOMSCompatibility();
+        }
+        else  {
+            java.rmi.Remote _stub = getPort(serviceEndpointInterface);
+            ((org.apache.axis.client.Stub) _stub).setPortName(portName);
+            return _stub;
+        }
+    }
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+
+
+\hypertarget{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilityServiceLocator_aa8efc072c7b3090f70426c98a232f646}{
+\index{org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator@{org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator}!getPorts@{getPorts}}
+\index{getPorts@{getPorts}!org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator@{org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator}}
+\subsubsection[{getPorts}]{\setlength{\rightskip}{0pt plus 5cm}java.util.Iterator org.glite.security.voms.service.compatibility.VOMSCompatibilityServiceLocator.getPorts (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilityServiceLocator_aa8efc072c7b3090f70426c98a232f646}
+
+
+Definition at line 113 of file VOMSCompatibilityServiceLocator.java.
+
+
+
+References org.glite.security.voms.service.compatibility.VOMSCompatibilityServiceLocator.ports.
+
+
+\begin{DoxyCode}
+                                         {
+        if (ports == null) {
+            ports = new java.util.HashSet();
+            ports.add(new javax.xml.namespace.QName("http://glite.org/wsdl/servic
+      es/org.glite.security.voms.service.compatibility", "VOMSCompatibility"));
+        }
+        return ports.iterator();
+    }
+\end{DoxyCode}
+\hypertarget{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilityServiceLocator_aee212f56af4ef41b33cd5d2fef7059b2}{
+\index{org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator@{org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator}!getServiceName@{getServiceName}}
+\index{getServiceName@{getServiceName}!org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator@{org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator}}
+\subsubsection[{getServiceName}]{\setlength{\rightskip}{0pt plus 5cm}namespace ::QName org.glite.security.voms.service.compatibility.VOMSCompatibilityServiceLocator.getServiceName (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilityServiceLocator_aee212f56af4ef41b33cd5d2fef7059b2}
+
+
+Definition at line 107 of file VOMSCompatibilityServiceLocator.java.
+
+
+\begin{DoxyCode}
+                                                      {
+        return new javax.xml.namespace.QName("http://glite.org/wsdl/services/org.
+      glite.security.voms.service.compatibility", "VOMSCompatibilityService");
+    }
+\end{DoxyCode}
+\hypertarget{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilityServiceLocator_a002deaf23830d35f3e1b711e54b51f2e}{
+\index{org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator@{org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator}!getVOMSCompatibility@{getVOMSCompatibility}}
+\index{getVOMSCompatibility@{getVOMSCompatibility}!org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator@{org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator}}
+\subsubsection[{getVOMSCompatibility}]{\setlength{\rightskip}{0pt plus 5cm}{\bf org.glite.security.voms.service.compatibility.VOMSCompatibility} org.glite.security.voms.service.compatibility.VOMSCompatibilityServiceLocator.getVOMSCompatibility (
+\begin{DoxyParamCaption}
+\item[{java.net.URL}]{portAddress}
+\end{DoxyParamCaption}
+)  throws javax.xml.rpc.ServiceException }}
+\label{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilityServiceLocator_a002deaf23830d35f3e1b711e54b51f2e}
+
+
+Implements \hyperlink{interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilityService_a269f388a966687cdde12e8e4652a3366}{org.glite.security.voms.service.compatibility.VOMSCompatibilityService}.
+
+
+
+Definition at line 53 of file VOMSCompatibilityServiceLocator.java.
+
+
+
+References org.glite.security.voms.service.compatibility.VOMSCompatibilityServiceLocator.getVOMSCompatibilityWSDDServiceName().
+
+
+\begin{DoxyCode}
+                                                                                 
+                                                                                     {
+        try {
+            org.glite.security.voms.service.compatibility.VOMSCompatibilitySoapBi
+      ndingStub _stub = new org.glite.security.voms.service.compatibility.VOMSCompatibi
+      litySoapBindingStub(portAddress, this);
+            _stub.setPortName(getVOMSCompatibilityWSDDServiceName());
+            return _stub;
+        }
+        catch (org.apache.axis.AxisFault e) {
+            return null;
+        }
+    }
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+
+
+\hypertarget{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilityServiceLocator_ae6382603bd094e24a9206cdc31f1f906}{
+\index{org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator@{org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator}!getVOMSCompatibility@{getVOMSCompatibility}}
+\index{getVOMSCompatibility@{getVOMSCompatibility}!org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator@{org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator}}
+\subsubsection[{getVOMSCompatibility}]{\setlength{\rightskip}{0pt plus 5cm}{\bf org.glite.security.voms.service.compatibility.VOMSCompatibility} org.glite.security.voms.service.compatibility.VOMSCompatibilityServiceLocator.getVOMSCompatibility (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)  throws javax.xml.rpc.ServiceException }}
+\label{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilityServiceLocator_ae6382603bd094e24a9206cdc31f1f906}
+
+
+Implements \hyperlink{interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilityService_a03f2aec60c23f8c05fd55608b625969e}{org.glite.security.voms.service.compatibility.VOMSCompatibilityService}.
+
+
+
+Definition at line 42 of file VOMSCompatibilityServiceLocator.java.
+
+
+
+References org.glite.security.voms.service.compatibility.VOMSCompatibilityServiceLocator.VOMSCompatibility\_\-address.
+
+
+
+Referenced by org.glite.security.voms.service.compatibility.VOMSCompatibilityServiceLocator.getPort().
+
+
+\begin{DoxyCode}
+                                                                                 
+                                                             {
+       java.net.URL endpoint;
+        try {
+            endpoint = new java.net.URL(VOMSCompatibility_address);
+        }
+        catch (java.net.MalformedURLException e) {
+            throw new javax.xml.rpc.ServiceException(e);
+        }
+        return getVOMSCompatibility(endpoint);
+    }
+\end{DoxyCode}
+
+
+Here is the caller graph for this function:
+
+
+\hypertarget{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilityServiceLocator_a6ae0e7b0000df21f3907e4a5ad195c0b}{
+\index{org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator@{org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator}!getVOMSCompatibilityAddress@{getVOMSCompatibilityAddress}}
+\index{getVOMSCompatibilityAddress@{getVOMSCompatibilityAddress}!org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator@{org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator}}
+\subsubsection[{getVOMSCompatibilityAddress}]{\setlength{\rightskip}{0pt plus 5cm}java.lang.String org.glite.security.voms.service.compatibility.VOMSCompatibilityServiceLocator.getVOMSCompatibilityAddress (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilityServiceLocator_a6ae0e7b0000df21f3907e4a5ad195c0b}
+
+
+Implements \hyperlink{interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilityService_ae7271de8da8106e70ae10f4f1d11c8c7}{org.glite.security.voms.service.compatibility.VOMSCompatibilityService}.
+
+
+
+Definition at line 27 of file VOMSCompatibilityServiceLocator.java.
+
+
+
+References org.glite.security.voms.service.compatibility.VOMSCompatibilityServiceLocator.VOMSCompatibility\_\-address.
+
+
+\begin{DoxyCode}
+                                                          {
+        return VOMSCompatibility_address;
+    }
+\end{DoxyCode}
+\hypertarget{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilityServiceLocator_ab20dc68744a55b30dcaa10caf7d6d0f3}{
+\index{org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator@{org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator}!getVOMSCompatibilityWSDDServiceName@{getVOMSCompatibilityWSDDServiceName}}
+\index{getVOMSCompatibilityWSDDServiceName@{getVOMSCompatibilityWSDDServiceName}!org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator@{org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator}}
+\subsubsection[{getVOMSCompatibilityWSDDServiceName}]{\setlength{\rightskip}{0pt plus 5cm}java.lang.String org.glite.security.voms.service.compatibility.VOMSCompatibilityServiceLocator.getVOMSCompatibilityWSDDServiceName (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilityServiceLocator_ab20dc68744a55b30dcaa10caf7d6d0f3}
+
+
+Definition at line 34 of file VOMSCompatibilityServiceLocator.java.
+
+
+
+References org.glite.security.voms.service.compatibility.VOMSCompatibilityServiceLocator.VOMSCompatibilityWSDDServiceName.
+
+
+
+Referenced by org.glite.security.voms.service.compatibility.VOMSCompatibilityServiceLocator.getPort(), and org.glite.security.voms.service.compatibility.VOMSCompatibilityServiceLocator.getVOMSCompatibility().
+
+
+\begin{DoxyCode}
+                                                                  {
+        return VOMSCompatibilityWSDDServiceName;
+    }
+\end{DoxyCode}
+
+
+Here is the caller graph for this function:
+
+
+\hypertarget{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilityServiceLocator_a6b33d464f58b25b09387ac85cd72f880}{
+\index{org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator@{org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator}!setEndpointAddress@{setEndpointAddress}}
+\index{setEndpointAddress@{setEndpointAddress}!org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator@{org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator}}
+\subsubsection[{setEndpointAddress}]{\setlength{\rightskip}{0pt plus 5cm}void org.glite.security.voms.service.compatibility.VOMSCompatibilityServiceLocator.setEndpointAddress (
+\begin{DoxyParamCaption}
+\item[{java.lang.String}]{portName, }
+\item[{java.lang.String}]{address}
+\end{DoxyParamCaption}
+)  throws javax.xml.rpc.ServiceException }}
+\label{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilityServiceLocator_a6b33d464f58b25b09387ac85cd72f880}
+Set the endpoint address for the specified port name. 
+
+Definition at line 124 of file VOMSCompatibilityServiceLocator.java.
+
+
+
+References org.glite.security.voms.service.compatibility.VOMSCompatibilityServiceLocator.setVOMSCompatibilityEndpointAddress().
+
+
+
+Referenced by org.glite.security.voms.service.compatibility.VOMSCompatibilityServiceLocator.setEndpointAddress().
+
+
+\begin{DoxyCode}
+                                                                                 
+                                                   {
+        
+if ("VOMSCompatibility".equals(portName)) {
+            setVOMSCompatibilityEndpointAddress(address);
+        }
+        else 
+{ // Unknown Port Name
+            throw new javax.xml.rpc.ServiceException(" Cannot set Endpoint Addres
+      s for Unknown Port" + portName);
+        }
+    }
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+
+
+
+
+Here is the caller graph for this function:
+
+
+\hypertarget{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilityServiceLocator_ad72ee1dfe54210cf6c72e45dafbfdba1}{
+\index{org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator@{org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator}!setEndpointAddress@{setEndpointAddress}}
+\index{setEndpointAddress@{setEndpointAddress}!org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator@{org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator}}
+\subsubsection[{setEndpointAddress}]{\setlength{\rightskip}{0pt plus 5cm}void org.glite.security.voms.service.compatibility.VOMSCompatibilityServiceLocator.setEndpointAddress (
+\begin{DoxyParamCaption}
+\item[{javax.xml.namespace.QName}]{portName, }
+\item[{java.lang.String}]{address}
+\end{DoxyParamCaption}
+)  throws javax.xml.rpc.ServiceException }}
+\label{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilityServiceLocator_ad72ee1dfe54210cf6c72e45dafbfdba1}
+Set the endpoint address for the specified port name. 
+
+Definition at line 138 of file VOMSCompatibilityServiceLocator.java.
+
+
+
+References org.glite.security.voms.service.compatibility.VOMSCompatibilityServiceLocator.setEndpointAddress().
+
+
+\begin{DoxyCode}
+                                                                                 
+                                                            {
+        setEndpointAddress(portName.getLocalPart(), address);
+    }
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+
+
+\hypertarget{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilityServiceLocator_a55522eb8c45fc41e2818243f89e7b798}{
+\index{org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator@{org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator}!setVOMSCompatibilityEndpointAddress@{setVOMSCompatibilityEndpointAddress}}
+\index{setVOMSCompatibilityEndpointAddress@{setVOMSCompatibilityEndpointAddress}!org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator@{org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator}}
+\subsubsection[{setVOMSCompatibilityEndpointAddress}]{\setlength{\rightskip}{0pt plus 5cm}void org.glite.security.voms.service.compatibility.VOMSCompatibilityServiceLocator.setVOMSCompatibilityEndpointAddress (
+\begin{DoxyParamCaption}
+\item[{java.lang.String}]{address}
+\end{DoxyParamCaption}
+)}}
+\label{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilityServiceLocator_a55522eb8c45fc41e2818243f89e7b798}
+
+
+Definition at line 64 of file VOMSCompatibilityServiceLocator.java.
+
+
+
+References org.glite.security.voms.service.compatibility.VOMSCompatibilityServiceLocator.VOMSCompatibility\_\-address.
+
+
+
+Referenced by org.glite.security.voms.service.compatibility.VOMSCompatibilityServiceLocator.setEndpointAddress().
+
+
+\begin{DoxyCode}
+                                                                              {
+        VOMSCompatibility_address = address;
+    }
+\end{DoxyCode}
+
+
+Here is the caller graph for this function:
+
+
+\hypertarget{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilityServiceLocator_a48d0be26d969caccb7701500f3877cc6}{
+\index{org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator@{org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator}!setVOMSCompatibilityWSDDServiceName@{setVOMSCompatibilityWSDDServiceName}}
+\index{setVOMSCompatibilityWSDDServiceName@{setVOMSCompatibilityWSDDServiceName}!org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator@{org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator}}
+\subsubsection[{setVOMSCompatibilityWSDDServiceName}]{\setlength{\rightskip}{0pt plus 5cm}void org.glite.security.voms.service.compatibility.VOMSCompatibilityServiceLocator.setVOMSCompatibilityWSDDServiceName (
+\begin{DoxyParamCaption}
+\item[{java.lang.String}]{name}
+\end{DoxyParamCaption}
+)}}
+\label{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilityServiceLocator_a48d0be26d969caccb7701500f3877cc6}
+
+
+Definition at line 38 of file VOMSCompatibilityServiceLocator.java.
+
+
+
+References org.glite.security.voms.service.compatibility.VOMSCompatibilityServiceLocator.VOMSCompatibilityWSDDServiceName.
+
+
+\begin{DoxyCode}
+                                                                           {
+        VOMSCompatibilityWSDDServiceName = name;
+    }
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilityServiceLocator_a335d56852056cb54d1eed2d21d3cd8ce}{
+\index{org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator@{org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator}!ports@{ports}}
+\index{ports@{ports}!org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator@{org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator}}
+\subsubsection[{ports}]{\setlength{\rightskip}{0pt plus 5cm}java.util.HashSet {\bf org.glite.security.voms.service.compatibility.VOMSCompatibilityServiceLocator.ports} = null\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilityServiceLocator_a335d56852056cb54d1eed2d21d3cd8ce}
+
+
+Definition at line 111 of file VOMSCompatibilityServiceLocator.java.
+
+
+
+Referenced by org.glite.security.voms.service.compatibility.VOMSCompatibilityServiceLocator.getPorts().
+
+\hypertarget{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilityServiceLocator_a1ce23128367b21c3f65ae5f30ca92795}{
+\index{org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator@{org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator}!VOMSCompatibility\_\-address@{VOMSCompatibility\_\-address}}
+\index{VOMSCompatibility\_\-address@{VOMSCompatibility\_\-address}!org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator@{org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator}}
+\subsubsection[{VOMSCompatibility\_\-address}]{\setlength{\rightskip}{0pt plus 5cm}java.lang.String {\bf org.glite.security.voms.service.compatibility.VOMSCompatibilityServiceLocator.VOMSCompatibility\_\-address} = \char`\"{}https://localhost:8443/glite-\/security-\/voms-\/admin-\/interface/{\bf VOMSCompatibility}\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilityServiceLocator_a1ce23128367b21c3f65ae5f30ca92795}
+
+
+Definition at line 25 of file VOMSCompatibilityServiceLocator.java.
+
+
+
+Referenced by org.glite.security.voms.service.compatibility.VOMSCompatibilityServiceLocator.getPort(), org.glite.security.voms.service.compatibility.VOMSCompatibilityServiceLocator.getVOMSCompatibility(), org.glite.security.voms.service.compatibility.VOMSCompatibilityServiceLocator.getVOMSCompatibilityAddress(), and org.glite.security.voms.service.compatibility.VOMSCompatibilityServiceLocator.setVOMSCompatibilityEndpointAddress().
+
+\hypertarget{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilityServiceLocator_a7e668f5502e13d2b520cab0b1b8f30b4}{
+\index{org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator@{org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator}!VOMSCompatibilityWSDDServiceName@{VOMSCompatibilityWSDDServiceName}}
+\index{VOMSCompatibilityWSDDServiceName@{VOMSCompatibilityWSDDServiceName}!org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator@{org::glite::security::voms::service::compatibility::VOMSCompatibilityServiceLocator}}
+\subsubsection[{VOMSCompatibilityWSDDServiceName}]{\setlength{\rightskip}{0pt plus 5cm}java.lang.String {\bf org.glite.security.voms.service.compatibility.VOMSCompatibilityServiceLocator.VOMSCompatibilityWSDDServiceName} = \char`\"{}VOMSCompatibility\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classorg_1_1glite_1_1security_1_1voms_1_1service_1_1compatibility_1_1VOMSCompatibilityServiceLocator_a7e668f5502e13d2b520cab0b1b8f30b4}
+
+
+Definition at line 32 of file VOMSCompatibilityServiceLocator.java.
+
+
+
+Referenced by org.glite.security.voms.service.compatibility.VOMSCompatibilityServiceLocator.getVOMSCompatibilityWSDDServiceName(), and org.glite.security.voms.service.compatibility.VOMSCompatibilityServiceLocator.setVOMSCompatibilityWSDDServiceName().
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/service/compatibility/\hyperlink{VOMSCompatibilityServiceLocator_8java}{VOMSCompatibilityServiceLocator.java}\end{DoxyCompactItemize}

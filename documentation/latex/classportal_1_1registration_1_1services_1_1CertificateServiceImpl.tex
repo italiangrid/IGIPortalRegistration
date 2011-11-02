@@ -1,0 +1,357 @@
+\hypertarget{classportal_1_1registration_1_1services_1_1CertificateServiceImpl}{
+\section{portal.registration.services.CertificateServiceImpl Class Reference}
+\label{classportal_1_1registration_1_1services_1_1CertificateServiceImpl}\index{portal::registration::services::CertificateServiceImpl@{portal::registration::services::CertificateServiceImpl}}
+}
+
+
+Inheritance diagram for portal.registration.services.CertificateServiceImpl:
+
+
+Collaboration diagram for portal.registration.services.CertificateServiceImpl:
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Integer \hyperlink{classportal_1_1registration_1_1services_1_1CertificateServiceImpl_a50956067a79a48c6957e422c33b73f56}{save} (\hyperlink{classportal_1_1registration_1_1domain_1_1Certificate}{Certificate} transientInstance)
+\item 
+void \hyperlink{classportal_1_1registration_1_1services_1_1CertificateServiceImpl_a304c2968bab9d2c97a7aa10863c8dd48}{delete} (\hyperlink{classportal_1_1registration_1_1domain_1_1Certificate}{Certificate} persistentInstance)
+\item 
+void \hyperlink{classportal_1_1registration_1_1services_1_1CertificateServiceImpl_a8c82de27eb589083a94bd6c34bde7247}{delete} (int idCert)
+\item 
+int \hyperlink{classportal_1_1registration_1_1services_1_1CertificateServiceImpl_a592df743c12b9a43db06dbae92db23c2}{save} (\hyperlink{classportal_1_1registration_1_1domain_1_1Certificate}{Certificate} certificate, int userId)
+\item 
+List$<$ \hyperlink{classportal_1_1registration_1_1domain_1_1Certificate}{Certificate} $>$ \hyperlink{classportal_1_1registration_1_1services_1_1CertificateServiceImpl_aa262a9afdd7f565552e4f6b273a97c8c}{findById} (int userId)
+\item 
+boolean \hyperlink{classportal_1_1registration_1_1services_1_1CertificateServiceImpl_abac3e70bf6b1f63ca1d96e0829365f5c}{setDefault} (int idCert)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{interfaceportal_1_1registration_1_1dao_1_1CertificateDAO}{CertificateDAO} \hyperlink{classportal_1_1registration_1_1services_1_1CertificateServiceImpl_a427333bd7f98ef4e0a577c9aad7f8b37}{certificateDAO}
+\item 
+\hyperlink{interfaceportal_1_1registration_1_1dao_1_1UserInfoDAO}{UserInfoDAO} \hyperlink{classportal_1_1registration_1_1services_1_1CertificateServiceImpl_aceeb91e757fb23300d5f1e6444ab1534}{userInfoDAO}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static final Logger \hyperlink{classportal_1_1registration_1_1services_1_1CertificateServiceImpl_a0e66a24ae339beb877a20586517a829f}{log}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Home object for domain model class UserInfo.
+
+\begin{DoxySeeAlso}{See also}
+portal.registration.services.UserInfo 
+\end{DoxySeeAlso}
+\begin{DoxyAuthor}{Author}
+Hibernate Tools 
+\end{DoxyAuthor}
+
+
+Definition at line 28 of file CertificateServiceImpl.java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classportal_1_1registration_1_1services_1_1CertificateServiceImpl_a304c2968bab9d2c97a7aa10863c8dd48}{
+\index{portal::registration::services::CertificateServiceImpl@{portal::registration::services::CertificateServiceImpl}!delete@{delete}}
+\index{delete@{delete}!portal::registration::services::CertificateServiceImpl@{portal::registration::services::CertificateServiceImpl}}
+\subsubsection[{delete}]{\setlength{\rightskip}{0pt plus 5cm}void portal.registration.services.CertificateServiceImpl.delete (
+\begin{DoxyParamCaption}
+\item[{{\bf Certificate}}]{persistentInstance}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1services_1_1CertificateServiceImpl_a304c2968bab9d2c97a7aa10863c8dd48}
+
+
+Implements \hyperlink{interfaceportal_1_1registration_1_1services_1_1CertificateService_a38c935159bdcb93abdb8ae5f37a72b82}{portal.registration.services.CertificateService}.
+
+
+
+Definition at line 46 of file CertificateServiceImpl.java.
+
+
+
+References portal.registration.services.CertificateServiceImpl.certificateDAO, portal.registration.dao.CertificateDAO.delete(), and portal.registration.services.CertificateServiceImpl.log.
+
+
+\begin{DoxyCode}
+                                                           {
+                log.debug("removing UserInfo instance");
+                certificateDAO.delete(persistentInstance);
+        }
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+
+
+\hypertarget{classportal_1_1registration_1_1services_1_1CertificateServiceImpl_a8c82de27eb589083a94bd6c34bde7247}{
+\index{portal::registration::services::CertificateServiceImpl@{portal::registration::services::CertificateServiceImpl}!delete@{delete}}
+\index{delete@{delete}!portal::registration::services::CertificateServiceImpl@{portal::registration::services::CertificateServiceImpl}}
+\subsubsection[{delete}]{\setlength{\rightskip}{0pt plus 5cm}void portal.registration.services.CertificateServiceImpl.delete (
+\begin{DoxyParamCaption}
+\item[{int}]{idCert}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1services_1_1CertificateServiceImpl_a8c82de27eb589083a94bd6c34bde7247}
+
+
+Implements \hyperlink{interfaceportal_1_1registration_1_1services_1_1CertificateService_a630898254fc5fe77e4b959ebb4fa0e6e}{portal.registration.services.CertificateService}.
+
+
+
+Definition at line 52 of file CertificateServiceImpl.java.
+
+
+
+References portal.registration.services.CertificateServiceImpl.certificateDAO, portal.registration.dao.CertificateDAO.delete(), portal.registration.dao.CertificateDAO.findById(), and portal.registration.services.CertificateServiceImpl.log.
+
+
+\begin{DoxyCode}
+                                       {
+                log.debug("removing UserInfo instance");
+                Certificate persistentInstance = certificateDAO.findById(idCert);
+      
+                certificateDAO.delete(persistentInstance);
+        }
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+
+
+\hypertarget{classportal_1_1registration_1_1services_1_1CertificateServiceImpl_aa262a9afdd7f565552e4f6b273a97c8c}{
+\index{portal::registration::services::CertificateServiceImpl@{portal::registration::services::CertificateServiceImpl}!findById@{findById}}
+\index{findById@{findById}!portal::registration::services::CertificateServiceImpl@{portal::registration::services::CertificateServiceImpl}}
+\subsubsection[{findById}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Certificate}$>$ portal.registration.services.CertificateServiceImpl.findById (
+\begin{DoxyParamCaption}
+\item[{int}]{userId}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1services_1_1CertificateServiceImpl_aa262a9afdd7f565552e4f6b273a97c8c}
+
+
+Implements \hyperlink{interfaceportal_1_1registration_1_1services_1_1CertificateService_a6e2ec6680c5fe99c57210c58567e5df1}{portal.registration.services.CertificateService}.
+
+
+
+Definition at line 91 of file CertificateServiceImpl.java.
+
+
+
+References portal.registration.services.CertificateServiceImpl.certificateDAO, portal.registration.dao.CertificateDAO.findById(), portal.registration.dao.UserInfoDAO.findById(), and portal.registration.services.CertificateServiceImpl.userInfoDAO.
+
+
+\begin{DoxyCode}
+                                                      {
+                UserInfo userInfo = userInfoDAO.findById(userId);
+                return certificateDAO.findById(userInfo);
+        }
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+
+
+\hypertarget{classportal_1_1registration_1_1services_1_1CertificateServiceImpl_a592df743c12b9a43db06dbae92db23c2}{
+\index{portal::registration::services::CertificateServiceImpl@{portal::registration::services::CertificateServiceImpl}!save@{save}}
+\index{save@{save}!portal::registration::services::CertificateServiceImpl@{portal::registration::services::CertificateServiceImpl}}
+\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}int portal.registration.services.CertificateServiceImpl.save (
+\begin{DoxyParamCaption}
+\item[{{\bf Certificate}}]{certificate, }
+\item[{int}]{userId}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1services_1_1CertificateServiceImpl_a592df743c12b9a43db06dbae92db23c2}
+
+
+Implements \hyperlink{interfaceportal_1_1registration_1_1services_1_1CertificateService_a3108e28c65788d0157a991abf6a4adc7}{portal.registration.services.CertificateService}.
+
+
+
+Definition at line 59 of file CertificateServiceImpl.java.
+
+
+
+References portal.registration.services.CertificateServiceImpl.certificateDAO, portal.registration.dao.CertificateDAO.edit(), portal.registration.dao.CertificateDAO.findById(), portal.registration.dao.UserInfoDAO.findById(), portal.registration.domain.Certificate.getIdCert(), portal.registration.domain.Certificate.getPrimaryCert(), portal.registration.domain.UserInfo.getUsername(), portal.registration.services.CertificateServiceImpl.log, portal.registration.dao.CertificateDAO.save(), portal.registration.domain.Certificate.setPrimaryCert(), portal.registration.domain.Certificate.setUserInfo(), portal.registration.domain.Certificate.setUsernameCert(), and portal.registration.services.CertificateServiceImpl.userInfoDAO.
+
+
+\begin{DoxyCode}
+                                                             {
+                log.debug("persisting UserInfo instance");
+                UserInfo userInfo = userInfoDAO.findById(userId);
+                List<Certificate> lc = certificateDAO.findById(userInfo);
+
+                certificate.setUserInfo(userInfo);
+                certificate.setUsernameCert(userInfo.getUsername() + "_"
+                                + certificate.getIdCert());
+
+                if (certificate.getPrimaryCert().equals("true")) {
+
+                        Certificate tmp = null;
+
+                        int i = 0;
+
+                        for (i = 0; i < lc.size(); i++) {
+                                tmp = lc.get(i);
+                                tmp.setPrimaryCert("false");
+                                certificateDAO.edit(tmp);
+                        }
+                }
+
+                int result = certificateDAO.save(certificate);
+
+                certificate.setUsernameCert(userInfo.getUsername() + "_" + result
+      );
+
+                certificateDAO.edit(certificate);
+
+                return result;
+        }
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+
+
+\hypertarget{classportal_1_1registration_1_1services_1_1CertificateServiceImpl_a50956067a79a48c6957e422c33b73f56}{
+\index{portal::registration::services::CertificateServiceImpl@{portal::registration::services::CertificateServiceImpl}!save@{save}}
+\index{save@{save}!portal::registration::services::CertificateServiceImpl@{portal::registration::services::CertificateServiceImpl}}
+\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}Integer portal.registration.services.CertificateServiceImpl.save (
+\begin{DoxyParamCaption}
+\item[{{\bf Certificate}}]{transientInstance}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1services_1_1CertificateServiceImpl_a50956067a79a48c6957e422c33b73f56}
+
+
+Implements \hyperlink{interfaceportal_1_1registration_1_1services_1_1CertificateService_a83013e7c634e5103c7bc21e961243b91}{portal.registration.services.CertificateService}.
+
+
+
+Definition at line 40 of file CertificateServiceImpl.java.
+
+
+
+References portal.registration.services.CertificateServiceImpl.certificateDAO, portal.registration.services.CertificateServiceImpl.log, and portal.registration.dao.CertificateDAO.save().
+
+
+\begin{DoxyCode}
+                                                           {
+                log.debug("persisting UserInfo instance");
+                return certificateDAO.save(transientInstance);
+        }
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+
+
+\hypertarget{classportal_1_1registration_1_1services_1_1CertificateServiceImpl_abac3e70bf6b1f63ca1d96e0829365f5c}{
+\index{portal::registration::services::CertificateServiceImpl@{portal::registration::services::CertificateServiceImpl}!setDefault@{setDefault}}
+\index{setDefault@{setDefault}!portal::registration::services::CertificateServiceImpl@{portal::registration::services::CertificateServiceImpl}}
+\subsubsection[{setDefault}]{\setlength{\rightskip}{0pt plus 5cm}boolean portal.registration.services.CertificateServiceImpl.setDefault (
+\begin{DoxyParamCaption}
+\item[{int}]{idCert}
+\end{DoxyParamCaption}
+)}}
+\label{classportal_1_1registration_1_1services_1_1CertificateServiceImpl_abac3e70bf6b1f63ca1d96e0829365f5c}
+
+
+Implements \hyperlink{interfaceportal_1_1registration_1_1services_1_1CertificateService_a31323ccb59ca777ac0bc7341454cbb07}{portal.registration.services.CertificateService}.
+
+
+
+Definition at line 97 of file CertificateServiceImpl.java.
+
+
+
+References portal.registration.services.CertificateServiceImpl.certificateDAO, portal.registration.dao.CertificateDAO.edit(), portal.registration.dao.CertificateDAO.findById(), portal.registration.domain.Certificate.getPrimaryCert(), portal.registration.services.CertificateServiceImpl.log, and portal.registration.domain.Certificate.setPrimaryCert().
+
+
+\begin{DoxyCode}
+                                              {
+                log.debug("ugrading Certificate instance");
+                Certificate persistentInstance = certificateDAO.findById(idCert);
+      
+
+                if (persistentInstance.getPrimaryCert().equals("false")) {
+                        List<Certificate> lc = certificateDAO.findById(persistent
+      Instance
+                                        .getUserInfo());
+                        Certificate tmp = null;
+
+                        int i = 0;
+
+                        for (i = 0; i < lc.size(); i++) {
+                                tmp = lc.get(i);
+                                tmp.setPrimaryCert("false");
+                                certificateDAO.edit(tmp);
+                        }
+
+                        persistentInstance.setPrimaryCert("true");
+                        certificateDAO.edit(persistentInstance);
+                        return true;
+                }
+
+                return false;
+        }
+\end{DoxyCode}
+
+
+Here is the call graph for this function:
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classportal_1_1registration_1_1services_1_1CertificateServiceImpl_a427333bd7f98ef4e0a577c9aad7f8b37}{
+\index{portal::registration::services::CertificateServiceImpl@{portal::registration::services::CertificateServiceImpl}!certificateDAO@{certificateDAO}}
+\index{certificateDAO@{certificateDAO}!portal::registration::services::CertificateServiceImpl@{portal::registration::services::CertificateServiceImpl}}
+\subsubsection[{certificateDAO}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CertificateDAO} {\bf portal.registration.services.CertificateServiceImpl.certificateDAO}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classportal_1_1registration_1_1services_1_1CertificateServiceImpl_a427333bd7f98ef4e0a577c9aad7f8b37}
+
+
+Definition at line 34 of file CertificateServiceImpl.java.
+
+
+
+Referenced by portal.registration.services.CertificateServiceImpl.delete(), portal.registration.services.CertificateServiceImpl.findById(), portal.registration.services.CertificateServiceImpl.save(), and portal.registration.services.CertificateServiceImpl.setDefault().
+
+\hypertarget{classportal_1_1registration_1_1services_1_1CertificateServiceImpl_a0e66a24ae339beb877a20586517a829f}{
+\index{portal::registration::services::CertificateServiceImpl@{portal::registration::services::CertificateServiceImpl}!log@{log}}
+\index{log@{log}!portal::registration::services::CertificateServiceImpl@{portal::registration::services::CertificateServiceImpl}}
+\subsubsection[{log}]{\setlength{\rightskip}{0pt plus 5cm}final Logger {\bf portal.registration.services.CertificateServiceImpl.log}\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{classportal_1_1registration_1_1services_1_1CertificateServiceImpl_a0e66a24ae339beb877a20586517a829f}
+{\bfseries Initial value:}
+\begin{DoxyCode}
+ Logger
+                        .getLogger(CertificateServiceImpl.class)
+\end{DoxyCode}
+
+
+Definition at line 30 of file CertificateServiceImpl.java.
+
+
+
+Referenced by portal.registration.services.CertificateServiceImpl.delete(), portal.registration.services.CertificateServiceImpl.save(), and portal.registration.services.CertificateServiceImpl.setDefault().
+
+\hypertarget{classportal_1_1registration_1_1services_1_1CertificateServiceImpl_aceeb91e757fb23300d5f1e6444ab1534}{
+\index{portal::registration::services::CertificateServiceImpl@{portal::registration::services::CertificateServiceImpl}!userInfoDAO@{userInfoDAO}}
+\index{userInfoDAO@{userInfoDAO}!portal::registration::services::CertificateServiceImpl@{portal::registration::services::CertificateServiceImpl}}
+\subsubsection[{userInfoDAO}]{\setlength{\rightskip}{0pt plus 5cm}{\bf UserInfoDAO} {\bf portal.registration.services.CertificateServiceImpl.userInfoDAO}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classportal_1_1registration_1_1services_1_1CertificateServiceImpl_aceeb91e757fb23300d5f1e6444ab1534}
+
+
+Definition at line 37 of file CertificateServiceImpl.java.
+
+
+
+Referenced by portal.registration.services.CertificateServiceImpl.findById(), and portal.registration.services.CertificateServiceImpl.save().
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/portal/registration/services/\hyperlink{CertificateServiceImpl_8java}{CertificateServiceImpl.java}\end{DoxyCompactItemize}

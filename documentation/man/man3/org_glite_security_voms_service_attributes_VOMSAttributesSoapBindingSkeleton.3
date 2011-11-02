@@ -1,0 +1,452 @@
+.TH "org::glite::security::voms::service::attributes::VOMSAttributesSoapBindingSkeleton" 3 "Wed Jul 13 2011" "Version 4" "Registration" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+org::glite::security::voms::service::attributes::VOMSAttributesSoapBindingSkeleton \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBorg.glite.security.voms.service.attributes.VOMSAttributes\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBVOMSAttributesSoapBindingSkeleton\fP ()"
+.br
+.ti -1c
+.RI "\fBVOMSAttributesSoapBindingSkeleton\fP (\fBorg.glite.security.voms.service.attributes.VOMSAttributes\fP \fBimpl\fP)"
+.br
+.ti -1c
+.RI "void \fBcreateAttributeClass\fP (java.lang.String in0, java.lang.String in1, boolean in2)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException     "
+.br
+.ti -1c
+.RI "void \fBcreateAttributeClass\fP (java.lang.String in0, java.lang.String in1)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException     "
+.br
+.ti -1c
+.RI "void \fBcreateAttributeClass\fP (java.lang.String in0)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException     "
+.br
+.ti -1c
+.RI "\fBorg.glite.security.voms.service.attributes.AttributeClass\fP \fBgetAttributeClass\fP (java.lang.String in0)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException     "
+.br
+.ti -1c
+.RI "void \fBsaveAttributeClass\fP (\fBorg.glite.security.voms.service.attributes.AttributeClass\fP in0)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException     "
+.br
+.ti -1c
+.RI "void \fBdeleteAttributeClass\fP (java.lang.String in0)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException     "
+.br
+.ti -1c
+.RI "void \fBdeleteAttributeClass\fP (\fBorg.glite.security.voms.service.attributes.AttributeClass\fP in0)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException     "
+.br
+.ti -1c
+.RI "\fBorg.glite.security.voms.service.attributes.AttributeClass\fP[] \fBlistAttributeClasses\fP ()  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException     "
+.br
+.ti -1c
+.RI "\fBorg.glite.security.voms.service.attributes.AttributeValue\fP[] \fBlistUserAttributes\fP (\fBorg.glite.security.voms.User\fP in0)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException     "
+.br
+.ti -1c
+.RI "void \fBsetUserAttribute\fP (\fBorg.glite.security.voms.User\fP in0, \fBorg.glite.security.voms.service.attributes.AttributeValue\fP in1)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException     "
+.br
+.ti -1c
+.RI "void \fBdeleteUserAttribute\fP (\fBorg.glite.security.voms.User\fP in0, java.lang.String in1)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException     "
+.br
+.ti -1c
+.RI "void \fBdeleteUserAttribute\fP (\fBorg.glite.security.voms.User\fP in0, \fBorg.glite.security.voms.service.attributes.AttributeValue\fP in1)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException     "
+.br
+.ti -1c
+.RI "void \fBsetGroupAttribute\fP (java.lang.String in0, \fBorg.glite.security.voms.service.attributes.AttributeValue\fP in1)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException     "
+.br
+.ti -1c
+.RI "void \fBdeleteGroupAttribute\fP (java.lang.String in0, java.lang.String in1)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException     "
+.br
+.ti -1c
+.RI "void \fBdeleteGroupAttribute\fP (java.lang.String in0, \fBorg.glite.security.voms.service.attributes.AttributeValue\fP in1)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException     "
+.br
+.ti -1c
+.RI "\fBorg.glite.security.voms.service.attributes.AttributeValue\fP[] \fBlistGroupAttributes\fP (java.lang.String in0)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException     "
+.br
+.ti -1c
+.RI "void \fBsetRoleAttribute\fP (java.lang.String in0, java.lang.String in1, \fBorg.glite.security.voms.service.attributes.AttributeValue\fP in2)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException     "
+.br
+.ti -1c
+.RI "void \fBdeleteRoleAttribute\fP (java.lang.String in0, java.lang.String in1, java.lang.String in2)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException     "
+.br
+.ti -1c
+.RI "void \fBdeleteRoleAttribute\fP (java.lang.String in0, java.lang.String in1, \fBorg.glite.security.voms.service.attributes.AttributeValue\fP in2)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException     "
+.br
+.ti -1c
+.RI "\fBorg.glite.security.voms.service.attributes.AttributeValue\fP[] \fBlistRoleAttributes\fP (java.lang.String in0, java.lang.String in1)  throws java.rmi.RemoteException, org.glite.security.voms.VOMSException     "
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static java.util.List \fBgetOperationDescByName\fP (java.lang.String methodName)"
+.br
+.ti -1c
+.RI "static java.util.Collection \fBgetOperationDescs\fP ()"
+.br
+.in -1c
+.SS "Static Package Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB[static initializer]\fP"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBorg.glite.security.voms.service.attributes.VOMSAttributes\fP \fBimpl\fP"
+.br
+.in -1c
+.SS "Static Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "static java.util.Map \fB_myOperations\fP = new java.util.Hashtable()"
+.br
+.ti -1c
+.RI "static java.util.Collection \fB_myOperationsList\fP = new java.util.ArrayList()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 10 of file VOMSAttributesSoapBindingSkeleton.java.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.VOMSAttributesSoapBindingSkeleton ()"
+.PP
+Definition at line 395 of file VOMSAttributesSoapBindingSkeleton.java.
+.PP
+References org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.impl.
+.PP
+.nf
+                                               {
+        this.impl = new org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingImpl();
+    }
+.fi
+.SS "org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.VOMSAttributesSoapBindingSkeleton (\fBorg.glite.security.voms.service.attributes.VOMSAttributes\fPimpl)"
+.PP
+Definition at line 399 of file VOMSAttributesSoapBindingSkeleton.java.
+.PP
+References org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.impl.
+.PP
+.nf
+                                                                                                             {
+        this.impl = impl;
+    }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.[static initializer] ()\fC [static, package]\fP"
+.SS "void org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.createAttributeClass (java.lang.Stringin0, java.lang.Stringin1, booleanin2)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP     "
+.PP
+Implements \fBorg.glite.security.voms.service.attributes.VOMSAttributes\fP.
+.PP
+Definition at line 402 of file VOMSAttributesSoapBindingSkeleton.java.
+.PP
+References org.glite.security.voms.service.attributes.VOMSAttributes.createAttributeClass(), and org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.impl.
+.PP
+.nf
+    {
+        impl.createAttributeClass(in0, in1, in2);
+    }
+.fi
+.SS "void org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.createAttributeClass (java.lang.Stringin0, java.lang.Stringin1)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP     "
+.PP
+Implements \fBorg.glite.security.voms.service.attributes.VOMSAttributes\fP.
+.PP
+Definition at line 407 of file VOMSAttributesSoapBindingSkeleton.java.
+.PP
+References org.glite.security.voms.service.attributes.VOMSAttributes.createAttributeClass(), and org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.impl.
+.PP
+.nf
+    {
+        impl.createAttributeClass(in0, in1);
+    }
+.fi
+.SS "void org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.createAttributeClass (java.lang.Stringin0)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP     "
+.PP
+Implements \fBorg.glite.security.voms.service.attributes.VOMSAttributes\fP.
+.PP
+Definition at line 412 of file VOMSAttributesSoapBindingSkeleton.java.
+.PP
+References org.glite.security.voms.service.attributes.VOMSAttributes.createAttributeClass(), and org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.impl.
+.PP
+.nf
+    {
+        impl.createAttributeClass(in0);
+    }
+.fi
+.SS "void org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.deleteAttributeClass (java.lang.Stringin0)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP     "
+.PP
+Implements \fBorg.glite.security.voms.service.attributes.VOMSAttributes\fP.
+.PP
+Definition at line 428 of file VOMSAttributesSoapBindingSkeleton.java.
+.PP
+References org.glite.security.voms.service.attributes.VOMSAttributes.deleteAttributeClass(), and org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.impl.
+.PP
+.nf
+    {
+        impl.deleteAttributeClass(in0);
+    }
+.fi
+.SS "void org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.deleteAttributeClass (\fBorg.glite.security.voms.service.attributes.AttributeClass\fPin0)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP     "
+.PP
+Implements \fBorg.glite.security.voms.service.attributes.VOMSAttributes\fP.
+.PP
+Definition at line 433 of file VOMSAttributesSoapBindingSkeleton.java.
+.PP
+References org.glite.security.voms.service.attributes.VOMSAttributes.deleteAttributeClass(), and org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.impl.
+.PP
+.nf
+    {
+        impl.deleteAttributeClass(in0);
+    }
+.fi
+.SS "void org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.deleteGroupAttribute (java.lang.Stringin0, java.lang.Stringin1)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP     "
+.PP
+Implements \fBorg.glite.security.voms.service.attributes.VOMSAttributes\fP.
+.PP
+Definition at line 470 of file VOMSAttributesSoapBindingSkeleton.java.
+.PP
+References org.glite.security.voms.service.attributes.VOMSAttributes.deleteGroupAttribute(), and org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.impl.
+.PP
+.nf
+    {
+        impl.deleteGroupAttribute(in0, in1);
+    }
+.fi
+.SS "void org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.deleteGroupAttribute (java.lang.Stringin0, \fBorg.glite.security.voms.service.attributes.AttributeValue\fPin1)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP     "
+.PP
+Implements \fBorg.glite.security.voms.service.attributes.VOMSAttributes\fP.
+.PP
+Definition at line 475 of file VOMSAttributesSoapBindingSkeleton.java.
+.PP
+References org.glite.security.voms.service.attributes.VOMSAttributes.deleteGroupAttribute(), and org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.impl.
+.PP
+.nf
+    {
+        impl.deleteGroupAttribute(in0, in1);
+    }
+.fi
+.SS "void org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.deleteRoleAttribute (java.lang.Stringin0, java.lang.Stringin1, java.lang.Stringin2)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP     "
+.PP
+Implements \fBorg.glite.security.voms.service.attributes.VOMSAttributes\fP.
+.PP
+Definition at line 491 of file VOMSAttributesSoapBindingSkeleton.java.
+.PP
+References org.glite.security.voms.service.attributes.VOMSAttributes.deleteRoleAttribute(), and org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.impl.
+.PP
+.nf
+    {
+        impl.deleteRoleAttribute(in0, in1, in2);
+    }
+.fi
+.SS "void org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.deleteRoleAttribute (java.lang.Stringin0, java.lang.Stringin1, \fBorg.glite.security.voms.service.attributes.AttributeValue\fPin2)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP     "
+.PP
+Implements \fBorg.glite.security.voms.service.attributes.VOMSAttributes\fP.
+.PP
+Definition at line 496 of file VOMSAttributesSoapBindingSkeleton.java.
+.PP
+References org.glite.security.voms.service.attributes.VOMSAttributes.deleteRoleAttribute(), and org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.impl.
+.PP
+.nf
+    {
+        impl.deleteRoleAttribute(in0, in1, in2);
+    }
+.fi
+.SS "void org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.deleteUserAttribute (\fBorg.glite.security.voms.User\fPin0, java.lang.Stringin1)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP     "
+.PP
+Implements \fBorg.glite.security.voms.service.attributes.VOMSAttributes\fP.
+.PP
+Definition at line 455 of file VOMSAttributesSoapBindingSkeleton.java.
+.PP
+References org.glite.security.voms.service.attributes.VOMSAttributes.deleteUserAttribute(), and org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.impl.
+.PP
+.nf
+    {
+        impl.deleteUserAttribute(in0, in1);
+    }
+.fi
+.SS "void org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.deleteUserAttribute (\fBorg.glite.security.voms.User\fPin0, \fBorg.glite.security.voms.service.attributes.AttributeValue\fPin1)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP     "
+.PP
+Implements \fBorg.glite.security.voms.service.attributes.VOMSAttributes\fP.
+.PP
+Definition at line 460 of file VOMSAttributesSoapBindingSkeleton.java.
+.PP
+References org.glite.security.voms.service.attributes.VOMSAttributes.deleteUserAttribute(), and org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.impl.
+.PP
+.nf
+    {
+        impl.deleteUserAttribute(in0, in1);
+    }
+.fi
+.SS "\fBorg.glite.security.voms.service.attributes.AttributeClass\fP org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.getAttributeClass (java.lang.Stringin0)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP     "
+.PP
+Implements \fBorg.glite.security.voms.service.attributes.VOMSAttributes\fP.
+.PP
+Definition at line 417 of file VOMSAttributesSoapBindingSkeleton.java.
+.PP
+References org.glite.security.voms.service.attributes.VOMSAttributes.getAttributeClass(), and org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.impl.
+.PP
+.nf
+    {
+        org.glite.security.voms.service.attributes.AttributeClass ret = impl.getAttributeClass(in0);
+        return ret;
+    }
+.fi
+.SS "static java.util.List org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.getOperationDescByName (java.lang.StringmethodName)\fC [static]\fP"Returns List of OperationDesc objects with this name 
+.PP
+Definition at line 18 of file VOMSAttributesSoapBindingSkeleton.java.
+.PP
+References org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton._myOperations.
+.PP
+.nf
+                                                                                     {
+        return (java.util.List)_myOperations.get(methodName);
+    }
+.fi
+.SS "static java.util.Collection org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.getOperationDescs ()\fC [static]\fP"Returns Collection of OperationDescs 
+.PP
+Definition at line 25 of file VOMSAttributesSoapBindingSkeleton.java.
+.PP
+References org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton._myOperationsList.
+.PP
+.nf
+                                                           {
+        return _myOperationsList;
+    }
+.fi
+.SS "\fBorg.glite.security.voms.service.attributes.AttributeClass\fP [] org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.listAttributeClasses ()  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP     "
+.PP
+Implements \fBorg.glite.security.voms.service.attributes.VOMSAttributes\fP.
+.PP
+Definition at line 438 of file VOMSAttributesSoapBindingSkeleton.java.
+.PP
+References org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.impl, and org.glite.security.voms.service.attributes.VOMSAttributes.listAttributeClasses().
+.PP
+.nf
+    {
+        org.glite.security.voms.service.attributes.AttributeClass[] ret = impl.listAttributeClasses();
+        return ret;
+    }
+.fi
+.SS "\fBorg.glite.security.voms.service.attributes.AttributeValue\fP [] org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.listGroupAttributes (java.lang.Stringin0)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP     "
+.PP
+Implements \fBorg.glite.security.voms.service.attributes.VOMSAttributes\fP.
+.PP
+Definition at line 480 of file VOMSAttributesSoapBindingSkeleton.java.
+.PP
+References org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.impl, and org.glite.security.voms.service.attributes.VOMSAttributes.listGroupAttributes().
+.PP
+.nf
+    {
+        org.glite.security.voms.service.attributes.AttributeValue[] ret = impl.listGroupAttributes(in0);
+        return ret;
+    }
+.fi
+.SS "\fBorg.glite.security.voms.service.attributes.AttributeValue\fP [] org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.listRoleAttributes (java.lang.Stringin0, java.lang.Stringin1)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP     "
+.PP
+Implements \fBorg.glite.security.voms.service.attributes.VOMSAttributes\fP.
+.PP
+Definition at line 501 of file VOMSAttributesSoapBindingSkeleton.java.
+.PP
+References org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.impl, and org.glite.security.voms.service.attributes.VOMSAttributes.listRoleAttributes().
+.PP
+.nf
+    {
+        org.glite.security.voms.service.attributes.AttributeValue[] ret = impl.listRoleAttributes(in0, in1);
+        return ret;
+    }
+.fi
+.SS "\fBorg.glite.security.voms.service.attributes.AttributeValue\fP [] org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.listUserAttributes (\fBorg.glite.security.voms.User\fPin0)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP     "
+.PP
+Implements \fBorg.glite.security.voms.service.attributes.VOMSAttributes\fP.
+.PP
+Definition at line 444 of file VOMSAttributesSoapBindingSkeleton.java.
+.PP
+References org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.impl, and org.glite.security.voms.service.attributes.VOMSAttributes.listUserAttributes().
+.PP
+.nf
+    {
+        org.glite.security.voms.service.attributes.AttributeValue[] ret = impl.listUserAttributes(in0);
+        return ret;
+    }
+.fi
+.SS "void org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.saveAttributeClass (\fBorg.glite.security.voms.service.attributes.AttributeClass\fPin0)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP     "
+.PP
+Implements \fBorg.glite.security.voms.service.attributes.VOMSAttributes\fP.
+.PP
+Definition at line 423 of file VOMSAttributesSoapBindingSkeleton.java.
+.PP
+References org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.impl, and org.glite.security.voms.service.attributes.VOMSAttributes.saveAttributeClass().
+.PP
+.nf
+    {
+        impl.saveAttributeClass(in0);
+    }
+.fi
+.SS "void org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.setGroupAttribute (java.lang.Stringin0, \fBorg.glite.security.voms.service.attributes.AttributeValue\fPin1)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP     "
+.PP
+Implements \fBorg.glite.security.voms.service.attributes.VOMSAttributes\fP.
+.PP
+Definition at line 465 of file VOMSAttributesSoapBindingSkeleton.java.
+.PP
+References org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.impl, and org.glite.security.voms.service.attributes.VOMSAttributes.setGroupAttribute().
+.PP
+.nf
+    {
+        impl.setGroupAttribute(in0, in1);
+    }
+.fi
+.SS "void org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.setRoleAttribute (java.lang.Stringin0, java.lang.Stringin1, \fBorg.glite.security.voms.service.attributes.AttributeValue\fPin2)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP     "
+.PP
+Implements \fBorg.glite.security.voms.service.attributes.VOMSAttributes\fP.
+.PP
+Definition at line 486 of file VOMSAttributesSoapBindingSkeleton.java.
+.PP
+References org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.impl, and org.glite.security.voms.service.attributes.VOMSAttributes.setRoleAttribute().
+.PP
+.nf
+    {
+        impl.setRoleAttribute(in0, in1, in2);
+    }
+.fi
+.SS "void org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.setUserAttribute (\fBorg.glite.security.voms.User\fPin0, \fBorg.glite.security.voms.service.attributes.AttributeValue\fPin1)  throws java.rmi.RemoteException, \fBorg.glite.security.voms.VOMSException\fP     "
+.PP
+Implements \fBorg.glite.security.voms.service.attributes.VOMSAttributes\fP.
+.PP
+Definition at line 450 of file VOMSAttributesSoapBindingSkeleton.java.
+.PP
+References org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.impl, and org.glite.security.voms.service.attributes.VOMSAttributes.setUserAttribute().
+.PP
+.nf
+    {
+        impl.setUserAttribute(in0, in1);
+    }
+.fi
+.SH "Member Data Documentation"
+.PP 
+.SS "java.util.Map \fBorg.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton._myOperations\fP = new java.util.Hashtable()\fC [static, private]\fP"
+.PP
+Definition at line 12 of file VOMSAttributesSoapBindingSkeleton.java.
+.PP
+Referenced by org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.getOperationDescByName().
+.SS "java.util.Collection \fBorg.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton._myOperationsList\fP = new java.util.ArrayList()\fC [static, private]\fP"
+.PP
+Definition at line 13 of file VOMSAttributesSoapBindingSkeleton.java.
+.PP
+Referenced by org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.getOperationDescs().
+.SS "\fBorg.glite.security.voms.service.attributes.VOMSAttributes\fP \fBorg.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.impl\fP\fC [private]\fP"
+.PP
+Definition at line 11 of file VOMSAttributesSoapBindingSkeleton.java.
+.PP
+Referenced by org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.createAttributeClass(), org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.deleteAttributeClass(), org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.deleteGroupAttribute(), org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.deleteRoleAttribute(), org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.deleteUserAttribute(), org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.getAttributeClass(), org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.listAttributeClasses(), org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.listGroupAttributes(), org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.listRoleAttributes(), org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.listUserAttributes(), org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.saveAttributeClass(), org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.setGroupAttribute(), org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.setRoleAttribute(), org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.setUserAttribute(), and org.glite.security.voms.service.attributes.VOMSAttributesSoapBindingSkeleton.VOMSAttributesSoapBindingSkeleton().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Registration from the source code.

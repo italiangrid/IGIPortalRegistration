@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest.html#a13cdd311fe94c0ecf08ad7c37528650c" title="org.glite.security.voms.service.registration.RegistrationRequest.getComments" alt="" coords="466,4,900,31"/>
+<area shape="rect" id="node5" href="$classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest.html#a8747a09df024d42c56563b5b22843409" title="org.glite.security.voms.service.registration.RegistrationRequest.getEmailAddress" alt="" coords="458,55,908,81"/>
+<area shape="rect" id="node7" href="$classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest.html#af4ed2cb8f7413e5dafcd21725a09a74f" title="org.glite.security.voms.service.registration.RegistrationRequest.getInstitute" alt="" coords="474,105,892,132"/>
+<area shape="rect" id="node9" href="$classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest.html#ad3819e6ca5fadaf39bed60c33ba2d386" title="org.glite.security.voms.service.registration.RegistrationRequest.getPhoneNumber" alt="" coords="456,156,909,183"/>
+<area shape="rect" id="node11" href="$classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest.html#af9e72e0f27fdac2732286c323848fc95" title="org.glite.security.voms.service.registration.RegistrationRequest.isAupAccepted" alt="" coords="463,207,902,233"/>
+<area shape="rect" id="node13" href="$classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1RegistrationRequest.html#ad1ae0fe437e84f09fa214721913dfb80" title="org.glite.security.voms.service.registration.RegistrationRequest.RegistrationRequest" alt="" coords="449,257,917,284"/>
+</map>

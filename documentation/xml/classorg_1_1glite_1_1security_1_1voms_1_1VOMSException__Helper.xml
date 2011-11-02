@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException__Helper" kind="class" prot="public">
+    <compoundname>org::glite::security::voms::VOMSException_Helper</compoundname>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException__Helper_1a5a4a12c43062ea03e2a3f8225cec5dd8" prot="private" static="yes" mutable="no">
+        <type>org.apache.axis.description.TypeDesc</type>
+        <definition>org.apache.axis.description.TypeDesc org.glite.security.voms.VOMSException_Helper.typeDesc</definition>
+        <argsstring></argsstring>
+        <name>typeDesc</name>
+        <initializer>
+        new org.apache.axis.description.TypeDesc(VOMSException.class, true)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/VOMSException_Helper.java" line="13" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/VOMSException_Helper.java" bodystart="12" bodyend="-1"/>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException__Helper_1ab1a43d60da089d665abb9fb4a1eadc53" compoundref="VOMSException__Helper_8java" startline="41" endline="48">org.glite.security.voms.VOMSException_Helper::getDeserializer</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException__Helper_1a43243fa615cf0c2072c3db6fd44a3fe9" compoundref="VOMSException__Helper_8java" startline="29" endline="36">org.glite.security.voms.VOMSException_Helper::getSerializer</referencedby>
+        <referencedby refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException__Helper_1a9412a5fc78b3b5753269f594ce0d2c87" compoundref="VOMSException__Helper_8java" startline="22" endline="24">org.glite.security.voms.VOMSException_Helper::getTypeDesc</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="package-static-func">
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException__Helper_1a32c6547f8f66c59d379adb059140d77c" prot="package" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>org.glite.security.voms.VOMSException_Helper.[static initializer]</definition>
+        <argsstring></argsstring>
+        <name>[static initializer]</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/VOMSException_Helper.java" line="15"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException__Helper_1a9412a5fc78b3b5753269f594ce0d2c87" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>org.apache.axis.description.TypeDesc</type>
+        <definition>static org.apache.axis.description.TypeDesc org.glite.security.voms.VOMSException_Helper.getTypeDesc</definition>
+        <argsstring>()</argsstring>
+        <name>getTypeDesc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return type metadata object </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/VOMSException_Helper.java" line="22" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/VOMSException_Helper.java" bodystart="22" bodyend="24"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException__Helper_1a5a4a12c43062ea03e2a3f8225cec5dd8" compoundref="VOMSException__Helper_8java" startline="12">org.glite.security.voms.VOMSException_Helper::typeDesc</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException__Helper_1a43243fa615cf0c2072c3db6fd44a3fe9" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>org.apache.axis.encoding.Serializer</type>
+        <definition>static org.apache.axis.encoding.Serializer org.glite.security.voms.VOMSException_Helper.getSerializer</definition>
+        <argsstring>(java.lang.String mechType, java.lang.Class _javaType, javax.xml.namespace.QName _xmlType)</argsstring>
+        <name>getSerializer</name>
+        <param>
+          <type>java.lang.String</type>
+          <declname>mechType</declname>
+        </param>
+        <param>
+          <type>java.lang.Class</type>
+          <declname>_javaType</declname>
+        </param>
+        <param>
+          <type>javax.xml.namespace.QName</type>
+          <declname>_xmlType</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get Custom Serializer </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/VOMSException_Helper.java" line="32" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/VOMSException_Helper.java" bodystart="29" bodyend="36"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException__Helper_1a5a4a12c43062ea03e2a3f8225cec5dd8" compoundref="VOMSException__Helper_8java" startline="12">org.glite.security.voms.VOMSException_Helper::typeDesc</references>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException__Helper_1ab1a43d60da089d665abb9fb4a1eadc53" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>org.apache.axis.encoding.Deserializer</type>
+        <definition>static org.apache.axis.encoding.Deserializer org.glite.security.voms.VOMSException_Helper.getDeserializer</definition>
+        <argsstring>(java.lang.String mechType, java.lang.Class _javaType, javax.xml.namespace.QName _xmlType)</argsstring>
+        <name>getDeserializer</name>
+        <param>
+          <type>java.lang.String</type>
+          <declname>mechType</declname>
+        </param>
+        <param>
+          <type>java.lang.Class</type>
+          <declname>_javaType</declname>
+        </param>
+        <param>
+          <type>javax.xml.namespace.QName</type>
+          <declname>_xmlType</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get Custom Deserializer </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/VOMSException_Helper.java" line="44" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/VOMSException_Helper.java" bodystart="41" bodyend="48"/>
+        <references refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException__Helper_1a5a4a12c43062ea03e2a3f8225cec5dd8" compoundref="VOMSException__Helper_8java" startline="12">org.glite.security.voms.VOMSException_Helper::typeDesc</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/VOMSException_Helper.java" line="10" bodyfile="/Users/mikel8/Documents/Uni/workspace/Registration/src/main/java/org/glite/security/voms/VOMSException_Helper.java" bodystart="10" bodyend="50"/>
+    <listofallmembers>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException__Helper_1a32c6547f8f66c59d379adb059140d77c" prot="package" virt="non-virtual"><scope>org::glite::security::voms::VOMSException_Helper</scope><name>[static initializer]</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException__Helper_1ab1a43d60da089d665abb9fb4a1eadc53" prot="public" virt="non-virtual"><scope>org::glite::security::voms::VOMSException_Helper</scope><name>getDeserializer</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException__Helper_1a43243fa615cf0c2072c3db6fd44a3fe9" prot="public" virt="non-virtual"><scope>org::glite::security::voms::VOMSException_Helper</scope><name>getSerializer</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException__Helper_1a9412a5fc78b3b5753269f594ce0d2c87" prot="public" virt="non-virtual"><scope>org::glite::security::voms::VOMSException_Helper</scope><name>getTypeDesc</name></member>
+      <member refid="classorg_1_1glite_1_1security_1_1voms_1_1VOMSException__Helper_1a5a4a12c43062ea03e2a3f8225cec5dd8" prot="private" virt="non-virtual"><scope>org::glite::security::voms::VOMSException_Helper</scope><name>typeDesc</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
