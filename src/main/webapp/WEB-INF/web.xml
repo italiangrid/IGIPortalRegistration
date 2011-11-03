@@ -17,8 +17,8 @@
 		<url-pattern>/WEB-INF/servlet/view</url-pattern>
 	</servlet-mapping>
 	
-	<listener>
+	<!-- <listener>
 		<listener-class>portal.registration.server.PortalContextListener</listener-class>
-	</listener>
+	</listener> -->
 	
 </web-app>
