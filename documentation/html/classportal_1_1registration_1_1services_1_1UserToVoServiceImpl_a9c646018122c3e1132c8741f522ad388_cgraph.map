@@ -1,9 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$interfaceportal_1_1registration_1_1dao_1_1VoDAO.html#a1e615e3cc23d178459a789ff9e91da5f" title="portal.registration.dao.VoDAO.findById" alt="" coords="389,4,616,31"/>
-<area shape="rect" id="node5" href="$interfaceportal_1_1registration_1_1dao_1_1UserInfoDAO.html#a6ae6399cb2791e189e16ab3633df360e" title="portal.registration.dao.UserInfoDAO.findById" alt="" coords="373,55,632,81"/>
-<area shape="rect" id="node7" href="$interfaceportal_1_1registration_1_1dao_1_1UserToVoDAO.html#a1b64a9ef38ac754471c8fb0ff069e973" title="portal.registration.dao.UserToVoDAO.save" alt="" coords="379,105,626,132"/>
-<area shape="rect" id="node9" href="$classportal_1_1registration_1_1domain_1_1UserToVo.html#ae49ca744a5c797153043c8e03c6258d1" title="portal.registration.domain.UserToVo.setId" alt="" coords="382,156,623,183"/>
-<area shape="rect" id="node11" href="$classportal_1_1registration_1_1domain_1_1UserToVo.html#a11470a7079520429ff32a26f4fe506dc" title="portal.registration.domain.UserToVo.setIsDefault" alt="" coords="363,207,642,233"/>
-<area shape="rect" id="node13" href="$classportal_1_1registration_1_1domain_1_1UserToVo.html#a775e683f5e2a6f48d82fe52c30c2c4a4" title="portal.registration.domain.UserToVo.setUserInfo" alt="" coords="364,257,641,284"/>
-<area shape="rect" id="node15" href="$classportal_1_1registration_1_1domain_1_1UserToVo.html#a3466e57b88a3c1aa2a850d5f9c3cf058" title="portal.registration.domain.UserToVo.setVo" alt="" coords="380,308,625,335"/>
-</map>

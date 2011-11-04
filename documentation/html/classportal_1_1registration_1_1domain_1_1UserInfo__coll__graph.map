@@ -1,3 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node9" href="$classportal_1_1registration_1_1domain_1_1Idp.html" title="{portal.registration.domain.Idp\n|&#45; idIdp\l&#45; idpname\l&#45; idpaddress\l&#45; idploginAddress\l&#45; idpparameterRequest\l&#45; idpattributeRequest\l&#45; idpdescription\l&#45; userInfos\l&#45; serialVersionUID\l|+ Idp()\l+ Idp()\l+ Idp()\l+ getIdIdp()\l+ setIdIdp()\l+ getIdpname()\l+ setIdpname()\l+ getIdpaddress()\l+ setIdpaddress()\l+ getIdploginAddress()\l+ setIdploginAddress()\l+ getIdpparameterRequest()\l+ setIdpparameterRequest()\l+ getIdpattributeRequest()\l+ setIdpattributeRequest()\l+ getIdpdescription()\l+ setIdpdescription()\l+ getUserInfos()\l+ setUserInfos()\l}" alt="" coords="246,349,423,800"/>
-</map>

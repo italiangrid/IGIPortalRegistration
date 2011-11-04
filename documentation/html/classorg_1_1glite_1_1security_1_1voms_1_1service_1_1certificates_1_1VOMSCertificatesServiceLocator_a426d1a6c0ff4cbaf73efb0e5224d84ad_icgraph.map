@@ -1,5 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesServiceLocator.html#aa81915dd9fe443883cbb0fa1bdde9aaa" title="org.glite.security.voms.service.certificates.VOMSCertificatesServiceLocator.getPort" alt="" coords="736,4,1198,31"/>
-<area shape="rect" id="node7" href="$classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesServiceLocator.html#ad0f4cb8aef61e4f619cc174db6063d39" title="org.glite.security.voms.service.certificates.VOMSCertificatesServiceLocator.getVOMSCertificates" alt="" coords="699,55,1234,81"/>
-<area shape="rect" id="node5" href="$classorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificatesServiceLocator.html#a9dbe7a84c976e66898bb6ea7eef12687" title="org.glite.security.voms.service.certificates.VOMSCertificatesServiceLocator.getPort" alt="" coords="1282,4,1744,31"/>
-</map>

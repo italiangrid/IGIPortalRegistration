@@ -2,12 +2,12 @@ package portal.registration.utils;
 
 import java.net.MalformedURLException;
 import java.rmi.RemoteException;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.Locale;
+//import java.text.DateFormat;
+//import java.text.ParseException;
+//import java.text.SimpleDateFormat;
+//import java.util.Date;
+//import java.util.GregorianCalendar;
+//import java.util.Locale;
 
 import javax.xml.rpc.ServiceException;
 

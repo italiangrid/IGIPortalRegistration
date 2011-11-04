@@ -1,5 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator.html#ac0d38d86947d56afe47bd4042eaf2dbd" title="org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.getPort" alt="" coords="562,4,1030,31"/>
-<area shape="rect" id="node7" href="$classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator.html#ae0102259b68be98cc8fd174a50b19e4c" title="org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.getVOMSRegistration" alt="" coords="523,55,1069,81"/>
-<area shape="rect" id="node5" href="$classorg_1_1glite_1_1security_1_1voms_1_1service_1_1registration_1_1VOMSRegistrationServiceLocator.html#a253149d8117eb6e99fe661b010a39d14" title="org.glite.security.voms.service.registration.VOMSRegistrationServiceLocator.getVOMSRegistrationWSDDServiceName" alt="" coords="1118,4,1772,31"/>
-</map>

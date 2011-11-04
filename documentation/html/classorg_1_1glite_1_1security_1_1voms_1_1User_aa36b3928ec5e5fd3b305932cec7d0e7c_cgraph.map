@@ -1,8 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classorg_1_1glite_1_1security_1_1voms_1_1User.html#a1627a505e6ec364b76a1c4c450d33d1a" title="org.glite.security.voms.User.getCA" alt="" coords="272,4,477,31"/>
-<area shape="rect" id="node5" href="$classorg_1_1glite_1_1security_1_1voms_1_1User.html#a517f19dcd2c3045bf95650b39cde309f" title="org.glite.security.voms.User.getCertUri" alt="" coords="262,55,488,81"/>
-<area shape="rect" id="node7" href="$classorg_1_1glite_1_1security_1_1voms_1_1User.html#ae5866f4f6167bca6d5c13e4381254fa6" title="org.glite.security.voms.User.getCN" alt="" coords="272,105,477,132"/>
-<area shape="rect" id="node9" href="$classorg_1_1glite_1_1security_1_1voms_1_1User.html#a094592b884a13e068f2f46a8c9b43096" title="org.glite.security.voms.User.getDN" alt="" coords="272,156,477,183"/>
-<area shape="rect" id="node11" href="$classorg_1_1glite_1_1security_1_1voms_1_1User.html#aa666d2f294debc95a3fca089bc8bad35" title="org.glite.security.voms.User.getMail" alt="" coords="270,207,480,233"/>
-<area shape="rect" id="node13" href="$classorg_1_1glite_1_1security_1_1voms_1_1User.html#ac77fa8f377a3661e4b49fbfa1c80aeca" title="org.glite.security.voms.User.User" alt="" coords="276,257,473,284"/>
-</map>

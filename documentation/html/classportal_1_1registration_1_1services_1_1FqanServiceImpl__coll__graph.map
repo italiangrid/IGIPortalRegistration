@@ -1,4 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node2" href="$interfaceportal_1_1registration_1_1services_1_1FqanService.html" title="{portal.registration.services.FqanService\n||+ save()\l+ delete()\l+ findById()\l+ findByFqan()\l+ getAllFqan()\l+ findByIdVo()\l}" alt="" coords="5,6,237,154"/>
-<area shape="rect" id="node6" href="$interfaceportal_1_1registration_1_1dao_1_1FqanDAO.html" title="{portal.registration.dao.FqanDAO\n||+ save()\l+ delete()\l+ findById()\l+ getAllFqan()\l+ findByIdVo()\l}" alt="" coords="344,13,537,147"/>
-</map>

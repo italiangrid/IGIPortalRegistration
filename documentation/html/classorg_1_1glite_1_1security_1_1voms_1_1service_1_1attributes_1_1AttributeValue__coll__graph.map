@@ -1,3 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node2" href="$classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeClass.html" title="{org.glite.security.voms.service.attributes.AttributeClass\n|&#45; description\l&#45; name\l&#45; uniquenessChecked\l&#45; __equalsCalc\l&#45; __hashCodeCalc\l|+ AttributeClass()\l+ AttributeClass()\l+ getDescription()\l+ setDescription()\l+ getName()\l+ setName()\l+ isUniquenessChecked()\l+ setUniquenessChecked()\l+ equals()\l+ hashCode()\l}" alt="" coords="4,5,315,269"/>
-</map>

@@ -1,5 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node2" href="$interfaceportal_1_1registration_1_1services_1_1CertificateService.html" title="{portal.registration.services.CertificateService\n||+ save()\l+ delete()\l+ save()\l+ findById()\l+ delete()\l+ setDefault()\l}" alt="" coords="5,42,264,190"/>
-<area shape="rect" id="node4" href="$interfaceportal_1_1registration_1_1services_1_1UserToVoService.html" title="{portal.registration.services.UserToVoService\n||+ save()\l+ save()\l+ findById()\l+ findVoByUserId()\l+ delete()\l+ setDefault()\l+ findById()\l+ update()\l+ findDefaultVo()\l+ getDefaultFqan()\l+ getNumberOfUserToVo()\l}" alt="" coords="288,6,544,226"/>
-<area shape="rect" id="node6" href="$interfaceportal_1_1registration_1_1services_1_1UserInfoService.html" title="{portal.registration.services.UserInfoService\n||+ save()\l+ delete()\l+ delete()\l+ findById()\l+ getAllUserInfo()\l+ edit()\l+ save()\l}" alt="" coords="568,35,817,197"/>
-</map>

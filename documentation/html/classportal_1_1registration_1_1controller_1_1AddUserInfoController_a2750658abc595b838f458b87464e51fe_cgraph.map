@@ -1,5 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$interfaceportal_1_1registration_1_1services_1_1IdpService.html#a86683b14e9bb0cbedc41bf0aea7f6b66" title="portal.registration.services.IdpService.findById" alt="" coords="417,4,685,31"/>
-<area shape="rect" id="node5" href="$interfaceportal_1_1registration_1_1services_1_1UserInfoService.html#abb06f632b024da6c7458c5d0ee4cc456" title="portal.registration.services.UserInfoService.save" alt="" coords="411,55,690,81"/>
-<area shape="rect" id="node7" href="$classportal_1_1registration_1_1utils_1_1MyValidator.html#acdf993cfac49201b241d31284851e165" title="portal.registration.utils.MyValidator.validate" alt="" coords="426,105,675,132"/>
-</map>

@@ -1,7 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classportal_1_1registration_1_1controller_1_1EditUserToVoController.html#aeb87d1e842bf381602343632f23f58e2" title="portal.registration.controller.EditUserToVoController.addUserToVo" alt="" coords="397,4,766,31"/>
-<area shape="rect" id="node5" href="$classportal_1_1registration_1_1controller_1_1AddUserToVOController.html#a31c8971c1e53637d1d8b26e660f77397" title="portal.registration.controller.AddUserToVOController.checkVO" alt="" coords="407,55,756,81"/>
-<area shape="rect" id="node7" href="$classportal_1_1registration_1_1controller_1_1EditUserToVoController.html#ab5f3b0f3201e6fead40534252c9f6836" title="portal.registration.controller.EditUserToVoController.getUserToVo" alt="" coords="399,105,764,132"/>
-<area shape="rect" id="node9" href="$classportal_1_1registration_1_1controller_1_1EditUserInfoController.html#a09ee8e90312405588fd950063bb797e4" title="portal.registration.controller.EditUserInfoController.showEditUserInfoForm" alt="" coords="375,156,787,183"/>
-<area shape="rect" id="node11" href="$classportal_1_1registration_1_1controller_1_1AddUserToVoPresentsController.html#a648d1bc4409c6d066c845d26eeef8549" title="portal.registration.controller.AddUserToVoPresentsController.showUserInfoForm" alt="" coords="358,207,804,233"/>
-</map>

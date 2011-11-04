@@ -1,3 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node2" href="$interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributes.html" title="{org.glite.security.voms.service.attributes.VOMSAttributes\n||+ createAttributeClass()\l+ createAttributeClass()\l+ createAttributeClass()\l+ getAttributeClass()\l+ saveAttributeClass()\l+ deleteAttributeClass()\l+ deleteAttributeClass()\l+ listAttributeClasses()\l+ listUserAttributes()\l+ setUserAttribute()\l+ deleteUserAttribute()\l+ deleteUserAttribute()\l+ setGroupAttribute()\l+ deleteGroupAttribute()\l+ deleteGroupAttribute()\l+ listGroupAttributes()\l+ setRoleAttribute()\l+ deleteRoleAttribute()\l+ deleteRoleAttribute()\l+ listRoleAttributes()\l}" alt="" coords="62,6,385,356"/>
-</map>

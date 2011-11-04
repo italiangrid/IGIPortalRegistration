@@ -1,3 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classorg_1_1glite_1_1security_1_1voms_1_1service_1_1acl_1_1VOMSACLServiceLocator.html" title="{org.glite.security.voms.service.acl.VOMSACLServiceLocator\n|&#45; VOMSACL_address\l&#45; VOMSACLWSDDServiceName\l&#45; ports\l|+ VOMSACLServiceLocator()\l+ VOMSACLServiceLocator()\l+ VOMSACLServiceLocator()\l+ getVOMSACLAddress()\l+ getVOMSACLWSDDServiceName()\l+ setVOMSACLWSDDServiceName()\l+ getVOMSACL()\l+ getVOMSACL()\l+ setVOMSACLEndpointAddress()\l+ getPort()\l+ getPort()\l+ getServiceName()\l+ getPorts()\l+ setEndpointAddress()\l+ setEndpointAddress()\l}" alt="" coords="5,160,347,467"/>
-</map>

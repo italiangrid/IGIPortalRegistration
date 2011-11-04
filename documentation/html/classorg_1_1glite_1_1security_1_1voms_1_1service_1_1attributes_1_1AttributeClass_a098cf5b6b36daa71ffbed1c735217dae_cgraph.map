@@ -1,6 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeClass.html#afb9d8f4f11af60d65c68ecd4692bd98d" title="org.glite.security.voms.service.attributes.AttributeClass.AttributeClass" alt="" coords="428,4,818,31"/>
-<area shape="rect" id="node5" href="$classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeClass.html#a21f554c1bc3c04739f68a482cfc1f2ab" title="org.glite.security.voms.service.attributes.AttributeClass.getDescription" alt="" coords="427,55,819,81"/>
-<area shape="rect" id="node7" href="$classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeClass.html#a86aeaeb29b5ed1b15506b993cd8f4f08" title="org.glite.security.voms.service.attributes.AttributeClass.getName" alt="" coords="441,105,805,132"/>
-<area shape="rect" id="node9" href="$classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1AttributeClass.html#a59f5201026ab869e6f104d667cad85ce" title="org.glite.security.voms.service.attributes.AttributeClass.isUniquenessChecked" alt="" coords="405,156,840,183"/>
-</map>

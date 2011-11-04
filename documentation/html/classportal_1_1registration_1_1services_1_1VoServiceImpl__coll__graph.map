@@ -1,4 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node2" href="$interfaceportal_1_1registration_1_1services_1_1VoService.html" title="{portal.registration.services.VoService\n||+ getAllVo()\l+ findById()\l+ findByVo()\l+ getAllDiscplines()\l}" alt="" coords="5,5,224,125"/>
-<area shape="rect" id="node6" href="$interfaceportal_1_1registration_1_1dao_1_1VoDAO.html" title="{portal.registration.dao.VoDAO\n||+ getAllVo()\l+ findById()\l+ getAllDiscipline()\l}" alt="" coords="331,13,511,118"/>
-</map>

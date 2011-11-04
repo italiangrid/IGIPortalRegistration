@@ -1,5 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node2" href="$interfaceportal_1_1registration_1_1services_1_1CertificateService.html" title="{portal.registration.services.CertificateService\n||+ save()\l+ delete()\l+ save()\l+ findById()\l+ delete()\l+ setDefault()\l}" alt="" coords="5,6,264,154"/>
-<area shape="rect" id="node6" href="$interfaceportal_1_1registration_1_1dao_1_1UserInfoDAO.html" title="{portal.registration.dao.UserInfoDAO\n||+ save()\l+ delete()\l+ findById()\l+ getAllUserInfo()\l+ edit()\l}" alt="" coords="371,13,583,147"/>
-<area shape="rect" id="node8" href="$interfaceportal_1_1registration_1_1dao_1_1CertificateDAO.html" title="{portal.registration.dao.CertificateDAO\n||+ save()\l+ delete()\l+ findById()\l+ findById()\l+ edit()\l}" alt="" coords="607,13,827,147"/>
-</map>

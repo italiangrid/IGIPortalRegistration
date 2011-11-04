@@ -1,3 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node2" href="$interfaceorg_1_1glite_1_1security_1_1voms_1_1service_1_1certificates_1_1VOMSCertificates.html" title="{org.glite.security.voms.service.certificates.VOMSCertificates\n||+ getCertificates()\l+ getCertificates()\l+ getUserIdFromDn()\l+ addCertificate()\l+ addCertificate()\l+ suspendCertificate()\l+ restoreCertificate()\l+ removeCertificate()\l}" alt="" coords="50,6,389,183"/>
-</map>

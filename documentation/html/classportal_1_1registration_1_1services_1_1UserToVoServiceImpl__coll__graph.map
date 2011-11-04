@@ -1,6 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node2" href="$interfaceportal_1_1registration_1_1services_1_1UserToVoService.html" title="{portal.registration.services.UserToVoService\n||+ save()\l+ save()\l+ findById()\l+ findVoByUserId()\l+ delete()\l+ setDefault()\l+ findById()\l+ update()\l+ findDefaultVo()\l+ getDefaultFqan()\l+ getNumberOfUserToVo()\l}" alt="" coords="5,6,261,226"/>
-<area shape="rect" id="node6" href="$interfaceportal_1_1registration_1_1dao_1_1VoDAO.html" title="{portal.registration.dao.VoDAO\n||+ getAllVo()\l+ findById()\l+ getAllDiscipline()\l}" alt="" coords="368,63,548,169"/>
-<area shape="rect" id="node8" href="$interfaceportal_1_1registration_1_1dao_1_1UserInfoDAO.html" title="{portal.registration.dao.UserInfoDAO\n||+ save()\l+ delete()\l+ findById()\l+ getAllUserInfo()\l+ edit()\l}" alt="" coords="573,49,784,183"/>
-<area shape="rect" id="node10" href="$interfaceportal_1_1registration_1_1dao_1_1UserToVoDAO.html" title="{portal.registration.dao.UserToVoDAO\n||+ save()\l+ findById()\l+ getVoByUserToVo()\l+ delete()\l+ findByIds()\l+ update()\l+ getNumberOfUserToVo()\l}" alt="" coords="809,35,1028,197"/>
-</map>

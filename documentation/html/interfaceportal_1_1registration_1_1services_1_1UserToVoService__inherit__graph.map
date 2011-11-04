@@ -1,3 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classportal_1_1registration_1_1services_1_1UserToVoServiceImpl.html" title="{portal.registration.services.UserToVoServiceImpl\n|&#45; userToVoDAO\l&#45; userInfoDAO\l&#45; voDAO\l&#45; log\l|+ UserToVoServiceImpl()\l+ save()\l+ save()\l+ findById()\l+ findVoByUserId()\l+ delete()\l+ setDefault()\l+ findById()\l+ update()\l+ findDefaultVo()\l+ getDefaultFqan()\l+ getNumberOfUserToVo()\l}" alt="" coords="4,276,283,554"/>
-</map>

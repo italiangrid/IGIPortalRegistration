@@ -1,5 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classorg_1_1glite_1_1security_1_1voms_1_1service_1_1admin_1_1VOMSAdminServiceLocator.html#a3cf5b1535dfa2ca9ab9c602e24c02685" title="org.glite.security.voms.service.admin.VOMSAdminServiceLocator.getPort" alt="" coords="512,4,923,31"/>
-<area shape="rect" id="node5" href="$classportal_1_1registration_1_1utils_1_1VOMSAdminCallOut.html#ac7248574c47f256fe524dfcb82059304" title="portal.registration.utils.VOMSAdminCallOut.getUserFQANs" alt="" coords="549,55,885,81"/>
-<area shape="rect" id="node7" href="$classportal_1_1registration_1_1utils_1_1VOMSTest.html#a5b50cacf533113b01ca54e44682993bf" title="portal.registration.utils.VOMSTest.main" alt="" coords="971,55,1200,81"/>
-</map>

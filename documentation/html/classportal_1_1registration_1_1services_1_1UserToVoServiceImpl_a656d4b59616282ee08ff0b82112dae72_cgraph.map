@@ -1,8 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$interfaceportal_1_1registration_1_1dao_1_1UserToVoDAO.html#a69d40c38f99fa8e610a7706f01971458" title="portal.registration.dao.UserToVoDAO.findById" alt="" coords="399,4,665,31"/>
-<area shape="rect" id="node5" href="$interfaceportal_1_1registration_1_1dao_1_1UserInfoDAO.html#a6ae6399cb2791e189e16ab3633df360e" title="portal.registration.dao.UserInfoDAO.findById" alt="" coords="403,55,661,81"/>
-<area shape="rect" id="node7" href="$interfaceportal_1_1registration_1_1dao_1_1UserToVoDAO.html#aa50e9d0d19887dfd02c83ef3fb55211f" title="portal.registration.dao.UserToVoDAO.findByIds" alt="" coords="396,105,668,132"/>
-<area shape="rect" id="node9" href="$classportal_1_1registration_1_1domain_1_1UserToVo.html#a9e9d57a592ee11683175c491e1f1ff72" title="portal.registration.domain.UserToVo.getIsDefault" alt="" coords="392,156,672,183"/>
-<area shape="rect" id="node11" href="$classportal_1_1registration_1_1domain_1_1UserToVo.html#a11470a7079520429ff32a26f4fe506dc" title="portal.registration.domain.UserToVo.setIsDefault" alt="" coords="393,207,671,233"/>
-<area shape="rect" id="node13" href="$interfaceportal_1_1registration_1_1dao_1_1UserToVoDAO.html#ae75b46fbc3679c3b5d48666ade7645a4" title="portal.registration.dao.UserToVoDAO.update" alt="" coords="403,257,661,284"/>
-</map>

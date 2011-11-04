@@ -1,5 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesServiceLocator.html#a536f7167dbc52e91c9f4bd86e306baa7" title="org.glite.security.voms.service.attributes.VOMSAttributesServiceLocator.getPort" alt="" coords="531,4,976,31"/>
-<area shape="rect" id="node7" href="$classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesServiceLocator.html#a981a432f1407ace3c240c9c7b2d1f909" title="org.glite.security.voms.service.attributes.VOMSAttributesServiceLocator.getVOMSAttributes" alt="" coords="499,55,1008,81"/>
-<area shape="rect" id="node5" href="$classorg_1_1glite_1_1security_1_1voms_1_1service_1_1attributes_1_1VOMSAttributesServiceLocator.html#a8e08dc861cc2e78e50f4bbc0cdac0ad0" title="org.glite.security.voms.service.attributes.VOMSAttributesServiceLocator.getVOMSAttributesWSDDServiceName" alt="" coords="1057,4,1674,31"/>
-</map>

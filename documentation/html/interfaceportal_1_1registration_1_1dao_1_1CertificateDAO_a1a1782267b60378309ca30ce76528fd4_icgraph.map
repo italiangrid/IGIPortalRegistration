@@ -1,6 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classportal_1_1registration_1_1services_1_1CertificateServiceImpl.html#a8c82de27eb589083a94bd6c34bde7247" title="portal.registration.services.CertificateServiceImpl.delete" alt="" coords="333,4,651,31"/>
-<area shape="rect" id="node5" href="$classportal_1_1registration_1_1services_1_1CertificateServiceImpl.html#aa262a9afdd7f565552e4f6b273a97c8c" title="portal.registration.services.CertificateServiceImpl.findById" alt="" coords="328,55,656,81"/>
-<area shape="rect" id="node7" href="$classportal_1_1registration_1_1services_1_1CertificateServiceImpl.html#a592df743c12b9a43db06dbae92db23c2" title="portal.registration.services.CertificateServiceImpl.save" alt="" coords="337,105,647,132"/>
-<area shape="rect" id="node9" href="$classportal_1_1registration_1_1services_1_1CertificateServiceImpl.html#abac3e70bf6b1f63ca1d96e0829365f5c" title="portal.registration.services.CertificateServiceImpl.setDefault" alt="" coords="323,156,661,183"/>
-</map>
