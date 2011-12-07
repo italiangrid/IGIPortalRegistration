@@ -35,10 +35,10 @@ public class VOMSAdminCallOut {
 			AxisProperties.setProperty("axis.socketSecureFactory",
 			"org.glite.security.trustmanager.axis.AXISSocketFactory");
 		}else{
-			log.error("axis giˆ settato");
+			log.error("axis giï¿½ settato");
 		}
 		
-		log.error("porpietˆ axis: " + AxisProperties.getProperty("axis.socketSecureFactory").toString());
+		log.error("porpietï¿½ axis: " + AxisProperties.getProperty("axis.socketSecureFactory").toString());
 		
 		Properties properties = AXISSocketFactory.getCurrentProperties();
 
@@ -132,7 +132,7 @@ public class VOMSAdminCallOut {
 			"org.glite.security.trustmanager.axis.AXISSocketFactory");
 		}
 
-		log.error("porpietˆ axis: " + AxisProperties.getProperty("axis.socketSecureFactory").toString());
+		log.error("porpietÃ  axis: " + AxisProperties.getProperty("axis.socketSecureFactory").toString());
 		
 		Properties properties = AXISSocketFactory.getCurrentProperties();
 

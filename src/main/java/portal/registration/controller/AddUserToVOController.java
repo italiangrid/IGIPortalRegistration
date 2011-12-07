@@ -10,6 +10,7 @@ import org.apache.log4j.Logger;
 
 import portal.registration.domain.Certificate;
 import portal.registration.domain.UserInfo;
+import portal.registration.domain.UserToVo;
 import portal.registration.domain.Vo;
 import portal.registration.services.CertificateService;
 import portal.registration.services.UserInfoService;
@@ -39,6 +40,12 @@ public class AddUserToVOController {
 
 	private static final Logger log = Logger
 			.getLogger(AddUserToVOController.class);
+	
+	private static String search = null;
+	
+	public static void setSearch(String search2){
+		search = search2;
+	}
 
 	@Autowired
 	private CertificateService certificateService;
@@ -87,6 +94,9 @@ public class AddUserToVOController {
 						activateUser(ui, request, errors);
 					}
 					userToVoService.save(userId, idVo, subject);
+					List<UserToVo> utvs =  userToVoService.findById(userId);
+					if(utvs.size()==1);
+						userToVoService.setDefault(userId, idVo);
 					log.info("Salvato sul DB ");
 				} else {
 					allOk = false;
@@ -111,6 +121,8 @@ public class AddUserToVOController {
 			response.setRenderParameter("userId", Integer.toString(userId));
 			request.setAttribute("userId", userId);
 			sessionStatus.setComplete();
+			
+			AddUserToVOController.setSearch(""); 
 
 		} else {
 
@@ -170,7 +182,10 @@ public class AddUserToVOController {
 
 	@ModelAttribute("vos")
 	public List<Vo> getVos() {
-		return voService.getAllVo();
+		if(search==null||search.equals(""))
+			return voService.getAllVo();
+		else
+			return voService.getAllVoByName(search);
 	}
 
 	@ModelAttribute("disciplines")
@@ -270,7 +285,7 @@ public class AddUserToVOController {
 		int idVo = Integer.parseInt(request.getParameter("idVo"));
 
 		try {
-			log.info("Sto per settarea default il userToVo con userId = "
+			log.info("Sto per settare default il userToVo con userId = "
 					+ userId + "e idVo = " + idVo);
 			if (userToVoService.setDefault(userId, idVo))
 				SessionMessages.add(request, "userToVo-updated-successufully");
@@ -312,9 +327,18 @@ public class AddUserToVOController {
 
 		response.setRenderParameter("myaction", "editUserInfoForm");
 		response.setRenderParameter("userId", Integer.toString(userId));
+		request.setAttribute("userId", userId);
 		request.setAttribute("firstReg", request.getParameter("firstReg"));
 		sessionStatus.setComplete();
 
+	}
+	
+	@ModelAttribute("searchUserToVo")
+	public String getSearch() {
+		
+		return search;
+		
+		
 	}
 
 }

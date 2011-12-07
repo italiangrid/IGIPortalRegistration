@@ -75,5 +75,11 @@ public class UserInfoServiceImpl implements UserInfoService {
 		log.debug("getting all UserInfo instance");
 		return userInfoDAO.getAllUserInfoByName(search);
 	}
+	
+	@Transactional
+	public UserInfo findByUsername(String username) {
+		log.debug("getting all UserInfo instance");
+		return userInfoDAO.getUserInfoByUsername(username);
+	}
 
 }

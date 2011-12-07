@@ -118,8 +118,12 @@ public class AddUserInfoController {
 											.getInstance(User.class.getName(),
 													request));
 
-							if (u == null)
+							if (u == null){
 								log.info("nulla di fatto");
+							} else {
+								UserLocalServiceUtil.deleteRoleUser((long) 10140,
+										u.getUserId());
+							}
 
 						} catch (Exception e) {
 
@@ -168,8 +172,11 @@ public class AddUserInfoController {
 					if (request.getParameter("haveCert").equals("true")) {
 						response.setRenderParameter("myaction",
 								"showUploadCert");
+						response.setRenderParameter("userId", Integer.toString(userId));
 						request.setAttribute("userId", userId);
+						response.setRenderParameter("username", userInfo.getUsername());
 						request.setAttribute("username", userInfo.getUsername());
+						response.setRenderParameter("firstReg", "true");
 						request.setAttribute("firstReg", "true");
 					} else {
 						response.setRenderParameter("myaction",

@@ -209,7 +209,7 @@ ul#sortable-delete {
 </style>
 
 <portlet:actionURL var="addUserToVoActionUrl">
-	<portlet:param name="myaction" value="addUserToVo" />
+	<portlet:param name="myaction" value="addFqans" />
 </portlet:actionURL>
 
 <jsp:useBean id="userToVo" type="portal.registration.domain.UserToVo"
@@ -232,7 +232,7 @@ ul#sortable-delete {
 							request.getParameter("idVo"));
 			%>
 
-
+			<c:out value="userId ${userId}; idVo ${idVo};"></c:out>
 			<aui:input name="userId" type="hidden" value="${userId}" />
 			<aui:input name="idVo" type="hidden" value="${idVo}" />
 

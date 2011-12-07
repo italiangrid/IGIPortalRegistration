@@ -6,8 +6,8 @@
 		<portlet-name>Registration</portlet-name>
 		<instanceable>true</instanceable>
 		<header-portlet-css>/css/main.css</header-portlet-css>
-		<header-portal-javascript>http://code.jquery.com/jquery-1.6.1.min.js</header-portal-javascript>
-		<header-portal-javascript>http://code.jquery.com/ui/1.8.14/jquery-ui.min.js</header-portal-javascript>
+		<header-portal-javascript>/Registration-4/js/jquery-1.6.1.min.js</header-portal-javascript>
+		<header-portal-javascript>/Registration-4/js/jquery-ui.min.js</header-portal-javascript>
 		<header-portal-javascript>/Registration-4/js/main.js</header-portal-javascript>
 	</portlet>
 	<role-mapper>

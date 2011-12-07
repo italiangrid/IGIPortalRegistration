@@ -1,9 +1,17 @@
 <%@ include file="/WEB-INF/jsp/init.jsp"%>
 
+<%
+if (request.getParameter("userId") != null){
+	pageContext.setAttribute("userId",request.getParameter("userId"));
+}	
+%>
 
-<portlet:actionURL var="addUserToVOActionUrl">
-	<portlet:param name="myaction" value="goToAddUserToVOForm" />
-</portlet:actionURL>
+
+<portlet:renderURL var="addUserToVOActionUrl">
+	<portlet:param name="myaction" value="showAddUserToVO" />
+	<portlet:param name="userId" value="${userId}" />
+	<portlet:param name="firstReg" value="true" />
+</portlet:renderURL>
 <portlet:renderURL var="homeUrl">
 	<portlet:param name="myaction" value="userInfos" />
 </portlet:renderURL>
@@ -30,25 +38,29 @@
 <liferay-ui:error key="exception-deactivation-user"
 	message="exception-deactivation-user" />
 
+
 <aui:form name="addUserToVOForm" method="post"
 	action="${addUserToVOActionUrl}">
 
-	<a href="${homeUrl}">Home</a>
-
-	<br />
-	<br />
-
 	<aui:input name="userId" type="hidden" value="${userId}" />
+	<aui:input name="firstReg" type="hidden" value="true" />
 
 	<aui:layout>
 
 		<h1 class="header-title">Virtual Organization</h1>
 
-
+		
 
 		<aui:fieldset>
+		
+			<aui:column columnWidth="25">
+				<aui:fieldset label="Registrazione">
+					<br />
+					<img src="https://flyback.cnaf.infn.it/image/image_gallery?img_id=13471&t=1323074859741" alt="Fase 3" />
+				</aui:fieldset>
+			</aui:column>
 
-			<aui:column columnWidth="100">
+			<aui:column columnWidth="75">
 
 				<aui:fieldset label="Lista VO">
 
@@ -91,19 +103,26 @@
 			
 			
 
-			<aui:input name="firstReg" type="hidden" value="true" />
+			
 			
 			<aui:button type="submit" value="Aggiungi VO" />
 			<portlet:renderURL var="voUrl">
 				<portlet:param name="myaction" value="showVOList" />
 				<portlet:param name="waif" value="showAddUserToVoPresents" />
-				<portlet:param name="userId" value="<%= request.getParameter("userId") %>" />
+				<portlet:param name="userId" value="${userId }" />
 			</portlet:renderURL>
 			<aui:button type="button" value="Richiedi appartenenza VO"
 							onClick="location.href='${voUrl}';" />
-			<aui:button type="cancel" value="Home"
-				onClick="location.href='${homeUrl}';" />
-			</div>
+		
+			<c:if test="<%= !themeDisplay.isSignedIn() %>">
+			<aui:button type="cancel" value="Fine Registrazione"
+				onClick="location.href='https://halfback.cnaf.infn.it/casshib/shib/app1/login?service=https%3A%2F%2Fflyback.cnaf.infn.it%2Fc%2Fportal%2Flogin%3Fp_l_id%3D11722';" />
+			</c:if>
+			
+			<c:if test="<%= themeDisplay.isSignedIn() %>">
+			<aui:button type="cancel" value="Fine Registrazione"
+				onClick="${homeUrl }" />
+			</c:if>
 			
 		</aui:fieldset>
 	</aui:layout>

@@ -2,6 +2,8 @@ package portal.registration.controller;
 
 import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
+import javax.portlet.RenderRequest;
+
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -49,12 +51,14 @@ public class EditUserToVoController {
 	}
 
 	@ModelAttribute("userInfo")
-	public UserInfo getUserInfo(@RequestParam int userId) {
+	public UserInfo getUserInfo(RenderRequest request) {
+		int userId = Integer.parseInt(request.getParameter("userId"));
 		return userInfoService.findById(userId);
 	}
 
 	@ModelAttribute("userToVo")
-	public UserToVo getUserToVo(@RequestParam int userId, @RequestParam int idVo) {
+	public UserToVo getUserToVo(RenderRequest request,@RequestParam int idVo) {
+		int userId = Integer.parseInt(request.getParameter("userId"));
 		return userToVoService.findById(userId, idVo);
 	}
 
@@ -65,7 +69,9 @@ public class EditUserToVoController {
 	}
 
 	@ModelAttribute("fqans")
-	public String[] getFqans(@RequestParam int userId, @RequestParam int idVo) {
+	public String[] getFqans(RenderRequest request,@RequestParam int idVo) {
+		
+		int userId = Integer.parseInt(request.getParameter("userId"));
 
 		Vo vo = voService.findById(idVo);
 		

@@ -1,7 +1,9 @@
 package portal.registration.controller;
 
 import javax.portlet.ActionRequest;
+import javax.portlet.ActionResponse;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,24 +30,29 @@ import com.liferay.portal.util.PortalUtil;
 @RequestMapping("VIEW")
 public class RemoveUserInfoController {
 	
+	private static final Logger log = Logger
+			.getLogger(UploadCertController.class);
+	
 	@Autowired
 	private UserInfoService userInfoService;
 
 	@ActionMapping(params="myaction=removeUserInfo")
-	public void removeUserInfo(@RequestParam int userId, ActionRequest request) throws PortalException, SystemException {
+	public void removeUserInfo(@RequestParam int userId, ActionRequest request, ActionResponse response) throws PortalException, SystemException {
 		
 		UserInfo userInfo = userInfoService.findById(userId);
 		String username = userInfo.getUsername();
-		
+		log.error("ricevuto userId " + userId + "corrispondente all'utente " + username);
 		long companyId = PortalUtil.getCompanyId(request);
-		
+		log.error("companyId " + companyId);
 		User user = UserLocalServiceUtil.getUserByScreenName(companyId,
 				username);
-		
+		log.error("recuperato liferay user " + user.getScreenName());
 		UserLocalServiceUtil.deleteUser(user);
-	
+		log.error("eliminato utente liferay");
 		userInfoService.delete(userId);
-		
+		log.error("eliminato utente portalUser");
+		response.setRenderParameter("myaction", "userInfos");
 		SessionMessages.add(request, "user-delated-successufully");
 	}
+	
 }

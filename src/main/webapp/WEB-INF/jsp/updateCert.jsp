@@ -1,8 +1,5 @@
 <%@ include file="/WEB-INF/jsp/init.jsp"%>
 
-
-<%@ include file="/WEB-INF/jsp/init.jsp"%>
-
 <script type="text/javascript">
 <!--
 	//-->
@@ -77,10 +74,10 @@ h5#usernameAlert {
 	message="key-password-failure" />
 
 
-	
-	
-	
-	
+
+
+
+
 
 <portlet:actionURL var="updateCertUrl">
 	<portlet:param name="myaction" value="updateCert" />
@@ -95,7 +92,6 @@ h5#usernameAlert {
 		<portlet:renderURL var="homeUrl">
 			<portlet:param name="myaction" value="userInfos" />
 		</portlet:renderURL>
-		<a href="${homeUrl}">Home</a>
 
 		<br></br>
 
@@ -139,10 +135,10 @@ h5#usernameAlert {
 
 				<aui:fieldset label="Sicurezza e Opzioni">
 					<br />
-					
-					
+
+
 					Per recuperare il certificato dovrai usare questi dati:
-					
+
 					<aui:input id="password" name="password" type="password"
 						label="Password" value="${password }" />
 
@@ -167,9 +163,7 @@ h5#usernameAlert {
 					<strong>Non dimenticare questi dati.</strong>
 					<br />
 					<div id="noteText">
-						Lo <strong>username</strong> da usare per il recupero del
-						certificato proxy verr&agrave indicato nella tabella riassuntiva
-						dei certificati tramite la moce "Edit" del men&ugrave "Actions".<br />
+						
 						<br /> Le <strong>password</strong> che hai inserito non verranno
 						salvate. Nel caso di smarrimento password non sar&agrave possibile
 						recuperarle e sar&agrave necessario eliminare il certificato
@@ -184,22 +178,9 @@ h5#usernameAlert {
 			</aui:column>
 
 			<aui:button-row>
-				<aui:button type="submit" value="Upload Certificate" />
-				<c:choose>
-					<c:when test="${firstReg == false}">
-
-						<aui:button type="cancel" value="Home"
-							onClick="location.href='${homeUrl}';" />
-					</c:when>
-					<c:otherwise>
-						<portlet:renderURL var="backURL">
-							<portlet:param name="myaction" value="editUserInfoForm" />
-							<portlet:param name="userId" value="${userId}" />
-						</portlet:renderURL>
-						<aui:button type="cancel" value="Indietro"
-							onClick="location.href='${backURL}';" />
-					</c:otherwise>
-				</c:choose>
+				<aui:button type="submit" value="Aggiorna Certificato" />
+				<<aui:button type="cancel" value="Indietro"
+					onClick="location.href='${homeUrl}';" />
 
 			</aui:button-row>
 

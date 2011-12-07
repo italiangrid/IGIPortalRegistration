@@ -1,7 +1,10 @@
 package portal.registration.controller;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
+import java.util.Properties;
 
 import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
@@ -22,10 +25,12 @@ import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.servlet.SessionErrors;
 import com.liferay.portal.kernel.servlet.SessionMessages;
+import com.liferay.portal.kernel.util.WebKeys;
 import com.liferay.portal.model.User;
 import com.liferay.portal.service.UserLocalServiceUtil;
 import com.liferay.portal.util.PortalUtil;
 
+import portal.registration.domain.UserToVo;
 import portal.registration.domain.UserInfo;
 import portal.registration.domain.Certificate;
 import portal.registration.domain.Vo;
@@ -193,6 +198,36 @@ public class EditUserInfoController {
 		response.setRenderParameter("myaction", "userInfos");
 		sessionStatus.setComplete();
 
+	}
+	
+	/**
+	 * Return to the portlet the list of the user's fqans.
+	 * @param request: session parameter.
+	 * @return the list of the user's fqans.
+	 */
+	@ModelAttribute("userFqans")
+	public Map<Object,Object> getUserFqans(@RequestParam int userId) {
+		
+		UserInfo userInfo = userInfoService.findById(userId);
+		List<UserToVo> utv = userToVoService.findById(userInfo.getUserId());
+		
+		Map<Object, Object> x = new Properties();
+		
+		String toParse = null;
+		
+		for (Iterator<UserToVo> iterator = utv.iterator(); iterator.hasNext();) {
+			UserToVo userToVo = iterator.next();
+			toParse = userToVo.getFqans();
+			if(toParse != null){
+				x.put(userToVo.getId().getIdVo(), toParse);
+				
+			}else{
+				x.put(userToVo.getId().getIdVo(), "No Roles for this VO");
+			}
+			
+		}
+		
+		return x;
 	}
 
 }

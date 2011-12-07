@@ -8,6 +8,7 @@
 
 	$.extend({
 		getUrlVars : function() {
+			var app = null;
 			var vars = [], hash;
 			var hashes = window.location.href.slice(
 					window.location.href.indexOf('?') + 1).split('&');
@@ -15,6 +16,31 @@
 				hash = hashes[i].split('=');
 				vars.push(hash[0]);
 				vars[hash[0]] = hash[1];
+				//alert("prima questo");
+				if(hash[0]=="uid"){
+					
+					$("#<portlet:namespace/>username").attr("value",hash[1]);
+				}
+				if(hash[0]=="mail"){
+					$("#<portlet:namespace/>mail").attr("value",hash[1]);
+				}
+				if(hash[0]=="givenName"){
+					$("#<portlet:namespace/>firstName").attr("value",hash[1]);
+					
+				}
+				if(hash[0]=="sn"){
+					$("#<portlet:namespace/>lastName").attr("value",hash[1]);
+				}
+				if(hash[0]=="Shib-Application-id"){
+					app = hash[1];
+				}
+				if(hash[0]=="l"){
+					if(app=="app2"){
+						$("#<portlet:namespace/>institute").attr("value",hash[1]+"-INFN");
+					}else{
+						$("#<portlet:namespace/>institute").attr("value",hash[1]);
+					}
+				}
 			}
 			return vars;
 		},
@@ -158,16 +184,32 @@
 	}
 
 	function start() {
-		$("#<portlet:namespace/>idpOk").hide("slow");
-		$("#<portlet:namespace/>NOidp").hide("slow");
+		//alert("faccio lo start");
+		$.getUrlVar('Shib-Application-ID');
+		var test = $("#<portlet:namespace/>username").val();
+		//alert(test); 
+		if(test == ""){
+			
+			//alert("sono dentro");
+			//$("#<portlet:namespace/>temp").attr("value","true");
+			window.location = "https://halfback.cnaf.infn.it/app2/index.jsp";
+			
+		}else{
+			//alert("sono fuori");
+			$.getUrlVar('Shib-Application-ID');
+			$("#<portlet:namespace/>idpOk").show("slow");
+			
+			setIdp();
+		}
 	}
 
 	$(document).ready(function() {
 		lista = new Array();
 		stampa = new Array();
-		//start();
+		
 		//displayUpload();
-		setIdp();
+		//setIdp();
+		start();
 	});
 </script>
 
@@ -199,6 +241,8 @@
 
 <jsp:useBean id="userInfo" type="portal.registration.domain.UserInfo"
 	scope="request" />
+	
+<aui:input id="temp" name="temp" type="hidden" value="false"/>
 
 <aui:form name="addUserInfoForm" commandName="userInfo" method="post"
 	action="${addUserInfoActionUrl}">
@@ -207,21 +251,19 @@
 
 		<h1 class="header-title">Dati Utente</h1>
 
-		<a href="${homeUrl}">Home</a>
-
 		<br></br>
 
 		<aui:fieldset>
 
-			<aui:column columnWidth="20">
+			<aui:column columnWidth="25">
 
-				<aui:fieldset label="Identity Provider">
+				<aui:fieldset label="Registrazione">
 
 					<br></br>
 
 					<aui:input id="idpValue" name="idpValue" type="hidden"
 						value="${idpValue }" />
-					<!--  -->
+					<div style="display: none;">
 					<aui:select id="idpSelect" name="idpId" label="IDP"
 						onChange="idpRedirect();">
 
@@ -239,7 +281,9 @@
 						</c:forEach>
 
 					</aui:select>
-
+					 </div>
+					 
+					 <img src="https://flyback.cnaf.infn.it/image/image_gallery?img_id=13463&t=1323074804011" alt="Fase 1" />
 				</aui:fieldset>
 
 			</aui:column>
@@ -249,7 +293,7 @@
 
 					<aui:fieldset label="Iscriviti al nostro IDP">
 						<br />
-					Richiedi l'appartenenza all'idp sequando il seguente link: <aui:a
+					Richiedi l'appartenenza all'idp seguendo il seguente link: <aui:a
 							href="#">IDP Page</aui:a>
 						<br />
 						<br />
@@ -263,73 +307,76 @@
 				<aui:column columnWidth="25">
 
 					<aui:fieldset label="Dati Personali">
+						
+						
 
 						<br></br>
+						
 						<%
-							if (request.getParameter("uid") != null)
-								userInfo.setUsername(request
-										.getParameter("uid"));
-							if (request.getParameter("mail") != null)
-								userInfo.setMail(request
-										.getParameter("mail"));
-							if (request.getParameter("givenName") != null)
-								userInfo.setFirstName(request
-										.getParameter("givenName"));
-							if (request.getParameter("sn") != null)
-								userInfo.setLastName(request
-										.getParameter("sn"));
-							if (request.getParameter("l") != null) {
-								if (request.getParameter(
-										"Shib-Application-ID").equals(
-										"app2"))
-									userInfo.setInstitute("INFN-"
-											+ request.getParameter("l")
-													.toUpperCase());
-							}
+						if (request.getParameter("uid") != null)
+							userInfo.setUsername(request
+									.getParameter("uid"));
+						if (request.getParameter("mail") != null)
+							userInfo.setMail(request
+									.getParameter("mail"));
+						if (request.getParameter("givenName") != null)
+							userInfo.setFirstName(request
+									.getParameter("givenName"));
+						if (request.getParameter("sn") != null)
+							userInfo.setLastName(request
+									.getParameter("sn"));
+						if (request.getParameter("l") != null) {
+							if (request.getParameter(
+									"Shib-Application-ID").equals(
+									"app2"))
+								userInfo.setInstitute("INFN-"
+										+ request.getParameter("l")
+												.toUpperCase());
+						}
 						%>
-
-						<aui:input name="firstName" type="text" label="First Name"
-							value="${userInfo.firstName}" />
-						<aui:input name="lastName" type="text" label="Last Name"
-							value="${userInfo.lastName}" />
-						<aui:input name="institute" type="text" label="Institute"
+						<strong>Nome</strong><br/>
+						<input id="<portlet:namespace/>firstName" name="firstName" type="text" readonly />
+						<br/><br/>	<strong>Cognome</strong><br/>
+						<input id="<portlet:namespace/>lastName" name="lastName" type="text" readonly />
+						<br/><br/><strong>Istituto</strong><br/>
+						<input id="<portlet:namespace/>institute" name="institute" type="text"
 							value="${userInfo.institute}" />
-						<aui:input name="phone" type="text" label="Phone Number"
-							value="${userInfo.phone}" />
+						
+						<input id="<portlet:namespace/>phone" name=">phone" type="hidden" />
+						<br/><br/><strong>Indirizzo e-Mail</strong><br/>
+						<input id="<portlet:namespace/>mail" name="mail" type="text" readonly />
+						<br/><br/><strong>Username</strong><br/>
+						<input id="<portlet:namespace/>username" name="username" type="text" />
 
-
+						<br></br>
+						
 					</aui:fieldset>
 
 				</aui:column>
-
+				<div style="display: none;">
 				<aui:column columnWidth="25">
 
 					<aui:fieldset label="Certificato">
 
+						
 						<br></br>
-
-						<aui:input name="mail" type="text" label="e-Mail Address"
-							value="${userInfo.mail}" />
-
-						<aui:input id="username" name="username" type="text"
-							label="Username" value="${userInfo.username}" />
-
-						<aui:input label="Possiedi un Certificato" name="haveCert"
-							type="checkbox" value="${checked}" onClick="displayUpload();" />
+						
 
 						<div id="<portlet:namespace/>update_cert"
-							style="display: none; text-align: justify;">L'username
-							inserito ti servirà per recuperare il tuo certificato dal MyProxy
-							server</div>
+							style="display: none; text-align: justify;">Nello step successivo ti verrà 
+							chiesto di caricare il tuo certificato.</div>
 
 						<div id="<portlet:namespace/>get_cert"
 							style="text-align: justify;">Se non hai un certificato puoi
-							richiederlo nella pagina che proposta al termine della procedura
+							richiederlo nella pagina che ti verrà proposta al termine della procedura
 							di registrazione</div>
+						
+						<aui:input label="Possiedi un Certificato" name="haveCert"
+							type="checkbox" value="true" onClick="displayUpload();" />
 
 					</aui:fieldset>
 				</aui:column>
-
+				</div>
 				<aui:column columnWidth="25">
 
 					<aui:fieldset label="Condizioni d'uso">
@@ -349,8 +396,8 @@
 				</aui:column>
 
 				<aui:button-row>
-					<aui:button type="submit" value="Salva"/>
-					<aui:button type="cancel" value="Home"
+					<aui:button type="submit" value="Continua"/>
+					<aui:button type="cancel" value="Annulla"
 						onClick="location.href='${homeUrl}';" />
 				</aui:button-row>
 			</div>

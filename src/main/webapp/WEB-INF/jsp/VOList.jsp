@@ -123,17 +123,15 @@ div.function {
 </liferay-ui:search-container>
 </div>
 
+<portlet:renderURL var="backURL">
+				<portlet:param name="myaction" value="<%= request.getParameter("waif")%>" />
+				<portlet:param name="userId" value="<%= request.getParameter("userId")%>" />
+			</portlet:renderURL>
+
 <aui:form name="completeListForm" method="post"
-	action="${homeUrl}">
+	action="${backURL}">
 	<aui:button-row>
-		<aui:button type="submit" value="Richiesta Completata" />
-		<portlet:renderURL var="backURL">
-						<portlet:param name="myaction" value="<%= request.getParameter("waif")%>" />
-						<portlet:param name="userId" value="<%= request.getParameter("userId")%>" />
-					</portlet:renderURL>
-					
-					<aui:button type="cancel" value="Indietro"
-						onClick="location.href='${backURL}';" />
+		<aui:button type="submit" value="Indietro" />
 	</aui:button-row>
 </aui:form>
 

@@ -116,5 +116,22 @@ public class UserInfoDAOImpl implements UserInfoDAO {
 			throw re;
 		}
 	}
+	
+	public UserInfo getUserInfoByUsername(String username) {
+		log.debug("getting all UserInfo instance");
+		try {
+
+			Session session = sessionFactory.getCurrentSession();
+
+			// Create a Hibernate query (HQL)
+			Query query = session.createQuery("FROM  UserInfo WHERE username  = '"+username+"'");
+
+			// Retrieve all
+			return (UserInfo) query.list().get(0);
+		} catch (RuntimeException re) {
+			log.error("get failed", re);
+			throw re;
+		}
+	}
 
 }

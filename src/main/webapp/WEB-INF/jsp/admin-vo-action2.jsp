@@ -8,11 +8,6 @@
 	//long groupId = themeDisplay.getLayout().getGroupId(); 
 	//String name = userInfo.getFirstName();
 	String primKey = String.valueOf(vo.getIdVo());
-	
-	if (request.getParameter("userId") != null){
-		pageContext.setAttribute("userId",request.getParameter("userId"));
-		//out.println("userId = " + request.getParameter("userId"));
-	}
 %>
 
 <liferay-ui:icon-menu>

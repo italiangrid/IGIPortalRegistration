@@ -72,11 +72,30 @@ h5#usernameAlert {
 <liferay-ui:error key="key-password-failure"
 	message="key-password-failure" />
 	
-	
+<%
+				if (request.getParameter("userId") != null)
+										pageContext.setAttribute("userId",
+												request.getParameter("userId"));
+									if (request.getParameter("username") != null)
+										pageContext.setAttribute("username",
+												request.getParameter("username"));
+									if (request.getParameter("firstReg") != null)
+										pageContext.setAttribute("firstReg",
+												request.getParameter("firstReg"));
+									else
+										pageContext.setAttribute("firstReg","false");
+											
+			%>
 
 <portlet:actionURL var="uploadCertUrl">
 	<portlet:param name="myaction" value="uploadCert" />
+	<portlet:param name="userId" value="${userId }" />
+	<portlet:param name="firstReg" value="${firstReg }" />
 </portlet:actionURL>
+
+<portlet:renderURL var="homeUrl">
+	<portlet:param name="myaction" value="userInfos" />
+</portlet:renderURL>
 
 <aui:form name="uploadCertForm" method="post" action="${uploadCertUrl}"
 	enctype="multipart/form-data">
@@ -84,37 +103,41 @@ h5#usernameAlert {
 
 		<h1 class="header-title">Upload Certificato</h1>
 
-		<portlet:renderURL var="homeUrl">
-			<portlet:param name="myaction" value="userInfos" />
-		</portlet:renderURL>
-		<a href="${homeUrl}">Home</a>
-
 		<br></br>
 
 		<aui:fieldset>
+			
+			
+				
+			<c:if test="${firstReg == true}">
+			<aui:column columnWidth="20">
+				
+				<aui:fieldset label="Registrazione">
+					<br />
+					
+					
+					<img src="https://flyback.cnaf.infn.it/image/image_gallery?img_id=13467&t=1323074831749" alt="Fase 2" />
+					
 
+				</aui:fieldset>
+				
+				<br />
+				<br />
+			</aui:column>
+			</c:if>
 			<aui:column columnWidth="25">
 
-				<aui:fieldset label="Upload Certificate">
+				<aui:fieldset label="Carica il Certificato">
 					<br />
-					<%
-						if (request.getParameter("userId") != null)
-												pageContext.setAttribute("userId",
-														request.getParameter("userId"));
-											if (request.getParameter("username") != null)
-												pageContext.setAttribute("username",
-														request.getParameter("username"));
-					%>
+					
 
 
 					<aui:input name="userId" type="hidden" value="${userId}" />
 					<aui:input name="username" type="hidden" value="${username}" />
 					<aui:input name="firstReg" type="hidden" value="${firstReg}" />
 
-					<aui:input name="usercert" type="file" label="Certificato"
-						value="${usercert }" />
-					<aui:input name="userkey" type="file" label="Chiave"
-						value="${userkey }" />
+					<aui:input name="usercert" type="file" label="Certificato" />
+					<aui:input name="userkey" type="file" label="Chiave" />
 
 					<aui:input id="keyPass" name="keyPass" type="password"
 						label="Password Della Chiave Privata" />
@@ -134,14 +157,12 @@ h5#usernameAlert {
 					Per recuperare il certificato dovrai usare questi dati:
 					
 					<aui:input id="password" name="password" type="password"
-						label="Password" value="${password }" />
+						label="Password" />
 
 					<aui:input id="passwordVerify" name="passwordVerify"
-						type="password" label="Retype Password" value="${passwordVerify }"
-						onkeyup="verifyPassword();" />
+						type="password" label="Retype Password" onkeyup="verifyPassword();" />
 
-					<aui:input name="primaryCert" type="checkbox" value="true"
-						label="Ritieni questo certificato come principale" />
+					<aui:input name="primaryCert" type="hidden" value="true"/>
 
 				</aui:fieldset>
 
@@ -157,10 +178,7 @@ h5#usernameAlert {
 					<strong>Non dimenticare questi dati.</strong>
 					<br />
 					<div id="noteText">
-						Lo <strong>username</strong> da usare per il recupero del
-						certificato proxy verr&agrave indicato nella tabella riassuntiva
-						dei certificati tramite la moce "Edit" del men&ugrave "Actions".<br />
-						<br /> Le <strong>password</strong> che hai inserito non verranno
+						Le <strong>password</strong> che hai inserito non verranno
 						salvate. Nel caso di smarrimento password non sar&agrave possibile
 						recuperarle e sar&agrave necessario eliminare il certificato
 						salvato e rieffettuare l'upload del certificato utente. Mantenerle
@@ -174,22 +192,12 @@ h5#usernameAlert {
 			</aui:column>
 
 			<aui:button-row>
-				<aui:button type="submit" value="Upload Certificate" />
-				<c:choose>
-					<c:when test="${firstReg == false}">
+				<aui:button type="submit" value="Carica il Certificato" />
+				
 
-						<aui:button type="cancel" value="Home"
+						<aui:button type="cancel" value="Esci"
 							onClick="location.href='${homeUrl}';" />
-					</c:when>
-					<c:otherwise>
-						<portlet:renderURL var="backURL">
-							<portlet:param name="myaction" value="editUserInfoForm" />
-							<portlet:param name="userId" value="${userId}" />
-						</portlet:renderURL>
-						<aui:button type="cancel" value="Indietro"
-							onClick="location.href='${backURL}';" />
-					</c:otherwise>
-				</c:choose>
+					
 
 			</aui:button-row>
 

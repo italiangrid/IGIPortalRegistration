@@ -17,5 +17,7 @@ public interface UserInfoDAO {
 	public void edit(UserInfo userInfo);
 
 	public List<UserInfo> getAllUserInfoByName(String search);
+	
+	public UserInfo getUserInfoByUsername(String username);
 
 }

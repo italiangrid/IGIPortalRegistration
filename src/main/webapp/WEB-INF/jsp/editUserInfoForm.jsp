@@ -67,6 +67,8 @@ div#voData {
 }
 </style>
 
+
+
 <portlet:actionURL var="editUserInfoActionUrl">
 	<portlet:param name="myaction" value="editUserInfo" />
 </portlet:actionURL>
@@ -81,6 +83,15 @@ div#voData {
 	scope="request" />
 <jsp:useBean id="userToVoList"
 	type="java.util.List<portal.registration.domain.Vo>" scope="request"></jsp:useBean>
+	
+	<%
+			User userLF = (User) request.getAttribute(WebKeys.USER);
+		%>
+	Bentornato <strong><c:out value="<%=userLF.getFirstName() %>"></c:out>
+		</strong>
+		<br />
+		<br />
+
 
 <div id="personalData">
 	<h3 class="header-title">Dati Personali</h3>
@@ -156,13 +167,15 @@ div#voData {
 								value="<%=userInfo.getUserId() %>" />
 							<liferay-ui:error key="user-first-name-required"
 								message="user-first-name-required" />
-							<aui:input name="firstName" type="text"
-								value="<%=userInfo.getFirstName() %>" label="First Name" />
+							<strong>First Name</strong><br/>
+							<input name="firstName" type="text"
+								value="<%=userInfo.getFirstName() %>" disabled="disabled"/>
 							<liferay-ui:error key="user-last-name-required"
 								message="user-last-name-required" />
-							<aui:input name="lastName" type="text"
-								value="<%=userInfo.getLastName() %>" label="Last Name" />
-
+							<br/><br/><strong>Last Name</strong><br/>
+							<input name="lastName" type="text"
+								value="<%=userInfo.getLastName() %>" disabled="disabled"/>
+							<br/> <br/>
 						</aui:fieldset>
 					</aui:column>
 
@@ -171,13 +184,15 @@ div#voData {
 							<br></br>
 							<liferay-ui:error key="user-institute-required"
 								message="user-institute-required" />
-							<aui:input name="institute" type="text"
-								value="<%=userInfo.getInstitute() %>" label="Institute" />
+							<strong>Institute</strong><br/>
+							<input name="institute" type="text"
+								value="<%=userInfo.getInstitute() %>" />
 							<liferay-ui:error key="user-phone-valid"
 								message="user-phone-valid" />
-							<aui:input name="phone" type="text"
-								value="<%=userInfo.getPhone() %>" label="Phone Number" />
-
+							<br/><br/><strong>Phone Number</strong><br/>
+							<input name="phone" type="text"
+								value="<%=userInfo.getPhone() %>"  />
+							<br/> <br/>
 						</aui:fieldset>
 					</aui:column>
 
@@ -188,18 +203,19 @@ div#voData {
 								message="user-username-required" />
 							<liferay-ui:error key="user-username-duplicate"
 								message="user-username-duplicate" />
-
-							<aui:input name="username" disabled="disabled" type="text"
-								value="<%=userInfo.getUsername() %>" label="Username" />
+							<strong>Username</strong><br/>
+							<input name="username" disabled="disabled" type="text"
+								value="<%=userInfo.getUsername() %>" />
 							<liferay-ui:error key="user-mail-required"
 								message="user-mail-required" />
 							<liferay-ui:error key="user-valid-mail-required"
 								message="user-valid-mail-required" />
 							<liferay-ui:error key="user-mail-duplicate"
 								message="user-mail-duplicate" />
-							<aui:input name="mail" disabled="disabled" type="text"
-								value="<%=userInfo.getMail() %>" label="e-Mail Address" />
-
+							<br/><br/><strong>e-Mail Address</strong><br/>
+							<input name="mail" disabled="disabled" type="text"
+								value="<%=userInfo.getMail() %>" />
+							<br/> <br/>
 						</aui:fieldset>
 					</aui:column>
 
@@ -237,8 +253,8 @@ div#voData {
 			Certificati</a><br /> <br /> Al momento hai effetuato l'upload di 
 				<c:choose>
 				<c:when test="${fn:length(certList)==0}" >
-				<span style="color:red"><strong>#<c:out value="${fn:length(certList)}" /></span>
-				</strong>certificati<br />
+				<span style="color:red"><strong>#<c:out value="${fn:length(certList)}" /></strong></span>
+				certificati<br />
 				</c:when>
 				<c:when test="${fn:length(certList)==1}" >
 				<strong>#<c:out value="${fn:length(certList)}" />
@@ -383,7 +399,7 @@ div#voData {
 		</c:if>
 		<c:if test="${!empty defaultFqan}">
 			<br />Ruoli per la VO di default: <strong><c:out
-					value="${defaultFqan}" /> </strong>
+					value="${fn:replace(defaultFqan,';',' ')}" /> </strong>
 		</c:if>
 
 		<br /> <br />
@@ -412,22 +428,38 @@ div#voData {
 			<liferay-ui:search-container-row
 				className="portal.registration.domain.Vo" keyProperty="idVo"
 				modelVar="Vo">
-				<liferay-ui:search-container-column-text name="Nome VO"
-					property="vo" />
-				<liferay-ui:search-container-column-text name="Default VO">
-					<c:choose>
-						<c:when test="${defaultVo == Vo.vo}">
-										true
-									</c:when>
-						<c:otherwise> 
-										false
-									</c:otherwise>
-					</c:choose>
-				</liferay-ui:search-container-column-text>
-				<liferay-ui:search-container-column-text name="Descrizione"
-					property="description" />
-				<liferay-ui:search-container-column-jsp
-					path="/WEB-INF/jsp/admin-vo-action.jsp" align="right" />
+				<c:choose>
+					<c:when test="${defaultVo == Vo.vo}">
+						
+						<liferay-ui:search-container-column-text name="Nome VO">
+							<span style="color:red"> <c:out value="${Vo.vo }"></c:out> </span>
+						</liferay-ui:search-container-column-text>
+						<liferay-ui:search-container-column-text name="Default VO">
+							<span style="color:red">true</span></liferay-ui:search-container-column-text>
+						<liferay-ui:search-container-column-text name="Descrizione"> 
+							<span style="color:red"><c:out value="${Vo.description}"></c:out></span> 
+						</liferay-ui:search-container-column-text>
+						<liferay-ui:search-container-column-text name="Ruoli"> 
+							<span style="color:red"><c:out value="${fn:replace(userFqans[Vo.idVo],';',' ')}"></c:out></span> 
+						</liferay-ui:search-container-column-text>
+						<liferay-ui:search-container-column-jsp
+							path="/WEB-INF/jsp/admin-vo-action.jsp" align="right" />
+						
+					</c:when>
+					<c:otherwise> 
+						<liferay-ui:search-container-column-text name="Nome VO"
+							property="vo" />
+						<liferay-ui:search-container-column-text name="Default VO">
+							false</liferay-ui:search-container-column-text>
+						<liferay-ui:search-container-column-text name="Descrizione"
+							property="description" />
+						<liferay-ui:search-container-column-text name="Ruoli"> 
+							<c:out value="${fn:replace(userFqans[Vo.idVo],';',' ')}"></c:out>
+						</liferay-ui:search-container-column-text>
+						<liferay-ui:search-container-column-jsp
+							path="/WEB-INF/jsp/admin-vo-action.jsp" align="right" />
+					</c:otherwise>
+				</c:choose>
 			</liferay-ui:search-container-row>
 			<liferay-ui:search-iterator />
 		</liferay-ui:search-container>
@@ -461,17 +493,42 @@ div#voData {
 <br />
 <br />
 
-<portlet:actionURL var="homeUrl">
-	<portlet:param name="myaction" value="uploadComplete" />
-	<portlet:param name="userId"
-		value="<%= request.getParameter("userId") %>" />
-</portlet:actionURL>
+<c:choose>
+	<c:when test="<%= request.isUserInRole("administrator") %>">
+	
+		<portlet:actionURL var="homeUrl">
+			<portlet:param name="myaction" value="uploadComplete" />
+			<portlet:param name="userId"
+				value="<%= request.getParameter("userId") %>" />
+		</portlet:actionURL>
+		
+		
+		<aui:form name="catalogForm" method="post" action="${homeUrl}">
+			<aui:button-row>
+				<aui:button type="submit" value="Modifiche Completate!!!" />
+			</aui:button-row>
+		</aui:form>
 
-<aui:form name="catalogForm" method="post" action="${homeUrl}">
-	<aui:button-row>
-		<aui:button type="submit" value="Modifiche Completate!!!" />
-	</aui:button-row>
-</aui:form>
+	</c:when>
+	<c:otherwise>
+	
+		<portlet:actionURL var="deleteURL">
+			<portlet:param name="myaction" value="deleteByUser" /> 
+			<portlet:param name="userId" value="<%= request.getParameter("userId") %>" /> 
+		</portlet:actionURL>
+		
+		<aui:form name="catalogForm" method="post" action="${deleteUrl}">
+			<aui:button-row>
+				<aui:button type="cancel" value="Delete Account"
+								onClick="${deleteURL}" />
+			</aui:button-row>
+		</aui:form>
+	
+	</c:otherwise>
+
+</c:choose>
+
+
 
 
 

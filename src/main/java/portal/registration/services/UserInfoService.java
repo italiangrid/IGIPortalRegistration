@@ -21,5 +21,7 @@ public interface UserInfoService {
 	public int save(UserInfo userInfo, int idIDP);
 
 	public List<UserInfo> getAllUserInfoByName(String search);
+	
+	public UserInfo findByUsername(String username);
 
 }

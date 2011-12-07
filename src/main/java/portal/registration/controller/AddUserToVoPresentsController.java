@@ -10,6 +10,8 @@ import portal.registration.domain.Vo;
 import portal.registration.services.UserInfoService;
 import portal.registration.services.UserToVoService;
 import portal.registration.services.VoService;
+
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -23,6 +25,7 @@ import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.servlet.SessionErrors;
 import com.liferay.portal.kernel.servlet.SessionMessages;
+import com.liferay.portal.kernel.util.WebKeys;
 import com.liferay.portal.model.User;
 import com.liferay.portal.service.UserLocalServiceUtil;
 import com.liferay.portal.util.PortalUtil;
@@ -30,6 +33,10 @@ import com.liferay.portal.util.PortalUtil;
 @Controller(value = "addUserToVoPresentsController")
 @RequestMapping(value = "VIEW")
 public class AddUserToVoPresentsController {
+	
+	private static final Logger log = Logger
+			.getLogger(AddUserToVoPresentsController.class);
+
 
 	@Autowired
 	private VoService voService;
@@ -98,14 +105,21 @@ public class AddUserToVoPresentsController {
 	@ActionMapping(params = "myaction=goToAddUserToVOForm")
 	public void goToAddUserToVOForm(ActionRequest request,
 			ActionResponse response, SessionStatus sessionStatus) {
-
-		int userId = Integer.parseInt(request.getParameter("userId"));
+		int userId = 0;
+		if(request.getParameter("userId")==null){
+			log.error("siamo rovinati");
+			User user = (User) request.getAttribute(WebKeys.USER);
+			if(user!=null)
+				userId = userInfoService.findByUsername(user.getScreenName()).getUserId();
+		}else{
+			userId = Integer.parseInt(request.getParameter("userId"));
+		}
 		response.setRenderParameter("myaction", "showAddUserToVO");
 		response.setRenderParameter("userId", Integer.toString(userId));
-		// log.info("firstReg = " +
-		// ((request.getParameter("firstReg")==null)?"null":request.getParameter("firstReg")));
+		response.setRenderParameter("firstReg", request.getParameter("firstReg"));
 
 		request.setAttribute("firstReg", request.getParameter("firstReg"));
+		request.setAttribute("userId", userId);
 		sessionStatus.setComplete();
 
 	}

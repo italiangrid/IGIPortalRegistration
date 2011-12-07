@@ -70,9 +70,9 @@ public class UploadCertController {
 		HttpServletRequest req = PortalUtil.getHttpServletRequest(request);
 
 		if (req != null) {
-			log.info("yessssss req");
+			log.error("yessssss req");
 		} else {
-			log.info("noooooo disastro req");
+			log.error("noooooo disastro req");
 		}
 		
 		String ns = response.getNamespace();
@@ -89,7 +89,7 @@ public class UploadCertController {
 		if (dir.isDirectory()) {
 
 			if (ServletFileUpload.isMultipartContent(req)) {
-				log.info("yessssss" + ServletFileUpload.isMultipartContent(req));
+				log.error("yessssss" + ServletFileUpload.isMultipartContent(req));
 				try {
 					MultipartParser mp = new MultipartParser(req,
 							1 * 1024 * 1024); // 10MB
@@ -113,7 +113,7 @@ public class UploadCertController {
 								primaryCert = value;
 							if (name.equals(ns + "firstReg"))
 								firstReg = value;
-							log.info("param; name=" + name + ", value=" + value);
+							log.error("param; name=" + name + ", value=" + value);
 						} else if (part.isFile()) {
 							// it's a file part
 							FilePart filePart = (FilePart) part;
@@ -121,7 +121,7 @@ public class UploadCertController {
 							if (fileName != null) {
 								// the part actually contained a file
 								long size = filePart.writeTo(dir);
-								log.info("file; name=" + name + "; filename="
+								log.error("file; name=" + name + "; filename="
 										+ fileName + ", filePath="
 										+ filePart.getFilePath()
 										+ ", content type="
@@ -130,26 +130,31 @@ public class UploadCertController {
 								files.add(fileName);
 							} else {
 								// the field did not contain a file
-								log.info("file; name=" + name + "; EMPTY");
+								log.error("file; name=" + name + "; EMPTY");
 							}
 						}
 					}
 
 				} catch (IOException lEx) {
 					allOk = false;
-					log.info("error reading or saving file");
+					log.error("error reading or saving file");
 				}
 
 			} else {
 				allOk = false;
-				log.info("nooooooo "
+				log.error("nooooooo "
 						+ ServletFileUpload.isMultipartContent(req));
 			}
 
 		} else {
 			allOk = false;
-			log.info("non è un a directory");
+			log.error("non √® una directory");
 		}
+		
+		uid = Integer.parseInt(request.getParameter("userId"));
+		username = request.getParameter("username");
+		firstReg = request.getParameter("firstReg");
+	 
 
 		if (MyValidator.validateCert(pwd, pwd1, pwd2, errors) && allOk) {
 			// controllo file
@@ -171,22 +176,22 @@ public class UploadCertController {
 							"MMM dd HH:mm:ss yyyy z", Locale.UK);
 					date = (Date) formatter.parse(enddate);
 
-					log.info("data formattata = " + date.toString());
+					log.error("data formattata = " + date.toString());
 					GregorianCalendar c = new GregorianCalendar();
 					Date oggi = c.getTime();
-					log.info("data oggi = " + oggi.toString());
+					log.error("data oggi = " + oggi.toString());
 
 					if (date.before(oggi)) {
-						log.info("Certificato scaduto");
+						log.error("Certificato scaduto");
 						errors.add("user-certificate-expired");
 						allOk = false;
 					} else {
-						log.info("Certificato valido");
+						log.error("Certificato valido");
 					}
 
 				} catch (ParseException e) {
 					allOk = false;
-					log.info("Eccezzione data");
+					log.error("Eccezzione data");
 				}
 				if (allOk) {
 					Certificate cert = new Certificate();
@@ -211,7 +216,7 @@ public class UploadCertController {
 						int id = certificateService.save(cert, uid);
 
 						if (id != -1) {
-							log.info("inserito il certificato per l'utente con userId = "
+							log.error("inserito il certificato per l'utente con userId = "
 									+ uid);
 						} else {
 							allOk = false;
@@ -219,7 +224,7 @@ public class UploadCertController {
 					}
 				}
 			} else {
-				log.info("errori vari");
+				log.error("errori vari");
 				allOk = false;
 			}
 			
@@ -244,7 +249,7 @@ public class UploadCertController {
 							+ usrnm + " /upload_files/" + files.get(0)
 							+ " /upload_files/" + files.get(1) + " " + pwd + " "
 							+ pwd1;
-					log.info("Myproxy command = " + myproxy);
+					log.error("Myproxy command = " + myproxy);
 					Process p = Runtime.getRuntime().exec(myproxy);
 					InputStream stdout = p.getInputStream();
 					InputStream stderr = p.getErrorStream();
@@ -255,33 +260,33 @@ public class UploadCertController {
 
 					while (((line = output.readLine()) != null)) {
 
-						log.info("[Stdout] " + line);
+						log.error("[Stdout] " + line);
 						if (line.equals("myproxy success")) {
-							log.info("myproxy ok");
+							log.error("myproxy ok");
 							pwd += "\n";
 						} else {
 							if (line.equals("myproxy verify password failure")) {
 								errors.add("error-password-mismatch");
-								log.info(line);
+								log.error(line);
 								allOk = false;
 							} else {
 								if (line.equals("myproxy password userkey failure")) {
 									errors.add("error-password-mismatch");
-									log.info(line);
+									log.error(line);
 									allOk = false;
 								} else {
 									if (line.equals("too short passphrase")) {
 										errors.add("error-password-too-short");
-										log.info(line);
+										log.error(line);
 										allOk = false;
 									} else {
 										if (line.equals("key password failure")) {
 											errors.add("key-password-failure");
-											log.info(line);
+											log.error(line);
 											allOk = false;
 										} else {
 											errors.add("no-valid-key");
-											log.info(line);
+											log.error(line);
 											allOk = false;
 										}
 									}
@@ -295,7 +300,7 @@ public class UploadCertController {
 							new InputStreamReader(stderr));
 					while ((line = brCleanUp.readLine()) != null) {
 						allOk = false;
-						log.info("[Stderr] " + line);
+						log.error("[Stderr] " + line);
 						errors.add("no-valid-key");
 					}
 					if (!allOk){
@@ -311,10 +316,10 @@ public class UploadCertController {
 			}
 		}
 
-		log.info("controllo errori");
+		log.error("controllo errori");
 		if (allOk && errors.isEmpty()) {
 
-			log.info("tutto ok!!");
+			log.error("tutto ok!!");
 			SessionMessages.add(request, "upload-cert-successufully");
 
 			if (firstReg.equals("true")) {
@@ -330,22 +335,26 @@ public class UploadCertController {
 
 		} else {
 
-			log.info("Trovato errori");
+			log.error("Trovato errori");
 			errors.add("error-uploading-certificate");
 
 			for (String error : errors) {
-				log.info("Errore: " + error);
+				log.error("Errore: " + error);
 				SessionErrors.add(request, error);
 			}
 
-			sessionStatus.setComplete();
+			//sessionStatus.setComplete();
 			response.setRenderParameter("myaction", "showUploadCert");
+			response.setRenderParameter("userId", String.valueOf(uid));
 			request.setAttribute("userId", uid);
+			response.setRenderParameter("username", username);
 			request.setAttribute("username", username);
 			request.setAttribute("password", pwd1);
 			request.setAttribute("passwordVerify", pwd2);
-			if (firstReg.equals("true"))
-					request.setAttribute("firstReg", "true");
+			if (firstReg.equals("true")){
+				response.setRenderParameter("firstReg", "true");
+				request.setAttribute("firstReg", "true");
+			}
 
 		}
 
@@ -361,7 +370,7 @@ public class UploadCertController {
 		try {
 			String cmd = "/usr/bin/openssl x509 -in /upload_files/" + filename
 					+ " -" + opt + " -noout";
-			log.info("cmd = " + cmd);
+			log.error("cmd = " + cmd);
 			Process p = Runtime.getRuntime().exec(cmd);
 			InputStream stdout = p.getInputStream();
 			InputStream stderr = p.getErrorStream();
@@ -375,10 +384,10 @@ public class UploadCertController {
 					: 1;
 
 			while ((line = output.readLine()) != null) {
-				log.info("[Stdout] " + line);
+				log.error("[Stdout] " + line);
 				if ((posizione = line.indexOf("=")) != -1) {
 					result = line.substring(posizione + cursore);
-					log.info(opt + " = " + result);
+					log.error(opt + " = " + result);
 				}
 			}
 			output.close();
@@ -387,7 +396,7 @@ public class UploadCertController {
 					new InputStreamReader(stderr));
 			while ((line = brCleanUp.readLine()) != null) {
 				errors.add("no-valid-cert-" + opt);
-				log.info("[Stderr] " + line);
+				log.error("[Stderr] " + line);
 			}
 			brCleanUp.close();
 
@@ -407,13 +416,13 @@ public class UploadCertController {
 		String userId = request.getParameter("userId");
 
 		try {
-			log.info("Sto per cancellare il certificato con id = " + idCert);
+			log.error("Sto per cancellare il certificato con id = " + idCert);
 			if (certificateService.setDefault(idCert))
 				SessionMessages.add(request,
 						"certificate-updated-successufully");
 			else
 				SessionErrors.add(request, "error-default-certificate");
-			log.info("Certificato cancellato");
+			log.error("Certificato cancellato");
 
 		} catch (Exception e) {
 			SessionErrors.add(request, "error-updating-certificate");
@@ -433,9 +442,9 @@ public class UploadCertController {
 		String userId = request.getParameter("userId");
 
 		try {
-			log.info("Sto per cancellare il certificato con id = " + idCert);
+			log.error("Sto per cancellare il certificato con id = " + idCert);
 			certificateService.delete(idCert);
-			log.info("Certificato cancellato");
+			log.error("Certificato cancellato");
 
 			SessionMessages.add(request, "certificate-deleted-successufully");
 
@@ -453,7 +462,7 @@ public class UploadCertController {
 		try {
 			String cmd = "rm -f /upload_files/" + files.get(0)
 					+ " /upload_files/" + files.get(1);
-			log.info("cmd = " + cmd);
+			log.error("cmd = " + cmd);
 			Runtime.getRuntime().exec(cmd);
 
 		} catch (IOException e) {
