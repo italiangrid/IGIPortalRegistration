@@ -110,7 +110,7 @@ h5#usernameAlert {
 			
 				
 			<c:if test="${firstReg == true}">
-			<aui:column columnWidth="20">
+			<aui:column columnWidth="25">
 				
 				<aui:fieldset label="Registrazione">
 					<br />
@@ -137,7 +137,7 @@ h5#usernameAlert {
 					<aui:input name="firstReg" type="hidden" value="${firstReg}" />
 
 					<aui:input name="usercert" type="file" label="Certificato" />
-					<aui:input name="userkey" type="file" label="Chiave" />
+					<!--<aui:input name="userkey" type="file" label="Chiave" />-->
 
 					<aui:input id="keyPass" name="keyPass" type="password"
 						label="Password Della Chiave Privata" />

@@ -49,6 +49,12 @@
 		$("#<portlet:namespace/>voOFF").hide("slow");
 		$("#<portlet:namespace/>voOn").show("slow");
 	}
+	
+	function verifyDelete(url){
+		var agree=confirm("Sei sicuro di voler eliminare il tuo account?");
+		if (agree)
+			return location.href=url ;
+	}
 
 	$(document).ready(function() {
 		//nascondiCertificatiUtente();
@@ -675,7 +681,7 @@ div#voData {
 		<aui:form name="catalogForm" method="post" action="${deleteUrl}">
 			<aui:button-row>
 				<aui:button type="cancel" value="Delete Account"
-								onClick="${deleteURL}" />
+								onClick="verifyDelete('${deleteURL}')" />
 			</aui:button-row>
 		</aui:form>
 

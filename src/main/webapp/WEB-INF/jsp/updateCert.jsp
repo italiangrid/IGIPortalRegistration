@@ -119,8 +119,8 @@ h5#usernameAlert {
 
 					<aui:input name="usercert" type="file" label="Certificato"
 						value="${usercert }" />
-					<aui:input name="userkey" type="file" label="Chiave"
-						value="${userkey }" />
+					<!--<aui:input name="userkey" type="file" label="Chiave"
+						value="${userkey }" />-->
 
 					<aui:input id="keyPass" name="keyPass" type="password"
 						label="Password Della Chiave Privata" />
