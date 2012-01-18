@@ -117,13 +117,13 @@ h5#usernameAlert {
 					<aui:input name="userId" type="hidden" value="${userId}" />
 					<aui:input name="idCert" type="hidden" value="${idCert}" />
 
-					<aui:input name="usercert" type="file" label="Certificato"
+					<aui:input name="usercert" type="file" label="Certificato in formato p12"
 						value="${usercert }" />
 					<!--<aui:input name="userkey" type="file" label="Chiave"
 						value="${userkey }" />-->
 
 					<aui:input id="keyPass" name="keyPass" type="password"
-						label="Password Della Chiave Privata" />
+						label="Password del tuo certificato" />
 
 				</aui:fieldset>
 
@@ -137,7 +137,8 @@ h5#usernameAlert {
 					<br />
 
 
-					Per recuperare il certificato dovrai usare questi dati:
+					Inserire la password che verr&agrave utilizzata per recuperare il proxy.<br/>
+					In futuro questa sar&agrave l'unica password da inserire per utilizzare il portale.
 
 					<aui:input id="password" name="password" type="password"
 						label="Password" value="${password }" />
@@ -179,7 +180,7 @@ h5#usernameAlert {
 
 			<aui:button-row>
 				<aui:button type="submit" value="Aggiorna Certificato" />
-				<<aui:button type="cancel" value="Indietro"
+				<aui:button type="cancel" value="Indietro"
 					onClick="location.href='${homeUrl}';" />
 
 			</aui:button-row>

@@ -1,8 +1,5 @@
 <%@ include file="/WEB-INF/jsp/init.jsp"%>
 
-
-<%@ include file="/WEB-INF/jsp/init.jsp"%>
-
 <script type="text/javascript">
 <!--
 	//-->
@@ -115,8 +112,8 @@ h5#usernameAlert {
 				<aui:fieldset label="Registrazione">
 					<br />
 					
-					
-					<img src="https://flyback.cnaf.infn.it/image/image_gallery?img_id=13467&t=1323074831749" alt="Fase 2" />
+					<img src="<%=request.getContextPath()%>/images/step2.png"/>
+					<!-- <img src="https://gridlab17.cnaf.infn.it/image/image_gallery?img_id=12347&t=1326102175108" alt="Fase 2" /> -->
 					
 
 				</aui:fieldset>
@@ -136,11 +133,13 @@ h5#usernameAlert {
 					<aui:input name="username" type="hidden" value="${username}" />
 					<aui:input name="firstReg" type="hidden" value="${firstReg}" />
 
-					<aui:input name="usercert" type="file" label="Certificato" />
-					<!--<aui:input name="userkey" type="file" label="Chiave" />-->
+					<aui:input name="usercert" type="file" label="Certificato in formato p12"
+						value="${usercert }" />
+					<!--<aui:input name="userkey" type="file" label="Chiave"
+						value="${userkey }" />-->
 
 					<aui:input id="keyPass" name="keyPass" type="password"
-						label="Password Della Chiave Privata" />
+						label="Password del tuo certificato" />
 
 				</aui:fieldset>
 
@@ -154,7 +153,8 @@ h5#usernameAlert {
 					<br />
 					
 					
-					Per recuperare il certificato dovrai usare questi dati:
+					Inserire la password che verr&agrave utilizzata per recuperare il proxy.<br/>
+					In futuro questa sar&agrave l'unica password da inserire per utilizzare il portale.
 					
 					<aui:input id="password" name="password" type="password"
 						label="Password" />

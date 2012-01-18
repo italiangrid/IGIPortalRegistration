@@ -9,6 +9,7 @@
 	$.extend({
 		getUrlVars : function() {
 			var app = null;
+			var l=null;
 			var vars = [], hash;
 			var hashes = window.location.href.slice(
 					window.location.href.indexOf('?') + 1).split('&');
@@ -35,12 +36,13 @@
 					app = hash[1];
 				}
 				if(hash[0]=="l"){
-					if(app=="app2"){
-						$("#<portlet:namespace/>institute").attr("value",hash[1]+"-INFN");
-					}else{
-						$("#<portlet:namespace/>institute").attr("value",hash[1]);
-					}
+					l=hash[1];
+					$("#<portlet:namespace/>institute").attr("value",hash[1]);
+					$("#<portlet:namespace/>institute").attr("readonly","true");
 				}
+			}
+			if(app=="app2"){
+				$("#<portlet:namespace/>institute").attr("value",l.toUpperCase()+"-INFN");
 			}
 			return vars;
 		},
@@ -282,8 +284,8 @@
 
 					</aui:select>
 					 </div>
-					 
-					 <img src="https://flyback.cnaf.infn.it/image/image_gallery?img_id=13463&t=1323074804011" alt="Fase 1" />
+					 <img src="<%=request.getContextPath()%>/images/step1.png"/>
+					 <!-- <img src="https://gridlab17.cnaf.infn.it/image/image_gallery?img_id=12343&t=1326102175099" alt="Fase 1" /> -->
 				</aui:fieldset>
 
 			</aui:column>

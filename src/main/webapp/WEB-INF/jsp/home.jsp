@@ -144,17 +144,28 @@ div#voData {
 
 <c:choose>
 	<c:when test="<%= !themeDisplay.isSignedIn() %>"> 
+		<aui:fieldset>
+		<aui:column columnWidth="75">
 	    <div style="text-align: justify">
 	 	<strong>Benvenuto nella pagina di registrazione al porlate.</strong>
 		<br/><br/>
-		<img src="https://flyback.cnaf.infn.it/image/image_gallery?img_id=13475&t=1323075181622" alt="Fase 1" />
+		<img src="<%=request.getContextPath()%>/images/3-steps.png"/>
+		<!-- <img src="https://gridlab17.cnaf.infn.it/image/image_gallery?img_id=12355&t=1326102175121" alt="Fase 1" />  -->
 		</div>
+		</aui:column>
+		<aui:column columnWidth="25">
+		<br/><br/>
+		<br/><br/>
+		<br/><br/>
+		<br/><br/>
+		<br/><br/>
 		<aui:form name="catalogForm" method="post" action="${showAddUserInfoUrl}">
 			<aui:button-row>
 				<aui:button type="submit" value="Registrati Adesso!!!"/>
 			</aui:button-row>
 		</aui:form>
-
+		</aui:column>
+		</aui:fieldset>
 	</c:when>
 	<c:when test="<%= request.isUserInRole("administrator") %>">
   

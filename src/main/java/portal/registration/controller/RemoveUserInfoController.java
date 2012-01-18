@@ -46,9 +46,12 @@ public class RemoveUserInfoController {
 		log.error("companyId " + companyId);
 		User user = UserLocalServiceUtil.getUserByScreenName(companyId,
 				username);
-		log.error("recuperato liferay user " + user.getScreenName());
-		UserLocalServiceUtil.deleteUser(user);
-		log.error("eliminato utente liferay");
+		if(user!=null){
+			log.error("recuperato liferay user " + user.getScreenName());
+			user.setActive(false);
+			UserLocalServiceUtil.deleteUser(user);
+			log.error("eliminato utente liferay");
+		}
 		userInfoService.delete(userId);
 		log.error("eliminato utente portalUser");
 		response.setRenderParameter("myaction", "userInfos");

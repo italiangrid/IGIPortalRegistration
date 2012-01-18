@@ -56,7 +56,8 @@ if (request.getParameter("userId") != null){
 			<aui:column columnWidth="25">
 				<aui:fieldset label="Registrazione">
 					<br />
-					<img src="https://flyback.cnaf.infn.it/image/image_gallery?img_id=13471&t=1323074859741" alt="Fase 3" />
+					<img src="<%=request.getContextPath()%>/images/step3.png"/>
+					<!-- <img src="https://gridlab17.cnaf.infn.it/image/image_gallery?img_id=12351&t=1326102175114" alt="Fase 3" /> -->
 				</aui:fieldset>
 			</aui:column>
 

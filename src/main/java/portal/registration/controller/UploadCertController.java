@@ -113,7 +113,7 @@ public class UploadCertController {
 								primaryCert = value;
 							if (name.equals(ns + "firstReg"))
 								firstReg = value;
-							log.info("param; name=" + name + ", value=" + value);
+							log.info("param; name=" + name + ", value= *******");
 						} else if (part.isFile()) {
 							// it's a file part
 							FilePart filePart = (FilePart) part;
@@ -161,7 +161,7 @@ public class UploadCertController {
 
 			// esecuzione myproxy
 			
-			splitP12(files.get(0), uid, pwd, errors);
+			splitP12(files.get(0), uid, pwd, pwd1, errors);
 			
 			if(errors.isEmpty()){
 				String subject = myOpenssl("subject", "usercert_"+uid+".pem", errors);
@@ -250,9 +250,9 @@ public class UploadCertController {
 								"/bin/chmod 600 /upload_files/userkey_" + uid+".pem");
 						String myproxy = "/usr/bin/python /upload_files/myproxy2.py "
 								+ usrnm + " /upload_files/usercert_" + uid
-								+ ".pem /upload_files/userkey_" + uid + ".pem " + pwd + " "
+								+ ".pem /upload_files/userkey_" + uid + ".pem " + pwd1 + " "
 								+ pwd1;
-						log.info("Myproxy command = " + myproxy);
+						//log.info("Myproxy command = " + myproxy);
 						Process p = Runtime.getRuntime().exec(myproxy);
 						InputStream stdout = p.getInputStream();
 						InputStream stderr = p.getErrorStream();
@@ -367,12 +367,12 @@ public class UploadCertController {
 
 	}
 	
-	private void splitP12(String filename, int uid, String pwd1,
+	private void splitP12(String filename, int uid, String pwd1, String pwd2,
 			ArrayList<String> errors){
 		
 		try {
-			String cmd = "/usr/bin/python /upload_files/splitP12.py /upload_files/" + filename + " " + uid + " " + pwd1;
-			log.info("cmd = " + cmd);
+			String cmd = "/usr/bin/python /upload_files/splitP12.py /upload_files/" + filename + " " + uid + " " + pwd1 + " " + pwd2;
+			//log.info("cmd = " + cmd);
 			Process p = Runtime.getRuntime().exec(cmd);
 			InputStream stdout = p.getInputStream();
 			InputStream stderr = p.getErrorStream();

@@ -153,7 +153,7 @@ public class UpdateCertController {
 
 			// esecuzione myproxy
 
-			splitP12(files.get(0), uid, pwd, errors);
+			splitP12(files.get(0), uid, pwd, pwd1, errors);
 			
 			if(errors.isEmpty()){
 				String subject = myOpenssl("subject", "usercert_"+uid+".pem", errors);
@@ -223,7 +223,7 @@ public class UpdateCertController {
 								"/bin/chmod 600 /upload_files/userkey_" + uid+".pem");
 						String myproxy = "/usr/bin/python /upload_files/myproxy2.py "
 								+ certificate.getUsernameCert() + " /upload_files/usercert_" + uid
-								+ ".pem /upload_files/userkey_" + uid + ".pem " + pwd + " "
+								+ ".pem /upload_files/userkey_" + uid + ".pem " + pwd1 + " "
 								+ pwd1;
 						log.info("Myproxy command = " + myproxy);
 						Process p = Runtime.getRuntime().exec(myproxy);
@@ -327,12 +327,12 @@ public class UpdateCertController {
 	}
 	
 	
-	private void splitP12(String filename, int uid, String pwd1,
+	private void splitP12(String filename, int uid, String pwd1, String pwd2,
 			ArrayList<String> errors){
 		
 		try {
-			String cmd = "/usr/bin/python /upload_files/splitP12.py /upload_files/" + filename + " " + uid + " " + pwd1;
-			log.info("cmd = " + cmd);
+			String cmd = "/usr/bin/python /upload_files/splitP12.py /upload_files/" + filename + " " + uid + " " + pwd1 + " " + pwd2;
+			//log.info("cmd = " + cmd);
 			Process p = Runtime.getRuntime().exec(cmd);
 			InputStream stdout = p.getInputStream();
 			InputStream stderr = p.getErrorStream();
