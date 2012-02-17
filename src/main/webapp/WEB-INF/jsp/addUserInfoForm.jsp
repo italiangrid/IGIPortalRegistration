@@ -251,7 +251,7 @@
 
 	<aui:layout>
 
-		<h1 class="header-title">Dati Utente</h1>
+		<h1 class="header-title">User Data</h1>
 
 		<br></br>
 
@@ -259,7 +259,7 @@
 
 			<aui:column columnWidth="25">
 
-				<aui:fieldset label="Registrazione">
+				<aui:fieldset label="Registration">
 
 					<br></br>
 
@@ -270,10 +270,10 @@
 						onChange="idpRedirect();">
 
 						<aui:option value="0">
-							<liferay-ui:message key="Seleziona un Idp" />
+							<liferay-ui:message key="Select IDP" />
 						</aui:option>
 						<aui:option value="1000">
-							<liferay-ui:message key="Nessun IDP" />
+							<liferay-ui:message key="No IDP" />
 						</aui:option>
 
 						<c:forEach var="idpi" items="${idps}">
@@ -293,14 +293,13 @@
 			<div id="<portlet:namespace/>NOidp" style="display: none;">
 				<aui:column columnWidth="50">
 
-					<aui:fieldset label="Iscriviti al nostro IDP">
+					<aui:fieldset label="Registr to our IDP">
 						<br />
-					Richiedi l'appartenenza all'idp seguendo il seguente link: <aui:a
+					Register to our IDP here: <aui:a
 							href="#">IDP Page</aui:a>
 						<br />
 						<br />
-					Dopo aver seguito tutto le indicazione e dopo aver ricevuto la conferma di appartenenza all'IDP torna su questa pagina per proseguire nella registrazione del portale.
-					
+					After registration returnto this page and complete the registration.
 					</aui:fieldset>
 
 				</aui:column>
@@ -308,7 +307,7 @@
 			<div id="<portlet:namespace/>idpOk" style="display: none;">
 				<aui:column columnWidth="25">
 
-					<aui:fieldset label="Dati Personali">
+					<aui:fieldset label="Personal data">
 						
 						
 
@@ -336,16 +335,16 @@
 												.toUpperCase());
 						}
 						%>
-						<strong>Nome</strong><br/>
+						<strong>First Name</strong><br/>
 						<input id="<portlet:namespace/>firstName" name="firstName" type="text" readonly />
-						<br/><br/>	<strong>Cognome</strong><br/>
+						<br/><br/>	<strong>Last Name</strong><br/>
 						<input id="<portlet:namespace/>lastName" name="lastName" type="text" readonly />
-						<br/><br/><strong>Istituto</strong><br/>
+						<br/><br/><strong>Institute</strong><br/>
 						<input id="<portlet:namespace/>institute" name="institute" type="text"
 							value="${userInfo.institute}" />
 						
 						<input id="<portlet:namespace/>phone" name=">phone" type="hidden" />
-						<br/><br/><strong>Indirizzo e-Mail</strong><br/>
+						<br/><br/><strong>e-Mail addess</strong><br/>
 						<input id="<portlet:namespace/>mail" name="mail" type="text" readonly />
 						<br/><br/><strong>Username</strong><br/>
 						<input id="<portlet:namespace/>username" name="username" type="text" />
@@ -358,22 +357,22 @@
 				<div style="display: none;">
 				<aui:column columnWidth="25">
 
-					<aui:fieldset label="Certificato">
+					<aui:fieldset label="Certificate">
 
 						
 						<br></br>
 						
 
 						<div id="<portlet:namespace/>update_cert"
-							style="display: none; text-align: justify;">Nello step successivo ti verrà 
-							chiesto di caricare il tuo certificato.</div>
+							style="display: none; text-align: justify;">In the next step you will
+asked 						to upload your certificate.</div>
 
 						<div id="<portlet:namespace/>get_cert"
-							style="text-align: justify;">Se non hai un certificato puoi
-							richiederlo nella pagina che ti verrà proposta al termine della procedura
-							di registrazione</div>
+							style="text-align: justify;">If you do not have a certificate
+							ask for the page which will be proposed at the end of the procedure
+							registration</div>
 						
-						<aui:input label="Possiedi un Certificato" name="haveCert"
+						<aui:input label="Do you have certificate" name="haveCert"
 							type="checkbox" value="true" onClick="displayUpload();" />
 
 					</aui:fieldset>
@@ -381,25 +380,25 @@
 				</div>
 				<aui:column columnWidth="25">
 
-					<aui:fieldset label="Condizioni d'uso">
+					<aui:fieldset label="Agreement">
 
 						<br></br>
 
 						<div style="text-align: justify;">
-							Per proseguire con la registrazione devi accettare le condizioni
-							d'uso che trovi al seguente link:
+							To continue registering you must agree to the conditions
+							of use that you find at the following link:
 							<aui:a href="#">Link</aui:a>
 						</div>
 
 
-						<aui:input label="Accetto" name="useCondition" type="checkbox" />
+						<aui:input label="Accept" name="useCondition" type="checkbox" />
 
 					</aui:fieldset>
 				</aui:column>
 
 				<aui:button-row>
-					<aui:button type="submit" value="Continua"/>
-					<aui:button type="cancel" value="Annulla"
+					<aui:button type="submit" value="Continue"/>
+					<aui:button type="cancel" value="Abort"
 						onClick="location.href='${homeUrl}';" />
 				</aui:button-row>
 			</div>

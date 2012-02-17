@@ -5,10 +5,10 @@
 </portlet:renderURL>
 
 
-<h1 class="header-title">Richiesta Certificato Utente</h1>
+<h1 class="header-title">Request User Certificate</h1>
 
 <a href="${homeUrl}">Home</a>
 
 </br></br>
 
-Istruzioni per richiedere un certificato
+Istruction for certificate request.

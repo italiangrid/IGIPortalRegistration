@@ -87,7 +87,7 @@ h5#usernameAlert {
 	enctype="multipart/form-data">
 	<aui:layout>
 
-		<h1 class="header-title">Update Certificato</h1>
+		<h1 class="header-title">Update Certificate</h1>
 
 		<portlet:renderURL var="homeUrl">
 			<portlet:param name="myaction" value="userInfos" />
@@ -117,13 +117,13 @@ h5#usernameAlert {
 					<aui:input name="userId" type="hidden" value="${userId}" />
 					<aui:input name="idCert" type="hidden" value="${idCert}" />
 
-					<aui:input name="usercert" type="file" label="Certificato in formato p12"
+					<aui:input name="usercert" type="file" label="p12 format Certificate"
 						value="${usercert }" />
 					<!--<aui:input name="userkey" type="file" label="Chiave"
 						value="${userkey }" />-->
 
 					<aui:input id="keyPass" name="keyPass" type="password"
-						label="Password del tuo certificato" />
+						label="Password of your certificate" />
 
 				</aui:fieldset>
 
@@ -133,12 +133,11 @@ h5#usernameAlert {
 
 			<aui:column columnWidth="25">
 
-				<aui:fieldset label="Sicurezza e Opzioni">
+				<aui:fieldset label="Security and Option">
 					<br />
 
-
-					Inserire la password che verr&agrave utilizzata per recuperare il proxy.<br/>
-					In futuro questa sar&agrave l'unica password da inserire per utilizzare il portale.
+					Insert a password that will be used for proxy retrieval.<br/>
+					In the future we will request you only this password for using the portal.
 
 					<aui:input id="password" name="password" type="password"
 						label="Password" value="${password }" />
@@ -148,7 +147,7 @@ h5#usernameAlert {
 						onkeyup="verifyPassword();" />
 
 					<aui:input name="primaryCert" type="checkbox" value="${primCert}"
-						label="Ritieni questo certificato come principale" />
+						label="This is default certificate" />
 
 				</aui:fieldset>
 
@@ -161,16 +160,16 @@ h5#usernameAlert {
 				<aui:fieldset label="Note">
 					<br />
 
-					<strong>Non dimenticare questi dati.</strong>
+					<strong>Don't forget these data.</strong>
 					<br />
 					<div id="noteText">
 						
-						<br /> Le <strong>password</strong> che hai inserito non verranno
-						salvate. Nel caso di smarrimento password non sar&agrave possibile
-						recuperarle e sar&agrave necessario eliminare il certificato
-						salvato e rieffettuare l'upload del certificato utente. Mantenerle
-						quindi in luogo sicuro.
-						</p>
+						<br /> The <strong>password</strong> that you have insert will 
+						not be saved. If you lose your password can not be
+						recover and will need to delete the certificate
+						saved and log in again to upload the user certificate. Keep them
+						so in a safe place.
+						
 					</div>
 				</aui:fieldset>
 
@@ -179,8 +178,8 @@ h5#usernameAlert {
 			</aui:column>
 
 			<aui:button-row>
-				<aui:button type="submit" value="Aggiorna Certificato" />
-				<aui:button type="cancel" value="Indietro"
+				<aui:button type="submit" value="Update Certificate" />
+				<aui:button type="cancel" value="Back"
 					onClick="location.href='${homeUrl}';" />
 
 			</aui:button-row>

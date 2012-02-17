@@ -55,13 +55,13 @@ div.function {
 					<aui:input name="userId" type="hidden" value="${userId}" />
 					<aui:input name="firstReg" type="hidden" value="${firstReg}" />
 					<aui:input name="key" label="Cerca VO" type="text" inlineField="true" inlineLabel="true"/>
-					<aui:button type="submit" value="Cerca" inlineField="true"/>
+					<aui:button type="submit" value="Search" inlineField="true"/>
 					<portlet:actionURL var="backURL">
 						<portlet:param name="myaction" value="searchResetUserToVo" />
 						<portlet:param name="userId" value="${userId}" />
 						<portlet:param name="firstReg" value="${firstReg}" />
 					</portlet:actionURL>
-					<aui:button type="cancel" value="Azzera Ricerca"
+					<aui:button type="cancel" value="Erase search"
 						onClick="location.href='${backURL}';" />
 					</aui:button-row>
 				</aui:layout>
@@ -69,7 +69,7 @@ div.function {
 			
 			<c:if test="${!empty searchUserToVo }">
 				<br/>
-				Ricerca: <strong><c:out value="${searchUserToVo}" /></strong>	
+				Search: <strong><c:out value="${searchUserToVo}" /></strong>	
 			</c:if>
 			</aui:column>
 			</aui:fieldset>
@@ -91,7 +91,7 @@ div.function {
 <aui:column columnWidth="40">
 
 <liferay-ui:search-container
-	emptyResultsMessage="Non ci sono Vo per la ricerca efftuata" delta="20" iteratorURL="<%= itURL %>">
+	emptyResultsMessage="VO not find" delta="20" iteratorURL="<%= itURL %>">
 	
 	<liferay-ui:search-container-results>
 		<%
@@ -134,7 +134,7 @@ div.function {
 <aui:form name="completeListForm" method="post"
 	action="${backURL}">
 	<aui:button-row>
-		<aui:button type="submit" value="Indietro" />
+		<aui:button type="submit" value="Back" />
 	</aui:button-row>
 </aui:form>
 

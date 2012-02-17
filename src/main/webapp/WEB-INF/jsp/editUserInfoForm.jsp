@@ -93,14 +93,14 @@ div#voData {
 	<%
 			User userLF = (User) request.getAttribute(WebKeys.USER);
 		%>
-	Bentornato <strong><c:out value="<%=userLF.getFirstName() %>"></c:out>
+	Hi <strong><c:out value="<%=userLF.getFirstName() %>"></c:out>
 		</strong>
 		<br />
 		<br />
 
 
 <div id="personalData">
-	<h3 class="header-title">Dati Personali</h3>
+	<h3 class="header-title">Personal data</h3>
 
 	<liferay-ui:success key="user-updated-successufully"
 		message="user-updated-successufully" />
@@ -130,8 +130,7 @@ div#voData {
 		message="problem-update-user-liferay" />
 	
 	<div id="<portlet:namespace/>formOn">
-		<a href="#editUserInfoForm" onclick="mostraModificaUtente();">Modifica
-			Dati</a><br /> <br />
+		<a href="#editUserInfoForm" onclick="mostraModificaUtente();">Modify data</a><br /> <br />
 		<table>
 			<tr>
 				<td align="right" style="margin: 0; padding: 0 1em 0 0;">User:</td>
@@ -139,7 +138,7 @@ div#voData {
 				</strong> <strong><c:out value="${userInfo.lastName }" /> </strong></td>
 			</tr>
 			<tr>
-				<td align="right" style="margin: 0; padding: 0 1em 0 0;">Istituto:</td>
+				<td align="right" style="margin: 0; padding: 0 1em 0 0;">Institute:</td>
 				<td><strong><c:out value="${userInfo.institute }" />
 				</strong></td>
 			</tr>
@@ -156,7 +155,7 @@ div#voData {
 	</div>
 	<div id="<portlet:namespace/>formOFF" style="display: none;">
 
-		<a href="#editUserInfoForm" onclick="nascondiModificaUtente();">Nascondi</a><br />
+		<a href="#editUserInfoForm" onclick="nascondiModificaUtente();">Hide data</a><br />
 		<br />
 
 		<aui:form name="editUserInfoForm" commandName="userInfo" method="post"
@@ -166,7 +165,7 @@ div#voData {
 
 				<aui:fieldset>
 					<aui:column columnWidth="33">
-						<aui:fieldset label="Dati Personali">
+						<aui:fieldset label="Personal data">
 							<br></br>
 
 							<aui:input name="userId" type="hidden"
@@ -186,13 +185,13 @@ div#voData {
 					</aui:column>
 
 					<aui:column columnWidth="33">
-						<aui:fieldset label="Recapiti">
+						<aui:fieldset label="Contact">
 							<br></br>
 							<liferay-ui:error key="user-institute-required"
 								message="user-institute-required" />
 							<strong>Institute</strong><br/>
 							<input name="institute" type="text"
-								value="<%=userInfo.getInstitute() %>" />
+								value="<%=userInfo.getInstitute() %>" disabled="disabled"/>
 							<liferay-ui:error key="user-phone-valid"
 								message="user-phone-valid" />
 							<br/><br/><strong>Phone Number</strong><br/>
@@ -203,7 +202,7 @@ div#voData {
 					</aui:column>
 
 					<aui:column columnWidth="33">
-						<aui:fieldset label="Dati Account">
+						<aui:fieldset label="Account data">
 							<br></br>
 							<liferay-ui:error key="user-username-required"
 								message="user-username-required" />
@@ -235,7 +234,7 @@ div#voData {
 </div>
 
 <div id="certificateData">
-	<h3 class="header-title">I miei certificati</h3>
+	<h3 class="header-title">My certificates</h3>
 
 	<liferay-ui:success key="certificate-updated-successufully"
 		message="certificate-updated-successufully" />
@@ -255,25 +254,25 @@ div#voData {
 
 	<div id="<portlet:namespace/>certificatiOn">
 
-		<a href="#apriCert" onclick="mostraCertificatiUtente();">Modifica
-			Certificati</a><br /> <br /> Al momento hai effetuato l'upload di 
+		<a href="#apriCert" onclick="mostraCertificatiUtente();">Modify
+			Certificate</a><br /> <br /> You have uploaded  
 				<c:choose>
 				<c:when test="${fn:length(certList)==0}" >
 				<span style="color:red"><strong>#<c:out value="${fn:length(certList)}" /></strong></span>
-				certificati<br />
+				certificates<br />
 				</c:when>
 				<c:when test="${fn:length(certList)==1}" >
 				<strong>#<c:out value="${fn:length(certList)}" />
-				</strong>certificato<br />
+				</strong>certificate<br />
 				</c:when>
 				<c:otherwise>
 				<strong>#<c:out value="${fn:length(certList)}" />
-				</strong>certificati<br />
+				</strong>certificates<br />
 				</c:otherwise>
 				</c:choose>
 		
 		<c:if test="${fn:length(certList) > 0}">
-		Il tuo certificato di default è: <strong> <c:forEach
+		Your defaul certificate is: <strong> <c:forEach
 					var="cert" items="${certList}">
 					<c:if test="${cert.primaryCert == 'true'}">
 						<c:out value="${cert.subject}" />
@@ -289,11 +288,11 @@ div#voData {
 
 	<div id="<portlet:namespace/>certificatiOFF" style="display: none;">
 
-		<a href="#cert" onclick="nascondiCertificatiUtente();">Nascondi</a><br />
+		<a href="#cert" onclick="nascondiCertificatiUtente();">Hide</a><br />
 		<br />
 
 		<liferay-ui:search-container
-			emptyResultsMessage="Non ci sono certificati per questo utente"
+			emptyResultsMessage="No certificates uploaded"
 			delta="5">
 			<liferay-ui:search-container-results>
 				<%
@@ -314,29 +313,34 @@ div#voData {
 					property="subject" />
 				<liferay-ui:search-container-column-text name="Issuer"
 					property="issuer" />
-					<liferay-ui:search-container-column-text name="Data Scadenza">
+					<liferay-ui:search-container-column-text name="Expiration data">
 					<%
 						Certificate cert = (Certificate) row.getObject();
 
-											GregorianCalendar c = new GregorianCalendar();
-											Date oggi = c.getTime();
-
-											if (cert.getExpirationDate().before(oggi)) {
-												%>
-												<span style="color:red; font-weight:bold;"><c:out value="<%=cert.getExpirationDate().toString() %>"/></span>
-												<%
-												
-											} else {
-												%>
-												<c:out value="<%=cert.getExpirationDate().toString() %>"/>
-												<%
-											}
+						GregorianCalendar c = new GregorianCalendar();
+						Date oggi = c.getTime();
+	
+						if (cert.getExpirationDate().before(oggi)) {
+							%>
+							<span style="color:red; font-weight:bold;"><c:out value="<%=cert.getExpirationDate().toString() %>"/></span>
+							<%
+							
+						} else {
+							%>
+							<c:out value="<%=cert.getExpirationDate().toString() %>"/>
+							<%
+						}
 					%>
 					</liferay-ui:search-container-column-text>
-				<liferay-ui:search-container-column-text name="Certificato primario"
-					property="primaryCert" />
-				<liferay-ui:search-container-column-text
-					name="Rilasciato dalla CA-online" property="caonline" />
+				<liferay-ui:search-container-column-text name="Defaul certificate">
+				<c:if test="${Certificate.primaryCert}">
+					
+						<img src="<%=request.getContextPath()%>/images/success.png"/>
+					
+				</c:if>
+				</liferay-ui:search-container-column-text>
+				<!-- <liferay-ui:search-container-column-text
+					name="Rilasciato dalla CA-online" property="caonline" /> -->
 				<liferay-ui:search-container-column-text name="Username"
 					property="usernameCert" />
 				<liferay-ui:search-container-column-jsp
@@ -359,7 +363,7 @@ div#voData {
 			<aui:input name="firstReg" type="hidden" value="false" />
 
 			<aui:button-row>
-				<aui:button type="submit" value="Carica certificato" />
+				<aui:button type="submit" value="Upload certificate" />
 			</aui:button-row>
 		</aui:form>
 
@@ -367,7 +371,7 @@ div#voData {
 </div>
 
 <div id="voData">
-	<h3 class="header-title">Le mie VO</h3>
+	<h3 class="header-title">My VO</h3>
 
 	<liferay-ui:success key="userToVo-adding-success"
 		message="userToVo-adding-success" />
@@ -396,15 +400,15 @@ div#voData {
 		message="exception-deactivation-user" />
 
 	<div id="<portlet:namespace/>voOn">
-		<a href="#apriVo" onclick="mostraVoUtente();">Modifica VO</a> <br /> <br />
-		Al momento appartieni a <strong>#<c:out
-				value="<%= Integer.toString(userToVoList.size()) %>"></c:out> </strong> VO<br />
+		<a href="#apriVo" onclick="mostraVoUtente();">Modify VO</a> <br /> <br />
+		At the moment you have <strong>#<c:out
+				value="<%= Integer.toString(userToVoList.size()) %>"></c:out> </strong> VO<br /> associations.
 		<c:if test="${!empty defaultVo}">
-	La tua VO di default è: <strong><c:out value="${defaultVo}" />
+	Your default VO is: <strong><c:out value="${defaultVo}" />
 			</strong>
 		</c:if>
 		<c:if test="${!empty defaultFqan}">
-			<br />Ruoli per la VO di default: <strong><c:out
+			<br />Selected roles for your default VO: <strong><c:out
 					value="${fn:replace(defaultFqan,';',' ')}" /> </strong>
 		</c:if>
 
@@ -414,10 +418,11 @@ div#voData {
 
 	<div id="<portlet:namespace/>voOFF" style="display: none;">
 
-		<a href="#vo" onclick="nascondiVoUtente();">Nascondi VO</a> <br /> <br />
+		<a href="#vo" onclick="nascondiVoUtente();">Hide VO</a> <br /> <br />
+		
 
 		<liferay-ui:search-container
-			emptyResultsMessage="Non appartieni a nessuna VO attualmente aggiungile qui in fianco"
+			emptyResultsMessage="No VO selected"
 			delta="5">
 			<liferay-ui:search-container-results>
 				<%
@@ -434,38 +439,24 @@ div#voData {
 			<liferay-ui:search-container-row
 				className="portal.registration.domain.Vo" keyProperty="idVo"
 				modelVar="Vo">
-				<c:choose>
-					<c:when test="${defaultVo == Vo.vo}">
-						
-						<liferay-ui:search-container-column-text name="Nome VO">
-							<span style="color:red"> <c:out value="${Vo.vo }"></c:out> </span>
-						</liferay-ui:search-container-column-text>
-						<liferay-ui:search-container-column-text name="Default VO">
-							<span style="color:red">true</span></liferay-ui:search-container-column-text>
-						<liferay-ui:search-container-column-text name="Descrizione"> 
-							<span style="color:red"><c:out value="${Vo.description}"></c:out></span> 
-						</liferay-ui:search-container-column-text>
-						<liferay-ui:search-container-column-text name="Ruoli"> 
-							<span style="color:red"><c:out value="${fn:replace(userFqans[Vo.idVo],';',' ')}"></c:out></span> 
-						</liferay-ui:search-container-column-text>
-						<liferay-ui:search-container-column-jsp
-							path="/WEB-INF/jsp/admin-vo-action.jsp" align="right" />
-						
-					</c:when>
-					<c:otherwise> 
-						<liferay-ui:search-container-column-text name="Nome VO"
+				
+						<liferay-ui:search-container-column-text name="VO name"
 							property="vo" />
 						<liferay-ui:search-container-column-text name="Default VO">
-							false</liferay-ui:search-container-column-text>
-						<liferay-ui:search-container-column-text name="Descrizione"
+						<c:if test="${defaultVo==Vo.vo}">
+							
+							<img src="<%=request.getContextPath()%>/images/success.png"/>	
+							
+						</c:if>
+						</liferay-ui:search-container-column-text>
+						<liferay-ui:search-container-column-text name="Description"
 							property="description" />
-						<liferay-ui:search-container-column-text name="Ruoli"> 
+						<liferay-ui:search-container-column-text name="Roles"> 
 							<c:out value="${fn:replace(userFqans[Vo.idVo],';',' ')}"></c:out>
 						</liferay-ui:search-container-column-text>
 						<liferay-ui:search-container-column-jsp
 							path="/WEB-INF/jsp/admin-vo-action.jsp" align="right" />
-					</c:otherwise>
-				</c:choose>
+					
 			</liferay-ui:search-container-row>
 			<liferay-ui:search-iterator />
 		</liferay-ui:search-container>
@@ -480,14 +471,14 @@ div#voData {
 			<aui:input name="userId" type="hidden" value="${userId}" />
 			<aui:input name="firstReg" type="hidden" value="false" />
 			<aui:button-row>
-				<aui:button type="submit" value="Aggiungi VO" />
+				<aui:button type="submit" value="Add VO" />
 				<portlet:renderURL var="voUrl">
 					<portlet:param name="myaction" value="showVOList" />
 					<portlet:param name="waif" value="editUserInfoForm" />
 					<portlet:param name="userId" value="${userInfo.userId}"/>
 				</portlet:renderURL>
-				<aui:button type="cancel" value="Richiedi appartenenza VO"
-								onClick="location.href='${voUrl}';" />
+				<!--<aui:button type="cancel" value="Request VO association"
+								onClick="location.href='${voUrl}';" />-->
 			</aui:button-row>
 		</aui:form>
 		<a name="apriVo"></a>
@@ -511,7 +502,7 @@ div#voData {
 		
 		<aui:form name="catalogForm" method="post" action="${homeUrl}">
 			<aui:button-row>
-				<aui:button type="submit" value="Modifiche Completate!!!" />
+				<aui:button type="submit" value="Changes completed" />
 			</aui:button-row>
 		</aui:form>
 

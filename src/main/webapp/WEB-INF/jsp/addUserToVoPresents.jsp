@@ -54,7 +54,7 @@ if (request.getParameter("userId") != null){
 		<aui:fieldset>
 		
 			<aui:column columnWidth="25">
-				<aui:fieldset label="Registrazione">
+				<aui:fieldset label="Registartion">
 					<br />
 					<img src="<%=request.getContextPath()%>/images/step3.png"/>
 					<!-- <img src="https://gridlab17.cnaf.infn.it/image/image_gallery?img_id=12351&t=1326102175114" alt="Fase 3" /> -->
@@ -63,14 +63,14 @@ if (request.getParameter("userId") != null){
 
 			<aui:column columnWidth="75">
 
-				<aui:fieldset label="Lista VO">
+				<aui:fieldset label="VO List">
 
 					<br />
 					<br />
 					
 			
 					<liferay-ui:search-container
-						emptyResultsMessage="Non appartieni a nessuna VO attualmente aggiungile qui in fianco"
+						emptyResultsMessage="No VO selected"
 						delta="5">
 						<liferay-ui:search-container-results>
 							<%
@@ -87,9 +87,9 @@ if (request.getParameter("userId") != null){
 						<liferay-ui:search-container-row
 							className="portal.registration.domain.Vo" keyProperty="idVo"
 							modelVar="Vo">
-							<liferay-ui:search-container-column-text name="Nome VO"
+							<liferay-ui:search-container-column-text name="VO name"
 								property="vo" />
-							<liferay-ui:search-container-column-text name="Descrizione VO"
+							<liferay-ui:search-container-column-text name="VO description"
 								property="description" />
 							<liferay-ui:search-container-column-jsp
 								path="/WEB-INF/jsp/vo-action.jsp" align="right" />
@@ -106,22 +106,22 @@ if (request.getParameter("userId") != null){
 
 			
 			
-			<aui:button type="submit" value="Aggiungi VO" />
+			<aui:button type="submit" value="Add VO" />
 			<portlet:renderURL var="voUrl">
 				<portlet:param name="myaction" value="showVOList" />
 				<portlet:param name="waif" value="showAddUserToVoPresents" />
 				<portlet:param name="userId" value="${userId }" />
 			</portlet:renderURL>
-			<aui:button type="button" value="Richiedi appartenenza VO"
+			<!--<aui:button type="button" value="Request VO association"
 							onClick="location.href='${voUrl}';" />
-		
+			-->
 			<c:if test="<%= !themeDisplay.isSignedIn() %>">
-			<aui:button type="cancel" value="Fine Registrazione"
+			<aui:button type="cancel" value="Registration terminated"
 				onClick="location.href='https://halfback.cnaf.infn.it/casshib/shib/app1/login?service=https%3A%2F%2Fflyback.cnaf.infn.it%2Fc%2Fportal%2Flogin%3Fp_l_id%3D11722';" />
 			</c:if>
 			
 			<c:if test="<%= themeDisplay.isSignedIn() %>">
-			<aui:button type="cancel" value="Fine Registrazione"
+			<aui:button type="cancel" value="Registration terminated"
 				onClick="${homeUrl }" />
 			</c:if>
 			

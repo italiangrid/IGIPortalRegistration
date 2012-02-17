@@ -8,7 +8,7 @@
 <%@ taglib uri="http://liferay.com/tld/aui" prefix="aui" %>
 <%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
 
-<%@ page import="portal.registration.services.UserInfoService" %>
+
 <%@ page import="portal.registration.domain.UserInfo" %>
 <%@ page import="portal.registration.domain.Idp" %>
 <%@ page import="portal.registration.domain.Vo" %>

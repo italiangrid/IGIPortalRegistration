@@ -24,7 +24,7 @@ div.function {
 	<portlet:param name="myaction" value="userInfos" />
 </portlet:renderURL>
 
-<h1 class="header-title">Lista Virtual Organization</h1>
+<h1 class="header-title">Virtual Organization List</h1>
 
 <a href="${homeUrl}">Home</a>
 
@@ -54,13 +54,13 @@ div.function {
 					<aui:input name="userId" type="hidden" value="${userId}" />
 					<aui:input name="waif" type="hidden" value="${waif}" />
 					<aui:input name="key" label="Cerca VO" type="text" inlineField="true" inlineLabel="true"/>
-					<aui:button type="submit" value="Cerca" inlineField="true"/>
+					<aui:button type="submit" value="Search" inlineField="true"/>
 					<portlet:actionURL var="backURL">
 						<portlet:param name="myaction" value="searchReset" />
 						<portlet:param name="waif" value="${waif}" />
 						<portlet:param name="userId" value="${userId}" />
 					</portlet:actionURL>
-					<aui:button type="cancel" value="Azzera Ricerca"
+					<aui:button type="cancel" value="Erase Search"
 						onClick="location.href='${backURL}';" />
 					</aui:button-row>
 				</aui:layout>
@@ -68,7 +68,7 @@ div.function {
 			
 			<c:if test="${!empty searchVo }">
 				<br/>
-				Ricerca: <strong><c:out value="${searchVo}" /></strong>	
+				Search: <strong><c:out value="${searchVo}" /></strong>	
 			</c:if>
 			</aui:column>
 			</aui:fieldset>
@@ -89,7 +89,7 @@ div.function {
 
 
 <liferay-ui:search-container
-	emptyResultsMessage="Non ci sono utenti iscritti" delta="20" iteratorURL="<%= itURL %>">
+	emptyResultsMessage="No VO found" delta="20" iteratorURL="<%= itURL %>">
 	
 	<liferay-ui:search-container-results>
 		<%
@@ -116,7 +116,7 @@ div.function {
 			<a href="${vo.enrollementUrl}" target="_blank"><c:out value="${vo.enrollementUrl}" />
 			</a>
 		</liferay-ui:search-container-column-text>
-		<liferay-ui:search-container-column-text name="Descrizione VO"
+		<liferay-ui:search-container-column-text name="VO Description"
 			property="description" />
 	</liferay-ui:search-container-row>
 	<liferay-ui:search-iterator />
@@ -131,7 +131,7 @@ div.function {
 <aui:form name="completeListForm" method="post"
 	action="${backURL}">
 	<aui:button-row>
-		<aui:button type="submit" value="Indietro" />
+		<aui:button type="submit" value="Back" />
 	</aui:button-row>
 </aui:form>
 

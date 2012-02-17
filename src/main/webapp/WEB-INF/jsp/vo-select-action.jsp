@@ -28,6 +28,6 @@
 		<portlet:param name="firstReg" value="${firstReg}" />
 		
 	</portlet:actionURL>
-	<liferay-ui:icon image="edit" message="Aggiungi VO" url="${addUserToVOActionUrl}" />
+	<liferay-ui:icon image="edit" message="Add VO" url="${addUserToVOActionUrl}" />
 
 </liferay-ui:icon-menu>

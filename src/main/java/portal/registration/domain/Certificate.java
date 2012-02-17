@@ -71,7 +71,7 @@ public class Certificate implements java.io.Serializable {
 		this.userInfo = userInfo;
 	}
 
-	@Column(name = "subject", nullable = false, length = 100)
+	@Column(name = "subject", nullable = false, length = 256)
 	public String getSubject() {
 		return this.subject;
 	}
@@ -108,7 +108,7 @@ public class Certificate implements java.io.Serializable {
 		this.primaryCert = primaryCert;
 	}
 
-	@Column(name = "issuer", nullable = false, length = 100)
+	@Column(name = "issuer", nullable = false, length = 256)
 	public String getIssuer() {
 		return this.issuer;
 	}

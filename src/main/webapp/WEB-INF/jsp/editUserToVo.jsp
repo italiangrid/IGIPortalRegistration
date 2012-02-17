@@ -28,7 +28,7 @@
 		}
 		if (lista.length == 0) {
 			//$("#reset").html("<li id=\"sortable-delete\">Trascina qui per cancellare</li>");
-			$("#reset").html("<li class=\"placeholder\">Inserisci i tuoi FQAN qui</li>");
+			$("#reset").html("<li class=\"placeholder\">Insert your FQAN here</li>");
 		}
 		printList();
 	}
@@ -46,7 +46,7 @@
 		if (check) {
 			lista.push(role);
 		} else {
-			alert("Ruolo già inserito");
+			alert("Role already selected");
 		}
 		printList();
 		return check;
@@ -61,7 +61,7 @@
 		var i = 0;
 
 		while (i < arr.length) {
-			if (arr[i].innerHTML == "Inserisci i tuoi FQAN qui") {
+			if (arr[i].innerHTML == "Insert your FQAN here") {
 				break;
 			}
 			//alert(arr[i].innerHTML);
@@ -144,7 +144,7 @@
 		$("#result").html("");
 		$("#reset").html("");
 		output = "";
-		output = "<li class=\"placeholder\">Inserisci i tuoi FQAN qui</li>";
+		output = "<li class=\"placeholder\">Insert your FQAN here</li>";
 		$("#reset").html(output);
 		lista = new Array();
 	}
@@ -155,7 +155,7 @@
 		var i = 0;
 
 		while (i < arr.length) {
-			if (arr[i].innerHTML != "Inserisci i tuoi FQAN qui") {
+			if (arr[i].innerHTML != "Insert your FQAN here") {
 				lista.push(arr[i].innerHTML);
 			}
 			i++;
@@ -236,17 +236,17 @@ ul#sortable-delete {
 			<aui:input name="userId" type="hidden" value="${userId}" />
 			<aui:input name="idVo" type="hidden" value="${idVo}" />
 
-			<h1>Modifica VO Role</h1>
+			<h1>Modify VO Role</h1>
 			<br />
 			<strong>Help:</strong>
 			<br />
-			Trascina le regole nel riquadro  giallo e ordinale in base alle tue preferenze. <br />
-			Per eliminare una regola trascinala nel riquadro rosso. <br />
+			Drag and drop roles form green zone into yellow zone and order by your preferences. </br>
+			For erasing a role from your list drag and drop the role from yellow zone into red zone. </br>
 			<br />
 			<div id="products">
 				<div id="catalog">
 					<h3>
-						Ruoli
+						Roles
 						<c:out value="${vo.vo}" />
 					</h3>
 					<div id="voList">
@@ -261,7 +261,7 @@ ul#sortable-delete {
 									</c:forEach>
 								</c:when>
 								<c:otherwise>
-									Non hai FQAN per questa VO
+									You not have FQAN for this VO.
 								</c:otherwise>
 							</c:choose>
 						</ul>
@@ -270,10 +270,10 @@ ul#sortable-delete {
 			</div>
 
 			<div id="cart">
-				<h3 class="ui-widget-header">Lista FQAN Preferiti</h3>
+				<h3 class="ui-widget-header">FQANs list</h3>
 				<div class="ui-widget-content">
 
-					<ul id="sortable-delete" class="sortable">Trascina qui per cancellare</ul>
+					<ul id="sortable-delete" class="sortable">Drag and drop here for erase role</ul>
 
 					<ol id="reset" class="sortable">
 
@@ -281,7 +281,7 @@ ul#sortable-delete {
 							<c:when
 								test="${(empty userToVo.fqans)||(userToVo.fqans == '')}">
 
-								<li class="placeholder">Inserisci i tuoi FQAN qui</li>
+								<li class="placeholder">Insert your FQAN here</li>
 							</c:when>
 							<c:otherwise>
 								<c:set var="strings" value="${fn:split(userToVo.fqans,';')}" />
@@ -297,7 +297,7 @@ ul#sortable-delete {
 					<br />
 				</div>
 
-				<aui:a href="#vo" onclick="reset();">Azzera</aui:a>
+				<aui:a href="#vo" onclick="reset();">Erase list</aui:a>
 			</div>
 
 			<div id="result">
@@ -322,7 +322,7 @@ ul#sortable-delete {
 					<portlet:param name="myaction" value="editUserInfoForm" />
 					<portlet:param name="userId" value="${userId}" />
 				</portlet:renderURL>
-				<aui:button type="cancel" value="Indietro"
+				<aui:button type="cancel" value="Back"
 					onClick="location.href='${backURL}';" />
 
 			</aui:button-row>
