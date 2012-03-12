@@ -44,6 +44,7 @@
 <%@ page import="com.liferay.portal.service.permission.PortletPermissionUtil"%> 
 <%@ page import="com.liferay.portal.model.User"%>
 <%@ page import="javax.portlet.PortletURL" %>
+<%@ page import="com.liferay.portal.security.auth.AuthTokenUtil" %>
 
 <portlet:defineObjects />	
 <liferay-theme:defineObjects />

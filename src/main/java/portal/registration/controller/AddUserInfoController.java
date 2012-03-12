@@ -5,8 +5,6 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
 
-import javax.validation.Valid;
-
 import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
 import javax.portlet.RenderResponse;
@@ -36,9 +34,11 @@ import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.servlet.SessionErrors;
 import com.liferay.portal.kernel.servlet.SessionMessages;
+import com.liferay.portal.kernel.util.WebKeys;
 import com.liferay.portal.model.User;
 import com.liferay.portal.service.ServiceContextFactory;
 import com.liferay.portal.service.UserLocalServiceUtil;
+import com.liferay.portal.theme.ThemeDisplay;
 import com.liferay.portal.util.PortalUtil;
 
 @Controller(value = "addUserInfoController")
@@ -71,7 +71,7 @@ public class AddUserInfoController {
 	}
 
 	@ActionMapping(params = "myaction=addUserInfo")
-	public void addUserInfo(@Valid @ModelAttribute UserInfo userInfo,
+	public void addUserInfo(@ModelAttribute UserInfo userInfo,
 			BindingResult bindingResult, ActionRequest request,
 			ActionResponse response, SessionStatus sessionStatus)
 			throws PortalException, SystemException {
@@ -103,6 +103,9 @@ public class AddUserInfoController {
 						try {
 
 							long companyId = PortalUtil.getCompanyId(request);
+							ThemeDisplay themeDisplay = 
+								     (ThemeDisplay)request.getAttribute(WebKeys.THEME_DISPLAY);
+							long[] groupIds = {themeDisplay.getLayout().getGroupId()};
 							log.info("companyid = " + companyId);
 							log.info("settate variabili di supporto ora si aggiunge un utenti a liferay!!");
 
@@ -113,7 +116,7 @@ public class AddUserInfoController {
 									0L, "", new Locale("en"), userInfo
 											.getFirstName(), "", userInfo
 											.getLastName(), 0, 0, true,
-									Calendar.JANUARY, 1, 1970, "", null, null,
+									Calendar.JANUARY, 1, 1970, "", groupIds, null,
 									null, null, true, ServiceContextFactory
 											.getInstance(User.class.getName(),
 													request));

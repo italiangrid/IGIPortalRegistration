@@ -508,10 +508,11 @@ div#voData {
 
 	</c:when>
 	<c:otherwise>
+		
 	
 		<portlet:actionURL var="deleteURL">
 			<portlet:param name="myaction" value="deleteByUser" /> 
-			<portlet:param name="userId" value="<%= request.getParameter("userId") %>" /> 
+			<portlet:param name="userId" value="${userInfo.userId }" /> 
 		</portlet:actionURL>
 		
 		<aui:form name="catalogForm" method="post" action="${deleteUrl}">

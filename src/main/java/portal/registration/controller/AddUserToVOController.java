@@ -2,6 +2,7 @@ package portal.registration.controller;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
 import javax.portlet.RenderResponse;
@@ -159,8 +160,21 @@ public class AddUserToVOController {
 		try {
 			user = UserLocalServiceUtil
 					.getUserByScreenName(companyId, username);
+			
+			List<User> powerUsers = UserLocalServiceUtil.getRoleUsers(10140);
+			
+			long users[] = new long[powerUsers.size()+1];
+			
+			int i;
+			
+			for (i=0; i<powerUsers.size(); i++) {
+				users[i]=powerUsers.get(i).getUserId();
+			}
 
-			long[] users = { user.getUserId() };
+			users[i] = user.getUserId();
+			//long[] roles = {10140};
+			
+			//RoleServiceUtil.addUserRoles(user.getUserId(), roles);
 
 			UserLocalServiceUtil.setRoleUsers((long) 10140, users);
 

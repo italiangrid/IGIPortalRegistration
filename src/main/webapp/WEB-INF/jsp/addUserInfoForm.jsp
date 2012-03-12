@@ -10,6 +10,7 @@
 		getUrlVars : function() {
 			var app = null;
 			var l=null;
+			var o=null;
 			var vars = [], hash;
 			var hashes = window.location.href.slice(
 					window.location.href.indexOf('?') + 1).split('&');
@@ -26,23 +27,27 @@
 					$("#<portlet:namespace/>mail").attr("value",hash[1]);
 				}
 				if(hash[0]=="givenName"){
-					$("#<portlet:namespace/>firstName").attr("value",hash[1]);
+					$("#<portlet:namespace/>firstName").attr("value",hash[1].replace("%20"," "));
 					
 				}
 				if(hash[0]=="sn"){
-					$("#<portlet:namespace/>lastName").attr("value",hash[1]);
+					$("#<portlet:namespace/>lastName").attr("value",hash[1].replace("%20"," "));
 				}
-				if(hash[0]=="Shib-Application-id"){
+				if(hash[0]=="Shib-Application-ID"){
 					app = hash[1];
+				}
+				if(hash[0]=="o"){
+					o=hash[1].replace("%20"," ").replace("%C3%A0","a'").replace("%20"," ").replace("%20"," ").replace("%20"," ").replace("%20"," ");
 				}
 				if(hash[0]=="l"){
 					l=hash[1];
-					$("#<portlet:namespace/>institute").attr("value",hash[1]);
+					$("#<portlet:namespace/>institute").attr("value",hash[1].toUpperCase()+"-INFN");
 					$("#<portlet:namespace/>institute").attr("readonly","true");
 				}
 			}
-			if(app=="app2"){
-				$("#<portlet:namespace/>institute").attr("value",l.toUpperCase()+"-INFN");
+			if(o!="Istituto Nazionale di Fisica Nucleare"){
+				$("#<portlet:namespace/>institute").attr("value",o);
+				$("#<portlet:namespace/>institute").attr("readonly","true");
 			}
 			return vars;
 		},
@@ -194,7 +199,7 @@
 			
 			//alert("sono dentro");
 			//$("#<portlet:namespace/>temp").attr("value","true");
-			window.location = "https://halfback.cnaf.infn.it/app2/index.jsp";
+			window.location = "https://halfback.cnaf.infn.it/app1/index.jsp";
 			
 		}else{
 			//alert("sono fuori");
@@ -347,7 +352,7 @@
 						<br/><br/><strong>e-Mail addess</strong><br/>
 						<input id="<portlet:namespace/>mail" name="mail" type="text" readonly />
 						<br/><br/><strong>Username</strong><br/>
-						<input id="<portlet:namespace/>username" name="username" type="text" />
+						<input id="<portlet:namespace/>username" name="username" type="text" readonly/>
 
 						<br></br>
 						
@@ -378,7 +383,7 @@ asked 						to upload your certificate.</div>
 					</aui:fieldset>
 				</aui:column>
 				</div>
-				<aui:column columnWidth="25">
+				<!-- <aui:column columnWidth="25">
 
 					<aui:fieldset label="Agreement">
 
@@ -394,7 +399,9 @@ asked 						to upload your certificate.</div>
 						<aui:input label="Accept" name="useCondition" type="checkbox" />
 
 					</aui:fieldset>
-				</aui:column>
+				</aui:column> -->
+				
+				<aui:input name="useCondition" type="hidden" value="true"/>
 
 				<aui:button-row>
 					<aui:button type="submit" value="Continue"/>

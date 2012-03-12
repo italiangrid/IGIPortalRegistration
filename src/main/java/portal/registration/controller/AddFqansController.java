@@ -9,6 +9,7 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.portlet.bind.annotation.ActionMapping;
 
@@ -78,27 +79,27 @@ public class AddFqansController {
 	}
 	
 	@ActionMapping(params = "myaction=deleteByUser")
-	public void deleteUserInfo(ActionRequest request,
-			ActionResponse response, SessionStatus sessionStatus) throws PortalException, SystemException, IOException{
-		
-		
-		int userId = Integer.parseInt(request.getParameter("userId"));
+public void removeUserInfo(@RequestParam int userId, ActionRequest request, ActionResponse response) throws PortalException, SystemException, IOException {
 		
 		UserInfo userInfo = userInfoService.findById(userId);
 		String username = userInfo.getUsername();
-		log.info("ricevuto userId " + userId + "corrispondente all'utente " + username);
+		log.error("ricevuto userId " + userId + "corrispondente all'utente " + username);
 		long companyId = PortalUtil.getCompanyId(request);
-		log.info("companyId " + companyId);
+		log.error("companyId " + companyId);
 		User user = UserLocalServiceUtil.getUserByScreenName(companyId,
 				username);
-		log.info("recuperato liferay user " + user.getScreenName());
-		
-		UserLocalServiceUtil.deleteUser(user.getUserId());
-		log.info("eliminato utente liferay");
+		if(user!=null){
+			log.error("recuperato liferay user " + user.getScreenName());
+			//user.setActive(false);
+			UserLocalServiceUtil.updateActive(user.getUserId(),false);
+			UserLocalServiceUtil.deleteUser(user.getUserId());
+			log.error("eliminato utente liferay");
+		}
 		userInfoService.delete(userId);
-		log.info("eliminato utente portalUser");
+		log.error("eliminato utente portalUser");
 		response.sendRedirect(PortalUtil.getPortalURL(request)+"/c/portal/logout"); 
 		
 	}
+	
 
 }

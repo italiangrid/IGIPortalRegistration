@@ -26,7 +26,7 @@ import com.liferay.portal.util.PortalUtil;
  * @author asarin
  *
  */
-@Controller
+@Controller(value = "removeUserInfoController")
 @RequestMapping("VIEW")
 public class RemoveUserInfoController {
 	
@@ -48,8 +48,9 @@ public class RemoveUserInfoController {
 				username);
 		if(user!=null){
 			log.error("recuperato liferay user " + user.getScreenName());
-			user.setActive(false);
-			UserLocalServiceUtil.deleteUser(user);
+			//user.setActive(false);
+			UserLocalServiceUtil.updateActive(user.getUserId(),false);
+			UserLocalServiceUtil.deleteUser(user.getUserId());
 			log.error("eliminato utente liferay");
 		}
 		userInfoService.delete(userId);
