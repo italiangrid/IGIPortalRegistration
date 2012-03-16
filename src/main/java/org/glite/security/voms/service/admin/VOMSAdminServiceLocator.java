@@ -6,7 +6,7 @@
  */
 
 package org.glite.security.voms.service.admin;
-
+@SuppressWarnings({"serial","rawtypes", "unchecked"})
 public class VOMSAdminServiceLocator extends org.apache.axis.client.Service implements org.glite.security.voms.service.admin.VOMSAdminService {
 
     public VOMSAdminServiceLocator() {

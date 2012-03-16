@@ -6,7 +6,7 @@
  */
 
 package org.glite.security.voms;
-
+@SuppressWarnings({"serial","unused"})
 public class User  implements java.io.Serializable {
     private java.lang.String CA;
 

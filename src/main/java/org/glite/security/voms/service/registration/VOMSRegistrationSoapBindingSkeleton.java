@@ -7,6 +7,7 @@
 
 package org.glite.security.voms.service.registration;
 
+@SuppressWarnings({ "serial", "unchecked", "rawtypes" })
 public class VOMSRegistrationSoapBindingSkeleton implements org.glite.security.voms.service.registration.VOMSRegistration, org.apache.axis.wsdl.Skeleton {
     private org.glite.security.voms.service.registration.VOMSRegistration impl;
     private static java.util.Map _myOperations = new java.util.Hashtable();

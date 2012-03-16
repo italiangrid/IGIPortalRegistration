@@ -6,7 +6,7 @@
  */
 
 package org.glite.security.voms.service.attributes;
-
+@SuppressWarnings({"rawtypes"})
 public class AttributeClass_Helper {
     // Type metadata
     private static org.apache.axis.description.TypeDesc typeDesc =

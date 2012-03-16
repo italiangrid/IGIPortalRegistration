@@ -6,7 +6,7 @@
  */
 
 package org.glite.security.voms.service.attributes;
-
+@SuppressWarnings({"serial","rawtypes", "unchecked"})
 public class VOMSAttributesServiceLocator extends org.apache.axis.client.Service implements org.glite.security.voms.service.attributes.VOMSAttributesService {
 
     public VOMSAttributesServiceLocator() {

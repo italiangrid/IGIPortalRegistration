@@ -7,6 +7,7 @@
 
 package org.glite.security.voms.service.registration;
 
+@SuppressWarnings("serial")
 public class VOMSRegistrationServiceLocator extends org.apache.axis.client.Service implements org.glite.security.voms.service.registration.VOMSRegistrationService {
 
     public VOMSRegistrationServiceLocator() {
@@ -70,7 +71,8 @@ public class VOMSRegistrationServiceLocator extends org.apache.axis.client.Servi
      * If this service has no port for the given interface,
      * then ServiceException is thrown.
      */
-    public java.rmi.Remote getPort(Class serviceEndpointInterface) throws javax.xml.rpc.ServiceException {
+    @SuppressWarnings("rawtypes")
+	public java.rmi.Remote getPort(Class serviceEndpointInterface) throws javax.xml.rpc.ServiceException {
         try {
             if (org.glite.security.voms.service.registration.VOMSRegistration.class.isAssignableFrom(serviceEndpointInterface)) {
                 org.glite.security.voms.service.registration.VOMSRegistrationSoapBindingStub _stub = new org.glite.security.voms.service.registration.VOMSRegistrationSoapBindingStub(new java.net.URL(VOMSRegistration_address), this);
@@ -89,7 +91,8 @@ public class VOMSRegistrationServiceLocator extends org.apache.axis.client.Servi
      * If this service has no port for the given interface,
      * then ServiceException is thrown.
      */
-    public java.rmi.Remote getPort(javax.xml.namespace.QName portName, Class serviceEndpointInterface) throws javax.xml.rpc.ServiceException {
+    @SuppressWarnings("rawtypes")
+	public java.rmi.Remote getPort(javax.xml.namespace.QName portName, Class serviceEndpointInterface) throws javax.xml.rpc.ServiceException {
         if (portName == null) {
             return getPort(serviceEndpointInterface);
         }
@@ -108,9 +111,11 @@ public class VOMSRegistrationServiceLocator extends org.apache.axis.client.Servi
         return new javax.xml.namespace.QName("http://glite.org/wsdl/services/org.glite.security.voms.service.registration", "VOMSRegistrationService");
     }
 
-    private java.util.HashSet ports = null;
+    @SuppressWarnings("rawtypes")
+	private java.util.HashSet ports = null;
 
-    public java.util.Iterator getPorts() {
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+	public java.util.Iterator getPorts() {
         if (ports == null) {
             ports = new java.util.HashSet();
             ports.add(new javax.xml.namespace.QName("http://glite.org/wsdl/services/org.glite.security.voms.service.registration", "VOMSRegistration"));

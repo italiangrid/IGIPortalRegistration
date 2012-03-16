@@ -6,7 +6,7 @@
  */
 
 package org.glite.security.voms;
-
+@SuppressWarnings({"serial", "unused"})
 public class VOMSException  extends org.apache.axis.AxisFault  implements java.io.Serializable {
     public VOMSException() {
     }

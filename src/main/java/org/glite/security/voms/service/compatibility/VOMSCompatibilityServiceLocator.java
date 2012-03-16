@@ -7,6 +7,7 @@
 
 package org.glite.security.voms.service.compatibility;
 
+@SuppressWarnings({"serial","rawtypes"})
 public class VOMSCompatibilityServiceLocator extends org.apache.axis.client.Service implements org.glite.security.voms.service.compatibility.VOMSCompatibilityService {
 
     public VOMSCompatibilityServiceLocator() {
@@ -70,7 +71,7 @@ public class VOMSCompatibilityServiceLocator extends org.apache.axis.client.Serv
      * If this service has no port for the given interface,
      * then ServiceException is thrown.
      */
-    public java.rmi.Remote getPort(Class serviceEndpointInterface) throws javax.xml.rpc.ServiceException {
+	public java.rmi.Remote getPort(Class serviceEndpointInterface) throws javax.xml.rpc.ServiceException {
         try {
             if (org.glite.security.voms.service.compatibility.VOMSCompatibility.class.isAssignableFrom(serviceEndpointInterface)) {
                 org.glite.security.voms.service.compatibility.VOMSCompatibilitySoapBindingStub _stub = new org.glite.security.voms.service.compatibility.VOMSCompatibilitySoapBindingStub(new java.net.URL(VOMSCompatibility_address), this);
@@ -110,7 +111,8 @@ public class VOMSCompatibilityServiceLocator extends org.apache.axis.client.Serv
 
     private java.util.HashSet ports = null;
 
-    public java.util.Iterator getPorts() {
+    @SuppressWarnings("unchecked")
+	public java.util.Iterator getPorts() {
         if (ports == null) {
             ports = new java.util.HashSet();
             ports.add(new javax.xml.namespace.QName("http://glite.org/wsdl/services/org.glite.security.voms.service.compatibility", "VOMSCompatibility"));

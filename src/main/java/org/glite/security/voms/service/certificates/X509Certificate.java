@@ -7,6 +7,7 @@
 
 package org.glite.security.voms.service.certificates;
 
+@SuppressWarnings("serial")
 public class X509Certificate  implements java.io.Serializable {
     private byte[] bytes;
 
@@ -135,7 +136,8 @@ public class X509Certificate  implements java.io.Serializable {
     }
 
     private java.lang.Object __equalsCalc = null;
-    public synchronized boolean equals(java.lang.Object obj) {
+    @SuppressWarnings("unused")
+	public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof X509Certificate)) return false;
         X509Certificate other = (X509Certificate) obj;
         if (obj == null) return false;

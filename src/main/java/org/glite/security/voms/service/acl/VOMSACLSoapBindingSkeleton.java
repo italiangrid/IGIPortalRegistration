@@ -6,7 +6,7 @@
  */
 
 package org.glite.security.voms.service.acl;
-
+@SuppressWarnings({"serial","rawtypes", "unchecked"})
 public class VOMSACLSoapBindingSkeleton implements org.glite.security.voms.service.acl.VOMSACL, org.apache.axis.wsdl.Skeleton {
     private org.glite.security.voms.service.acl.VOMSACL impl;
     private static java.util.Map _myOperations = new java.util.Hashtable();

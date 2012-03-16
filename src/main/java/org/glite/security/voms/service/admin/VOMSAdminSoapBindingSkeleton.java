@@ -6,7 +6,7 @@
  */
 
 package org.glite.security.voms.service.admin;
-
+@SuppressWarnings({"serial","rawtypes", "unchecked"})
 public class VOMSAdminSoapBindingSkeleton implements org.glite.security.voms.service.admin.VOMSAdmin, org.apache.axis.wsdl.Skeleton {
     private org.glite.security.voms.service.admin.VOMSAdmin impl;
     private static java.util.Map _myOperations = new java.util.Hashtable();

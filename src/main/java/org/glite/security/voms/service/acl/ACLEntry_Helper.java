@@ -6,7 +6,7 @@
  */
 
 package org.glite.security.voms.service.acl;
-
+@SuppressWarnings("rawtypes")
 public class ACLEntry_Helper {
     // Type metadata
     private static org.apache.axis.description.TypeDesc typeDesc =

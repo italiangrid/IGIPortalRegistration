@@ -6,7 +6,7 @@
  */
 
 package org.glite.security.voms.service.acl;
-
+@SuppressWarnings({"serial","rawtypes", "unchecked"})
 public class VOMSACLServiceLocator extends org.apache.axis.client.Service implements org.glite.security.voms.service.acl.VOMSACLService {
 
     public VOMSACLServiceLocator() {

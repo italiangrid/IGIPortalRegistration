@@ -7,6 +7,7 @@
 
 package org.glite.security.voms.service.compatibility;
 
+@SuppressWarnings({"serial","rawtypes", "unchecked"})
 public class VOMSCompatibilitySoapBindingSkeleton implements org.glite.security.voms.service.compatibility.VOMSCompatibility, org.apache.axis.wsdl.Skeleton {
     private org.glite.security.voms.service.compatibility.VOMSCompatibility impl;
     private static java.util.Map _myOperations = new java.util.Hashtable();

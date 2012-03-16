@@ -6,7 +6,7 @@
  */
 
 package org.glite.security.voms.service.certificates;
-
+@SuppressWarnings({"serial","rawtypes", "unchecked", "unused"})
 public class VOMSCertificatesSoapBindingSkeleton implements org.glite.security.voms.service.certificates.VOMSCertificates, org.apache.axis.wsdl.Skeleton {
     private org.glite.security.voms.service.certificates.VOMSCertificates impl;
     private static java.util.Map _myOperations = new java.util.Hashtable();

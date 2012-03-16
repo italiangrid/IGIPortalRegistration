@@ -6,12 +6,12 @@
  */
 
 package org.glite.security.voms.service.compatibility;
-
+@SuppressWarnings("rawtypes")
 public class VOMSCompatibilitySoapBindingStub extends org.apache.axis.client.Stub implements org.glite.security.voms.service.compatibility.VOMSCompatibility {
     private java.util.Vector cachedSerClasses = new java.util.Vector();
     private java.util.Vector cachedSerQNames = new java.util.Vector();
     private java.util.Vector cachedSerFactories = new java.util.Vector();
-    private java.util.Vector cachedDeserFactories = new java.util.Vector();
+	private java.util.Vector cachedDeserFactories = new java.util.Vector();
 
     static org.apache.axis.description.OperationDesc [] _operations;
 
@@ -93,7 +93,8 @@ public class VOMSCompatibilitySoapBindingStub extends org.apache.axis.client.Stu
          super.cachedEndpoint = endpointURL;
     }
 
-    public VOMSCompatibilitySoapBindingStub(javax.xml.rpc.Service service) throws org.apache.axis.AxisFault {
+    @SuppressWarnings({ "unused", "unchecked" })
+	public VOMSCompatibilitySoapBindingStub(javax.xml.rpc.Service service) throws org.apache.axis.AxisFault {
         if (service == null) {
             super.service = new org.apache.axis.client.Service();
         } else {

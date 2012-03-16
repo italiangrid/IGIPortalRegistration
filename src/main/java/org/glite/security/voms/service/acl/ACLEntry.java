@@ -6,7 +6,7 @@
  */
 
 package org.glite.security.voms.service.acl;
-
+@SuppressWarnings({"serial","unused"})
 public class ACLEntry  implements java.io.Serializable {
     private java.lang.String adminIssuer;
 

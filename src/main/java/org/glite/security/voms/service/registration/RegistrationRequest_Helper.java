@@ -56,7 +56,8 @@ public class RegistrationRequest_Helper {
     /**
      * Get Custom Serializer
      */
-    public static org.apache.axis.encoding.Serializer getSerializer(
+    @SuppressWarnings("rawtypes")
+	public static org.apache.axis.encoding.Serializer getSerializer(
            java.lang.String mechType, 
            java.lang.Class _javaType,  
            javax.xml.namespace.QName _xmlType) {
@@ -68,7 +69,8 @@ public class RegistrationRequest_Helper {
     /**
      * Get Custom Deserializer
      */
-    public static org.apache.axis.encoding.Deserializer getDeserializer(
+    @SuppressWarnings("rawtypes")
+	public static org.apache.axis.encoding.Deserializer getDeserializer(
            java.lang.String mechType, 
            java.lang.Class _javaType,  
            javax.xml.namespace.QName _xmlType) {

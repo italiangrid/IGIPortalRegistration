@@ -6,7 +6,7 @@
  */
 
 package org.glite.security.voms.service.admin;
-
+@SuppressWarnings({"rawtypes", "unchecked", "unused"})
 public class VOMSAdminSoapBindingStub extends org.apache.axis.client.Stub implements org.glite.security.voms.service.admin.VOMSAdmin {
     private java.util.Vector cachedSerClasses = new java.util.Vector();
     private java.util.Vector cachedSerQNames = new java.util.Vector();

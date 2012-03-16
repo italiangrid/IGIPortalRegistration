@@ -7,6 +7,7 @@
 
 package org.glite.security.voms.service.registration;
 
+@SuppressWarnings("serial")
 public class RegistrationRequest  implements java.io.Serializable {
     private boolean aupAccepted;
 
@@ -135,7 +136,8 @@ public class RegistrationRequest  implements java.io.Serializable {
     }
 
     private java.lang.Object __equalsCalc = null;
-    public synchronized boolean equals(java.lang.Object obj) {
+    @SuppressWarnings("unused")
+	public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof RegistrationRequest)) return false;
         RegistrationRequest other = (RegistrationRequest) obj;
         if (obj == null) return false;

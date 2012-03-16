@@ -7,6 +7,7 @@
 
 package org.glite.security.voms.service.certificates;
 
+@SuppressWarnings({"serial","rawtypes"})
 public class VOMSCertificatesServiceLocator extends org.apache.axis.client.Service implements org.glite.security.voms.service.certificates.VOMSCertificatesService {
 
     public VOMSCertificatesServiceLocator() {
@@ -70,7 +71,7 @@ public class VOMSCertificatesServiceLocator extends org.apache.axis.client.Servi
      * If this service has no port for the given interface,
      * then ServiceException is thrown.
      */
-    public java.rmi.Remote getPort(Class serviceEndpointInterface) throws javax.xml.rpc.ServiceException {
+	public java.rmi.Remote getPort(Class serviceEndpointInterface) throws javax.xml.rpc.ServiceException {
         try {
             if (org.glite.security.voms.service.certificates.VOMSCertificates.class.isAssignableFrom(serviceEndpointInterface)) {
                 org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingStub _stub = new org.glite.security.voms.service.certificates.VOMSCertificatesSoapBindingStub(new java.net.URL(VOMSCertificates_address), this);
@@ -110,7 +111,8 @@ public class VOMSCertificatesServiceLocator extends org.apache.axis.client.Servi
 
     private java.util.HashSet ports = null;
 
-    public java.util.Iterator getPorts() {
+    @SuppressWarnings("unchecked")
+	public java.util.Iterator getPorts() {
         if (ports == null) {
             ports = new java.util.HashSet();
             ports.add(new javax.xml.namespace.QName("http://glite.org/wsdl/services/org.glite.security.voms.service.certificates", "VOMSCertificates"));

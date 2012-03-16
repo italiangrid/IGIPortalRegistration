@@ -1,5 +1,8 @@
 package portal.registration.utils;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.rmi.RemoteException;
@@ -28,42 +31,73 @@ public class VOMSAdminCallOut {
 
 	public static String[] getUserFQANs(String subject, String issuer,
 			String voHost) {
-
 		
+		String cert = DEFAULT_SSL_CERT_FILE;
+		String key = DEFAULT_SSL_KEY;
+
+		String contextPath = VOMSAdminCallOut.class.getClassLoader().getResource("").getPath();
+		
+		log.info("dove sono:" + contextPath);
+		
+		File test = new File(contextPath + "/content/Registration.properties");
+		log.info("File: " + test.getAbsolutePath());
+		if(test.exists()){
+			log.info("ESISTE!!");
+			try {
+				FileInputStream inStream =
+			    new FileInputStream(contextPath + "/content/Registration.properties");
+		
+				Properties prop = new Properties();
+			
+				prop.load(inStream);
+			
+				inStream.close();
+				
+				cert = prop.getProperty("SSL_CERT_FILE");
+				key = prop.getProperty("SSL_KEY");
+				
+				log.info("try cert: "+ cert + " key: "+key);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 		
 		if(AxisProperties.getProperty("axis.socketSecureFactory") == null){
 			AxisProperties.setProperty("axis.socketSecureFactory",
 			"org.glite.security.trustmanager.axis.AXISSocketFactory");
 		}else{
-			log.error("axis gi� settato");
+			log.info("axis già settato");
 		}
 		
-		log.error("porpiet� axis: " + AxisProperties.getProperty("axis.socketSecureFactory").toString());
+		log.info("porpietà axis: " + AxisProperties.getProperty("axis.socketSecureFactory").toString());
 		
 		Properties properties = AXISSocketFactory.getCurrentProperties();
 
-		// log.error(properties);
+		// log.info(properties);
 
 		// Properties old = AXISSocketFactory.getCurrentProperties();
 
-		// log.error(old);
+		// log.info(old);
+		
+		log.info("set cert: "+ cert + " key: "+key);
 
-		properties.setProperty("sslCertFile", DEFAULT_SSL_CERT_FILE); //
+		properties.setProperty("sslCertFile", cert); //
 		// hostcert.pem
 
-		properties.setProperty("sslKey", DEFAULT_SSL_KEY); // hostkey.pem
+		properties.setProperty("sslKey", key); // hostkey.pem
 
 		// AXISSocketFactory.setCurrentProperties(properties);
 		// System.setProperties(properties);
 
 		/*
-		 * if(properties.equals(old)){ log.error("***** UGUALI *****"); } else {
-		 * log.error("***** DIVERSI *****"); }
+		 * if(properties.equals(old)){ log.info("***** UGUALI *****"); } else {
+		 * log.info("***** DIVERSI *****"); }
 		 */
 
 		// Properties properties2 = AXISSocketFactory.getCurrentProperties();
 
-		// log.error(properties2);
+		// log.info(properties2);
 
 		String[] roles = null;
 		try {
@@ -125,6 +159,36 @@ public class VOMSAdminCallOut {
 
 	public static boolean getUser(String subject, String issuer, String voHost) {
 		
+		String cert = DEFAULT_SSL_CERT_FILE;
+		String key = DEFAULT_SSL_KEY;
+
+		String contextPath = VOMSAdminCallOut.class.getClassLoader().getResource("").getPath();
+		
+		log.info("dove sono:" + contextPath);
+		
+		File test = new File(contextPath + "/content/Registration.properties");
+		log.info("File: " + test.getAbsolutePath());
+		if(test.exists()){
+			log.info("ESISTE!!");
+			try {
+				FileInputStream inStream =
+			    new FileInputStream(contextPath + "/content/Registration.properties");
+		
+				Properties prop = new Properties();
+			
+				prop.load(inStream);
+			
+				inStream.close();
+				
+				cert = prop.getProperty("SSL_CERT_FILE");
+				key = prop.getProperty("SSL_KEY");
+				
+				log.info("try cert: "+ cert + " key: "+key);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 		
 
 		if(AxisProperties.getProperty("axis.socketSecureFactory") == null){
@@ -132,32 +196,34 @@ public class VOMSAdminCallOut {
 			"org.glite.security.trustmanager.axis.AXISSocketFactory");
 		}
 
-		log.error("porpietà axis: " + AxisProperties.getProperty("axis.socketSecureFactory").toString());
+		log.info("porpietà axis: " + AxisProperties.getProperty("axis.socketSecureFactory").toString());
 		
 		Properties properties = AXISSocketFactory.getCurrentProperties();
 
-		// log.error(properties);
+		// log.info(properties);
 
 		// Properties old = AXISSocketFactory.getCurrentProperties();
 
-		// log.error(old);
+		// log.info(old);
 
-		properties.setProperty("sslCertFile", DEFAULT_SSL_CERT_FILE); //
+		log.info("set cert: "+ cert + " key: "+key);
+
+		properties.setProperty("sslCertFile", cert); //
 		// hostcert.pem
 
-		properties.setProperty("sslKey", DEFAULT_SSL_KEY); // hostkey.pem
+		properties.setProperty("sslKey", key); // hostkey.pem
 
 		// AXISSocketFactory.setCurrentProperties(properties);
 		// System.setProperties(properties);
 
 		/*
-		 * if(properties.equals(old)){ log.error("***** UGUALI *****"); } else {
-		 * log.error("***** DIVERSI *****"); }
+		 * if(properties.equals(old)){ log.info("***** UGUALI *****"); } else {
+		 * log.info("***** DIVERSI *****"); }
 		 */
 
 		// Properties properties2 = AXISSocketFactory.getCurrentProperties();
 
-		// log.error(properties2);
+		// log.info(properties2);
 
 		try {
 

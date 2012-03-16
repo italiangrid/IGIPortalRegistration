@@ -6,7 +6,7 @@
  */
 
 package org.glite.security.voms.service.attributes;
-
+@SuppressWarnings({"rawtypes", "unchecked", "unused"})
 public class VOMSAttributesSoapBindingStub extends org.apache.axis.client.Stub implements org.glite.security.voms.service.attributes.VOMSAttributes {
     private java.util.Vector cachedSerClasses = new java.util.Vector();
     private java.util.Vector cachedSerQNames = new java.util.Vector();

@@ -6,7 +6,7 @@
  */
 
 package org.glite.security.voms.service.attributes;
-
+@SuppressWarnings({"serial","unused"})
 public class AttributeClass  implements java.io.Serializable {
     private java.lang.String description;
 

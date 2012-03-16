@@ -6,7 +6,7 @@
  */
 
 package org.glite.security.voms.service.certificates;
-
+@SuppressWarnings({"rawtypes", "unchecked", "unused"})
 public class VOMSCertificatesSoapBindingStub extends org.apache.axis.client.Stub implements org.glite.security.voms.service.certificates.VOMSCertificates {
     private java.util.Vector cachedSerClasses = new java.util.Vector();
     private java.util.Vector cachedSerQNames = new java.util.Vector();

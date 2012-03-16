@@ -7,6 +7,7 @@
 
 package org.glite.security.voms.service.certificates;
 
+@SuppressWarnings("rawtypes")
 public class X509Certificate_Helper {
     // Type metadata
     private static org.apache.axis.description.TypeDesc typeDesc =

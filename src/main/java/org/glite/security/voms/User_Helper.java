@@ -6,7 +6,7 @@
  */
 
 package org.glite.security.voms;
-
+@SuppressWarnings("rawtypes")
 public class User_Helper {
     // Type metadata
     private static org.apache.axis.description.TypeDesc typeDesc =
