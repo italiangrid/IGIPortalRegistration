@@ -49,7 +49,7 @@ public class RemoveUserInfoController {
 		if(user!=null){
 			log.info("recuperato liferay user " + user.getScreenName());
 			//user.setActive(false);
-			UserLocalServiceUtil.updateActive(user.getUserId(),false);
+			//UserLocalServiceUtil.updateActive(user.getUserId(),false);
 			UserLocalServiceUtil.deleteUser(user.getUserId());
 			log.info("eliminato utente liferay");
 		}

@@ -83,7 +83,7 @@ h5#usernameAlert {
 	<portlet:param name="myaction" value="updateCert" />
 </portlet:actionURL>
 
-<aui:form name="uploadCertForm" method="post" action="${updateCertUrl}"
+<aui:form name="uploadCertForm" action="${updateCertUrl}"
 	enctype="multipart/form-data">
 	<aui:layout>
 

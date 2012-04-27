@@ -159,7 +159,7 @@ div#voData {
 		<br/><br/>
 		<br/><br/>
 		<br/><br/>
-		<aui:form name="catalogForm" method="post" action="${showAddUserInfoUrl}">
+		<aui:form name="catalogForm" action="${showAddUserInfoUrl}">
 			<aui:button-row>
 				<aui:button type="submit" value="Register NOW!!!"/>
 			</aui:button-row>
@@ -182,7 +182,7 @@ div#voData {
 				<portlet:param name="myaction" value="searchUser" />
 			</portlet:actionURL>
 			
-			<aui:form name="searchUserInfo" method="post"
+			<aui:form name="searchUserInfo" 
 				action="${searchVOActionUrl}">
 				<aui:layout>
 					<aui:button-row>
@@ -230,8 +230,6 @@ div#voData {
 					property="firstName" />
 				<liferay-ui:search-container-column-text name="Institute"
 					property="institute" />
-				<liferay-ui:search-container-column-text name="Phone Number"
-					property="phone" />
 				<liferay-ui:search-container-column-text name="e-Mail"
 					property="mail" />
 
@@ -239,12 +237,6 @@ div#voData {
 					UserInfo ui = (UserInfo) row.getObject();
 									String res = (String) idpsName.get(ui.getUserId());
 				%>
-
-				<liferay-ui:search-container-column-text name="IDP">
-					<c:out value="<%= res %>" />
-				</liferay-ui:search-container-column-text>
-				<liferay-ui:search-container-column-text name="Username"
-					property="username" />
 				<liferay-ui:search-container-column-jsp
 					path="/WEB-INF/jsp/admin-action.jsp" align="right" />
 			</liferay-ui:search-container-row>

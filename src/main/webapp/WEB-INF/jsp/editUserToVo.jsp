@@ -217,7 +217,7 @@ ul#sortable-delete {
 
 
 
-<aui:form name="addUserToVoForm" method="post"
+<aui:form name="addUserToVoForm"
 	action="${addUserToVoActionUrl}">
 
 	<aui:layout>
@@ -240,8 +240,8 @@ ul#sortable-delete {
 			<br />
 			<strong>Help:</strong>
 			<br />
-			Drag and drop roles form green zone into yellow zone and order by your preferences. </br>
-			For erasing a role from your list drag and drop the role from yellow zone into red zone. </br>
+			Drag and drop roles form green zone into yellow zone and order by your preferences. <br/>
+			For erasing a role from your list drag and drop the role from yellow zone into red zone. <br/>
 			<br />
 			<div id="products">
 				<div id="catalog">

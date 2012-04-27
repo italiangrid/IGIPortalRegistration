@@ -94,7 +94,7 @@ h5#usernameAlert {
 	<portlet:param name="myaction" value="userInfos" />
 </portlet:renderURL>
 
-<aui:form name="uploadCertForm" method="post" action="${uploadCertUrl}"
+<aui:form name="uploadCertForm" action="${uploadCertUrl}"
 	enctype="multipart/form-data">
 	<aui:layout>
 

@@ -47,7 +47,7 @@ div.function {
 				<portlet:param name="myaction" value="searchVo" />
 			</portlet:actionURL>
 			
-			<aui:form name="searchUserInfo" method="post"
+			<aui:form name="searchUserInfo"
 				action="${searchVOActionUrl}">
 				<aui:layout>
 					<aui:button-row>
@@ -128,7 +128,7 @@ div.function {
 				<portlet:param name="userId" value="<%= request.getParameter("userId")%>" />
 			</portlet:renderURL>
 
-<aui:form name="completeListForm" method="post"
+<aui:form name="completeListForm"
 	action="${backURL}">
 	<aui:button-row>
 		<aui:button type="submit" value="Back" />

@@ -9,7 +9,7 @@
 	<version>4</version>
 	<properties>
 		<liferay.auto.deploy.dir>/Users/dmichelotto/Sities/liferay-portal-6.0.5/deploy</liferay.auto.deploy.dir>
-		<liferay.version>6.0.5</liferay.version>
+		<liferay.version>6.1.0</liferay.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <axis-version>1.4</axis-version>

@@ -33,8 +33,15 @@
 				if(hash[0]=="sn"){
 					$("#<portlet:namespace/>lastName").attr("value",hash[1].replace("%20"," "));
 				}
+				/*if(hash[0]=="targeted-id"){
+					$("#<portlet:namespace/>username").attr("value",hash[1]);
+				}*/
 				if(hash[0]=="Shib-Application-ID"){
 					app = hash[1];
+					if(hash[1]=="app2")
+						$("#<portlet:namespace/>idpValue").attr("value","2");
+					else
+						$("#<portlet:namespace/>idpValue").attr("value","1");
 				}
 				if(hash[0]=="o"){
 					o=hash[1].replace("%20"," ").replace("%C3%A0","a'").replace("%20"," ").replace("%20"," ").replace("%20"," ").replace("%20"," ");
@@ -199,7 +206,7 @@
 			
 			//alert("sono dentro");
 			//$("#<portlet:namespace/>temp").attr("value","true");
-			window.location = "https://halfback.cnaf.infn.it/app1/index.jsp";
+			window.location = "https://halfback.cnaf.infn.it/app3/index.jsp";
 			
 		}else{
 			//alert("sono fuori");
@@ -251,7 +258,7 @@
 	
 <aui:input id="temp" name="temp" type="hidden" value="false"/>
 
-<aui:form name="addUserInfoForm" commandName="userInfo" method="post"
+<aui:form name="addUserInfoForm" commandName="userInfo"
 	action="${addUserInfoActionUrl}">
 
 	<aui:layout>
@@ -351,8 +358,8 @@
 						<input id="<portlet:namespace/>phone" name=">phone" type="hidden" />
 						<br/><br/><strong>e-Mail addess</strong><br/>
 						<input id="<portlet:namespace/>mail" name="mail" type="text" readonly />
-						<br/><br/><strong>Username</strong><br/>
-						<input id="<portlet:namespace/>username" name="username" type="text" readonly/>
+						<!-- <br/><br/><strong>Username</strong><br/>  -->
+						<input id="<portlet:namespace/>username" name="username" type="hidden" />
 
 						<br></br>
 						

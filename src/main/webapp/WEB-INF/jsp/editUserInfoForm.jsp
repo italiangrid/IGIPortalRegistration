@@ -44,9 +44,23 @@
 		
 		$("#importTest").submit();
 		
-		//alert("OK");
+		alert("OK");
 		//window.location = url;
 	}
+	
+	
+	$(function() {
+
+
+		$("#foottipUser a, #foottipCert a, #foottipVO a").tooltip({
+			bodyHandler: function() {
+				return $($(this).attr("href")).html();
+			},
+			showURL: false
+			
+		});
+
+		});
 	
 
 	$(document).ready(function() {
@@ -140,35 +154,55 @@ div#voData {
 		message="problem-update-user-liferay" />
 	
 	<div id="<portlet:namespace/>formOn">
-		<a href="#editUserInfoForm" onclick="mostraModificaUtente();">Modify data</a><br /> <br />
-		<table>
-			<tr>
-				<td align="right" style="margin: 0; padding: 0 1em 0 0;">User:</td>
-				<td><strong><c:out value="${userInfo.firstName }" />
-				</strong> <strong><c:out value="${userInfo.lastName }" /> </strong></td>
-			</tr>
-			<tr>
-				<td align="right" style="margin: 0; padding: 0 1em 0 0;">Institute:</td>
-				<td><strong><c:out value="${userInfo.institute }" />
-				</strong></td>
-			</tr>
-			<tr>
-				<td align="right" style="margin: 0; padding: 0 1em 0 0;">Username:</td>
-				<td><strong><c:out value="${userInfo.username }" /> </strong>
-				</td>
-			</tr>
-			<tr>
-				<td align="right" style="margin: 0; padding: 0 1em 0 0;">e-Mail:</td>
-				<td><strong><c:out value="${userInfo.mail }" /> </strong></td>
-			</tr>
-		</table>
+		<!-- <a href="#editUserInfoForm" onclick="mostraModificaUtente();">Modify data</a><br /> <br />  -->
+		<aui:layout>
+
+			<aui:fieldset>
+				<aui:column columnWidth="80">
+					<aui:fieldset>
+		
+						<table>
+							<tr>
+								<td align="right" style="margin: 0; padding: 0 1em 0 0;">User:</td>
+								<td><strong><c:out value="${userInfo.firstName }" />
+								</strong> <strong><c:out value="${userInfo.lastName }" /> </strong></td>
+							</tr>
+							<c:if test="${!empty  userInfo.institute}">
+							<tr>
+								<td align="right" style="margin: 0; padding: 0 1em 0 0;">Institute:</td>
+								<td><strong><c:out value="${userInfo.institute }" />
+								</strong></td>
+							</tr>
+							</c:if>
+							<!-- <tr>
+								<td align="right" style="margin: 0; padding: 0 1em 0 0;">Username:</td>
+								<td><strong><c:out value="${userInfo.username }" /> </strong>
+								</td>
+							</tr> -->
+							<tr>
+								<td align="right" style="margin: 0; padding: 0 1em 0 0;">e-Mail:</td>
+								<td><strong><c:out value="${userInfo.mail }" /> </strong></td>
+							</tr>
+						</table>
+					</aui:fieldset>
+				</aui:column>
+				<aui:column columnWidth="20">
+					<aui:fieldset>
+						<div id="foottipUser">
+							<a href="#footnoteUserOK"><img src="<%=request.getContextPath()%>/images/check.png" width="64" height="64" style="float: right"/></a>
+							<div id="footnoteUserOK" style="display:none;">All is OK.</div>
+						</div>
+					</aui:fieldset>
+				</aui:column>	
+			</aui:fieldset>
+		</aui:layout>
 	</div>
 	<div id="<portlet:namespace/>formOFF" style="display: none;">
 
 		<a href="#editUserInfoForm" onclick="nascondiModificaUtente();">Hide data</a><br />
 		<br />
 
-		<aui:form name="editUserInfoForm" commandName="userInfo" method="post"
+		<aui:form name="editUserInfoForm" commandName="userInfo"
 			action="${editUserInfoActionUrl}">
 
 			<aui:layout>
@@ -204,14 +238,25 @@ div#voData {
 								value="<%=userInfo.getInstitute() %>" disabled="disabled"/>
 							<liferay-ui:error key="user-phone-valid"
 								message="user-phone-valid" />
-							<br/><br/><strong>Phone Number</strong><br/>
-							<input name="phone" type="text"
+							<!-- <br/><br/><strong>Phone Number</strong><br/>  -->
+							<input name="phone" type="hidden"
 								value="<%=userInfo.getPhone() %>"  />
+							<liferay-ui:error key="user-mail-required"
+								message="user-mail-required" />
+							<liferay-ui:error key="user-valid-mail-required"
+								message="user-valid-mail-required" />
+							<liferay-ui:error key="user-mail-duplicate"
+								message="user-mail-duplicate" />
+							<br/><br/><strong>e-Mail Address</strong><br/>
+							<input name="mail" disabled="disabled" type="text"
+								value="<%=userInfo.getMail() %>" />	
+							<input name="username" disabled="disabled" type="hidden"
+								value="<%=userInfo.getUsername() %>" />	
 							<br/> <br/>
 						</aui:fieldset>
 					</aui:column>
 
-					<aui:column columnWidth="33">
+					<!--<aui:column columnWidth="33">
 						<aui:fieldset label="Account data">
 							<br></br>
 							<liferay-ui:error key="user-username-required"
@@ -232,7 +277,7 @@ div#voData {
 								value="<%=userInfo.getMail() %>" />
 							<br/> <br/>
 						</aui:fieldset>
-					</aui:column>
+					</aui:column> -->
 
 					<aui:button-row>
 						<aui:button type="submit" />
@@ -263,35 +308,59 @@ div#voData {
 
 
 	<div id="<portlet:namespace/>certificatiOn">
+		<aui:layout>
 
-		<a href="#apriCert" onclick="mostraCertificatiUtente();">Modify
-			Certificate</a><br /> <br /> You have uploaded  
-				<c:choose>
-				<c:when test="${fn:length(certList)==0}" >
-				<span style="color:red"><strong>#<c:out value="${fn:length(certList)}" /></strong></span>
-				certificates<br />
-				</c:when>
-				<c:when test="${fn:length(certList)==1}" >
-				<strong>#<c:out value="${fn:length(certList)}" />
-				</strong>certificate<br />
-				</c:when>
-				<c:otherwise>
-				<strong>#<c:out value="${fn:length(certList)}" />
-				</strong>certificates<br />
-				</c:otherwise>
-				</c:choose>
-		
-		<c:if test="${fn:length(certList) > 0}">
-		Your defaul certificate is: <strong> <c:forEach
-					var="cert" items="${certList}">
-					<c:if test="${cert.primaryCert == 'true'}">
-						<c:out value="${cert.subject}" />
+			<aui:fieldset>
+				<aui:column columnWidth="80">
+					<aui:fieldset>
+					<a href="#apriCert" onclick="mostraCertificatiUtente();">Modify
+						Certificate</a><br /> <br /> You have uploaded  
+							<c:choose>
+							<c:when test="${fn:length(certList)==0}" >
+							<span style="color:red"><strong>#<c:out value="${fn:length(certList)}" /></strong></span>
+							certificates<br />
+							</c:when>
+							<c:when test="${fn:length(certList)==1}" >
+							<strong>#<c:out value="${fn:length(certList)}" />
+							</strong>certificate<br />
+							</c:when>
+							<c:otherwise>
+							<strong>#<c:out value="${fn:length(certList)}" />
+							</strong>certificates<br />
+							</c:otherwise>
+							</c:choose>
+					
+					<c:if test="${fn:length(certList) > 0}">
+					Your defaul certificate is: <strong> <c:forEach
+								var="cert" items="${certList}">
+								<c:if test="${cert.primaryCert == 'true'}">
+									<c:out value="${cert.subject}" />
+								</c:if>
+							</c:forEach> </strong>
+						<br />
 					</c:if>
-				</c:forEach> </strong>
-			<br />
-		</c:if>
-
-		<br />
+			
+					<br />
+					</aui:fieldset>
+				</aui:column>
+				<aui:column columnWidth="20">
+					<aui:fieldset>
+					<div id="foottipCert">
+						<c:choose>
+							<c:when test="${fn:length(certList)==0}" >
+								<a href="#footnoteCertKO"><img src="<%=request.getContextPath()%>/images/missed_calls.png" width="64" height="64" style="float: right"/></a>
+							</c:when>
+							<c:otherwise>
+								<a href="#footnoteCertOK"><img src="<%=request.getContextPath()%>/images/check.png" width="64" height="64" style="float: right"/></a>
+							</c:otherwise>
+						</c:choose>
+						<div id="footnoteCertOK" style="display:none;">All is OK.</div>
+						<div id="footnoteCertKO" style="display:none;">Add your Certificate.</div>
+					</div>
+					</aui:fieldset>
+				</aui:column>	
+			</aui:fieldset>
+		</aui:layout>
 
 
 	</div>
@@ -349,10 +418,7 @@ div#voData {
 					
 				</c:if>
 				</liferay-ui:search-container-column-text>
-				<!-- <liferay-ui:search-container-column-text
-					name="Rilasciato dalla CA-online" property="caonline" /> -->
-				<liferay-ui:search-container-column-text name="Username"
-					property="usernameCert" />
+				
 				<liferay-ui:search-container-column-jsp
 					path="/WEB-INF/jsp/admin-cert-action.jsp" align="right" />
 			</liferay-ui:search-container-row>
@@ -365,7 +431,7 @@ div#voData {
 
 		</portlet:renderURL>
 
-		<aui:form name="catalogForm" method="post" commandName="userInfo" action="${uploadCertUrl}">
+		<aui:form name="catalogForm" commandName="userInfo" action="${uploadCertUrl}">
 
 			<aui:input name="userId" type="hidden" value="${userInfo.userId }" />
 			<aui:input name="username" type="hidden"
@@ -410,19 +476,44 @@ div#voData {
 		message="exception-deactivation-user" />
 
 	<div id="<portlet:namespace/>voOn">
-		<a href="#apriVo" onclick="mostraVoUtente();">Modify VO</a> <br /> <br />
-		At the moment you have <strong>#<c:out
-				value="<%= Integer.toString(userToVoList.size()) %>"></c:out> </strong> VO<br /> associations.
-		<c:if test="${!empty defaultVo}">
-	Your default VO is: <strong><c:out value="${defaultVo}" />
-			</strong>
-		</c:if>
-		<c:if test="${!empty defaultFqan}">
-			<br />Selected roles for your default VO: <strong><c:out
-					value="${fn:replace(defaultFqan,';',' ')}" /> </strong>
-		</c:if>
+		<aui:layout>
 
-		<br /> <br />
+			<aui:fieldset>
+				<aui:column columnWidth="80">
+					<aui:fieldset>
+						<a href="#apriVo" onclick="mostraVoUtente();">Modify VO</a> <br /> <br />
+						At the moment you have <strong>#<c:out
+								value="<%= Integer.toString(userToVoList.size()) %>"></c:out> </strong> VO associations.<br />
+						<c:if test="${!empty defaultVo}">
+					Your default VO is: <strong><c:out value="${defaultVo}" />
+							</strong>
+						</c:if>
+						<c:if test="${!empty defaultFqan}">
+							<br />Selected roles for your default VO: <strong><c:out
+									value="${fn:replace(defaultFqan,';',' ')}" /> </strong>
+						</c:if>
+				
+						<br /> <br />
+					</aui:fieldset>
+				</aui:column>
+				<aui:column columnWidth="20">
+					<aui:fieldset>
+					<div id="foottipVO">
+						<c:choose>
+							<c:when test="${fn:length(userToVoList)==0}" >
+								<a href="#footnoteVOKO"><img src="<%=request.getContextPath()%>/images/missed_calls.png" width="64" height="64" style="float: right"/></a>
+							</c:when>
+							<c:otherwise>
+								<a href="#footnoteVOOK"><img src="<%=request.getContextPath()%>/images/check.png" width="64" height="64" style="float: right"/></a>
+							</c:otherwise>
+						</c:choose>
+						<div id="footnoteVOOK" style="display:none;">All is OK.</div>
+						<div id="footnoteVOKO" style="display:none;">Add a new VO.</div>
+					</div>
+					</aui:fieldset>
+				</aui:column>	
+			</aui:fieldset>
+		</aui:layout>
 
 	</div>
 
@@ -471,22 +562,25 @@ div#voData {
 			<liferay-ui:search-iterator />
 		</liferay-ui:search-container>
 
-		<portlet:actionURL var="addUserToVOActionUrl">
-			<portlet:param name="myaction" value="goToAddUserToVOForm" />
-		</portlet:actionURL>
+		<portlet:renderURL var="addUserToVOActionUrl">
+			<portlet:param name="myaction" value="showAddUserToVO" />
+			<portlet:param name="userId" value="${userInfo.userId}" />
+			<portlet:param name="firstReg" value="false" />
+		</portlet:renderURL>
+		
+		<portlet:renderURL var="voUrl">
+			<portlet:param name="myaction" value="showVOList" />
+			<portlet:param name="waif" value="editUserInfoForm" />
+			<portlet:param name="userId" value="${userInfo.userId}"/>
+		</portlet:renderURL>
 
-		<aui:form name="addUserToVOForm" method="post"
+		<aui:form name="addUserToVOForm"
 			action="${addUserToVOActionUrl}">
 
-			<aui:input name="userId" type="hidden" value="${userId}" />
-			<aui:input name="firstReg" type="hidden" value="false" />
+			
 			<aui:button-row>
 				<aui:button type="submit" value="Add VO" />
-				<portlet:renderURL var="voUrl">
-					<portlet:param name="myaction" value="showVOList" />
-					<portlet:param name="waif" value="editUserInfoForm" />
-					<portlet:param name="userId" value="${userInfo.userId}"/>
-				</portlet:renderURL>
+				
 				<!--<aui:button type="cancel" value="Request VO association"
 								onClick="location.href='${voUrl}';" />-->
 			</aui:button-row>
@@ -510,18 +604,18 @@ div#voData {
 		</portlet:actionURL>
 		
 		
-		<aui:form name="catalogForm" method="post" action="${homeUrl}">
+		<aui:form name="catalogForm" action="${homeUrl}">
 			<aui:button-row>
 				<aui:button type="submit" value="Changes completed" />
 				<aui:button type="button" value="Import Job Test" onClick="mysubmit();"/>
 			</aui:button-row>
 		</aui:form>
 		
-		<div style="display:none;"><form name="importTest" id="importTest" method="post" action="https://portal.italiangrid.it/web/guest/import?p_auth=<%=AuthTokenUtil.getToken(request)%>&p_p_id=wfimport_WAR_wspgrade&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-1&p_p_col_count=1&_wfimport_WAR_wspgrade_guse=doJustDoIt">
+		<div style="display:none;"><form method="post" name="importTest" id="importTest" action="https://gridlab04.cnaf.infn.it/web/guest/import?p_auth=<%=AuthTokenUtil.getToken(request)%>&p_p_id=wfimport_WAR_wspgrade&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-1&p_p_col_count=1&_wfimport_WAR_wspgrade_guse=doJustDoIt">
 			<input type="hidden" value="import" name="impMethode">
 			<input type="hidden" value="appl" name="impWfType">
-			<input type="hidden" value="124" name="impItemId">
-			<input type="hidden" value="https://portal.italiangrid.it/web/guest/job-monitor" name="returnPath">
+			<input type="hidden" value="1" name="impItemId">
+			<input type="hidden" value="https://gridlab04.cnaf.infn.it/web/guest/concrate" name="returnPath">
 			<input type="hidden" value="JOB_gridit" name="wfimp_newRealName">
 			<input type="submit" value="Import Job Test">
 		
@@ -536,7 +630,7 @@ div#voData {
 			<portlet:param name="userId" value="${userInfo.userId }" /> 
 		</portlet:actionURL>
 		
-		<aui:form name="catalogForm" method="post" action="${deleteUrl}">
+		<aui:form name="catalogForm" action="${deleteUrl}">
 			<aui:button-row>
 				<aui:button type="cancel" value="Delete Account"
 								onClick="verifyDelete('${deleteURL}')" />
@@ -544,11 +638,11 @@ div#voData {
 			</aui:button-row>
 		</aui:form>
 		
-		<div style="display:none;"><form name="importTest" id="importTest" method="post" action="https://portal.italiangrid.it/web/guest/import?p_auth=<%=AuthTokenUtil.getToken(request)%>&p_p_id=wfimport_WAR_wspgrade&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-1&p_p_col_count=1&_wfimport_WAR_wspgrade_guse=doJustDoIt">
+		<div style="display:none;"><form method="post" name="importTest" id="importTest" action="https://gridlab04.cnaf.infn.it/web/guest/import?p_auth=<%=AuthTokenUtil.getToken(request)%>&p_p_id=wfimport_WAR_wspgrade&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-1&p_p_col_count=1&_wfimport_WAR_wspgrade_guse=doJustDoIt">
 			<input type="hidden" value="import" name="impMethode">
 			<input type="hidden" value="appl" name="impWfType">
-			<input type="hidden" value="124" name="impItemId">
-			<input type="hidden" value="https://portal.italiangrid.it/web/guest/job-monitor" name="returnPath">
+			<input type="hidden" value="1" name="impItemId">
+			<input type="hidden" value="https://gridlab04.cnaf.infn.it/web/guest/concrate" name="returnPath">
 			<input type="hidden" value="JOB_gridit" name="wfimp_newRealName">
 			<input type="submit" value="Import Job Test">
 		
@@ -557,6 +651,9 @@ div#voData {
 	</c:otherwise>
 
 </c:choose>
+
+
+
 
 
 

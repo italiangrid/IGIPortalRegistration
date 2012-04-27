@@ -31,7 +31,9 @@ import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.servlet.SessionErrors;
 import com.liferay.portal.kernel.servlet.SessionMessages;
+import com.liferay.portal.model.Role;
 import com.liferay.portal.model.User;
+import com.liferay.portal.service.RoleLocalServiceUtil;
 import com.liferay.portal.service.UserLocalServiceUtil;
 import com.liferay.portal.util.PortalUtil;
 
@@ -161,7 +163,9 @@ public class AddUserToVOController {
 			user = UserLocalServiceUtil
 					.getUserByScreenName(companyId, username);
 			
-			List<User> powerUsers = UserLocalServiceUtil.getRoleUsers(10140);
+			Role rolePowerUser = RoleLocalServiceUtil.getRole(companyId, "Power User");
+			
+			List<User> powerUsers = UserLocalServiceUtil.getRoleUsers(rolePowerUser.getRoleId());
 			
 			long users[] = new long[powerUsers.size()+1];
 			
@@ -175,8 +179,10 @@ public class AddUserToVOController {
 			//long[] roles = {10140};
 			
 			//RoleServiceUtil.addUserRoles(user.getUserId(), roles);
+			
+			
 
-			UserLocalServiceUtil.setRoleUsers((long) 10140, users);
+			UserLocalServiceUtil.setRoleUsers(rolePowerUser.getRoleId(), users);
 
 			userInfo.setRegistrationComplete("true");
 
