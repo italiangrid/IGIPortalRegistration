@@ -112,12 +112,6 @@ div#voData {
 	<portlet:param name="myaction" value="addUserInfoForm" />
 </portlet:renderURL>
 
-
-
-
-
-
-
 <jsp:useBean id="userInfos"
 	type="java.util.List<portal.registration.domain.UserInfo>"
 	scope="request" />
@@ -135,12 +129,6 @@ div#voData {
 	message="use-condition-not-acepted" />
 <liferay-ui:error key="exception-activation-user"
 	message="exception-activation-user" />
-
-
-
-<c:if test="<%= !themeDisplay.isSignedIn() %>">
-
-</c:if>
 
 <c:choose>
 	<c:when test="<%= !themeDisplay.isSignedIn() %>"> 

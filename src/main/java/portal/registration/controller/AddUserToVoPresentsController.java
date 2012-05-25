@@ -109,14 +109,12 @@ public class AddUserToVoPresentsController {
 	@ActionMapping(params = "myaction=goToAddUserToVOForm")
 	public void goToAddUserToVOForm(ActionRequest request,
 			ActionResponse response, SessionStatus sessionStatus) {
-		int userId = 0;
 		if(request.getParameter("userId")==null){
 			log.error("siamo rovinati");
 			User user = (User) request.getAttribute(WebKeys.USER);
-			if(user!=null)
-				userId = userInfoService.findByUsername(user.getScreenName()).getUserId();
+			if(user!=null) {
+			}
 		}else{
-			userId = Integer.parseInt(request.getParameter("userId"));
 		}
 		
 		/*User user = (User) request.getAttribute(WebKeys.USER);

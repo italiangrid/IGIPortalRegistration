@@ -90,9 +90,12 @@ h5#usernameAlert {
 	<portlet:param name="firstReg" value="${firstReg }" />
 </portlet:actionURL>
 
-<portlet:renderURL var="homeUrl">
-	<portlet:param name="myaction" value="userInfos" />
-</portlet:renderURL>
+<portlet:actionURL var="homeUrl">
+	<portlet:param name="myaction" value="goBack" />
+	<portlet:param name="userId" value="${userId }" />
+	<portlet:param name="firstReg" value="${firstReg }" />
+	<portlet:param name="username" value="${username }" />
+</portlet:actionURL>
 
 <aui:form name="uploadCertForm" action="${uploadCertUrl}"
 	enctype="multipart/form-data">
