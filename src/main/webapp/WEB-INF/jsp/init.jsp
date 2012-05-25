@@ -41,5 +41,7 @@
 <%@ page import="javax.portlet.PortletURL" %>
 <%@ page import="com.liferay.portal.security.auth.AuthTokenUtil" %>
 
+<!-- Test Switch -->
+
 <portlet:defineObjects />	
 <liferay-theme:defineObjects />
