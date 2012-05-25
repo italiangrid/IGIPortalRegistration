@@ -131,7 +131,7 @@ if (request.getParameter("userId") != null){
 			-->
 			<c:if test="<%= !themeDisplay.isSignedIn() %>">
 			<aui:button type="cancel" value="Registration terminated"
-				onClick="location.href='https://halfback.cnaf.infn.it/casshib/shib/app4/login?service=https%3A%2F%2Fgridlab04.cnaf.infn.it%2Fc%2Fportal%2Flogin%3Fp_l_id%3D10671';" />
+				onClick="location.href='https://halfback.cnaf.infn.it/casshib/shib/app2/login?service=https%3A%2F%2Fportal.italiangrid.it%2Fc%2Fportal%2Flogin%3Fp_l_id%3D11504';" />
 			</c:if>
 			
 			<c:if test="<%= themeDisplay.isSignedIn() %>">
@@ -146,11 +146,11 @@ if (request.getParameter("userId") != null){
 <div style="display:none">
 	
 	
-	<form id="formId" action="https://gridlab04.cnaf.infn.it/web/guest/import?p_auth=<%=AuthTokenUtil.getToken(request)%>&p_p_id=wfimport_WAR_wspgrade&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-1&p_p_col_count=1&_wfimport_WAR_wspgrade_guse=doJustDoIt">
+	<form id="formId" action="https://portal.italiangrid.it/web/guest/import?p_auth=<%=AuthTokenUtil.getToken(request)%>&p_p_id=wfimport_WAR_wspgrade&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-1&p_p_col_count=1&_wfimport_WAR_wspgrade_guse=doJustDoIt">
 		<input type="hidden" value="import" name="impMethode">
 		<input type="hidden" value="appl" name="impWfType">
-		<input type="hidden" value="1" name="impItemId">
-		<!-- <input type="hidden" value="https://gridlab04.cnaf.infn.it/web/guest/concrate" name="returnPath">  -->
+		<input type="hidden" value="126" name="impItemId">
+		<input type="hidden" value="https://portal.italiangrid.it/web/guest/job-monitor" name="returnPath">
 		<input type="hidden" value="JOB_gridit" name="wfimp_newRealName">
 		<input type="submit" value="Import">
 	</form>

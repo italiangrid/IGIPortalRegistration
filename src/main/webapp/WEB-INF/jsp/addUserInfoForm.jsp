@@ -18,11 +18,13 @@
 				hash = hashes[i].split('=');
 				vars.push(hash[0]);
 				vars[hash[0]] = hash[1];
+				
+				//alert(hash[0] + ": " + hash[1]);
 				//alert("prima questo");
-				if(hash[0]=="uid"){
+				/*if(hash[0]=="uid"){
 					
 					$("#<portlet:namespace/>username").attr("value",hash[1]);
-				}
+				}*/
 				if(hash[0]=="mail"){
 					$("#<portlet:namespace/>mail").attr("value",hash[1]);
 				}
@@ -33,9 +35,9 @@
 				if(hash[0]=="sn"){
 					$("#<portlet:namespace/>lastName").attr("value",hash[1].replace("%20"," "));
 				}
-				/*if(hash[0]=="targeted-id"){
+				if(hash[0]=="persistent-id"){
 					$("#<portlet:namespace/>username").attr("value",hash[1]);
-				}*/
+				}
 				if(hash[0]=="Shib-Application-ID"){
 					app = hash[1];
 					if(hash[1]=="app2")
@@ -45,6 +47,7 @@
 				}
 				if(hash[0]=="o"){
 					o=hash[1].replace("%20"," ").replace("%C3%A0","a'").replace("%20"," ").replace("%20"," ").replace("%20"," ").replace("%20"," ");
+					//alert(o);
 				}
 				if(hash[0]=="l"){
 					l=hash[1];
@@ -52,9 +55,17 @@
 					$("#<portlet:namespace/>institute").attr("readonly","true");
 				}
 			}
-			if(o!="Istituto Nazionale di Fisica Nucleare"){
+			//alert(l);
+			//alert(o);
+			if((o=="Istituto Nazionale di Fisica Nucleare")&&(l==null)){
 				$("#<portlet:namespace/>institute").attr("value",o);
 				$("#<portlet:namespace/>institute").attr("readonly","true");
+				//alert("sono dentro a o INFN");
+			}
+			if((o!="Istituto Nazionale di Fisica Nucleare")){
+				$("#<portlet:namespace/>institute").attr("value",o);
+				$("#<portlet:namespace/>institute").attr("readonly","true");
+				//alert("sono dentro a o");
 			}
 			return vars;
 		},
@@ -206,11 +217,11 @@
 			
 			//alert("sono dentro");
 			//$("#<portlet:namespace/>temp").attr("value","true");
-			window.location = "https://halfback.cnaf.infn.it/app3/index.jsp";
+			window.location = "https://halfback.cnaf.infn.it/app2/index.jsp";
 			
 		}else{
 			//alert("sono fuori");
-			$.getUrlVar('Shib-Application-ID');
+			//$.getUrlVar('Shib-Application-ID');
 			$("#<portlet:namespace/>idpOk").show("slow");
 			
 			setIdp();

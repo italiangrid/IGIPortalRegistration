@@ -44,7 +44,7 @@
 		
 		$("#importTest").submit();
 		
-		alert("OK");
+		//alert("OK");
 		//window.location = url;
 	}
 	
@@ -611,11 +611,11 @@ div#voData {
 			</aui:button-row>
 		</aui:form>
 		
-		<div style="display:none;"><form method="post" name="importTest" id="importTest" action="https://gridlab04.cnaf.infn.it/web/guest/import?p_auth=<%=AuthTokenUtil.getToken(request)%>&p_p_id=wfimport_WAR_wspgrade&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-1&p_p_col_count=1&_wfimport_WAR_wspgrade_guse=doJustDoIt">
+		<div style="display:none;"><form method="post" name="importTest" id="importTest" action="https://portal.italiangrid.it/web/guest/import?p_auth=<%=AuthTokenUtil.getToken(request)%>&p_p_id=wfimport_WAR_wspgrade&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-1&p_p_col_count=1&_wfimport_WAR_wspgrade_guse=doJustDoIt">
 			<input type="hidden" value="import" name="impMethode">
 			<input type="hidden" value="appl" name="impWfType">
-			<input type="hidden" value="1" name="impItemId">
-			<input type="hidden" value="https://gridlab04.cnaf.infn.it/web/guest/concrate" name="returnPath">
+			<input type="hidden" value="126" name="impItemId">
+			<input type="hidden" value="https://portal.italiangrid.it/web/guest/job-monitor" name="returnPath">
 			<input type="hidden" value="JOB_gridit" name="wfimp_newRealName">
 			<input type="submit" value="Import Job Test">
 		
@@ -638,11 +638,11 @@ div#voData {
 			</aui:button-row>
 		</aui:form>
 		
-		<div style="display:none;"><form method="post" name="importTest" id="importTest" action="https://gridlab04.cnaf.infn.it/web/guest/import?p_auth=<%=AuthTokenUtil.getToken(request)%>&p_p_id=wfimport_WAR_wspgrade&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-1&p_p_col_count=1&_wfimport_WAR_wspgrade_guse=doJustDoIt">
+		<div style="display:none;"><form method="post" name="importTest" id="importTest" action="https://portal.italiangrid.it/web/guest/import?p_auth=<%=AuthTokenUtil.getToken(request)%>&p_p_id=wfimport_WAR_wspgrade&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-1&p_p_col_count=1&_wfimport_WAR_wspgrade_guse=doJustDoIt">
 			<input type="hidden" value="import" name="impMethode">
 			<input type="hidden" value="appl" name="impWfType">
-			<input type="hidden" value="1" name="impItemId">
-			<input type="hidden" value="https://gridlab04.cnaf.infn.it/web/guest/concrate" name="returnPath">
+			<input type="hidden" value="126" name="impItemId">
+			<input type="hidden" value="https://portal.italiangrid.it/web/guest/job-monitor" name="returnPath">
 			<input type="hidden" value="JOB_gridit" name="wfimp_newRealName">
 			<input type="submit" value="Import Job Test">
 		

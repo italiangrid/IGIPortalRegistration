@@ -232,7 +232,7 @@ ul#sortable-delete {
 							request.getParameter("idVo"));
 			%>
 
-			<c:out value="userId ${userId}; idVo ${idVo};"></c:out>
+			<!-- <c:out value="userId ${userId}; idVo ${idVo};"></c:out> -->
 			<aui:input name="userId" type="hidden" value="${userId}" />
 			<aui:input name="idVo" type="hidden" value="${idVo}" />
 

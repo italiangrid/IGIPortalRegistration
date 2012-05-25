@@ -98,7 +98,7 @@ h5#usernameAlert {
 	enctype="multipart/form-data">
 	<aui:layout>
 
-		<h1 class="header-title">Upload New Certificato</h1>
+		<h1 class="header-title">Upload New Certificate</h1>
 
 		<br></br>
 

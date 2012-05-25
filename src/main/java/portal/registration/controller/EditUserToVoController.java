@@ -4,6 +4,7 @@ import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
 import javax.portlet.RenderRequest;
 
+import org.apache.commons.lang3.ArrayUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -84,8 +85,10 @@ public class EditUserToVoController {
 		fqans = VOMSAdminCallOut.getUserFQANs(cert.getSubject(),
 				cert.getIssuer(), vo.getHost());
 			
+		//ArrayUtils.addAll(roles, groups); 
 
-
+		//return ArrayUtils.remove(fqans,ArrayUtils.indexOf(fqans, "/"+vo.getVo()));
+		
 		return fqans;
 	}
 

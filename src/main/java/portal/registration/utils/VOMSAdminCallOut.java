@@ -18,6 +18,8 @@ import org.glite.security.voms.VOMSException;
 import org.glite.security.voms.service.admin.VOMSAdmin;
 import org.glite.security.voms.service.admin.VOMSAdminServiceLocator;
 
+import org.apache.commons.lang3.ArrayUtils;
+
 public class VOMSAdminCallOut {
 
 	// -Daxis.socketSecureFactory=org.glite.security.trustmanager.axis.AXISSocketFactory
@@ -100,6 +102,7 @@ public class VOMSAdminCallOut {
 		// log.info(properties2);
 
 		String[] roles = null;
+		String[] groups = null;
 		try {
 
 			log.info("Contatto VOMSAdmin con URL = https://" + voHost
@@ -121,8 +124,9 @@ public class VOMSAdminCallOut {
 					+ " e issuer = " + issuer);
 
 			roles = adminService.listRoles(subject, issuer);
+			groups = adminService.listGroups(subject, issuer);
 
-			if (roles == null) {
+			if ((roles == null)&&(groups == null)) {
 				log.info("nessun risultato con subject = " + subject
 						+ " e issuer = " + issuer);
 				log.info("Contatto VOMSAdmin con URL = https://" + voHost
@@ -153,8 +157,8 @@ public class VOMSAdminCallOut {
 			properties.remove("sslKey");
 		}
 
-		return roles;
-
+		
+		return ArrayUtils.addAll(roles, groups); 
 	}
 
 	public static boolean getUser(String subject, String issuer, String voHost) {
