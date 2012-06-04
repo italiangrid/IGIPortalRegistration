@@ -20,10 +20,17 @@ import com.liferay.portal.model.User;
 import com.liferay.portal.service.UserLocalServiceUtil;
 import com.liferay.portal.util.PortalUtil;
 
-import portal.registration.domain.UserInfo;
-import portal.registration.domain.UserToVo;
-import portal.registration.services.UserInfoService;
-import portal.registration.services.UserToVoService;
+//import portal.registration.domain.UserInfo;
+//import portal.registration.domain.UserToVo;
+//import portal.registration.services.UserInfoService;
+//import portal.registration.services.UserToVoService;
+
+import it.italiangrid.portal.dbapi.domain.UserInfo;
+import it.italiangrid.portal.dbapi.domain.UserToVo;
+import it.italiangrid.portal.dbapi.services.UserInfoService;
+import it.italiangrid.portal.dbapi.services.UserToVoService;
+
+
 
 
 @Controller(value = "addFqansController")

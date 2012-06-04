@@ -113,10 +113,10 @@ div#voData {
 </portlet:renderURL>
 
 <jsp:useBean id="userInfos"
-	type="java.util.List<portal.registration.domain.UserInfo>"
+	type="java.util.List<it.italiangrid.portal.dbapi.domain.UserInfo>"
 	scope="request" />
 <jsp:useBean id="idps"
-	type="java.util.List<portal.registration.domain.Idp>" scope="request" />
+	type="java.util.List<it.italiangrid.portal.dbapi.domain.Idp>" scope="request" />
 <jsp:useBean id="idpsName" type="java.util.Map" scope="request" />
 
 
@@ -210,7 +210,7 @@ div#voData {
 
 			</liferay-ui:search-container-results>
 			<liferay-ui:search-container-row
-				className="portal.registration.domain.UserInfo" keyProperty="userId"
+				className="it.italiangrid.portal.dbapi.domain.UserInfo" keyProperty="userId"
 				modelVar="UserInfo">
 				<liferay-ui:search-container-column-text name="Last Name"
 					property="lastName" />

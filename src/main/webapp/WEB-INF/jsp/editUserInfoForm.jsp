@@ -106,13 +106,13 @@ div#voData {
 	<portlet:param name="myaction" value="userInfos" />
 </portlet:renderURL>
 
-<jsp:useBean id="userInfo" type="portal.registration.domain.UserInfo"
+<jsp:useBean id="userInfo" type="it.italiangrid.portal.dbapi.domain.UserInfo"
 	scope="request" />
 <jsp:useBean id="certList"
-	type="java.util.List<portal.registration.domain.Certificate>"
+	type="java.util.List<it.italiangrid.portal.dbapi.domain.Certificate>"
 	scope="request" />
 <jsp:useBean id="userToVoList"
-	type="java.util.List<portal.registration.domain.Vo>" scope="request"></jsp:useBean>
+	type="java.util.List<it.italiangrid.portal.dbapi.domain.Vo>" scope="request"></jsp:useBean>
 	
 	<%
 			User userLF = (User) request.getAttribute(WebKeys.USER);
@@ -386,7 +386,7 @@ div#voData {
 
 			</liferay-ui:search-container-results>
 			<liferay-ui:search-container-row
-				className="portal.registration.domain.Certificate"
+				className="it.italiangrid.portal.dbapi.domain.Certificate"
 				keyProperty="idCert" modelVar="Certificate">
 				<liferay-ui:search-container-column-text name="Subject"
 					property="subject" />
@@ -411,13 +411,7 @@ div#voData {
 						}
 					%>
 					</liferay-ui:search-container-column-text>
-				<liferay-ui:search-container-column-text name="Defaul certificate">
-				<c:if test="${Certificate.primaryCert}">
-					
-						<img src="<%=request.getContextPath()%>/images/success.png"/>
-					
-				</c:if>
-				</liferay-ui:search-container-column-text>
+				
 				
 				<liferay-ui:search-container-column-jsp
 					path="/WEB-INF/jsp/admin-cert-action.jsp" align="right" />
@@ -439,7 +433,10 @@ div#voData {
 			<aui:input name="firstReg" type="hidden" value="false" />
 
 			<aui:button-row>
-				<aui:button type="submit" value="Upload certificate" />
+				<c:if test="${fn:length(certList) == 0}">
+					<aui:button type="submit" value="Upload certificate" />
+				</c:if>
+				<!-- <a href="https://lapdmichelotto.cnaf.infn.it:8443/test/index.jsp" onclick="setHaveCert('false'); $(this).modal({width:800, height:600}).open(); return false;"><aui:button value="Request new Certtificate"/></a>  -->
 			</aui:button-row>
 		</aui:form>
 
@@ -538,7 +535,7 @@ div#voData {
 
 			</liferay-ui:search-container-results>
 			<liferay-ui:search-container-row
-				className="portal.registration.domain.Vo" keyProperty="idVo"
+				className="it.italiangrid.portal.dbapi.domain.Vo" keyProperty="idVo"
 				modelVar="Vo">
 				
 						<liferay-ui:search-container-column-text name="VO name"
@@ -599,8 +596,7 @@ div#voData {
 	
 		<portlet:actionURL var="homeUrl">
 			<portlet:param name="myaction" value="uploadComplete" />
-			<portlet:param name="userId"
-				value="<%= request.getParameter("userId") %>" />
+			<portlet:param name="userId" value="<%= request.getParameter("userId") %>" />
 		</portlet:actionURL>
 		
 		

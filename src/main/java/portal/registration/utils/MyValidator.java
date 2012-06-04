@@ -4,7 +4,9 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 
-import portal.registration.domain.UserInfo;
+//import portal.registration.domain.UserInfo;
+import it.italiangrid.portal.dbapi.domain.UserInfo;
+
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.Validator;
 import com.liferay.portal.model.User;

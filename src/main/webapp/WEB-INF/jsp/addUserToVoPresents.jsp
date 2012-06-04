@@ -31,7 +31,7 @@ if (request.getParameter("userId") != null){
 </portlet:renderURL>
 
 <jsp:useBean id="userToVoList"
-	type="java.util.List<portal.registration.domain.Vo>" scope="request"></jsp:useBean>
+	type="java.util.List<it.italiangrid.portal.dbapi.domain.Vo>" scope="request"></jsp:useBean>
 
 
 <liferay-ui:success key="upload-cert-successufully"
@@ -99,7 +99,7 @@ if (request.getParameter("userId") != null){
 
 						</liferay-ui:search-container-results>
 						<liferay-ui:search-container-row
-							className="portal.registration.domain.Vo" keyProperty="idVo"
+							className="it.italiangrid.portal.dbapi.domain.Vo" keyProperty="idVo"
 							modelVar="Vo">
 							<liferay-ui:search-container-column-text name="VO name"
 								property="vo" />

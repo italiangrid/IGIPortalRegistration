@@ -15,12 +15,7 @@
 
 <liferay-ui:icon-menu>
 
-	<portlet:actionURL var="editURL">
-		<portlet:param name="myaction" value="setDefaultCert" />
-		<portlet:param name="idCert" value="<%= primKey %>" />
-		<portlet:param name="userId" value="<%=userId %>" />
-	</portlet:actionURL>
-	<liferay-ui:icon image="edit" message="Set Default" url="${editURL}" />
+	
 	
 	<portlet:renderURL var="updateURL">
 		<portlet:param name="myaction" value="showUpdateCert" />

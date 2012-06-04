@@ -212,7 +212,7 @@ ul#sortable-delete {
 	<portlet:param name="myaction" value="addFqans" />
 </portlet:actionURL>
 
-<jsp:useBean id="userToVo" type="portal.registration.domain.UserToVo"
+<jsp:useBean id="userToVo" type="it.italiangrid.portal.dbapi.domain.UserToVo"
 	scope="request" />
 
 

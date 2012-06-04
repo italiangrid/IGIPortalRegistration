@@ -8,7 +8,7 @@
 <%@ taglib uri="http://alloy.liferay.com/tld/aui" prefix="aui" %>
 <%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
 
-<%@ page import="portal.registration.domain.*" %>
+<%@ page import="it.italiangrid.portal.dbapi.domain.*" %>
 <%@ page import="portal.registration.controller.AddUserToVOController" %>
 <%@ page import="java.security.cert.X509Certificate" %>
 <%@ page import="java.net.*" %>

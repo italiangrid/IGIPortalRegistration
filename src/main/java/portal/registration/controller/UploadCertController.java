@@ -1,7 +1,9 @@
 package portal.registration.controller;
 
-import portal.registration.domain.Certificate;
-import portal.registration.services.CertificateService;
+//import portal.registration.domain.Certificate;
+//import portal.registration.services.CertificateService;
+import it.italiangrid.portal.dbapi.domain.Certificate;
+import it.italiangrid.portal.dbapi.services.CertificateService;
 import portal.registration.utils.MyValidator;
 
 import java.io.BufferedReader;

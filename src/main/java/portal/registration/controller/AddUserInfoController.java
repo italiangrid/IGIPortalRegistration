@@ -11,10 +11,14 @@ import javax.portlet.RenderResponse;
 
 import org.apache.log4j.Logger;
 
-import portal.registration.domain.Idp;
-import portal.registration.domain.UserInfo;
-import portal.registration.services.IdpService;
-import portal.registration.services.UserInfoService;
+//import portal.registration.domain.Idp;
+//import portal.registration.domain.UserInfo;
+//import portal.registration.services.IdpService;
+//import portal.registration.services.UserInfoService;
+import it.italiangrid.portal.dbapi.domain.Idp;
+import it.italiangrid.portal.dbapi.domain.UserInfo;
+import it.italiangrid.portal.dbapi.services.IdpService;
+import it.italiangrid.portal.dbapi.services.UserInfoService;
 import portal.registration.utils.LongNumberEditor;
 import portal.registration.utils.MyValidator;
 

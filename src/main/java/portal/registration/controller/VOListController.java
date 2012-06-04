@@ -6,8 +6,10 @@ import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
 import javax.portlet.RenderResponse;
 
-import portal.registration.domain.Vo;
-import portal.registration.services.VoService;
+//import portal.registration.domain.Vo;
+//import portal.registration.services.VoService;
+import it.italiangrid.portal.dbapi.domain.Vo;
+import it.italiangrid.portal.dbapi.services.VoService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

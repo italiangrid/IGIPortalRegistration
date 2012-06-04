@@ -264,7 +264,7 @@
 	message="user-mail-duplicate" />
 <liferay-ui:error key="user-phone-valid" message="user-phone-valid" />
 
-<jsp:useBean id="userInfo" type="portal.registration.domain.UserInfo"
+<jsp:useBean id="userInfo" type="it.italiangrid.portal.dbapi.domain.UserInfo"
 	scope="request" />
 	
 <aui:input id="temp" name="temp" type="hidden" value="false"/>

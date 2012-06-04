@@ -16,14 +16,22 @@ import org.springframework.web.portlet.bind.annotation.RenderMapping;
 
 import com.liferay.portal.kernel.servlet.SessionMessages;
 
-import portal.registration.domain.Certificate;
-import portal.registration.domain.UserInfo;
-import portal.registration.domain.UserToVo;
-import portal.registration.domain.Vo;
-import portal.registration.services.CertificateService;
-import portal.registration.services.UserInfoService;
-import portal.registration.services.UserToVoService;
-import portal.registration.services.VoService;
+//import portal.registration.domain.Certificate;
+//import portal.registration.domain.UserInfo;
+//import portal.registration.domain.UserToVo;
+//import portal.registration.domain.Vo;
+//import portal.registration.services.CertificateService;
+//import portal.registration.services.UserInfoService;
+//import portal.registration.services.UserToVoService;
+//import portal.registration.services.VoService;
+import it.italiangrid.portal.dbapi.domain.Certificate;
+import it.italiangrid.portal.dbapi.domain.UserInfo;
+import it.italiangrid.portal.dbapi.domain.UserToVo;
+import it.italiangrid.portal.dbapi.domain.Vo;
+import it.italiangrid.portal.dbapi.services.CertificateService;
+import it.italiangrid.portal.dbapi.services.UserInfoService;
+import it.italiangrid.portal.dbapi.services.UserToVoService;
+import it.italiangrid.portal.dbapi.services.VoService;
 import portal.registration.utils.VOMSAdminCallOut;
 
 @Controller
