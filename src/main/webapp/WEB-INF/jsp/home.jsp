@@ -170,6 +170,7 @@ div#voData {
 				<portlet:param name="myaction" value="searchUser" />
 			</portlet:actionURL>
 			
+			
 			<aui:form name="searchUserInfo" 
 				action="${searchVOActionUrl}">
 				<aui:layout>

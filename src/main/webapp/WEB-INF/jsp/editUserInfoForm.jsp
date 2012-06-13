@@ -331,7 +331,7 @@ div#voData {
 							</c:choose>
 					
 					<c:if test="${fn:length(certList) > 0}">
-					Your defaul certificate is: <strong> <c:forEach
+					Your default certificate is: <strong> <c:forEach
 								var="cert" items="${certList}">
 								<c:if test="${cert.primaryCert == 'true'}">
 									<c:out value="${cert.subject}" />
@@ -418,7 +418,6 @@ div#voData {
 			</liferay-ui:search-container-row>
 			<liferay-ui:search-iterator />
 		</liferay-ui:search-container>
-		<a name="apriCert"></a>
 
 		<portlet:renderURL var="uploadCertUrl">
 			<portlet:param name="myaction" value="showUploadCert" />
@@ -582,8 +581,6 @@ div#voData {
 								onClick="location.href='${voUrl}';" />-->
 			</aui:button-row>
 		</aui:form>
-		<a name="apriVo"></a>
-
 	</div>
 </div>
 
