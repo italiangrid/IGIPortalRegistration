@@ -106,13 +106,13 @@ div#voData {
 	<portlet:param name="myaction" value="userInfos" />
 </portlet:renderURL>
 
-<jsp:useBean id="userInfo" type="portal.registration.domain.UserInfo"
+<jsp:useBean id="userInfo" type="it.italiangrid.portal.dbapi.domain.UserInfo"
 	scope="request" />
 <jsp:useBean id="certList"
-	type="java.util.List<portal.registration.domain.Certificate>"
+	type="java.util.List<it.italiangrid.portal.dbapi.domain.Certificate>"
 	scope="request" />
 <jsp:useBean id="userToVoList"
-	type="java.util.List<portal.registration.domain.Vo>" scope="request"></jsp:useBean>
+	type="java.util.List<it.italiangrid.portal.dbapi.domain.Vo>" scope="request"></jsp:useBean>
 
 	<%
 			User userLF = (User) request.getAttribute(WebKeys.USER);
@@ -393,7 +393,7 @@ div#voData {
 
 			</liferay-ui:search-container-results>
 			<liferay-ui:search-container-row
-				className="portal.registration.domain.Certificate"
+				className="it.italiangrid.portal.dbapi.domain.Certificate"
 				keyProperty="idCert" modelVar="Certificate">
 				<liferay-ui:search-container-column-text name="Subject"
 					property="subject" />
@@ -541,7 +541,7 @@ div#voData {
 
 			</liferay-ui:search-container-results>
 			<liferay-ui:search-container-row
-				className="portal.registration.domain.Vo" keyProperty="idVo"
+				className="it.italiangrid.portal.dbapi.domain.Vo" keyProperty="idVo"
 				modelVar="Vo">
 
 						<liferay-ui:search-container-column-text name="VO name"
