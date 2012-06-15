@@ -35,6 +35,8 @@ import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.servlet.SessionErrors;
 import com.liferay.portal.kernel.servlet.SessionMessages;
+import com.liferay.portal.kernel.util.WebKeys;
+import com.liferay.portal.model.User;
 import com.liferay.portal.util.PortalUtil;
 import com.oreilly.servlet.multipart.FilePart;
 import com.oreilly.servlet.multipart.MultipartParser;
@@ -43,6 +45,8 @@ import com.oreilly.servlet.multipart.Part;
 
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.log4j.Logger;
+import org.globus.gsi.GlobusCredential;
+import org.globus.gsi.GlobusCredentialException;
 
 @Controller(value = "uploadCertController")
 @RequestMapping(value = "VIEW")
@@ -487,6 +491,61 @@ public class UploadCertController {
 
 		int idCert = Integer.parseInt(request.getParameter("idCert"));
 		String userId = request.getParameter("userId");
+		
+		User user = (User) request.getAttribute(WebKeys.USER);
+		String userPath = System.getProperty("java.io.tmpdir") + "/users/" + user.getUserId() + "/";
+		
+		File proxy = new File(userPath+"/x509up");
+		
+		if(!proxy.exists()){
+			SessionErrors.add(request, "error-deleting-certificate-proxy-not-exists");
+			return;
+		}
+		
+		GlobusCredential cred;
+		try {
+			cred = new GlobusCredential(proxy.toString());
+		
+			if (cred.getTimeLeft() <= 0) {
+				SessionErrors.add(request, "error-deleting-certificate-proxy-expired");
+				return;
+			}
+		
+		} catch (GlobusCredentialException e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		}
+		
+		log.info("Move to: "+userPath);
+        String[] cmd = new String[]{"/usr/bin/myproxy-destroy","-s","fullback.cnaf.infn.it","-l", certificateService.findByIdCert(idCert).getUsernameCert()};
+		
+		try {
+			Process p = Runtime.getRuntime().exec(cmd, null, new File(userPath));
+			InputStream stdout = p.getInputStream();
+			InputStream stderr = p.getErrorStream();
+
+			BufferedReader output = new BufferedReader(new InputStreamReader(
+					stdout));
+			String line = null;
+
+			while ((line = output.readLine()) != null) {
+				log.info("[Stdout] " + line);
+			}
+			output.close();
+
+			BufferedReader brCleanUp = new BufferedReader(
+					new InputStreamReader(stderr));
+			while ((line = brCleanUp.readLine()) != null) {
+				log.error("[Stderr] " + line);
+				SessionErrors.add(request, "error-deleting-certificate-wrong-proxy");
+				brCleanUp.close();
+				return;
+			}
+			
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 
 		try {
 			log.info("Sto per cancellare il certificato con id = " + idCert);

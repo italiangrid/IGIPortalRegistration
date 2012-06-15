@@ -304,7 +304,14 @@ div#voData {
 		message="error-updating-certificate" />
 	<liferay-ui:error key="error-default-certificate"
 		message="error-default-certificate" />
-
+	<liferay-ui:error key="error-deleting-certificate-proxy-not-exists"
+		message="error-deleting-certificate-proxy-not-exists" />
+	<liferay-ui:error key="error-deleting-certificate-proxy-expired"
+		message="error-deleting-certificate-proxy-expired" />
+	<liferay-ui:error key="error-deleting-certificate-proxy-expired"
+		message="error-deleting-certificate-proxy-expired" />
+	<liferay-ui:error key="error-deleting-certificate-wrong-proxy"
+		message="error-deleting-certificate-wrong-proxy" />
 
 
 	<div id="<portlet:namespace/>certificatiOn">
@@ -411,13 +418,7 @@ div#voData {
 						}
 					%>
 					</liferay-ui:search-container-column-text>
-				<liferay-ui:search-container-column-text name="Defaul certificate">
-				<c:if test="${Certificate.primaryCert}">
-					
-						<img src="<%=request.getContextPath()%>/images/success.png"/>
-					
-				</c:if>
-				</liferay-ui:search-container-column-text>
+				
 				
 				<liferay-ui:search-container-column-jsp
 					path="/WEB-INF/jsp/admin-cert-action.jsp" align="right" />
@@ -439,7 +440,9 @@ div#voData {
 			<aui:input name="firstReg" type="hidden" value="false" />
 
 			<aui:button-row>
-				<aui:button type="submit" value="Upload certificate" />
+				<c:if test="${fn:length(certList) == 0}">
+					<aui:button type="submit" value="Upload certificate" />
+				</c:if>
 			</aui:button-row>
 		</aui:form>
 
