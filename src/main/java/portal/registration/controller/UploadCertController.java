@@ -1,7 +1,5 @@
 package portal.registration.controller;
 
-//import portal.registration.domain.Certificate;
-//import portal.registration.services.CertificateService;
 import it.italiangrid.portal.dbapi.domain.Certificate;
 import it.italiangrid.portal.dbapi.services.CertificateService;
 import portal.registration.utils.MyValidator;
@@ -37,6 +35,8 @@ import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.servlet.SessionErrors;
 import com.liferay.portal.kernel.servlet.SessionMessages;
+import com.liferay.portal.kernel.util.WebKeys;
+import com.liferay.portal.model.User;
 import com.liferay.portal.util.PortalUtil;
 import com.oreilly.servlet.multipart.FilePart;
 import com.oreilly.servlet.multipart.MultipartParser;
@@ -45,6 +45,8 @@ import com.oreilly.servlet.multipart.Part;
 
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.log4j.Logger;
+import org.globus.gsi.GlobusCredential;
+import org.globus.gsi.GlobusCredentialException;
 
 @Controller(value = "uploadCertController")
 @RequestMapping(value = "VIEW")
@@ -76,7 +78,7 @@ public class UploadCertController {
 		} else {
 			log.info("noooooo disastro req");
 		}
-		
+
 		String ns = response.getNamespace();
 		String primaryCert = "";
 		String pwd = "";
@@ -152,38 +154,38 @@ public class UploadCertController {
 			allOk = false;
 			log.info("non è una directory");
 		}
-		
+
 		uid = Integer.parseInt(request.getParameter("userId"));
 		username = request.getParameter("username");
 		firstReg = request.getParameter("firstReg");
-	 
+
 
 		if (MyValidator.validateCert(pwd, pwd1, pwd2, errors) && allOk) {
 			// controllo file
 
 			// esecuzione myproxy
-			
+
 			splitP12(files.get(0), uid, pwd, pwd1, errors);
-			
+
 			if(errors.isEmpty()){
 				String subject = myOpenssl("subject", "usercert_"+uid+".pem", errors);
 				String issuer = myOpenssl("issuer", "usercert_"+uid+".pem", errors);
 				String enddate = myOpenssl("enddate", "usercert_"+uid+".pem", errors);
-	
+
 				if ((subject != null) && (issuer != null) && (enddate != null)
 						&& allOk) {
 					Date date = null;
-	
+
 					try {
 						DateFormat formatter = new SimpleDateFormat(
 								"MMM dd HH:mm:ss yyyy z", Locale.UK);
 						date = (Date) formatter.parse(enddate);
-	
+
 						log.info("data formattata = " + date.toString());
 						GregorianCalendar c = new GregorianCalendar();
 						Date oggi = c.getTime();
 						log.info("data oggi = " + oggi.toString());
-	
+
 						if (date.before(oggi)) {
 							log.info("Certificato scaduto");
 							errors.add("user-certificate-expired");
@@ -191,7 +193,7 @@ public class UploadCertController {
 						} else {
 							log.info("Certificato valido");
 						}
-	
+
 					} catch (ParseException e) {
 						allOk = false;
 						log.info("Eccezzione data");
@@ -204,7 +206,7 @@ public class UploadCertController {
 						cert.setIssuer(issuer);
 						cert.setPrimaryCert(primaryCert);
 						cert.setSubject(subject);
-						
+
 						List<Certificate> lc = certificateService.findById(uid);
 						if(lc.size()!=0){
 							int i = 0;
@@ -214,12 +216,12 @@ public class UploadCertController {
 									errors.add("certificate-duplicate");
 									break;
 								}
-		
+
 							}
 						}
 						if (allOk) {
 							int id = certificateService.save(cert, uid);
-	
+
 							if (id != -1) {
 								log.info("inserito il certificato per l'utente con userId = "
 										+ uid);
@@ -232,7 +234,7 @@ public class UploadCertController {
 					log.info("errori vari");
 					allOk = false;
 				}
-			
+
 				if(allOk){
 					try {
 						String usrnm = null;
@@ -245,9 +247,9 @@ public class UploadCertController {
 								usrnm = certificate.getUsernameCert();
 								break;
 							}
-							
+
 						}
-						
+
 						Runtime.getRuntime().exec(
 								"/bin/chmod 600 /upload_files/userkey_" + uid+".pem");
 						String myproxy = "/usr/bin/python /upload_files/myproxy2.py "
@@ -258,13 +260,13 @@ public class UploadCertController {
 						Process p = Runtime.getRuntime().exec(myproxy);
 						InputStream stdout = p.getInputStream();
 						InputStream stderr = p.getErrorStream();
-	
+
 						BufferedReader output = new BufferedReader(
 								new InputStreamReader(stdout));
 						String line = null;
-	
+
 						while (((line = output.readLine()) != null)) {
-	
+
 							log.info("[Stdout] " + line);
 							if (line.equals("myproxy success")) {
 								log.info("myproxy ok");
@@ -300,7 +302,7 @@ public class UploadCertController {
 							}
 						}
 						output.close();
-	
+
 						BufferedReader brCleanUp = new BufferedReader(
 								new InputStreamReader(stderr));
 						while ((line = brCleanUp.readLine()) != null) {
@@ -368,10 +370,10 @@ public class UploadCertController {
 			deleteUploadedFile(files,uid);
 
 	}
-	
+
 	private void splitP12(String filename, int uid, String pwd1, String pwd2,
 			ArrayList<String> errors){
-		
+
 		try {
 			String cmd = "/usr/bin/python /upload_files/splitP12.py /upload_files/" + filename + " " + uid + " " + pwd1 + " " + pwd2;
 			//log.info("cmd = " + cmd);
@@ -409,7 +411,7 @@ public class UploadCertController {
 			e.printStackTrace();
 			errors.add("error-unrecognized-exception");
 		}
-		
+
 	}
 
 	private String myOpenssl(String opt, String filename,
@@ -490,6 +492,61 @@ public class UploadCertController {
 		int idCert = Integer.parseInt(request.getParameter("idCert"));
 		String userId = request.getParameter("userId");
 
+		User user = (User) request.getAttribute(WebKeys.USER);
+		String userPath = System.getProperty("java.io.tmpdir") + "/users/" + user.getUserId() + "/";
+
+		File proxy = new File(userPath+"/x509up");
+
+		if(!proxy.exists()){
+			SessionErrors.add(request, "error-deleting-certificate-proxy-not-exists");
+			return;
+		}
+
+		GlobusCredential cred;
+		try {
+			cred = new GlobusCredential(proxy.toString());
+
+			if (cred.getTimeLeft() <= 0) {
+				SessionErrors.add(request, "error-deleting-certificate-proxy-expired");
+				return;
+			}
+
+		} catch (GlobusCredentialException e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		}
+
+		log.info("Move to: "+userPath);
+        String[] cmd = new String[]{"/usr/bin/myproxy-destroy","-s","fullback.cnaf.infn.it","-l", certificateService.findByIdCert(idCert).getUsernameCert()};
+
+		try {
+			Process p = Runtime.getRuntime().exec(cmd, null, new File(userPath));
+			InputStream stdout = p.getInputStream();
+			InputStream stderr = p.getErrorStream();
+
+			BufferedReader output = new BufferedReader(new InputStreamReader(
+					stdout));
+			String line = null;
+
+			while ((line = output.readLine()) != null) {
+				log.info("[Stdout] " + line);
+			}
+			output.close();
+
+			BufferedReader brCleanUp = new BufferedReader(
+					new InputStreamReader(stderr));
+			while ((line = brCleanUp.readLine()) != null) {
+				log.error("[Stderr] " + line);
+				SessionErrors.add(request, "error-deleting-certificate-wrong-proxy");
+				brCleanUp.close();
+				return;
+			}
+
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+
 		try {
 			log.info("Sto per cancellare il certificato con id = " + idCert);
 			certificateService.delete(idCert);
@@ -513,7 +570,7 @@ public class UploadCertController {
 					//+ " /upload_files/" + files.get(1);
 			log.info("cmd = " + cmd);
 			Runtime.getRuntime().exec(cmd);
-			
+
 			File cert = new File("/upload_files/usercert_"+uid+".pem");
 			if(cert.exists())
 				cert.delete();
@@ -526,29 +583,4 @@ public class UploadCertController {
 			e.printStackTrace();
 		}
 	}
-	
-	@ActionMapping(params = "myaction=goBack")
-	public void haveCert(ActionRequest request, ActionResponse response) {
-		
-		log.error("Torna Indietro");
-		
-		String userId = request.getParameter("userId");
-		String username = request.getParameter("username");
-		String firstReg = request.getParameter("firstReg");
-		boolean choice = Boolean.parseBoolean(firstReg);
-		
-		log.error("Torna alla scelta del certificato? " + firstReg);
-
-		String destination = "home";
-		if(choice)
-			destination = "showCAOnline";
-			
-		
-		response.setRenderParameter("userId", userId);
-		response.setRenderParameter("username", username);
-		response.setRenderParameter("firstReg", firstReg);
-		response.setRenderParameter("myaction", destination);
-		
-	}
-	
 }
