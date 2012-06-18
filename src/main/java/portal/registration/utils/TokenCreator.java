@@ -21,8 +21,6 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 import java.util.TimeZone;
 
@@ -181,7 +179,7 @@ public class TokenCreator {
         return String.format("%x", new BigInteger(arg.getBytes(/*YOUR_CHARSET?*/)));
     }
     
-    public List<String> getToken(String userSecret) {
+    public static List<String> getToken(String userSecret) {
     	
         log.error(System.currentTimeMillis()/1000);
         
@@ -194,9 +192,6 @@ public class TokenCreator {
         
         String seed64 = toHex(userSecret) + baseSeed64.substring(toHex(userSecret).length());
         
-        log.error(baseSeed64);
-        log.error(seed64);
-        
         long T0 = 0;
         long X = 60;
 
@@ -204,14 +199,7 @@ public class TokenCreator {
         df.setTimeZone(TimeZone.getTimeZone("UTC"));
 
         try {
-            System.out.println("+---------------+-----------------------+" +
-                "------------------+--------+--------+");
-            System.out.println("|  Time(sec)    |   Time (UTC format)   " +
-                "| Value of T(Hex)  |  TOTP  | Mode   |");
-            System.out.println("+---------------+-----------------------+" +
-                "------------------+--------+--------+");
-            
-            long timeNow = System.currentTimeMillis()/1000;
+        	long timeNow = System.currentTimeMillis()/1000;
             
             long T = ((timeNow) - T0) / X;
             String steps = Long.toHexString(T).toUpperCase();
@@ -219,18 +207,9 @@ public class TokenCreator {
             while (steps.length() < 16)
                 steps = "0" + steps;
             
-            
-            String fmtTime = String.format("%1$-11s", timeNow);
-            String utcTime = df.format(new Date((timeNow) * 1000));
-            
             tokens.add(generateTOTP(seed64, steps, "8", "HmacSHA512"));
             
-            log.error("|  " + fmtTime + "  |  " + utcTime + "  | " +
-                steps + " |" + tokens.get(0) +
-                "| SHA512 |");
-
-            System.out.println("+---------------+-----------------------+" +
-                "------------------+--------+--------+");
+            log.error("TokenCreator[t1] = " + tokens.get(0));
             
             timeNow = timeNow +60L;
             T = ((timeNow) - T0) / X;
@@ -239,18 +218,9 @@ public class TokenCreator {
             while (steps.length() < 16)
                 steps = "0" + steps;
             
-            
-            fmtTime = String.format("%1$-11s", timeNow);
-            utcTime = df.format(new Date((timeNow) * 1000));
-            
             tokens.add(generateTOTP(seed64, steps, "8", "HmacSHA512"));
             
-            log.error("|  " + fmtTime + "  |  " + utcTime + "  | " +
-                steps + " |" + tokens.get(1) +
-                "| SHA512 |");
-
-            System.out.println("+---------------+-----------------------+" +
-                "------------------+--------+--------+");
+            log.error("TokenCreator[t2] = " + tokens.get(1));
             
         } catch (final Exception e) {
             System.out.println("Error : " + e);

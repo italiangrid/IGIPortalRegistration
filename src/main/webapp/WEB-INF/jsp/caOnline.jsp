@@ -110,7 +110,7 @@ function setHaveCert(value){
 					<aui:input name="haveCert" id="haveCert" type="hidden" value="false"/>
 					
 					<a href="" onclick="setHaveCert('true'); return false;"><img src="<%=request.getContextPath()%>/images/check.png" id="yesImg" width="64" height="64"/></a>
-					<a href="https://localhost:8443/CAOnlineBridge" onclick="setHaveCert('false'); $(this).modal({width:800, height:600}).open(); return false;"><img src="<%=request.getContextPath()%>/images/missed_calls.png" id="noImg" width="64" height="64"/></a>
+					<a href="https://openlab03.cnaf.infn.it/CAOnlineBridge/home?t1=${tokens[0]}&t2=${tokens[1]}" onclick="setHaveCert('false'); $(this).modal({width:800, height:600}).open(); return false;"><img src="<%=request.getContextPath()%>/images/missed_calls.png" id="noImg" width="64" height="64"/></a>
 					
 
 				</aui:fieldset>
