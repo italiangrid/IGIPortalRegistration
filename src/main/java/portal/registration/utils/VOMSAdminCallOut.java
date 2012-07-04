@@ -280,4 +280,87 @@ public class VOMSAdminCallOut {
 		return false;
 
 	}
+	
+	static void test() {
+		try {
+			
+			String cert = DEFAULT_SSL_CERT_FILE;
+			String key = DEFAULT_SSL_KEY;
+			
+			
+			
+			if(AxisProperties.getProperty("axis.socketSecureFactory") == null){
+				AxisProperties.setProperty("axis.socketSecureFactory",
+				"org.glite.security.trustmanager.axis.AXISSocketFactory");
+			}
+
+			log.info("porpietà axis: " + AxisProperties.getProperty("axis.socketSecureFactory").toString());
+			
+			Properties properties = AXISSocketFactory.getCurrentProperties();
+
+			// log.info(properties);
+
+			// Properties old = AXISSocketFactory.getCurrentProperties();
+
+			// log.info(old);
+
+			log.info("set cert: "+ cert + " key: "+key);
+
+			properties.setProperty("sslCertFile", cert); //
+			// hostcert.pem
+
+			properties.setProperty("sslKey", key); // hostkey.pem
+
+			AXISSocketFactory.setCurrentProperties(properties);
+			System.setProperties(properties);
+
+			/*
+			 * if(properties.equals(old)){ log.info("***** UGUALI *****"); } else {
+			 * log.info("***** DIVERSI *****"); }
+			 */
+
+			Properties properties2 = AXISSocketFactory.getCurrentProperties();
+
+			// log.info(properties2);
+			
+			log.info("AXIS cert: " + properties2.getProperty("sslCertFile"));
+			log.info("AXIS key: " + properties2.getProperty("sslKey"));
+			
+
+			log.info("Contatto VOMSAdmin con URL = https://voms.cnaf.infn.it:8443/voms/gridit/services/VOMSAdmin");
+
+			String url = "https://voms.cnaf.infn.it:8443/voms/gridit/services/VOMSAdmin";
+
+			log.info("Trovo VOMSAdmin Service: "+ url);
+
+			VOMSAdminServiceLocator locator = new VOMSAdminServiceLocator();
+
+			log.info("Prendo VOMSAdmin Service");
+
+			VOMSAdmin adminService;
+			
+			URL vomsUrl = new URL(url);
+			
+			log.info("Protocol: " + vomsUrl.getProtocol() + " Host: " + vomsUrl.getHost() + " Port: " + vomsUrl.getPort() + " Path: " + vomsUrl.getPath());
+
+			adminService = locator.getVOMSAdmin(vomsUrl);
+
+			log.info("TEST: " + adminService.getVOName());
+
+		} catch (VOMSException e) {
+			log.info("VOMSexception");
+			e.printStackTrace();
+
+		} catch (RemoteException e) {
+			log.info("RemoteException");
+			e.printStackTrace();
+		} catch (MalformedURLException e) {
+			log.info("MalformedURLException");
+			e.printStackTrace();
+		} catch (ServiceException e) {
+			log.info("ServiceException");
+			e.printStackTrace();
+		}
+		
+	}
 }

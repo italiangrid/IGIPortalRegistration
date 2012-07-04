@@ -83,6 +83,14 @@ h5#usernameAlert {
 										pageContext.setAttribute("firstReg","false");
 											
 			%>
+			
+			<%
+
+	if(user.getScreenName() != null)
+		out.println(user.getScreenName());
+	else
+		out.println("nooooooooo");
+%>
 
 <portlet:actionURL var="uploadCertUrl">
 	<portlet:param name="myaction" value="uploadCert" />

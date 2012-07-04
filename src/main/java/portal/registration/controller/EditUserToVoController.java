@@ -3,8 +3,6 @@ package portal.registration.controller;
 import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
 import javax.portlet.RenderRequest;
-
-import org.apache.commons.lang3.ArrayUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -48,6 +46,12 @@ public class EditUserToVoController {
 
 	@RenderMapping(params = "myaction=showEditVo")
 	public String showEditUserInfoForm() {
+		return "editUserToVo";
+	}
+	
+	@RenderMapping(params = "myaction=showEditVoFirst")
+	public String showEditUserInfoFormFirst(ActionResponse response) {
+		response.setRenderParameter("firstReg", "true");
 		return "editUserToVo";
 	}
 

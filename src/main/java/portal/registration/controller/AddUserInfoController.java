@@ -4,11 +4,10 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
-
 import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
+import javax.portlet.PortletSession;
 import javax.portlet.RenderResponse;
-
 import org.apache.log4j.Logger;
 
 import portal.registration.domain.Idp;
@@ -50,6 +49,8 @@ public class AddUserInfoController {
 
 	private static final Logger log = Logger
 			.getLogger(AddUserInfoController.class);
+	
+	private static String PASSWORD = "settedByPortal";
 
 	@Autowired
 	private IdpService idpService;
@@ -75,10 +76,14 @@ public class AddUserInfoController {
 	@ActionMapping(params = "myaction=addUserInfo")
 	public void addUserInfo(@ModelAttribute UserInfo userInfo,
 			BindingResult bindingResult, ActionRequest request,
-			ActionResponse response, SessionStatus sessionStatus)
+			ActionResponse response, SessionStatus sessionStatus, PortletSession session)
 			throws PortalException, SystemException {
 
 		log.info("sono dentro");
+		
+		User u = null;
+		long companyId = PortalUtil.getCompanyId(request);
+		
 		if (!bindingResult.hasErrors()) {
 
 			ArrayList<String> errors = new ArrayList<String>();
@@ -101,19 +106,19 @@ public class AddUserInfoController {
 						log.info("Settato idp "
 								+ Integer.parseInt(request
 										.getParameter("idpId")));
-
+						
 						try {
 
-							long companyId = PortalUtil.getCompanyId(request);
+							
 							ThemeDisplay themeDisplay = 
 								     (ThemeDisplay)request.getAttribute(WebKeys.THEME_DISPLAY);
 							long[] groupIds = {themeDisplay.getLayout().getGroupId()};
 							log.info("companyid = " + companyId);
 							log.info("settate variabili di supporto ora si aggiunge un utenti a liferay!!");
-
-							User u = UserLocalServiceUtil.addUser(0L,
-									companyId, false, "settedByPortal",
-									"settedByPortal", false, userInfo
+								
+							u = UserLocalServiceUtil.addUser(0L,
+									companyId, false, PASSWORD,
+									PASSWORD, false, userInfo
 											.getUsername(), userInfo.getMail(),
 									0L, "", new Locale("en"), userInfo
 											.getFirstName(), "", userInfo
@@ -124,8 +129,17 @@ public class AddUserInfoController {
 													request));
 
 							if (u == null){
+								
+								
+								
 								log.info("nulla di fatto");
 							} else {
+								
+								
+								
+								
+								
+								
 								Role rolePowerUser = RoleLocalServiceUtil.getRole(companyId, "Power User");
 
 								UserLocalServiceUtil.deleteRoleUser(rolePowerUser.getRoleId(),
@@ -135,10 +149,12 @@ public class AddUserInfoController {
 						} catch (Exception e) {
 
 							errors.add("user-liferay-problem");
-							log.info("Inserimento utente in liferay" + e);
+							log.error("Inserimento utente in liferay " + e.getMessage());
 							allOk = false;
 							request.setAttribute("firstReg", "true");
 						}
+						
+						
 
 						if (allOk) {
 							try {
@@ -171,6 +187,8 @@ public class AddUserInfoController {
 
 					allOk = false;
 				}
+				
+				
 
 				if (allOk) {
 
@@ -222,8 +240,8 @@ public class AddUserInfoController {
 			log.info("Errore errore");
 			response.setRenderParameter("myaction", "addUserInfoForm");
 		}
-
 	}
+
 
 	@ModelAttribute("idps")
 	public List<Idp> getIdps() {

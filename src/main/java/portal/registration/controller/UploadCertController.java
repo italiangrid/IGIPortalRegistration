@@ -3,9 +3,9 @@ package portal.registration.controller;
 import portal.registration.domain.Certificate;
 import portal.registration.services.CertificateService;
 import portal.registration.utils.MyValidator;
-
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -18,6 +18,7 @@ import java.util.GregorianCalendar;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
+import java.util.Properties;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.portlet.ActionRequest;
@@ -51,6 +52,8 @@ import org.globus.gsi.GlobusCredentialException;
 @Controller(value = "uploadCertController")
 @RequestMapping(value = "VIEW")
 public class UploadCertController {
+	
+	private static final String MYPROXY_HOST = "fullback.cnaf.infn.it";
 
 	private static final Logger log = Logger
 			.getLogger(UploadCertController.class);
@@ -488,6 +491,34 @@ public class UploadCertController {
 	@ActionMapping(params = "myaction=removeCert")
 	public void removeCert(ActionRequest request, ActionResponse response,
 			SessionStatus sessionStatus) {
+		
+		String contextPath = UploadCertController.class.getClassLoader().getResource("").getPath();
+		
+		log.info("dove sono:" + contextPath);
+		
+		String myproxyHost = MYPROXY_HOST;
+		
+		File test = new File(contextPath + "/content/Registration.properties");
+		log.info("File: " + test.getAbsolutePath());
+		if(test.exists()){
+			log.info("ESISTE!!");
+			try {
+				FileInputStream inStream =
+			    new FileInputStream(contextPath + "/content/Registration.properties");
+		
+				Properties prop = new Properties();
+			
+				prop.load(inStream);
+			
+				inStream.close();
+				if(prop.getProperty("myproxy.storage")!=null)
+					myproxyHost = prop.getProperty("myproxy.storage");
+				
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 
 		int idCert = Integer.parseInt(request.getParameter("idCert"));
 		String userId = request.getParameter("userId");
@@ -516,9 +547,15 @@ public class UploadCertController {
 			e2.printStackTrace();
 		}
 		
-		log.info("Move to: "+userPath);
-        String[] cmd = new String[]{"/usr/bin/myproxy-destroy","-s","fullback.cnaf.infn.it","-l", certificateService.findByIdCert(idCert).getUsernameCert()};
-		
+		log.error("Move to: "+userPath);
+        String[] cmd = new String[]{"/usr/bin/myproxy-destroy","-s",myproxyHost,"-l", certificateService.findByIdCert(idCert).getUsernameCert()};
+		String allCmd = "";
+        for (String string : cmd) {
+			allCmd += string + " "; 
+		}
+        
+        log.info("myproxy destroy: " + allCmd);
+        
 		try {
 			Process p = Runtime.getRuntime().exec(cmd, null, new File(userPath));
 			InputStream stdout = p.getInputStream();
@@ -532,31 +569,33 @@ public class UploadCertController {
 				log.info("[Stdout] " + line);
 			}
 			output.close();
+			
+			boolean isWrong = false;
 
 			BufferedReader brCleanUp = new BufferedReader(
 					new InputStreamReader(stderr));
 			while ((line = brCleanUp.readLine()) != null) {
 				log.error("[Stderr] " + line);
-				SessionErrors.add(request, "error-deleting-certificate-wrong-proxy");
-				brCleanUp.close();
-				return;
+				if(!isWrong)
+					SessionErrors.add(request, "error-deleting-certificate-wrong-proxy");
+				isWrong = true;
+			}
+			brCleanUp.close();
+			
+			if(!isWrong){
+				log.info("Sto per cancellare il certificato con id = " + idCert);
+				certificateService.delete(idCert);
+				log.info("Certificato cancellato");
+
+				SessionMessages.add(request, "certificate-deleted-successufully");
 			}
 			
 		} catch (IOException e1) {
-			// TODO Auto-generated catch block
+			SessionErrors.add(request, "error-deleting-certificate");
 			e1.printStackTrace();
 		}
 
-		try {
-			log.info("Sto per cancellare il certificato con id = " + idCert);
-			certificateService.delete(idCert);
-			log.info("Certificato cancellato");
-
-			SessionMessages.add(request, "certificate-deleted-successufully");
-
-		} catch (Exception e) {
-			SessionErrors.add(request, "error-deleting-certificate");
-		}
+		
 
 		response.setRenderParameter("myaction", "editUserInfoForm");
 		response.setRenderParameter("userId", userId);

@@ -105,6 +105,9 @@ if (request.getParameter("userId") != null){
 								property="vo" />
 							<liferay-ui:search-container-column-text name="VO description"
 								property="description" />
+								<liferay-ui:search-container-column-text name="Roles"> 
+									<c:out value="${fn:replace(userFqansPresent[Vo.idVo],';',' ')}"></c:out>
+								</liferay-ui:search-container-column-text>
 							<liferay-ui:search-container-column-jsp
 								path="/WEB-INF/jsp/vo-action.jsp" align="right" />
 						</liferay-ui:search-container-row>

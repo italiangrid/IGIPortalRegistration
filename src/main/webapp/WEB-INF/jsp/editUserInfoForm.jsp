@@ -376,10 +376,17 @@ div#voData {
 
 		<a href="#cert" onclick="nascondiCertificatiUtente();">Hide</a><br />
 		<br />
+		
+		<%
+		    PortletURL itURL = renderResponse.createRenderURL();
+			itURL.setParameter("myaction","editUserInfoForm");
+			itURL.setParameter("userId",Integer.toString(userInfo.getUserId()));
+			
+		%>
 
 		<liferay-ui:search-container
 			emptyResultsMessage="No certificates uploaded"
-			delta="5">
+			delta="5" iteratorURL="<%= itURL %>">
 			<liferay-ui:search-container-results>
 				<%
 					results = ListUtil.subList(certList,
@@ -527,7 +534,7 @@ div#voData {
 
 		<liferay-ui:search-container
 			emptyResultsMessage="No VO selected"
-			delta="5">
+			delta="5" iteratorURL="<%= itURL %>">
 			<liferay-ui:search-container-results>
 				<%
 					results = ListUtil.subList(userToVoList,

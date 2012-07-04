@@ -80,6 +80,7 @@
 			<artifactId>util-bridges</artifactId>
 			<version>${liferay.version}</version>
 		</dependency>
+		
 		<dependency>
 			<groupId>com.liferay.portal</groupId>
 			<artifactId>util-taglib</artifactId>
@@ -379,6 +380,23 @@
 			<version>1.8.0</version>
 			<scope>compile</scope>
 		</dependency>
-       
+
+
+
+		<!-- <dependency>
+			<groupId>com.liferay.portal</groupId>
+			<artifactId>portal-impl</artifactId>
+			<version>6.1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>easyconf</groupId>
+			<artifactId>easyconf</artifactId>
+			<version>0.9.5</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.6</version>
+		</dependency> -->
 	</dependencies> 
 </project>

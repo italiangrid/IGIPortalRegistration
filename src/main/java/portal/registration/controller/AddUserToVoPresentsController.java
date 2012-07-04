@@ -1,11 +1,16 @@
 package portal.registration.controller;
 
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
+import java.util.Properties;
+
 import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
 import javax.portlet.RenderRequest;
 
 import portal.registration.domain.UserInfo;
+import portal.registration.domain.UserToVo;
 import portal.registration.domain.Vo;
 import portal.registration.services.UserInfoService;
 import portal.registration.services.UserToVoService;
@@ -119,19 +124,12 @@ public class AddUserToVoPresentsController {
 			userId = Integer.parseInt(request.getParameter("userId"));
 		}
 		
-		/*User user = (User) request.getAttribute(WebKeys.USER);
-		if(user!=null)
-			userId = userInfoService.findByUsername(user.getScreenName()).getUserId();*/
-		
 		log.info("UserID = " + request.getParameter("userId"));
 		
-		
 		response.setRenderParameter("myaction", "showAddUserToVO");
-		response.setRenderParameter("userId", request.getParameter("userId"));
+		response.setRenderParameter("userId", Integer.toString(userId));
 		response.setRenderParameter("firstReg", request.getParameter("firstReg"));
 
-		//request.setAttribute("firstReg", request.getParameter("firstReg"));
-		//request.setAttribute("userId", userId);
 		sessionStatus.setComplete();
 
 	}
@@ -148,6 +146,36 @@ public class AddUserToVoPresentsController {
 		response.setRenderParameter("myaction", "userInfos");
 		sessionStatus.setComplete();
 
+	}
+	
+	/**
+	 * Return to the portlet the list of the user's fqans.
+	 * @param request: session parameter.
+	 * @return the list of the user's fqans.
+	 */
+	@ModelAttribute("userFqansPresent")
+	public Map<Object,Object> getUserFqans(@RequestParam int userId) {
+		
+		UserInfo userInfo = userInfoService.findById(userId);
+		List<UserToVo> utv = userToVoService.findById(userInfo.getUserId());
+		
+		Map<Object, Object> x = new Properties();
+		
+		String toParse = null;
+		
+		for (Iterator<UserToVo> iterator = utv.iterator(); iterator.hasNext();) {
+			UserToVo userToVo = iterator.next();
+			toParse = userToVo.getFqans();
+			if((toParse != null)&&(!toParse.equals(""))){
+				x.put(userToVo.getId().getIdVo(), toParse);
+				
+			}else{
+				x.put(userToVo.getId().getIdVo(), "No Roles for this VO");
+			}
+			
+		}
+		
+		return x;
 	}
 
 }

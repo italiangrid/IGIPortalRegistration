@@ -42,10 +42,12 @@ public class AddFqansController {
 	@ActionMapping(params = "myaction=addFqans")
 	public void addUserInfo(ActionRequest request,
 			ActionResponse response, SessionStatus sessionStatus){
-		
+		boolean firstReg = false;
 		String[] fqans = request.getParameterValues("resultList");
 		int userId = Integer.parseInt(request.getParameter("userId"));
 		int idVo = Integer.parseInt(request.getParameter("idVo"));
+		if(request.getParameter("firstReg")!=null)
+			firstReg = Boolean.parseBoolean(request.getParameter("firstReg"));
 		
 		UserToVo utv = userToVoService.findById(userId, idVo);
 		
@@ -70,8 +72,13 @@ public class AddFqansController {
 		
 		SessionMessages.add(request, "userToVo-updated-successufully");
 
+		if(firstReg){
+			response.setRenderParameter("myaction",
+					"showAddUserToVoPresents");
+		}else{
+			response.setRenderParameter("myaction", "editUserInfoForm");
+		}
 		
-		response.setRenderParameter("myaction", "editUserInfoForm");
 		response.setRenderParameter("userId", Integer.toString(userId));
 		request.setAttribute("userId", userId);
 		sessionStatus.setComplete();

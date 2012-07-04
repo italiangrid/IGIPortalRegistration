@@ -12,6 +12,14 @@
 
 <liferay-ui:icon-menu>
 
+	<portlet:renderURL var="editURL">
+		<portlet:param name="myaction" value="showEditVo" />
+		<portlet:param name="userId"
+			value="<%=request.getParameter("userId") %>" />
+		<portlet:param name="idVo" value="<%=primKey %>" />
+		<portlet:param name="firstReg" value="true" />
+	</portlet:renderURL>
+	<liferay-ui:icon image="edit" message="Set Role VO" url="${editURL}" />
 
 	<portlet:actionURL var="deleteURL">
 		<portlet:param name="myaction" value="removeUserToVo" />
