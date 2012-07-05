@@ -14,8 +14,16 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.portlet.bind.annotation.RenderMapping;
 
+import com.liferay.portal.kernel.exception.PortalException;
+import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.servlet.SessionErrors;
+import com.liferay.portal.kernel.servlet.SessionMessages;
 import com.liferay.portal.kernel.util.WebKeys;
+import com.liferay.portal.model.Role;
 import com.liferay.portal.model.User;
+import com.liferay.portal.service.RoleLocalServiceUtil;
+import com.liferay.portal.service.UserLocalServiceUtil;
+import com.liferay.portal.util.PortalUtil;
 
 //import portal.registration.domain.Certificate;
 //import portal.registration.domain.Idp;
@@ -66,7 +74,21 @@ public class UserInfoController {
 	private CertificateService certificateService;
 
 	@RenderMapping
-	public String showUserInfos(RenderResponse response) {
+	public String showUserInfos(RenderRequest request, RenderResponse response) {
+		
+		try {
+			User user = PortalUtil.getUser(request);
+			if(user!=null){
+				activateUser(user, request);
+			}
+		} catch (PortalException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SystemException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		return "home";
 	}
 
@@ -204,6 +226,54 @@ public class UserInfoController {
 			return x;
 		}
 		return null;
+	}
+	/**
+	 * Private method for activate user if it is setted suh as activated from CAOnlineBridge
+	 * @param user - Liferay user retrived from session.
+	 * @param request - RenderRequest of session.
+	 */
+	private void activateUser(User user, RenderRequest request) {
+
+		long companyId = PortalUtil.getCompanyId(request);
+
+		try{
+			
+			Role rolePowerUser = RoleLocalServiceUtil.getRole(companyId, "Power User");
+			
+			List<Role> roles = user.getRoles();
+			
+			for (Role role : roles) {
+				if (role.equals(rolePowerUser)){
+					return;
+				}
+			}
+			
+			
+			
+			List<User> powerUsers = UserLocalServiceUtil.getRoleUsers(rolePowerUser.getRoleId());
+			
+			long users[] = new long[powerUsers.size()+1];
+			
+			int i;
+			
+			for (i=0; i<powerUsers.size(); i++) {
+				users[i]=powerUsers.get(i).getUserId();
+			}
+
+			users[i] = user.getUserId();
+			
+			UserLocalServiceUtil.setRoleUsers(rolePowerUser.getRoleId(), users);
+
+			SessionMessages.add(request, "user-activate");
+
+		} catch (PortalException e) {
+			SessionErrors.add(request,"exception-activation-user");
+			//e.printStackTrace();
+		} catch (SystemException e) {
+			SessionErrors.add(request,"exception-activation-user");
+			//e.printStackTrace();
+		}
+
 	}
 
 }

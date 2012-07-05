@@ -11,6 +11,9 @@
 			var app = null;
 			var l=null;
 			var o=null;
+			var gn=null;
+			var sn=null;
+			var uid=null;
 			var vars = [], hash;
 			var hashes = window.location.href.slice(
 					window.location.href.indexOf('?') + 1).split('&');
@@ -24,20 +27,25 @@
 				if(hash[0]=="uid"){
 					
 					$("#<portlet:namespace/>username").attr("value",hash[1]);
+					uid=hash[1];
 				}
 				if(hash[0]=="mail"){
 					$("#<portlet:namespace/>mail").attr("value",hash[1]);
 				}
 				if(hash[0]=="givenName"){
 					$("#<portlet:namespace/>firstName").attr("value",hash[1].replace("%20"," "));
+					gn=hash[1].replace("%20"," ");
+					alert(gn);
 					
 				}
 				if(hash[0]=="sn"){
 					$("#<portlet:namespace/>lastName").attr("value",hash[1].replace("%20"," "));
+					sn=hash[1].replace("%20"," ");
+					alert(sn);
 				}
-				if(hash[0]=="persistent-id"){
+				/*if(hash[0]=="persistent-id"){
 					$("#<portlet:namespace/>username").attr("value",hash[1]);
-				}
+				}*/
 				if(hash[0]=="Shib-Application-ID"){
 					app = hash[1];
 					if(hash[1]=="app2")
@@ -66,6 +74,12 @@
 				$("#<portlet:namespace/>institute").attr("value",o);
 				$("#<portlet:namespace/>institute").attr("readonly","true");
 				//alert("sono dentro a o");
+			}
+			
+			if((uid==null)&&(sn!=null)&&(gn!=null)){
+				alert(sn+"_"+gn);
+				$("#<portlet:namespace/>username").attr("value",sn.trim().toLowerCase()+gn.trim().toLowerCase());
+				alert("uid null");
 			}
 			return vars;
 		},

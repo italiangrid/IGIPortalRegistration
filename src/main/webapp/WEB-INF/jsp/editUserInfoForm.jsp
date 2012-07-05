@@ -400,7 +400,7 @@ div#voData {
 
 			</liferay-ui:search-container-results>
 			<liferay-ui:search-container-row
-				className="portal.registration.domain.Certificate"
+				className="it.italiangrid.portal.dbapi.domain.Certificate"
 				keyProperty="idCert" modelVar="Certificate">
 				<liferay-ui:search-container-column-text name="Subject"
 					property="subject" />
@@ -548,7 +548,7 @@ div#voData {
 
 			</liferay-ui:search-container-results>
 			<liferay-ui:search-container-row
-				className="portal.registration.domain.Vo" keyProperty="idVo"
+				className="it.italiangrid.portal.dbapi.domain.Vo" keyProperty="idVo"
 				modelVar="Vo">
 
 						<liferay-ui:search-container-column-text name="VO name"

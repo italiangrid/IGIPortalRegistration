@@ -642,4 +642,28 @@ public class UploadCertController {
 			e.printStackTrace();
 		}
 	}
+	
+	@ActionMapping(params = "myaction=goBack")
+	public void haveCert(ActionRequest request, ActionResponse response) {
+		
+		log.error("Torna Indietro");
+		
+		String userId = request.getParameter("userId");
+		String username = request.getParameter("username");
+		String firstReg = request.getParameter("firstReg");
+		boolean choice = Boolean.parseBoolean(firstReg);
+		
+		log.error("Torna alla scelta del certificato? " + firstReg);
+
+		String destination = "home";
+		if(choice)
+			destination = "showCAOnline";
+			
+		
+		response.setRenderParameter("userId", userId);
+		response.setRenderParameter("username", username);
+		response.setRenderParameter("firstReg", firstReg);
+		response.setRenderParameter("myaction", destination);
+		
+	}
 }
