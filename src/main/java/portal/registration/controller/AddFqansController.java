@@ -25,32 +25,31 @@ import portal.registration.domain.UserToVo;
 import portal.registration.services.UserInfoService;
 import portal.registration.services.UserToVoService;
 
-
 @Controller(value = "addFqansController")
 @RequestMapping(value = "VIEW")
 public class AddFqansController {
-	
+
 	private static final Logger log = Logger
 			.getLogger(AddFqansController.class);
-	
+
 	@Autowired
 	private UserToVoService userToVoService;
-	
+
 	@Autowired
 	private UserInfoService userInfoService;
-	
+
 	@ActionMapping(params = "myaction=addFqans")
-	public void addUserInfo(ActionRequest request,
-			ActionResponse response, SessionStatus sessionStatus){
+	public void addUserInfo(ActionRequest request, ActionResponse response,
+			SessionStatus sessionStatus) {
 		boolean firstReg = false;
 		String[] fqans = request.getParameterValues("resultList");
 		int userId = Integer.parseInt(request.getParameter("userId"));
 		int idVo = Integer.parseInt(request.getParameter("idVo"));
-		if(request.getParameter("firstReg")!=null)
+		if (request.getParameter("firstReg") != null)
 			firstReg = Boolean.parseBoolean(request.getParameter("firstReg"));
-		
+
 		UserToVo utv = userToVoService.findById(userId, idVo);
-		
+
 		if (fqans != null && !fqans[0].equals("")) {
 
 			log.info("prova =" + fqans[0] + ";fine");
@@ -69,44 +68,46 @@ public class AddFqansController {
 		}
 
 		userToVoService.update(utv);
-		
+
 		SessionMessages.add(request, "userToVo-updated-successufully");
 
-		if(firstReg){
-			response.setRenderParameter("myaction",
-					"showAddUserToVoPresents");
-		}else{
+		if (firstReg) {
+			response.setRenderParameter("myaction", "showAddUserToVoPresents");
+		} else {
 			response.setRenderParameter("myaction", "editUserInfoForm");
 		}
-		
+
 		response.setRenderParameter("userId", Integer.toString(userId));
 		request.setAttribute("userId", userId);
 		sessionStatus.setComplete();
-		
+
 	}
-	
+
 	@ActionMapping(params = "myaction=deleteByUser")
-public void removeUserInfo(@RequestParam int userId, ActionRequest request, ActionResponse response) throws PortalException, SystemException, IOException {
-		
+	public void removeUserInfo(@RequestParam int userId, ActionRequest request,
+			ActionResponse response) throws PortalException, SystemException,
+			IOException {
+
 		UserInfo userInfo = userInfoService.findById(userId);
 		String username = userInfo.getUsername();
-		log.error("ricevuto userId " + userId + "corrispondente all'utente " + username);
+		log.error("ricevuto userId " + userId + "corrispondente all'utente "
+				+ username);
 		long companyId = PortalUtil.getCompanyId(request);
 		log.error("companyId " + companyId);
 		User user = UserLocalServiceUtil.getUserByScreenName(companyId,
 				username);
-		if(user!=null){
+		if (user != null) {
 			log.error("recuperato liferay user " + user.getScreenName());
-			//user.setActive(false);
-			//UserLocalServiceUtil.updateActive(user.getUserId(),false);
+			// user.setActive(false);
+			// UserLocalServiceUtil.updateActive(user.getUserId(),false);
 			UserLocalServiceUtil.deleteUser(user.getUserId());
 			log.error("eliminato utente liferay");
 		}
 		userInfoService.delete(userId);
 		log.error("eliminato utente portalUser");
-		response.sendRedirect(PortalUtil.getPortalURL(request)+"/c/portal/logout"); 
-		
+		response.sendRedirect(PortalUtil.getPortalURL(request)
+				+ "/c/portal/logout");
+
 	}
-	
 
 }

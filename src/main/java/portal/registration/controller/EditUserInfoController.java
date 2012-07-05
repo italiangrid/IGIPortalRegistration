@@ -44,9 +44,9 @@ import portal.registration.utils.MyValidator;
 @RequestMapping("view")
 @SessionAttributes("userInfo")
 public class EditUserInfoController {
-	
+
 	private static final Logger log = Logger
-	.getLogger(AddUserInfoController.class);
+			.getLogger(AddUserInfoController.class);
 
 	@Autowired
 	private UserInfoService userInfoService;
@@ -63,7 +63,7 @@ public class EditUserInfoController {
 
 		if (userToVoService.findById(userId).size() == 0) {
 			deactivateUser(userId, request);
-			
+
 		}
 
 		return "editUserInfoForm";
@@ -83,7 +83,8 @@ public class EditUserInfoController {
 				user = UserLocalServiceUtil.getUserByScreenName(companyId,
 						username);
 
-				Role rolePowerUser = RoleLocalServiceUtil.getRole(companyId, "Power User");
+				Role rolePowerUser = RoleLocalServiceUtil.getRole(companyId,
+						"Power User");
 
 				UserLocalServiceUtil.deleteRoleUser(rolePowerUser.getRoleId(),
 						user.getUserId());
@@ -121,17 +122,18 @@ public class EditUserInfoController {
 				log.info("prendo user con username = " + userInfo.getUsername());
 				User user = UserLocalServiceUtil.getUserByScreenName(companyId,
 						userInfo.getUsername());
-				
-				log.info("setto: nome = " + userInfo.getFirstName() + " ; Cognome = " + userInfo.getLastName());
-				
+
+				log.info("setto: nome = " + userInfo.getFirstName()
+						+ " ; Cognome = " + userInfo.getLastName());
+
 				user.setFirstName(userInfo.getFirstName());
 				user.setLastName(userInfo.getLastName());
-				
-				log.info("controllo: nome = " + user.getFirstName() + " ; Cognome = " + user.getLastName());
+
+				log.info("controllo: nome = " + user.getFirstName()
+						+ " ; Cognome = " + user.getLastName());
 
 				UserLocalServiceUtil.updateUser(user);
-				
-				
+
 				log.info("lifery aggiornato");
 
 			} catch (Exception e) {
@@ -140,7 +142,7 @@ public class EditUserInfoController {
 				allOk = false;
 				e.printStackTrace();
 			}
-			if(allOk){
+			if (allOk) {
 				try {
 					userInfoService.edit(userInfo);
 				} catch (Exception e) {
@@ -202,34 +204,36 @@ public class EditUserInfoController {
 		sessionStatus.setComplete();
 
 	}
-	
+
 	/**
 	 * Return to the portlet the list of the user's fqans.
-	 * @param request: session parameter.
+	 * 
+	 * @param request
+	 *            : session parameter.
 	 * @return the list of the user's fqans.
 	 */
 	@ModelAttribute("userFqans")
-	public Map<Object,Object> getUserFqans(@RequestParam int userId) {
-		
+	public Map<Object, Object> getUserFqans(@RequestParam int userId) {
+
 		UserInfo userInfo = userInfoService.findById(userId);
 		List<UserToVo> utv = userToVoService.findById(userInfo.getUserId());
-		
+
 		Map<Object, Object> x = new Properties();
-		
+
 		String toParse = null;
-		
+
 		for (Iterator<UserToVo> iterator = utv.iterator(); iterator.hasNext();) {
 			UserToVo userToVo = iterator.next();
 			toParse = userToVo.getFqans();
-			if((toParse != null)&&(!toParse.equals(""))){
+			if ((toParse != null) && (!toParse.equals(""))) {
 				x.put(userToVo.getId().getIdVo(), toParse);
-				
-			}else{
+
+			} else {
 				x.put(userToVo.getId().getIdVo(), "No Roles for this VO");
 			}
-			
+
 		}
-		
+
 		return x;
 	}
 

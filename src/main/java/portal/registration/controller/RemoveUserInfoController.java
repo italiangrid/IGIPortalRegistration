@@ -24,32 +24,34 @@ import com.liferay.portal.util.PortalUtil;
  * RemoveUserInfoController handles removal of UserInfo from the Catalog.
  * 
  * @author asarin
- *
+ * 
  */
 @Controller(value = "removeUserInfoController")
 @RequestMapping("VIEW")
 public class RemoveUserInfoController {
-	
+
 	private static final Logger log = Logger
 			.getLogger(RemoveUserInfoController.class);
-	
+
 	@Autowired
 	private UserInfoService userInfoService;
 
-	@ActionMapping(params="myaction=removeUserInfo")
-	public void removeUserInfo(@RequestParam int userId, ActionRequest request, ActionResponse response) throws PortalException, SystemException {
-		
+	@ActionMapping(params = "myaction=removeUserInfo")
+	public void removeUserInfo(@RequestParam int userId, ActionRequest request,
+			ActionResponse response) throws PortalException, SystemException {
+
 		UserInfo userInfo = userInfoService.findById(userId);
 		String username = userInfo.getUsername();
-		log.info("ricevuto userId " + userId + "corrispondente all'utente " + username);
+		log.info("ricevuto userId " + userId + "corrispondente all'utente "
+				+ username);
 		long companyId = PortalUtil.getCompanyId(request);
 		log.info("companyId " + companyId);
 		User user = UserLocalServiceUtil.getUserByScreenName(companyId,
 				username);
-		if(user!=null){
+		if (user != null) {
 			log.info("recuperato liferay user " + user.getScreenName());
-			//user.setActive(false);
-			//UserLocalServiceUtil.updateActive(user.getUserId(),false);
+			// user.setActive(false);
+			// UserLocalServiceUtil.updateActive(user.getUserId(),false);
 			UserLocalServiceUtil.deleteUser(user.getUserId());
 			log.info("eliminato utente liferay");
 		}
@@ -58,5 +60,5 @@ public class RemoveUserInfoController {
 		response.setRenderParameter("myaction", "userInfos");
 		SessionMessages.add(request, "user-delated-successufully");
 	}
-	
+
 }

@@ -52,7 +52,7 @@ import org.globus.gsi.GlobusCredentialException;
 @Controller(value = "uploadCertController")
 @RequestMapping(value = "VIEW")
 public class UploadCertController {
-	
+
 	private static final String MYPROXY_HOST = "fullback.cnaf.infn.it";
 
 	private static final Logger log = Logger
@@ -81,7 +81,7 @@ public class UploadCertController {
 		} else {
 			log.info("noooooo disastro req");
 		}
-		
+
 		String ns = response.getNamespace();
 		String primaryCert = "";
 		String pwd = "";
@@ -157,38 +157,40 @@ public class UploadCertController {
 			allOk = false;
 			log.info("non è una directory");
 		}
-		
+
 		uid = Integer.parseInt(request.getParameter("userId"));
 		username = request.getParameter("username");
 		firstReg = request.getParameter("firstReg");
-	 
 
 		if (MyValidator.validateCert(pwd, pwd1, pwd2, errors) && allOk) {
 			// controllo file
 
 			// esecuzione myproxy
-			
+
 			splitP12(files.get(0), uid, pwd, pwd1, errors);
-			
-			if(errors.isEmpty()){
-				String subject = myOpenssl("subject", "usercert_"+uid+".pem", errors);
-				String issuer = myOpenssl("issuer", "usercert_"+uid+".pem", errors);
-				String enddate = myOpenssl("enddate", "usercert_"+uid+".pem", errors);
-	
+
+			if (errors.isEmpty()) {
+				String subject = myOpenssl("subject", "usercert_" + uid
+						+ ".pem", errors);
+				String issuer = myOpenssl("issuer", "usercert_" + uid + ".pem",
+						errors);
+				String enddate = myOpenssl("enddate", "usercert_" + uid
+						+ ".pem", errors);
+
 				if ((subject != null) && (issuer != null) && (enddate != null)
 						&& allOk) {
 					Date date = null;
-	
+
 					try {
 						DateFormat formatter = new SimpleDateFormat(
 								"MMM dd HH:mm:ss yyyy z", Locale.UK);
 						date = (Date) formatter.parse(enddate);
-	
+
 						log.info("data formattata = " + date.toString());
 						GregorianCalendar c = new GregorianCalendar();
 						Date oggi = c.getTime();
 						log.info("data oggi = " + oggi.toString());
-	
+
 						if (date.before(oggi)) {
 							log.info("Certificato scaduto");
 							errors.add("user-certificate-expired");
@@ -196,7 +198,7 @@ public class UploadCertController {
 						} else {
 							log.info("Certificato valido");
 						}
-	
+
 					} catch (ParseException e) {
 						allOk = false;
 						log.info("Eccezzione data");
@@ -209,9 +211,9 @@ public class UploadCertController {
 						cert.setIssuer(issuer);
 						cert.setPrimaryCert(primaryCert);
 						cert.setSubject(subject);
-						
+
 						List<Certificate> lc = certificateService.findById(uid);
-						if(lc.size()!=0){
+						if (lc.size() != 0) {
 							int i = 0;
 							for (i = 0; i < lc.size(); i++) {
 								if (cert.equals(lc.get(i))) {
@@ -219,12 +221,12 @@ public class UploadCertController {
 									errors.add("certificate-duplicate");
 									break;
 								}
-		
+
 							}
 						}
 						if (allOk) {
 							int id = certificateService.save(cert, uid);
-	
+
 							if (id != -1) {
 								log.info("inserito il certificato per l'utente con userId = "
 										+ uid);
@@ -237,39 +239,45 @@ public class UploadCertController {
 					log.info("errori vari");
 					allOk = false;
 				}
-			
-				if(allOk){
+
+				if (allOk) {
 					try {
 						String usrnm = null;
 						Certificate certificate = null;
-						List<Certificate> certs = certificateService.findById(uid);
+						List<Certificate> certs = certificateService
+								.findById(uid);
 						for (Iterator<Certificate> iterator = certs.iterator(); iterator
 								.hasNext();) {
 							certificate = (Certificate) iterator.next();
-							if(certificate.getSubject().equals(subject)){
+							if (certificate.getSubject().equals(subject)) {
 								usrnm = certificate.getUsernameCert();
 								break;
 							}
-							
+
 						}
-						
+
 						Runtime.getRuntime().exec(
-								"/bin/chmod 600 /upload_files/userkey_" + uid+".pem");
+								"/bin/chmod 600 /upload_files/userkey_" + uid
+										+ ".pem");
 						String myproxy = "/usr/bin/python /upload_files/myproxy2.py "
-								+ usrnm + " /upload_files/usercert_" + uid
-								+ ".pem /upload_files/userkey_" + uid + ".pem " + pwd1 + " "
-								+ pwd1;
-						//log.info("Myproxy command = " + myproxy);
+								+ usrnm
+								+ " /upload_files/usercert_"
+								+ uid
+								+ ".pem /upload_files/userkey_"
+								+ uid
+								+ ".pem "
+								+ pwd1 + " " + pwd1;
+						// log.info("Myproxy command = " + myproxy);
 						Process p = Runtime.getRuntime().exec(myproxy);
 						InputStream stdout = p.getInputStream();
 						InputStream stderr = p.getErrorStream();
-	
+
 						BufferedReader output = new BufferedReader(
 								new InputStreamReader(stdout));
 						String line = null;
-	
+
 						while (((line = output.readLine()) != null)) {
-	
+
 							log.info("[Stdout] " + line);
 							if (line.equals("myproxy success")) {
 								log.info("myproxy ok");
@@ -305,7 +313,7 @@ public class UploadCertController {
 							}
 						}
 						output.close();
-	
+
 						BufferedReader brCleanUp = new BufferedReader(
 								new InputStreamReader(stderr));
 						while ((line = brCleanUp.readLine()) != null) {
@@ -313,7 +321,7 @@ public class UploadCertController {
 							log.info("[Stderr] " + line);
 							errors.add("no-valid-key");
 						}
-						if (!allOk){
+						if (!allOk) {
 							certificateService.delete(certificate);
 							errors.add("myproxy-error");
 						}
@@ -354,32 +362,33 @@ public class UploadCertController {
 				SessionErrors.add(request, error);
 			}
 
-			//sessionStatus.setComplete();
+			// sessionStatus.setComplete();
 			response.setRenderParameter("myaction", "showUploadCert");
 			response.setRenderParameter("userId", String.valueOf(uid));
 			request.setAttribute("userId", uid);
-			//response.setRenderParameter("username", username);
+			// response.setRenderParameter("username", username);
 			request.setAttribute("username", username);
 			request.setAttribute("password", pwd1);
 			request.setAttribute("passwordVerify", pwd2);
-			if (firstReg.equals("true")){
+			if (firstReg.equals("true")) {
 				response.setRenderParameter("firstReg", "true");
 				request.setAttribute("firstReg", "true");
 			}
 
 		}
 
-		if(!files.isEmpty())
-			deleteUploadedFile(files,uid);
+		if (!files.isEmpty())
+			deleteUploadedFile(files, uid);
 
 	}
-	
+
 	private void splitP12(String filename, int uid, String pwd1, String pwd2,
-			ArrayList<String> errors){
-		
+			ArrayList<String> errors) {
+
 		try {
-			String cmd = "/usr/bin/python /upload_files/splitP12.py /upload_files/" + filename + " " + uid + " " + pwd1 + " " + pwd2;
-			//log.info("cmd = " + cmd);
+			String cmd = "/usr/bin/python /upload_files/splitP12.py /upload_files/"
+					+ filename + " " + uid + " " + pwd1 + " " + pwd2;
+			// log.info("cmd = " + cmd);
 			Process p = Runtime.getRuntime().exec(cmd);
 			InputStream stdout = p.getInputStream();
 			InputStream stderr = p.getErrorStream();
@@ -390,13 +399,13 @@ public class UploadCertController {
 
 			while ((line = output.readLine()) != null) {
 				log.info("[Stdout] " + line);
-				if (line.equals("too short passphrase")) 
+				if (line.equals("too short passphrase"))
 					errors.add("error-password-too-short");
-				if (line.equals("p12 passwd error key")) 
+				if (line.equals("p12 passwd error key"))
 					errors.add("key-password-failure");
-				if (line.equals("error unrecognized")) 
+				if (line.equals("error unrecognized"))
 					errors.add("error-unrecognized");
-				if (line.equals("p12 passwd error cert")) 
+				if (line.equals("p12 passwd error cert"))
 					errors.add("key-password-failure");
 			}
 			output.close();
@@ -414,7 +423,7 @@ public class UploadCertController {
 			e.printStackTrace();
 			errors.add("error-unrecognized-exception");
 		}
-		
+
 	}
 
 	private String myOpenssl(String opt, String filename,
@@ -491,29 +500,30 @@ public class UploadCertController {
 	@ActionMapping(params = "myaction=removeCert")
 	public void removeCert(ActionRequest request, ActionResponse response,
 			SessionStatus sessionStatus) {
-		
-		String contextPath = UploadCertController.class.getClassLoader().getResource("").getPath();
-		
+
+		String contextPath = UploadCertController.class.getClassLoader()
+				.getResource("").getPath();
+
 		log.info("dove sono:" + contextPath);
-		
+
 		String myproxyHost = MYPROXY_HOST;
-		
+
 		File test = new File(contextPath + "/content/Registration.properties");
 		log.info("File: " + test.getAbsolutePath());
-		if(test.exists()){
+		if (test.exists()) {
 			log.info("ESISTE!!");
 			try {
-				FileInputStream inStream =
-			    new FileInputStream(contextPath + "/content/Registration.properties");
-		
+				FileInputStream inStream = new FileInputStream(contextPath
+						+ "/content/Registration.properties");
+
 				Properties prop = new Properties();
-			
+
 				prop.load(inStream);
-			
+
 				inStream.close();
-				if(prop.getProperty("myproxy.storage")!=null)
+				if (prop.getProperty("myproxy.storage") != null)
 					myproxyHost = prop.getProperty("myproxy.storage");
-				
+
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -522,42 +532,48 @@ public class UploadCertController {
 
 		int idCert = Integer.parseInt(request.getParameter("idCert"));
 		String userId = request.getParameter("userId");
-		
+
 		User user = (User) request.getAttribute(WebKeys.USER);
-		String userPath = System.getProperty("java.io.tmpdir") + "/users/" + user.getUserId() + "/";
-		
-		File proxy = new File(userPath+"/x509up");
-		
-		if(!proxy.exists()){
-			SessionErrors.add(request, "error-deleting-certificate-proxy-not-exists");
+		String userPath = System.getProperty("java.io.tmpdir") + "/users/"
+				+ user.getUserId() + "/";
+
+		File proxy = new File(userPath + "/x509up");
+
+		if (!proxy.exists()) {
+			SessionErrors.add(request,
+					"error-deleting-certificate-proxy-not-exists");
 			return;
 		}
-		
+
 		GlobusCredential cred;
 		try {
 			cred = new GlobusCredential(proxy.toString());
-		
+
 			if (cred.getTimeLeft() <= 0) {
-				SessionErrors.add(request, "error-deleting-certificate-proxy-expired");
+				SessionErrors.add(request,
+						"error-deleting-certificate-proxy-expired");
 				return;
 			}
-		
+
 		} catch (GlobusCredentialException e2) {
 			// TODO Auto-generated catch block
 			e2.printStackTrace();
 		}
-		
-		log.error("Move to: "+userPath);
-        String[] cmd = new String[]{"/usr/bin/myproxy-destroy","-s",myproxyHost,"-l", certificateService.findByIdCert(idCert).getUsernameCert()};
+
+		log.error("Move to: " + userPath);
+		String[] cmd = new String[] { "/usr/bin/myproxy-destroy", "-s",
+				myproxyHost, "-l",
+				certificateService.findByIdCert(idCert).getUsernameCert() };
 		String allCmd = "";
-        for (String string : cmd) {
-			allCmd += string + " "; 
+		for (String string : cmd) {
+			allCmd += string + " ";
 		}
-        
-        log.info("myproxy destroy: " + allCmd);
-        
+
+		log.info("myproxy destroy: " + allCmd);
+
 		try {
-			Process p = Runtime.getRuntime().exec(cmd, null, new File(userPath));
+			Process p = Runtime.getRuntime()
+					.exec(cmd, null, new File(userPath));
 			InputStream stdout = p.getInputStream();
 			InputStream stderr = p.getErrorStream();
 
@@ -569,33 +585,33 @@ public class UploadCertController {
 				log.info("[Stdout] " + line);
 			}
 			output.close();
-			
+
 			boolean isWrong = false;
 
 			BufferedReader brCleanUp = new BufferedReader(
 					new InputStreamReader(stderr));
 			while ((line = brCleanUp.readLine()) != null) {
 				log.error("[Stderr] " + line);
-				if(!isWrong)
-					SessionErrors.add(request, "error-deleting-certificate-wrong-proxy");
+				if (!isWrong)
+					SessionErrors.add(request,
+							"error-deleting-certificate-wrong-proxy");
 				isWrong = true;
 			}
 			brCleanUp.close();
-			
-			if(!isWrong){
+
+			if (!isWrong) {
 				log.info("Sto per cancellare il certificato con id = " + idCert);
 				certificateService.delete(idCert);
 				log.info("Certificato cancellato");
 
-				SessionMessages.add(request, "certificate-deleted-successufully");
+				SessionMessages.add(request,
+						"certificate-deleted-successufully");
 			}
-			
+
 		} catch (IOException e1) {
 			SessionErrors.add(request, "error-deleting-certificate");
 			e1.printStackTrace();
 		}
-
-		
 
 		response.setRenderParameter("myaction", "editUserInfoForm");
 		response.setRenderParameter("userId", userId);
@@ -606,15 +622,15 @@ public class UploadCertController {
 	private void deleteUploadedFile(ArrayList<String> files, int uid) {
 		try {
 			String cmd = "rm -f /upload_files/" + files.get(0);
-					//+ " /upload_files/" + files.get(1);
+			// + " /upload_files/" + files.get(1);
 			log.info("cmd = " + cmd);
 			Runtime.getRuntime().exec(cmd);
-			
-			File cert = new File("/upload_files/usercert_"+uid+".pem");
-			if(cert.exists())
+
+			File cert = new File("/upload_files/usercert_" + uid + ".pem");
+			if (cert.exists())
 				cert.delete();
-			File key = new File("/upload_files/userkey_"+uid+".pem");
-			if(key.exists())
+			File key = new File("/upload_files/userkey_" + uid + ".pem");
+			if (key.exists())
 				key.delete();
 
 		} catch (IOException e) {

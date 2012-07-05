@@ -20,19 +20,18 @@ import org.springframework.web.portlet.bind.annotation.RenderMapping;
 @Controller(value = "showVOListController")
 @RequestMapping(value = "VIEW")
 public class VOListController {
-	
+
 	private static String search = null;
-	
-	public static void setSearch(String search2){
+
+	public static void setSearch(String search2) {
 		search = search2;
 	}
-	
+
 	@ModelAttribute("searchVo")
 	public String getSearch() {
-		
+
 		return search;
-		
-		
+
 	}
 
 	@Autowired
@@ -45,16 +44,16 @@ public class VOListController {
 
 	@ModelAttribute("vos")
 	public List<Vo> getVos(RenderResponse response) {
-		if(search==null||search.equals(""))
+		if (search == null || search.equals(""))
 			return voService.getAllVo();
 		else
 			return voService.getAllVoByName(search);
 	}
-	
+
 	@ActionMapping(params = "myaction=listComplete")
 	public void listComplete(ActionRequest request, ActionResponse response,
 			SessionStatus sessionStatus) {
-		
+
 		String userId = request.getParameter("userId");
 		String waif = request.getParameter("waif");
 
