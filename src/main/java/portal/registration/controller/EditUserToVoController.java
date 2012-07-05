@@ -71,7 +71,7 @@ public class EditUserToVoController {
 	}
 
 	@ModelAttribute("userToVo")
-	public UserToVo getUserToVo(RenderRequest request,@RequestParam int idVo) {
+	public UserToVo getUserToVo(RenderRequest request, @RequestParam int idVo) {
 		int userId = Integer.parseInt(request.getParameter("userId"));
 		return userToVoService.findById(userId, idVo);
 	}
@@ -83,25 +83,27 @@ public class EditUserToVoController {
 	}
 
 	@ModelAttribute("fqans")
-	public String[] getFqans(RenderRequest request,@RequestParam int idVo) {
-		
+	public String[] getFqans(RenderRequest request, @RequestParam int idVo) {
+
 		int userId = Integer.parseInt(request.getParameter("userId"));
 
 		Vo vo = voService.findById(idVo);
-		
+
 		UserToVo utv = userToVoService.findById(userId, idVo);
-		
-		Certificate cert = certificateService.findByIdCert(utv.getCertificate());
+
+		Certificate cert = certificateService
+				.findByIdCert(utv.getCertificate());
 
 		String[] fqans = null;
-			
+
 		fqans = VOMSAdminCallOut.getUserFQANs(cert.getSubject(),
 				cert.getIssuer(), vo.getHost());
-			
-		//ArrayUtils.addAll(roles, groups); 
 
-		//return ArrayUtils.remove(fqans,ArrayUtils.indexOf(fqans, "/"+vo.getVo()));
-		
+		// ArrayUtils.addAll(roles, groups);
+
+		// return ArrayUtils.remove(fqans,ArrayUtils.indexOf(fqans,
+		// "/"+vo.getVo()));
+
 		return fqans;
 	}
 

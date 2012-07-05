@@ -80,10 +80,12 @@ public class AddUserInfoController {
 	@ActionMapping(params = "myaction=addUserInfo")
 	public void addUserInfo(@ModelAttribute UserInfo userInfo,
 			BindingResult bindingResult, ActionRequest request,
-			ActionResponse response, SessionStatus sessionStatus, PortletSession session)
-			throws PortalException, SystemException {
+			ActionResponse response, SessionStatus sessionStatus,
+			PortletSession session) throws PortalException, SystemException {
+
 
 		log.info("sono dentro");
+
 		
 		User u = null;
 		long companyId = PortalUtil.getCompanyId(request);
@@ -113,47 +115,47 @@ public class AddUserInfoController {
 						
 						try {
 
-							
-							ThemeDisplay themeDisplay = 
-								     (ThemeDisplay)request.getAttribute(WebKeys.THEME_DISPLAY);
-							long[] groupIds = {themeDisplay.getLayout().getGroupId()};
+
+							ThemeDisplay themeDisplay = (ThemeDisplay) request
+									.getAttribute(WebKeys.THEME_DISPLAY);
+							long[] groupIds = { themeDisplay.getLayout()
+									.getGroupId() };
+
 							log.info("companyid = " + companyId);
 							log.info("settate variabili di supporto ora si aggiunge un utenti a liferay!!");
-								
-							u = UserLocalServiceUtil.addUser(0L,
-									companyId, false, PASSWORD,
-									PASSWORD, false, userInfo
+
+							u = UserLocalServiceUtil.addUser(0L, companyId,
+									false, PASSWORD, PASSWORD, false, userInfo
 											.getUsername(), userInfo.getMail(),
 									0L, "", new Locale("en"), userInfo
 											.getFirstName(), "", userInfo
 											.getLastName(), 0, 0, true,
-									Calendar.JANUARY, 1, 1970, "", groupIds, null,
-									null, null, true, ServiceContextFactory
-											.getInstance(User.class.getName(),
-													request));
+									Calendar.JANUARY, 1, 1970, "", groupIds,
+									null, null, null, true,
+									ServiceContextFactory.getInstance(
+											User.class.getName(), request));
+
 
 							if (u == null){
-								
-								
-								
+
 								log.info("nulla di fatto");
 							} else {
-								
-								
-								
-								
-								
-								
-								Role rolePowerUser = RoleLocalServiceUtil.getRole(companyId, "Power User");
 
-								UserLocalServiceUtil.deleteRoleUser(rolePowerUser.getRoleId(),
+								Role rolePowerUser = RoleLocalServiceUtil
+										.getRole(companyId, "Power User");
+
+								UserLocalServiceUtil.deleteRoleUser(
+										rolePowerUser.getRoleId(),
 										u.getUserId());
 							}
 
 						} catch (Exception e) {
 
 							errors.add("user-liferay-problem");
-							log.error("Inserimento utente in liferay " + e.getMessage());
+
+							log.error("Inserimento utente in liferay "
+									+ e.getMessage());
+
 							allOk = false;
 							request.setAttribute("firstReg", "true");
 						}
@@ -200,10 +202,12 @@ public class AddUserInfoController {
 
 					if (request.getParameter("haveCert").equals("true")) {
 						response.setRenderParameter("myaction",
-								"showCAOnline");
-						response.setRenderParameter("userId", Integer.toString(userId));
+								"showUploadCert");
+						response.setRenderParameter("userId",
+								Integer.toString(userId));
 						request.setAttribute("userId", userId);
-						response.setRenderParameter("username", userInfo.getUsername());
+						response.setRenderParameter("username",
+								userInfo.getUsername());
 						request.setAttribute("username", userInfo.getUsername());
 						response.setRenderParameter("firstReg", "true");
 						request.setAttribute("firstReg", "true");

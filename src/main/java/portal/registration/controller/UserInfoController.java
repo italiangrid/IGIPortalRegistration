@@ -39,19 +39,18 @@ import it.italiangrid.portal.dbapi.services.UserToVoService;
 @Controller("userInfoController")
 @RequestMapping(value = "VIEW")
 public class UserInfoController {
-	
+
 	private static String search = null;
-	
-	public static void setSearch(String search2){
+
+	public static void setSearch(String search2) {
 		search = search2;
 	}
 
 	@ModelAttribute("search")
 	public String getSearch() {
-		
+
 		return search;
-		
-		
+
 	}
 
 	@Autowired
@@ -59,13 +58,13 @@ public class UserInfoController {
 
 	@Autowired
 	private IdpService idpService;
-	
+
 	@Autowired
 	private UserToVoService userToVoService;
-	
+
 	@Autowired
 	private CertificateService certificateService;
-	
+
 	@RenderMapping
 	public String showUserInfos(RenderResponse response) {
 		return "home";
@@ -78,9 +77,8 @@ public class UserInfoController {
 
 	@ModelAttribute("userInfos")
 	public List<UserInfo> getUserInfos() {
-		
-		
-		if(search==null||search.equals(""))
+
+		if (search == null || search.equals(""))
 			return userInfoService.getAllUserInfo();
 		else
 			return userInfoService.getAllUserInfoByName(search);
@@ -90,13 +88,14 @@ public class UserInfoController {
 	public List<Idp> getIdps() {
 		return idpService.getAllIdp();
 	}
-	
+
 	@ModelAttribute("userId")
 	public int getUserId(RenderRequest request) {
-		
+
 		User user = (User) request.getAttribute(WebKeys.USER);
-		if(user!=null){
-			return userInfoService.findByUsername(user.getScreenName()).getUserId();
+		if (user != null) {
+			return userInfoService.findByUsername(user.getScreenName())
+					.getUserId();
 		}
 		return 0;
 	}
@@ -115,13 +114,14 @@ public class UserInfoController {
 		}
 		return x;
 	}
-	
+
 	@ModelAttribute("defaultVo")
 	public String getDefaultVo(RenderRequest request) {
-		
+
 		User user = (User) request.getAttribute(WebKeys.USER);
-		if(user!=null){
-			int userId = userInfoService.findByUsername(user.getScreenName()).getUserId(); 
+		if (user != null) {
+			int userId = userInfoService.findByUsername(user.getScreenName())
+					.getUserId();
 			return userToVoService.findDefaultVo(userId);
 		}
 		return null;
@@ -130,8 +130,9 @@ public class UserInfoController {
 	@ModelAttribute("defaultFqan")
 	public String getDefaultFqan(RenderRequest request) {
 		User user = (User) request.getAttribute(WebKeys.USER);
-		if(user!=null){
-			int userId = userInfoService.findByUsername(user.getScreenName()).getUserId();
+		if (user != null) {
+			int userId = userInfoService.findByUsername(user.getScreenName())
+					.getUserId();
 			return userToVoService.getDefaultFqan(userId);
 		}
 		return null;
@@ -140,7 +141,7 @@ public class UserInfoController {
 	@ModelAttribute("userInfo")
 	public UserInfo getUserInfo(RenderRequest request) {
 		User user = (User) request.getAttribute(WebKeys.USER);
-		if(user!=null)
+		if (user != null)
 			return userInfoService.findByUsername(user.getScreenName());
 		return null;
 	}
@@ -148,8 +149,9 @@ public class UserInfoController {
 	@ModelAttribute("certList")
 	public List<Certificate> getListCert(RenderRequest request) {
 		User user = (User) request.getAttribute(WebKeys.USER);
-		if(user!=null){
-		int userId = userInfoService.findByUsername(user.getScreenName()).getUserId();
+		if (user != null) {
+			int userId = userInfoService.findByUsername(user.getScreenName())
+					.getUserId();
 			return certificateService.findById(userId);
 		}
 		return null;
@@ -158,42 +160,47 @@ public class UserInfoController {
 	@ModelAttribute("userToVoList")
 	public List<Vo> getUserToVoList(RenderRequest request) {
 		User user = (User) request.getAttribute(WebKeys.USER);
-		if(user!=null){
-			int userId = userInfoService.findByUsername(user.getScreenName()).getUserId();
+		if (user != null) {
+			int userId = userInfoService.findByUsername(user.getScreenName())
+					.getUserId();
 			return userToVoService.findVoByUserId(userId);
 		}
 		return null;
 	}
-	
+
 	/**
 	 * Return to the portlet the list of the user's fqans.
-	 * @param request: session parameter.
+	 * 
+	 * @param request
+	 *            : session parameter.
 	 * @return the list of the user's fqans.
 	 */
 	@ModelAttribute("userFqans")
-	public Map<Object,Object> getUserFqans(RenderRequest request) {
-		
+	public Map<Object, Object> getUserFqans(RenderRequest request) {
+
 		User user = (User) request.getAttribute(WebKeys.USER);
-		if(user!=null){
-			UserInfo userInfo = userInfoService.findByUsername(user.getScreenName());
+		if (user != null) {
+			UserInfo userInfo = userInfoService.findByUsername(user
+					.getScreenName());
 			List<UserToVo> utv = userToVoService.findById(userInfo.getUserId());
-			
+
 			Map<Object, Object> x = new Properties();
-			
+
 			String toParse = null;
-			
-			for (Iterator<UserToVo> iterator = utv.iterator(); iterator.hasNext();) {
+
+			for (Iterator<UserToVo> iterator = utv.iterator(); iterator
+					.hasNext();) {
 				UserToVo userToVo = iterator.next();
 				toParse = userToVo.getFqans();
-				if(toParse != null){
+				if (toParse != null) {
 					x.put(userToVo.getId().getIdVo(), toParse);
-					
-				}else{
+
+				} else {
 					x.put(userToVo.getId().getIdVo(), "No Roles for this VO");
 				}
-				
+
 			}
-			
+
 			return x;
 		}
 		return null;

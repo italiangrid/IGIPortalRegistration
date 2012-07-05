@@ -376,12 +376,12 @@ div#voData {
 
 		<a href="#cert" onclick="nascondiCertificatiUtente();">Hide</a><br />
 		<br />
-		
+
 		<%
 		    PortletURL itURL = renderResponse.createRenderURL();
 			itURL.setParameter("myaction","editUserInfoForm");
 			itURL.setParameter("userId",Integer.toString(userInfo.getUserId()));
-			
+
 		%>
 
 		<liferay-ui:search-container
@@ -400,7 +400,7 @@ div#voData {
 
 			</liferay-ui:search-container-results>
 			<liferay-ui:search-container-row
-				className="it.italiangrid.portal.dbapi.domain.Certificate"
+				className="portal.registration.domain.Certificate"
 				keyProperty="idCert" modelVar="Certificate">
 				<liferay-ui:search-container-column-text name="Subject"
 					property="subject" />
@@ -425,13 +425,8 @@ div#voData {
 						}
 					%>
 					</liferay-ui:search-container-column-text>
-<<<<<<< HEAD
 
 
-=======
-				
-				
->>>>>>> refs/heads/master
 				<liferay-ui:search-container-column-jsp
 					path="/WEB-INF/jsp/admin-cert-action.jsp" align="right" />
 			</liferay-ui:search-container-row>
@@ -553,7 +548,7 @@ div#voData {
 
 			</liferay-ui:search-container-results>
 			<liferay-ui:search-container-row
-				className="it.italiangrid.portal.dbapi.domain.Vo" keyProperty="idVo"
+				className="portal.registration.domain.Vo" keyProperty="idVo"
 				modelVar="Vo">
 
 						<liferay-ui:search-container-column-text name="VO name"

@@ -51,10 +51,10 @@ public class AddUserToVOController {
 
 	private static final Logger log = Logger
 			.getLogger(AddUserToVOController.class);
-	
+
 	private static String search = null;
-	
-	public static void setSearch(String search2){
+
+	public static void setSearch(String search2) {
 		search = search2;
 	}
 
@@ -98,16 +98,17 @@ public class AddUserToVOController {
 			int idVo = Integer.parseInt(request.getParameter("VOids"));
 			if (idVo != 0) {
 				String subject = null;
-				if ((subject=checkVO(idVo, userId, errors))!=null) {
+				if ((subject = checkVO(idVo, userId, errors)) != null) {
 					log.info("Salvo sul DB la Vo " + idVo);
 					UserInfo ui = userInfoService.findById(userId);
 					if (ui.getRegistrationComplete().equals("false")) {
 						activateUser(ui, request, errors);
 					}
 					userToVoService.save(userId, idVo, subject);
-					List<UserToVo> utvs =  userToVoService.findById(userId);
-					if(utvs.size()==1);
-						userToVoService.setDefault(userId, idVo);
+					List<UserToVo> utvs = userToVoService.findById(userId);
+					if (utvs.size() == 1)
+						;
+					userToVoService.setDefault(userId, idVo);
 					log.info("Salvato sul DB ");
 				} else {
 					allOk = false;
@@ -132,8 +133,8 @@ public class AddUserToVOController {
 			response.setRenderParameter("userId", Integer.toString(userId));
 			request.setAttribute("userId", userId);
 			sessionStatus.setComplete();
-			
-			AddUserToVOController.setSearch(""); 
+
+			AddUserToVOController.setSearch("");
 
 		} else {
 
@@ -170,25 +171,25 @@ public class AddUserToVOController {
 		try {
 			user = UserLocalServiceUtil
 					.getUserByScreenName(companyId, username);
-			
-			Role rolePowerUser = RoleLocalServiceUtil.getRole(companyId, "Power User");
-			
-			List<User> powerUsers = UserLocalServiceUtil.getRoleUsers(rolePowerUser.getRoleId());
-			
-			long users[] = new long[powerUsers.size()+1];
-			
+
+			Role rolePowerUser = RoleLocalServiceUtil.getRole(companyId,
+					"Power User");
+
+			List<User> powerUsers = UserLocalServiceUtil
+					.getRoleUsers(rolePowerUser.getRoleId());
+
+			long users[] = new long[powerUsers.size() + 1];
+
 			int i;
-			
-			for (i=0; i<powerUsers.size(); i++) {
-				users[i]=powerUsers.get(i).getUserId();
+
+			for (i = 0; i < powerUsers.size(); i++) {
+				users[i] = powerUsers.get(i).getUserId();
 			}
 
 			users[i] = user.getUserId();
-			//long[] roles = {10140};
-			
-			//RoleServiceUtil.addUserRoles(user.getUserId(), roles);
-			
-			
+			// long[] roles = {10140};
+
+			// RoleServiceUtil.addUserRoles(user.getUserId(), roles);
 
 			UserLocalServiceUtil.setRoleUsers(rolePowerUser.getRoleId(), users);
 
@@ -210,7 +211,7 @@ public class AddUserToVOController {
 
 	@ModelAttribute("vos")
 	public List<Vo> getVos() {
-		if(search==null||search.equals(""))
+		if (search == null || search.equals(""))
 			return voService.getAllVo();
 		else
 			return voService.getAllVoByName(search);
@@ -237,15 +238,15 @@ public class AddUserToVOController {
 			errors.add("userToVo-already-exists");
 			return null;
 		}
-		
-		
+
 		for (int i = 0; i < certs.size(); i++) {
-			if(VOMSAdminCallOut.getUser(certs.get(i).getSubject(), certs.get(i).getIssuer(), vo.getHost())){
-				result=certs.get(i).getSubject();
+			if (VOMSAdminCallOut.getUser(certs.get(i).getSubject(), certs
+					.get(i).getIssuer(), vo.getHost())) {
+				result = certs.get(i).getSubject();
 			}
 		}
-		
-		if (result==null)
+
+		if (result == null)
 			errors.add("no-user-found-in-VO");
 
 		return result;
@@ -360,13 +361,12 @@ public class AddUserToVOController {
 		sessionStatus.setComplete();
 
 	}
-	
+
 	@ModelAttribute("searchUserToVo")
 	public String getSearch() {
-		
+
 		return search;
-		
-		
+
 	}
 
 }

@@ -156,28 +156,34 @@ public class UpdateCertController {
 			// esecuzione myproxy
 
 			splitP12(files.get(0), uid, pwd, pwd1, errors);
-			
-			if(errors.isEmpty()){
-				String subject = myOpenssl("subject", "usercert_"+uid+".pem", errors);
-				String issuer = myOpenssl("issuer", "usercert_"+uid+".pem", errors);
-				String enddate = myOpenssl("enddate", "usercert_"+uid+".pem", errors);
+
+			if (errors.isEmpty()) {
+				String subject = myOpenssl("subject", "usercert_" + uid
+						+ ".pem", errors);
+				String issuer = myOpenssl("issuer", "usercert_" + uid + ".pem",
+						errors);
+				String enddate = myOpenssl("enddate", "usercert_" + uid
+						+ ".pem", errors);
 
 				if ((subject != null) && (issuer != null) && (enddate != null)
 						&& allOk) {
 					Date date = null;
-	
+
 					try {
 						DateFormat formatter = new SimpleDateFormat(
-								"MMM dd HH:mm:ss yyyy z", Locale.UK); //Oct 17 13:10:50 2012 GMT
-						
+								"MMM dd HH:mm:ss yyyy z", Locale.UK); // Oct 17
+																		// 13:10:50
+																		// 2012
+																		// GMT
+
 						log.info(enddate);
 						date = (Date) formatter.parse(enddate);
-	
+
 						log.info("data formattata = " + date.toString());
 						GregorianCalendar c = new GregorianCalendar();
 						Date oggi = c.getTime();
 						log.info("data oggi = " + oggi.toString());
-	
+
 						if (date.before(oggi)) {
 							log.info("Certificato scaduto");
 							errors.add("user-certificate-expired");
@@ -185,7 +191,7 @@ public class UpdateCertController {
 						} else {
 							log.info("Certificato valido");
 						}
-	
+
 					} catch (ParseException e) {
 						allOk = false;
 						log.info("Eccezzione data");
@@ -195,7 +201,8 @@ public class UpdateCertController {
 						log.info("idCert = " + idCert);
 						backUp = certificateService.findByIdCert(idCert);
 						log.info("backup subject = " + backUp.getSubject());
-						Certificate cert = certificateService.findByIdCert(idCert);
+						Certificate cert = certificateService
+								.findByIdCert(idCert);
 						// cert.setCaonline("false");
 						cert.setExpirationDate(date);
 						// cert.setIssuer(issuer);
@@ -214,30 +221,35 @@ public class UpdateCertController {
 					log.info("errori vari");
 					allOk = false;
 				}
-	
+
 				if (allOk) {
 					try {
-	
+
 						Certificate certificate = certificateService
 								.findByIdCert(idCert);
-	
+
 						Runtime.getRuntime().exec(
-								"/bin/chmod 600 /upload_files/userkey_" + uid+".pem");
+								"/bin/chmod 600 /upload_files/userkey_" + uid
+										+ ".pem");
 						String myproxy = "/usr/bin/python /upload_files/myproxy2.py "
-								+ certificate.getUsernameCert() + " /upload_files/usercert_" + uid
-								+ ".pem /upload_files/userkey_" + uid + ".pem " + pwd1 + " "
-								+ pwd1;
+								+ certificate.getUsernameCert()
+								+ " /upload_files/usercert_"
+								+ uid
+								+ ".pem /upload_files/userkey_"
+								+ uid
+								+ ".pem "
+								+ pwd1 + " " + pwd1;
 						log.info("Myproxy command = " + myproxy);
 						Process p = Runtime.getRuntime().exec(myproxy);
 						InputStream stdout = p.getInputStream();
 						InputStream stderr = p.getErrorStream();
-	
+
 						BufferedReader output = new BufferedReader(
 								new InputStreamReader(stdout));
 						String line = null;
-	
+
 						while (((line = output.readLine()) != null)) {
-	
+
 							log.info("[Stdout] " + line);
 							if (line.equals("myproxy success")) {
 								log.info("myproxy ok");
@@ -273,7 +285,7 @@ public class UpdateCertController {
 							}
 						}
 						output.close();
-	
+
 						BufferedReader brCleanUp = new BufferedReader(
 								new InputStreamReader(stderr));
 						while ((line = brCleanUp.readLine()) != null) {
@@ -323,18 +335,18 @@ public class UpdateCertController {
 			request.setAttribute("primCert", primaryCert);
 
 		}
-		if(!files.isEmpty())
-			deleteUploadedFile(files,uid);
+		if (!files.isEmpty())
+			deleteUploadedFile(files, uid);
 
 	}
-	
-	
+
 	private void splitP12(String filename, int uid, String pwd1, String pwd2,
-			ArrayList<String> errors){
-		
+			ArrayList<String> errors) {
+
 		try {
-			String cmd = "/usr/bin/python /upload_files/splitP12.py /upload_files/" + filename + " " + uid + " " + pwd1 + " " + pwd2;
-			//log.info("cmd = " + cmd);
+			String cmd = "/usr/bin/python /upload_files/splitP12.py /upload_files/"
+					+ filename + " " + uid + " " + pwd1 + " " + pwd2;
+			// log.info("cmd = " + cmd);
 			Process p = Runtime.getRuntime().exec(cmd);
 			InputStream stdout = p.getInputStream();
 			InputStream stderr = p.getErrorStream();
@@ -345,13 +357,13 @@ public class UpdateCertController {
 
 			while ((line = output.readLine()) != null) {
 				log.info("[Stdout] " + line);
-				if (line.equals("too short passphrase")) 
+				if (line.equals("too short passphrase"))
 					errors.add("too-short-passpharase");
-				if (line.equals("p12 passwd error key")) 
+				if (line.equals("p12 passwd error key"))
 					errors.add("p12-passwd-error-key");
-				if (line.equals("error unrecognized")) 
+				if (line.equals("error unrecognized"))
 					errors.add("error-unrecognized");
-				if (line.equals("p12 passwd error cert")) 
+				if (line.equals("p12 passwd error cert"))
 					errors.add("p12-passwd-error-cert");
 			}
 			output.close();
@@ -369,7 +381,7 @@ public class UpdateCertController {
 			e.printStackTrace();
 			errors.add("error-unrecognized-exception");
 		}
-		
+
 	}
 
 	private String myOpenssl(String opt, String filename,
@@ -420,15 +432,15 @@ public class UpdateCertController {
 	private void deleteUploadedFile(ArrayList<String> files, int uid) {
 		try {
 			String cmd = "rm -f /upload_files/" + files.get(0);
-					//+ " /upload_files/" + files.get(1);
+			// + " /upload_files/" + files.get(1);
 			log.info("cmd = " + cmd);
 			Runtime.getRuntime().exec(cmd);
-			
-			File cert = new File("/upload_files/usercert_"+uid+".pem");
-			if(cert.exists())
+
+			File cert = new File("/upload_files/usercert_" + uid + ".pem");
+			if (cert.exists())
 				cert.delete();
-			File key = new File("/upload_files/userkey_"+uid+".pem");
-			if(key.exists())
+			File key = new File("/upload_files/userkey_" + uid + ".pem");
+			if (key.exists())
 				key.delete();
 
 		} catch (IOException e) {
