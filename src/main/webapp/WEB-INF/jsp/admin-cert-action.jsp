@@ -15,7 +15,11 @@
 
 <liferay-ui:icon-menu>
 
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> refs/heads/master
 	<portlet:renderURL var="updateURL">
 		<portlet:param name="myaction" value="showUpdateCert" />
 		<portlet:param name="idCert" value="<%= primKey %>" />

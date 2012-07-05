@@ -57,6 +57,12 @@ public class EditUserToVoController {
 	public String showEditUserInfoForm() {
 		return "editUserToVo";
 	}
+	
+	@RenderMapping(params = "myaction=showEditVoFirst")
+	public String showEditUserInfoFormFirst(ActionResponse response) {
+		response.setRenderParameter("firstReg", "true");
+		return "editUserToVo";
+	}
 
 	@ModelAttribute("userInfo")
 	public UserInfo getUserInfo(RenderRequest request) {

@@ -228,7 +228,7 @@ public class EditUserInfoController {
 		for (Iterator<UserToVo> iterator = utv.iterator(); iterator.hasNext();) {
 			UserToVo userToVo = iterator.next();
 			toParse = userToVo.getFqans();
-			if(toParse != null){
+			if((toParse != null)&&(!toParse.equals(""))){
 				x.put(userToVo.getId().getIdVo(), toParse);
 				
 			}else{

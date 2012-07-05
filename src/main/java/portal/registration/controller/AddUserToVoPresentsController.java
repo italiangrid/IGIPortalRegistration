@@ -40,7 +40,7 @@ import com.liferay.portal.util.PortalUtil;
 @Controller(value = "addUserToVoPresentsController")
 @RequestMapping(value = "VIEW")
 public class AddUserToVoPresentsController {
-	
+
 	private static final Logger log = Logger
 			.getLogger(AddUserToVoPresentsController.class);
 
@@ -89,7 +89,7 @@ public class AddUserToVoPresentsController {
 			try {
 				user = UserLocalServiceUtil.getUserByScreenName(companyId,
 						username);
-				
+
 				Role rolePowerUser = RoleLocalServiceUtil.getRole(companyId, "Power User");
 
 				UserLocalServiceUtil.deleteRoleUser(rolePowerUser.getRoleId(),
@@ -121,14 +121,14 @@ public class AddUserToVoPresentsController {
 			}
 		}else{
 		}
-		
+
 		/*User user = (User) request.getAttribute(WebKeys.USER);
 		if(user!=null)
 			userId = userInfoService.findByUsername(user.getScreenName()).getUserId();*/
-		
+
 		log.info("UserID = " + request.getParameter("userId"));
-		
-		
+
+
 		response.setRenderParameter("myaction", "showAddUserToVO");
 		response.setRenderParameter("userId", request.getParameter("userId"));
 		response.setRenderParameter("firstReg", request.getParameter("firstReg"));

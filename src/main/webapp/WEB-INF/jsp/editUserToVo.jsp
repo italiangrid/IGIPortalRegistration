@@ -162,6 +162,14 @@
 		}
 
 	}
+	
+	function getValue() { alert("hello");}
+	
+	$(function() {
+            $("#voReset").click(reset);
+        });
+
+    
 
 	$(document).ready(function() {
 		lista = new Array();
@@ -171,7 +179,7 @@
 <style>
 #products {
 	float: left;
-	width: 300px;
+	width: 250px;
 	margin-right: 2em;
 }
 
@@ -185,9 +193,20 @@
 }
 
 #cart {
-	width: 300px;
+	width: 250px;
 	float: left;
+	margin-right: 2em;
 }
+
+#arrow {
+	width: 80px;
+	float: left;
+	margin-right: 2em;
+	margin-top: 5em;
+	
+}
+
+
 /* style the list to maximize the droppable hitarea */
 #cart ol {
 	margin: 0;
@@ -200,12 +219,20 @@
 
 ul#sortable-delete {
 	margin: 0 0 3px 0;
-	padding: 1em 0 1em 3em;
+	padding: 1em 1em 1em 3em;
 	border: 1px;
 	border-color: red;
 	border-style: solid;
 	background-color: #FDD;
 }
+
+ul#insertHere{
+	list-style-image: url('<%=request.getContextPath()%>/images/arrow.16x16.png');
+}
+
+/*li{
+	padding: 0 1em 0 0 ;
+}*/
 </style>
 
 <portlet:actionURL var="addUserToVoActionUrl">
@@ -215,14 +242,11 @@ ul#sortable-delete {
 <jsp:useBean id="userToVo" type="it.italiangrid.portal.dbapi.domain.UserToVo"
 	scope="request" />
 
-
-
 <aui:form name="addUserToVoForm"
 	action="${addUserToVoActionUrl}">
 
 	<aui:layout>
 		<aui:fieldset>
-
 			<%
 				if (request.getParameter("userId") != null)
 					pageContext.setAttribute("userId",
@@ -230,13 +254,19 @@ ul#sortable-delete {
 				if (request.getParameter("idVo") != null)
 					pageContext.setAttribute("idVo",
 							request.getParameter("idVo"));
+				if (request.getParameter("firstReg") != null){
+					pageContext.setAttribute("firstReg",request.getParameter("firstReg"));
+				}else{
+					pageContext.setAttribute("firstReg","false");
+				}
+
 			%>
 
-			<!-- <c:out value="userId ${userId}; idVo ${idVo};"></c:out> -->
 			<aui:input name="userId" type="hidden" value="${userId}" />
 			<aui:input name="idVo" type="hidden" value="${idVo}" />
+			<aui:input name="firstReg" type="hidden" value="${firstReg}" />
 
-			<h1>Modify VO Role</h1>
+			<h1>Modify <c:out value="${vo.vo}" /> Role</h1>
 			<br />
 			<strong>Help:</strong>
 			<br />
@@ -246,8 +276,8 @@ ul#sortable-delete {
 			<div id="products">
 				<div id="catalog">
 					<h3>
-						Roles
-						<c:out value="${vo.vo}" />
+						 <img src="<%=request.getContextPath()%>/images/add.png" width="24" height="24"/> My available attributes
+						
 					</h3>
 					<div id="voList">
 						<ul id="insertHere">
@@ -256,7 +286,7 @@ ul#sortable-delete {
 								<c:when test="${fn:length(fqans) > 0}">
 									<c:forEach var="fqan" items="${fqans}">
 
-										<li><c:out value="${fqan}" /></li>
+										<li><c:out value="${fqan}" /> </li>
 
 									</c:forEach>
 								</c:when>
@@ -268,12 +298,16 @@ ul#sortable-delete {
 					</div>
 				</div>
 			</div>
+			
+			<div id ="arrow">
+				
+			<img src="<%=request.getContextPath()%>/images/Arrow_Right.png" width="48" height="48"/>
+			<br/>Drag and Drop<br/> to <strong>ADD</strong>.
+			</div>
 
 			<div id="cart">
-				<h3 class="ui-widget-header">FQANs list</h3>
+				<h3 class="ui-widget-header"><img src="<%=request.getContextPath()%>/images/accept.png" width="24" height="24"/> Attributes I want to use</h3>
 				<div class="ui-widget-content">
-
-					<ul id="sortable-delete" class="sortable">Drag and drop here for erase role</ul>
 
 					<ol id="reset" class="sortable">
 
@@ -287,8 +321,7 @@ ul#sortable-delete {
 								<c:set var="strings" value="${fn:split(userToVo.fqans,';')}" />
 								<c:forEach var="fqan" items="${strings}">
 
-									<li><c:out value="${fqan}" />
-									</li>
+									<li><c:out value="${fqan}" /> </li>
 
 								</c:forEach>
 							</c:otherwise>
@@ -297,7 +330,27 @@ ul#sortable-delete {
 					<br />
 				</div>
 
-				<aui:a href="#vo" onclick="reset();">Erase list</aui:a>
+				<a href="#VO" id="voReset">Erase list</a>
+				
+			</div>
+			<div style="display:none">
+			<div id ="arrow">
+				
+			
+			<img src="<%=request.getContextPath()%>/images/Arrow_Right.png" width="48" height="48"/>
+			<br/>Drag and Drop<br/> to <strong>DELETE</strong>.
+			</div>
+			
+			<div id="cart">
+				<h3 class="ui-widget-header"><img src="<%=request.getContextPath()%>/images/delete.png" width="24" height="24"/>Trash</h3>
+				<div class="ui-widget-content">
+
+					<ul id="sortable-delete" class="sortable">Drag and drop here for erase role</ul>
+
+					<br />
+				</div>
+			</div>
+			
 			</div>
 
 			<div id="result">
@@ -316,14 +369,24 @@ ul#sortable-delete {
 
 			<aui:button-row>
 			
-				<aui:button type="submit" value="Salva Lista"/>
+				<aui:button type="submit" value="Save List"/>
 
-				<portlet:renderURL var="backURL">
-					<portlet:param name="myaction" value="editUserInfoForm" />
-					<portlet:param name="userId" value="${userId}" />
-				</portlet:renderURL>
-				<aui:button type="cancel" value="Back"
-					onClick="location.href='${backURL}';" />
+				<c:if test="${firstReg == 'true' }" >
+									<portlet:renderURL var="backURL">
+									<portlet:param name="myaction" value="showAddUserToVoPresents" />
+									<portlet:param name="userId" value="${userId}" />
+								</portlet:renderURL>
+								<aui:button type="cancel" value="Back"
+									onClick="location.href='${backURL}';" />
+								</c:if>
+								<c:if test="${firstReg != 'true' }" >
+									<portlet:renderURL var="backURL">
+										<portlet:param name="myaction" value="editUserInfoForm" />
+										<portlet:param name="userId" value="${userId}" />
+									</portlet:renderURL>
+									<aui:button type="cancel" value="Back"
+										onClick="location.href='${backURL}';" />
+								</c:if>
 
 			</aui:button-row>
 

@@ -512,7 +512,6 @@ public class UploadCertController {
 			}
 
 		} catch (GlobusCredentialException e2) {
-			// TODO Auto-generated catch block
 			e2.printStackTrace();
 		}
 
@@ -543,7 +542,7 @@ public class UploadCertController {
 			}
 
 		} catch (IOException e1) {
-			// TODO Auto-generated catch block
+			
 			e1.printStackTrace();
 		}
 

@@ -17,23 +17,25 @@ public class VOMSTest {
 
 	public static void main(String[] args) throws VOMSException, MalformedURLException, RemoteException, ServiceException {
 		
-		
-		String[] roles = VOMSAdminCallOut.getUserFQANs("/C=IT/O=INFN/OU=Personal Certificate/L=Ferrara/CN=Enrico Vianello", "/C=IT/O=INFN/CN=INFN CA", "voms-02.pd.infn.it:8443/voms/superbvo.org");
-		if(roles!=null){
-		for (int i = 0; i < roles.length; i++) {
-
-			System.out.println("roles " + i + " = " + roles[i]);
-
-		}
-		}else{
-			System.out.println("utente non trovato");
-		}
+		VOMSAdminCallOut.test();
 		
 		
-		
-			System.out.println("Utente vo trovato? " + VOMSAdminCallOut.getUser("/C=IT/O=INFN/OU=Personal Certificate/L=Ferrara/CN=Enrico Vianello", "/C=IT/O=INFN/CN=INFN CA", "voms-02.pd.infn.it:8443/voms/superbvo.org"));
-		
-	
+//		String[] roles = VOMSAdminCallOut.getUserFQANs("/C=IT/O=INFN/OU=Personal Certificate/L=Ferrara/CN=Enrico Vianello", "/C=IT/O=INFN/CN=INFN CA", "voms-02.pd.infn.it:8443/voms/superbvo.org");
+//		if(roles!=null){
+//		for (int i = 0; i < roles.length; i++) {
+//
+//			System.out.println("roles " + i + " = " + roles[i]);
+//
+//		}
+//		}else{
+//			System.out.println("utente non trovato");
+//		}
+//		
+//		
+//		
+//			System.out.println("Utente vo trovato? " + VOMSAdminCallOut.getUser("/C=IT/O=INFN/OU=Personal Certificate/L=Ferrara/CN=Enrico Vianello", "/C=IT/O=INFN/CN=INFN CA", "voms-02.pd.infn.it:8443/voms/superbvo.org"));
+//		
+//	
 		/*Date date = null;
 
 		try {
