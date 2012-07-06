@@ -46,12 +46,13 @@ public class CAOnlineController {
 		String firstReg = request.getParameter("firstReg");
 		boolean haveCert = Boolean.parseBoolean((String) request.getParameter("haveCert"));
 		
-		log.error("Ha il certificato? " + haveCert + " = "+ request.getParameter("haveCert") +" UFFA");
+		log.error("Ha il certificato? " + haveCert + " = "+ request.getParameter("haveCert") +" UFFA UFFA");
 
-		String destination = "home";
+		String destination = "showSuccessCAOnline";
 		if(haveCert)
 			destination = "showUploadCert";
 			
+		log.error("destination: " + destination);
 		
 		response.setRenderParameter("userId", userId);
 		response.setRenderParameter("username", username);

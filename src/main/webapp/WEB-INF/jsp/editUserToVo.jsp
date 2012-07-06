@@ -345,7 +345,7 @@ ul#insertHere{
 				<h3 class="ui-widget-header"><img src="<%=request.getContextPath()%>/images/delete.png" width="24" height="24"/>Trash</h3>
 				<div class="ui-widget-content">
 
-					<ul id="sortable-delete" class="sortable">Drag and drop here for erase role</ul>
+					<ul id="sortable-delete" class="sortable"><c:out value="Drag and drop here for erase role"/></ul>
 
 					<br />
 				</div>

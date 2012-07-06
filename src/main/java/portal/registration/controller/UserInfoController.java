@@ -238,6 +238,12 @@ public class UserInfoController {
 
 		try{
 			
+			UserInfo userInfo = userInfoService.findByMail(user.getEmailAddress());
+			
+			if (userInfo.getRegistrationComplete().equals("false")){
+				return;
+			}
+			
 			Role rolePowerUser = RoleLocalServiceUtil.getRole(companyId, "Power User");
 			
 			List<Role> roles = user.getRoles();

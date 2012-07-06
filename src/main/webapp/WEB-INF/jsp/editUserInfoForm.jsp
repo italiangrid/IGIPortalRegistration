@@ -432,7 +432,7 @@ div#voData {
 			</liferay-ui:search-container-row>
 			<liferay-ui:search-iterator />
 		</liferay-ui:search-container>
-		<a name="apriCert"></a>
+		<div id="apriCert"></div>
 
 		<portlet:renderURL var="uploadCertUrl">
 			<portlet:param name="myaction" value="showUploadCert" />
@@ -595,7 +595,7 @@ div#voData {
 								onClick="location.href='${voUrl}';" />-->
 			</aui:button-row>
 		</aui:form>
-		<a name="apriVo"></a>
+		<div id="apriVo"></div>
 
 	</div>
 </div>
@@ -617,7 +617,7 @@ div#voData {
 		<aui:form name="catalogForm" action="${homeUrl}">
 			<aui:button-row>
 				<aui:button type="submit" value="Changes completed" />
-				<aui:button type="button" value="Import Job Test" onClick="mysubmit();"/>
+				<aui:button type="button" value="Import Job Test" onClick="location.href='https://gridlab04.cnaf.infn.it/web/guest/job-monitor';"/>
 			</aui:button-row>
 		</aui:form>
 
@@ -644,7 +644,7 @@ div#voData {
 			<aui:button-row>
 				<aui:button type="cancel" value="Delete Account"
 								onClick="verifyDelete('${deleteURL}')" />
-				<aui:button type="button" value="Import Job Test" onClick="mysubmit();"/>
+				<aui:button type="button" value="Import Job Test" onClick="location.href='https://gridlab04.cnaf.infn.it/web/guest/job-monitor';"/>
 			</aui:button-row>
 		</aui:form>
 

@@ -35,13 +35,13 @@
 				if(hash[0]=="givenName"){
 					$("#<portlet:namespace/>firstName").attr("value",hash[1].replace("%20"," "));
 					gn=hash[1].replace("%20"," ");
-					alert(gn);
+					
 					
 				}
 				if(hash[0]=="sn"){
 					$("#<portlet:namespace/>lastName").attr("value",hash[1].replace("%20"," "));
 					sn=hash[1].replace("%20"," ");
-					alert(sn);
+					
 				}
 				/*if(hash[0]=="persistent-id"){
 					$("#<portlet:namespace/>username").attr("value",hash[1]);
@@ -77,9 +77,7 @@
 			}
 			
 			if((uid==null)&&(sn!=null)&&(gn!=null)){
-				alert(sn+"_"+gn);
 				$("#<portlet:namespace/>username").attr("value",sn.trim().toLowerCase()+gn.trim().toLowerCase());
-				alert("uid null");
 			}
 			return vars;
 		},
