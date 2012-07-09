@@ -21,11 +21,11 @@
 				hash = hashes[i].split('=');
 				vars.push(hash[0]);
 				vars[hash[0]] = hash[1];
-				
+
 				//alert(hash[0] + ": " + hash[1]);
 				//alert("prima questo");
 				if(hash[0]=="uid"){
-					
+
 					$("#<portlet:namespace/>username").attr("value",hash[1]);
 					uid=hash[1];
 				}
@@ -33,19 +33,19 @@
 					$("#<portlet:namespace/>mail").attr("value",hash[1]);
 				}
 				if(hash[0]=="givenName"){
-					$("#<portlet:namespace/>firstName").attr("value",hash[1].replace("%20"," "));
+					$("#<portlet:namespace/>firstName").attr("value",hash[1].replace(new RegExp("%20", 'g')," "));
 					gn=hash[1].replace("%20"," ");
-					
-					
+
+
 				}
 				if(hash[0]=="sn"){
-					$("#<portlet:namespace/>lastName").attr("value",hash[1].replace("%20"," "));
+					$("#<portlet:namespace/>lastName").attr("value",hash[1].replace(new RegExp("%20", 'g')," "));
 					sn=hash[1].replace("%20"," ");
-					
+
 				}
-				/*if(hash[0]=="persistent-id"){
+				if(hash[0]=="persistent-id"){
 					$("#<portlet:namespace/>username").attr("value",hash[1]);
-				}*/
+				}
 				if(hash[0]=="Shib-Application-ID"){
 					app = hash[1];
 					if(hash[1]=="app2")
@@ -53,29 +53,35 @@
 					else
 						$("#<portlet:namespace/>idpValue").attr("value","1");
 				}
+				if(hash[0]=="org-dn"){
+					//alert(hash[1]);
+					o=hash[1].replace(new RegExp("dc.", 'g'),"").replace(new RegExp(",", 'g')," ").toUpperCase();
+					//alert(o);
+				}
 				if(hash[0]=="o"){
-					o=hash[1].replace("%20"," ").replace("%C3%A0","a'").replace("%20"," ").replace("%20"," ").replace("%20"," ").replace("%20"," ");
+					//alert(hash[1]);
+					o=hash[1].replace(new RegExp("dc.", 'g'),"").replace(new RegExp(",", 'g')," ").toUpperCase();
 					//alert(o);
 				}
 				if(hash[0]=="l"){
-					l=hash[1];
-					$("#<portlet:namespace/>institute").attr("value",hash[1].toUpperCase()+"-INFN");
-					$("#<portlet:namespace/>institute").attr("readonly","true");
+					l=hash[1].toUpperCase();
+
 				}
 			}
 			//alert(l);
 			//alert(o);
-			if((o=="Istituto Nazionale di Fisica Nucleare")&&(l==null)){
-				$("#<portlet:namespace/>institute").attr("value",o);
-				$("#<portlet:namespace/>institute").attr("readonly","true");
-				//alert("sono dentro a o INFN");
-			}
-			if((o!="Istituto Nazionale di Fisica Nucleare")){
-				$("#<portlet:namespace/>institute").attr("value",o);
-				$("#<portlet:namespace/>institute").attr("readonly","true");
-				//alert("sono dentro a o");
-			}
 			
+			if((o!=null)&&(l!=null)){
+				$("#<portlet:namespace/>institute").attr("value",l+" - "+o);
+				$("#<portlet:namespace/>institute").attr("readonly","true");
+			}else if((l==null)&&(o!=null)){
+				$("#<portlet:namespace/>institute").attr("value",o);
+				$("#<portlet:namespace/>institute").attr("readonly","true");
+			}else if((l!=null)&&(o==null)){
+				$("#<portlet:namespace/>institute").attr("value",l);
+				$("#<portlet:namespace/>institute").attr("readonly","true");
+			}
+
 			if((uid==null)&&(sn!=null)&&(gn!=null)){
 				$("#<portlet:namespace/>username").attr("value",sn.trim().toLowerCase()+gn.trim().toLowerCase());
 			}
