@@ -3,6 +3,8 @@
 <script type="text/javascript">
 <!--
 	//-->
+	
+	var check=false;
 
 	function verifyPassword() {
 		var pwd1 = $("#<portlet:namespace/>password").val();
@@ -12,12 +14,53 @@
 			$("#<portlet:namespace/>password").css("background", "#ACDFA7");
 			$("#<portlet:namespace/>passwordVerify").css("background",
 					"#ACDFA7");
+			check=true;
 		} else {
 			$("#<portlet:namespace/>password").css("background", "#FDD");
 			$("#<portlet:namespace/>passwordVerify").css("background",
 					"#FF9999");
 			output = "KO";
+			check=false;
 		}
+	}
+	
+	function printCheck(element){
+		$('#'+element+'_img').remove();
+		if(!$('#'+element).val()){
+			$('#'+element).after("<img id='"+element+"_img' src='<%=request.getContextPath()%>/images/close-button2.png' width='16' height='16'  style='padding-left:5px;'/>");
+		}else{
+			$('#'+element).after("<img id='"+element+"_img' src='<%=request.getContextPath()%>/images/success.png' style='padding-left:5px;'/>");
+		}
+	}
+	
+	function validate(){
+		$(".proxyPwd").hide();
+		$(".pwd").hide();
+		$(".p12").hide();
+		allOK = true;
+		//alert(allOK);
+		if(check==false){
+			allOK = false;
+			$(".proxyPwd").show();
+			//alert(allOK);
+		}
+		//alert("valore: " + $("#<portlet:namespace/>keyPass").val());
+		//alert("check: " + !$("#<portlet:namespace/>keyPass").val());
+		if(!$("#<portlet:namespace/>keyPass").val()){
+			allOK = false;
+			$(".pwd").show();
+			//alert(allOK);
+		}
+		//alert($("#<portlet:namespace/>usercert").val());
+		//alert(!$("#<portlet:namespace/>usercert").val());
+		if(!$("#<portlet:namespace/>usercert").val()){
+			allOK = false;
+			$(".p12").show();
+			//alert(allOK);
+		}
+		//alert(allOK);
+		return allOK;
+		//return false;
 	}
 
 	$(document).ready(function() {
@@ -83,14 +126,6 @@ h5#usernameAlert {
 										pageContext.setAttribute("firstReg","false");
 											
 			%>
-			
-			<%
-
-	if(user.getScreenName() != null)
-		out.println(user.getScreenName());
-	else
-		out.println("nooooooooo");
-%>
 
 <portlet:actionURL var="uploadCertUrl">
 	<portlet:param name="myaction" value="uploadCert" />
@@ -98,15 +133,14 @@ h5#usernameAlert {
 	<portlet:param name="firstReg" value="${firstReg }" />
 </portlet:actionURL>
 
-<portlet:actionURL var="homeUrl">
-	<portlet:param name="myaction" value="goBack" />
-	<portlet:param name="userId" value="${userId }" />
-	<portlet:param name="firstReg" value="${firstReg }" />
-	<portlet:param name="username" value="${username }" />
-</portlet:actionURL>
+
+<portlet:renderURL var="homeUrl">
+	<portlet:param name="myaction" value="editUserInfoForm" />
+	<portlet:param name="userId" value="${userId}" />
+</portlet:renderURL>
 
 <aui:form name="uploadCertForm" action="${uploadCertUrl}"
-	enctype="multipart/form-data">
+	enctype="multipart/form-data" >
 	<aui:layout>
 
 		<h1 class="header-title">Upload New Certificate</h1>
@@ -117,8 +151,8 @@ h5#usernameAlert {
 			
 			
 				
-			<c:if test="${firstReg == true}">
-			<aui:column columnWidth="25">
+			
+			<aui:column columnWidth="20">
 				
 				<aui:fieldset label="Registration">
 					<br />
@@ -132,8 +166,8 @@ h5#usernameAlert {
 				<br />
 				<br />
 			</aui:column>
-			</c:if>
-			<aui:column columnWidth="25">
+			
+			<aui:column columnWidth="20" style="margin-left:30px;">
 
 				<aui:fieldset label="Upload Certificate">
 					<br />
@@ -143,14 +177,20 @@ h5#usernameAlert {
 					<aui:input name="userId" type="hidden" value="${userId}" />
 					<aui:input name="username" type="hidden" value="${username}" />
 					<aui:input name="firstReg" type="hidden" value="${firstReg}" />
-
-					<aui:input name="usercert" type="file" label="p12 format certificate"
+					
+					<div class="portlet-msg-error p12" style="display:none;">
+						Insert certificate here.
+					</div>
+					<aui:input id="usercert" name="usercert" type="file" label="p12 format certificate"
 						value="${usercert }" />
 					<!--<aui:input name="userkey" type="file" label="Chiave"
 						value="${userkey }" />-->
-
+					
+					<div class="portlet-msg-error pwd" style="display:none;">
+						Insert password of your certificate here.
+					</div>
 					<aui:input id="keyPass" name="keyPass" type="password"
-						label="Password of your certificate" />
+						label="Password of your certificate" onBlur="printCheck($(this).attr('id'));"/> 
 
 				</aui:fieldset>
 
@@ -158,20 +198,31 @@ h5#usernameAlert {
 				<br />
 			</aui:column>
 
-			<aui:column columnWidth="25">
+			<aui:column columnWidth="20" style="margin-left:30px;">
 
-				<aui:fieldset label="Security and Option">
+				<aui:fieldset label="Insert New Password">
 					<br />
 					
-					
-					Insert a password that will be used for proxy retrieval.<br/>
-					In the future we will request you only this password for using the portal.
+					<div class="portlet-msg-error proxyPwd" style="display:none;">
+						These password must be the same.
+					</div>
 					
 					<aui:input id="password" name="password" type="password"
-						label="Password" />
-
+						label="Password" onBlur="printCheck($(this).attr('id'));"/>
+					
+					<div class="portlet-msg-error proxyPwd" style="display:none;">
+						These password must be the same.
+					</div>
+					
 					<aui:input id="passwordVerify" name="passwordVerify"
-						type="password" label="Retype Password" onkeyup="verifyPassword();" />
+						type="password" label="Retype Password" onkeyup="verifyPassword();" onBlur="printCheck($(this).attr('id'));"/>
+					
+					<br />
+					
+					<div style="float:left; width: 70%;">Insert a password that will be used for proxy retrieval.<br/>
+					<strong>In the future we will request you only this password for using the portal.</strong></div>
+					<div style="float:left; width: 30%;"><img src="<%=request.getContextPath()%>/images/emblem-important.png"   /></div>
+					<div style="clear:left;"></div>
 
 					<aui:input name="primaryCert" type="hidden" value="true"/>
 
@@ -181,7 +232,7 @@ h5#usernameAlert {
 				<br />
 			</aui:column>
 
-			<aui:column columnWidth="25">
+			<aui:column columnWidth="20"  style="margin-left:30px;">
 
 				<aui:fieldset label="Note">
 					<br />
@@ -203,14 +254,24 @@ h5#usernameAlert {
 			</aui:column>
 
 			<aui:button-row>
-				<aui:button type="submit" value="Upload Certificate" />
 				
-
+				
+				<c:if test="${firstReg == false}">
+					<aui:button type="submit" value="Upload Certificate" onClick="return validate();"/>
 						<aui:button type="cancel" value="Back"
 							onClick="location.href='${homeUrl}';" />
+				</c:if>
+				
+				<c:if test="${firstReg == true}">
+					<aui:button type="submit" value="Continue" onClick="return validate();"/>
+						<aui:button type="cancel" value="Back"
+							onClick="location.href='https://halfback.cnaf.infn.it/casshib/shib/app2/login?service=https%3A%2F%2Fportal.italiangrid.it%2Fc%2Fportal%2Flogin%3Fp_l_id%3D11504';" />
+				</c:if>
 					
 
 			</aui:button-row>
+			
+			
 
 		</aui:fieldset>
 	</aui:layout>

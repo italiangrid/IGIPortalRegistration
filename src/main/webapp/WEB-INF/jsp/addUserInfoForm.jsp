@@ -24,11 +24,14 @@
 
 				//alert(hash[0] + ": " + hash[1]);
 				//alert("prima questo");
-				if(hash[0]=="uid"){
+
+				/*if(hash[0]=="uid"){
 
 					$("#<portlet:namespace/>username").attr("value",hash[1]);
 					uid=hash[1];
-				}
+
+				}*/
+
 				if(hash[0]=="mail"){
 					$("#<portlet:namespace/>mail").attr("value",hash[1]);
 				}
@@ -82,9 +85,9 @@
 				$("#<portlet:namespace/>institute").attr("readonly","true");
 			}
 
-			if((uid==null)&&(sn!=null)&&(gn!=null)){
+			/*if((uid==null)&&(sn!=null)&&(gn!=null)){
 				$("#<portlet:namespace/>username").attr("value",sn.trim().toLowerCase()+gn.trim().toLowerCase());
-			}
+			}*/
 			return vars;
 		},
 		getUrlVar : function(name) {
@@ -235,7 +238,7 @@
 			
 			//alert("sono dentro");
 			//$("#<portlet:namespace/>temp").attr("value","true");
-			window.location = "https://halfback.cnaf.infn.it/app4/index.jsp";
+			window.location = "https://halfback.cnaf.infn.it/app2/index.jsp";
 			
 		}else{
 			//alert("sono fuori");

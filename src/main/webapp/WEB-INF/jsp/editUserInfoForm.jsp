@@ -32,23 +32,23 @@
 		$("#<portlet:namespace/>voOFF").hide("slow");
 		$("#<portlet:namespace/>voOn").show("slow");
 	}
-
+	
 	function verifyDelete(url){
 		var agree=confirm("Sei sicuro di voler eliminare il tuo account?");
 		if (agree)
 			return location.href=url ;
 	}
-
+	
 	function mysubmit() {
 		//submit form
-
+		
 		$("#importTest").submit();
-
+		
 		//alert("OK");
 		//window.location = url;
 	}
-
-
+	
+	
 	$(function() {
 
 
@@ -57,11 +57,11 @@
 				return $($(this).attr("href")).html();
 			},
 			showURL: false
-
+			
 		});
 
 		});
-
+	
 
 	$(document).ready(function() {
 		//nascondiCertificatiUtente();
@@ -113,7 +113,7 @@ div#voData {
 	scope="request" />
 <jsp:useBean id="userToVoList"
 	type="java.util.List<it.italiangrid.portal.dbapi.domain.Vo>" scope="request"></jsp:useBean>
-
+	
 	<%
 			User userLF = (User) request.getAttribute(WebKeys.USER);
 		%>
@@ -152,7 +152,7 @@ div#voData {
 		message="user-username-must-same" />
 	<liferay-ui:error key="problem-update-user-liferay"
 		message="problem-update-user-liferay" />
-
+	
 	<div id="<portlet:namespace/>formOn">
 		<!-- <a href="#editUserInfoForm" onclick="mostraModificaUtente();">Modify data</a><br /> <br />  -->
 		<aui:layout>
@@ -160,7 +160,7 @@ div#voData {
 			<aui:fieldset>
 				<aui:column columnWidth="80">
 					<aui:fieldset>
-
+		
 						<table>
 							<tr>
 								<td align="right" style="margin: 0; padding: 0 1em 0 0;">User:</td>
@@ -320,8 +320,7 @@ div#voData {
 			<aui:fieldset>
 				<aui:column columnWidth="80">
 					<aui:fieldset>
-					<a href="#apriCert" onclick="mostraCertificatiUtente();">Modify
-						Certificate</a><br /> <br /> You have uploaded  
+					<a href="#apriCert" ></a> You have uploaded  
 							<c:choose>
 							<c:when test="${fn:length(certList)==0}" >
 							<span style="color:red"><strong>#<c:out value="${fn:length(certList)}" /></strong></span>
@@ -336,7 +335,7 @@ div#voData {
 							</strong>certificates<br />
 							</c:otherwise>
 							</c:choose>
-
+					
 					<c:if test="${fn:length(certList) > 0}">
 					Your defaul certificate is: <strong> <c:forEach
 								var="cert" items="${certList}">
@@ -346,7 +345,7 @@ div#voData {
 							</c:forEach> </strong>
 						<br />
 					</c:if>
-
+			
 					<br />
 					</aui:fieldset>
 				</aui:column>
@@ -364,6 +363,7 @@ div#voData {
 						<div id="footnoteCertOK" style="display:none;">All is OK.</div>
 						<div id="footnoteCertKO" style="display:none;">Add your Certificate.</div>
 					</div>
+					<a href="#apriCert" onclick="mostraCertificatiUtente();"><img src="<%=request.getContextPath()%>/images/advancedsettings.png" width="64" height="64" style="float: right; padding-right:10px;"/></a>
 					</aui:fieldset>
 				</aui:column>	
 			</aui:fieldset>
@@ -376,12 +376,12 @@ div#voData {
 
 		<a href="#cert" onclick="nascondiCertificatiUtente();">Hide</a><br />
 		<br />
-
+		
 		<%
 		    PortletURL itURL = renderResponse.createRenderURL();
 			itURL.setParameter("myaction","editUserInfoForm");
 			itURL.setParameter("userId",Integer.toString(userInfo.getUserId()));
-
+			
 		%>
 
 		<liferay-ui:search-container
@@ -400,7 +400,7 @@ div#voData {
 
 			</liferay-ui:search-container-results>
 			<liferay-ui:search-container-row
-				className="it.italiangrid.portal.dbapi.domain.Certificate"
+				className="portal.registration.domain.Certificate"
 				keyProperty="idCert" modelVar="Certificate">
 				<liferay-ui:search-container-column-text name="Subject"
 					property="subject" />
@@ -412,12 +412,12 @@ div#voData {
 
 						GregorianCalendar c = new GregorianCalendar();
 						Date oggi = c.getTime();
-
+	
 						if (cert.getExpirationDate().before(oggi)) {
 							%>
 							<span style="color:red; font-weight:bold;"><c:out value="<%=cert.getExpirationDate().toString() %>"/></span>
 							<%
-
+							
 						} else {
 							%>
 							<c:out value="<%=cert.getExpirationDate().toString() %>"/>
@@ -425,14 +425,14 @@ div#voData {
 						}
 					%>
 					</liferay-ui:search-container-column-text>
-
-
+				
+				
 				<liferay-ui:search-container-column-jsp
 					path="/WEB-INF/jsp/admin-cert-action.jsp" align="right" />
 			</liferay-ui:search-container-row>
 			<liferay-ui:search-iterator />
 		</liferay-ui:search-container>
-		<div id="apriCert"></div>
+		<a name="apriCert"></a>
 
 		<portlet:renderURL var="uploadCertUrl">
 			<portlet:param name="myaction" value="showUploadCert" />
@@ -491,7 +491,7 @@ div#voData {
 			<aui:fieldset>
 				<aui:column columnWidth="80">
 					<aui:fieldset>
-						<a href="#apriVo" onclick="mostraVoUtente();">Modify VO</a> <br /> <br />
+						<a href="#apriVo"/></a>
 						At the moment you have <strong>#<c:out
 								value="<%= Integer.toString(userToVoList.size()) %>"></c:out> </strong> VO associations.<br />
 						<c:if test="${!empty defaultVo}">
@@ -502,7 +502,7 @@ div#voData {
 							<br />Selected roles for your default VO: <strong><c:out
 									value="${fn:replace(defaultFqan,';',' ')}" /> </strong>
 						</c:if>
-
+				
 						<br /> <br />
 					</aui:fieldset>
 				</aui:column>
@@ -520,6 +520,7 @@ div#voData {
 						<div id="footnoteVOOK" style="display:none;">All is OK.</div>
 						<div id="footnoteVOKO" style="display:none;">Add a new VO.</div>
 					</div>
+					<a href="#apriVo" onclick="mostraVoUtente();"><img src="<%=request.getContextPath()%>/images/advancedsettings.png" width="64" height="64" style="float: right; padding-right:10px;"/></a>
 					</aui:fieldset>
 				</aui:column>	
 			</aui:fieldset>
@@ -530,7 +531,7 @@ div#voData {
 	<div id="<portlet:namespace/>voOFF" style="display: none;">
 
 		<a href="#vo" onclick="nascondiVoUtente();">Hide VO</a> <br /> <br />
-
+		
 
 		<liferay-ui:search-container
 			emptyResultsMessage="No VO selected"
@@ -548,16 +549,16 @@ div#voData {
 
 			</liferay-ui:search-container-results>
 			<liferay-ui:search-container-row
-				className="it.italiangrid.portal.dbapi.domain.Vo" keyProperty="idVo"
+				className="portal.registration.domain.Vo" keyProperty="idVo"
 				modelVar="Vo">
-
+				
 						<liferay-ui:search-container-column-text name="VO name"
 							property="vo" />
 						<liferay-ui:search-container-column-text name="Default VO">
 						<c:if test="${defaultVo==Vo.vo}">
-
+							
 							<img src="<%=request.getContextPath()%>/images/success.png"/>	
-
+							
 						</c:if>
 						</liferay-ui:search-container-column-text>
 						<liferay-ui:search-container-column-text name="Description"
@@ -567,7 +568,7 @@ div#voData {
 						</liferay-ui:search-container-column-text>
 						<liferay-ui:search-container-column-jsp
 							path="/WEB-INF/jsp/admin-vo-action.jsp" align="right" />
-
+					
 			</liferay-ui:search-container-row>
 			<liferay-ui:search-iterator />
 		</liferay-ui:search-container>
@@ -577,7 +578,7 @@ div#voData {
 			<portlet:param name="userId" value="${userInfo.userId}" />
 			<portlet:param name="firstReg" value="false" />
 		</portlet:renderURL>
-
+		
 		<portlet:renderURL var="voUrl">
 			<portlet:param name="myaction" value="showVOList" />
 			<portlet:param name="waif" value="editUserInfoForm" />
@@ -587,15 +588,15 @@ div#voData {
 		<aui:form name="addUserToVOForm"
 			action="${addUserToVOActionUrl}">
 
-
+			
 			<aui:button-row>
 				<aui:button type="submit" value="Add VO" />
-
+				
 				<!--<aui:button type="cancel" value="Request VO association"
 								onClick="location.href='${voUrl}';" />-->
 			</aui:button-row>
 		</aui:form>
-		<div id="apriVo"></div>
+		<a name="apriVo"></a>
 
 	</div>
 </div>
@@ -606,58 +607,46 @@ div#voData {
 
 <c:choose>
 	<c:when test="<%= request.isUserInRole("administrator") %>">
-
+	
 		<portlet:actionURL var="homeUrl">
 			<portlet:param name="myaction" value="uploadComplete" />
 			<portlet:param name="userId"
 				value="<%= request.getParameter("userId") %>" />
 		</portlet:actionURL>
-
-
+		
+		
 		<aui:form name="catalogForm" action="${homeUrl}">
 			<aui:button-row>
 				<aui:button type="submit" value="Changes completed" />
-				<aui:button type="button" value="Import Job Test" onClick="location.href='https://gridlab04.cnaf.infn.it/web/guest/job-monitor';"/>
 			</aui:button-row>
 		</aui:form>
 
-		<div style="display:none;"><form method="post" name="importTest" id="importTest" action="https://portal.italiangrid.it/web/guest/import?p_auth=<%=AuthTokenUtil.getToken(request)%>&p_p_id=wfimport_WAR_wspgrade&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-1&p_p_col_count=1&_wfimport_WAR_wspgrade_guse=doJustDoIt">
-			<input type="hidden" value="import" name="impMethode">
-			<input type="hidden" value="appl" name="impWfType">
-			<input type="hidden" value="126" name="impItemId">
-			<input type="hidden" value="https://portal.italiangrid.it/web/guest/job-monitor" name="returnPath">
-			<input type="hidden" value="JOB_gridit" name="wfimp_newRealName">
-			<input type="submit" value="Import Job Test">
-
-		</form></div>
-
 	</c:when>
 	<c:otherwise>
-
-
+		
+	
 		<portlet:actionURL var="deleteURL">
 			<portlet:param name="myaction" value="deleteByUser" /> 
 			<portlet:param name="userId" value="${userInfo.userId }" /> 
 		</portlet:actionURL>
-
+		
 		<aui:form name="catalogForm" action="${deleteUrl}">
 			<aui:button-row>
 				<aui:button type="cancel" value="Delete Account"
 								onClick="verifyDelete('${deleteURL}')" />
-				<aui:button type="button" value="Import Job Test" onClick="location.href='https://gridlab04.cnaf.infn.it/web/guest/job-monitor';"/>
+				
 			</aui:button-row>
 		</aui:form>
-
-		<div style="display:none;"><form method="post" name="importTest" id="importTest" action="https://portal.italiangrid.it/web/guest/import?p_auth=<%=AuthTokenUtil.getToken(request)%>&p_p_id=wfimport_WAR_wspgrade&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-1&p_p_col_count=1&_wfimport_WAR_wspgrade_guse=doJustDoIt">
-			<input type="hidden" value="import" name="impMethode">
-			<input type="hidden" value="appl" name="impWfType">
-			<input type="hidden" value="126" name="impItemId">
-			<input type="hidden" value="https://portal.italiangrid.it/web/guest/job-monitor" name="returnPath">
-			<input type="hidden" value="JOB_gridit" name="wfimp_newRealName">
-			<input type="submit" value="Import Job Test">
-
-		</form></div>
-
+	
 	</c:otherwise>
 
 </c:choose>
+
+
+
+
+
+
+
+
+
