@@ -320,8 +320,7 @@ div#voData {
 			<aui:fieldset>
 				<aui:column columnWidth="80">
 					<aui:fieldset>
-					<a href="#apriCert" onclick="mostraCertificatiUtente();">Modify
-						Certificate</a><br /> <br /> You have uploaded  
+					<a href="#apriCert" ></a> You have uploaded  
 							<c:choose>
 							<c:when test="${fn:length(certList)==0}" >
 							<span style="color:red"><strong>#<c:out value="${fn:length(certList)}" /></strong></span>
@@ -364,6 +363,7 @@ div#voData {
 						<div id="footnoteCertOK" style="display:none;">All is OK.</div>
 						<div id="footnoteCertKO" style="display:none;">Add your Certificate.</div>
 					</div>
+					<a href="#apriCert" onclick="mostraCertificatiUtente();"><img src="<%=request.getContextPath()%>/images/advancedsettings.png" width="64" height="64" style="float: right; padding-right:10px;"/></a>
 					</aui:fieldset>
 				</aui:column>	
 			</aui:fieldset>
@@ -491,7 +491,7 @@ div#voData {
 			<aui:fieldset>
 				<aui:column columnWidth="80">
 					<aui:fieldset>
-						<a href="#apriVo" onclick="mostraVoUtente();">Modify VO</a> <br /> <br />
+						<a href="#apriVo"/></a>
 						At the moment you have <strong>#<c:out
 								value="<%= Integer.toString(userToVoList.size()) %>"></c:out> </strong> VO associations.<br />
 						<c:if test="${!empty defaultVo}">
@@ -520,6 +520,7 @@ div#voData {
 						<div id="footnoteVOOK" style="display:none;">All is OK.</div>
 						<div id="footnoteVOKO" style="display:none;">Add a new VO.</div>
 					</div>
+					<a href="#apriVo" onclick="mostraVoUtente();"><img src="<%=request.getContextPath()%>/images/advancedsettings.png" width="64" height="64" style="float: right; padding-right:10px;"/></a>
 					</aui:fieldset>
 				</aui:column>	
 			</aui:fieldset>
@@ -617,19 +618,8 @@ div#voData {
 		<aui:form name="catalogForm" action="${homeUrl}">
 			<aui:button-row>
 				<aui:button type="submit" value="Changes completed" />
-				<aui:button type="button" value="Import Job Test" onClick="mysubmit();"/>
 			</aui:button-row>
 		</aui:form>
-		
-		<div style="display:none;"><form method="post" name="importTest" id="importTest" action="https://portal.italiangrid.it/web/guest/import?p_auth=<%=AuthTokenUtil.getToken(request)%>&p_p_id=wfimport_WAR_wspgrade&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-1&p_p_col_count=1&_wfimport_WAR_wspgrade_guse=doJustDoIt">
-			<input type="hidden" value="import" name="impMethode">
-			<input type="hidden" value="appl" name="impWfType">
-			<input type="hidden" value="126" name="impItemId">
-			<input type="hidden" value="https://portal.italiangrid.it/web/guest/job-monitor" name="returnPath">
-			<input type="hidden" value="JOB_gridit" name="wfimp_newRealName">
-			<input type="submit" value="Import Job Test">
-		
-		</form></div>
 
 	</c:when>
 	<c:otherwise>
@@ -644,19 +634,9 @@ div#voData {
 			<aui:button-row>
 				<aui:button type="cancel" value="Delete Account"
 								onClick="verifyDelete('${deleteURL}')" />
-				<aui:button type="button" value="Import Job Test" onClick="mysubmit();"/>
+				
 			</aui:button-row>
 		</aui:form>
-		
-		<div style="display:none;"><form method="post" name="importTest" id="importTest" action="https://portal.italiangrid.it/web/guest/import?p_auth=<%=AuthTokenUtil.getToken(request)%>&p_p_id=wfimport_WAR_wspgrade&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-1&p_p_col_count=1&_wfimport_WAR_wspgrade_guse=doJustDoIt">
-			<input type="hidden" value="import" name="impMethode">
-			<input type="hidden" value="appl" name="impWfType">
-			<input type="hidden" value="126" name="impItemId">
-			<input type="hidden" value="https://portal.italiangrid.it/web/guest/job-monitor" name="returnPath">
-			<input type="hidden" value="JOB_gridit" name="wfimp_newRealName">
-			<input type="submit" value="Import Job Test">
-		
-		</form></div>
 	
 	</c:otherwise>
 
