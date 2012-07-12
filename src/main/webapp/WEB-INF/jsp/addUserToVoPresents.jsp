@@ -20,6 +20,7 @@
 	}
 %>
 
+<div id="container">
 
 <portlet:renderURL var="addUserToVOActionUrl">
 	<portlet:param name="myaction" value="showAddUserToVO" />
@@ -167,3 +168,4 @@
 
 
 
+</div>

@@ -84,6 +84,8 @@ h5#usernameAlert {
 }
 </style>
 
+<div id="container">
+
 <liferay-ui:success key="user-saved-successufully"
 	message="user-saved-successufully" />
 <liferay-ui:error key="error-uploading-certificate"
@@ -265,7 +267,7 @@ h5#usernameAlert {
 				<c:if test="${firstReg == true}">
 					<aui:button type="submit" value="Continue" onClick="return validate();"/>
 						<aui:button type="cancel" value="Back"
-							onClick="location.href='https://halfback.cnaf.infn.it/casshib/shib/app2/login?service=https%3A%2F%2Fportal.italiangrid.it%2Fc%2Fportal%2Flogin%3Fp_l_id%3D11504';" />
+							onClick="location.href='https://halfback.cnaf.infn.it/casshib/shib/app4/login?service=https%3A%2F%2Fgridlab04.cnaf.infn.it%2Fc%2Fportal%2Flogin%3Fp_l_id%3D10671';" />
 				</c:if>
 					
 
@@ -276,3 +278,5 @@ h5#usernameAlert {
 		</aui:fieldset>
 	</aui:layout>
 </aui:form>
+
+</div>

@@ -1,5 +1,5 @@
 <%@ include file="/WEB-INF/jsp/init.jsp"%>
-
+<div id="container">
 <aui:form>
 	<aui:layout>
 		<aui:fieldset>		
@@ -12,3 +12,4 @@
 		</aui:fieldset>
 	</aui:layout>
 </aui:form>
+</div>

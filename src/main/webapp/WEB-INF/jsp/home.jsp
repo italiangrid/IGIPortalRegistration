@@ -108,6 +108,8 @@ div#voData {
 }
 </style>
 
+<div id="container">
+
 <portlet:renderURL var="showAddUserInfoUrl">
 	<portlet:param name="myaction" value="addUserInfoForm" />
 </portlet:renderURL>
@@ -244,3 +246,4 @@ div#voData {
 
 
 
+</div>

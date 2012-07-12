@@ -29,16 +29,7 @@ function setHaveCert(value){
 
 </script>
 
-<style>
-<!--
-
--->
-
-
-
-</style>
-
-
+<div id="container">
 
 <liferay-ui:success key="user-saved-successufully"
 	message="user-saved-successufully" />
@@ -139,3 +130,4 @@ function setHaveCert(value){
 
 
 
+</div>

@@ -36,3 +36,12 @@
 	overflow: hidden;
 	cursor: pointer;
 }
+
+#container {
+	background-color: #e4e4e4;
+	border: 1px;
+	border-style: solid;
+	border-color: #c1c1c1;
+	border-radius: 5px;
+	padding: 5px;
+}
