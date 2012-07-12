@@ -13,6 +13,8 @@
 	}
 </script>
 
+<div id="container">
+
 <%
 	if (request.getParameter("userId") != null) {
 		pageContext.setAttribute("userId",
@@ -165,7 +167,5 @@
 			name="wfimp_newRealName"> <input type="submit" value="Import">
 	</form>
 </div>
-
-
 
 </div>

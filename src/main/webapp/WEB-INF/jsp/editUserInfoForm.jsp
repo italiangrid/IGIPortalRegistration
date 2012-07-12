@@ -49,14 +49,15 @@
 	}
 	
 	function viewTooltip(url){
-		
+
 		$("#userSettings a").tooltip({
-			
+
 			bodyHandler: function() {
 				return $(url).html();
 			},
 			showURL: false
-			
+
+
 		});
 	}
 	
@@ -81,6 +82,8 @@
 		//nascondiVoUtente();
 	});
 </script>
+
+
 
 <style>
 div#personalData {
@@ -119,12 +122,18 @@ div#voData {
 	padding-right: 10px;
 	width: 24px;
 	height: 24px;
-	
 }
 
 </style>
 
-<div id="container">
+<c:choose>
+<c:when test="<%= request.isUserInRole("administrator") %>">
+	<div id="container">
+</c:when>
+<c:otherwise>
+	<div>
+</c:otherwise>
+</c:choose>
 
 <portlet:actionURL var="editUserInfoActionUrl">
 	<portlet:param name="myaction" value="editUserInfo" />
@@ -143,12 +152,13 @@ div#voData {
 	
 	<%
 			User userLF = (User) request.getAttribute(WebKeys.USER);
+			
+			String saluto= "Hi " + userLF.getFirstName();
 		%>
-	Hi <strong><c:out value="<%=userLF.getFirstName() %>"></c:out>
-		</strong>
-		<br />
-		<br />
-
+		<div id="presentation"><aui:fieldset label="<%=saluto %>"></aui:fieldset> </div>
+	
+	
+	<br/><br/>
 
 <div id="personalData">
 	<h3 class="header-title">Personal data</h3>
@@ -400,7 +410,11 @@ div#voData {
 	</div>
 
 	<div id="<portlet:namespace/>certificatiOFF" style="display: none;">
+<<<<<<< HEAD
 		
+=======
+
+>>>>>>> refs/remotes/origin/master
 		<div id="closeBox"><a href="#cert" onclick="nascondiCertificatiUtente();"><img src="<%=request.getContextPath()%>/images/close-button2.png"/></a></div>
 		<div id="closeBox"><a href="#cert" onclick="nascondiCertificatiUtente();">Hide Certificate</a></div>
 		<br /> <br /> <br />
@@ -561,7 +575,10 @@ div#voData {
 		<div id="closeBox"><a href="#vo" onclick="nascondiVoUtente();"><img src="<%=request.getContextPath()%>/images/close-button2.png"/></a></div>
 		<div id="closeBox"><a href="#vo" onclick="nascondiVoUtente();">Hide VO</a></div>
 		<br /> <br /> <br />
+<<<<<<< HEAD
 		
+=======
+>>>>>>> refs/remotes/origin/master
 		
 
 		<liferay-ui:search-container
@@ -672,6 +689,11 @@ div#voData {
 	</c:otherwise>
 
 </c:choose>
+<<<<<<< HEAD
 <div id="settingsButtonCert" style="display:none;">Edit you certficate.</div>
 <div id="settingsButtonVO" style="display:none;">Edit you VO.</div>
+=======
+<div id="settingsButtonCert" style="display:none;">Edit your certficate.</div>
+<div id="settingsButtonVO" style="display:none;">Edit your VO.</div>
+>>>>>>> refs/remotes/origin/master
 </div>

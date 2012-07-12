@@ -106,6 +106,7 @@ div#voData {
 	border-style: solid;
 	background-color: #EFEFEF;
 }
+
 </style>
 
 <div id="container">
@@ -158,12 +159,17 @@ div#voData {
 		</aui:fieldset>
 	</c:when>
 	<c:when test="<%= request.isUserInRole("administrator") %>">
-  
-  	Hi <strong><c:out
-				value="<%=((User) request.getAttribute(WebKeys.USER)).getFirstName() %>"></c:out>
-		</strong>
-		<br />
-		<br />
+	  	<div id="presentation">
+		
+			<%
+					User userLF = (User) request.getAttribute(WebKeys.USER);
+
+					String saluto= "Hi " + userLF.getFirstName();
+				%>
+		  	<aui:fieldset label="<%=saluto %>"></aui:fieldset>
+			<br />
+			<br />
+		</div>
 		
 		<div class="function">
 			<aui:fieldset>
@@ -243,7 +249,5 @@ div#voData {
 
 	</c:otherwise>
 </c:choose>
-
-
 
 </div>

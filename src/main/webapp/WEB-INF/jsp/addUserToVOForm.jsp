@@ -140,6 +140,4 @@ div.function {
 	</aui:button-row>
 </aui:form>
 
-
-
 </div>
