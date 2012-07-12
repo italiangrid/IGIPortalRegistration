@@ -20,6 +20,8 @@ div.function {
 #clear{clear:both;}
 </style>
 
+<div id="container">
+
 <portlet:renderURL var="homeUrl">
 	<portlet:param name="myaction" value="userInfos" />
 </portlet:renderURL>
@@ -135,4 +137,4 @@ div.function {
 	</aui:button-row>
 </aui:form>
 
-
+</div>

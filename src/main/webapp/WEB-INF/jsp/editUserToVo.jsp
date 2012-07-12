@@ -235,6 +235,8 @@ ul#insertHere{
 }*/
 </style>
 
+<div id="container">
+
 <portlet:actionURL var="addUserToVoActionUrl">
 	<portlet:param name="myaction" value="addFqans" />
 </portlet:actionURL>
@@ -393,3 +395,5 @@ ul#insertHere{
 		</aui:fieldset>
 	</aui:layout>
 </aui:form>
+
+</div>

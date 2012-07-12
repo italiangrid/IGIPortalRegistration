@@ -84,6 +84,8 @@ h5#usernameAlert {
 }
 </style>
 
+<div id="container">
+
 <liferay-ui:success key="user-saved-successufully"
 	message="user-saved-successufully" />
 <liferay-ui:error key="error-uploading-certificate"
@@ -238,3 +240,5 @@ h5#usernameAlert {
 		</aui:fieldset>
 	</aui:layout>
 </aui:form>
+
+</div>

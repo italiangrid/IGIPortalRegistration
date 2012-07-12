@@ -22,6 +22,8 @@ div.function {
 #clear{clear:both;}
 </style>
 
+<div id="container">
+
 <liferay-ui:error key="user-vo-list-empty" message="user-vo-list-empty"/>
 <liferay-ui:error key="no-user-found-in-VO" message="no-user-found-in-VO"/>
 <liferay-ui:error key="no-cert-for-user" message="no-cert-for-user"/>
@@ -138,5 +140,4 @@ div.function {
 	</aui:button-row>
 </aui:form>
 
-
-
+</div>

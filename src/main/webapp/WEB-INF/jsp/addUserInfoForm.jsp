@@ -256,6 +256,8 @@
 	});
 </script>
 
+<div id="container">
+
 <portlet:actionURL var="addUserInfoActionUrl">
 	<portlet:param name="myaction" value="addUserInfo" />
 </portlet:actionURL>
@@ -450,3 +452,4 @@ asked 						to upload your certificate.</div>
 </aui:form>
 
 
+</div>

@@ -48,6 +48,18 @@
 		//window.location = url;
 	}
 	
+	function viewTooltip(url){
+
+		$("#userSettings a").tooltip({
+
+			bodyHandler: function() {
+				return $(url).html();
+			},
+			showURL: false
+
+		});
+	}
+	
 	
 	$(function() {
 
@@ -69,6 +81,8 @@
 		//nascondiVoUtente();
 	});
 </script>
+
+<div id="container">
 
 <style>
 div#personalData {
@@ -95,6 +109,26 @@ div#voData {
 	border-style: solid;
 	background-color: #EFEFEF;
 }
+
+#closeBox {
+	float:right;
+	height: 24px;
+	line-height:24px;
+	
+}
+
+#closeBox img{
+	padding-left: 5px;
+	padding-right: 10px;
+	width: 24px;
+	height: 24px;
+
+}
+
+#presentation {
+	margin: 10px;
+}
+
 </style>
 
 
@@ -117,10 +151,13 @@ div#voData {
 	<%
 			User userLF = (User) request.getAttribute(WebKeys.USER);
 		%>
+
+	<div id="presentation">
 	Hi <strong><c:out value="<%=userLF.getFirstName() %>"></c:out>
 		</strong>
 		<br />
 		<br />
+	</div>
 
 
 <div id="personalData">
@@ -363,7 +400,7 @@ div#voData {
 						<div id="footnoteCertOK" style="display:none;">All is OK.</div>
 						<div id="footnoteCertKO" style="display:none;">Add your Certificate.</div>
 					</div>
-					<a href="#apriCert" onclick="mostraCertificatiUtente();"><img src="<%=request.getContextPath()%>/images/advancedsettings.png" width="64" height="64" style="float: right; padding-right:10px;"/></a>
+					<div id="userSettings"><a href="#apriCert" onclick="mostraCertificatiUtente();" onmouseover="viewTooltip('#settingsButtonCert');"><img src="<%=request.getContextPath()%>/images/advancedsettings.png" width="64" height="64" style="float: right; padding-right:10px;"/></a></div>
 					</aui:fieldset>
 				</aui:column>	
 			</aui:fieldset>
@@ -374,8 +411,9 @@ div#voData {
 
 	<div id="<portlet:namespace/>certificatiOFF" style="display: none;">
 
-		<a href="#cert" onclick="nascondiCertificatiUtente();">Hide</a><br />
-		<br />
+		<div id="closeBox"><a href="#cert" onclick="nascondiCertificatiUtente();"><img src="<%=request.getContextPath()%>/images/close-button2.png"/></a></div>
+		<div id="closeBox"><a href="#cert" onclick="nascondiCertificatiUtente();">Hide Certificate</a></div>
+		<br /> <br /> <br />
 		
 		<%
 		    PortletURL itURL = renderResponse.createRenderURL();
@@ -520,7 +558,7 @@ div#voData {
 						<div id="footnoteVOOK" style="display:none;">All is OK.</div>
 						<div id="footnoteVOKO" style="display:none;">Add a new VO.</div>
 					</div>
-					<a href="#apriVo" onclick="mostraVoUtente();"><img src="<%=request.getContextPath()%>/images/advancedsettings.png" width="64" height="64" style="float: right; padding-right:10px;"/></a>
+					<div id="userSettings"><a href="#apriVo" onclick="mostraVoUtente();" onmouseover="viewTooltip('#settingsButtonVO');"><img src="<%=request.getContextPath()%>/images/advancedsettings.png" width="64" height="64" style="float: right; padding-right:10px;"/></a></div>
 					</aui:fieldset>
 				</aui:column>	
 			</aui:fieldset>
@@ -530,7 +568,9 @@ div#voData {
 
 	<div id="<portlet:namespace/>voOFF" style="display: none;">
 
-		<a href="#vo" onclick="nascondiVoUtente();">Hide VO</a> <br /> <br />
+		<div id="closeBox"><a href="#vo" onclick="nascondiVoUtente();"><img src="<%=request.getContextPath()%>/images/close-button2.png"/></a></div>
+		<div id="closeBox"><a href="#vo" onclick="nascondiVoUtente();">Hide VO</a></div>
+		<br /> <br /> <br />
 		
 
 		<liferay-ui:search-container
@@ -641,11 +681,6 @@ div#voData {
 	</c:otherwise>
 
 </c:choose>
-
-
-
-
-
-
-
-
+<div id="settingsButtonCert" style="display:none;">Edit you certficate.</div>
+<div id="settingsButtonVO" style="display:none;">Edit you VO.</div>
+</div>

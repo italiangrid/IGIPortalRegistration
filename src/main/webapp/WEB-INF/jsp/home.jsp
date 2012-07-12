@@ -106,7 +106,14 @@ div#voData {
 	border-style: solid;
 	background-color: #EFEFEF;
 }
+
+#presentation {
+	margin: 10px;
+}
+
 </style>
+
+<div id="container">
 
 <portlet:renderURL var="showAddUserInfoUrl">
 	<portlet:param name="myaction" value="addUserInfoForm" />
@@ -168,12 +175,13 @@ div#voData {
 		</aui:fieldset>
 	</c:when>
 	<c:when test="<%= request.isUserInRole("administrator") %>">
-  
-  	Hi <strong><c:out
-				value="<%=((User) request.getAttribute(WebKeys.USER)).getFirstName() %>"></c:out>
-		</strong>
-		<br />
-		<br />
+	  	<div id="presentation">
+		  	Hi <strong><c:out
+						value="<%=((User) request.getAttribute(WebKeys.USER)).getFirstName() %>"></c:out>
+			</strong>
+			<br />
+			<br />
+		</div>
 		
 		<div class="function">
 			<aui:fieldset>
@@ -253,5 +261,6 @@ div#voData {
 	</c:otherwise>
 </c:choose>
 
+</div>
 
 

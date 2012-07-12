@@ -1,5 +1,7 @@
 <%@ include file="/WEB-INF/jsp/init.jsp"%>
 
+<div id="container">
+
 <portlet:renderURL var="homeUrl">
 	<portlet:param name="myaction" value="userInfos" />
 </portlet:renderURL>
@@ -12,3 +14,5 @@
 <br/><br/>
 
 Istruction for certificate request.
+
+</div>

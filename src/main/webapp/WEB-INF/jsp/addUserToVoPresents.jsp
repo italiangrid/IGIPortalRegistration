@@ -14,6 +14,8 @@
 
 </script>
 
+<div id="container">
+
 <%
 if (request.getParameter("userId") != null){
 	pageContext.setAttribute("userId",request.getParameter("userId"));
@@ -159,5 +161,4 @@ if (request.getParameter("userId") != null){
 	</form>
 </div>
 
-
-
+</div>
