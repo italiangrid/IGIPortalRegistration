@@ -82,7 +82,7 @@
 	});
 </script>
 
-<div id="container">
+
 
 <style>
 div#personalData {
@@ -125,13 +125,15 @@ div#voData {
 
 }
 
-#presentation {
-	margin: 10px;
-}
-
 </style>
-
-
+<c:choose>
+<c:when test="<%= request.isUserInRole("administrator") %>">
+	<div id="container">
+</c:when>
+<c:otherwise>
+	<div>
+</c:otherwise>
+</c:choose>
 
 <portlet:actionURL var="editUserInfoActionUrl">
 	<portlet:param name="myaction" value="editUserInfo" />
@@ -150,15 +152,13 @@ div#voData {
 	
 	<%
 			User userLF = (User) request.getAttribute(WebKeys.USER);
+			
+			String saluto= "Hi " + userLF.getFirstName();
 		%>
-
-	<div id="presentation">
-	Hi <strong><c:out value="<%=userLF.getFirstName() %>"></c:out>
-		</strong>
-		<br />
-		<br />
-	</div>
-
+		<div id="presentation"><aui:fieldset label="<%=saluto %>"></aui:fieldset> </div>
+	
+	
+	<br/><br/>
 
 <div id="personalData">
 	<h3 class="header-title">Personal data</h3>
@@ -681,6 +681,6 @@ div#voData {
 	</c:otherwise>
 
 </c:choose>
-<div id="settingsButtonCert" style="display:none;">Edit you certficate.</div>
-<div id="settingsButtonVO" style="display:none;">Edit you VO.</div>
+<div id="settingsButtonCert" style="display:none;">Edit your certficate.</div>
+<div id="settingsButtonVO" style="display:none;">Edit your VO.</div>
 </div>
