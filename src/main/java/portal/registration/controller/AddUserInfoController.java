@@ -106,6 +106,18 @@ public class AddUserInfoController {
 						log.info("Settato idp "
 								+ Integer.parseInt(request
 										.getParameter("idpId")));
+						
+						String newUsername = "";
+						char[] chars = userInfo.getUsername().toCharArray();
+						
+						for(int i=0; i<chars.length; i++){
+							if(Character.isLetterOrDigit(chars[i]))
+								newUsername+=chars[i];
+							else
+								newUsername+='_';
+						}
+						
+						userInfo.setUsername(newUsername);
 
 						try {
 
