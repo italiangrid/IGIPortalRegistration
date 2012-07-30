@@ -33,6 +33,16 @@
 		$("#<portlet:namespace/>voOn").show("slow");
 	}
 	
+	function mostraAdvSetUtente() {
+		$("#<portlet:namespace/>advSetOff").show("slow");
+		$("#<portlet:namespace/>advSetOn").hide("slow");
+	}
+
+	function nascondiAdvSetUtente() {
+		$("#<portlet:namespace/>advSetOff").hide("slow");
+		$("#<portlet:namespace/>advSetOn").show("slow");
+	}
+	
 	function verifyDelete(url){
 		var agree=confirm("Sei sicuro di voler eliminare il tuo account?");
 		if (agree)
@@ -104,6 +114,15 @@ div#certificateData {
 }
 
 div#voData {
+	margin: 3px 0 3px 0;
+	padding: 1em;
+	border: 1px;
+	border-color: #C8C9CA;
+	border-style: solid;
+	background-color: #EFEFEF;
+}
+
+div#advancedSettings {
 	padding: 1em;
 	border: 1px;
 	border-color: #C8C9CA;
@@ -410,11 +429,7 @@ div#voData {
 	</div>
 
 	<div id="<portlet:namespace/>certificatiOFF" style="display: none;">
-<<<<<<< HEAD
-		
-=======
 
->>>>>>> refs/remotes/origin/master
 		<div id="closeBox"><a href="#cert" onclick="nascondiCertificatiUtente();"><img src="<%=request.getContextPath()%>/images/close-button2.png"/></a></div>
 		<div id="closeBox"><a href="#cert" onclick="nascondiCertificatiUtente();">Hide Certificate</a></div>
 		<br /> <br /> <br />
@@ -468,9 +483,11 @@ div#voData {
 					%>
 					</liferay-ui:search-container-column-text>
 				
-				
-				<liferay-ui:search-container-column-jsp
+				<c:if test="${certCAonline == 'false' }">
+					<liferay-ui:search-container-column-jsp
 					path="/WEB-INF/jsp/admin-cert-action.jsp" align="right" />
+				</c:if>
+				
 			</liferay-ui:search-container-row>
 			<liferay-ui:search-iterator />
 		</liferay-ui:search-container>
@@ -575,10 +592,7 @@ div#voData {
 		<div id="closeBox"><a href="#vo" onclick="nascondiVoUtente();"><img src="<%=request.getContextPath()%>/images/close-button2.png"/></a></div>
 		<div id="closeBox"><a href="#vo" onclick="nascondiVoUtente();">Hide VO</a></div>
 		<br /> <br /> <br />
-<<<<<<< HEAD
-		
-=======
->>>>>>> refs/remotes/origin/master
+
 		
 
 		<liferay-ui:search-container
@@ -614,8 +628,11 @@ div#voData {
 						<liferay-ui:search-container-column-text name="Roles"> 
 							<c:out value="${fn:replace(userFqans[Vo.idVo],';',' ')}"></c:out>
 						</liferay-ui:search-container-column-text>
-						<liferay-ui:search-container-column-jsp
+						<c:if test="${certCAonline == 'false' }">
+							<liferay-ui:search-container-column-jsp
 							path="/WEB-INF/jsp/admin-vo-action.jsp" align="right" />
+						</c:if>
+						
 					
 			</liferay-ui:search-container-row>
 			<liferay-ui:search-iterator />
@@ -646,6 +663,42 @@ div#voData {
 		</aui:form>
 		<a name="apriVo"></a>
 
+	</div>
+</div>
+<div id="advancedSettings">
+
+	<h3 class="header-title">Advanced Settings</h3>
+	
+	<div id="<portlet:namespace/>advSetOn">
+	
+		<aui:layout>
+
+			<aui:fieldset>
+				<aui:column columnWidth="80">
+					<aui:fieldset>
+					
+						Notification settings.
+				
+						<br /> <br />
+					</aui:fieldset>
+				</aui:column>
+				<aui:column columnWidth="20">
+					<aui:fieldset>
+						<div id="userSettings"><a href="#apriAdvSet" onclick="mostraAdvSetUtente();" onmouseover="viewTooltip('#settingsButtonAdv');"><img src="<%=request.getContextPath()%>/images/advancedsettings.png" width="24" height="24" style="float: right; padding-right:10px;"/></a></div>
+					</aui:fieldset>
+				</aui:column>	
+			</aui:fieldset>
+		</aui:layout>
+		
+	</div>
+	<div id="<portlet:namespace/>advSetOff" style="display: none;">
+		<div id="closeBox"><a href="#advSet" onclick="nascondiAdvSetUtente();"><img src="<%=request.getContextPath()%>/images/close-button2.png"/></a></div>
+		<div id="closeBox"><a href="#advSet" onclick="nascondiAdvSetUtente();">Hide Settings</a></div>
+		<br /> <br /> <br />
+		
+		Select Advanced settings
+		
+		<a name="apriAdvSet"></a>
 	</div>
 </div>
 
@@ -689,11 +742,8 @@ div#voData {
 	</c:otherwise>
 
 </c:choose>
-<<<<<<< HEAD
-<div id="settingsButtonCert" style="display:none;">Edit you certficate.</div>
-<div id="settingsButtonVO" style="display:none;">Edit you VO.</div>
-=======
+
+<div id="settingsButtonAdv" style="display:none;">Edit your Advanced Settings.</div>
 <div id="settingsButtonCert" style="display:none;">Edit your certficate.</div>
 <div id="settingsButtonVO" style="display:none;">Edit your VO.</div>
->>>>>>> refs/remotes/origin/master
-</div>
+

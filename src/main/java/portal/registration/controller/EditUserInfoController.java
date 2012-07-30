@@ -245,5 +245,28 @@ public class EditUserInfoController {
 
 		return x;
 	}
+	
+	/**
+	 * Return to the portlet true if the user certificate was released by the CA online.
+	 * 
+	 * @param request
+	 *            : session parameter.
+	 * @return true if the user certificate was released by the CA online.
+	 */
+	@ModelAttribute("certCAonline")
+	public boolean getCertCAonline(@RequestParam int userId) {
+
+		UserInfo userInfo = userInfoService.findById(userId);
+		List<Certificate> certs = certificateService.findById(userInfo.getUserId());
+
+		for (Iterator<Certificate> iterator = certs.iterator(); iterator.hasNext();) {
+			Certificate cert = iterator.next();
+			if(cert.getCaonline().equals("true"))
+				return true;
+
+		}
+
+		return false;
+	}
 
 }
