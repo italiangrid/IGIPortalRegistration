@@ -38,11 +38,13 @@ import com.liferay.portal.util.PortalUtil;
 //import portal.registration.services.CertificateService;
 //import portal.registration.services.UserInfoService;
 //import portal.registration.services.UserToVoService;
+import it.italiangrid.portal.dbapi.domain.Notify;
 import it.italiangrid.portal.dbapi.domain.UserToVo;
 import it.italiangrid.portal.dbapi.domain.UserInfo;
 import it.italiangrid.portal.dbapi.domain.Certificate;
 import it.italiangrid.portal.dbapi.domain.Vo;
 import it.italiangrid.portal.dbapi.services.CertificateService;
+import it.italiangrid.portal.dbapi.services.NotifyService;
 import it.italiangrid.portal.dbapi.services.UserInfoService;
 import it.italiangrid.portal.dbapi.services.UserToVoService;
 import portal.registration.utils.MyValidator;
@@ -57,6 +59,9 @@ public class EditUserInfoController {
 
 	@Autowired
 	private UserInfoService userInfoService;
+	
+	@Autowired
+	private NotifyService notifyService;
 
 	@Autowired
 	private CertificateService certificateService;
@@ -267,6 +272,36 @@ public class EditUserInfoController {
 		}
 
 		return false;
+	}
+	
+	/**
+	 * Return to the portlet the advanced configurations of the user.
+	 * 
+	 * @param request
+	 *            : session parameter.
+	 * @return true if the user certificate was released by the CA online.
+	 */
+	@ModelAttribute("advOpts")
+	public Notify getAdvOpts(@RequestParam int userId) {
+
+		UserInfo userInfo = userInfoService.findById(userId);
+		return notifyService.findByUserInfo(userInfo);
+	}
+	
+	@ActionMapping(params = "myaction=updateAdvOpts")
+	public void updateAdvOpts(@ModelAttribute("advOpts") Notify notify,
+			ActionRequest request, ActionResponse response,
+			SessionStatus sessionStatus) {
+
+		Notify n = notifyService.findById(notify.getIdNotify());
+		log.error("session id= "+ notify.getIdNotify()+" retrived: "+n.getIdNotify());
+		n.setProxyExpire(notify.getProxyExpire());
+		log.error("session value= "+ notify.getProxyExpire()+" retrived: "+n.getProxyExpire());
+		notifyService.save(n);
+		response.setRenderParameter("myaction", "editUserInfoForm");
+		response.setRenderParameter("userId",
+				request.getParameter("userId"));
+
 	}
 
 }

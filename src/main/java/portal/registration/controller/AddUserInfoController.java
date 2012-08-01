@@ -15,8 +15,10 @@ import org.apache.log4j.Logger;
 //import portal.registration.services.IdpService;
 //import portal.registration.services.UserInfoService;
 import it.italiangrid.portal.dbapi.domain.Idp;
+import it.italiangrid.portal.dbapi.domain.Notify;
 import it.italiangrid.portal.dbapi.domain.UserInfo;
 import it.italiangrid.portal.dbapi.services.IdpService;
+import it.italiangrid.portal.dbapi.services.NotifyService;
 import it.italiangrid.portal.dbapi.services.UserInfoService;
 import portal.registration.utils.LongNumberEditor;
 import portal.registration.utils.MyValidator;
@@ -58,6 +60,9 @@ public class AddUserInfoController {
 
 	@Autowired
 	private IdpService idpService;
+	
+	@Autowired
+	private NotifyService notifyService;
 
 	@Autowired
 	private UserInfoService userInfoService;
@@ -112,6 +117,18 @@ public class AddUserInfoController {
 						log.info("Settato idp "
 								+ Integer.parseInt(request
 										.getParameter("idpId")));
+						
+						String newUsername = "";
+						char[] chars = userInfo.getUsername().toCharArray();
+						
+						for(int i=0; i<chars.length; i++){
+							if(Character.isLetterOrDigit(chars[i]))
+								newUsername+=chars[i];
+							else
+								newUsername+='_';
+						}
+						
+						userInfo.setUsername(newUsername);
 						
 						try {
 
@@ -173,6 +190,10 @@ public class AddUserInfoController {
 
 								log.info("Utente aggiunto in PortalUsert con UserId = "
 										+ userId);
+								
+								Notify notify = new Notify(userInfo);
+								
+								notifyService.save(notify);
 
 							} catch (Exception e) {
 

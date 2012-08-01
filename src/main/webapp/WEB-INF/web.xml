@@ -19,6 +19,10 @@
 	
 	<!-- <listener>
 		<listener-class>portal.registration.server.PortalContextListener</listener-class>
-	</listener> -->
+	</listener> 
+	
+	<listener>
+		<listener-class>portal.registration.server.NotificationCenter</listener-class>
+	</listener>  -->
 	
 </web-app>

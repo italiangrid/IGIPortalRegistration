@@ -157,6 +157,9 @@ div#advancedSettings {
 <portlet:actionURL var="editUserInfoActionUrl">
 	<portlet:param name="myaction" value="editUserInfo" />
 </portlet:actionURL>
+<portlet:actionURL var="updateAdvOptsActionUrl">
+	<portlet:param name="myaction" value="updateAdvOpts" />
+</portlet:actionURL>
 <portlet:renderURL var="homeUrl">
 	<portlet:param name="myaction" value="userInfos" />
 </portlet:renderURL>
@@ -491,7 +494,7 @@ div#advancedSettings {
 			</liferay-ui:search-container-row>
 			<liferay-ui:search-iterator />
 		</liferay-ui:search-container>
-		<a name="apriCert"></a>
+		<div id="apriCert"></div>
 
 		<portlet:renderURL var="uploadCertUrl">
 			<portlet:param name="myaction" value="showUploadCert" />
@@ -661,7 +664,7 @@ div#advancedSettings {
 								onClick="location.href='${voUrl}';" />-->
 			</aui:button-row>
 		</aui:form>
-		<a name="apriVo"></a>
+		<div id="apriVo"></div>
 
 	</div>
 </div>
@@ -694,11 +697,49 @@ div#advancedSettings {
 	<div id="<portlet:namespace/>advSetOff" style="display: none;">
 		<div id="closeBox"><a href="#advSet" onclick="nascondiAdvSetUtente();"><img src="<%=request.getContextPath()%>/images/close-button2.png"/></a></div>
 		<div id="closeBox"><a href="#advSet" onclick="nascondiAdvSetUtente();">Hide Settings</a></div>
-		<br /> <br /> <br />
+		<br /> <br />
 		
-		Select Advanced settings
+			<aui:layout>
+
+				<aui:fieldset>
+					<aui:column columnWidth="50">
+						<aui:fieldset label="Notification">
+							<aui:form name="editUserInfoForm" commandName="advOpts"
+								action="${updateAdvOptsActionUrl}">
+								<br></br>
+	
+								<aui:input name="idNotify" type="hidden"
+									value="${advOpts.idNotify }" />
+									
+								<aui:input name="userId" type="hidden"
+								value="<%=userInfo.getUserId() %>" />
+								
+								<aui:input name="proxyExpire" type="checkbox"
+									label="Check if you want a notify mail befor proxy expiration" checked="${advOpts.proxyExpire }" />
+								
+								<br/> <br/>
+								<aui:button-row>
+									<aui:button type="submit" />
+								</aui:button-row>
+							</aui:form>
+						</aui:fieldset>
+					</aui:column>
+
+					<aui:column columnWidth="50">
+						<aui:fieldset label="Job Notification">
+							<br></br>
+							
+							Under costruction.
+							
+						</aui:fieldset>
+					</aui:column>
+
+					
+				</aui:fieldset>
+			</aui:layout>
 		
-		<a name="apriAdvSet"></a>
+		
+		<div id="apriAdvSet"></div>
 	</div>
 </div>
 
@@ -746,4 +787,6 @@ div#advancedSettings {
 <div id="settingsButtonAdv" style="display:none;">Edit your Advanced Settings.</div>
 <div id="settingsButtonCert" style="display:none;">Edit your certficate.</div>
 <div id="settingsButtonVO" style="display:none;">Edit your VO.</div>
+
+</div>
 
