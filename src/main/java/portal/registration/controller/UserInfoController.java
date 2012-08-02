@@ -312,10 +312,10 @@ public class UserInfoController {
 		GuseNotify guseNotify=null;
 		
 		User user = (User) request.getAttribute(WebKeys.USER);
-		GuseNotifyUtil guseNotifyUtil = new GuseNotifyUtil();
-		
-		guseNotify = guseNotifyUtil.readNotifyXML(user.getUserId());
-		
+		if(user!=null){
+			GuseNotifyUtil guseNotifyUtil = new GuseNotifyUtil();
+			guseNotify = guseNotifyUtil.readNotifyXML(user.getUserId());
+		}
 		return guseNotify;
 	}
 	
@@ -331,8 +331,8 @@ public class UserInfoController {
 	public Notify getAdvOpts(RenderRequest request) {
 		User user = (User) request.getAttribute(WebKeys.USER);
 		if (user != null) {
-		UserInfo userInfo = userInfoService.findByUsername(user.getScreenName());
-		return notifyService.findByUserInfo(userInfo);
+			UserInfo userInfo = userInfoService.findByUsername(user.getScreenName());
+			return notifyService.findByUserInfo(userInfo);
 		}
 		return null;
 	}
