@@ -109,7 +109,7 @@ div#voData {
 
 </style>
 
-<div id="container">
+
 
 <portlet:renderURL var="showAddUserInfoUrl">
 	<portlet:param name="myaction" value="addUserInfoForm" />
@@ -135,6 +135,7 @@ div#voData {
 
 <c:choose>
 	<c:when test="<%= !themeDisplay.isSignedIn() %>"> 
+		<div id="container">
 		<aui:fieldset>
 		<aui:column columnWidth="75">
 	    <div style="text-align: justify">
@@ -157,8 +158,10 @@ div#voData {
 		</aui:form>
 		</aui:column>
 		</aui:fieldset>
+		</div>
 	</c:when>
 	<c:when test="<%= request.isUserInRole("administrator") %>">
+		<div id="container">
 	  	<div id="presentation">
 		
 			<%
@@ -241,7 +244,7 @@ div#voData {
 		</liferay-ui:search-container>
 		</div>
 		
-
+		</div>
 	</c:when>
 	<c:otherwise>
 
@@ -250,4 +253,4 @@ div#voData {
 	</c:otherwise>
 </c:choose>
 
-</div>
+

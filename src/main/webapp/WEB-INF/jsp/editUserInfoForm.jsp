@@ -145,20 +145,25 @@ div#advancedSettings {
 
 </style>
 
-<c:choose>
+<%-- <c:choose>
 <c:when test="<%= request.isUserInRole("administrator") %>">
 	<div id="container">
 </c:when>
 <c:otherwise>
 	<div>
 </c:otherwise>
-</c:choose>
+</c:choose> --%>
+
+<div id="container">
 
 <portlet:actionURL var="editUserInfoActionUrl">
 	<portlet:param name="myaction" value="editUserInfo" />
 </portlet:actionURL>
 <portlet:actionURL var="updateAdvOptsActionUrl">
 	<portlet:param name="myaction" value="updateAdvOpts" />
+</portlet:actionURL>
+<portlet:actionURL var="updateGuseNotifyActionUrl">
+	<portlet:param name="myaction" value="updateGuseNotify" />
 </portlet:actionURL>
 <portlet:renderURL var="homeUrl">
 	<portlet:param name="myaction" value="userInfos" />
@@ -707,7 +712,7 @@ div#advancedSettings {
 							<aui:form name="editUserInfoForm" commandName="advOpts"
 								action="${updateAdvOptsActionUrl}">
 								<br></br>
-	
+								
 								<aui:input name="idNotify" type="hidden"
 									value="${advOpts.idNotify }" />
 									
@@ -717,7 +722,7 @@ div#advancedSettings {
 								<aui:input name="proxyExpire" type="checkbox"
 									label="Check if you want a notify mail befor proxy expiration" checked="${advOpts.proxyExpire }" />
 								
-								<br/> <br/>
+								
 								<aui:button-row>
 									<aui:button type="submit" />
 								</aui:button-row>
@@ -727,9 +732,51 @@ div#advancedSettings {
 
 					<aui:column columnWidth="50">
 						<aui:fieldset label="Job Notification">
-							<br></br>
-							
-							Under costruction.
+							<aui:form name="guseNotifyForm" commandName="notification"
+								action="${updateGuseNotifyActionUrl}">
+								<br></br>
+	
+								<aui:input name="emailAddr" type="hidden"
+									value="${notification.emailAddr }" />
+									
+								<aui:input name="userId" type="hidden"
+								value="<%=userInfo.getUserId() %>" />
+								
+							 	<aui:input name="emailEnab" type="hidden"
+									value="${notification.emailEnab }" />
+									
+								<aui:input name="emailSubj" type="text"
+									label="Email Subject:" value="${notification.emailSubj }" />
+								
+								<aui:input name="wfchgEnab" type="checkbox"
+									label="Check if you want a notify mail on workflow status changing" checked="${notification.wfchgEnab }" />
+									
+								<aui:fieldset>
+									<aui:column columnWidth="70">
+										<aui:input name="wfchgMess" type="textarea" rows="7" cols="70"
+											label="Insert your message here" value="${notification.wfchgMess }" />
+									</aui:column>
+									<aui:column columnWidth="30">
+										<br/> <strong>key list:</strong> <br/>
+										#now# <br/>
+										#portal# <br/>
+										#workflow# <br/>
+										#instance# <br/>
+										#oldstatus# <br/>
+										#newstatus# 
+									</aui:column>
+								</aui:fieldset>
+									
+								<aui:input name="quotaMess" type="hidden"
+									value="${notification.quotaMess }" />
+								
+								<aui:input name="quotaEnab" type="hidden"
+									value="${notification.quotaEnab }" />
+								
+								<aui:button-row>
+									<aui:button type="submit" />
+								</aui:button-row>
+							</aui:form>
 							
 						</aui:fieldset>
 					</aui:column>

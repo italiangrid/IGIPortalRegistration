@@ -9,7 +9,6 @@ import java.util.Properties;
 import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
 import javax.portlet.RenderRequest;
-
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -31,13 +30,6 @@ import com.liferay.portal.service.RoleLocalServiceUtil;
 import com.liferay.portal.service.UserLocalServiceUtil;
 import com.liferay.portal.util.PortalUtil;
 
-//import portal.registration.domain.UserToVo;
-//import portal.registration.domain.UserInfo;
-//import portal.registration.domain.Certificate;
-//import portal.registration.domain.Vo;
-//import portal.registration.services.CertificateService;
-//import portal.registration.services.UserInfoService;
-//import portal.registration.services.UserToVoService;
 import it.italiangrid.portal.dbapi.domain.Notify;
 import it.italiangrid.portal.dbapi.domain.UserToVo;
 import it.italiangrid.portal.dbapi.domain.UserInfo;
@@ -47,6 +39,8 @@ import it.italiangrid.portal.dbapi.services.CertificateService;
 import it.italiangrid.portal.dbapi.services.NotifyService;
 import it.italiangrid.portal.dbapi.services.UserInfoService;
 import it.italiangrid.portal.dbapi.services.UserToVoService;
+import portal.registration.utils.GuseNotify;
+import portal.registration.utils.GuseNotifyUtil;
 import portal.registration.utils.MyValidator;
 
 @Controller
@@ -55,11 +49,11 @@ import portal.registration.utils.MyValidator;
 public class EditUserInfoController {
 
 	private static final Logger log = Logger
-			.getLogger(AddUserInfoController.class);
+			.getLogger(EditUserInfoController.class);
 
 	@Autowired
 	private UserInfoService userInfoService;
-	
+
 	@Autowired
 	private NotifyService notifyService;
 
@@ -208,20 +202,11 @@ public class EditUserInfoController {
 		return userToVoService.findVoByUserId(userId);
 	}
 
-	@ActionMapping(params = "myaction=uploadComplete")
-	public void uploadComplete(ActionResponse response,
-			SessionStatus sessionStatus) {
-
-		response.setRenderParameter("myaction", "userInfos");
-		sessionStatus.setComplete();
-
-	}
-
 	/**
 	 * Return to the portlet the list of the user's fqans.
 	 * 
-	 * @param request
-	 *            : session parameter.
+	 * @param userId
+	 *            : the identifier of the user.
 	 * @return the list of the user's fqans.
 	 */
 	@ModelAttribute("userFqans")
@@ -237,7 +222,7 @@ public class EditUserInfoController {
 		for (Iterator<UserToVo> iterator = utv.iterator(); iterator.hasNext();) {
 			UserToVo userToVo = iterator.next();
 			toParse = userToVo.getFqans();
-			
+
 			if ((toParse != null) && (!toParse.equals(""))) {
 
 				x.put(userToVo.getId().getIdVo(), toParse);
@@ -250,28 +235,110 @@ public class EditUserInfoController {
 
 		return x;
 	}
-	
+
 	/**
-	 * Return to the portlet true if the user certificate was released by the CA online.
+	 * Return to the portlet true if the user certificate was released by the CA
+	 * online.
 	 * 
-	 * @param request
-	 *            : session parameter.
+	 * @param userId
+	 *            : the identifier of the user.
 	 * @return true if the user certificate was released by the CA online.
 	 */
 	@ModelAttribute("certCAonline")
 	public boolean getCertCAonline(@RequestParam int userId) {
 
 		UserInfo userInfo = userInfoService.findById(userId);
-		List<Certificate> certs = certificateService.findById(userInfo.getUserId());
+		List<Certificate> certs = certificateService.findById(userInfo
+				.getUserId());
 
-		for (Iterator<Certificate> iterator = certs.iterator(); iterator.hasNext();) {
+		for (Iterator<Certificate> iterator = certs.iterator(); iterator
+				.hasNext();) {
 			Certificate cert = iterator.next();
-			if(cert.getCaonline().equals("true"))
+			if (cert.getCaonline().equals("true"))
 				return true;
 
 		}
 
 		return false;
+	}
+
+	/**
+	 * Return to the portlet the advanced configurations of the user.
+	 * 
+	 * @param userId
+	 *            : the identifier of the user.
+	 * @return an object that contain the value of the advanced configurations.
+	 */
+	@ModelAttribute("advOpts")
+	public Notify getAdvOpts(@RequestParam int userId) {
+
+		UserInfo userInfo = userInfoService.findById(userId);
+		
+		if(notifyService.findByUserInfo(userInfo)==null)
+			return new Notify(userInfo,"false");
+		return notifyService.findByUserInfo(userInfo);
+	}
+
+	
+	
+	
+	
+	
+	
+
+	@ActionMapping(params = "myaction=uploadComplete")
+	public void uploadComplete(ActionResponse response,
+			SessionStatus sessionStatus) {
+
+		response.setRenderParameter("myaction", "userInfos");
+		sessionStatus.setComplete();
+
+	}
+	
+	/**
+	 * Update the user's row of the table notification.
+	 * 
+	 * @param notify
+	 *            : the object that contain the advanced options
+	 * @param request
+	 *            : the request of the portlet
+	 * @param response
+	 *            : the response of the portlet
+	 * @param sessionStatus
+	 *            : the status of the portlet
+	 */
+	@ActionMapping(params = "myaction=updateGuseNotify")
+	public void updateGuseNotify(@ModelAttribute("notification") GuseNotify guseNotify,
+			ActionRequest request, ActionResponse response,
+			SessionStatus sessionStatus) {
+		
+		UserInfo userInfo = userInfoService.findById(Integer.valueOf(request.getParameter("userId")));
+		userInfoService.save(userInfo);
+		String username = userInfo.getUsername();
+		long companyId = PortalUtil.getCompanyId(request);
+		
+		try {
+			User user = UserLocalServiceUtil.getUserByScreenName(companyId,
+					username);
+			
+			GuseNotifyUtil guseNotifyUtil = new GuseNotifyUtil();
+			
+			guseNotify.setWfchgEnab((request.getParameter("wfchgEnab").equals("true")?"1":"0"));
+			guseNotify.setEmailEnab((request.getParameter("wfchgEnab").equals("true")?"1":"0"));
+			guseNotify.setQuotaEnab((request.getParameter("quotaEnab").equals("true")?"1":"0"));
+			
+			guseNotifyUtil.writeNotifyXML(user, guseNotify);
+			
+			
+		} catch (PortalException e) {
+			e.printStackTrace();
+		} catch (SystemException e) {
+			e.printStackTrace();
+		}	
+		response.setRenderParameter("myaction", "editUserInfoForm");
+		response.setRenderParameter("userId", request.getParameter("userId"));
+		sessionStatus.setComplete();
+
 	}
 	
 	/**
@@ -279,29 +346,72 @@ public class EditUserInfoController {
 	 * 
 	 * @param request
 	 *            : session parameter.
-	 * @return true if the user certificate was released by the CA online.
+	 * @return an object that contain the value of the advanced configurations.
 	 */
-	@ModelAttribute("advOpts")
-	public Notify getAdvOpts(@RequestParam int userId) {
-
+	@ModelAttribute("notification")
+	public GuseNotify getGuseNotifications(@RequestParam int userId) {
+		
 		UserInfo userInfo = userInfoService.findById(userId);
-		return notifyService.findByUserInfo(userInfo);
+		String username = userInfo.getUsername();
+		long companyId = PortalUtil.getPortal().getCompanyIds()[0];
+		
+		log.debug("companyId " + companyId);
+		
+		GuseNotify guseNotify=null;
+		
+		try {
+			User user = UserLocalServiceUtil.getUserByScreenName(companyId,
+					username);
+			GuseNotifyUtil guseNotifyUtil = new GuseNotifyUtil();
+			
+			guseNotify = guseNotifyUtil.readNotifyXML(user.getUserId());
+		} catch (PortalException e) {
+			e.printStackTrace();
+		} catch (SystemException e) {
+			e.printStackTrace();
+		}
+		
+		
+		return guseNotify;
 	}
 	
+	/**
+	 * Update the user's row of the table notification.
+	 * 
+	 * @param notify
+	 *            : the object that contain the advanced options
+	 * @param request
+	 *            : the request of the portlet
+	 * @param response
+	 *            : the response of the portlet
+	 * @param sessionStatus
+	 *            : the status of the portlet
+	 */
 	@ActionMapping(params = "myaction=updateAdvOpts")
 	public void updateAdvOpts(@ModelAttribute("advOpts") Notify notify,
 			ActionRequest request, ActionResponse response,
 			SessionStatus sessionStatus) {
-
-		Notify n = notifyService.findById(notify.getIdNotify());
-		log.error("session id= "+ notify.getIdNotify()+" retrived: "+n.getIdNotify());
-		n.setProxyExpire(notify.getProxyExpire());
-		log.error("session value= "+ notify.getProxyExpire()+" retrived: "+n.getProxyExpire());
+		UserInfo userInfo = userInfoService.findById(Integer.parseInt(request.getParameter("userId")));
+		Notify n = notifyService.findByUserInfo(userInfo);
+		if(n!=null){
+			
+			log.debug("session id= " + notify.getIdNotify() + " retrived: "
+					+ n.getIdNotify());
+			n.setProxyExpire(notify.getProxyExpire());
+			log.debug("session value= " + notify.getProxyExpire() + " retrived: "
+					+ n.getProxyExpire());
+		}else{
+			log.debug("New entry");
+			n = new Notify(userInfo, notify.getProxyExpire());
+			log.debug("session value= " + notify.getProxyExpire() + " retrived: "
+					+ n.getProxyExpire());
+		}
 		notifyService.save(n);
+		
 		response.setRenderParameter("myaction", "editUserInfoForm");
-		response.setRenderParameter("userId",
-				request.getParameter("userId"));
+		response.setRenderParameter("userId", request.getParameter("userId"));
 
 	}
+	
 
 }

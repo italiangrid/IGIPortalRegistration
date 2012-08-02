@@ -1,5 +1,9 @@
 package portal.registration.controller;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -8,11 +12,20 @@ import java.util.Properties;
 import javax.portlet.RenderRequest;
 import javax.portlet.RenderResponse;
 
+import org.jdom2.Document;
+import org.jdom2.Element;
+import org.jdom2.JDOMException;
+import org.jdom2.input.SAXBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.portlet.bind.annotation.RenderMapping;
+
+import portal.registration.utils.GuseNotify;
+import portal.registration.utils.GuseNotifyUtil;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
@@ -36,11 +49,13 @@ import com.liferay.portal.util.PortalUtil;
 //import portal.registration.services.UserToVoService;
 import it.italiangrid.portal.dbapi.domain.Certificate;
 import it.italiangrid.portal.dbapi.domain.Idp;
+import it.italiangrid.portal.dbapi.domain.Notify;
 import it.italiangrid.portal.dbapi.domain.UserInfo;
 import it.italiangrid.portal.dbapi.domain.UserToVo;
 import it.italiangrid.portal.dbapi.domain.Vo;
 import it.italiangrid.portal.dbapi.services.CertificateService;
 import it.italiangrid.portal.dbapi.services.IdpService;
+import it.italiangrid.portal.dbapi.services.NotifyService;
 import it.italiangrid.portal.dbapi.services.UserInfoService;
 import it.italiangrid.portal.dbapi.services.UserToVoService;
 
@@ -64,6 +79,9 @@ public class UserInfoController {
 	@Autowired
 	private UserInfoService userInfoService;
 
+	@Autowired
+	private NotifyService notifyService;
+	
 	@Autowired
 	private IdpService idpService;
 
@@ -99,7 +117,6 @@ public class UserInfoController {
 
 	@ModelAttribute("userInfos")
 	public List<UserInfo> getUserInfos() {
-
 		if (search == null || search.equals(""))
 			return userInfoService.getAllUserInfo();
 		else
@@ -280,6 +297,44 @@ public class UserInfoController {
 			//e.printStackTrace();
 		}
 
+	}
+	
+	/**
+	 * Return to the portlet the advanced configurations of the user.
+	 * 
+	 * @param request
+	 *            : session parameter.
+	 * @return an object that contain the value of the advanced configurations.
+	 */
+	@ModelAttribute("notification")
+	public GuseNotify getGuseNotifications(RenderRequest request) {
+		
+		GuseNotify guseNotify=null;
+		
+		User user = (User) request.getAttribute(WebKeys.USER);
+		GuseNotifyUtil guseNotifyUtil = new GuseNotifyUtil();
+		
+		guseNotify = guseNotifyUtil.readNotifyXML(user.getUserId());
+		
+		return guseNotify;
+	}
+	
+
+	/**
+	 * Return to the portlet the advanced configurations of the user.
+	 * 
+	 * @param userId
+	 *            : the identifier of the user.
+	 * @return an object that contain the value of the advanced configurations.
+	 */
+	@ModelAttribute("advOpts")
+	public Notify getAdvOpts(RenderRequest request) {
+		User user = (User) request.getAttribute(WebKeys.USER);
+		if (user != null) {
+		UserInfo userInfo = userInfoService.findByUsername(user.getScreenName());
+		return notifyService.findByUserInfo(userInfo);
+		}
+		return null;
 	}
 
 }
