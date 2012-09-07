@@ -1,9 +1,5 @@
 package portal.registration.controller;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -12,20 +8,16 @@ import java.util.Properties;
 import javax.portlet.RenderRequest;
 import javax.portlet.RenderResponse;
 
-import org.jdom2.Document;
-import org.jdom2.Element;
-import org.jdom2.JDOMException;
-import org.jdom2.input.SAXBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.portlet.bind.annotation.RenderMapping;
 
 import portal.registration.utils.GuseNotify;
 import portal.registration.utils.GuseNotifyUtil;
+import portal.registration.utils.TokenCreator;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
@@ -335,6 +327,16 @@ public class UserInfoController {
 			return notifyService.findByUserInfo(userInfo);
 		}
 		return null;
+	}
+	
+	@ModelAttribute("tokens")
+	public List<String> getTokens(RenderRequest request) {
+		List<String> tokens = null;
+		User user = (User) request.getAttribute(WebKeys.USER);
+		if (user != null) {	
+			tokens = TokenCreator.getToken(user.getEmailAddress());
+		}
+		return tokens;
 	}
 
 }

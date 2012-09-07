@@ -46,9 +46,9 @@
 					sn=hash[1].replace("%20"," ");
 
 				}
-				if(hash[0]=="persistent-id"){
+				/*if(hash[0]=="persistent-id"){
 					$("#<portlet:namespace/>username").attr("value",hash[1]);
-				}
+				}*/
 				if(hash[0]=="Shib-Application-ID"){
 					app = hash[1];
 					if(hash[1]=="app2")
@@ -238,7 +238,8 @@
 			
 			//alert("sono dentro");
 			//$("#<portlet:namespace/>temp").attr("value","true");
-			window.location = "https://halfback.cnaf.infn.it/app4/index.jsp";
+			//window.location = "https://halfback.cnaf.infn.it/app4/index.jsp";
+			window.location = "https://halfback.cnaf.infn.it/app1/index.jsp";
 			
 		}else{
 			//alert("sono fuori");
@@ -258,8 +259,6 @@
 		start();
 	});
 </script>
-
-<div id="container">
 
 <div id="container">
 

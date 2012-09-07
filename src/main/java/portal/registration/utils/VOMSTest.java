@@ -2,16 +2,6 @@ package portal.registration.utils;
 
 import java.net.MalformedURLException;
 import java.rmi.RemoteException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-//import java.text.DateFormat;
-//import java.text.ParseException;
-//import java.text.SimpleDateFormat;
-//import java.util.Date;
-//import java.util.GregorianCalendar;
-//import java.util.Locale;
-
 import javax.xml.rpc.ServiceException;
 
 import org.glite.security.voms.VOMSException;

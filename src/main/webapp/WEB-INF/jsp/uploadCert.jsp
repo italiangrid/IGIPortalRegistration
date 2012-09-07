@@ -153,21 +153,22 @@ h5#usernameAlert {
 			
 			
 				
-			
-			<aui:column columnWidth="20">
-				
-				<aui:fieldset label="Registration">
+			<c:if test="${firstReg == true}">
+				<aui:column columnWidth="20">
+					
+					<aui:fieldset label="Registration">
+						<br />
+						
+						<img src="<%=request.getContextPath()%>/images/step2.png"/>
+						<!-- <img src="https://gridlab17.cnaf.infn.it/image/image_gallery?img_id=12347&t=1326102175108" alt="Fase 2" /> -->
+						
+	
+					</aui:fieldset>
+					
 					<br />
-					
-					<img src="<%=request.getContextPath()%>/images/step2.png"/>
-					<!-- <img src="https://gridlab17.cnaf.infn.it/image/image_gallery?img_id=12347&t=1326102175108" alt="Fase 2" /> -->
-					
-
-				</aui:fieldset>
-				
-				<br />
-				<br />
-			</aui:column>
+					<br />
+				</aui:column>
+			</c:if>
 			
 			<aui:column columnWidth="20" style="margin-left:30px;">
 
@@ -267,7 +268,7 @@ h5#usernameAlert {
 				<c:if test="${firstReg == true}">
 					<aui:button type="submit" value="Continue" onClick="return validate();"/>
 						<aui:button type="cancel" value="Back"
-							onClick="location.href='https://halfback.cnaf.infn.it/casshib/shib/app4/login?service=https%3A%2F%2Fgridlab04.cnaf.infn.it%2Fc%2Fportal%2Flogin%3Fp_l_id%3D10671';" />
+							onClick="location.href='https://halfback.cnaf.infn.it/casshib/shib/app1/login?service=https%3A%2F%2Fflyback.cnaf.infn.it%2Fc%2Fportal%2Flogin%3Fp_l_id%3D10669';" />
 				</c:if>
 					
 

@@ -151,13 +151,14 @@ public class AddUserInfoController {
 									null, null, null, true,
 									ServiceContextFactory.getInstance(
 											User.class.getName(), request));
-
+							
 
 							if (u == null){
 
 								log.info("nulla di fatto");
 							} else {
-
+								u.setPasswordReset(false);
+								UserLocalServiceUtil.updateUser(u);
 								Role rolePowerUser = RoleLocalServiceUtil
 										.getRole(companyId, "Power User");
 
@@ -191,7 +192,7 @@ public class AddUserInfoController {
 								log.info("Utente aggiunto in PortalUsert con UserId = "
 										+ userId);
 								
-								Notify notify = new Notify(userInfo);
+								Notify notify = new Notify(userInfo, "false");
 								
 								notifyService.save(notify);
 

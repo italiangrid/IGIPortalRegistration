@@ -13,8 +13,6 @@
 	}
 </script>
 
-<div id="container">
-
 <%
 	if (request.getParameter("userId") != null) {
 		pageContext.setAttribute("userId",
@@ -141,8 +139,9 @@
 			-->
 			<c:if test="<%=!themeDisplay.isSignedIn()%>">
 				<aui:button type="cancel" value="Registration terminated"
-					onClick="location.href='https://halfback.cnaf.infn.it/casshib/shib/app4/login?service=https%3A%2F%2Fgridlab04.cnaf.infn.it%2Fc%2Fportal%2Flogin%3Fp_l_id%3D10671';" />
-			</c:if>
+					onClick="location.href='https://halfback.cnaf.infn.it/casshib/shib/app1/login?service=https%3A%2F%2Fflyback.cnaf.infn.it%2Fc%2Fportal%2Flogin%3Fp_l_id%3D10669';" />
+			<!-- onClick="location.href='https://halfback.cnaf.infn.it/casshib/shib/app4/login?service=https%3A%2F%2Fgridlab04.cnaf.infn.it%2Fc%2Fportal%2Flogin%3Fp_l_id%3D10671';" />
+			 --></c:if>
 
 			<c:if test="<%=themeDisplay.isSignedIn()%>">
 				<aui:button type="cancel" value="Registration terminated"

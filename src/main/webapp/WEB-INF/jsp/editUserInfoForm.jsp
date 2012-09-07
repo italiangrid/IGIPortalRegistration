@@ -85,7 +85,26 @@
 
 		});
 	
-
+	function setHaveCert(value){
+		//alert(value);
+		$("#<portlet:namespace/>haveCert").attr("value",value);
+		
+		if(value=='true'){
+			//alert(value);
+			//opacizza NO
+			//opacity:0.4;
+			//filter:alpha(opacity=40);
+			$("#yesImg").attr("style","opacity:1.0; filter:alpha(opacity=100);");
+			$("#noImg").attr("style","opacity:0.4; filter:alpha(opacity=40);");
+			$("#<portlet:namespace/>uploadCertForm").submit();
+		}else{
+			//alert(value);
+			//opacizza SI
+			$("#noImg").attr("style","opacity:1.0; filter:alpha(opacity=100);");
+			$("#yesImg").attr("style","opacity:0.4; filter:alpha(opacity=40);");
+		}
+	}
+	
 	$(document).ready(function() {
 		//nascondiCertificatiUtente();
 		//nascondiModificaUtente();
@@ -142,6 +161,77 @@ div#advancedSettings {
 	width: 24px;
 	height: 24px;
 }
+
+#chooseTable td{
+	margin: 5px;
+}
+
+#chooseContainer{
+	font-size: 14px;
+  width: 790px ;
+  margin-left: auto ;
+  margin-right: auto ;
+
+}
+
+.choose{
+	width: 250px;
+	height: 80px;
+	float: left;
+}
+
+.bordered{
+	background-color: #f4fdef;
+	border: 1px;
+	border-style: solid;
+	border-color: #ACDFA7;
+	border-radius: 5px;
+	-moz-border-radius:5px;
+	padding: 8px;
+}
+
+.mess{
+	height: 80px;
+	width: 180px;
+	vertical-align: middle;
+	display: table-cell;
+	float: left;
+}
+
+.icon{
+	height: 80px;
+	width: 70px;
+	vertical-align: middle;
+	display: table-cell;
+}
+
+.iconContainer{
+	height: 80px;
+	width: 70px;
+	float: left;
+}
+
+.reset{
+	clear:both;
+}
+
+#or{
+	text-align: center;
+	height: 80px;
+	width: 250px;
+	vertical-align: middle;
+	display: table-cell;
+}
+
+.center{
+	
+	height: 80px;
+	width: 200px;
+	vertical-align: middle;
+	display: table-cell;
+	
+}
+
 
 </style>
 
@@ -491,10 +581,12 @@ div#advancedSettings {
 					%>
 					</liferay-ui:search-container-column-text>
 				
-				<c:if test="${certCAonline == 'false' }">
+				<!-- <c:if test="${certCAonline == 'false' }">
+					
+				</c:if> -->
+				
 					<liferay-ui:search-container-column-jsp
 					path="/WEB-INF/jsp/admin-cert-action.jsp" align="right" />
-				</c:if>
 				
 			</liferay-ui:search-container-row>
 			<liferay-ui:search-iterator />
@@ -506,18 +598,66 @@ div#advancedSettings {
 
 		</portlet:renderURL>
 
-		<aui:form name="catalogForm" commandName="userInfo" action="${uploadCertUrl}">
-
+		<aui:form id="uploadCertForm" name="uploadCertForm" commandName="userInfo" action="${uploadCertUrl}">
+			<c:if test="${fn:length(certList) == 0}">
 			<aui:input name="userId" type="hidden" value="${userInfo.userId }" />
 			<aui:input name="username" type="hidden"
 				value="${userInfo.username }" />
 			<aui:input name="firstReg" type="hidden" value="false" />
+			
+			
+			
+					
+					
+					
+					<div id="chooseContainer">
+						<a href="" onclick="setHaveCert('true'); return false;">
+						<div class="choose bordered">
+						
+							<div class="mess">
+								<div class="center">
+								Upload your personal certificate.
+								</div>
+							</div>
+							<div class="iconContainer">
+							<div class="icon">
+								<img class="displayed" src="<%=request.getContextPath()%>/images/cert-upload.png" id="yesImg" width="64" />							</div>
+							</div>
+							<div class="reset"></div>
+						</div>
+						</a>
 
-			<aui:button-row>
-				<c:if test="${fn:length(certList) == 0}">
-					<aui:button type="submit" value="Upload certificate" />
-				</c:if>
+						<div class="choose">
+							<div id="or"><strong>OR</strong></div>
+						</div>
+						<a href="https://openlab03.cnaf.infn.it/CAOnlineBridge/home?t1=${tokens[0]}&t2=${tokens[1]}" onclick="setHaveCert('false'); $(this).modal({width:800, height:600}).open(); return false;">
+						<div class="choose bordered">
+							<div class="mess">
+								<div class="center">
+								Request a new certificate<br/>by our on-Line CA.
+								</div>
+							</div>
+							<div class="iconContainer">
+							<div class="icon">
+								<img class="displayed" src="<%=request.getContextPath()%>/images/cert-download.png" id="noImg" width="64"/>
+							</div>
+							</div>
+							<div class="reset"></div>
+						</div>
+						</a>
+					</div>	
+						
+						
+			
+			
+
+			<aui:button-row >
+				
+					<aui:button type="submit" value="Upload certificate" style="display:none;"/>
+				
 			</aui:button-row>
+			
+			</c:if>
 		</aui:form>
 
 	</div>
@@ -636,10 +776,12 @@ div#advancedSettings {
 						<liferay-ui:search-container-column-text name="Roles"> 
 							<c:out value="${fn:replace(userFqans[Vo.idVo],';',' ')}"></c:out>
 						</liferay-ui:search-container-column-text>
-						<c:if test="${certCAonline == 'false' }">
-							<liferay-ui:search-container-column-jsp
+						<!-- <c:if test="${certCAonline == 'false' }">
+							
+						</c:if> -->
+						
+						<liferay-ui:search-container-column-jsp
 							path="/WEB-INF/jsp/admin-vo-action.jsp" align="right" />
-						</c:if>
 						
 					
 			</liferay-ui:search-container-row>
@@ -823,6 +965,9 @@ div#advancedSettings {
 			<aui:button-row>
 				<aui:button type="cancel" value="Delete Account"
 								onClick="verifyDelete('${deleteURL}')" />
+								
+				<aui:button type="button" value="Use Portal"
+								onClick="location.href='https://flyback.cnaf.infn.it/web/guest/concrate';" />
 				
 			</aui:button-row>
 		</aui:form>

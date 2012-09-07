@@ -160,7 +160,7 @@ div#voData {
 		</aui:fieldset>
 		</div>
 	</c:when>
-	<c:when test="<%= request.isUserInRole("administrator") %>">
+	<c:when test="<%= (themeDisplay.isSignedIn()) && (request.isUserInRole("administrator")) %>">
 		<div id="container">
 	  	<div id="presentation">
 		
