@@ -117,6 +117,11 @@ h5#usernameAlert {
 	message="error-password-too-short" />
 <liferay-ui:error key="key-password-failure"
 	message="key-password-failure" />
+	
+<portlet:actionURL var="updateCertUrl">
+	<portlet:param name="myaction" value="updateCert" />
+	<portlet:param name="userId" value="${userId }" />
+</portlet:actionURL>
 
 <aui:form name="uploadCertForm" action="${updateCertUrl}"
 	enctype="multipart/form-data">

@@ -117,7 +117,7 @@ public class AddUserInfoController {
 								newUsername+='_';
 						}
 						
-						userInfo.setUsername(newUsername);
+						userInfo.setUsername(newUsername.toLowerCase());
 
 						try {
 
