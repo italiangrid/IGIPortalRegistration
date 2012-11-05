@@ -153,20 +153,22 @@ h5#usernameAlert {
 			
 				
 			
-			<aui:column columnWidth="20">
-				
-				<aui:fieldset label="Registration">
+			<c:if test="${firstReg}">
+				<aui:column columnWidth="20">
+					
+					<aui:fieldset label="Registration">
+						<br />
+						
+						<img src="<%=request.getContextPath()%>/images/step2.png"/>
+						<!-- <img src="https://gridlab17.cnaf.infn.it/image/image_gallery?img_id=12347&t=1326102175108" alt="Fase 2" /> -->
+						
+	
+					</aui:fieldset>
+					
 					<br />
-					
-					<img src="<%=request.getContextPath()%>/images/step2.png"/>
-					<!-- <img src="https://gridlab17.cnaf.infn.it/image/image_gallery?img_id=12347&t=1326102175108" alt="Fase 2" /> -->
-					
-
-				</aui:fieldset>
-				
-				<br />
-				<br />
-			</aui:column>
+					<br />
+				</aui:column>
+			</c:if>
 			
 			<aui:column columnWidth="20" style="margin-left:30px;">
 
