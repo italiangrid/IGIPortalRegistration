@@ -29,25 +29,30 @@
 
 					$("#<portlet:namespace/>username").attr("value",hash[1]);
 					uid=hash[1];
+					$("#<portlet:namespace/>username").attr("readonly","true");
 
 				}
 
 				if(hash[0]=="mail"){
 					$("#<portlet:namespace/>mail").attr("value",hash[1]);
+					$("#<portlet:namespace/>mail").attr("readonly","true");
 				}
 				if(hash[0]=="givenName"){
 					$("#<portlet:namespace/>firstName").attr("value",hash[1].replace(new RegExp("%20", 'g')," "));
 					gn=hash[1].replace("%20"," ");
+					$("#<portlet:namespace/>firstName").attr("readonly","true");
 
 
 				}
 				if(hash[0]=="sn"){
 					$("#<portlet:namespace/>lastName").attr("value",hash[1].replace(new RegExp("%20", 'g')," "));
 					sn=hash[1].replace("%20"," ");
+					$("#<portlet:namespace/>lastName").attr("readonly","true");
 
 				}
 				/*if(hash[0]=="persistent-id"){
 					$("#<portlet:namespace/>username").attr("value",hash[1]);
+					$("#<portlet:namespace/>username").attr("readonly","true");
 				}*/
 				if(hash[0]=="Shib-Application-ID"){
 					app = hash[1];
@@ -383,16 +388,16 @@
 						}
 						%>
 						<strong>First Name</strong><br/>
-						<input id="<portlet:namespace/>firstName" name="firstName" type="text" readonly />
+						<input id="<portlet:namespace/>firstName" name="firstName" type="text" />
 						<br/><br/>	<strong>Last Name</strong><br/>
-						<input id="<portlet:namespace/>lastName" name="lastName" type="text" readonly />
+						<input id="<portlet:namespace/>lastName" name="lastName" type="text" />
 						<br/><br/><strong>Institute</strong><br/>
 						<input id="<portlet:namespace/>institute" name="institute" type="text"
 							value="${userInfo.institute}" />
 						
 						<input id="<portlet:namespace/>phone" name=">phone" type="hidden" />
 						<br/><br/><strong>e-Mail addess</strong><br/>
-						<input id="<portlet:namespace/>mail" name="mail" type="text" readonly />
+						<input id="<portlet:namespace/>mail" name="mail" type="text" />
 						<!-- <br/><br/><strong>Username</strong><br/>  -->
 						<input id="<portlet:namespace/>username" name="username" type="hidden" />
 
