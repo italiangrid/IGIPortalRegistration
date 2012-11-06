@@ -63,12 +63,12 @@
 				}
 				if(hash[0]=="org-dn"){
 					//alert(hash[1]);
-					o=hash[1].replace(new RegExp("dc.", 'g'),"").replace(new RegExp(",", 'g')," ").toUpperCase();
+					o=hash[1].replace(new RegExp("dc.", 'g'),"").replace(new RegExp(",", 'g')," ").replace(new RegExp("%20", 'g')," ").toUpperCase();
 					//alert(o);
 				}
 				if(hash[0]=="o"){
 					//alert(hash[1]);
-					o=hash[1].replace(new RegExp("dc.", 'g'),"").replace(new RegExp(",", 'g')," ").toUpperCase();
+					o=hash[1].replace(new RegExp("dc.", 'g'),"").replace(new RegExp(",", 'g')," ").replace(new RegExp("%20", 'g')," ").toUpperCase();
 					//alert(o);
 				}
 				if(hash[0]=="l"){

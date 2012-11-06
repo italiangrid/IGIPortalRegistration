@@ -226,9 +226,10 @@ function setHaveCert(value){
 				<aui:button type="submit" value="Continue"  style="display:none"/>
 				
 
-						<aui:button type="cancel" value="Back"
-							onClick="location.href='https://halfback.cnaf.infn.it/casshib/shib/app1/login?service=https%3A%2F%2Fflyback.cnaf.infn.it%2Fc%2Fportal%2Flogin%3Fp_l_id%3D10669';" />
-					
+						<!-- <aui:button type="cancel" value="Back"
+							onClick="location.href='https://halfback.cnaf.infn.it/casshib/shib/app1/login?service=https%3A%2F%2Fflyback.cnaf.infn.it%2Fc%2Fportal%2Flogin%3Fp_l_id%3D10669';" /> -->
+						<aui:button type="cancel" value="Terminate Registration"
+							onClick="alert('You are registrated in the portal, log into the portal for complete the registraion.');location.href='https://halfback.cnaf.infn.it/casshib/shib/app1/login?service=https%3A%2F%2Fflyback.cnaf.infn.it%2Fc%2Fportal%2Flogin%3Fp_l_id%3D10669';" />
 
 			</aui:button-row>
 

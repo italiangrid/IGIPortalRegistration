@@ -139,15 +139,13 @@ div#voData {
 		<aui:fieldset>
 		<aui:column columnWidth="75">
 	    <div style="text-align: justify">
-	 	<strong>Welcome into registration page.</strong>
-		<br/><br/>
+	 	
 		<img src="<%=request.getContextPath()%>/images/3-steps.png"/>
 		<!-- <img src="https://gridlab17.cnaf.infn.it/image/image_gallery?img_id=12355&t=1326102175121" alt="Fase 1" />  -->
 		</div>
 		</aui:column>
 		<aui:column columnWidth="25">
-		<br/><br/>
-		<br/><br/>
+		
 		<br/><br/>
 		<br/><br/>
 		<br/><br/>
@@ -206,7 +204,7 @@ div#voData {
 		</div>
 		<div id="tabella">
 		<liferay-ui:search-container
-			emptyResultsMessage="No user registred" delta="5">
+			emptyResultsMessage="No user registred" delta="20">
 			<liferay-ui:search-container-results>
 				<%
 					results = ListUtil.subList(userInfos,

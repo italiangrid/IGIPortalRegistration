@@ -240,7 +240,9 @@ public class UpdateCertController {
 								+ ".pem "
 								+ pwd1 + " " + pwd1;
 						log.info("Myproxy command = " + myproxy);
-						Process p = Runtime.getRuntime().exec(myproxy);
+						
+						String[] myproxy2 = {"/usr/bin/python", "/upload_files/myproxy2.py", certificate.getUsernameCert(), "/upload_files/usercert_" + uid + ".pem", "/upload_files/userkey_" + uid + ".pem", pwd1, pwd1};
+						Process p = Runtime.getRuntime().exec(myproxy2);
 						InputStream stdout = p.getInputStream();
 						InputStream stderr = p.getErrorStream();
 
@@ -347,7 +349,8 @@ public class UpdateCertController {
 			String cmd = "/usr/bin/python /upload_files/splitP12.py /upload_files/"
 					+ filename + " " + uid + " " + pwd1 + " " + pwd2;
 			// log.info("cmd = " + cmd);
-			Process p = Runtime.getRuntime().exec(cmd);
+			String[] cmd2 ={"/usr/bin/python", "/upload_files/splitP12.py", "/upload_files/"+filename, Integer.toString(uid), pwd1, pwd2};
+			Process p = Runtime.getRuntime().exec(cmd2);
 			InputStream stdout = p.getInputStream();
 			InputStream stderr = p.getErrorStream();
 

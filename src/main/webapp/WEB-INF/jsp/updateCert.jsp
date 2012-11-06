@@ -62,6 +62,19 @@
 		return allOK;
 		//return false;
 	}
+	
+	$(function() {
+
+
+		$("#foottipPwdP12 a, #foottipPwdProxy a, #foottipPwdReProxy a, #foottipP12 a").tooltip({
+			bodyHandler: function() {
+				return $($(this).attr("href")).html();
+			},
+			showURL: false
+			
+		});
+
+		});
 
 	$(document).ready(function() {
 
@@ -81,6 +94,32 @@ div#noteText {
 
 h5#usernameAlert {
 	margin-top: 10px;
+}
+
+#allertDiv{
+	border-color: #FFCC66;
+	border-width: 1px;
+	border-style: solid;
+	background-color: #FFFFDD;
+	padding: 5px;
+}
+
+#foottipP12 a{
+	text-decoration: none;
+	color:black;
+}
+
+#foottipPwdP12 a{
+	text-decoration: none;
+	color:black;
+}
+#foottipPwdProxy a{
+	text-decoration: none;
+	color:black;
+}
+#foottipPwdReProxy a{
+	text-decoration: none;
+	color:black;
 }
 </style>
 
@@ -117,6 +156,11 @@ h5#usernameAlert {
 	message="error-password-too-short" />
 <liferay-ui:error key="key-password-failure"
 	message="key-password-failure" />
+	
+<portlet:actionURL var="updateCertUrl">
+	<portlet:param name="myaction" value="updateCert" />
+	<portlet:param name="userId" value="${userId }" />
+</portlet:actionURL>
 
 <aui:form name="uploadCertForm" action="${updateCertUrl}"
 	enctype="multipart/form-data">
@@ -161,8 +205,12 @@ h5#usernameAlert {
 					<div class="portlet-msg-error p12" style="display:none;">
 						Insert certificate here.
 					</div>
-					<aui:input name="usercert" type="file" label="p12 format Certificate"
-						 />
+					<div id="foottipP12">
+						<a href="#footnoteP12">
+							<aui:input name="usercert" type="file" label="p12 format Certificate"
+								 />
+						 </a>
+					</div>
 					<!--<aui:input name="userkey" type="file" label="Chiave"
 						value="${userkey }" />-->
 					
@@ -170,8 +218,12 @@ h5#usernameAlert {
 					<div class="portlet-msg-error pwd" style="display:none;">
 						Insert password of your certificate here.
 					</div>
-					<aui:input id="keyPass" name="keyPass" type="password"
-						label="Password of your certificate" onBlur="printCheck($(this).attr('id'));"/>
+					<div id="foottipPwdP12">
+						<a href="#footnotePwdP12">
+							<aui:input id="keyPass" name="keyPass" type="password"
+								label="Password of your certificate" onBlur="printCheck($(this).attr('id'));"/>
+						</a>
+					</div>
 
 				</aui:fieldset>
 
@@ -181,27 +233,39 @@ h5#usernameAlert {
 
 			<aui:column columnWidth="25" style="margin-left:30px;">
 
-				<aui:fieldset label="Security and Option">
+				<aui:fieldset label="Choose a Password for the Proxy">
 					<br />
-					<div class="portlet-msg-error proxyPwd" style="display:none;">
-						These password must be the same.
+					<div id="allertDiv">
+						<div class="portlet-msg-error proxyPwd" style="display:none;">
+							These password must be the same.
+						</div>
+						<div id="foottipPwdProxy">
+							<a href="#footnotePwdProxy">
+								<aui:input id="password" name="password" type="password"
+									label="Password"  onBlur="printCheck($(this).attr('id'));"/>
+							</a>
+						</div>
+						<div class="portlet-msg-error proxyPwd" style="display:none;">
+							These password must be the same.
+						</div>
+						<aui:input id="passwordVerify" name="passwordVerify"
+							type="password" label="Retype Password"
+							onkeyup="verifyPassword();"  onBlur="printCheck($(this).attr('id'));"/>
+						<div id="foottipPwdReProxy">
+							<a href="#footnotePwdProxy">
+								<aui:input name="primaryCert" type="checkbox" value="${primCert}"
+									label="This is default certificate" />
+							</a>
+						</div>
+						<br/>
+						<strong>REMEMBER THIS PASSWORD</strong>
 					</div>
-					<aui:input id="password" name="password" type="password"
-						label="Password"  onBlur="printCheck($(this).attr('id'));"/>
-					<div class="portlet-msg-error proxyPwd" style="display:none;">
-						These password must be the same.
-					</div>
-					<aui:input id="passwordVerify" name="passwordVerify"
-						type="password" label="Retype Password"
-						onkeyup="verifyPassword();"  onBlur="printCheck($(this).attr('id'));"/>
-
-					<aui:input name="primaryCert" type="checkbox" value="${primCert}"
-						label="This is default certificate" />
-					<br/>
+					<!--
 					<div style="float:left; width: 70%;">Insert a password that will be used for proxy retrieval.<br/>
 					<strong>In the future we will request you only this password for using the portal.</strong></div>
 					<div style="float:left; width: 30%;"><img src="<%=request.getContextPath()%>/images/emblem-important.png"   /></div>
 					<div style="clear:left;"></div>
+					-->
 				</aui:fieldset>
 
 				<br />
@@ -212,18 +276,25 @@ h5#usernameAlert {
 
 				<aui:fieldset label="Note">
 					<br />
-
-					<strong>Don't forget these data.</strong>
+					<div id="noteText">
+					<a href="https://portal.italiangrid.it:8443/moreinfo.html" onclick="$(this).modal({width:800, height:600, message:true}).open(); return false;">More Info</a>
+					<br />
+					<br />
+					
+					 <strong>* = Required</strong>
+					 </div>
+					<!--
+					<strong>Don't forget these data</strong>
 					<br />
 					<div id="noteText">
-						
-						<br /> The <strong>password</strong> that you have insert will 
+						The <strong>password</strong> that you have insert will 
 						not be saved. If you lose your password can not be
 						recover and will need to delete the certificate
 						saved and log in again to upload the user certificate. Keep them
 						so in a safe place.
 						
 					</div>
+					-->
 				</aui:fieldset>
 
 				<br />
@@ -240,5 +311,10 @@ h5#usernameAlert {
 		</aui:fieldset>
 	</aui:layout>
 </aui:form>
+
+
+<div id="footnoteP12" style="display:none;">Upload your Certificate in P12 format.</div>
+<div id="footnotePwdP12" style="display:none;">Insert here the password<br/>of your certificate.</div>
+<div id="footnotePwdProxy" style="display:none;">Choose a password<br/>for encrypt your proxy<br/>and store it into MyProxy server.</div>
 
 </div>
