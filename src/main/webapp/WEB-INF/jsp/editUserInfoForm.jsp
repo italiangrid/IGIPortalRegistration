@@ -606,7 +606,7 @@ div#advancedSettings {
 			<aui:input name="firstReg" type="hidden" value="false" />
 			
 			
-			
+			<!-- 
 					
 					
 					
@@ -648,12 +648,12 @@ div#advancedSettings {
 					</div>	
 						
 						
-			
+			-->
 			
 
 			<aui:button-row >
 				
-					<aui:button type="submit" value="Upload certificate" style="display:none;"/>
+					<aui:button type="submit" value="Upload certificate"/>
 				
 			</aui:button-row>
 			

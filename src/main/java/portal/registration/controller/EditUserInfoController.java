@@ -413,14 +413,5 @@ public class EditUserInfoController {
 		response.setRenderParameter("userId", request.getParameter("userId"));
 
 	}
-	
-	@ModelAttribute("tokens")
-	public List<String> getTokens(@RequestParam int userId) {
-		
-		UserInfo userInfo = userInfoService.findById(userId);	
-		List<String> tokens = TokenCreator.getToken(userInfo.getMail());
-		return tokens;
-	}
-	
 
 }

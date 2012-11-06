@@ -328,15 +328,5 @@ public class UserInfoController {
 		}
 		return null;
 	}
-	
-	@ModelAttribute("tokens")
-	public List<String> getTokens(RenderRequest request) {
-		List<String> tokens = null;
-		User user = (User) request.getAttribute(WebKeys.USER);
-		if (user != null) {	
-			tokens = TokenCreator.getToken(user.getEmailAddress());
-		}
-		return tokens;
-	}
 
 }
