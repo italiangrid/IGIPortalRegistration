@@ -248,14 +248,16 @@ h5#usernameAlert {
 						<div class="portlet-msg-error proxyPwd" style="display:none;">
 							These password must be the same.
 						</div>
-						<aui:input id="passwordVerify" name="passwordVerify"
-							type="password" label="Retype Password"
-							onkeyup="verifyPassword();"  onBlur="printCheck($(this).attr('id'));"/>
 						<div id="foottipPwdReProxy">
 							<a href="#footnotePwdProxy">
-								<aui:input name="primaryCert" type="checkbox" value="${primCert}"
-									label="This is default certificate" />
+								<aui:input id="passwordVerify" name="passwordVerify"
+									type="password" label="Retype Password"
+									onkeyup="verifyPassword();"  onBlur="printCheck($(this).attr('id'));"/>
 							</a>
+						</div>
+						<div style="display:none;">
+							<aui:input name="primaryCert" type="checkbox" value="${primCert}"
+								label="This is default certificate" />
 						</div>
 						<br/>
 						<strong>REMEMBER THIS PASSWORD</strong>
@@ -315,6 +317,6 @@ h5#usernameAlert {
 
 <div id="footnoteP12" style="display:none;">Upload your Certificate in P12 format.</div>
 <div id="footnotePwdP12" style="display:none;">Insert here the password<br/>of your certificate.</div>
-<div id="footnotePwdProxy" style="display:none;">Choose a password<br/>for encrypt your proxy<br/>and store it into MyProxy server.</div>
+<div id="footnotePwdProxy" style="display:none;">Choose a password<br/>for encrypting your proxy<br/>and storing it into MyProxy server.</div>
 
 </div>
