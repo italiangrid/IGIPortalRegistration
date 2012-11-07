@@ -343,7 +343,7 @@ h5#usernameAlert {
 
 <div id="footnoteP12" style="display:none;">Upload your Certificate in P12 format.</div>
 <div id="footnotePwdP12" style="display:none;">Insert here the password<br/>of your certificate.</div>
-<div id="footnotePwdProxy" style="display:none;">Choose a password<br/>for encrypt your proxy<br/>and store it into MyProxy server.</div>
+<div id="footnotePwdProxy" style="display:none;">Choose a password<br/>for encrypting your proxy<br/>and storing it into MyProxy server.</div>
 
 
 </div>
