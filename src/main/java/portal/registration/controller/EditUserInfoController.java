@@ -275,8 +275,11 @@ public class EditUserInfoController {
 
 		UserInfo userInfo = userInfoService.findById(userId);
 		
-		if(notifyService.findByUserInfo(userInfo)==null)
-			return new Notify(userInfo,"false");
+		if(notifyService.findByUserInfo(userInfo)==null){
+			notifyService.save(new Notify(userInfo,"false"));
+			
+			log.error("§§§§§§§§§§§§§§§§§ "+notifyService.findByUserInfo(userInfo).getIdNotify());
+		}
 		return notifyService.findByUserInfo(userInfo);
 	}
 
