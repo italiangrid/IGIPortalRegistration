@@ -276,7 +276,7 @@ public class EditUserInfoController {
 		UserInfo userInfo = userInfoService.findById(userId);
 		
 		if(notifyService.findByUserInfo(userInfo)==null)
-			return new Notify(userInfo,"false");
+			notifyService.save(new Notify(userInfo, "false"));
 		return notifyService.findByUserInfo(userInfo);
 	}
 

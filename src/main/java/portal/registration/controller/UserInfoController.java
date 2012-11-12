@@ -324,6 +324,9 @@ public class UserInfoController {
 		User user = (User) request.getAttribute(WebKeys.USER);
 		if (user != null) {
 			UserInfo userInfo = userInfoService.findByUsername(user.getScreenName());
+			if(notifyService.findByUserInfo(userInfo)==null){
+				notifyService.save(new Notify(userInfo, "false"));
+			}
 			return notifyService.findByUserInfo(userInfo);
 		}
 		return null;
