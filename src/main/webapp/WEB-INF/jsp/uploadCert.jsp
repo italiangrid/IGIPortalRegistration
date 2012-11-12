@@ -6,6 +6,17 @@
 	
 	var check=false;
 
+		
+	function printCheck(element){
+		//alert(element);
+		$('#'+element+'_img').remove();
+		if(!$('#'+element).val()){
+			$('#'+element).after("<img id='"+element+"_img' src='<%=request.getContextPath()%>/images/close-button2.png' width='16' height='16'  style='padding-left:5px;'/>");
+		}else{
+			$('#'+element).after("<img id='"+element+"_img' src='<%=request.getContextPath()%>/images/success.png' style='padding-left:5px;'/>");
+		}
+	}
+	
 	function verifyPassword() {
 		var pwd1 = $("#<portlet:namespace/>password").val();
 		var pwd2 = $("#<portlet:namespace/>passwordVerify").val();
@@ -15,21 +26,14 @@
 			$("#<portlet:namespace/>passwordVerify").css("background",
 					"#ACDFA7");
 			check=true;
+			printCheck("<portlet:namespace/>passwordVerify");
+			
 		} else {
 			$("#<portlet:namespace/>password").css("background", "#FDD");
 			$("#<portlet:namespace/>passwordVerify").css("background",
 					"#FF9999");
 			output = "KO";
 			check=false;
-		}
-	}
-	
-	function printCheck(element){
-		$('#'+element+'_img').remove();
-		if(!$('#'+element).val()){
-			$('#'+element).after("<img id='"+element+"_img' src='<%=request.getContextPath()%>/images/close-button2.png' width='16' height='16'  style='padding-left:5px;'/>");
-		}else{
-			$('#'+element).after("<img id='"+element+"_img' src='<%=request.getContextPath()%>/images/success.png' style='padding-left:5px;'/>");
 		}
 	}
 	
@@ -65,15 +69,16 @@
 	$(function() {
 
 
-		$("#foottipPwdP12 a, #foottipPwdProxy a, #foottipPwdReProxy a, #foottipP12 a").tooltip({
+		$("#foottipPwdP12 div, #foottipPwdProxy div, #foottipPwdReProxy div, #foottipP12 div").tooltip({
 			bodyHandler: function() {
-				return $($(this).attr("href")).html();
+				//alert($(this).attr("id"));
+				return $($(this).attr("id")).html();
 			},
 			showURL: false
 			
 		});
 
-		});
+	});
 
 	$(document).ready(function() {
 
@@ -104,23 +109,7 @@ h5#usernameAlert {
 	padding: 5px;
 }
 
-#foottipP12 a{
-	text-decoration: none;
-	color:black;
-}
 
-#foottipPwdP12 a{
-	text-decoration: none;
-	color:black;
-}
-#foottipPwdProxy a{
-	text-decoration: none;
-	color:black;
-}
-#foottipPwdReProxy a{
-	text-decoration: none;
-	color:black;
-}
 </style>
 
 <div id="container">
@@ -224,10 +213,10 @@ h5#usernameAlert {
 						Insert certificate here.
 					</div>
 					<div id="foottipP12">
-						<a href="#footnoteP12">
+						<div id="#footnoteP12" />
 							<aui:input id="usercert" name="usercert" type="file" label=" * p12 format certificate"
 								value="${usercert }" />
-						</a>
+						</div>
 					</div>
 					<!--<aui:input name="userkey" type="file" label="Chiave"
 						value="${userkey }" />-->
@@ -236,10 +225,10 @@ h5#usernameAlert {
 						Insert password of your certificate here.
 					</div>
 					<div id="foottipPwdP12">
-						<a href="#footnotePwdP12">
+						<div id="#footnotePwdP12">
 							<aui:input id="keyPass" name="keyPass" type="password"
 								label=" * Password of your certificate" onBlur="printCheck($(this).attr('id'));"/> 
-						</a>
+						</div>
 					</div>
 
 				</aui:fieldset>
@@ -257,19 +246,19 @@ h5#usernameAlert {
 							These password must be the same.
 						</div>
 						<div id="foottipPwdProxy">
-							<a href="#footnotePwdProxy">
+							<div id="#footnotePwdProxy">
 								<aui:input id="password" name="password" type="password"
 									label=" * Password" onBlur="printCheck($(this).attr('id'));"/>
-							</a>
+							</div>
 						</div>
 						<div class="portlet-msg-error proxyPwd" style="display:none;">
 							These password must be the same.
 						</div>
 						<div id="foottipPwdReProxy">
-							<a href="#footnotePwdProxy">
+							<div id="#footnotePwdProxy">
 								<aui:input id="passwordVerify" name="passwordVerify"
-									type="password" label=" * Retype Password" onkeyup="verifyPassword();" onBlur="printCheck($(this).attr('id'));"/>
-							</a>
+									type="password" label=" * Retype Password" onkeyup="verifyPassword();"/>
+							</div>
 						</div>
 						<br />
 						<strong>REMEMBER THIS PASSWORD</strong>
@@ -329,7 +318,7 @@ h5#usernameAlert {
 				<c:if test="${firstReg == true}">
 					<aui:button type="submit" value="Continue" onClick="return validate();"/>
 						<aui:button type="cancel" value="Terminate Registration"
-							onClick="alert('You are registrated in the portal, log into the portal for complete the registraion.');location.href='https://halfback.cnaf.infn.it/casshib/shib/app1/login?service=https%3A%2F%2Fflyback.cnaf.infn.it%2Fc%2Fportal%2Flogin%3Fp_l_id%3D10669';" />
+							onClick="alert('You are registrated in the portal, log into the portal for complete the registraion.');location.href='https://halfback.cnaf.infn.it/casshib/shib/app2/login?service=https%3A%2F%2Fportal.italiangrid.it%2Fc%2Fportal%2Flogin%3Fp_l_id%3D11504';" />
 				</c:if>
 					
 

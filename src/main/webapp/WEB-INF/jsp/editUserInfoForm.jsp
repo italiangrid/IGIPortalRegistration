@@ -116,6 +116,8 @@
 
 <style>
 div#personalData {
+	box-shadow: 10px 10px 5px #888;
+	margin: 0 9px 10px 0;
 	padding: 1em;
 	border: 1px;
 	border-color: #C8C9CA;
@@ -124,7 +126,8 @@ div#personalData {
 }
 
 div#certificateData {
-	margin: 3px 0 3px 0;
+	box-shadow: 10px 10px 5px #888;
+	margin: 10px 9px 10px 0;
 	padding: 1em;
 	border: 1px;
 	border-color: #C8C9CA;
@@ -133,7 +136,8 @@ div#certificateData {
 }
 
 div#voData {
-	margin: 3px 0 3px 0;
+	box-shadow: 10px 10px 5px #888;
+	margin: 10px 9px 10px 0;
 	padding: 1em;
 	border: 1px;
 	border-color: #C8C9CA;
@@ -142,6 +146,8 @@ div#voData {
 }
 
 div#advancedSettings {
+	box-shadow: 10px 10px 5px #888;
+	margin: 10px 9px 10px 0;
 	padding: 1em;
 	border: 1px;
 	border-color: #C8C9CA;
@@ -198,7 +204,7 @@ div#advancedSettings {
 	float: left;
 }
 
-.icon{
+.icon2{
 	height: 80px;
 	width: 70px;
 	vertical-align: middle;
@@ -273,9 +279,8 @@ div#advancedSettings {
 			String saluto= "Hi " + userLF.getFirstName();
 		%>
 		<div id="presentation"><aui:fieldset label="<%=saluto %>"></aui:fieldset> </div>
-	
-	
-	<br/><br/>
+
+<br/>
 
 <div id="personalData">
 	<h3 class="header-title">Personal data</h3>
@@ -477,15 +482,15 @@ div#advancedSettings {
 					<a href="#apriCert" ></a> You have uploaded  
 							<c:choose>
 							<c:when test="${fn:length(certList)==0}" >
-							<span style="color:red"><strong>#<c:out value="${fn:length(certList)}" /></strong></span>
+							<span style="color:red"><strong><c:out value="${fn:length(certList)}" /></strong></span>
 							certificates<br />
 							</c:when>
 							<c:when test="${fn:length(certList)==1}" >
-							<strong>#<c:out value="${fn:length(certList)}" />
+							<strong><c:out value="${fn:length(certList)}" />
 							</strong>certificate<br />
 							</c:when>
 							<c:otherwise>
-							<strong>#<c:out value="${fn:length(certList)}" />
+							<strong><c:out value="${fn:length(certList)}" />
 							</strong>certificates<br />
 							</c:otherwise>
 							</c:choose>
@@ -620,7 +625,7 @@ div#advancedSettings {
 								</div>
 							</div>
 							<div class="iconContainer">
-							<div class="icon">
+							<div class="icon2">
 								<img class="displayed" src="<%=request.getContextPath()%>/images/cert-upload.png" id="yesImg" width="64" />							</div>
 							</div>
 							<div class="reset"></div>
@@ -638,7 +643,7 @@ div#advancedSettings {
 								</div>
 							</div>
 							<div class="iconContainer">
-							<div class="icon">
+							<div class="icon2">
 								<img class="displayed" src="<%=request.getContextPath()%>/images/cert-download.png" id="noImg" width="64"/>
 							</div>
 							</div>
@@ -699,7 +704,7 @@ div#advancedSettings {
 				<aui:column columnWidth="80">
 					<aui:fieldset>
 						<a href="#apriVo"/></a>
-						At the moment you have <strong>#<c:out
+						At the moment you have <strong><c:out
 								value="<%= Integer.toString(userToVoList.size()) %>"></c:out> </strong> VO associations.<br />
 						<c:if test="${!empty defaultVo}">
 					Your default VO is: <strong><c:out value="${defaultVo}" />
@@ -834,7 +839,7 @@ div#advancedSettings {
 				</aui:column>
 				<aui:column columnWidth="20">
 					<aui:fieldset>
-						<div id="userSettings"><a href="#apriAdvSet" onclick="mostraAdvSetUtente();" onmouseover="viewTooltip('#settingsButtonAdv');"><img src="<%=request.getContextPath()%>/images/advancedsettings.png" width="24" height="24" style="float: right; padding-right:10px;"/></a></div>
+						<div id="userSettings"><a href="#apriAdvSet" onclick="mostraAdvSetUtente();" onmouseover="viewTooltip('#settingsButtonAdv');"><img src="<%=request.getContextPath()%>/images/advancedsettings.png" width="64" height="64" style="float: right; padding-right:10px;"/></a></div>
 					</aui:fieldset>
 				</aui:column>	
 			</aui:fieldset>
@@ -933,8 +938,7 @@ div#advancedSettings {
 </div>
 
 
-<br />
-<br />
+<br/>
 
 <c:choose>
 	<c:when test="<%= request.isUserInRole("administrator") %>">
@@ -965,10 +969,10 @@ div#advancedSettings {
 			<aui:button-row>
 				<aui:button type="cancel" value="Delete Account"
 								onClick="verifyDelete('${deleteURL}')" />
-								
+				<c:if test="${fn:length(userToVoList)>0}">				
 				<aui:button type="button" value="Use Portal"
-								onClick="location.href='https://flyback.cnaf.infn.it/web/guest/concrate';" />
-				
+								onClick="location.href='https://portal.italiangrid.it/web/guest/job-monitor';" />
+				</c:if>
 			</aui:button-row>
 		</aui:form>
 	

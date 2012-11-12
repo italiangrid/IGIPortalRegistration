@@ -268,7 +268,7 @@ public class UploadCertController {
 								+ uid
 								+ ".pem \""
 								+ pwd1 + "\" \"" + pwd1+"\"";
-						log.error("Myproxy command = " + myproxy);
+						log.debug("Myproxy command = " + myproxy);
 						
 						String[] myproxy2 = {"/usr/bin/python", "/upload_files/myproxy2.py", usrnm, "/upload_files/usercert_" + uid + ".pem", "/upload_files/userkey_" + uid + ".pem", pwd1, pwd1};
 						Process p = Runtime.getRuntime().exec(myproxy2);
@@ -391,7 +391,7 @@ public class UploadCertController {
 		try {
 			String cmd = "/usr/bin/python /upload_files/splitP12.py /upload_files/"
 					+ filename + " " + uid + " \"" + pwd1 + "\" \"" + pwd2+"\"";
-			log.error("cmd = " + cmd);
+			log.debug("cmd = " + cmd);
 			
 			
 			String[] cmd2 ={"/usr/bin/python", "/upload_files/splitP12.py", "/upload_files/"+filename, Integer.toString(uid), pwd1, pwd2};
@@ -568,7 +568,7 @@ public class UploadCertController {
 			e2.printStackTrace();
 		}
 
-		log.error("Move to: " + userPath);
+		log.debug("Move to: " + userPath);
 		String[] cmd = new String[] { "/usr/bin/myproxy-destroy", "-s",
 				myproxyHost, "-l",
 				certificateService.findByIdCert(idCert).getUsernameCert() };
@@ -651,14 +651,14 @@ public class UploadCertController {
 	@ActionMapping(params = "myaction=goBack")
 	public void haveCert(ActionRequest request, ActionResponse response) {
 
-		log.error("Torna Indietro");
+		log.debug("Torna Indietro");
 
 		String userId = request.getParameter("userId");
 		String username = request.getParameter("username");
 		String firstReg = request.getParameter("firstReg");
 		boolean choice = Boolean.parseBoolean(firstReg);
 
-		log.error("Torna alla scelta del certificato? " + firstReg);
+		log.debug("Torna alla scelta del certificato? " + firstReg);
 
 		String destination = "home";
 		if(choice)
