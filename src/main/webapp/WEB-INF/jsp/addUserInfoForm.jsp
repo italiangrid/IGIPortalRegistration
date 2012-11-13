@@ -1,6 +1,7 @@
 <%@ include file="/WEB-INF/jsp/init.jsp"%>
 <script type="text/javascript">
 <!--
+	
 	//-->
 
 	var lista;
