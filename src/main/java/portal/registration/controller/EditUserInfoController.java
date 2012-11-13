@@ -42,7 +42,6 @@ import it.italiangrid.portal.dbapi.services.UserToVoService;
 import portal.registration.utils.GuseNotify;
 import portal.registration.utils.GuseNotifyUtil;
 import portal.registration.utils.MyValidator;
-import portal.registration.utils.TokenCreator;
 
 @Controller
 @RequestMapping("view")
