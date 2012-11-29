@@ -213,7 +213,7 @@ h5#usernameAlert {
 						Insert certificate here.
 					</div>
 					<div id="foottipP12">
-						<div id="#footnoteP12" />
+						<div id="#footnoteP12" >
 							<aui:input id="usercert" name="usercert" type="file" label=" * p12 format certificate"
 								value="${usercert }" />
 						</div>
