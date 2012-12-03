@@ -33,7 +33,6 @@ public class VOListController {
 	public String getSearch() {
 
 		return search;
-		
 
 	}
 

@@ -30,15 +30,6 @@ import com.liferay.portal.service.RoleLocalServiceUtil;
 import com.liferay.portal.service.UserLocalServiceUtil;
 import com.liferay.portal.util.PortalUtil;
 
-//import portal.registration.domain.Certificate;
-//import portal.registration.domain.Idp;
-//import portal.registration.domain.UserInfo;
-//import portal.registration.domain.UserToVo;
-//import portal.registration.domain.Vo;
-//import portal.registration.services.CertificateService;
-//import portal.registration.services.IdpService;
-//import portal.registration.services.UserInfoService;
-//import portal.registration.services.UserToVoService;
 import it.italiangrid.portal.dbapi.domain.Certificate;
 import it.italiangrid.portal.dbapi.domain.Idp;
 import it.italiangrid.portal.dbapi.domain.Notify;

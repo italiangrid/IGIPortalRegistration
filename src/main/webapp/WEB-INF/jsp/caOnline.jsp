@@ -8,20 +8,16 @@
 
 
 function setHaveCert(value){
-	//alert(value);
+	
 	$("#<portlet:namespace/>haveCert").attr("value",value);
 	
 	if(value=='true'){
-		//alert(value);
-		//opacizza NO
-		//opacity:0.4;
-		//filter:alpha(opacity=40);
+		
 		$("#yesImg").attr("style","opacity:1.0; filter:alpha(opacity=100);");
 		$("#noImg").attr("style","opacity:0.4; filter:alpha(opacity=40);");
 		$("#<portlet:namespace/>formCA").submit();
 	}else{
-		//alert(value);
-		//opacizza SI
+		
 		$("#noImg").attr("style","opacity:1.0; filter:alpha(opacity=100);");
 		$("#yesImg").attr("style","opacity:0.4; filter:alpha(opacity=40);");
 	}

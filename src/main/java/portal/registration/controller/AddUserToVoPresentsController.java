@@ -111,7 +111,6 @@ public class AddUserToVoPresentsController {
 
 	}
 
-	//
 	@ActionMapping(params = "myaction=goToAddUserToVOForm")
 	public void goToAddUserToVOForm(ActionRequest request,
 			ActionResponse response, SessionStatus sessionStatus) {

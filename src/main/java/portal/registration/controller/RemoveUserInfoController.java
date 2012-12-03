@@ -25,7 +25,6 @@ import com.liferay.portal.util.PortalUtil;
 /**
  * RemoveUserInfoController handles removal of UserInfo from the Catalog.
  * 
- * @author asarin
  * 
  */
 @Controller(value = "removeUserInfoController")

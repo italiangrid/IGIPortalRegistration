@@ -98,12 +98,7 @@ public class EditUserToVoController {
 
 		fqans = VOMSAdminCallOut.getUserFQANs(cert.getSubject(),
 				cert.getIssuer(), vo.getHost());
-
-		// ArrayUtils.addAll(roles, groups);
-
-		// return ArrayUtils.remove(fqans,ArrayUtils.indexOf(fqans,
-		// "/"+vo.getVo()));
-
+		
 		return fqans;
 	}
 

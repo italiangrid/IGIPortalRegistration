@@ -33,4 +33,5 @@ public class SearchUserController {
 		response.setRenderParameter("myaction", "userInfos");
 	}
 
+
 }

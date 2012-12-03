@@ -283,12 +283,6 @@ public class EditUserInfoController {
 		return notifyService.findByUserInfo(userInfo);
 	}
 
-	
-	
-	
-	
-	
-	
 
 	@ActionMapping(params = "myaction=uploadComplete")
 	public void uploadComplete(ActionResponse response,

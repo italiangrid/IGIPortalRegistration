@@ -97,6 +97,4 @@ public class GuseNotify {
 		this.emailSubj = emailSubj;
 	}
 
-	
-
 }

@@ -21,14 +21,11 @@ public class SearchController {
 		String userId = request.getParameter("userId");
 		String waif = request.getParameter("waif");
 
-		// request.setAttribute("waif", waif);
-		// request.setAttribute("userId", userId);
 
 		response.setRenderParameter("myaction", "showVOList");
 		response.setRenderParameter("waif", waif);
 		response.setRenderParameter("userId", userId);
 
-		// sessionStatus.setComplete();
 
 	}
 

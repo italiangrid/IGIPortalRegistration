@@ -81,6 +81,7 @@ public class UploadCertController {
 		} else {
 			log.info("noooooo disastro req");
 		}
+		
 
 		String ns = response.getNamespace();
 		String primaryCert = "";

@@ -18,5 +18,6 @@ public class SuccessCAController {
 	public String showUploadCert(RenderResponse response) {
 		log.error("Registration with CA-online certificate request completed.");
 		return "successCAonline";
+		
 	}
 }
