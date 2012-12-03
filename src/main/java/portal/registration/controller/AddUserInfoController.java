@@ -220,7 +220,7 @@ public class AddUserInfoController {
 
 					if (request.getParameter("haveCert").equals("true")) {
 						response.setRenderParameter("myaction",
-								"showCAOnline");
+								"showUploadCert");
 						response.setRenderParameter("userId",
 								Integer.toString(userId));
 						request.setAttribute("userId", userId);

@@ -12,13 +12,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.portlet.bind.annotation.RenderMapping;
 
 import portal.registration.utils.GuseNotify;
 import portal.registration.utils.GuseNotifyUtil;
-import portal.registration.utils.TokenCreator;
-
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.servlet.SessionErrors;
@@ -316,21 +313,11 @@ public class UserInfoController {
 		if (user != null) {
 			UserInfo userInfo = userInfoService.findByUsername(user.getScreenName());
 			if(notifyService.findByUserInfo(userInfo)==null){
-				notifyService.save(new Notify(userInfo,"false"));
+				notifyService.save(new Notify(userInfo, "false"));
 			}
 			return notifyService.findByUserInfo(userInfo);
 		}
 		return null;
-	}
-	
-	@ModelAttribute("tokens")
-	public List<String> getTokens(RenderRequest request) {
-		List<String> tokens = null;
-		User user = (User) request.getAttribute(WebKeys.USER);
-		if (user != null) {	
-			tokens = TokenCreator.getToken(user.getEmailAddress());
-		}
-		return tokens;
 	}
 
 }

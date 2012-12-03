@@ -5,7 +5,16 @@
 	//-->
 
 	var check=false;
-
+	
+	function printCheck(element){
+		$('#'+element+'_img').remove();
+		if(!$('#'+element).val()){
+			$('#'+element).after("<img id='"+element+"_img' src='<%=request.getContextPath()%>/images/close-button2.png' width='16' height='16'  style='padding-left:5px;'/>");
+		}else{
+			$('#'+element).after("<img id='"+element+"_img' src='<%=request.getContextPath()%>/images/success.png' style='padding-left:5px;'/>");
+		}
+	}
+	
 	function verifyPassword() {
 		var pwd1 = $("#<portlet:namespace/>password").val();
 		var pwd2 = $("#<portlet:namespace/>passwordVerify").val();
@@ -15,21 +24,17 @@
 			$("#<portlet:namespace/>passwordVerify").css("background",
 					"#ACDFA7");
 			check=true;
+			//printCheck("<portlet:namespace/>passwordVerify");
+			$('#<portlet:namespace/>passwordVerify_img').remove();
+			$("#<portlet:namespace/>passwordVerify").after("<img id='<portlet:namespace/>passwordVerify_img' src='<%=request.getContextPath()%>/images/success.png' style='padding-left:5px;'/>");
 		} else {
 			$("#<portlet:namespace/>password").css("background", "#FDD");
 			$("#<portlet:namespace/>passwordVerify").css("background",
 					"#FF9999");
 			output = "KO";
 			check=false;
-		}
-	}
-	
-	function printCheck(element){
-		$('#'+element+'_img').remove();
-		if(!$('#'+element).val()){
-			$('#'+element).after("<img id='"+element+"_img' src='<%=request.getContextPath()%>/images/close-button2.png' width='16' height='16'  style='padding-left:5px;'/>");
-		}else{
-			$('#'+element).after("<img id='"+element+"_img' src='<%=request.getContextPath()%>/images/success.png' style='padding-left:5px;'/>");
+			$('#<portlet:namespace/>passwordVerify_img').remove();
+			$("#<portlet:namespace/>passwordVerify").after("<img id='<portlet:namespace/>passwordVerify_img' src='<%=request.getContextPath()%>/images/close-button2.png' width='16' height='16'  style='padding-left:5px;'/>");
 		}
 	}
 	
@@ -66,15 +71,16 @@
 	$(function() {
 
 
-		$("#foottipPwdP12 a, #foottipPwdProxy a, #foottipPwdReProxy a, #foottipP12 a").tooltip({
+		$("#foottipPwdP12 div, #foottipPwdProxy div, #foottipPwdReProxy div, #foottipP12 div").tooltip({
 			bodyHandler: function() {
-				return $($(this).attr("href")).html();
+				//alert($(this).attr("id"));
+				return $($(this).attr("id")).html();
 			},
 			showURL: false
 			
 		});
 
-		});
+	});
 
 	$(document).ready(function() {
 
@@ -102,24 +108,6 @@ h5#usernameAlert {
 	border-style: solid;
 	background-color: #FFFFDD;
 	padding: 5px;
-}
-
-#foottipP12 a{
-	text-decoration: none;
-	color:black;
-}
-
-#foottipPwdP12 a{
-	text-decoration: none;
-	color:black;
-}
-#foottipPwdProxy a{
-	text-decoration: none;
-	color:black;
-}
-#foottipPwdReProxy a{
-	text-decoration: none;
-	color:black;
 }
 </style>
 
@@ -206,10 +194,10 @@ h5#usernameAlert {
 						Insert certificate here.
 					</div>
 					<div id="foottipP12">
-						<a href="#footnoteP12">
+						<div id="#footnoteP12">
 							<aui:input name="usercert" type="file" label="p12 format Certificate"
 								 />
-						 </a>
+						 </div>
 					</div>
 					<!--<aui:input name="userkey" type="file" label="Chiave"
 						value="${userkey }" />-->
@@ -219,10 +207,10 @@ h5#usernameAlert {
 						Insert password of your certificate here.
 					</div>
 					<div id="foottipPwdP12">
-						<a href="#footnotePwdP12">
+						<div id="#footnotePwdP12">
 							<aui:input id="keyPass" name="keyPass" type="password"
 								label="Password of your certificate" onBlur="printCheck($(this).attr('id'));"/>
-						</a>
+						</div>
 					</div>
 
 				</aui:fieldset>
@@ -240,24 +228,26 @@ h5#usernameAlert {
 							These password must be the same.
 						</div>
 						<div id="foottipPwdProxy">
-							<a href="#footnotePwdProxy">
+							<div id="#footnotePwdProxy">
 								<aui:input id="password" name="password" type="password"
 									label="Password"  onBlur="printCheck($(this).attr('id'));"/>
-							</a>
+							</div>
 						</div>
 						<div class="portlet-msg-error proxyPwd" style="display:none;">
 							These password must be the same.
 						</div>
 						<div id="foottipPwdReProxy">
-							<a href="#footnotePwdProxy">
-							<aui:input id="passwordVerify" name="passwordVerify"
-								type="password" label="Retype Password"
-								onkeyup="verifyPassword();"  onBlur="printCheck($(this).attr('id'));"/>
-							</a>
+c
+							<div id="#footnotePwdProxy">
+								<aui:input id="passwordVerify" name="passwordVerify"
+									type="password" label="Retype Password"
+									onkeyup="verifyPassword();"/>
+							</div>
 						</div>
 						<div style="display:none;">
-						<aui:input name="primaryCert" type="checkbox" value="${primCert}"
-							label="This is default certificate" />
+							<aui:input name="primaryCert" type="checkbox" value="${primCert}"
+								label="This is default certificate" />
+
 						</div>
 						<br/>
 						<strong>REMEMBER THIS PASSWORD</strong>

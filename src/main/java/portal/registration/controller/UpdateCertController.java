@@ -1,7 +1,5 @@
 package portal.registration.controller;
 
-//import portal.registration.domain.Certificate;
-//import portal.registration.services.CertificateService;
 import it.italiangrid.portal.dbapi.domain.Certificate;
 import it.italiangrid.portal.dbapi.services.CertificateService;
 import portal.registration.utils.MyValidator;
@@ -347,9 +345,7 @@ public class UpdateCertController {
 			ArrayList<String> errors) {
 
 		try {
-			String cmd = "/usr/bin/python /upload_files/splitP12.py /upload_files/"
-					+ filename + " " + uid + " " + pwd1 + " " + pwd2;
-			// log.info("cmd = " + cmd);
+			
 			String[] cmd2 ={"/usr/bin/python", "/upload_files/splitP12.py", "/upload_files/"+filename, Integer.toString(uid), pwd1, pwd2};
 			Process p = Runtime.getRuntime().exec(cmd2);
 			InputStream stdout = p.getInputStream();

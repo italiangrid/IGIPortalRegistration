@@ -244,7 +244,7 @@
 			//alert("sono dentro");
 			//$("#<portlet:namespace/>temp").attr("value","true");
 			//window.location = "https://halfback.cnaf.infn.it/app4/index.jsp";
-			window.location = "https://halfback.cnaf.infn.it/app1/index.jsp";
+			window.location = "https://halfback.cnaf.infn.it/app2/index.jsp";
 			
 		}else{
 			//alert("sono fuori");
