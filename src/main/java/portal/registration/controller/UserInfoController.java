@@ -16,6 +16,8 @@ import org.springframework.web.portlet.bind.annotation.RenderMapping;
 
 import portal.registration.utils.GuseNotify;
 import portal.registration.utils.GuseNotifyUtil;
+import portal.registration.utils.TokenCreator;
+
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.servlet.SessionErrors;
@@ -319,5 +321,16 @@ public class UserInfoController {
 		}
 		return null;
 	}
+	
+	@ModelAttribute("tokens")
+	public List<String> getTokens(RenderRequest request) {
+		List<String> tokens = null;
+		User user = (User) request.getAttribute(WebKeys.USER);
+		if (user != null) {	
+			tokens = TokenCreator.getToken(user.getEmailAddress());
+		}
+		return tokens;
+	}
+
 
 }

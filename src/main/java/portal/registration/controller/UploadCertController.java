@@ -272,7 +272,8 @@ public class UploadCertController {
 						log.debug("Myproxy command = " + myproxy);
 						
 						String[] myproxy2 = {"/usr/bin/python", "/upload_files/myproxy2.py", usrnm, "/upload_files/usercert_" + uid + ".pem", "/upload_files/userkey_" + uid + ".pem", pwd1, pwd1};
-						Process p = Runtime.getRuntime().exec(myproxy2);
+						String[] env = {"GT_PROXY_MODE=old"};
+						Process p = Runtime.getRuntime().exec(myproxy2, env, new File("/upload_files"));
 						InputStream stdout = p.getInputStream();
 						InputStream stderr = p.getErrorStream();
 
@@ -579,10 +580,11 @@ public class UploadCertController {
 		}
 
 		log.info("myproxy destroy: " + allCmd);
+		String[] env = {"X509_USER_PROXY=x509up", "X509_USER_CERT="+userPath + "/x509up", "X509_USER_KEY="+userPath + "/x509up"};
 
 		try {
 			Process p = Runtime.getRuntime()
-					.exec(cmd, null, new File(userPath));
+					.exec(cmd, env, new File(userPath));
 			InputStream stdout = p.getInputStream();
 			InputStream stderr = p.getErrorStream();
 

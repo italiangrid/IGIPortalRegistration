@@ -241,7 +241,8 @@ public class UpdateCertController {
 						log.info("Myproxy command = " + myproxy);
 						
 						String[] myproxy2 = {"/usr/bin/python", "/upload_files/myproxy2.py", certificate.getUsernameCert(), "/upload_files/usercert_" + uid + ".pem", "/upload_files/userkey_" + uid + ".pem", pwd1, pwd1};
-						Process p = Runtime.getRuntime().exec(myproxy2);
+						String[] env = {"GT_PROXY_MODE=old"};
+						Process p = Runtime.getRuntime().exec(myproxy2, env, new File("/upload_files"));
 						InputStream stdout = p.getInputStream();
 						InputStream stderr = p.getErrorStream();
 

@@ -42,6 +42,7 @@ import it.italiangrid.portal.dbapi.services.UserToVoService;
 import portal.registration.utils.GuseNotify;
 import portal.registration.utils.GuseNotifyUtil;
 import portal.registration.utils.MyValidator;
+import portal.registration.utils.TokenCreator;
 
 @Controller
 @RequestMapping("view")
@@ -406,6 +407,14 @@ public class EditUserInfoController {
 		response.setRenderParameter("myaction", "editUserInfoForm");
 		response.setRenderParameter("userId", request.getParameter("userId"));
 
+	}
+	
+	@ModelAttribute("tokens")
+	public List<String> getTokens(@RequestParam int userId) {
+
+		UserInfo userInfo = userInfoService.findById(userId);	
+		List<String> tokens = TokenCreator.getToken(userInfo.getMail());
+		return tokens;
 	}
 
 }
