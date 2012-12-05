@@ -1,5 +1,8 @@
 package portal.registration.controller;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -70,7 +73,7 @@ public class UserInfoController {
 
 	@Autowired
 	private NotifyService notifyService;
-	
+
 	@Autowired
 	private IdpService idpService;
 
@@ -82,20 +85,18 @@ public class UserInfoController {
 
 	@RenderMapping
 	public String showUserInfos(RenderRequest request, RenderResponse response) {
-		
+
 		try {
 			User user = PortalUtil.getUser(request);
-			if(user!=null){
+			if (user != null) {
 				activateUser(user, request);
 			}
 		} catch (PortalException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (SystemException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		return "home";
 	}
 
@@ -233,61 +234,67 @@ public class UserInfoController {
 		}
 		return null;
 	}
+
 	/**
-	 * Private method for activate user if it is setted suh as activated from CAOnlineBridge
-	 * @param user - Liferay user retrived from session.
-	 * @param request - RenderRequest of session.
+	 * Private method for activate user if it is setted suh as activated from
+	 * CAOnlineBridge
+	 * 
+	 * @param user
+	 *            - Liferay user retrived from session.
+	 * @param request
+	 *            - RenderRequest of session.
 	 */
 	private void activateUser(User user, RenderRequest request) {
 
 		long companyId = PortalUtil.getCompanyId(request);
 
-		try{
-			
-			UserInfo userInfo = userInfoService.findByMail(user.getEmailAddress());
-			
-			if (userInfo.getRegistrationComplete().equals("false")){
+		try {
+
+			UserInfo userInfo = userInfoService.findByMail(user
+					.getEmailAddress());
+
+			if (userInfo.getRegistrationComplete().equals("false")) {
 				return;
 			}
-			
-			Role rolePowerUser = RoleLocalServiceUtil.getRole(companyId, "Power User");
-			
+
+			Role rolePowerUser = RoleLocalServiceUtil.getRole(companyId,
+					"Power User");
+
 			List<Role> roles = user.getRoles();
-			
+
 			for (Role role : roles) {
-				if (role.equals(rolePowerUser)){
+				if (role.equals(rolePowerUser)) {
 					return;
 				}
 			}
-			
-			
-			
-			List<User> powerUsers = UserLocalServiceUtil.getRoleUsers(rolePowerUser.getRoleId());
-			
-			long users[] = new long[powerUsers.size()+1];
-			
+
+			List<User> powerUsers = UserLocalServiceUtil
+					.getRoleUsers(rolePowerUser.getRoleId());
+
+			long users[] = new long[powerUsers.size() + 1];
+
 			int i;
-			
-			for (i=0; i<powerUsers.size(); i++) {
-				users[i]=powerUsers.get(i).getUserId();
+
+			for (i = 0; i < powerUsers.size(); i++) {
+				users[i] = powerUsers.get(i).getUserId();
 			}
 
 			users[i] = user.getUserId();
-			
+
 			UserLocalServiceUtil.setRoleUsers(rolePowerUser.getRoleId(), users);
 
 			SessionMessages.add(request, "user-activate");
 
 		} catch (PortalException e) {
-			SessionErrors.add(request,"exception-activation-user");
-			//e.printStackTrace();
+			SessionErrors.add(request, "exception-activation-user");
+			// e.printStackTrace();
 		} catch (SystemException e) {
-			SessionErrors.add(request,"exception-activation-user");
-			//e.printStackTrace();
+			SessionErrors.add(request, "exception-activation-user");
+			// e.printStackTrace();
 		}
 
 	}
-	
+
 	/**
 	 * Return to the portlet the advanced configurations of the user.
 	 * 
@@ -297,17 +304,16 @@ public class UserInfoController {
 	 */
 	@ModelAttribute("notification")
 	public GuseNotify getGuseNotifications(RenderRequest request) {
-		
-		GuseNotify guseNotify=null;
-		
+
+		GuseNotify guseNotify = null;
+
 		User user = (User) request.getAttribute(WebKeys.USER);
-		if(user!=null){
+		if (user != null) {
 			GuseNotifyUtil guseNotifyUtil = new GuseNotifyUtil();
 			guseNotify = guseNotifyUtil.readNotifyXML(user.getUserId());
 		}
 		return guseNotify;
 	}
-	
 
 	/**
 	 * Return to the portlet the advanced configurations of the user.
@@ -320,13 +326,53 @@ public class UserInfoController {
 	public Notify getAdvOpts(RenderRequest request) {
 		User user = (User) request.getAttribute(WebKeys.USER);
 		if (user != null) {
-			UserInfo userInfo = userInfoService.findByUsername(user.getScreenName());
-			if(notifyService.findByUserInfo(userInfo)==null){
+			UserInfo userInfo = userInfoService.findByUsername(user
+					.getScreenName());
+			if (notifyService.findByUserInfo(userInfo) == null) {
 				notifyService.save(new Notify(userInfo, "false"));
 			}
 			return notifyService.findByUserInfo(userInfo);
 		}
 		return null;
+	}
+
+	/**
+	 * Return an array that contain the information to display into drop down
+	 * menu with for display the possible exipration value of the certificate
+	 * 
+	 * @return Return an array string of pair value and option name.
+	 */
+	@ModelAttribute("expirationTime")
+	public String[] getExpirationTime() {
+
+		String contextPath = UploadCertController.class.getClassLoader()
+				.getResource("").getPath();
+
+		String timesProperties = null;
+
+		File test = new File(contextPath + "/content/Registration.properties");
+		if (test.exists()) {
+
+			try {
+				FileInputStream inStream = new FileInputStream(contextPath
+						+ "/content/Registration.properties");
+
+				Properties prop = new Properties();
+
+				prop.load(inStream);
+
+				inStream.close();
+
+				timesProperties = prop.getProperty("proxy.expiration.times");
+
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+
+		String[] results = timesProperties.trim().split(",");
+
+		return results;
 	}
 
 }

@@ -869,6 +869,15 @@ div#advancedSettings {
 								<aui:input name="proxyExpire" type="checkbox"
 									label="Check if you want a notify mail befor proxy expiration" checked="${advOpts.proxyExpire }" />
 								
+								<aui:select name="proxyExpireTime" inlineLabel="true" label="Expiration Time">
+								
+									<c:forEach var="option" items="${expirationTime}">
+										
+										<aui:option value="${fn:trim(fn:split(option,'/')[0]) }" selected="${advOpts.proxyExpireTime==fn:trim(fn:split(option,'/')[0]) }">${fn:split(option,'/')[1] }</aui:option>
+																	
+									</c:forEach>
+								
+								</aui:select>
 								
 								<aui:button-row>
 									<aui:button type="submit" />

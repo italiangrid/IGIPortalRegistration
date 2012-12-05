@@ -1,5 +1,8 @@
 package portal.registration.controller;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -273,19 +276,20 @@ public class EditUserInfoController {
 	public Notify getAdvOpts(@RequestParam int userId) {
 
 		UserInfo userInfo = userInfoService.findById(userId);
-		
-		if(notifyService.findByUserInfo(userInfo)==null)
-			notifyService.save(new Notify(userInfo, "false"));
+
+		if (notifyService.findByUserInfo(userInfo) == null)
+			notifyService.save(new Notify(userInfo, "false", "12:00"));
 		return notifyService.findByUserInfo(userInfo);
 	}
 
-	
-	
-	
-	
-	
-	
-
+	/**
+	 * Function called after the upload.
+	 * 
+	 * @param response
+	 *            - reponse of the request
+	 * @param sessionStatus
+	 *            - the status of the request
+	 */
 	@ActionMapping(params = "myaction=uploadComplete")
 	public void uploadComplete(ActionResponse response,
 			SessionStatus sessionStatus) {
@@ -294,7 +298,7 @@ public class EditUserInfoController {
 		sessionStatus.setComplete();
 
 	}
-	
+
 	/**
 	 * Update the user's row of the table notification.
 	 * 
@@ -308,39 +312,43 @@ public class EditUserInfoController {
 	 *            : the status of the portlet
 	 */
 	@ActionMapping(params = "myaction=updateGuseNotify")
-	public void updateGuseNotify(@ModelAttribute("notification") GuseNotify guseNotify,
+	public void updateGuseNotify(
+			@ModelAttribute("notification") GuseNotify guseNotify,
 			ActionRequest request, ActionResponse response,
 			SessionStatus sessionStatus) {
-		
-		UserInfo userInfo = userInfoService.findById(Integer.valueOf(request.getParameter("userId")));
+
+		UserInfo userInfo = userInfoService.findById(Integer.valueOf(request
+				.getParameter("userId")));
 		userInfoService.save(userInfo);
 		String username = userInfo.getUsername();
 		long companyId = PortalUtil.getCompanyId(request);
-		
+
 		try {
 			User user = UserLocalServiceUtil.getUserByScreenName(companyId,
 					username);
-			
+
 			GuseNotifyUtil guseNotifyUtil = new GuseNotifyUtil();
-			
-			guseNotify.setWfchgEnab((request.getParameter("wfchgEnab").equals("true")?"1":"0"));
-			guseNotify.setEmailEnab((request.getParameter("wfchgEnab").equals("true")?"1":"0"));
-			guseNotify.setQuotaEnab((request.getParameter("quotaEnab").equals("true")?"1":"0"));
-			
+
+			guseNotify.setWfchgEnab((request.getParameter("wfchgEnab").equals(
+					"true") ? "1" : "0"));
+			guseNotify.setEmailEnab((request.getParameter("wfchgEnab").equals(
+					"true") ? "1" : "0"));
+			guseNotify.setQuotaEnab((request.getParameter("quotaEnab").equals(
+					"true") ? "1" : "0"));
+
 			guseNotifyUtil.writeNotifyXML(user, guseNotify);
-			
-			
+
 		} catch (PortalException e) {
 			e.printStackTrace();
 		} catch (SystemException e) {
 			e.printStackTrace();
-		}	
+		}
 		response.setRenderParameter("myaction", "editUserInfoForm");
 		response.setRenderParameter("userId", request.getParameter("userId"));
 		sessionStatus.setComplete();
 
 	}
-	
+
 	/**
 	 * Return to the portlet the advanced configurations of the user.
 	 * 
@@ -350,31 +358,30 @@ public class EditUserInfoController {
 	 */
 	@ModelAttribute("notification")
 	public GuseNotify getGuseNotifications(@RequestParam int userId) {
-		
+
 		UserInfo userInfo = userInfoService.findById(userId);
 		String username = userInfo.getUsername();
 		long companyId = PortalUtil.getPortal().getCompanyIds()[0];
-		
+
 		log.debug("companyId " + companyId);
-		
-		GuseNotify guseNotify=null;
-		
+
+		GuseNotify guseNotify = null;
+
 		try {
 			User user = UserLocalServiceUtil.getUserByScreenName(companyId,
 					username);
 			GuseNotifyUtil guseNotifyUtil = new GuseNotifyUtil();
-			
+
 			guseNotify = guseNotifyUtil.readNotifyXML(user.getUserId());
 		} catch (PortalException e) {
 			e.printStackTrace();
 		} catch (SystemException e) {
 			e.printStackTrace();
 		}
-		
-		
+
 		return guseNotify;
 	}
-	
+
 	/**
 	 * Update the user's row of the table notification.
 	 * 
@@ -391,26 +398,70 @@ public class EditUserInfoController {
 	public void updateAdvOpts(@ModelAttribute("advOpts") Notify notify,
 			ActionRequest request, ActionResponse response,
 			SessionStatus sessionStatus) {
-		UserInfo userInfo = userInfoService.findById(Integer.parseInt(request.getParameter("userId")));
+		UserInfo userInfo = userInfoService.findById(Integer.parseInt(request
+				.getParameter("userId")));
 		Notify n = notifyService.findByUserInfo(userInfo);
-		if(n!=null){
-			
+		if (n != null) {
+
 			log.debug("session id= " + notify.getIdNotify() + " retrived: "
 					+ n.getIdNotify());
 			n.setProxyExpire(notify.getProxyExpire());
-			log.debug("session value= " + notify.getProxyExpire() + " retrived: "
-					+ n.getProxyExpire());
-		}else{
+			n.setProxyExpireTime(notify.getProxyExpireTime());
+			log.debug("session value= " + notify.getProxyExpire()
+					+ " retrived: " + n.getProxyExpire());
+			log.debug("session value= " + notify.getProxyExpireTime()
+					+ " retrived: " + n.getProxyExpireTime());
+		} else {
 			log.debug("New entry");
-			n = new Notify(userInfo, notify.getProxyExpire());
-			log.debug("session value= " + notify.getProxyExpire() + " retrived: "
-					+ n.getProxyExpire());
+			n = new Notify(userInfo, notify.getProxyExpire(),
+					notify.getProxyExpireTime());
+			log.debug("session value= " + notify.getProxyExpire()
+					+ " retrived: " + n.getProxyExpire());
 		}
 		notifyService.save(n);
-		
+
 		response.setRenderParameter("myaction", "editUserInfoForm");
 		response.setRenderParameter("userId", request.getParameter("userId"));
 
+	}
+
+	/**
+	 * Return an array that contain the information to display into drop down
+	 * menu with for display the possible exipration value of the certificate
+	 * 
+	 * @return Return an array string of pair value and option name.
+	 */
+	@ModelAttribute("expirationTime")
+	public String[] getExpirationTime() {
+
+		String contextPath = UploadCertController.class.getClassLoader()
+				.getResource("").getPath();
+
+		String timesProperties = null;
+
+		File test = new File(contextPath + "/content/Registration.properties");
+		if (test.exists()) {
+
+			try {
+				FileInputStream inStream = new FileInputStream(contextPath
+						+ "/content/Registration.properties");
+
+				Properties prop = new Properties();
+
+				prop.load(inStream);
+
+				inStream.close();
+
+				timesProperties = prop.getProperty("proxy.expiration.times");
+
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+
+		String[] results = timesProperties.trim().split(",");
+
+		return results;
 	}
 
 }
