@@ -855,7 +855,7 @@ div#advancedSettings {
 
 				<aui:fieldset>
 					<aui:column columnWidth="50">
-						<aui:fieldset label="Notification">
+						<aui:fieldset label="Proxy Notification">
 							<aui:form name="editUserInfoForm" commandName="advOpts"
 								action="${updateAdvOptsActionUrl}">
 								<br></br>
