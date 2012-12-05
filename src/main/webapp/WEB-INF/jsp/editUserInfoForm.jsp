@@ -855,7 +855,7 @@ div#advancedSettings {
 
 				<aui:fieldset>
 					<aui:column columnWidth="50">
-						<aui:fieldset label="Notification">
+						<aui:fieldset label="Proxy Notification">
 							<aui:form name="editUserInfoForm" commandName="advOpts"
 								action="${updateAdvOptsActionUrl}">
 								<br></br>
@@ -867,7 +867,7 @@ div#advancedSettings {
 								value="<%=userInfo.getUserId() %>" />
 								
 								<aui:input name="proxyExpire" type="checkbox"
-									label="Check if you want a notify mail befor proxy expiration" checked="${advOpts.proxyExpire }" />
+									label="Check if you want to be notified by mail 1 hour before the proxy expiration" checked="${advOpts.proxyExpire }" />
 								<aui:select name="proxyExpireTime" inlineLabel="true" label="Expiration Time">
 								
 									<c:forEach var="option" items="${expirationTime}">
@@ -904,7 +904,7 @@ div#advancedSettings {
 									label="Email Subject:" value="${notification.emailSubj }" />
 								
 								<aui:input name="wfchgEnab" type="checkbox"
-									label="Check if you want a notify mail on workflow status changing" checked="${notification.wfchgEnab }" />
+									label="Check if you want to be notified by mail on workflow status changing" checked="${notification.wfchgEnab }" />
 									
 								<aui:fieldset>
 									<aui:column columnWidth="70">
