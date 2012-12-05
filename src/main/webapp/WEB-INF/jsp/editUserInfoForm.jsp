@@ -867,7 +867,7 @@ div#advancedSettings {
 								value="<%=userInfo.getUserId() %>" />
 								
 								<aui:input name="proxyExpire" type="checkbox"
-									label="Check if you want a notify mail befor proxy expiration" checked="${advOpts.proxyExpire }" />
+									label="Check if you want to be notified by mail 1 hour before proxy expiration" checked="${advOpts.proxyExpire }" />
 								
 								<aui:select name="proxyExpireTime" inlineLabel="true" label="Expiration Time">
 								
