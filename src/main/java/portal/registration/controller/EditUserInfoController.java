@@ -1,5 +1,8 @@
 package portal.registration.controller;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -276,7 +279,7 @@ public class EditUserInfoController {
 		UserInfo userInfo = userInfoService.findById(userId);
 		
 		if(notifyService.findByUserInfo(userInfo)==null)
-			notifyService.save(new Notify(userInfo, "false"));
+			notifyService.save(new Notify(userInfo, "false", "12:00"));
 
 		return notifyService.findByUserInfo(userInfo);
 	}
@@ -394,11 +397,14 @@ public class EditUserInfoController {
 			log.debug("session id= " + notify.getIdNotify() + " retrived: "
 					+ n.getIdNotify());
 			n.setProxyExpire(notify.getProxyExpire());
+			n.setProxyExpireTime(notify.getProxyExpireTime());
 			log.debug("session value= " + notify.getProxyExpire() + " retrived: "
 					+ n.getProxyExpire());
+			log.error("session value= " + notify.getProxyExpireTime() + " retrived: "
+					+ n.getProxyExpireTime());
 		}else{
 			log.debug("New entry");
-			n = new Notify(userInfo, notify.getProxyExpire());
+			n = new Notify(userInfo, notify.getProxyExpire(), notify.getProxyExpireTime());
 			log.debug("session value= " + notify.getProxyExpire() + " retrived: "
 					+ n.getProxyExpire());
 		}
@@ -415,6 +421,54 @@ public class EditUserInfoController {
 		UserInfo userInfo = userInfoService.findById(userId);	
 		List<String> tokens = TokenCreator.getToken(userInfo.getMail());
 		return tokens;
+	}
+	
+	@ModelAttribute("expirationTime")
+	public String[] getExpirationTime() {
+
+		/*
+		 * 1 prendi file
+		 * 2 leggi prop proxy.expiration.times
+		 * 3 parsa e metti in array
+		 */
+		
+		
+		//1
+		
+		String contextPath = UploadCertController.class.getClassLoader()
+				.getResource("").getPath();
+
+		log.info("dove sono:" + contextPath);
+		
+		String timesProperties = null;
+
+		File test = new File(contextPath + "/content/Registration.properties");
+		log.info("File: " + test.getAbsolutePath());
+		if (test.exists()) {
+			log.info("ESISTE!!");
+			try {
+				FileInputStream inStream = new FileInputStream(contextPath
+						+ "/content/Registration.properties");
+
+				Properties prop = new Properties();
+
+				prop.load(inStream);
+
+				inStream.close();
+				
+				//2
+				timesProperties = prop.getProperty("proxy.expiration.times");
+
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		//3
+		String[] results = timesProperties.trim().split(",");
+ 		
+		return results;
 	}
 
 }

@@ -1,5 +1,8 @@
 package portal.registration.controller;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -12,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.portlet.bind.annotation.RenderMapping;
 
 import portal.registration.utils.GuseNotify;
@@ -315,7 +319,7 @@ public class UserInfoController {
 		if (user != null) {
 			UserInfo userInfo = userInfoService.findByUsername(user.getScreenName());
 			if(notifyService.findByUserInfo(userInfo)==null){
-				notifyService.save(new Notify(userInfo, "false"));
+				notifyService.save(new Notify(userInfo, "false", "12:00"));
 			}
 			return notifyService.findByUserInfo(userInfo);
 		}
@@ -330,6 +334,51 @@ public class UserInfoController {
 			tokens = TokenCreator.getToken(user.getEmailAddress());
 		}
 		return tokens;
+	}
+	
+	@ModelAttribute("expirationTime")
+	public String[] getExpirationTime() {
+
+		/*
+		 * 1 prendi file
+		 * 2 leggi prop proxy.expiration.times
+		 * 3 parsa e metti in array
+		 */
+		
+		
+		//1
+		
+		String contextPath = UploadCertController.class.getClassLoader()
+				.getResource("").getPath();
+		
+		String timesProperties = null;
+
+		File test = new File(contextPath + "/content/Registration.properties");
+		if (test.exists()) {
+			
+			try {
+				FileInputStream inStream = new FileInputStream(contextPath
+						+ "/content/Registration.properties");
+
+				Properties prop = new Properties();
+
+				prop.load(inStream);
+
+				inStream.close();
+				
+				//2
+				timesProperties = prop.getProperty("proxy.expiration.times");
+
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		//3
+		String[] results = timesProperties.trim().split(",");
+ 		
+		return results;
 	}
 
 
