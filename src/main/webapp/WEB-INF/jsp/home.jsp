@@ -135,7 +135,7 @@ div#voData {
 
 <c:choose>
 	<c:when test="<%= !themeDisplay.isSignedIn() %>"> 
-		<div id="container">
+		<div id="container2">
 		<aui:fieldset>
 		<aui:column columnWidth="75">
 	    <div style="text-align: justify">
@@ -159,7 +159,7 @@ div#voData {
 		</div>
 	</c:when>
 	<c:when test="<%= (themeDisplay.isSignedIn()) && (request.isUserInRole("administrator")) %>">
-		<div id="container">
+		<div id="container2">
 	  	<div id="presentation">
 		
 			<%

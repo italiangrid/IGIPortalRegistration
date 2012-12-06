@@ -20,7 +20,7 @@
 	}
 %>
 
-<div id="container">
+<div id="container2">
 
 <portlet:renderURL var="addUserToVOActionUrl">
 	<portlet:param name="myaction" value="showAddUserToVO" />

@@ -183,6 +183,10 @@
 	margin-right: 2em;
 }
 
+#catalog{
+	margin-bottom: 20px;
+}
+
 #insertHere {
 	margin: 0;
 	padding: 1em 0 1em 3em;
@@ -235,7 +239,7 @@ ul#insertHere{
 }*/
 </style>
 
-<div id="container">
+<div id="container2">
 
 <portlet:actionURL var="addUserToVoActionUrl">
 	<portlet:param name="myaction" value="addFqans" />

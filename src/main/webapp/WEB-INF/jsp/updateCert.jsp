@@ -111,7 +111,7 @@ h5#usernameAlert {
 }
 </style>
 
-<div id="container">
+<div id="container2">
 
 <liferay-ui:success key="user-saved-successufully"
 	message="user-saved-successufully" />

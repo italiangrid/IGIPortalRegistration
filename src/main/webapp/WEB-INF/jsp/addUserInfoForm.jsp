@@ -265,7 +265,7 @@
 	});
 </script>
 
-<div id="container">
+<div id="container2">
 
 <portlet:actionURL var="addUserInfoActionUrl">
 	<portlet:param name="myaction" value="addUserInfo" />

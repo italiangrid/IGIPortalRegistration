@@ -48,6 +48,17 @@
 	margin-right: 9px;
 }
 
+#container2 {
+	box-shadow: 10px 10px 5px #888;
+	border: 1px;
+	border-color: #C8C9CA;
+	border-style: solid;
+	background-color: #EFEFEF;
+	border-radius: 5px;
+	padding: 10px;
+	margin-right: 9px;
+}
+
 #presentation {
 	margin: 10px;
 }

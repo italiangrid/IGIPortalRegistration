@@ -22,7 +22,7 @@ div.function {
 #clear{clear:both;}
 </style>
 
-<div id="container">
+<div id="container2">
 
 <liferay-ui:error key="user-vo-list-empty" message="user-vo-list-empty"/>
 <liferay-ui:error key="no-user-found-in-VO" message="no-user-found-in-VO"/>
