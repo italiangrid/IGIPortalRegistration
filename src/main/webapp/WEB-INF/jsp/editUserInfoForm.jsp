@@ -120,9 +120,9 @@ div#personalData {
 	margin: 0 9px 10px 0;
 	padding: 1em;
 	border: 1px;
-	border-color: #C8C9CA;
+	border-color: #c1c1c1;
 	border-style: solid;
-	background-color: #EFEFEF;
+	background-color: #e4e4e4;
 }
 
 div#certificateData {
@@ -130,9 +130,9 @@ div#certificateData {
 	margin: 10px 9px 10px 0;
 	padding: 1em;
 	border: 1px;
-	border-color: #C8C9CA;
+	border-color: #c1c1c1;
 	border-style: solid;
-	background-color: #EFEFEF;
+	background-color: #e4e4e4;
 }
 
 div#voData {
@@ -140,9 +140,9 @@ div#voData {
 	margin: 10px 9px 10px 0;
 	padding: 1em;
 	border: 1px;
-	border-color: #C8C9CA;
+	border-color: #c1c1c1;
 	border-style: solid;
-	background-color: #EFEFEF;
+	background-color: #e4e4e4;
 }
 
 div#advancedSettings {
@@ -150,9 +150,9 @@ div#advancedSettings {
 	margin: 10px 9px 10px 0;
 	padding: 1em;
 	border: 1px;
-	border-color: #C8C9CA;
+	border-color: #c1c1c1;
 	border-style: solid;
-	background-color: #EFEFEF;
+	background-color: #e4e4e4;
 }
 
 #closeBox {
