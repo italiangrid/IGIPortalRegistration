@@ -20,9 +20,10 @@ div.function {
 #search{float:left;}
 #addVo{float:left;}
 #clear{clear:both;}
+
 </style>
 
-<div id="container">
+<div id="container2">
 
 <liferay-ui:error key="user-vo-list-empty" message="user-vo-list-empty"/>
 <liferay-ui:error key="no-user-found-in-VO" message="no-user-found-in-VO"/>
@@ -31,7 +32,7 @@ div.function {
 <liferay-ui:error key="edg-mkgridmap-exception" message="edg-mkgridmap-exception"/>
 
 
-<h1 class="header-title">Lista Virtual Organization</h1>
+<h1 class="header-title">Virtual Organization List</h1>
 
 <%
 	if (request.getParameter("userId") != null){
@@ -42,6 +43,7 @@ div.function {
 	}
 											
 %>
+
 
 <div class="function">
 			<aui:fieldset>

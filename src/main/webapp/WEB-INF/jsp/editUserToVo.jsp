@@ -182,6 +182,9 @@
 	width: 250px;
 	margin-right: 2em;
 }
+#catalog{
+	margin-bottom: 20px;
+}
 
 #insertHere {
 	margin: 0;
@@ -230,12 +233,13 @@ ul#insertHere{
 	list-style-image: url('<%=request.getContextPath()%>/images/arrow.16x16.png');
 }
 
+
 /*li{
 	padding: 0 1em 0 0 ;
 }*/
 </style>
 
-<div id="container">
+<div id="container2">
 
 <portlet:actionURL var="addUserToVoActionUrl">
 	<portlet:param name="myaction" value="addFqans" />
