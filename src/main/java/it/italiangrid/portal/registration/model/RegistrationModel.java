@@ -1,8 +1,5 @@
 package it.italiangrid.portal.registration.model;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class RegistrationModel {
 	
 	private boolean haveCertificate;

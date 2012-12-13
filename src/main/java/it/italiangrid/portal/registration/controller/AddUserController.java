@@ -2,15 +2,16 @@ package it.italiangrid.portal.registration.controller;
 
 import it.italiangrid.portal.dbapi.domain.UserInfo;
 import it.italiangrid.portal.dbapi.services.CertificateService;
-import it.italiangrid.portal.dbapi.services.IdpService;
 import it.italiangrid.portal.dbapi.services.NotifyService;
 import it.italiangrid.portal.dbapi.services.UserInfoService;
 import it.italiangrid.portal.dbapi.services.UserToVoService;
 import it.italiangrid.portal.registration.exception.RegistrationException;
 import it.italiangrid.portal.registration.model.RegistrationModel;
 import it.italiangrid.portal.registration.util.CookieUtil;
+import it.italiangrid.portal.registration.util.RegistrationConfig;
 import it.italiangrid.portal.registration.util.RegistrationUtil;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Enumeration;
@@ -114,7 +115,7 @@ public class AddUserController {
 		List<String> errors = new ArrayList<String>();
 		
 		//Validate user
-		if(MyValidator.validate(userInfo, errors)){
+		if(!MyValidator.validate(userInfo, errors)){
 			
 			for(String error: errors)
 				SessionErrors.add(request, error);
@@ -128,7 +129,7 @@ public class AddUserController {
 		
 		try{
 			//AddUser into Liferay
-			RegistrationUtil.addUserToLiferay(request, userInfo);
+			RegistrationUtil.addUserToLiferay(request, userInfo, registrationModel);
 			
 			//AddUser into DB
 			userInfo=RegistrationUtil.addUserToDB(userInfo, userInfoService, notifyService);
@@ -139,10 +140,13 @@ public class AddUserController {
 			//Associate Vo to the user
 			RegistrationUtil.associateVoToUser(userInfo, registrationModel, userToVoService);
 			
-			response.sendRedirect("")
+			response.sendRedirect(RegistrationConfig.getProperties("Registration.properties", "login.url"));
 		
 		}catch(RegistrationException e){
+			e.printStackTrace();
 			SessionErrors.add(request, e.getMessage());
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 		
 		request.setAttribute("userInfo", userInfo);

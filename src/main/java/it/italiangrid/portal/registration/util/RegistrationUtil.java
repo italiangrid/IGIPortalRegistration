@@ -30,11 +30,11 @@ import com.liferay.portal.theme.ThemeDisplay;
 import com.liferay.portal.util.PortalUtil;
 
 public class RegistrationUtil {
-	
+
 	private static final Logger log = Logger.getLogger(RegistrationUtil.class);
-	
+
 	private static String PASSWORD = "settedByPortal";
-	
+
 	public static boolean validate(UserInfo target, List<String> errors)
 			throws SystemException {
 		boolean result = true;
@@ -106,40 +106,41 @@ public class RegistrationUtil {
 		return result;
 	}
 
-	public static void addUserToLiferay(ActionRequest request, UserInfo userInfo) throws RegistrationException {
+	public static void addUserToLiferay(ActionRequest request,
+			UserInfo userInfo, RegistrationModel registrationModel)
+			throws RegistrationException {
 		try {
 			long companyId = PortalUtil.getCompanyId(request);
 
 			ThemeDisplay themeDisplay = (ThemeDisplay) request
 					.getAttribute(WebKeys.THEME_DISPLAY);
-			long[] groupIds = { themeDisplay.getLayout()
-					.getGroupId() };
+			long[] groupIds = { themeDisplay.getLayout().getGroupId() };
 
 			log.info("companyid = " + companyId);
 			log.info("settate variabili di supporto ora si aggiunge un utenti a liferay!!");
 
-			User u = UserLocalServiceUtil.addUser(0L, companyId,
-					false, PASSWORD, PASSWORD, false, userInfo
-							.getUsername(), userInfo.getMail(),
-					0L, "", new Locale("en"), userInfo
-							.getFirstName(), "", userInfo
-							.getLastName(), 0, 0, true,
-					Calendar.JANUARY, 1, 1970, "", groupIds,
-					null, null, null, true,
-					ServiceContextFactory.getInstance(
+			User u = UserLocalServiceUtil.addUser(0L, companyId, false,
+					PASSWORD, PASSWORD, false, userInfo.getUsername(), userInfo
+							.getMail(), 0L, "", new Locale("en"), userInfo
+							.getFirstName(), "", userInfo.getLastName(), 0, 0,
+					true, Calendar.JANUARY, 1, 1970, "", groupIds, null, null,
+					null, true, ServiceContextFactory.getInstance(
 							User.class.getName(), request));
-			
 
-			if (u == null){
+			if (!registrationModel.isHaveCertificate())
+				UserLocalServiceUtil.sendEmailAddressVerification(u, userInfo
+						.getMail(), ServiceContextFactory.getInstance(
+						User.class.getName(), request));
+
+			if (u == null) {
 				throw new RegistrationException("no-user-inserted");
 			} else {
 				u.setPasswordReset(false);
 				UserLocalServiceUtil.updateUser(u);
-				Role rolePowerUser = RoleLocalServiceUtil
-						.getRole(companyId, "Power User");
+				Role rolePowerUser = RoleLocalServiceUtil.getRole(companyId,
+						"Power User");
 
-				UserLocalServiceUtil.deleteRoleUser(
-						rolePowerUser.getRoleId(),
+				UserLocalServiceUtil.deleteRoleUser(rolePowerUser.getRoleId(),
 						u.getUserId());
 			}
 
@@ -147,53 +148,54 @@ public class RegistrationUtil {
 			e.printStackTrace();
 			throw new RegistrationException("user-liferay-problem");
 		}
-		
+
 	}
 
 	public static UserInfo addUserToDB(UserInfo userInfo,
-			UserInfoService userInfoService, NotifyService notifyService) throws RegistrationException {
-				
-				
-		
-		userInfo.setRegistrationComplete("false");
-		int userId = userInfoService.save(userInfo,0);
+			UserInfoService userInfoService, NotifyService notifyService)
+			throws RegistrationException {
 
-		log.info("Utente aggiunto in PortalUsert con UserId = "
-				+ userId);
-		
+		userInfo.setRegistrationComplete("false");
+		int userId = userInfoService.save(userInfo, 1);
+
+		log.info("Utente aggiunto in PortalUsert con UserId = " + userId);
+
 		Notify notify = new Notify(userInfo, "false");
-		
+
 		notifyService.save(notify);
-		
+
 		UserInfo newUser = userInfoService.findById(userId);
-		
-		if(newUser != null)
+
+		if (newUser != null)
 			return newUser;
 		else
 			throw new RegistrationException("user-db-problem");
 	}
 
 	public static void associateUserToCertificate(UserInfo userInfo,
-			RegistrationModel registrationModel, CertificateService certificateService) throws RegistrationException {
-		
-		Certificate selectedCert = certificateService.findBySubject(registrationModel.getSubject());
-		
-		if(selectedCert != null){
+			RegistrationModel registrationModel,
+			CertificateService certificateService) throws RegistrationException {
+
+		Certificate selectedCert = certificateService
+				.findBySubject(registrationModel.getSubject());
+
+		if (selectedCert != null) {
 			selectedCert.setUserInfo(userInfo);
 			certificateService.save(selectedCert);
 		} else {
 			throw new RegistrationException("certificate-not-found");
 		}
-		
+
 	}
 
 	public static void associateVoToUser(UserInfo userInfo,
 			RegistrationModel registrationModel, UserToVoService userToVoService) {
-		
-		for(String idVo : registrationModel.getVos().split(";")){
-			userToVoService.save(userInfo.getUserId(), Integer.parseInt(idVo), registrationModel.getSubject());
+
+		for (String idVo : registrationModel.getVos().split(";")) {
+			userToVoService.save(userInfo.getUserId(), Integer.parseInt(idVo),
+					registrationModel.getSubject());
 		}
-		
+
 	}
 
 }
