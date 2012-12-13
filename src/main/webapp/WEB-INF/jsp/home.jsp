@@ -111,8 +111,8 @@ div#voData {
 
 
 
-<portlet:renderURL var="showAddUserInfoUrl">
-	<portlet:param name="myaction" value="addUserInfoForm" />
+<portlet:renderURL var="showAskForCertificateUrl">
+	<portlet:param name="myaction" value="askForCertificate" />
 </portlet:renderURL>
 
 <jsp:useBean id="userInfos"
@@ -136,26 +136,25 @@ div#voData {
 <c:choose>
 	<c:when test="<%= !themeDisplay.isSignedIn() %>"> 
 		<div id="container2">
-		<aui:fieldset>
-		<aui:column columnWidth="75">
-	    <div style="text-align: justify">
-	 	
-		<img src="<%=request.getContextPath()%>/images/3-steps.png"/>
-		<!-- <img src="https://gridlab17.cnaf.infn.it/image/image_gallery?img_id=12355&t=1326102175121" alt="Fase 1" />  -->
-		</div>
-		</aui:column>
-		<aui:column columnWidth="25">
-		
-		<br/><br/>
-		<br/><br/>
-		<br/><br/>
-		<aui:form name="catalogForm" action="${showAddUserInfoUrl}">
-			<aui:button-row>
-				<aui:button type="submit" value="Register NOW!!!"/>
-			</aui:button-row>
-		</aui:form>
-		</aui:column>
-		</aui:fieldset>
+			<aui:fieldset>
+			<aui:column columnWidth="75">
+		    <div style="text-align: justify">
+		 	
+			<!-- <img src="<%=request.getContextPath()%>/images/3-steps.png"/>
+			<img src="https://gridlab17.cnaf.infn.it/image/image_gallery?img_id=12355&t=1326102175121" alt="Fase 1" />  -->
+			
+			Registration information.
+			
+			</div>
+			</aui:column>
+			<aui:column columnWidth="25">
+				<aui:form name="catalogForm" action="${showAskForCertificateUrl}">
+					<aui:button-row>
+						<aui:button type="submit" value="Register NOW!!!"/>
+					</aui:button-row>
+				</aui:form>
+			</aui:column>
+			</aui:fieldset>
 		</div>
 	</c:when>
 	<c:when test="<%= (themeDisplay.isSignedIn()) && (request.isUserInRole("administrator")) %>">

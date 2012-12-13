@@ -1,5 +1,6 @@
 package portal.registration.controller;
 
+
 import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
 

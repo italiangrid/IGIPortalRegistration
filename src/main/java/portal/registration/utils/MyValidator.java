@@ -16,8 +16,7 @@ public class MyValidator {
 
 	private static final Logger log = Logger.getLogger(MyValidator.class);
 
-	public static boolean validate(UserInfo target, List<String> errors)
-			throws SystemException {
+	public static boolean validate(UserInfo target, List<String> errors){
 		boolean result = true;
 
 		if (Validator.isNull(target.getFirstName())) {
@@ -66,22 +65,30 @@ public class MyValidator {
 			}
 		}
 
-		List<User> liferayUsers = UserLocalServiceUtil.getUsers(0,
-				UserLocalServiceUtil.getUsersCount());
-
-		for (int i = 0; i < UserLocalServiceUtil.getUsersCount(); i++) {
-			if (liferayUsers.get(i).getScreenName()
-					.equals(target.getUsername())) {
-				errors.add("user-username-duplicate");
-				result = false;
-				log.info("username duplicato sbagliato");
+		List<User> liferayUsers;
+		try {
+			liferayUsers = UserLocalServiceUtil.getUsers(0,
+					UserLocalServiceUtil.getUsersCount());
+			
+			for (int i = 0; i < UserLocalServiceUtil.getUsersCount(); i++) {
+				if (liferayUsers.get(i).getScreenName()
+						.equals(target.getUsername())) {
+					errors.add("user-username-duplicate");
+					result = false;
+					log.info("username duplicato sbagliato");
+				}
+				if (liferayUsers.get(i).getEmailAddress().equals(target.getMail())) {
+					errors.add("user-mail-duplicate");
+					result = false;
+					log.info("mail duplicato sbagliato " + target.getMail() + " = "
+							+ liferayUsers.get(i).getEmailAddress());
+				}
 			}
-			if (liferayUsers.get(i).getEmailAddress().equals(target.getMail())) {
-				errors.add("user-mail-duplicate");
-				result = false;
-				log.info("mail duplicato sbagliato " + target.getMail() + " = "
-						+ liferayUsers.get(i).getEmailAddress());
-			}
+		} catch (SystemException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			errors.add("user-problem");
+			result = false;
 		}
 
 		return result;
