@@ -6,11 +6,11 @@
 //-->
 
 	function showSearchForm(){
-		$("#searchForm").show("slow");
+		$(".function").show("slow");
 	}
 	
 	function hideSearchForm(){
-		$("#searchForm").hide("slow");
+		$(".function").hide("slow");
 	}
 	
 	var list = new Array();
@@ -58,9 +58,9 @@
 			lis2t = newlist;
 
 		if (list2.length == 0) {
-			$("#deleteButton").hide("slow");
+			$("#deleteButton").hide();
 		} else {
-			$("#deleteButton").show("slow");
+			$("#deleteButton").show();
 		}
 	}
 
@@ -122,11 +122,12 @@ div.function {
 		<h1 class="header-title">Virtual Organization</h1>
 	
 	<aui:fieldset>
-	<div id="searchForm" <c:if test="${(empty registrationModel.searchVo)&&(fn:length(vos)==0) }"><c:out value="style=display:none;"/></c:if>>
 	
-	<div class="function">
+	<div class="function" <c:if test="${(empty registrationModel.searchVo)&&(fn:length(vos)==0) }"><c:out value="style=display:none;"/></c:if>>
 		<aui:fieldset>
 		<aui:column columnWidth="50">
+		<div id="searchForm" >
+	
 		<portlet:actionURL var="searchVOActionUrl">
 			<portlet:param name="myaction" value="searchVo2" />
 		</portlet:actionURL>
@@ -153,9 +154,10 @@ div.function {
 			<br/>
 			Search: <strong><c:out value="${registrationModel.searchVo}" /></strong>	
 		</c:if>
+		</div>
 		</aui:column>
 		</aui:fieldset>
-	</div>
+	
 </div>
 	<c:if test ="${fn:length(vos)!=0 }">
 		<div id="tabella">
@@ -164,11 +166,7 @@ div.function {
 		
 			<aui:column columnWidth="75">
 		
-				<%
-			    	PortletURL itURL = renderResponse.createRenderURL();
-					itURL.setParameter("myaction","showAddVoForm");
-					
-				%>
+				
 				
 				<portlet:actionURL var="addVOActionUrl">
 					<portlet:param name="myaction" value="addVo" />
@@ -181,8 +179,14 @@ div.function {
 					<aui:input name="certificateUserId" type="hidden" value="${registrationModel.certificateUserId }"></aui:input>
 					<aui:input name="vos" type="hidden" value="${registrationModel.vos }"></aui:input>
 					<aui:input name="searchVo" type="hidden" value="${registrationModel.searchVo }"></aui:input>
-					<liferay-ui:search-container
-						emptyResultsMessage="VO not find" delta="20" iteratorURL="<%= itURL %>">
+					
+					<%
+					PortletURL itURL2 = renderResponse.createRenderURL();
+					itURL2.setParameter("myaction","showAddVoForm");
+						
+					%>
+					<c:out value="<%= itURL2 %>"/>
+					<liferay-ui:search-container iteratorURL="<%= itURL2 %>" emptyResultsMessage="VO not find" delta="20">
 						
 						<liferay-ui:search-container-results>
 							<%
@@ -213,11 +217,11 @@ div.function {
 						</liferay-ui:search-container-row>
 						<liferay-ui:search-iterator />
 					</liferay-ui:search-container>
-					
+					<div id="addButton" style="display:none;" >
 					<aui:button-row>
 						<aui:button type="submit" value="Add VO" />
 					</aui:button-row>
-					
+					</div>
 				</aui:form>
 		
 			</aui:column>
@@ -289,7 +293,10 @@ div.function {
 					</liferay-ui:search-container>
 					
 					<aui:button-row>
-						<aui:button type="submit" value="Del VO" />
+						<aui:button type="button" value="Add VO" onClick="showSearchForm();" />
+						
+						<aui:button id="deleteButton" type="submit" value="Del VO" style="display:none;" />
+						
 					</aui:button-row>
 					
 					</aui:form>
@@ -308,7 +315,6 @@ div.function {
 		
 			<aui:button-row>
 				<aui:button type="submit" value="Continue" />
-				<aui:button type="button" value="Add VO" onClick="showSearchForm();" />
 				<aui:button type="cancel" value="Registration terminated"
 					onClick="mysubmit();${homeUrl }" />
 			</aui:button-row>

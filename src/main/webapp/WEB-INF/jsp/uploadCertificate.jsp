@@ -141,7 +141,7 @@ h5#usernameAlert {
 	<portlet:param name="myaction" value="editUserInfoForm" />
 	<portlet:param name="userId" value="${userId}" />
 </portlet:renderURL>
-${registrationModel.haveCertificate }
+
 <aui:form name="uploadCertForm" action="${uploadCertUrl}"
 	enctype="multipart/form-data" >
 	<aui:input name="subject" type="hidden" value="${registrationModel.subject }"></aui:input>

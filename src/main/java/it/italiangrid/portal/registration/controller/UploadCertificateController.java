@@ -3,6 +3,7 @@ package it.italiangrid.portal.registration.controller;
 import it.italiangrid.portal.dbapi.domain.Certificate;
 import it.italiangrid.portal.dbapi.services.CertificateService;
 import it.italiangrid.portal.registration.model.RegistrationModel;
+import it.italiangrid.portal.registration.util.CookieUtil;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -317,7 +318,7 @@ public class UploadCertificateController {
 
 			log.info("tutto ok!!");
 			SessionMessages.add(request, "upload-cert-successufully");
-
+			CookieUtil.setCookie(registrationModel, response);
 			response.setRenderParameter("myaction", "showAddVoForm");
 			request.setAttribute("registrationModel", registrationModel);
 

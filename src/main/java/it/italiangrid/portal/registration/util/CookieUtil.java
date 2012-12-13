@@ -7,6 +7,7 @@ import it.italiangrid.portal.registration.model.RegistrationModel;
 
 import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
+import javax.portlet.RenderRequest;
 import javax.portlet.RenderResponse;
 import javax.servlet.http.Cookie;
 
@@ -83,5 +84,44 @@ public class CookieUtil {
 		}
 		
 		return rm;
+	}
+
+	public static RegistrationModel getCookie(RenderRequest request) {
+		RegistrationModel rm = new RegistrationModel();
+		
+		String[] array = {"haveCertificate", "issuer", "subject", "certificateUserId", "vos", "searchVo"};
+		List<String> cookieNames = Arrays.asList(array);
+		
+		for(Cookie c: request.getCookies()){
+			switch(cookieNames.indexOf(c.getName())){
+			case 0:
+				//haveCertificate
+				rm.setHaveCertificate(Boolean.parseBoolean(c.getValue()));
+				break;
+			case 1:
+				//issuer
+				rm.setIssuer(c.getValue());
+				break;
+			case 2:
+				//subject
+				rm.setSubject(c.getValue());
+				break;
+			case 3:
+				//certificateUserId
+				rm.setCertificateUserId(c.getValue());
+				break;
+			case 4:
+				//vos
+				rm.setVos(c.getValue());
+				break;
+			case 5:
+				//searchVo
+				rm.setSearchVo(c.getValue());
+				break;
+			}
+		}
+		
+		return rm;
+		
 	}
 }

@@ -1,45 +1,6 @@
 <%@ include file="/WEB-INF/jsp/init.jsp"%>
 
 <div id="container2">
-	${registrationModel } <br/><br/>
-	<a href="https://halfback.cnaf.infn.it/app1/index.jsp">GO</a> <br/><br/>
-	
-	<c:forEach items="${cookie}" var="currentCookie">  
-
-            <!-- Compare each incoming cookie with the cookies kept in the servlet,
-                 if there's not a match then redirect to the login page. Otherwise,
-                 show the contents of the page below --> 
-
-
-            ${currentCookie.value.name} - ${currentCookie.value.value}<br/>
-            
-            <jsp:useBean id="registrationModel" class="it.italiangrid.portal.registration.model.RegistrationModel" />
-			<c:choose>
-				<c:when test="${currentCookie.value.name=='haveCertificate'}">
-					<c:set target="${registrationModel }" property="haveCertificate" value="${currentCookie.value.value }"/>
-				</c:when>
-				<c:when test="${currentCookie.value.name=='issuer'}">
-					<c:set target="${registrationModel }" property="issuer" value="${currentCookie.value.value }"/>
-				</c:when>
-				<c:when test="${currentCookie.value.name=='subject'}">
-					<c:set target="${registrationModel }" property="subject" value="${currentCookie.value.value }"/>
-				</c:when>
-				<c:when test="${currentCookie.value.name=='vos'}">
-					<c:set target="${registrationModel }" property="vos" value="${currentCookie.value.value }"/>
-				</c:when>
-				<c:when test="${currentCookie.value.name=='searchVo'}">
-					<c:set target="${registrationModel }" property="searchVo" value="${currentCookie.value.value }"/> 
-				</c:when>
-				<c:when test="${currentCookie.value.name=='certificateUserId'}">
-					<c:set target="${registrationModel }" property="certificateUserId" value="${currentCookie.value.value }"/> 
-				</c:when>
-			</c:choose>
-            
-
-
-    </c:forEach>  
-     <br/><br/>
-    ${registrationModel } <br/><br/>
     
 
 <portlet:actionURL var="addUserActionUrl">

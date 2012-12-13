@@ -134,13 +134,28 @@ public class AddUserController {
 			//AddUser into DB
 			userInfo=RegistrationUtil.addUserToDB(userInfo, userInfoService, notifyService);
 			
-			//Associate certificate to the user
-			RegistrationUtil.associateUserToCertificate(userInfo, registrationModel, certificateService);
+			if(registrationModel.isHaveCertificate()){
 			
-			//Associate Vo to the user
-			RegistrationUtil.associateVoToUser(userInfo, registrationModel, userToVoService);
+				//Associate certificate to the user
+				RegistrationUtil.associateUserToCertificate(userInfo, registrationModel, certificateService);
+				
+				if(!registrationModel.getVos().isEmpty()){
+					
+					//Associate Vo to the user
+					RegistrationUtil.associateVoToUser(userInfo, registrationModel, userToVoService);
+					
+					//Activate User
+					RegistrationUtil.activateUser(userInfo, userInfoService);
+				}
+				
+				response.sendRedirect(RegistrationConfig.getProperties("Registration.properties", "login.url"));
 			
-			response.sendRedirect(RegistrationConfig.getProperties("Registration.properties", "login.url"));
+			}else{
+				
+				request.setAttribute("userInfo", userInfo);
+				response.setRenderParameter("myaction", "showCAForm");
+				return;
+			}
 		
 		}catch(RegistrationException e){
 			e.printStackTrace();

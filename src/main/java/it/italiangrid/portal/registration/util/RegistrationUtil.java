@@ -198,4 +198,11 @@ public class RegistrationUtil {
 
 	}
 
+	public static void activateUser(UserInfo userInfo,
+			UserInfoService userInfoService) {
+		userInfo.setRegistrationComplete("true");
+		userInfoService.save(userInfo);
+		
+	}
+
 }
