@@ -90,7 +90,7 @@ public class AddUserController {
 	        	break;
 	        case 5:
 //	        	mail
-	        	userInfo.setMail(request.getParameter(name).replaceAll("%20", " "));
+	        	//userInfo.setMail(request.getParameter(name).replaceAll("%20", " "));
 	        	break;
 	        case 6:
 	        	userInfo.setUsername(request.getParameter(name).replaceAll("%20", " "));
@@ -195,11 +195,13 @@ public class AddUserController {
 		
 		try{
 			
+			//AddUser into IDP
 			if(!registrationModel.isHaveIDP())
 				RegistrationUtil.insertIntoIDP(userInfo, registrationModel);
 			
 			//AddUser into Liferay
-			RegistrationUtil.addUserToLiferay(request, userInfo, registrationModel);
+			boolean verify = registrationModel.getMail().isEmpty();
+			RegistrationUtil.addUserToLiferay(request, userInfo, registrationModel, verify);
 			
 			//AddUser into DB
 			userInfo=RegistrationUtil.addUserToDB(userInfo, userInfoService, notifyService);

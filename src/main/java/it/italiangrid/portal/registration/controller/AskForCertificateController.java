@@ -40,7 +40,11 @@ public class AskForCertificateController {
 	public void doRedirect(@ModelAttribute RegistrationModel registrationModel, ActionResponse response, ActionRequest request){
 		log.error("Elaborate response for \"Do you have certificate?\" response is: " + registrationModel.isHaveCertificate());
 		log.error(registrationModel.toString());
+		
+		CookieUtil.setCookie(registrationModel, response);
+		
 		if(registrationModel.isHaveCertificate()){
+			
 			log.debug("Redirect to certificate uploader");
 			response.setRenderParameter("myaction", "showUploadCertificate");
 			request.setAttribute("registrationModel", registrationModel);

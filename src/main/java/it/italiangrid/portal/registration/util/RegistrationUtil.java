@@ -107,7 +107,7 @@ public class RegistrationUtil {
 	}
 
 	public static void addUserToLiferay(ActionRequest request,
-			UserInfo userInfo, RegistrationModel registrationModel)
+			UserInfo userInfo, RegistrationModel registrationModel, boolean verify)
 			throws RegistrationException {
 		try {
 			long companyId = PortalUtil.getCompanyId(request);
@@ -131,6 +131,10 @@ public class RegistrationUtil {
 				UserLocalServiceUtil.sendEmailAddressVerification(u, userInfo
 						.getMail(), ServiceContextFactory.getInstance(
 						User.class.getName(), request));
+			
+			log.error("verify = "+verify);
+			if(verify)
+				UserLocalServiceUtil.sendEmailAddressVerification(u, u.getEmailAddress(), ServiceContextFactory.getInstance(User.class.getName(), request));
 
 			if (u == null) {
 				throw new RegistrationException("no-user-inserted");

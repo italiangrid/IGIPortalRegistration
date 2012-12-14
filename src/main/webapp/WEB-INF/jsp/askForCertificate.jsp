@@ -179,7 +179,6 @@ function setHaveCert(value){
 			<aui:button-row>
 				<aui:button type="submit" value="Continue"  style="display:none"/>
 				
-
 						<aui:button type="cancel" value="Terminate Registration" />
 
 			</aui:button-row>

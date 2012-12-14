@@ -325,7 +325,6 @@ div.function {
 				<aui:button type="submit" value="Continue" />
 				<aui:button type="cancel" value="Registration terminated"
 					onClick="mysubmit();${homeUrl }" />
-					<aui:button type="button" value="ONLY FOR TEST NOIDP" onclick="location.href='https://flyback.cnaf.infn.it/web/guest/registration?p_p_id=Registration_WAR_Registration4_INSTANCE_7NTSc9EWudEm&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&p_p_col_id=column-1&p_p_col_count=1&_Registration_WAR_Registration4_INSTANCE_7NTSc9EWudEm_myaction=showAddUserFormNoIDP';" />
 			</aui:button-row>
 		
 		</aui:form>

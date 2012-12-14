@@ -49,20 +49,35 @@
 
 					<aui:fieldset label="Personal data">
 						
-						<c:if test="${!empty  userInfo.firstName}"><c:out value="readonly='readonly'"/></c:if>
-						<aui:input label="First Name" name="firstName" type="input" value="${userInfo.firstName}" />
+						<c:if test="${!empty  userInfo.firstName}">
+							<aui:input label="First Name" name="firstName" type="input" value="${userInfo.firstName}" readonly="readonly"/>
+						</c:if>
+						<c:if test="${empty  userInfo.firstName}">
+							<aui:input label="First Name" name="firstName" type="input" value="${userInfo.firstName}"/>
+						</c:if>
 						
-						<c:if test="${!empty  userInfo.lastName}"><c:out value="readonly='readonly'"/></c:if>
-						<aui:input label="Last Name" name="lastName" type="input" value="${userInfo.lastName}" />
+						<c:if test="${!empty  userInfo.lastName}">
+							<aui:input label="Last Name" name="lastName" type="input" value="${userInfo.lastName}" readonly="readonly"/>
+						</c:if>
+						<c:if test="${empty  userInfo.lastName}">
+							<aui:input label="Last Name" name="lastName" type="input" value="${userInfo.lastName}" />
+						</c:if>
 						
-						<c:if test="${!empty  userInfo.institute}"><c:out value="readonly='readonly'"/></c:if>
-						<aui:input label="Institute" name="institute" type="input" value="${userInfo.institute}" />
+						<c:if test="${!empty  userInfo.institute}">
+							<aui:input label="Institute" name="institute" type="input" value="${userInfo.institute}" readonly="readonly"/>
+						</c:if>
+						<c:if test="${empty  userInfo.institute}">
+							<aui:input label="Institute" name="institute" type="input" value="${userInfo.institute}" />
+						</c:if>
 						
 						<aui:input name="phone" type="hidden" />
 						
-						<c:if test="${!empty  userInfo.mail}"><c:out value="readonly='readonly'"/></c:if>
-						
-						<aui:input label="e-Mail addess" name="mail" type="input" value="${userInfo.mail }" />
+						<c:if test="${!empty  userInfo.mail}">
+							<aui:input label="e-Mail addess" name="mail" type="input" value="${userInfo.mail }" readonly="readonly"/>
+						</c:if>
+						<c:if test="${empty  userInfo.mail}">
+							<aui:input label="e-Mail addess" name="mail" type="input" value="${userInfo.mail }" />
+						</c:if>
 						
 						<aui:input  name="username" type="hidden" value="${userInfo.username }"/>
 						
