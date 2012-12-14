@@ -166,7 +166,9 @@ public class UploadCertificateController {
 						errors);
 				String enddate = myOpenssl("enddate", "usercert_" + certificateUserId
 						+ ".pem", errors);
-
+				String mail = myOpenssl("email", "usercert_" + certificateUserId
+						+ ".pem", errors);
+				log.error("mail is: " +  mail);
 				if ((subject != null) && (issuer != null) && (enddate != null)
 						&& allOk) {
 					Date date = null;
@@ -208,6 +210,7 @@ public class UploadCertificateController {
 						registrationModel.setIssuer(issuer);
 						registrationModel.setSubject(subject);
 						registrationModel.setCertificateUserId(certificateUserId);
+						registrationModel.setMail(mail);
 
 						
 						
@@ -399,7 +402,7 @@ public class UploadCertificateController {
 		try {
 			String cmd = "/usr/bin/openssl x509 -in /upload_files/" + filename
 					+ " -" + opt + " -noout";
-			log.info("cmd = " + cmd);
+			log.error("cmd = " + cmd);
 			Process p = Runtime.getRuntime().exec(cmd);
 			InputStream stdout = p.getInputStream();
 			InputStream stderr = p.getErrorStream();
@@ -413,10 +416,15 @@ public class UploadCertificateController {
 					: 1;
 
 			while ((line = output.readLine()) != null) {
-				log.info("[Stdout] " + line);
+				log.error("[Stdout] " + line);
+				if(opt.equals("email")){
+					result = line;
+					log.error(opt + " = " + result);
+				}
+					
 				if ((posizione = line.indexOf("=")) != -1) {
 					result = line.substring(posizione + cursore);
-					log.info(opt + " = " + result);
+					log.error(opt + " = " + result);
 				}
 			}
 			output.close();

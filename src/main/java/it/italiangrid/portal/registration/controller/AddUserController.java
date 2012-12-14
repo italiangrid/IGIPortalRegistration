@@ -20,6 +20,7 @@ import java.util.List;
 import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
 import javax.portlet.RenderRequest;
+import javax.portlet.RenderResponse;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,7 +38,7 @@ import portal.registration.utils.MyValidator;
 @RequestMapping(value = "VIEW")
 public class AddUserController {
 
-	private static final Logger log = Logger.getLogger(AddVOActionController.class);
+	private static final Logger log = Logger.getLogger(AddUserController.class);
 	
 	@Autowired
 	private NotifyService notifyService;
@@ -52,12 +53,15 @@ public class AddUserController {
 	private CertificateService certificateService;
 	
 	@RenderMapping(params = "myaction=showAddUserForm")
-	public String showAskForCertificate(RenderRequest request) {
+	public String showAddUserForm(RenderRequest request, RenderResponse response) {
 		log.debug("Show addUserForm.jsp");
 		String[] array = {"l","o", "givenName", "sn", "uid", "mail", "persistent-id", "org-dn"};
 		List<String> attributes = Arrays.asList(array);
 		
 		UserInfo userInfo = new UserInfo();
+		
+		String o = "";
+		String l = "";
 		
 		for (Enumeration<String> e = request.getParameterNames() ; e.hasMoreElements() ;) {
 			String name = e.nextElement();
@@ -66,11 +70,11 @@ public class AddUserController {
 	        switch(attributes.indexOf(name)){
 	        case 0:
 //	        	l
-	        	userInfo.setInstitute(request.getParameter(name).replaceAll("%20", " ").toUpperCase());
+	        	l=request.getParameter(name).replaceAll("%20", " ").toUpperCase();
 	        	break;
 	        case 1:
 //	        	o
-	        	userInfo.setInstitute(request.getParameter(name).replaceAll("%20", " ").toUpperCase());
+	        	o = request.getParameter(name).replaceAll("%20", " ").toUpperCase();
 	        	break;
 	        case 2:
 //	        	givenName
@@ -94,16 +98,77 @@ public class AddUserController {
 	        	break;
 	        case 7:
 //	        	org-dn
-	        	userInfo.setInstitute(request.getParameter(name).replaceAll("%20", " ").replaceAll("dc.", "").replaceAll(",", " ").toUpperCase());
+	        	o= request.getParameter(name).replaceAll("%20", " ").replaceAll("dc.", "").replaceAll(",", " ").toUpperCase();
 	        	break;
 	        }
 	        
 
 	     }
 		
+		String institute = o + (((!o.isEmpty())&&(!l.isEmpty()))? " - " : "") + l;
+		userInfo.setInstitute(institute);
+		
+		RegistrationModel registrationModel = CookieUtil.getCookie(request);
+		registrationModel.setHaveIDP(true);
+		CookieUtil.setCookie(registrationModel, response);
+		
 		request.setAttribute("userInfo", userInfo);
 		
 		return "addUserForm";
+	}
+	
+	@RenderMapping(params = "myaction=showAddUserFormNoIDP")
+	public String showAddUserFormNoIDP(RenderRequest request, RenderResponse response) {
+		log.debug("Show addUserForm.jsp");
+		
+		UserInfo userInfo = new UserInfo();
+		
+		RegistrationModel registrationModel = CookieUtil.getCookie(request);
+		
+		if(registrationModel.isHaveCertificate()){
+			
+			String[] dnParts = registrationModel.getSubject().split("/");
+			String o = "";
+			String l = "";
+			String cn = "";
+			
+			for(String value: dnParts){
+				if(value.contains("O="))
+					o = value.replace("O=", "");
+				if(value.contains("L="))
+					l = value.replace("L=", "");
+				if(value.contains("CN="))
+					cn = value.replace("CN=", "");
+			}
+			
+			String institute = o + (((!o.isEmpty())&&(!l.isEmpty()))? " - " : "") + l;
+			userInfo.setInstitute(institute);
+			
+			String[] cnParts = cn.split(" ");
+			String firstName = cnParts[0];
+			
+			String lastName = cnParts[1];
+			
+			for(int i=2; i < cnParts.length; i++ ){
+				if(!cnParts[i].contains("@"))
+					lastName += " " + cnParts[i];
+			}
+				
+			String username = firstName + "." + lastName.trim();
+			
+			userInfo.setFirstName(firstName);
+			userInfo.setLastName(lastName);
+			userInfo.setUsername(username.toLowerCase());
+			userInfo.setMail(registrationModel.getMail());
+			
+			registrationModel.setHaveIDP(false);
+			CookieUtil.setCookie(registrationModel, response);
+			
+			request.setAttribute("userInfo", userInfo);
+			
+			return "addUserForm";
+		}
+		return "noRegistration";
 	}
 	
 	@ActionMapping(params="myaction=addUser")
@@ -128,6 +193,10 @@ public class AddUserController {
 		}
 		
 		try{
+			
+			if(!registrationModel.isHaveIDP())
+				RegistrationUtil.insertIntoIDP(userInfo, registrationModel);
+			
 			//AddUser into Liferay
 			RegistrationUtil.addUserToLiferay(request, userInfo, registrationModel);
 			
@@ -148,14 +217,18 @@ public class AddUserController {
 					RegistrationUtil.activateUser(userInfo, userInfoService);
 				}
 				
-				response.sendRedirect(RegistrationConfig.getProperties("Registration.properties", "login.url"));
+				
 			
 			}else{
-				
-				request.setAttribute("userInfo", userInfo);
-				response.setRenderParameter("myaction", "showCAForm");
-				return;
+				if(Boolean.parseBoolean(RegistrationConfig.getProperties("Registration.properties", "CAOnline.enabled"))){
+					request.setAttribute("userInfo", userInfo);
+					response.setRenderParameter("myaction", "showCAForm");
+					return;
+				}
 			}
+			
+			response.sendRedirect(RegistrationConfig.getProperties("Registration.properties", "login.url"));
+			return;
 		
 		}catch(RegistrationException e){
 			e.printStackTrace();

@@ -42,46 +42,46 @@ public class RegistrationUtil {
 		if (Validator.isNull(target.getFirstName())) {
 			errors.add("user-first-name-required");
 			result = false;
-			log.info("nome sbagliato");
+			log.debug("nome sbagliato");
 		}
 
 		if (Validator.isNull(target.getLastName())) {
 			errors.add("user-last-name-required");
 			result = false;
-			log.info("cognome sbagliato");
+			log.debug("cognome sbagliato");
 		}
 
 		if (Validator.isNull(target.getInstitute())) {
 			errors.add("user-institute-required");
 			result = false;
-			log.info("istituto sbagliato");
+			log.debug("istituto sbagliato");
 		}
 
 		if (Validator.isNull(target.getMail())) {
 			errors.add("user-mail-required");
 			result = false;
-			log.info("mail sbagliato");
+			log.debug("mail sbagliato");
 		}
 
 		if (Validator.isNotNull(target.getMail())) {
 			if (!Validator.isEmailAddress(target.getMail())) {
 				errors.add("user-valid-mail-required");
 				result = false;
-				log.info("mail invalida sbagliato");
+				log.debug("mail invalida sbagliato");
 			}
 		}
 
 		if (Validator.isNull(target.getUsername())) {
 			errors.add("user-username-required");
 			result = false;
-			log.info("usename vuoto sbagliato");
+			log.debug("usename vuoto sbagliato");
 		}
 
 		if (Validator.isNotNull(target.getPhone())) {
 			if (!Validator.isPhoneNumber(target.getPhone())) {
 				errors.add("user-phone-valid");
 				result = false;
-				log.info("telefono sbagliato");
+				log.debug("telefono sbagliato");
 			}
 		}
 
@@ -93,12 +93,12 @@ public class RegistrationUtil {
 					.equals(target.getUsername())) {
 				errors.add("user-username-duplicate");
 				result = false;
-				log.info("username duplicato sbagliato");
+				log.debug("username duplicato sbagliato");
 			}
 			if (liferayUsers.get(i).getEmailAddress().equals(target.getMail())) {
 				errors.add("user-mail-duplicate");
 				result = false;
-				log.info("mail duplicato sbagliato " + target.getMail() + " = "
+				log.debug("mail duplicato sbagliato " + target.getMail() + " = "
 						+ liferayUsers.get(i).getEmailAddress());
 			}
 		}
@@ -116,8 +116,8 @@ public class RegistrationUtil {
 					.getAttribute(WebKeys.THEME_DISPLAY);
 			long[] groupIds = { themeDisplay.getLayout().getGroupId() };
 
-			log.info("companyid = " + companyId);
-			log.info("settate variabili di supporto ora si aggiunge un utenti a liferay!!");
+			log.debug("companyid = " + companyId);
+			log.debug("settate variabili di supporto ora si aggiunge un utenti a liferay!!");
 
 			User u = UserLocalServiceUtil.addUser(0L, companyId, false,
 					PASSWORD, PASSWORD, false, userInfo.getUsername(), userInfo
@@ -158,7 +158,7 @@ public class RegistrationUtil {
 		userInfo.setRegistrationComplete("false");
 		int userId = userInfoService.save(userInfo, 1);
 
-		log.info("Utente aggiunto in PortalUsert con UserId = " + userId);
+		log.debug("Utente aggiunto in PortalUsert con UserId = " + userId);
 
 		Notify notify = new Notify(userInfo, "false");
 
@@ -180,6 +180,7 @@ public class RegistrationUtil {
 				.findBySubject(registrationModel.getSubject());
 
 		if (selectedCert != null) {
+			log.debug("Aggiunto userToCertificate");
 			selectedCert.setUserInfo(userInfo);
 			certificateService.save(selectedCert);
 		} else {
@@ -192,6 +193,7 @@ public class RegistrationUtil {
 			RegistrationModel registrationModel, UserToVoService userToVoService) {
 
 		for (String idVo : registrationModel.getVos().split(";")) {
+			log.debug("Aggiunto userToVo");
 			userToVoService.save(userInfo.getUserId(), Integer.parseInt(idVo),
 					registrationModel.getSubject());
 		}
@@ -200,8 +202,15 @@ public class RegistrationUtil {
 
 	public static void activateUser(UserInfo userInfo,
 			UserInfoService userInfoService) {
+		log.debug("UserActivated");
 		userInfo.setRegistrationComplete("true");
 		userInfoService.save(userInfo);
+		
+	}
+
+	public static void insertIntoIDP(UserInfo userInfo,
+			RegistrationModel registrationModel) {
+		log.debug("inserimento utente nell'IDP");
 		
 	}
 

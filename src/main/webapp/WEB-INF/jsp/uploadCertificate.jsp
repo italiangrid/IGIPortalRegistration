@@ -150,6 +150,8 @@ h5#usernameAlert {
 	<aui:input name="certificateUserId" type="hidden" value="${registrationModel.certificateUserId }"></aui:input>
 	<aui:input name="vos" type="hidden" value="${registrationModel.vos }"></aui:input>
 	<aui:input name="searchVo" type="hidden" value="${registrationModel.searchVo }"></aui:input>
+	<aui:input name="mail" type="hidden" value="${registrationModel.mail }"></aui:input>
+	<aui:input name="haveIDP" type="hidden" value="${registrationModel.haveIDP }"></aui:input>
 	<aui:layout>
 
 		<h1 class="header-title">Upload New Certificate</h1>

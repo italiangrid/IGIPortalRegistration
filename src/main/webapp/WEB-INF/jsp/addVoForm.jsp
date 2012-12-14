@@ -140,6 +140,8 @@ div.function {
 			<aui:input name="haveCertificate" type="hidden" value="${registrationModel.haveCertificate }"></aui:input>
 			<aui:input name="certificateUserId" type="hidden" value="${registrationModel.certificateUserId }"></aui:input>
 			<aui:input name="vos" type="hidden" value="${registrationModel.vos }"></aui:input>
+			<aui:input name="mail" type="hidden" value="${registrationModel.mail }"></aui:input>
+			<aui:input name="haveIDP" type="hidden" value="${registrationModel.haveIDP }"></aui:input>
 			<aui:layout>
 				<aui:button-row>
 				<aui:input name="searchVo" label="Cerca VO" type="text" inlineField="true" inlineLabel="true"/>
@@ -179,13 +181,15 @@ div.function {
 					<aui:input name="certificateUserId" type="hidden" value="${registrationModel.certificateUserId }"></aui:input>
 					<aui:input name="vos" type="hidden" value="${registrationModel.vos }"></aui:input>
 					<aui:input name="searchVo" type="hidden" value="${registrationModel.searchVo }"></aui:input>
-					
+					<aui:input name="mail" type="hidden" value="${registrationModel.mail }"></aui:input>
+					<aui:input name="haveIDP" type="hidden" value="${registrationModel.haveIDP }"></aui:input>
+	
 					<%
 					PortletURL itURL2 = renderResponse.createRenderURL();
 					itURL2.setParameter("myaction","showAddVoForm");
 						
 					%>
-					<c:out value="<%= itURL2 %>"/>
+					
 					<liferay-ui:search-container iteratorURL="<%= itURL2 %>" emptyResultsMessage="VO not find" delta="20">
 						
 						<liferay-ui:search-container-results>
@@ -254,6 +258,8 @@ div.function {
 					<aui:input name="certificateUserId" type="hidden" value="${registrationModel.certificateUserId }"></aui:input>
 					<aui:input name="vos" type="hidden" value="${registrationModel.vos }"></aui:input>
 					<aui:input name="searchVo" type="hidden" value="${registrationModel.searchVo }"></aui:input>
+					<aui:input name="mail" type="hidden" value="${registrationModel.mail }"></aui:input>
+					<aui:input name="haveIDP" type="hidden" value="${registrationModel.haveIDP }"></aui:input>
 					<liferay-ui:search-container emptyResultsMessage="No VO selected"
 						delta="5">
 						<liferay-ui:search-container-results>
@@ -312,14 +318,18 @@ div.function {
 			<aui:input name="certificateUserId" type="hidden" value="${registrationModel.certificateUserId }"></aui:input>
 			<aui:input name="vos" type="hidden" value="${registrationModel.vos }"></aui:input>
 			<aui:input name="searchVo" type="hidden" value="${registrationModel.searchVo }"></aui:input>
-		
+			<aui:input name="mail" type="hidden" value="${registrationModel.mail }"></aui:input>
+			<aui:input name="haveIDP" type="hidden" value="${registrationModel.haveIDP }"></aui:input>
+			
 			<aui:button-row>
 				<aui:button type="submit" value="Continue" />
 				<aui:button type="cancel" value="Registration terminated"
 					onClick="mysubmit();${homeUrl }" />
+					<aui:button type="button" value="ONLY FOR TEST NOIDP" onclick="location.href='https://flyback.cnaf.infn.it/web/guest/registration?p_p_id=Registration_WAR_Registration4_INSTANCE_7NTSc9EWudEm&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&p_p_col_id=column-1&p_p_col_count=1&_Registration_WAR_Registration4_INSTANCE_7NTSc9EWudEm_myaction=showAddUserFormNoIDP';" />
 			</aui:button-row>
 		
 		</aui:form>
+		
 		</aui:fieldset>
 	</aui:layout>
 

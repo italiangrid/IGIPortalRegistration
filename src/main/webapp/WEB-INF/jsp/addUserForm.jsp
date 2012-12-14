@@ -49,25 +49,22 @@
 
 					<aui:fieldset label="Personal data">
 						
-						<strong>First Name</strong><br/>
+						<c:if test="${!empty  userInfo.firstName}"><c:out value="readonly='readonly'"/></c:if>
 						<aui:input label="First Name" name="firstName" type="input" value="${userInfo.firstName}" />
 						
+						<c:if test="${!empty  userInfo.lastName}"><c:out value="readonly='readonly'"/></c:if>
 						<aui:input label="Last Name" name="lastName" type="input" value="${userInfo.lastName}" />
 						
+						<c:if test="${!empty  userInfo.institute}"><c:out value="readonly='readonly'"/></c:if>
 						<aui:input label="Institute" name="institute" type="input" value="${userInfo.institute}" />
 						
 						<aui:input name="phone" type="hidden" />
 						
-						<aui:input label="e-Mail addess" name="mail" type="input" value="${userInfo.mail }"/>
+						<c:if test="${!empty  userInfo.mail}"><c:out value="readonly='readonly'"/></c:if>
+						
+						<aui:input label="e-Mail addess" name="mail" type="input" value="${userInfo.mail }" />
 						
 						<aui:input  name="username" type="hidden" value="${userInfo.username }"/>
-						
-						<aui:input  name="haveCertificate" type="hidden" value="${registrationModel.haveCertificate }"/>
-						<aui:input  name="issuer" type="hidden" value="${registrationModel.issuer }"/>
-						<aui:input  name="subject" type="hidden" value="${registrationModel.subject }"/>
-						<aui:input  name="vos" type="hidden" value="${registrationModel.vos }"/>
-						<aui:input  name="searchVo" type="hidden" value="${registrationModel.searchVo }"/>
-						<aui:input  name="certificateUserId" type="hidden" value="${registrationModel.certificateUserId }"/>
 						
 					</aui:fieldset>
 

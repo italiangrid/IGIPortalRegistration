@@ -20,9 +20,33 @@ public class CookieUtil {
 		setCookie("certificateUserId",  registrationModel.getCertificateUserId(), response);
 		setCookie("vos",  registrationModel.getVos(), response);
 		setCookie("searchVo", registrationModel.getSearchVo(), response);
+		setCookie("mail", registrationModel.getMail(), response);
+		setCookie("haveIDP", Boolean.toString(registrationModel.isHaveIDP()), response);
+	}
+	
+	public static void setCookie(RegistrationModel registrationModel,
+			RenderResponse response) {
+		setCookie("haveCertificate", Boolean.toString(registrationModel.isHaveCertificate()), response);
+		setCookie("issuer",  registrationModel.getIssuer(), response);
+		setCookie("subject",  registrationModel.getSubject(), response);
+		setCookie("certificateUserId",  registrationModel.getCertificateUserId(), response);
+		setCookie("vos",  registrationModel.getVos(), response);
+		setCookie("searchVo", registrationModel.getSearchVo(), response);
+		setCookie("mail", registrationModel.getMail(), response);
+		setCookie("haveIDP", Boolean.toString(registrationModel.isHaveIDP()), response);
+		
 	}
 	
 	public static void setCookie(String name, String value, ActionResponse response) {
+		Cookie cookie = new Cookie(name, value);
+		cookie.setSecure(true);
+		cookie.setPath("/");
+		cookie.setMaxAge(3600);
+		response.addProperty(cookie);
+		
+	}
+	
+	public static void setCookie(String name, String value, RenderResponse response) {
 		Cookie cookie = new Cookie(name, value);
 		cookie.setSecure(true);
 		cookie.setPath("/");
@@ -38,6 +62,8 @@ public class CookieUtil {
 		delCookie("certificateUserId",  response);
 		delCookie("vos",  response);
 		delCookie("searchVo", response);
+		delCookie("mail", response);
+		delCookie("haveIDP", response);
 	}
 	
 	public static void delCookie(String name, RenderResponse response){
@@ -51,77 +77,64 @@ public class CookieUtil {
 	public static RegistrationModel getCookie(ActionRequest request) {
 		RegistrationModel rm = new RegistrationModel();
 		
-		String[] array = {"haveCertificate", "issuer", "subject", "certificateUserId", "vos", "searchVo"};
-		List<String> cookieNames = Arrays.asList(array);
-		
 		for(Cookie c: request.getCookies()){
-			switch(cookieNames.indexOf(c.getName())){
-			case 0:
-				//haveCertificate
-				rm.setHaveCertificate(Boolean.parseBoolean(c.getValue()));
-				break;
-			case 1:
-				//issuer
-				rm.setIssuer(c.getValue());
-				break;
-			case 2:
-				//subject
-				rm.setSubject(c.getValue());
-				break;
-			case 3:
-				//certificateUserId
-				rm.setCertificateUserId(c.getValue());
-				break;
-			case 4:
-				//vos
-				rm.setVos(c.getValue());
-				break;
-			case 5:
-				//searchVo
-				rm.setSearchVo(c.getValue());
-				break;
-			}
+			parseCookie(rm, c);
 		}
 		
 		return rm;
+		
 	}
 
 	public static RegistrationModel getCookie(RenderRequest request) {
 		RegistrationModel rm = new RegistrationModel();
 		
-		String[] array = {"haveCertificate", "issuer", "subject", "certificateUserId", "vos", "searchVo"};
-		List<String> cookieNames = Arrays.asList(array);
-		
 		for(Cookie c: request.getCookies()){
-			switch(cookieNames.indexOf(c.getName())){
-			case 0:
-				//haveCertificate
-				rm.setHaveCertificate(Boolean.parseBoolean(c.getValue()));
-				break;
-			case 1:
-				//issuer
-				rm.setIssuer(c.getValue());
-				break;
-			case 2:
-				//subject
-				rm.setSubject(c.getValue());
-				break;
-			case 3:
-				//certificateUserId
-				rm.setCertificateUserId(c.getValue());
-				break;
-			case 4:
-				//vos
-				rm.setVos(c.getValue());
-				break;
-			case 5:
-				//searchVo
-				rm.setSearchVo(c.getValue());
-				break;
-			}
+			parseCookie(rm, c);
 		}
 		
 		return rm;
 		
 	}
+	
+	private static void parseCookie(RegistrationModel rm, Cookie c){
+		String[] array = {"haveCertificate", "issuer", "subject", "certificateUserId", "vos", "searchVo", "mail", "haveIDP"};
+		List<String> cookieNames = Arrays.asList(array);
+		
+		switch(cookieNames.indexOf(c.getName())){
+		case 0:
+			//haveCertificate
+			rm.setHaveCertificate(Boolean.parseBoolean(c.getValue()));
+			break;
+		case 1:
+			//issuer
+			rm.setIssuer(c.getValue());
+			break;
+		case 2:
+			//subject
+			rm.setSubject(c.getValue());
+			break;
+		case 3:
+			//certificateUserId
+			rm.setCertificateUserId(c.getValue());
+			break;
+		case 4:
+			//vos
+			rm.setVos(c.getValue());
+			break;
+		case 5:
+			//searchVo
+			rm.setSearchVo(c.getValue());
+			break;
+		case 6:
+			//mail
+			rm.setMail(c.getValue());
+			break;
+		case 7:
+			//haveIDP
+			rm.setHaveIDP(Boolean.parseBoolean(c.getValue()));
+			break;
+		}
+	}
+
+	
 }

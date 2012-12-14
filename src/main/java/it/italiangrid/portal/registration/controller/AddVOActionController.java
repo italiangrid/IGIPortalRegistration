@@ -55,6 +55,7 @@ public class AddVOActionController {
 		}
 		registrationModel.setSearchVo(null);
 		
+		CookieUtil.setCookie(registrationModel, response);
 		response.setRenderParameter("myaction", "showAddVoForm");
 		request.setAttribute("registrationModel", registrationModel);
 	}
@@ -70,6 +71,8 @@ public class AddVOActionController {
 		
 		registrationModel.setSearchVo(null);
 		SessionMessages.add(request, "userToVo-removed-success");
+		
+		CookieUtil.setCookie(registrationModel, response);
 		response.setRenderParameter("myaction", "showAddVoForm");
 		request.setAttribute("registrationModel", registrationModel);
 	}
@@ -91,13 +94,6 @@ public class AddVOActionController {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
-//		CookieUtil.setCookie("haveCertificate", Boolean.toString(registrationModel.isHaveCertificate()), response);
-//		CookieUtil.setCookie("issuer",  registrationModel.getIssuer(), response);
-//		CookieUtil.setCookie("subject",  registrationModel.getSubject(), response);
-//		CookieUtil.setCookie("certificateUserId",  registrationModel.getCertificateUserId(), response);
-//		CookieUtil.setCookie("vos",  registrationModel.getVos(), response);
-//		CookieUtil.setCookie("searchVo", registrationModel.getSearchVo(), response);
 	}
 
 	
