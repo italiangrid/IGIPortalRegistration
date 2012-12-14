@@ -44,7 +44,7 @@ public class AddVOController {
 		}
 		List<Vo> result = new ArrayList<Vo>();
 		if(!registrationModel.getVos().isEmpty())
-			for(String id : registrationModel.getVos().split(";"))
+			for(String id : registrationModel.getVos().split("#"))
 				result.add(voService.findById(Integer.parseInt(id)));
 		
 		return result;

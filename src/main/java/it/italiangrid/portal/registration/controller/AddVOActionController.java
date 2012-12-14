@@ -42,11 +42,12 @@ public class AddVOActionController {
 	
 	@ActionMapping(params = "myaction=addVo")
 	public void addVo(@ModelAttribute RegistrationModel registrationModel, ActionRequest request , ActionResponse response){
+		log.error("myaction=addVo");
 		log.error(registrationModel.toString());
 		log.error(request.getParameter("voToAdd"));
 		log.error(voService.findById(Integer.valueOf(request.getParameter("voToAdd"))).getHost());
 		if(VOMSAdminCallOut.getUser(registrationModel.getSubject(), registrationModel.getIssuer(), voService.findById(Integer.valueOf(request.getParameter("voToAdd"))).getHost())){
-			registrationModel.setVos(registrationModel.getVos().isEmpty()?request.getParameter("voToAdd"):registrationModel.getVos()+";"+request.getParameter("voToAdd"));
+			registrationModel.setVos(registrationModel.getVos().isEmpty()?request.getParameter("voToAdd"):registrationModel.getVos()+"#"+request.getParameter("voToAdd"));
 			SessionMessages.add(request, "userToVo-adding-success");
 		}else{
 			PortletConfig portletConfig = (PortletConfig)request.getAttribute(JavaConstants.JAVAX_PORTLET_CONFIG);
@@ -54,7 +55,7 @@ public class AddVOActionController {
 			SessionErrors.add(request, "no-user-found-in-VO");
 		}
 		registrationModel.setSearchVo(null);
-		
+		log.error(registrationModel.toString());
 		CookieUtil.setCookie(registrationModel, response);
 		response.setRenderParameter("myaction", "showAddVoForm");
 		request.setAttribute("registrationModel", registrationModel);
@@ -62,16 +63,17 @@ public class AddVOActionController {
 	
 	@ActionMapping(params = "myaction=delVo")
 	public void delVo(@ModelAttribute RegistrationModel registrationModel, ActionRequest request , ActionResponse response){
+		log.error("myaction=delVo");
 		log.error(registrationModel.toString());
 		log.error(request.getParameter("voToDel"));
-		if(registrationModel.getVos().contains(request.getParameter("voToDel")+";"))
-			registrationModel.setVos(registrationModel.getVos().replace(request.getParameter("voToDel")+";",""));
+		if(registrationModel.getVos().contains(request.getParameter("voToDel")+"#"))
+			registrationModel.setVos(registrationModel.getVos().replace(request.getParameter("voToDel")+"#",""));
 		if(registrationModel.getVos().contains(request.getParameter("voToDel")))
 			registrationModel.setVos(registrationModel.getVos().replace(request.getParameter("voToDel"),""));
 		
 		registrationModel.setSearchVo(null);
 		SessionMessages.add(request, "userToVo-removed-success");
-		
+		log.error(registrationModel.toString());
 		CookieUtil.setCookie(registrationModel, response);
 		response.setRenderParameter("myaction", "showAddVoForm");
 		request.setAttribute("registrationModel", registrationModel);
@@ -79,13 +81,14 @@ public class AddVOActionController {
 	
 	@ActionMapping(params = "myaction=goToAddUserForm")
 	public void goToAddUserForm(@ModelAttribute RegistrationModel registrationModel, ActionRequest request , ActionResponse response){
+		log.error("myaction=goToAddUserForm");
+		
 		log.error(registrationModel.toString());
 		
 		//response.setRenderParameter("myaction", "getShibbolethHeader");
 		request.setAttribute("registrationModel", registrationModel);
 		
 		CookieUtil.setCookie(registrationModel, response);
-		
 		try {
 			URL url = new URL("https://halfback.cnaf.infn.it/app1/index.jsp");
 			

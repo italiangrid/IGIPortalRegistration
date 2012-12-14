@@ -192,10 +192,11 @@ public class RegistrationUtil {
 	public static void associateVoToUser(UserInfo userInfo,
 			RegistrationModel registrationModel, UserToVoService userToVoService) {
 
-		for (String idVo : registrationModel.getVos().split(";")) {
+		for (String idVo : registrationModel.getVos().split("#")) {
 			log.debug("Aggiunto userToVo");
 			userToVoService.save(userInfo.getUserId(), Integer.parseInt(idVo),
 					registrationModel.getSubject());
+			userToVoService.setDefault(userInfo.getUserId(), Integer.parseInt(idVo));
 		}
 
 	}

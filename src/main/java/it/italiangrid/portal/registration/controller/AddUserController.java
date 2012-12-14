@@ -119,11 +119,12 @@ public class AddUserController {
 	
 	@RenderMapping(params = "myaction=showAddUserFormNoIDP")
 	public String showAddUserFormNoIDP(RenderRequest request, RenderResponse response) {
-		log.debug("Show addUserForm.jsp");
+		log.error("Show addUserForm.jsp");
 		
 		UserInfo userInfo = new UserInfo();
 		
 		RegistrationModel registrationModel = CookieUtil.getCookie(request);
+		log.error(registrationModel.toString());
 		
 		if(registrationModel.isHaveCertificate()){
 			
@@ -175,7 +176,7 @@ public class AddUserController {
 	public void addUser(@ModelAttribute UserInfo userInfo, ActionRequest request, ActionResponse response){
 		
 		RegistrationModel registrationModel = CookieUtil.getCookie(request);
-		log.error(registrationModel);
+		log.error(registrationModel.toString());
 		
 		List<String> errors = new ArrayList<String>();
 		
