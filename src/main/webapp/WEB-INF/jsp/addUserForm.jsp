@@ -80,6 +80,7 @@
 						</c:if>
 						
 						<aui:input  name="username" type="hidden" value="${userInfo.username }"/>
+						<aui:input  name="fromIDP" type="hidden" value="${fromIDP }"/>
 						
 					</aui:fieldset>
 

@@ -4,8 +4,10 @@ import java.io.IOException;
 import java.net.URL;
 
 import it.italiangrid.portal.dbapi.services.VoService;
+import it.italiangrid.portal.registration.exception.RegistrationException;
 import it.italiangrid.portal.registration.model.RegistrationModel;
 import it.italiangrid.portal.registration.util.CookieUtil;
+import it.italiangrid.portal.registration.util.RegistrationConfig;
 
 import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
@@ -87,14 +89,15 @@ public class AddVOActionController {
 		
 		//response.setRenderParameter("myaction", "getShibbolethHeader");
 		request.setAttribute("registrationModel", registrationModel);
-		
 		CookieUtil.setCookie(registrationModel, response);
 		try {
-			URL url = new URL("https://halfback.cnaf.infn.it/app1/index.jsp");
+			URL url = new URL(RegistrationConfig.getProperties("Registration.properties", "retrive.user.information"));
 			
 			log.error(url);
 			response.sendRedirect(url.toString());
 		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (RegistrationException e) {
 			e.printStackTrace();
 		}
 	}

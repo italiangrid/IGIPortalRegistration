@@ -1,4 +1,4 @@
-package portal.registration.controller;
+ package portal.registration.controller;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -43,6 +43,7 @@ import it.italiangrid.portal.dbapi.services.IdpService;
 import it.italiangrid.portal.dbapi.services.NotifyService;
 import it.italiangrid.portal.dbapi.services.UserInfoService;
 import it.italiangrid.portal.dbapi.services.UserToVoService;
+import it.italiangrid.portal.registration.model.RegistrationModel;
 
 @Controller("userInfoController")
 @RequestMapping(value = "VIEW")
@@ -99,6 +100,12 @@ public class UserInfoController {
 	public String showUserInfos2(RenderResponse response) {
 		return "home";
 	}
+	
+	@ModelAttribute("registrationModel")
+	public RegistrationModel getRegistrationModel() {
+//		log.debug("Initialize registration process.");	
+		return new RegistrationModel();
+	} 
 
 	@ModelAttribute("userInfos")
 	public List<UserInfo> getUserInfos() {

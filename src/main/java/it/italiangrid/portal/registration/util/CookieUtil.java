@@ -21,7 +21,7 @@ public class CookieUtil {
 		setCookie("vos",  registrationModel.getVos(), response);
 		setCookie("searchVo", registrationModel.getSearchVo(), response);
 		setCookie("mail", registrationModel.getMail(), response);
-		setCookie("haveIDP", Boolean.toString(registrationModel.isHaveIDP()), response);
+//		setCookie("haveIDP", Boolean.toString(registrationModel.isHaveIDP()), response);
 	}
 	
 	public static void setCookie(RegistrationModel registrationModel,
@@ -33,7 +33,7 @@ public class CookieUtil {
 		setCookie("vos",  registrationModel.getVos(), response);
 		setCookie("searchVo", registrationModel.getSearchVo(), response);
 		setCookie("mail", registrationModel.getMail(), response);
-		setCookie("haveIDP", Boolean.toString(registrationModel.isHaveIDP()), response);
+//		setCookie("haveIDP", Boolean.toString(registrationModel.isHaveIDP()), response);
 		
 	}
 	

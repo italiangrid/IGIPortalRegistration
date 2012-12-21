@@ -55,7 +55,7 @@ public class AddUserController {
 	@RenderMapping(params = "myaction=showAddUserForm")
 	public String showAddUserForm(RenderRequest request, RenderResponse response) {
 		log.debug("Show addUserForm.jsp");
-		String[] array = {"l","o", "givenName", "sn", "uid", "mail", "persistent-id", "org-dn"};
+		String[] array = {"l","o", "givenName", "sn", "uid", "mail", "persistent-id", "org-dn", "fromIDP"};
 		List<String> attributes = Arrays.asList(array);
 		
 		UserInfo userInfo = new UserInfo();
@@ -90,7 +90,7 @@ public class AddUserController {
 	        	break;
 	        case 5:
 //	        	mail
-	        	//userInfo.setMail(request.getParameter(name).replaceAll("%20", " "));
+	        	userInfo.setMail(request.getParameter(name).replaceAll("%20", " "));
 	        	break;
 	        case 6:
 	        	userInfo.setUsername(request.getParameter(name).replaceAll("%20", " "));
@@ -109,9 +109,16 @@ public class AddUserController {
 		userInfo.setInstitute(institute);
 		
 		RegistrationModel registrationModel = CookieUtil.getCookie(request);
+		CookieUtil.delCookie(response);
+		log.error(registrationModel.toString());
 		registrationModel.setHaveIDP(true);
+		CookieUtil.setCookie("haveIDP", Boolean.toString(registrationModel.isHaveIDP()), response);
+		CookieUtil.setCookie("pippo2", "pippone2", response);
 		CookieUtil.setCookie(registrationModel, response);
+
 		
+		log.error(registrationModel.toString());
+		request.setAttribute("fromIDP", "true");
 		request.setAttribute("userInfo", userInfo);
 		
 		return "addUserForm";
@@ -163,8 +170,9 @@ public class AddUserController {
 			userInfo.setMail(registrationModel.getMail());
 			
 			registrationModel.setHaveIDP(false);
+			CookieUtil.setCookie("haveIDP", Boolean.toString(registrationModel.isHaveIDP()), response);
 			CookieUtil.setCookie(registrationModel, response);
-			
+			request.setAttribute("fromIDP", "false");
 			request.setAttribute("userInfo", userInfo);
 			
 			return "addUserForm";
@@ -196,11 +204,12 @@ public class AddUserController {
 		try{
 			
 			//AddUser into IDP
-			if(!registrationModel.isHaveIDP())
+			if(request.getParameter("fromIDP").equals("false"))
 				RegistrationUtil.insertIntoIDP(userInfo, registrationModel);
 			
 			//AddUser into Liferay
 			boolean verify = registrationModel.getMail().isEmpty();
+			log.error("Verify??? " + verify);
 			RegistrationUtil.addUserToLiferay(request, userInfo, registrationModel, verify);
 			
 			//AddUser into DB

@@ -118,27 +118,10 @@ div#voData {
 
 <c:choose>
 	<c:when test="<%= !themeDisplay.isSignedIn() %>"> 
-		<div id="container2">
-			<aui:fieldset>
-			<aui:column columnWidth="75">
-		    <div style="text-align: justify">
-		 	
-			<!-- <img src="<%=request.getContextPath()%>/images/3-steps.png"/>
-			<img src="https://gridlab17.cnaf.infn.it/image/image_gallery?img_id=12355&t=1326102175121" alt="Fase 1" />  -->
+		
 			
-			Registration information.
 			
-			</div>
-			</aui:column>
-			<aui:column columnWidth="25">
-				<aui:form name="catalogForm" action="${showAskForCertificateUrl}">
-					<aui:button-row>
-						<aui:button type="submit" value="Register NOW!!!"/>
-					</aui:button-row>
-				</aui:form>
-			</aui:column>
-			</aui:fieldset>
-		</div>
+		<%@ include file="/WEB-INF/jsp/askForCertificate.jsp" %>
 	</c:when>
 	<c:when test="<%= (themeDisplay.isSignedIn()) && (request.isUserInRole("administrator")) %>">
 		<div id="container2">

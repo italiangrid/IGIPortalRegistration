@@ -16,7 +16,7 @@ public class RegistrationModel {
 	 */
 	public RegistrationModel() {
 		this.haveCertificate = false;
-		this.haveIDP = false;
+		this.haveIDP = true;
 		this.issuer = "";
 		this.subject = "";
 		this.certificateUserId = "";
