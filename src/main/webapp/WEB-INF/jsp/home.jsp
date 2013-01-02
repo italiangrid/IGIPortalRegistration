@@ -119,9 +119,11 @@ div#voData {
 <c:choose>
 	<c:when test="<%= !themeDisplay.isSignedIn() %>"> 
 		
-			
-			
-		<%@ include file="/WEB-INF/jsp/askForCertificate.jsp" %>
+		<div>
+		<%@ include file="/WEB-INF/jsp/summary.jsp" %>	
+		<%@ include file="/WEB-INF/jsp/instructionPage.jsp" %>
+		<div style="clear:both;"></div>
+		</div>
 	</c:when>
 	<c:when test="<%= (themeDisplay.isSignedIn()) && (request.isUserInRole("administrator")) %>">
 		<div id="container2">

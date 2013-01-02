@@ -103,9 +103,26 @@ function setHaveCert(value){
 	
 }
 
-</style>
+#action{
+		width: 74%;
+		box-shadow: 10px 10px 5px #888;
+		border: 1px;
+		border-color: #C8C9CA;
+		border-style: solid;
+		background-color: #EFEFEF;
+		border-radius: 5px;
+		padding: 10px;
+		margin-right: 9px;
+		margin-left: 10px;
+		float: left;
+	}
 
-<div id="container2">
+</style>
+<div>
+		<%@ include file="/WEB-INF/jsp/summary.jsp" %>	
+		
+		
+<div id="action">
 
 <liferay-ui:success key="user-saved-successufully"
 	message="user-saved-successufully" />
@@ -166,7 +183,13 @@ function setHaveCert(value){
 						</a>
 					</div>
 							
+					
 					<aui:input name="haveCertificate" id="haveCertificate" type="hidden" value="false"/>
+					<aui:input name="firstName" type="hidden" value="${registrationModel.firstName }"/>
+					<aui:input name="lastName" type="hidden" value="${registrationModel.lastName }"/>
+					<aui:input name="institute" type="hidden" value="${registrationModel.institute }"/>
+					<aui:input name="email" type="hidden" value="${registrationModel.email }"/>
+					<aui:input name="userStatus" type="hidden" value="${registrationModel.userStatus }"/>
 
 				</aui:fieldset>
 
@@ -191,4 +214,7 @@ function setHaveCert(value){
 
 
 
+</div>
+
+<div style="clear:both;"></div>
 </div>

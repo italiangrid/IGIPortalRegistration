@@ -1,6 +1,32 @@
 <%@ include file="/WEB-INF/jsp/init.jsp"%>
 
-<div id="container2">
+<style type="text/css">
+<!--
+
+-->
+
+
+#action{
+		width: 74%;
+		box-shadow: 10px 10px 5px #888;
+		border: 1px;
+		border-color: #C8C9CA;
+		border-style: solid;
+		background-color: #EFEFEF;
+		border-radius: 5px;
+		padding: 10px;
+		margin-right: 9px;
+		margin-left: 10px;
+		float: left;
+	}
+
+</style>
+
+<div>
+		<%@ include file="/WEB-INF/jsp/summary.jsp" %>	
+		
+		
+<div id="action">
     
 
 <portlet:actionURL var="addUserActionUrl">
@@ -99,4 +125,6 @@
 
 
 
+</div>
+<div style="clear:both;"></div>
 </div>

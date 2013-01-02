@@ -25,15 +25,18 @@ import javax.naming.directory.BasicAttributes;
 import javax.naming.directory.DirContext;
 import javax.naming.directory.InitialDirContext;
 import javax.portlet.ActionRequest;
+import javax.portlet.RenderRequest;
 
 import org.apache.log4j.Logger;
 
+import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.Validator;
 import com.liferay.portal.kernel.util.WebKeys;
 import com.liferay.portal.model.Role;
 import com.liferay.portal.model.User;
 import com.liferay.portal.service.RoleLocalServiceUtil;
+import com.liferay.portal.service.ServiceContext;
 import com.liferay.portal.service.ServiceContextFactory;
 import com.liferay.portal.service.UserLocalServiceUtil;
 import com.liferay.portal.theme.ThemeDisplay;
@@ -119,11 +122,51 @@ public class RegistrationUtil {
 	public static void addUserToLiferay(ActionRequest request,
 			UserInfo userInfo, RegistrationModel registrationModel, boolean verify)
 			throws RegistrationException {
-		try {
+		
 			long companyId = PortalUtil.getCompanyId(request);
 
 			ThemeDisplay themeDisplay = (ThemeDisplay) request
 					.getAttribute(WebKeys.THEME_DISPLAY);
+
+			try {
+				addUserToLiferay(companyId, themeDisplay, ServiceContextFactory.getInstance(User.class.getName(), request), userInfo, registrationModel, verify);
+			} catch (PortalException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (SystemException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+	}
+	
+	public static void addUserToLiferay(RenderRequest request,
+			UserInfo userInfo, RegistrationModel registrationModel, boolean verify)
+			throws RegistrationException {
+		
+			long companyId = PortalUtil.getCompanyId(request);
+
+			ThemeDisplay themeDisplay = (ThemeDisplay) request
+					.getAttribute(WebKeys.THEME_DISPLAY);
+			
+			try {
+				addUserToLiferay(companyId, themeDisplay, ServiceContextFactory.getInstance(User.class.getName(), request), userInfo, registrationModel, verify);
+			} catch (PortalException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (SystemException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+
+	}
+	
+	private static void addUserToLiferay(long companyId, ThemeDisplay themeDisplay, ServiceContext scf, UserInfo userInfo, RegistrationModel registrationModel, boolean verify)
+			throws RegistrationException{
+		
+		try {
+	
 			long[] groupIds = { themeDisplay.getLayout().getGroupId() };
 
 			log.debug("companyid = " + companyId);
@@ -134,17 +177,15 @@ public class RegistrationUtil {
 							.getMail(), 0L, "", new Locale("en"), userInfo
 							.getFirstName(), "", userInfo.getLastName(), 0, 0,
 					true, Calendar.JANUARY, 1, 1970, "", groupIds, null, null,
-					null, true, ServiceContextFactory.getInstance(
-							User.class.getName(), request));
+					null, true, scf);
 
 			if (!registrationModel.isHaveCertificate())
 				UserLocalServiceUtil.sendEmailAddressVerification(u, userInfo
-						.getMail(), ServiceContextFactory.getInstance(
-						User.class.getName(), request));
+						.getMail(), scf);
 			
 			log.error("verify = "+verify);
 			if(verify)
-				UserLocalServiceUtil.sendEmailAddressVerification(u, u.getEmailAddress(), ServiceContextFactory.getInstance(User.class.getName(), request));
+				UserLocalServiceUtil.sendEmailAddressVerification(u, u.getEmailAddress(), scf);
 
 			if (u == null) {
 				throw new RegistrationException("no-user-inserted");
@@ -162,7 +203,7 @@ public class RegistrationUtil {
 			e.printStackTrace();
 			throw new RegistrationException("user-liferay-problem");
 		}
-
+		
 	}
 
 	public static UserInfo addUserToDB(UserInfo userInfo,

@@ -69,6 +69,13 @@ public class UploadCertificateController {
 		return "uploadCertificate";
 	}
 	
+	@ModelAttribute("registrationModel")
+	public RegistrationModel getRegistrationModel(@ModelAttribute RegistrationModel registrationModel) {
+		log.error("Initialize registration process.");
+		log.error(registrationModel);
+		return registrationModel;
+	}
+	
 	@ActionMapping(params = "myaction=uploadCertificate")
 	public void uploadCert(@ModelAttribute RegistrationModel registrationModel, ActionRequest request, ActionResponse response,
 			SessionStatus sessionStatus) throws PortalException,

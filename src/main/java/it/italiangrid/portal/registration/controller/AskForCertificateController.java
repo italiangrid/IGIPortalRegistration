@@ -23,12 +23,6 @@ public class AskForCertificateController {
 	private static final Logger log = Logger
 			.getLogger(AskForCertificateController.class);
 	
-	@ModelAttribute("registrationModel")
-	public RegistrationModel getRegistrationModel() {
-		log.debug("Initialize registration process.");	
-		return new RegistrationModel();
-	}
-	
 	
 	@RenderMapping(params = "myaction=askForCertificate")
 	public String showAskForCertificate() {
@@ -40,8 +34,6 @@ public class AskForCertificateController {
 	public void doRedirect(@ModelAttribute RegistrationModel registrationModel, ActionResponse response, ActionRequest request){
 		log.error("Elaborate response for \"Do you have certificate?\" response is: " + registrationModel.isHaveCertificate());
 		log.error(registrationModel.toString());
-		
-		CookieUtil.setCookie(registrationModel, response);
 		
 		if(registrationModel.isHaveCertificate()){
 			

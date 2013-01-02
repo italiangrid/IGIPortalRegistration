@@ -59,6 +59,7 @@ public class AddUserController {
 		List<String> attributes = Arrays.asList(array);
 		
 		UserInfo userInfo = new UserInfo();
+		RegistrationModel registrationModel = new RegistrationModel();
 		
 		String o = "";
 		String l = "";
@@ -79,10 +80,12 @@ public class AddUserController {
 	        case 2:
 //	        	givenName
 	        	userInfo.setFirstName(request.getParameter(name).replaceAll("%20", " "));
+	        	registrationModel.setFirstName(userInfo.getFirstName());
 	        	break;
 	        case 3:
 //	        	sn
 	        	userInfo.setLastName(request.getParameter(name).replaceAll("%20", " "));
+	        	registrationModel.setLastName(userInfo.getLastName());
 	        	break;
 	        case 4:
 //	        	uid
@@ -91,6 +94,7 @@ public class AddUserController {
 	        case 5:
 //	        	mail
 	        	userInfo.setMail(request.getParameter(name).replaceAll("%20", " "));
+	        	registrationModel.setEmail(userInfo.getMail());
 	        	break;
 	        case 6:
 	        	userInfo.setUsername(request.getParameter(name).replaceAll("%20", " "));
@@ -107,19 +111,22 @@ public class AddUserController {
 		
 		String institute = o + (((!o.isEmpty())&&(!l.isEmpty()))? " - " : "") + l;
 		userInfo.setInstitute(institute);
+		registrationModel.setInstitute(institute);
 		
-		RegistrationModel registrationModel = CookieUtil.getCookie(request);
-		CookieUtil.delCookie(response);
-		log.error(registrationModel.toString());
-		registrationModel.setHaveIDP(true);
-		CookieUtil.setCookie("haveIDP", Boolean.toString(registrationModel.isHaveIDP()), response);
-		CookieUtil.setCookie("pippo2", "pippone2", response);
-		CookieUtil.setCookie(registrationModel, response);
-
+		
 		
 		log.error(registrationModel.toString());
 		request.setAttribute("fromIDP", "true");
 		request.setAttribute("userInfo", userInfo);
+		
+		
+		if((!registrationModel.getFirstName().isEmpty())&&(!registrationModel.getLastName().isEmpty())&&(!registrationModel.getInstitute().isEmpty())&&(!registrationModel.getEmail().isEmpty())){
+			registrationModel.setUserStatus(true);
+			request.setAttribute("registrationModel", registrationModel);
+			return addUser(userInfo, registrationModel, request, response);
+		}
+		
+		request.setAttribute("registrationModel", new RegistrationModel());
 		
 		return "addUserForm";
 	}
@@ -203,10 +210,6 @@ public class AddUserController {
 		
 		try{
 			
-			//AddUser into IDP
-			if(request.getParameter("fromIDP").equals("false"))
-				RegistrationUtil.insertIntoIDP(userInfo, registrationModel);
-			
 			//AddUser into Liferay
 			boolean verify = registrationModel.getMail().isEmpty();
 			log.error("Verify??? " + verify);
@@ -214,30 +217,6 @@ public class AddUserController {
 			
 			//AddUser into DB
 			userInfo=RegistrationUtil.addUserToDB(userInfo, userInfoService, notifyService);
-			
-			if(registrationModel.isHaveCertificate()){
-			
-				//Associate certificate to the user
-				RegistrationUtil.associateUserToCertificate(userInfo, registrationModel, certificateService);
-				
-				if(!registrationModel.getVos().isEmpty()){
-					
-					//Associate Vo to the user
-					RegistrationUtil.associateVoToUser(userInfo, registrationModel, userToVoService);
-					
-					//Activate User
-					RegistrationUtil.activateUser(userInfo, userInfoService);
-				}
-				
-				
-			
-			}else{
-				if(Boolean.parseBoolean(RegistrationConfig.getProperties("Registration.properties", "CAOnline.enabled"))){
-					request.setAttribute("userInfo", userInfo);
-					response.setRenderParameter("myaction", "showCAForm");
-					return;
-				}
-			}
 			
 			response.sendRedirect(RegistrationConfig.getProperties("Registration.properties", "login.url"));
 			return;
@@ -253,5 +232,35 @@ public class AddUserController {
 		CookieUtil.setCookie(registrationModel, response);
 		response.setRenderParameter("myaction", "showAddUserForm");
 		
+	}
+	
+private String addUser(UserInfo userInfo, RegistrationModel registrationModel, RenderRequest request, RenderResponse response){
+		
+		List<String> errors = new ArrayList<String>();
+		
+		//Validate user
+		if(!MyValidator.validate(userInfo, errors)){
+			
+			for(String error: errors)
+				SessionErrors.add(request, error);
+			
+			return "addUserForm";
+		}
+		
+		try{
+			
+			RegistrationUtil.addUserToLiferay(request, userInfo, registrationModel, false);
+			
+			//AddUser into DB
+			userInfo=RegistrationUtil.addUserToDB(userInfo, userInfoService, notifyService);
+			
+			return "askForCertificate";
+		
+		}catch(RegistrationException e){
+			e.printStackTrace();
+			SessionErrors.add(request, e.getMessage());
+		}
+		
+		return "addUserForm";
 	}
 }

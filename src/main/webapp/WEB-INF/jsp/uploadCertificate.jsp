@@ -76,7 +76,7 @@
 </script>
 
 
-<style>
+<style type="text/css">
 span .<portlet:namespace />pwd {
 	float: right;
 }
@@ -100,9 +100,27 @@ h5#usernameAlert {
 }
 
 
+#action{
+		width: 74%;
+		box-shadow: 10px 10px 5px #888;
+		border: 1px;
+		border-color: #C8C9CA;
+		border-style: solid;
+		background-color: #EFEFEF;
+		border-radius: 5px;
+		padding: 10px;
+		margin-right: 9px;
+		margin-left: 10px;
+		float: left;
+	}
+
 </style>
 
-<div id="container2">
+<div>
+		<%@ include file="/WEB-INF/jsp/summary.jsp" %>	
+		
+		
+<div id="action">
 
 <liferay-ui:success key="user-saved-successufully"
 	message="user-saved-successufully" />
@@ -261,4 +279,7 @@ h5#usernameAlert {
 <div id="footnotePwdProxy" style="display:none;">Choose a password<br/>for encrypting your proxy<br/>and storing it into MyProxy server.</div>
 
 
+</div>
+
+<div style="clear:both;"></div>
 </div>
