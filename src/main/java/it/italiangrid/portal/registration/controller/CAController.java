@@ -2,6 +2,7 @@ package it.italiangrid.portal.registration.controller;
 
 import it.italiangrid.portal.dbapi.domain.UserInfo;
 import it.italiangrid.portal.registration.exception.RegistrationException;
+import it.italiangrid.portal.registration.model.RegistrationModel;
 import it.italiangrid.portal.registration.util.RegistrationConfig;
 
 import java.util.List;
@@ -27,11 +28,18 @@ public class CAController {
 		return "caForm";
 	}
 	
-	@ModelAttribute("tokens")
-	public List<String> getTokens(RenderRequest request) {
+	@ModelAttribute("caUrl")
+	public String getCaUrl(RenderRequest request) {
 		
-		UserInfo userInfo = (UserInfo) request.getAttribute("userInfo");	
-		return TokenCreator.getToken(userInfo.getMail());
+		try {
+			log.error(RegistrationConfig.getProperties("Registration.properties", "login.url"));
+			RegistrationModel registrationModel = (RegistrationModel) request.getAttribute("registrationModel");	
+			List<String> tokens = TokenCreator.getToken(registrationModel.getEmail());
+			return RegistrationConfig.getProperties("Registration.properties", "CAOnline.url")+"?t1="+tokens.get(0)+"&t2="+tokens.get(1);
+		} catch (RegistrationException e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 	
 	@ModelAttribute("loginUrl")

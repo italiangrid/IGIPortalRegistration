@@ -162,25 +162,26 @@ function setHaveCert(value){
 							<div class="reset"></div>
 						</div>
 						</a>
-
-						<div class="choose">
-							<div id="or"><strong>OR</strong></div>
-						</div>
-						<a href="" onclick="setHaveCert('false'); return false;">
-						<div class="choose bordered">
-							<div class="mess">
-								<div class="center">
-								I haven't a personal certificate.
+						<c:if test="${registrationModel.haveIDP }">
+							<div class="choose">
+								<div id="or"><strong>OR</strong></div>
+							</div>
+							<a href="" onclick="setHaveCert('false'); return false;">
+							<div class="choose bordered">
+								<div class="mess">
+									<div class="center">
+									I haven't a personal certificate.
+									</div>
 								</div>
+								<div class="iconContainer">
+								<div class="icon">
+									<img class="displayed" src="<%=request.getContextPath()%>/images/cert-download.png" id="noImg" width="64"/>
+								</div>
+								</div>
+								<div class="reset"></div>
 							</div>
-							<div class="iconContainer">
-							<div class="icon">
-								<img class="displayed" src="<%=request.getContextPath()%>/images/cert-download.png" id="noImg" width="64"/>
-							</div>
-							</div>
-							<div class="reset"></div>
-						</div>
-						</a>
+							</a>
+						</c:if>
 					</div>
 							
 					
@@ -198,12 +199,15 @@ function setHaveCert(value){
 				<br />
 			</aui:column>
 
+
+##### ${loginUrl } #####
 			
 
 			<aui:button-row>
 				<aui:button type="submit" value="Continue"  style="display:none"/>
 				
-						<aui:button type="cancel" value="Terminate Registration" />
+						<aui:button type="cancel" value="Terminate Registration" 
+					onClick="alert('You are registrated in the portal, log into the portal for complete the registraion.');location.href='${loginUrl }';" />
 
 			</aui:button-row>
 

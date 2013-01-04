@@ -1,10 +1,15 @@
 package it.italiangrid.portal.registration.controller;
 
 import it.italiangrid.portal.dbapi.domain.Certificate;
+import it.italiangrid.portal.dbapi.domain.UserInfo;
 import it.italiangrid.portal.dbapi.services.CertificateService;
+import it.italiangrid.portal.dbapi.services.NotifyService;
 import it.italiangrid.portal.dbapi.services.UserInfoService;
+import it.italiangrid.portal.registration.exception.RegistrationException;
 import it.italiangrid.portal.registration.model.RegistrationModel;
 import it.italiangrid.portal.registration.util.CookieUtil;
+import it.italiangrid.portal.registration.util.RegistrationConfig;
+import it.italiangrid.portal.registration.util.RegistrationUtil;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -58,9 +63,12 @@ import com.oreilly.servlet.multipart.Part;
 public class UploadCertificateController {
 	private static final Logger log = Logger
 			.getLogger(UploadCertificateController.class);
+	@Autowired
+	private NotifyService notifyService;
 	
 	@Autowired
 	private CertificateService certificateService;
+	
 	@Autowired
 	private UserInfoService userInfoService;
 	
@@ -70,6 +78,18 @@ public class UploadCertificateController {
 	public String showAskForCertificate() {
 		log.error("Show uploadCertificate.jsp");
 		return "uploadCertificate";
+	}
+	
+
+	
+	@ModelAttribute("loginUrl")
+	public String getLoginUrl() {	
+		try {
+			return RegistrationConfig.getProperties("Registration.properties", "login.url");
+		} catch (RegistrationException e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 	
 	
@@ -218,6 +238,68 @@ public class UploadCertificateController {
 					}
 					if (allOk) {
 						
+						registrationModel.setIssuer(issuer);
+						registrationModel.setSubject(subject);
+						registrationModel.setCertificateUserId(certificateUserId);
+						registrationModel.setMail(mail);
+						
+						if(!registrationModel.isHaveIDP()){
+							
+							UserInfo userInfo = new UserInfo();
+							
+							String[] dnParts = registrationModel.getSubject().split("/");
+							String o = "";
+							String l = "";
+							String cn = "";
+							
+							for(String value: dnParts){
+								if(value.contains("O="))
+									o = value.replace("O=", "");
+								if(value.contains("L="))
+									l = value.replace("L=", "");
+								if(value.contains("CN="))
+									cn = value.replace("CN=", "");
+							}
+							
+							String institute = o + (((!o.isEmpty())&&(!l.isEmpty()))? " - " : "") + l;
+							userInfo.setInstitute(institute);
+							
+							String[] cnParts = cn.split(" ");
+							String firstName = cnParts[0];
+							
+							String lastName = cnParts[1];
+							
+							for(int i=2; i < cnParts.length; i++ ){
+								if(!cnParts[i].contains("@"))
+									lastName += " " + cnParts[i];
+							}
+								
+							String username = firstName + "." + lastName.trim();
+							
+							userInfo.setFirstName(firstName);
+							userInfo.setLastName(lastName);
+							userInfo.setUsername(username.toLowerCase());
+							userInfo.setMail(registrationModel.getMail());
+							
+							registrationModel.setFirstName(firstName);
+							registrationModel.setLastName(lastName);
+							registrationModel.setInstitute(institute);
+							registrationModel.setEmail(registrationModel.getMail());
+							registrationModel.setUserStatus(true);
+							
+							try {
+								RegistrationUtil.insertIntoIDP(userInfo, registrationModel);
+								boolean verify = registrationModel.getEmail().isEmpty();
+								log.error("Verify??? " + verify);
+								RegistrationUtil.addUserToLiferay(request, userInfo, registrationModel, verify);
+								userInfo=RegistrationUtil.addUserToDB(userInfo, userInfoService, notifyService);
+								
+							} catch (RegistrationException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+						}
+						
 						Certificate cert = new Certificate();
 						cert.setIdCert(0);
 						cert.setUserInfo(null);
@@ -229,12 +311,6 @@ public class UploadCertificateController {
 						cert.setUsernameCert(certificateUserId);
 						cert.setUserInfo(userInfoService.findByMail(registrationModel.getEmail()));
 						
-						registrationModel.setIssuer(issuer);
-						registrationModel.setSubject(subject);
-						registrationModel.setCertificateUserId(certificateUserId);
-						registrationModel.setMail(mail);
-						
-
 						log.error("@@@@@@@@"+registrationModel);
 						
 						int id = certificateService.save(cert);

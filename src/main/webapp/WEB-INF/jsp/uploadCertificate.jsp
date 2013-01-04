@@ -270,7 +270,7 @@ h5#usernameAlert {
 			<aui:button-row>
 				<aui:button type="submit" value="Continue" onClick="return validate();"/>
 				<aui:button type="cancel" value="Terminate Registration"
-					onClick="alert('You are registrated in the portal, log into the portal for complete the registraion.');location.href='${loginURL }';" />
+					onClick="alert('You are registrated in the portal, log into the portal for complete the registraion.');location.href='${loginUrl }';" />
 			</aui:button-row>
 			
 			

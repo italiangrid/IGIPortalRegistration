@@ -123,6 +123,13 @@ public class AddUserController {
 			registrationModel.setUserStatus(true);
 			log.error("###########"+registrationModel);
 			request.setAttribute("registrationModel", registrationModel);
+			try {
+				log.error(RegistrationConfig.getProperties("Registration.properties", "login.url"));
+				request.setAttribute("loginUrl", RegistrationConfig.getProperties("Registration.properties", "login.url"));
+			} catch (RegistrationException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			return addUser(userInfo, registrationModel, request, response);
 		}
 		
@@ -133,58 +140,71 @@ public class AddUserController {
 	
 	@RenderMapping(params = "myaction=showAddUserFormNoIDP")
 	public String showAddUserFormNoIDP(RenderRequest request, RenderResponse response) {
-		log.error("Show addUserForm.jsp");
+//		log.error("Show addUserForm.jsp");
+//		
+//		UserInfo userInfo = new UserInfo();
+//		
+//		RegistrationModel registrationModel = CookieUtil.getCookie(request);
+//		log.error(registrationModel.toString());
+//		
+//		if(registrationModel.isHaveCertificate()){
+//			
+//			String[] dnParts = registrationModel.getSubject().split("/");
+//			String o = "";
+//			String l = "";
+//			String cn = "";
+//			
+//			for(String value: dnParts){
+//				if(value.contains("O="))
+//					o = value.replace("O=", "");
+//				if(value.contains("L="))
+//					l = value.replace("L=", "");
+//				if(value.contains("CN="))
+//					cn = value.replace("CN=", "");
+//			}
+//			
+//			String institute = o + (((!o.isEmpty())&&(!l.isEmpty()))? " - " : "") + l;
+//			userInfo.setInstitute(institute);
+//			
+//			String[] cnParts = cn.split(" ");
+//			String firstName = cnParts[0];
+//			
+//			String lastName = cnParts[1];
+//			
+//			for(int i=2; i < cnParts.length; i++ ){
+//				if(!cnParts[i].contains("@"))
+//					lastName += " " + cnParts[i];
+//			}
+//				
+//			String username = firstName + "." + lastName.trim();
+//			
+//			userInfo.setFirstName(firstName);
+//			userInfo.setLastName(lastName);
+//			userInfo.setUsername(username.toLowerCase());
+//			userInfo.setMail(registrationModel.getMail());
+//			
+//			registrationModel.setHaveIDP(false);
+//			CookieUtil.setCookie("haveIDP", Boolean.toString(registrationModel.isHaveIDP()), response);
+//			CookieUtil.setCookie(registrationModel, response);
+//			request.setAttribute("fromIDP", "false");
+//			request.setAttribute("userInfo", userInfo);
+//			
+//			return "addUserForm";
+//		}
+//		return "noRegistration";
 		
-		UserInfo userInfo = new UserInfo();
+		RegistrationModel registrationModel = new RegistrationModel();
+		request.setAttribute("registrationModel", registrationModel);
 		
-		RegistrationModel registrationModel = CookieUtil.getCookie(request);
-		log.error(registrationModel.toString());
-		
-		if(registrationModel.isHaveCertificate()){
-			
-			String[] dnParts = registrationModel.getSubject().split("/");
-			String o = "";
-			String l = "";
-			String cn = "";
-			
-			for(String value: dnParts){
-				if(value.contains("O="))
-					o = value.replace("O=", "");
-				if(value.contains("L="))
-					l = value.replace("L=", "");
-				if(value.contains("CN="))
-					cn = value.replace("CN=", "");
-			}
-			
-			String institute = o + (((!o.isEmpty())&&(!l.isEmpty()))? " - " : "") + l;
-			userInfo.setInstitute(institute);
-			
-			String[] cnParts = cn.split(" ");
-			String firstName = cnParts[0];
-			
-			String lastName = cnParts[1];
-			
-			for(int i=2; i < cnParts.length; i++ ){
-				if(!cnParts[i].contains("@"))
-					lastName += " " + cnParts[i];
-			}
-				
-			String username = firstName + "." + lastName.trim();
-			
-			userInfo.setFirstName(firstName);
-			userInfo.setLastName(lastName);
-			userInfo.setUsername(username.toLowerCase());
-			userInfo.setMail(registrationModel.getMail());
-			
-			registrationModel.setHaveIDP(false);
-			CookieUtil.setCookie("haveIDP", Boolean.toString(registrationModel.isHaveIDP()), response);
-			CookieUtil.setCookie(registrationModel, response);
-			request.setAttribute("fromIDP", "false");
-			request.setAttribute("userInfo", userInfo);
-			
-			return "addUserForm";
+		try {
+			log.error(RegistrationConfig.getProperties("Registration.properties", "login.url"));
+			request.setAttribute("loginUrl", RegistrationConfig.getProperties("Registration.properties", "login.url"));
+		} catch (RegistrationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		return "noRegistration";
+		
+		return "askForCertificate";
 	}
 	
 	@ActionMapping(params="myaction=addUser")
@@ -219,7 +239,7 @@ public class AddUserController {
 		try{
 			
 			//AddUser into Liferay
-			boolean verify = registrationModel.getMail().isEmpty();
+			boolean verify = registrationModel.getEmail().isEmpty();
 			log.error("Verify??? " + verify);
 			RegistrationUtil.addUserToLiferay(request, userInfo, registrationModel, verify);
 			
@@ -229,6 +249,10 @@ public class AddUserController {
 			request.setAttribute("userInfo", userInfo);
 			registrationModel.setUserStatus(true);
 			request.setAttribute("registrationModel", registrationModel);
+			
+			log.error(RegistrationConfig.getProperties("Registration.properties", "login.url"));
+			request.setAttribute("loginUrl", RegistrationConfig.getProperties("Registration.properties", "login.url"));
+			
 			response.setRenderParameter("myaction", "askForCertificate");
 //			response.sendRedirect(RegistrationConfig.getProperties("Registration.properties", "login.url"));
 			return;

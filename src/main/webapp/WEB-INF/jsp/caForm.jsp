@@ -4,18 +4,42 @@
 	<portlet:param name="myaction" value="endRegistration" />
 </portlet:actionURL>
 
-<div id="container2">
+<style>
+
+#action{
+		width: 74%;
+		box-shadow: 10px 10px 5px #888;
+		border: 1px;
+		border-color: #C8C9CA;
+		border-style: solid;
+		background-color: #EFEFEF;
+		border-radius: 5px;
+		padding: 10px;
+		margin-right: 9px;
+		margin-left: 10px;
+		float: left;
+	}
+
+
+</style>
+
+<div>
+		<%@ include file="/WEB-INF/jsp/summary.jsp" %>	
+
+<div id="action">
 	<aui:fieldset label="CA Online - Request new certificate">
-	<aui:column columnWidth="20"><br/></aui:column>
-	<aui:column columnWidth="60">
-	<iframe frameborder="0" scrolling="no" allowtransparency="true"src="https://openlab03.cnaf.infn.it/CAOnlineBridge/home?t1=${tokens[0]}&t2=${tokens[1]}" width="800" height="600" ></iframe>
+	
+	
+	<iframe frameborder="0" scrolling="no" allowtransparency="true" src="${caUrl }" width="900" height="600"
+	 ></iframe>
 	<br/><br/>
 	<aui:form name="caForm" action="${endActionUrl}">
 	
 		<aui:button type="cancel" value="Terminate Registration"
 						onClick="location.href='${loginUrl}';" />
 	</aui:form>
-	</aui:column>
-	<aui:column columnWidth="20"><br/></aui:column>
+	
 	</aui:fieldset>
+</div>
+<div style="clear:both;"></div>
 </div>

@@ -178,10 +178,6 @@ public class RegistrationUtil {
 							.getFirstName(), "", userInfo.getLastName(), 0, 0,
 					true, Calendar.JANUARY, 1, 1970, "", groupIds, null, null,
 					null, true, scf);
-
-			if (!registrationModel.isHaveCertificate())
-				UserLocalServiceUtil.sendEmailAddressVerification(u, userInfo
-						.getMail(), scf);
 			
 			log.error("verify = "+verify);
 			if(verify)
@@ -298,6 +294,8 @@ public class RegistrationUtil {
 			if(value.contains("CN="))
 				cn = value.replace("CN=", "");
 		}
+		
+		cn += " IGP";
 	    
 	    String uid = (userInfo.getFirstName()+"."+userInfo.getLastName()).toLowerCase();
 	    
