@@ -68,7 +68,6 @@
 		<h1 class="header-title">User Data</h1>
 
 		<br></br>
-
 		<aui:fieldset>
 			<div id="<portlet:namespace/>idpOk">
 				<aui:column columnWidth="25">

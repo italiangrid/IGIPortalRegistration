@@ -3,11 +3,15 @@ package it.italiangrid.portal.registration.controller;
 import java.io.IOException;
 import java.net.URL;
 
+import it.italiangrid.portal.dbapi.domain.UserInfo;
+import it.italiangrid.portal.dbapi.services.UserInfoService;
+import it.italiangrid.portal.dbapi.services.UserToVoService;
 import it.italiangrid.portal.dbapi.services.VoService;
 import it.italiangrid.portal.registration.exception.RegistrationException;
 import it.italiangrid.portal.registration.model.RegistrationModel;
 import it.italiangrid.portal.registration.util.CookieUtil;
 import it.italiangrid.portal.registration.util.RegistrationConfig;
+import it.italiangrid.portal.registration.util.RegistrationUtil;
 
 import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
@@ -34,6 +38,12 @@ public class AddVOActionController {
 	@Autowired
 	private VoService voService;
 	
+	@Autowired
+	private UserToVoService userToVoService;
+	
+	@Autowired
+	private UserInfoService userInfoService;
+	
 	@ActionMapping(params = "myaction=searchVo2")
 	public void searchVo(@ModelAttribute RegistrationModel registrationModel, ActionRequest request , ActionResponse response){
 		log.error(registrationModel.toString());
@@ -57,8 +67,8 @@ public class AddVOActionController {
 			SessionErrors.add(request, "no-user-found-in-VO");
 		}
 		registrationModel.setSearchVo(null);
+		registrationModel.setVoStatus(true);
 		log.error(registrationModel.toString());
-		CookieUtil.setCookie(registrationModel, response);
 		response.setRenderParameter("myaction", "showAddVoForm");
 		request.setAttribute("registrationModel", registrationModel);
 	}
@@ -72,11 +82,11 @@ public class AddVOActionController {
 			registrationModel.setVos(registrationModel.getVos().replace(request.getParameter("voToDel")+"#",""));
 		if(registrationModel.getVos().contains(request.getParameter("voToDel")))
 			registrationModel.setVos(registrationModel.getVos().replace(request.getParameter("voToDel"),""));
-		
+		if(registrationModel.getVos().isEmpty())
+			registrationModel.setVoStatus(false);
 		registrationModel.setSearchVo(null);
 		SessionMessages.add(request, "userToVo-removed-success");
 		log.error(registrationModel.toString());
-		CookieUtil.setCookie(registrationModel, response);
 		response.setRenderParameter("myaction", "showAddVoForm");
 		request.setAttribute("registrationModel", registrationModel);
 	}
@@ -87,12 +97,14 @@ public class AddVOActionController {
 		
 		log.error(registrationModel.toString());
 		
-		//response.setRenderParameter("myaction", "getShibbolethHeader");
-		request.setAttribute("registrationModel", registrationModel);
-		CookieUtil.setCookie(registrationModel, response);
+		UserInfo userInfo = userInfoService.findByMail(registrationModel.getEmail());
+		
+		RegistrationUtil.associateVoToUser(userInfo, registrationModel, userToVoService);
+		RegistrationUtil.activateUser(userInfo, userInfoService);
+		
 		try {
-			URL url = new URL(RegistrationConfig.getProperties("Registration.properties", "retrive.user.information"));
-			
+			URL url = new URL(RegistrationConfig.getProperties("Registration.properties", "login.url"));
+
 			log.error(url);
 			response.sendRedirect(url.toString());
 		} catch (IOException e) {
@@ -100,6 +112,8 @@ public class AddVOActionController {
 		} catch (RegistrationException e) {
 			e.printStackTrace();
 		}
+		
+		request.setAttribute("registrationModel", registrationModel);
 	}
 
 	

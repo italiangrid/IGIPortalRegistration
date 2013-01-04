@@ -36,16 +36,14 @@ public class AddVOController {
 	@ModelAttribute("selectedVos")
 	public List<Vo> getSelectedVo(RenderRequest request, RenderResponse response){
  
-		RegistrationModel registrationModel = null;
-		if(request.getAttribute("registrationModel")==null){
-			registrationModel = CookieUtil.getCookie(request);
-		}else{
-			registrationModel = (RegistrationModel) request.getAttribute("registrationModel");
-		}
+		RegistrationModel registrationModel = (RegistrationModel) request.getAttribute("registrationModel");
+		
 		List<Vo> result = new ArrayList<Vo>();
 		if(!registrationModel.getVos().isEmpty())
 			for(String id : registrationModel.getVos().split("#"))
 				result.add(voService.findById(Integer.parseInt(id)));
+		
+		request.setAttribute("registrationModel", registrationModel);
 		
 		return result;
 	}
@@ -55,16 +53,13 @@ public class AddVOController {
 	public List<Vo> getSerchedVo(RenderRequest request){
 		
 		List<Vo> result = new ArrayList<Vo>();
-		RegistrationModel registrationModel = null;
-		if(request.getAttribute("registrationModel")==null){
-			registrationModel = CookieUtil.getCookie(request);
-		}else{
-			registrationModel = (RegistrationModel) request.getAttribute("registrationModel");
-		}
+		RegistrationModel registrationModel = (RegistrationModel) request.getAttribute("registrationModel");
+		
 		
 		if(registrationModel.getSearchVo()!=null){
 			result = voService.getAllVoByName(registrationModel.getSearchVo());
 		}
+		request.setAttribute("registrationModel", registrationModel);
 		return result;
 	}
 

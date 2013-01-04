@@ -109,24 +109,24 @@ public class AddUserController {
 
 	     }
 		
-		String institute = o + (((!o.isEmpty())&&(!l.isEmpty()))? " - " : "") + l;
+		String institute = l + (((!l.isEmpty())&&(!o.isEmpty()))? " - " : "") + o;
 		userInfo.setInstitute(institute);
 		registrationModel.setInstitute(institute);
 		
-		
-		
 		log.error(registrationModel.toString());
+		registrationModel.setHaveIDP(true);
 		request.setAttribute("fromIDP", "true");
 		request.setAttribute("userInfo", userInfo);
 		
 		
 		if((!registrationModel.getFirstName().isEmpty())&&(!registrationModel.getLastName().isEmpty())&&(!registrationModel.getInstitute().isEmpty())&&(!registrationModel.getEmail().isEmpty())){
 			registrationModel.setUserStatus(true);
+			log.error("###########"+registrationModel);
 			request.setAttribute("registrationModel", registrationModel);
 			return addUser(userInfo, registrationModel, request, response);
 		}
 		
-		request.setAttribute("registrationModel", new RegistrationModel());
+		request.setAttribute("registrationModel", registrationModel);
 		
 		return "addUserForm";
 	}
@@ -190,8 +190,16 @@ public class AddUserController {
 	@ActionMapping(params="myaction=addUser")
 	public void addUser(@ModelAttribute UserInfo userInfo, ActionRequest request, ActionResponse response){
 		
-		RegistrationModel registrationModel = CookieUtil.getCookie(request);
-		log.error(registrationModel.toString());
+		RegistrationModel registrationModel = new RegistrationModel();
+		
+		if (!userInfo.getFirstName().isEmpty())
+			registrationModel.setFirstName(userInfo.getFirstName());
+		if (!userInfo.getLastName().isEmpty())
+			registrationModel.setLastName(userInfo.getLastName());
+		if (!userInfo.getInstitute().isEmpty())
+			registrationModel.setInstitute(userInfo.getInstitute());
+		if (!userInfo.getMail().isEmpty())
+			registrationModel.setEmail(userInfo.getMail());
 		
 		List<String> errors = new ArrayList<String>();
 		
@@ -202,7 +210,7 @@ public class AddUserController {
 				SessionErrors.add(request, error);
 			
 			request.setAttribute("userInfo", userInfo);
-			CookieUtil.setCookie(registrationModel, response);
+			request.setAttribute("registrationModel", registrationModel);
 			response.setRenderParameter("myaction", "showAddUserForm");
 			return;
 		
@@ -218,18 +226,19 @@ public class AddUserController {
 			//AddUser into DB
 			userInfo=RegistrationUtil.addUserToDB(userInfo, userInfoService, notifyService);
 			
-			response.sendRedirect(RegistrationConfig.getProperties("Registration.properties", "login.url"));
+			request.setAttribute("userInfo", userInfo);
+			registrationModel.setUserStatus(true);
+			request.setAttribute("registrationModel", registrationModel);
+			response.setRenderParameter("myaction", "askForCertificate");
+//			response.sendRedirect(RegistrationConfig.getProperties("Registration.properties", "login.url"));
 			return;
 		
 		}catch(RegistrationException e){
 			e.printStackTrace();
 			SessionErrors.add(request, e.getMessage());
-		} catch (IOException e) {
-			e.printStackTrace();
 		}
 		
 		request.setAttribute("userInfo", userInfo);
-		CookieUtil.setCookie(registrationModel, response);
 		response.setRenderParameter("myaction", "showAddUserForm");
 		
 	}

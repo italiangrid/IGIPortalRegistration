@@ -185,6 +185,7 @@ function setHaveCert(value){
 							
 					
 					<aui:input name="haveCertificate" id="haveCertificate" type="hidden" value="false"/>
+					<aui:input name="haveIDP" type="hidden" value="${registrationModel.haveIDP }"/>
 					<aui:input name="firstName" type="hidden" value="${registrationModel.firstName }"/>
 					<aui:input name="lastName" type="hidden" value="${registrationModel.lastName }"/>
 					<aui:input name="institute" type="hidden" value="${registrationModel.institute }"/>

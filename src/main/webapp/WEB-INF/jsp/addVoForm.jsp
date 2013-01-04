@@ -75,11 +75,27 @@ div.function {
 	background-color: #D1D6DC;
 }
 
+#action{
+		width: 74%;
+		box-shadow: 10px 10px 5px #888;
+		border: 1px;
+		border-color: #C8C9CA;
+		border-style: solid;
+		background-color: #EFEFEF;
+		border-radius: 5px;
+		padding: 10px;
+		margin-right: 9px;
+		margin-left: 10px;
+		float: left;
+	}
+
 
 </style>
 
+<div>
+		<%@ include file="/WEB-INF/jsp/summary.jsp" %>	
 
-<div id="container2">
+<div id="action">
 
 <portlet:actionURL var="addUserActionUrl">
 	<portlet:param name="myaction" value="goToAddUserForm" />
@@ -137,11 +153,19 @@ div.function {
 			
 			<aui:input name="subject" type="hidden" value="${registrationModel.subject }"></aui:input>
 			<aui:input name="issuer" type="hidden" value="${registrationModel.issuer }"></aui:input>
+			<aui:input name="expiration" type="hidden" value="${registrationModel.expiration }"></aui:input>
 			<aui:input name="haveCertificate" type="hidden" value="${registrationModel.haveCertificate }"></aui:input>
 			<aui:input name="certificateUserId" type="hidden" value="${registrationModel.certificateUserId }"></aui:input>
 			<aui:input name="vos" type="hidden" value="${registrationModel.vos }"></aui:input>
 			<aui:input name="mail" type="hidden" value="${registrationModel.mail }"></aui:input>
 			<aui:input name="haveIDP" type="hidden" value="${registrationModel.haveIDP }"></aui:input>
+			<aui:input name="firstName" type="hidden" value="${registrationModel.firstName }"/>
+			<aui:input name="lastName" type="hidden" value="${registrationModel.lastName }"/>
+			<aui:input name="institute" type="hidden" value="${registrationModel.institute }"/>
+			<aui:input name="email" type="hidden" value="${registrationModel.email }"/>
+			<aui:input name="userStatus" type="hidden" value="${registrationModel.userStatus }"/>
+			<aui:input name="certificateStatus" type="hidden" value="${registrationModel.certificateStatus }"/>
+			<aui:input name="voStatus" type="hidden" value="${registrationModel.voStatus }"/>
 			<aui:layout>
 				<aui:button-row>
 				<aui:input name="searchVo" label="Cerca VO" type="text" inlineField="true" inlineLabel="true"/>
@@ -177,12 +201,20 @@ div.function {
 					action="${addVOActionUrl}"  commandName="registrationModel">
 					<aui:input name="subject" type="hidden" value="${registrationModel.subject }"></aui:input>
 					<aui:input name="issuer" type="hidden" value="${registrationModel.issuer }"></aui:input>
+					<aui:input name="expiration" type="hidden" value="${registrationModel.expiration }"></aui:input>
 					<aui:input name="haveCertificate" type="hidden" value="${registrationModel.haveCertificate }"></aui:input>
 					<aui:input name="certificateUserId" type="hidden" value="${registrationModel.certificateUserId }"></aui:input>
 					<aui:input name="vos" type="hidden" value="${registrationModel.vos }"></aui:input>
 					<aui:input name="searchVo" type="hidden" value="${registrationModel.searchVo }"></aui:input>
 					<aui:input name="mail" type="hidden" value="${registrationModel.mail }"></aui:input>
 					<aui:input name="haveIDP" type="hidden" value="${registrationModel.haveIDP }"></aui:input>
+					<aui:input name="firstName" type="hidden" value="${registrationModel.firstName }"/>
+					<aui:input name="lastName" type="hidden" value="${registrationModel.lastName }"/>
+					<aui:input name="institute" type="hidden" value="${registrationModel.institute }"/>
+					<aui:input name="email" type="hidden" value="${registrationModel.email }"/>
+					<aui:input name="userStatus" type="hidden" value="${registrationModel.userStatus }"/>
+					<aui:input name="certificateStatus" type="hidden" value="${registrationModel.certificateStatus }"/>
+					<aui:input name="voStatus" type="hidden" value="${registrationModel.voStatus }"/>
 	
 					<%
 					PortletURL itURL2 = renderResponse.createRenderURL();
@@ -254,12 +286,21 @@ div.function {
 						
 					<aui:input name="subject" type="hidden" value="${registrationModel.subject }"></aui:input>
 					<aui:input name="issuer" type="hidden" value="${registrationModel.issuer }"></aui:input>
+					<aui:input name="expiration" type="hidden" value="${registrationModel.expiration }"></aui:input>
 					<aui:input name="haveCertificate" type="hidden" value="${registrationModel.haveCertificate }"></aui:input>
 					<aui:input name="certificateUserId" type="hidden" value="${registrationModel.certificateUserId }"></aui:input>
 					<aui:input name="vos" type="hidden" value="${registrationModel.vos }"></aui:input>
 					<aui:input name="searchVo" type="hidden" value="${registrationModel.searchVo }"></aui:input>
 					<aui:input name="mail" type="hidden" value="${registrationModel.mail }"></aui:input>
 					<aui:input name="haveIDP" type="hidden" value="${registrationModel.haveIDP }"></aui:input>
+					<aui:input name="firstName" type="hidden" value="${registrationModel.firstName }"/>
+					<aui:input name="lastName" type="hidden" value="${registrationModel.lastName }"/>
+					<aui:input name="institute" type="hidden" value="${registrationModel.institute }"/>
+					<aui:input name="email" type="hidden" value="${registrationModel.email }"/>
+					<aui:input name="userStatus" type="hidden" value="${registrationModel.userStatus }"/>
+					<aui:input name="certificateStatus" type="hidden" value="${registrationModel.certificateStatus }"/>
+					<aui:input name="voStatus" type="hidden" value="${registrationModel.voStatus }"/>
+					
 					<liferay-ui:search-container emptyResultsMessage="No VO selected"
 						delta="5">
 						<liferay-ui:search-container-results>
@@ -314,17 +355,24 @@ div.function {
 		<aui:form name="addVOForm" action="${addUserActionUrl}" commandName="registrationModel">
 			<aui:input name="subject" type="hidden" value="${registrationModel.subject }"></aui:input>
 			<aui:input name="issuer" type="hidden" value="${registrationModel.issuer }"></aui:input>
+			<aui:input name="expiration" type="hidden" value="${registrationModel.expiration }"></aui:input>
 			<aui:input name="haveCertificate" type="hidden" value="${registrationModel.haveCertificate }"></aui:input>
 			<aui:input name="certificateUserId" type="hidden" value="${registrationModel.certificateUserId }"></aui:input>
 			<aui:input name="vos" type="hidden" value="${registrationModel.vos }"></aui:input>
 			<aui:input name="searchVo" type="hidden" value="${registrationModel.searchVo }"></aui:input>
 			<aui:input name="mail" type="hidden" value="${registrationModel.mail }"></aui:input>
 			<aui:input name="haveIDP" type="hidden" value="${registrationModel.haveIDP }"></aui:input>
+			<aui:input name="firstName" type="hidden" value="${registrationModel.firstName }"/>
+			<aui:input name="lastName" type="hidden" value="${registrationModel.lastName }"/>
+			<aui:input name="institute" type="hidden" value="${registrationModel.institute }"/>
+			<aui:input name="email" type="hidden" value="${registrationModel.email }"/>
+			<aui:input name="userStatus" type="hidden" value="${registrationModel.userStatus }"/>
+			<aui:input name="certificateStatus" type="hidden" value="${registrationModel.certificateStatus }"/>
+			<aui:input name="voStatus" type="hidden" value="${registrationModel.voStatus }"/>
+			
 			
 			<aui:button-row>
-				<aui:button type="submit" value="Continue" />
-				<aui:button type="cancel" value="Registration terminated"
-					onClick="mysubmit();${homeUrl }" />
+				<aui:button type="submit" value="Terminate Registration" />
 			</aui:button-row>
 		
 		</aui:form>
@@ -336,4 +384,6 @@ div.function {
 	
 
 
+</div>
+<div style="clear:both;"></div>
 </div>

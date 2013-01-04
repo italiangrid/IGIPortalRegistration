@@ -170,6 +170,11 @@ h5#usernameAlert {
 	<aui:input name="searchVo" type="hidden" value="${registrationModel.searchVo }"></aui:input>
 	<aui:input name="mail" type="hidden" value="${registrationModel.mail }"></aui:input>
 	<aui:input name="haveIDP" type="hidden" value="${registrationModel.haveIDP }"></aui:input>
+	<aui:input name="firstName" type="hidden" value="${registrationModel.firstName }"/>
+	<aui:input name="lastName" type="hidden" value="${registrationModel.lastName }"/>
+	<aui:input name="institute" type="hidden" value="${registrationModel.institute }"/>
+	<aui:input name="email" type="hidden" value="${registrationModel.email }"/>
+	<aui:input name="userStatus" type="hidden" value="${registrationModel.userStatus }"/>
 	<aui:layout>
 
 		<h1 class="header-title">Upload New Certificate</h1>
@@ -178,7 +183,7 @@ h5#usernameAlert {
 
 		<aui:fieldset>
 			
-			<aui:column columnWidth="20" style="margin-left:30px;">
+			<aui:column columnWidth="35" style="margin-left:30px;">
 
 				<aui:fieldset label="Upload Certificate">
 					<br />
@@ -211,7 +216,7 @@ h5#usernameAlert {
 				<br />
 			</aui:column>
 
-			<aui:column columnWidth="20" style="margin-left:30px;">
+			<aui:column columnWidth="35" style="margin-left:30px;">
 
 				<aui:fieldset label="Choose a Password for the Proxy">
 					<br />

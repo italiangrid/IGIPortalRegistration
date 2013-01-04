@@ -41,16 +41,16 @@ public class AskForCertificateController {
 			response.setRenderParameter("myaction", "showUploadCertificate");
 			request.setAttribute("registrationModel", registrationModel);
 		}else{
-			CookieUtil.setCookie(registrationModel, response);
-			try {
-				URL url = new URL("https://halfback.cnaf.infn.it/app1/index.jsp");
-				
-				log.error(url);
-				response.sendRedirect(url.toString());
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-			log.debug("Redirect to IDP");
+//			CookieUtil.setCookie(registrationModel, response);
+//			try {
+//				URL url = new URL("https://halfback.cnaf.infn.it/app1/index.jsp");
+//				
+//				log.error(url);
+//				response.sendRedirect(url.toString());
+//			} catch (IOException e) {
+//				e.printStackTrace();
+//			}
+//			log.debug("Redirect to IDP");
 		}
 	}
 

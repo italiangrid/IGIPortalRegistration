@@ -2,6 +2,7 @@ package it.italiangrid.portal.registration.controller;
 
 import it.italiangrid.portal.dbapi.domain.Certificate;
 import it.italiangrid.portal.dbapi.services.CertificateService;
+import it.italiangrid.portal.dbapi.services.UserInfoService;
 import it.italiangrid.portal.registration.model.RegistrationModel;
 import it.italiangrid.portal.registration.util.CookieUtil;
 
@@ -60,27 +61,26 @@ public class UploadCertificateController {
 	
 	@Autowired
 	private CertificateService certificateService;
+	@Autowired
+	private UserInfoService userInfoService;
 	
 	private static final String MYPROXY_HOST = "fullback.cnaf.infn.it";
 	
 	@RenderMapping(params = "myaction=showUploadCertificate")
 	public String showAskForCertificate() {
-		log.debug("Show uploadCertificate.jsp");
+		log.error("Show uploadCertificate.jsp");
 		return "uploadCertificate";
 	}
 	
-	@ModelAttribute("registrationModel")
-	public RegistrationModel getRegistrationModel(@ModelAttribute RegistrationModel registrationModel) {
-		log.error("Initialize registration process.");
-		log.error(registrationModel);
-		return registrationModel;
-	}
+	
 	
 	@ActionMapping(params = "myaction=uploadCertificate")
-	public void uploadCert(@ModelAttribute RegistrationModel registrationModel, ActionRequest request, ActionResponse response,
+	public void uploadCert(ActionRequest request, ActionResponse response,
 			SessionStatus sessionStatus) throws PortalException,
 			SystemException {
-		log.error(registrationModel.toString());
+		
+		RegistrationModel registrationModel = new RegistrationModel();
+		
 		ArrayList<String> errors = new ArrayList<String>();
 		boolean allOk = true;
 
@@ -117,6 +117,20 @@ public class UploadCertificateController {
 								pwd = value;
 							if (name.equals(ns + "primaryCert"))
 								primaryCert = value;
+							if (name.equals(ns + "firstName"))
+								registrationModel.setFirstName(value);
+							if (name.equals(ns + "lastName"))
+								registrationModel.setLastName(value);
+							if (name.equals(ns + "institute"))
+								registrationModel.setInstitute(value);
+							if (name.equals(ns + "email"))
+								registrationModel.setEmail(value);
+							if (name.equals(ns + "userStatus"))
+								if(value.equals("true"))
+									registrationModel.setUserStatus(true);
+							if (name.equals(ns + "haveIDP"))
+								if(value.equals("true"))
+									registrationModel.setHaveIDP(true);
 							if (name.equals(ns + "haveCertificate")){
 								if(value.equals("true"))
 									registrationModel.setHaveCertificate(true);
@@ -213,21 +227,27 @@ public class UploadCertificateController {
 						cert.setPrimaryCert(primaryCert);
 						cert.setSubject(subject);
 						cert.setUsernameCert(certificateUserId);
+						cert.setUserInfo(userInfoService.findByMail(registrationModel.getEmail()));
 						
 						registrationModel.setIssuer(issuer);
 						registrationModel.setSubject(subject);
 						registrationModel.setCertificateUserId(certificateUserId);
 						registrationModel.setMail(mail);
-
 						
-						
-							int id = certificateService.save(cert);
 
-							if (id != -1) {
-								log.info("inserito il certificato");
-							} else {
-								allOk = false;
-							}
+						log.error("@@@@@@@@"+registrationModel);
+						
+						int id = certificateService.save(cert);
+						
+						Certificate cert2 = certificateService.findByIdCert(id);
+						
+						registrationModel.setExpiration(cert2.getExpirationDate().toString());
+
+						if (id != -1) {
+							log.info("inserito il certificato");
+						} else {
+							allOk = false;
+						}
 						
 					}
 				} else {
@@ -328,9 +348,10 @@ public class UploadCertificateController {
 
 			log.info("tutto ok!!");
 			SessionMessages.add(request, "upload-cert-successufully");
-			CookieUtil.setCookie(registrationModel, response);
-			response.setRenderParameter("myaction", "showAddVoForm");
+			registrationModel.setCertificateStatus(true);
 			request.setAttribute("registrationModel", registrationModel);
+			response.setRenderParameter("myaction", "showAddVoForm");
+			
 
 		} else {
 
