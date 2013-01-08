@@ -1,6 +1,5 @@
 package it.italiangrid.portal.registration.controller;
 
-import it.italiangrid.portal.dbapi.domain.UserInfo;
 import it.italiangrid.portal.registration.exception.RegistrationException;
 import it.italiangrid.portal.registration.model.RegistrationModel;
 import it.italiangrid.portal.registration.util.RegistrationConfig;

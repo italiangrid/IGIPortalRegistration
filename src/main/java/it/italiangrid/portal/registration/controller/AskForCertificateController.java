@@ -1,14 +1,10 @@
 package it.italiangrid.portal.registration.controller;
 
-import java.io.IOException;
-import java.net.URL;
-
 import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
 
 import it.italiangrid.portal.registration.exception.RegistrationException;
 import it.italiangrid.portal.registration.model.RegistrationModel;
-import it.italiangrid.portal.registration.util.CookieUtil;
 import it.italiangrid.portal.registration.util.RegistrationConfig;
 
 import org.apache.log4j.Logger;
