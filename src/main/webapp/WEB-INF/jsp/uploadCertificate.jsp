@@ -56,19 +56,7 @@
 		}
 		return allOK;
 	}
-	$(function() {
-
-
-		$("#foottipPwdP12 div, #foottipPwdProxy div, #foottipPwdReProxy div, #foottipP12 div").tooltip({
-			bodyHandler: function() {
-				//alert($(this).attr("id"));
-				return $($(this).attr("id")).html();
-			},
-			showURL: false
-			
-		});
-
-	});
+	
 
 	$(document).ready(function() {
 
@@ -97,6 +85,17 @@ h5#usernameAlert {
 	border-style: solid;
 	background-color: #FFFFDD;
 	padding: 5px;
+}
+
+#submit{
+	float:right; 
+	margin-right:20px;
+}
+
+#help{
+	height: 64px;
+	vertical-align: middle;
+	display: table-cell;
 }
 
 
@@ -177,90 +176,81 @@ h5#usernameAlert {
 	<aui:input name="userStatus" type="hidden" value="${registrationModel.userStatus }"/>
 	<aui:layout>
 
-		<h1 class="header-title">Upload New Certificate</h1>
+		<h1 class="header-title">Registration - Certificate Upload</h1>
 
 		<br></br>
 
 		<aui:fieldset>
 			
-			<aui:column columnWidth="35" style="margin-left:30px;">
+			<aui:column columnWidth="45" style="margin-left:30px;">
 
-				<aui:fieldset label="Upload Certificate">
-					<br />
-					
+				<aui:fieldset>
+					<div id="allertDiv2">
 					<div class="portlet-msg-error p12" style="display:none;">
 						Insert certificate here.
 					</div>
-					<div id="foottipP12">
-						<div id="#footnoteP12" >
-							<aui:input id="usercert" name="usercert" type="file" label=" * p12 format certificate"
+							<aui:input id="usercert" name="usercert" type="file" label="Import certificate in P12 format"
 								value="${usercert }" />
-						</div>
-					</div>
-					<!--<aui:input name="userkey" type="file" label="Chiave"
-						value="${userkey }" />-->
+
 					
 					<div class="portlet-msg-error pwd" style="display:none;">
 						Insert password of your certificate here.
 					</div>
-					<div id="foottipPwdP12">
-						<div id="#footnotePwdP12">
 							<aui:input id="keyPass" name="keyPass" type="password"
-								label=" * Password of your certificate" onBlur="printCheck($(this).attr('id'));"/> 
-						</div>
+								label="Import certificate password" onBlur="printCheck($(this).attr('id'));"/> 
 					</div>
-
-				</aui:fieldset>
-
-				<br />
-				<br />
-			</aui:column>
-
-			<aui:column columnWidth="35" style="margin-left:30px;">
-
-				<aui:fieldset label="Choose a Password for the Proxy">
-					<br />
-					<div id="allertDiv">
-						<div class="portlet-msg-error proxyPwd" style="display:none;">
-							These password must be the same.
-						</div>
-						<div id="foottipPwdProxy">
-							<div id="#footnotePwdProxy">
-								<aui:input id="password" name="password" type="password"
-									label=" * Password" onBlur="printCheck($(this).attr('id'));"/>
-							</div>
-						</div>
-						<div class="portlet-msg-error proxyPwd" style="display:none;">
-							These password must be the same.
-						</div>
-						<div id="foottipPwdReProxy">
-							<div id="#footnotePwdProxy">
-								<aui:input id="passwordVerify" name="passwordVerify"
-									type="password" label=" * Retype Password" onkeyup="verifyPassword();"/>
-							</div>
-						</div>
-						<br />
-						<strong>REMEMBER THIS PASSWORD</strong>
-					</div>
-					<aui:input name="primaryCert" type="hidden" value="true"/>
-
-				</aui:fieldset>
-
-				<br />
-				<br />
-			</aui:column>
-
-			<aui:column columnWidth="20"  style="margin-left:30px;">
-
-				<aui:fieldset label="Note">
-					<br />
-					<div id="noteText">
-					<a href="https://portal.italiangrid.it:8443/moreinfo.html" onclick="$(this).modal({width:800, height:600, message:true}).open(); return false;">More Info</a>
-					<br />
 					<br />
 					
-					 <strong>* = Required</strong>
-					 </div>
+						Please insert below a new password. <br/>
+						This password will be asked to use Grid and Cloud resources in a secure way. <br/>
+					<div id="allertDiv2">
+				
+						<br/>
+						<div class="portlet-msg-error proxyPwd" style="display:none;">
+							These password must be the same.
+						</div>
+
+								<aui:input id="password" name="password" type="password"
+									label="Insert Password" onBlur="printCheck($(this).attr('id'));"/>
+
+						<div class="portlet-msg-error proxyPwd" style="display:none;">
+							These password must be the same.
+						</div>
+
+								<aui:input id="passwordVerify" name="passwordVerify"
+									type="password" label="Retype Password" onkeyup="verifyPassword();"/>
+
+						
+					</div>
+						<br/>
+						<strong>Note:</strong> this password will be not saved in the system.
+						
+					<aui:input name="primaryCert" type="hidden" value="true"/>
+				</aui:fieldset>
+
+				<br />
+				<br />
+			</aui:column>
+
+			<aui:column columnWidth="40" style="margin-left:30px;">
+
+				<aui:fieldset>
+					
+					<br/><br/>
+					
+					<div id="help">
+					<a href="#"><img class="displayed"
+													src="<%=request.getContextPath()%>/images/Help.png"
+													id="noImg" width="64" /> Certificate Upload Help</a>
+													
+					</div>
+					<br/><br/><br/><br/><br/><br/><br/>
+					<div id="help">
+					<a href="#"><img class="displayed"
+													src="<%=request.getContextPath()%>/images/Information2.png"
+													id="noImg" width="64" /> Technical Information</a>
+													
+					</div>
 				</aui:fieldset>
 
 				<br />
@@ -268,9 +258,12 @@ h5#usernameAlert {
 			</aui:column>
 
 			<aui:button-row>
-				<aui:button type="submit" value="Continue" onClick="return validate();"/>
-				<aui:button type="cancel" value="Terminate Registration"
-					onClick="alert('You are registrated in the portal, log into the portal for complete the registraion.');location.href='${loginUrl }';" />
+				<aui:button type="cancel" value= "Back" onClick="history.back()"/>
+				<aui:button type="submit" value="Continue" onClick="return validate();" />
+				<div style="float: right;">
+				<aui:button type="cancel" value="Abort Registration"
+					onClick="alert('You are now registrated in the portal, please log into the portal to complete the registraion.');location.href='${loginUrl }';" />
+				</div>
 			</aui:button-row>
 			
 			

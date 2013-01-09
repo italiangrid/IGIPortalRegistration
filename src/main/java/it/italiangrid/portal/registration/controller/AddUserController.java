@@ -246,9 +246,11 @@ public class AddUserController {
 			
 			request.setAttribute("userInfo", userInfo);
 			registrationModel.setUserStatus(true);
+			registrationModel.setHaveIDP(true);
 			request.setAttribute("registrationModel", registrationModel);
 			
 			log.error(RegistrationConfig.getProperties("Registration.properties", "login.url"));
+			request.setAttribute("loginUrl", RegistrationConfig.getProperties("Registration.properties", "login.url"));
 			request.setAttribute("loginUrl", RegistrationConfig.getProperties("Registration.properties", "login.url"));
 			
 			response.setRenderParameter("myaction", "askForCertificate");

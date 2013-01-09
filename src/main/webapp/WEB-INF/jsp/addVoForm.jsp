@@ -135,7 +135,7 @@ div.function {
 	
 	<aui:layout>
 
-		<h1 class="header-title">Virtual Organization</h1>
+		<h1 class="header-title">Registration - Virtual Organization</h1>
 	
 	<aui:fieldset>
 	
@@ -372,7 +372,7 @@ div.function {
 			
 			
 			<aui:button-row>
-				<aui:button type="submit" value="Terminate Registration" />
+				<aui:button type="submit" value="Registration Completed" />
 			</aui:button-row>
 		
 		</aui:form>

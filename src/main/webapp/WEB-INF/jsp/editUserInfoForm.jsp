@@ -348,7 +348,7 @@ div#advancedSettings {
 				<aui:column columnWidth="20">
 					<aui:fieldset>
 						<div id="foottipUser">
-							<a href="#footnoteUserOK"><img src="<%=request.getContextPath()%>/images/check.png" width="64" height="64" style="float: right"/></a>
+							<a href="#footnoteUserOK"><img src="<%=request.getContextPath()%>/images/NewCheck.png" width="64" height="64" style="float: right"/></a>
 							<div id="footnoteUserOK" style="display:none;">All is OK.</div>
 						</div>
 					</aui:fieldset>
@@ -513,10 +513,10 @@ div#advancedSettings {
 					<div id="foottipCert">
 						<c:choose>
 							<c:when test="${fn:length(certList)==0}" >
-								<a href="#footnoteCertKO"><img src="<%=request.getContextPath()%>/images/missed_calls.png" width="64" height="64" style="float: right"/></a>
+								<a href="#footnoteCertKO"><img src="<%=request.getContextPath()%>/images/NewDelete.png" width="64" height="64" style="float: right"/></a>
 							</c:when>
 							<c:otherwise>
-								<a href="#footnoteCertOK"><img src="<%=request.getContextPath()%>/images/check.png" width="64" height="64" style="float: right"/></a>
+								<a href="#footnoteCertOK"><img src="<%=request.getContextPath()%>/images/NewCheck.png" width="64" height="64" style="float: right"/></a>
 							</c:otherwise>
 						</c:choose>
 						<div id="footnoteCertOK" style="display:none;">All is OK.</div>
@@ -723,10 +723,10 @@ div#advancedSettings {
 					<div id="foottipVO">
 						<c:choose>
 							<c:when test="${fn:length(userToVoList)==0}" >
-								<a href="#footnoteVOKO"><img src="<%=request.getContextPath()%>/images/missed_calls.png" width="64" height="64" style="float: right"/></a>
+								<a href="#footnoteVOKO"><img src="<%=request.getContextPath()%>/images/NewDelete.png" width="64" height="64" style="float: right"/></a>
 							</c:when>
 							<c:otherwise>
-								<a href="#footnoteVOOK"><img src="<%=request.getContextPath()%>/images/check.png" width="64" height="64" style="float: right"/></a>
+								<a href="#footnoteVOOK"><img src="<%=request.getContextPath()%>/images/NewCheck.png" width="64" height="64" style="float: right"/></a>
 							</c:otherwise>
 						</c:choose>
 						<div id="footnoteVOOK" style="display:none;">All is OK.</div>

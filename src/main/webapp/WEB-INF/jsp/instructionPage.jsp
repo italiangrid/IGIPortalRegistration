@@ -24,19 +24,36 @@
 	margin-right:20px;
 }
 
+#userData{
+	font-size: 14px;
+}
+
 </style>
 
 <div id="action">
-	<aui:fieldset label="Registration Instruction">
-		<br/><br/>
-		Per registrarti abbiamo bisogno dei tuoi dati personali, li recupereremo dalla tua organizzazione.
-		<br/><br/>
-		Ti verrà chiesto di selezionare la tua organizzazione ed effettuare il login, in questo modo recupereremo i tuoi dati personali, sucessivamente ti verrà chiesto di caricare il tuo certificato personale in formato p12 e di specivicare le Virtual Organization (VO) a cui appartieni. 
-		<br/><br/>
-		Se non fai parte di nessuna organizzazione tra quelle proposte usa l'apposito pulsante in questo modo useremo il tuo certificato personale per recuperare i tuoi dati.
+
+	<h1 class="header-title">Registration - User Data</h1>
+	
+	<aui:fieldset>
+		<aui:column columnWidth="80">
+		<div id="userData">
+			<br/><br/>
+			To use the Grid and Cloud resources some credentials are necessary, during the registration phase we check 
+			if you already have all the necessary credentials otherwise we can provide for them.
+			<br/><br/>
+			<hr/>
+			<br/>
+			In the first step we are going to retrieve your personal data from your organization.<br/>
+			<strong>Please in the next page select your institute, if it is not in the list click on "Other Institutes" button.</strong>
+			<br/><br/>
+			
+		</div>
+		</aui:column>
+		<aui:column columnWidth="20">
+		<br/><br/><br/>
+		<img src="<%=request.getContextPath()%>/images/PatientFile.png" width="128" style="margin-right:20px; float: right"/>
 		
-		<br/><br/>
-		
+		</aui:column>
 		<portlet:actionURL var="showWAYF">
 			<portlet:param name="myaction" value="startRegistration" />
 		</portlet:actionURL>

@@ -53,10 +53,10 @@
 					<td class="head">User Data</td>
 					<td class="head"><c:if
 							test="${registrationModel.userStatus == true }">
-							<img src="<%=request.getContextPath()%>/images/check.png"
+							<img src="<%=request.getContextPath()%>/images/NewCheck.png"
 								width="16" height="16" style="float: right" />
 						</c:if> <c:if test="${registrationModel.userStatus == false }">
-							<img src="<%=request.getContextPath()%>/images/missed_calls.png"
+							<img src="<%=request.getContextPath()%>/images/NewDelete.png"
 								width="16" height="16" style="float: right" />
 						</c:if></td>
 				</tr>
@@ -89,10 +89,10 @@
 					<td class="head">Certificate</td>
 					<td class="head"><c:if
 							test="${registrationModel.certificateStatus == true }">
-							<img src="<%=request.getContextPath()%>/images/check.png"
+							<img src="<%=request.getContextPath()%>/images/NewCheck.png"
 								width="16" height="16" style="float: right" />
 						</c:if> <c:if test="${registrationModel.certificateStatus == false }">
-							<img src="<%=request.getContextPath()%>/images/missed_calls.png"
+							<img src="<%=request.getContextPath()%>/images/NewDelete.png"
 								width="16" height="16" style="float: right" />
 						</c:if></td>
 				</tr>
@@ -117,10 +117,10 @@
 					<td class="head">VO</td>
 					<td class="head"><c:if
 							test="${registrationModel.voStatus == true }">
-							<img src="<%=request.getContextPath()%>/images/check.png"
+							<img src="<%=request.getContextPath()%>/images/NewCheck.png"
 								width="16" height="16" style="float: right" />
 						</c:if> <c:if test="${registrationModel.voStatus == false }">
-							<img src="<%=request.getContextPath()%>/images/missed_calls.png"
+							<img src="<%=request.getContextPath()%>/images/NewDelete.png"
 								width="16" height="16" style="float: right" />
 						</c:if></td>
 				</tr>

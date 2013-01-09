@@ -34,8 +34,8 @@
 	 ></iframe>
 	<br/><br/>
 	<aui:form name="caForm" action="${endActionUrl}">
-	
-		<aui:button type="cancel" value="Terminate Registration"
+		<aui:button type="cancel" value= "Back" onClick="history.back()"/>
+		<aui:button type="cancel" value="Registration Completed"
 						onClick="location.href='${loginUrl}';" />
 	</aui:form>
 	
