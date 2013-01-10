@@ -59,6 +59,9 @@ public class AddVOActionController {
 				registrationModel.setVos(registrationModel.getVos().isEmpty()?Integer.toString(vo.getIdVo()):registrationModel.getVos()+"#"+Integer.toString(vo.getIdVo()));
 				SessionMessages.add(request, "userToVo-adding-success");
 				registrationModel.setVoStatus(true);
+				UserInfo userInfo = userInfoService.findByMail(registrationModel.getEmail());
+				userToVoService.save(userInfo.getUserId(), vo.getIdVo(),registrationModel.getSubject());
+				userToVoService.setDefault(userInfo.getUserId(), vo.getIdVo());
 			}else{
 				PortletConfig portletConfig = (PortletConfig)request.getAttribute(JavaConstants.JAVAX_PORTLET_CONFIG);
 				SessionMessages.add(request, portletConfig.getPortletName() + SessionMessages.KEY_SUFFIX_HIDE_DEFAULT_ERROR_MESSAGE);
@@ -67,7 +70,7 @@ public class AddVOActionController {
 		}else{
 			PortletConfig portletConfig = (PortletConfig)request.getAttribute(JavaConstants.JAVAX_PORTLET_CONFIG);
 			SessionMessages.add(request, portletConfig.getPortletName() + SessionMessages.KEY_SUFFIX_HIDE_DEFAULT_ERROR_MESSAGE);
-			SessionErrors.add(request, "no-user-found-in-VO");
+			SessionErrors.add(request, "no-VO-found");
 		}
 		
 		response.setRenderParameter("myaction", "showAddVoForm");
@@ -100,6 +103,13 @@ public class AddVOActionController {
 		log.error("myaction=delVo");
 		log.error(registrationModel.toString());
 		log.error(request.getParameter("voToDel"));
+		UserInfo userInfo = userInfoService.findByMail(registrationModel.getEmail());
+		userToVoService.delete(userInfo.getUserId(), Integer.parseInt(request.getParameter("voToDel")));
+		
+		if(!userToVoService.findById(userInfo.getUserId()).isEmpty()){
+			userToVoService.setDefault(userInfo.getUserId(), userToVoService.findById(userInfo.getUserId()).get(0).getId().getIdVo());
+		}
+		
 		if(registrationModel.getVos().contains(request.getParameter("voToDel")+"#"))
 			registrationModel.setVos(registrationModel.getVos().replace(request.getParameter("voToDel")+"#",""));
 		if(registrationModel.getVos().contains(request.getParameter("voToDel")))
@@ -123,8 +133,10 @@ public class AddVOActionController {
 		
 		UserInfo userInfo = userInfoService.findByMail(registrationModel.getEmail());
 		
-		RegistrationUtil.associateVoToUser(userInfo, registrationModel, userToVoService);
-		RegistrationUtil.activateUser(userInfo, userInfoService);
+//		RegistrationUtil.associateVoToUser(userInfo, registrationModel, userToVoService);
+		
+		if(!registrationModel.getVos().isEmpty())
+			RegistrationUtil.activateUser(userInfo, userInfoService);
 		
 		try {
 			URL url;

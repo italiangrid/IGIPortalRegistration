@@ -144,6 +144,8 @@ div.function {
 <liferay-ui:error key="user-vo-list-empty" message="user-vo-list-empty" />
 <liferay-ui:error key="no-user-found-in-VO"
 	message="no-user-found-in-VO" />
+<liferay-ui:error key="no-VO-found"
+	message="no-VO-found" />
 <liferay-ui:error key="no-cert-for-user" message="no-cert-for-user" />
 <liferay-ui:error key="edg-mkgridmap-problem"
 	message="edg-mkgridmap-problem" />
@@ -215,9 +217,9 @@ div.function {
 
 		<aui:fieldset>
 
-			<aui:column columnWidth="75">
+			
 
-				<aui:fieldset label="VO List">
+				<aui:fieldset>
 
 					<portlet:actionURL var="delVOActionUrl">
 						<portlet:param name="myaction" value="delVo" />
@@ -264,7 +266,7 @@ div.function {
 							className="it.italiangrid.portal.dbapi.domain.Vo"
 							keyProperty="idVo" modelVar="Vo">
 							
-							<liferay-ui:search-container-column-text name="Del">
+							<liferay-ui:search-container-column-text name="Select">
 							<input name="voToDel" type="radio"
 										value="${Vo.idVo }"
 										onchange="viewOrHideDeleteButton2('${Vo.vo }');"></input>
@@ -283,7 +285,7 @@ div.function {
 					
 					<aui:button-row>
 						
-						<aui:button id="deleteButton" type="submit" value="Del VO" style="display:none;" />
+						<aui:button id="deleteButton" type="submit" value="Delete VO" style="display:none;" />
 						
 					</aui:button-row>
 					
@@ -291,7 +293,7 @@ div.function {
 				</aui:fieldset>
 				<br />
 				<br />
-			</aui:column>
+			
 
 		<aui:form name="addVOForm" action="${addUserActionUrl}" commandName="registrationModel">
 			<aui:input name="subject" type="hidden" value="${registrationModel.subject }"></aui:input>
