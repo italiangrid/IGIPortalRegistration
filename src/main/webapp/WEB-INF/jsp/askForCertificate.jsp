@@ -33,7 +33,7 @@
 
 #chooseContainer {
 	font-size: 12px;
-	width: 900px;
+	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -42,13 +42,13 @@
 	width: 200px;
 	height: 155px;
 	float: left;
-	margin: 0px 30px;
+	margin: 0px 0px 0px 15%;
 }
 
 .choose {
 	width: 200px;
 	height: 150px;
-	
+	margin
 }
 
 .bordered {
@@ -148,7 +148,7 @@
 
 		<!--  -->
 		
-		<h1 class="header-title">Registration - Select the User Type</h1>
+		<h1 class="header-title">Registration - Select your Profile</h1>
 
 		<aui:form name="askForCertificate" id="askForCertificate"
 			action="${askForCertificateUrl}" commandName="registrationModel">
@@ -217,31 +217,33 @@
 										<a href="">More info</a>
 									</div>
 								</div>
-								<div class="type">
-								<a href="" onclick="return false;">
-									<div class="choose bordered">
-										<div class="title">
-											<strong>Expert User</strong>
-										</div>
-										<div class="iconContainer">
-											<div class="icon">
-												<img class="displayed"
-													src="<%=request.getContextPath()%>/images/ExpertUser.png"
-													id="noImg" width="64" />
+								<c:if test="${false }">
+									<div class="type">
+									<a href="" onclick="return false;">
+										<div class="choose bordered">
+											<div class="title">
+												<strong>Expert User</strong>
 											</div>
+											<div class="iconContainer">
+												<div class="icon">
+													<img class="displayed"
+														src="<%=request.getContextPath()%>/images/ExpertUser.png"
+														id="noImg" width="64" />
+												</div>
+											</div>
+											<div class="reset"></div>
+											<div class="mess">
+												<div class="center">I already have Grid credentials and I want to use my proxy.</div>
+											</div>
+											<div class="reset"></div>
 										</div>
-										<div class="reset"></div>
-										<div class="mess">
-											<div class="center">I already have Grid credentials and I want to use my proxy.</div>
+									</a>
+									<div class="reset"></div>
+										<div class="moreInfo">
+											<a href="">More info</a>
 										</div>
-										<div class="reset"></div>
 									</div>
-								</a>
-								<div class="reset"></div>
-									<div class="moreInfo">
-										<a href="">More info</a>
-									</div>
-								</div>
+								</c:if>
 								<div class="reset"></div>
 							</div>
 
@@ -260,6 +262,8 @@
 								value="${registrationModel.email }" />
 							<aui:input name="userStatus" type="hidden"
 								value="${registrationModel.userStatus }" />
+							<aui:input name="verifyUser" type="hidden" 
+								value="${registrationModel.verifyUser }"/>
 
 						</aui:fieldset>
 

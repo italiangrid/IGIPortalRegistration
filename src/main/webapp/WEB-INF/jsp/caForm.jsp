@@ -27,10 +27,11 @@
 		<%@ include file="/WEB-INF/jsp/summary.jsp" %>	
 
 <div id="action">
-	<aui:fieldset label="CA Online - Request new certificate">
+
+	<h1 class="header-title">Registration - Request new certificate</h1>
+	<aui:fieldset>
 	
-	
-	<iframe frameborder="0" scrolling="no" allowtransparency="true" src="${caUrl }" width="900" height="600"
+	<iframe frameborder="0" scrolling="no" allowtransparency="true" src="${caUrl }" width="100%" height="320"
 	 ></iframe>
 	<br/><br/>
 	<aui:form name="caForm" action="${endActionUrl}">

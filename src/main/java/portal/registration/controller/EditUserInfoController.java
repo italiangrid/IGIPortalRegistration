@@ -42,6 +42,8 @@ import it.italiangrid.portal.dbapi.services.CertificateService;
 import it.italiangrid.portal.dbapi.services.NotifyService;
 import it.italiangrid.portal.dbapi.services.UserInfoService;
 import it.italiangrid.portal.dbapi.services.UserToVoService;
+import it.italiangrid.portal.registration.exception.RegistrationException;
+import it.italiangrid.portal.registration.util.RegistrationConfig;
 import portal.registration.utils.GuseNotify;
 import portal.registration.utils.GuseNotifyUtil;
 import portal.registration.utils.MyValidator;
@@ -204,6 +206,19 @@ public class EditUserInfoController {
 	public List<Vo> getUserToVoList(@RequestParam int userId) {
 
 		return userToVoService.findVoByUserId(userId);
+	}
+	
+	@ModelAttribute("usePortalURL")
+	public String getUsePortalURL() {
+
+		try {
+			return RegistrationConfig.getProperties("Registration.properties", "jobs.url");
+		} catch (RegistrationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return "";
 	}
 
 	/**

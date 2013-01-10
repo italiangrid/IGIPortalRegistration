@@ -1,5 +1,11 @@
 <%@ include file="/WEB-INF/jsp/init.jsp"%>
 
+
+<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+
+
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />
+
 <script type="text/javascript">
 <!--
 
@@ -63,10 +69,23 @@
 			$("#deleteButton").show();
 		}
 	}
+	
+	$(function() {
+	    var availableTags = [${voList}];
+	    $( "#tags" ).autocomplete({
+	    	
+	      source: availableTags
+	    });
+	  });
 
 </script>
 
 <style>
+
+.search-results {
+    display: none;
+}
+
 div.function {
 	padding: 1em 5em 1em 1em;
 	border: 1px;
@@ -139,7 +158,7 @@ div.function {
 	
 	<aui:fieldset>
 	
-	<div class="function" <c:if test="${(empty registrationModel.searchVo)&&(fn:length(vos)==0) }"><c:out value="style=display:none;"/></c:if>>
+	<div class="function">
 		<aui:fieldset>
 		<aui:column columnWidth="50">
 		<div id="searchForm" >
@@ -166,105 +185,27 @@ div.function {
 			<aui:input name="userStatus" type="hidden" value="${registrationModel.userStatus }"/>
 			<aui:input name="certificateStatus" type="hidden" value="${registrationModel.certificateStatus }"/>
 			<aui:input name="voStatus" type="hidden" value="${registrationModel.voStatus }"/>
+			<aui:input name="verifyUser" type="hidden" value="${registrationModel.verifyUser }"/>
+			<aui:input name="searchVo" id="searchVo" type="hidden" value=""/>
 			<aui:layout>
 				<aui:button-row>
-				<aui:input name="searchVo" label="Cerca VO" type="text" inlineField="true" inlineLabel="true"/>
-				<aui:button type="submit" value="Search" inlineField="true"/>
-				<aui:button type="button" value="Hide search"
-					 onClick="hideSearchForm();" />
+				
+				<div class="ui-widget" style="float:left;">
+				  Select your VO <input id="tags" name="tags" type="text" />
+				</div>
+				
+				
+				<aui:button type="submit" value="Add" inlineField="true"/>
+				
 				</aui:button-row>
 			</aui:layout>
 		</aui:form>
 		
-		<c:if test="${!empty registrationModel.searchVo}">
-			<br/>
-			Search: <strong><c:out value="${registrationModel.searchVo}" /></strong>	
-		</c:if>
 		</div>
 		</aui:column>
 		</aui:fieldset>
 	
 </div>
-	<c:if test ="${fn:length(vos)!=0 }">
-		<div id="tabella">
-		<br/>
-		<aui:fieldset>
-		
-			<aui:column columnWidth="75">
-		
-				
-				
-				<portlet:actionURL var="addVOActionUrl">
-					<portlet:param name="myaction" value="addVo" />
-				</portlet:actionURL>
-				<aui:form name="addVo"
-					action="${addVOActionUrl}"  commandName="registrationModel">
-					<aui:input name="subject" type="hidden" value="${registrationModel.subject }"></aui:input>
-					<aui:input name="issuer" type="hidden" value="${registrationModel.issuer }"></aui:input>
-					<aui:input name="expiration" type="hidden" value="${registrationModel.expiration }"></aui:input>
-					<aui:input name="haveCertificate" type="hidden" value="${registrationModel.haveCertificate }"></aui:input>
-					<aui:input name="certificateUserId" type="hidden" value="${registrationModel.certificateUserId }"></aui:input>
-					<aui:input name="vos" type="hidden" value="${registrationModel.vos }"></aui:input>
-					<aui:input name="searchVo" type="hidden" value="${registrationModel.searchVo }"></aui:input>
-					<aui:input name="mail" type="hidden" value="${registrationModel.mail }"></aui:input>
-					<aui:input name="haveIDP" type="hidden" value="${registrationModel.haveIDP }"></aui:input>
-					<aui:input name="firstName" type="hidden" value="${registrationModel.firstName }"/>
-					<aui:input name="lastName" type="hidden" value="${registrationModel.lastName }"/>
-					<aui:input name="institute" type="hidden" value="${registrationModel.institute }"/>
-					<aui:input name="email" type="hidden" value="${registrationModel.email }"/>
-					<aui:input name="userStatus" type="hidden" value="${registrationModel.userStatus }"/>
-					<aui:input name="certificateStatus" type="hidden" value="${registrationModel.certificateStatus }"/>
-					<aui:input name="voStatus" type="hidden" value="${registrationModel.voStatus }"/>
-	
-					<%
-					PortletURL itURL2 = renderResponse.createRenderURL();
-					itURL2.setParameter("myaction","showAddVoForm");
-						
-					%>
-					
-					<liferay-ui:search-container iteratorURL="<%= itURL2 %>" emptyResultsMessage="VO not find" delta="20">
-						
-						<liferay-ui:search-container-results>
-							<%
-								results = ListUtil.subList(vos, searchContainer.getStart(),
-												searchContainer.getEnd());
-										total = vos.size();
-					
-										pageContext.setAttribute("results", results);
-										pageContext.setAttribute("total", total);
-							%>
-					
-					
-						</liferay-ui:search-container-results>
-						<liferay-ui:search-container-row
-							className="it.italiangrid.portal.dbapi.domain.Vo" keyProperty="idVo"
-							modelVar="vo">
-							<liferay-ui:search-container-column-text name="Add">
-							<input name="voToAdd" type="radio"
-										value="${vo.idVo }"
-										onchange="viewOrHideDeleteButton('${vo.vo }');"></input>
-							</liferay-ui:search-container-column-text>
-							
-							<liferay-ui:search-container-column-text name="VO Name"
-								property="vo" />
-							<liferay-ui:search-container-column-text name="VO description"
-								property="description" />
-			
-						</liferay-ui:search-container-row>
-						<liferay-ui:search-iterator />
-					</liferay-ui:search-container>
-					<div id="addButton" style="display:none;" >
-					<aui:button-row>
-						<aui:button type="submit" value="Add VO" />
-					</aui:button-row>
-					</div>
-				</aui:form>
-		
-			</aui:column>
-		</aui:fieldset>
-		
-		</div>
-	</c:if>
 
 
 </aui:fieldset>
@@ -300,6 +241,7 @@ div.function {
 					<aui:input name="userStatus" type="hidden" value="${registrationModel.userStatus }"/>
 					<aui:input name="certificateStatus" type="hidden" value="${registrationModel.certificateStatus }"/>
 					<aui:input name="voStatus" type="hidden" value="${registrationModel.voStatus }"/>
+					<aui:input name="verifyUser" type="hidden" value="${registrationModel.verifyUser }"/>
 					
 					<liferay-ui:search-container emptyResultsMessage="No VO selected"
 						delta="5">
@@ -340,7 +282,6 @@ div.function {
 					</liferay-ui:search-container>
 					
 					<aui:button-row>
-						<aui:button type="button" value="Add VO" onClick="showSearchForm();" />
 						
 						<aui:button id="deleteButton" type="submit" value="Del VO" style="display:none;" />
 						
@@ -369,7 +310,7 @@ div.function {
 			<aui:input name="userStatus" type="hidden" value="${registrationModel.userStatus }"/>
 			<aui:input name="certificateStatus" type="hidden" value="${registrationModel.certificateStatus }"/>
 			<aui:input name="voStatus" type="hidden" value="${registrationModel.voStatus }"/>
-			
+			<aui:input name="verifyUser" type="hidden" value="${registrationModel.verifyUser }"/>
 			
 			<aui:button-row>
 				<aui:button type="submit" value="Registration Completed" />

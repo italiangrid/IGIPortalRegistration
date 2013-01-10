@@ -11,6 +11,7 @@
 	padding: 10px;
 	margin-right: 5px;
 	float: left;
+	font-size: 11px;
 }
 
 .head {

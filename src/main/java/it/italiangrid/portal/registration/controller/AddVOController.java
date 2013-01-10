@@ -60,5 +60,19 @@ public class AddVOController {
 		request.setAttribute("registrationModel", registrationModel);
 		return result;
 	}
+	
+	@ModelAttribute("voList")
+	public String getVoList() {
+		
+		List<Vo> vos = voService.getAllVo();
+		
+		String result="";
+		
+		for(int i=0; i<vos.size()-1; i++){
+			result += "\""+vos.get(i).getVo()+"\", ";
+		}
+		result += "\""+vos.get(vos.size()-1).getVo()+"\"";
+		return result;
+	}
 
 }

@@ -116,6 +116,9 @@ public class AddUserController {
 		request.setAttribute("fromIDP", "true");
 		request.setAttribute("userInfo", userInfo);
 		
+		if(registrationModel.getEmail().isEmpty())
+			registrationModel.setVerifyUser(true);
+		
 		
 		if((!registrationModel.getFirstName().isEmpty())&&(!registrationModel.getLastName().isEmpty())&&(!registrationModel.getInstitute().isEmpty())&&(!registrationModel.getEmail().isEmpty())){
 			registrationModel.setUserStatus(true);
@@ -237,7 +240,7 @@ public class AddUserController {
 		try{
 			
 			//AddUser into Liferay
-			boolean verify = registrationModel.getEmail().isEmpty();
+			boolean verify = registrationModel.isVerifyUser();
 			log.error("Verify??? " + verify);
 			RegistrationUtil.addUserToLiferay(request, userInfo, registrationModel, verify);
 			

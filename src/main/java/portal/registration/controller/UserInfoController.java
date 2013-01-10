@@ -43,7 +43,10 @@ import it.italiangrid.portal.dbapi.services.IdpService;
 import it.italiangrid.portal.dbapi.services.NotifyService;
 import it.italiangrid.portal.dbapi.services.UserInfoService;
 import it.italiangrid.portal.dbapi.services.UserToVoService;
+import it.italiangrid.portal.dbapi.services.VoService;
+import it.italiangrid.portal.registration.exception.RegistrationException;
 import it.italiangrid.portal.registration.model.RegistrationModel;
+import it.italiangrid.portal.registration.util.RegistrationConfig;
 
 @Controller("userInfoController")
 @RequestMapping(value = "VIEW")
@@ -76,6 +79,9 @@ public class UserInfoController {
 
 	@Autowired
 	private CertificateService certificateService;
+	
+	@Autowired
+	private VoService voService;
 
 	@RenderMapping
 	public String showUserInfos(RenderRequest request, RenderResponse response) {
@@ -385,6 +391,19 @@ public class UserInfoController {
 		String[] results = timesProperties.trim().split(",");
  		
 		return results;
+	}
+	
+	@ModelAttribute("usePortalURL")
+	public String getUsePortalURL() {
+
+		try {
+			return RegistrationConfig.getProperties("Registration.properties", "jobs.url");
+		} catch (RegistrationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return "";
 	}
 
 

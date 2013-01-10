@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 
 import it.italiangrid.portal.dbapi.domain.UserInfo;
+import it.italiangrid.portal.dbapi.domain.Vo;
 import it.italiangrid.portal.dbapi.services.UserInfoService;
 import it.italiangrid.portal.dbapi.services.UserToVoService;
 import it.italiangrid.portal.dbapi.services.VoService;
@@ -47,6 +48,28 @@ public class AddVOActionController {
 	public void searchVo(@ModelAttribute RegistrationModel registrationModel, ActionRequest request , ActionResponse response){
 		log.error(registrationModel.toString());
 		
+		registrationModel.setSearchVo((String) request.getParameter("tags"));
+		
+		log.error(registrationModel.toString());
+		
+		Vo vo = voService.findByName(registrationModel.getSearchVo());
+		
+		if(vo!=null){
+			if(VOMSAdminCallOut.getUser(registrationModel.getSubject(), registrationModel.getIssuer(), vo.getHost())){
+				registrationModel.setVos(registrationModel.getVos().isEmpty()?Integer.toString(vo.getIdVo()):registrationModel.getVos()+"#"+Integer.toString(vo.getIdVo()));
+				SessionMessages.add(request, "userToVo-adding-success");
+				registrationModel.setVoStatus(true);
+			}else{
+				PortletConfig portletConfig = (PortletConfig)request.getAttribute(JavaConstants.JAVAX_PORTLET_CONFIG);
+				SessionMessages.add(request, portletConfig.getPortletName() + SessionMessages.KEY_SUFFIX_HIDE_DEFAULT_ERROR_MESSAGE);
+				SessionErrors.add(request, "no-user-found-in-VO");
+			}
+		}else{
+			PortletConfig portletConfig = (PortletConfig)request.getAttribute(JavaConstants.JAVAX_PORTLET_CONFIG);
+			SessionMessages.add(request, portletConfig.getPortletName() + SessionMessages.KEY_SUFFIX_HIDE_DEFAULT_ERROR_MESSAGE);
+			SessionErrors.add(request, "no-user-found-in-VO");
+		}
+		
 		response.setRenderParameter("myaction", "showAddVoForm");
 		request.setAttribute("registrationModel", registrationModel);
 	}
@@ -81,6 +104,8 @@ public class AddVOActionController {
 			registrationModel.setVos(registrationModel.getVos().replace(request.getParameter("voToDel")+"#",""));
 		if(registrationModel.getVos().contains(request.getParameter("voToDel")))
 			registrationModel.setVos(registrationModel.getVos().replace(request.getParameter("voToDel"),""));
+		if(registrationModel.getVos().endsWith("#"))
+			registrationModel.setVos(registrationModel.getVos().substring(0, registrationModel.getVos().length() - 1));
 		if(registrationModel.getVos().isEmpty())
 			registrationModel.setVoStatus(false);
 		registrationModel.setSearchVo(null);
@@ -102,8 +127,14 @@ public class AddVOActionController {
 		RegistrationUtil.activateUser(userInfo, userInfoService);
 		
 		try {
-			URL url = new URL(RegistrationConfig.getProperties("Registration.properties", "login.url"));
-
+			URL url;
+			if(registrationModel.isVerifyUser()){
+				log.error(RegistrationConfig.getProperties("Registration.properties", "home.url"));
+				url = new URL(RegistrationConfig.getProperties("Registration.properties", "home.url"));
+			}else{
+				log.error(RegistrationConfig.getProperties("Registration.properties", "login.url"));
+				url = new URL(RegistrationConfig.getProperties("Registration.properties", "login.url"));
+			}
 			log.error(url);
 			response.sendRedirect(url.toString());
 		} catch (IOException e) {

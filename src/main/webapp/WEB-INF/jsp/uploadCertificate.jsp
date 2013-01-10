@@ -174,6 +174,7 @@ h5#usernameAlert {
 	<aui:input name="institute" type="hidden" value="${registrationModel.institute }"/>
 	<aui:input name="email" type="hidden" value="${registrationModel.email }"/>
 	<aui:input name="userStatus" type="hidden" value="${registrationModel.userStatus }"/>
+	<aui:input name="verifyUser" type="hidden" value="${registrationModel.verifyUser }"/>
 	<aui:layout>
 
 		<h1 class="header-title">Registration - Certificate Upload</h1>

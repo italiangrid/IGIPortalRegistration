@@ -34,9 +34,13 @@ public class InstructionPageController {
 		return new RegistrationModel();
 	}
 	
+	
+	
+//	
+	
 	@ActionMapping(params = "myaction=startRegistration")
 	public void redirectToWayf(ActionResponse response){
-	
+		
 		try {
 			URL url = new URL(RegistrationConfig.getProperties("Registration.properties", "retrieve.user.information"));
 			

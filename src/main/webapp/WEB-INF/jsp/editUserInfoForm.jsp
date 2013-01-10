@@ -477,7 +477,7 @@ div#advancedSettings {
 		<aui:layout>
 
 			<aui:fieldset>
-				<aui:column columnWidth="80">
+				<aui:column columnWidth="70">
 					<aui:fieldset>
 					<a href="#apriCert" ></a> You have uploaded  
 							<c:choose>
@@ -508,7 +508,7 @@ div#advancedSettings {
 					<br />
 					</aui:fieldset>
 				</aui:column>
-				<aui:column columnWidth="20">
+				<aui:column columnWidth="30">
 					<aui:fieldset>
 					<div id="foottipCert">
 						<c:choose>
@@ -701,7 +701,7 @@ div#advancedSettings {
 		<aui:layout>
 
 			<aui:fieldset>
-				<aui:column columnWidth="80">
+				<aui:column columnWidth="70">
 					<aui:fieldset>
 						<a href="#apriVo"/></a>
 						At the moment you have <strong><c:out
@@ -718,7 +718,7 @@ div#advancedSettings {
 						<br /> <br />
 					</aui:fieldset>
 				</aui:column>
-				<aui:column columnWidth="20">
+				<aui:column columnWidth="30">
 					<aui:fieldset>
 					<div id="foottipVO">
 						<c:choose>
@@ -979,7 +979,7 @@ div#advancedSettings {
 								onClick="verifyDelete('${deleteURL}')" />
 				<c:if test="${fn:length(userToVoList)>0}">				
 				<aui:button type="button" value="Use Portal"
-								onClick="location.href='https://portal.italiangrid.it/web/guest/job-monitor';" />
+								onClick="location.href='${usePortalURL }';" />
 				</c:if>
 			</aui:button-row>
 		</aui:form>

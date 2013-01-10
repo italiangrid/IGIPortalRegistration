@@ -7,6 +7,16 @@ public class RegistrationModel {
 	private boolean userStatus;
 	private boolean certificateStatus;
 	private boolean voStatus;
+	private boolean verifyUser;
+	
+	public boolean isVerifyUser() {
+		return verifyUser;
+	}
+
+	public void setVerifyUser(boolean verifyUser) {
+		this.verifyUser = verifyUser;
+	}
+
 	private String firstName;
 	private String lastName;
 	private String institute;
@@ -28,6 +38,7 @@ public class RegistrationModel {
 		this.userStatus = false;
 		this.certificateStatus = false;
 		this.voStatus = false;
+		this.verifyUser = false;
 		this.firstName = "";
 		this.lastName = "";
 		this.institute = "";
@@ -46,6 +57,7 @@ public class RegistrationModel {
 	 * @param userStatus
 	 * @param certificateStatus
 	 * @param voStatus
+	 * @param verifyUser
 	 * @param firstName
 	 * @param lastName
 	 * @param institute
@@ -60,15 +72,17 @@ public class RegistrationModel {
 	 */
 	public RegistrationModel(boolean haveCertificate, boolean haveIDP,
 			boolean userStatus, boolean certificateStatus, boolean voStatus,
-			String firstName, String lastName, String institute, String email,
-			String issuer, String subject, String expiration,
-			String certificateUserId, String vos, String searchVo, String mail) {
+			boolean verifyUser, String firstName, String lastName,
+			String institute, String email, String issuer, String subject,
+			String expiration, String certificateUserId, String vos,
+			String searchVo, String mail) {
 		super();
 		this.haveCertificate = haveCertificate;
 		this.haveIDP = haveIDP;
 		this.userStatus = userStatus;
 		this.certificateStatus = certificateStatus;
 		this.voStatus = voStatus;
+		this.verifyUser = verifyUser;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.institute = institute;
@@ -215,16 +229,12 @@ public class RegistrationModel {
 		return "RegistrationModel [haveCertificate=" + haveCertificate
 				+ ", haveIDP=" + haveIDP + ", userStatus=" + userStatus
 				+ ", certificateStatus=" + certificateStatus + ", voStatus="
-				+ voStatus + ", firstName=" + firstName + ", lastName="
-				+ lastName + ", institute=" + institute + ", email=" + email
-				+ ", issuer=" + issuer + ", subject=" + subject
-				+ ", expiration=" + expiration + ", certificateUserId="
-				+ certificateUserId + ", vos=" + vos + ", searchVo=" + searchVo
-				+ ", mail=" + mail + "]";
+				+ voStatus + ", verifyUser=" + verifyUser + ", firstName="
+				+ firstName + ", lastName=" + lastName + ", institute="
+				+ institute + ", email=" + email + ", issuer=" + issuer
+				+ ", subject=" + subject + ", expiration=" + expiration
+				+ ", certificateUserId=" + certificateUserId + ", vos=" + vos
+				+ ", searchVo=" + searchVo + ", mail=" + mail + "]";
 	}
 
-	
-
-	
-	
 }
