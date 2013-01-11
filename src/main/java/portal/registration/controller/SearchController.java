@@ -34,7 +34,6 @@ public class SearchController {
 			SessionStatus sessionStatus) {
 
 		VOListController.setSearch("");
-		sessionStatus.setComplete();
 
 		String userId = request.getParameter("userId");
 		String waif = request.getParameter("waif");

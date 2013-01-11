@@ -28,6 +28,7 @@ import java.util.UUID;
 
 import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
+import javax.portlet.PortletConfig;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
@@ -49,6 +50,7 @@ import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.servlet.SessionErrors;
 import com.liferay.portal.kernel.servlet.SessionMessages;
+import com.liferay.portal.kernel.util.JavaConstants;
 import com.liferay.portal.kernel.util.WebKeys;
 import com.liferay.portal.model.User;
 import com.liferay.portal.util.PortalUtil;
@@ -438,6 +440,9 @@ public class UploadCertificateController {
 				SessionErrors.add(request, error);
 			}
 			
+			PortletConfig portletConfig = (PortletConfig)request.getAttribute(JavaConstants.JAVAX_PORTLET_CONFIG);
+			SessionMessages.add(request, portletConfig.getPortletName() + SessionMessages.KEY_SUFFIX_HIDE_DEFAULT_ERROR_MESSAGE);
+			
 			response.setRenderParameter("myaction", "showUploadCertificate");
 			request.setAttribute("password", pwd1);
 			request.setAttribute("passwordVerify", pwd2);
@@ -549,8 +554,7 @@ public class UploadCertificateController {
 	}
 
 	@ActionMapping(params = "myaction=setDefaultCert")
-	public void setDefaultCert(ActionRequest request, ActionResponse response,
-			SessionStatus sessionStatus) {
+	public void setDefaultCert(ActionRequest request, ActionResponse response) {
 
 		int idCert = Integer.parseInt(request.getParameter("idCert"));
 		String userId = request.getParameter("userId");
@@ -570,13 +574,11 @@ public class UploadCertificateController {
 
 		response.setRenderParameter("myaction", "editUserInfoForm");
 		response.setRenderParameter("userId", userId);
-		sessionStatus.setComplete();
 
 	}
 
 	@ActionMapping(params = "myaction=removeCert")
-	public void removeCert(ActionRequest request, ActionResponse response,
-			SessionStatus sessionStatus) {
+	public void removeCert(ActionRequest request, ActionResponse response) {
 
 		String contextPath = UploadCertController.class.getClassLoader()
 				.getResource("").getPath();
@@ -679,6 +681,9 @@ public class UploadCertificateController {
 			}
 			brCleanUp.close();
 
+			PortletConfig portletConfig = (PortletConfig)request.getAttribute(JavaConstants.JAVAX_PORTLET_CONFIG);
+			SessionMessages.add(request, portletConfig.getPortletName() + SessionMessages.KEY_SUFFIX_HIDE_DEFAULT_ERROR_MESSAGE);
+			
 			if (!isWrong) {
 				log.info("Sto per cancellare il certificato con id = " + idCert);
 				certificateService.delete(idCert);
@@ -695,7 +700,6 @@ public class UploadCertificateController {
 
 		response.setRenderParameter("myaction", "editUserInfoForm");
 		response.setRenderParameter("userId", userId);
-		sessionStatus.setComplete();
 
 	}
 

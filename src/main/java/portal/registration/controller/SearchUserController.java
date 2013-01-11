@@ -19,7 +19,6 @@ public class SearchUserController {
 
 		UserInfoController.setSearch(request.getParameter("key"));
 
-		sessionStatus.setComplete();
 
 		response.setRenderParameter("myaction", "userInfos");
 	}
@@ -29,7 +28,6 @@ public class SearchUserController {
 			SessionStatus sessionStatus) {
 
 		UserInfoController.setSearch("");
-		sessionStatus.setComplete();
 
 		response.setRenderParameter("myaction", "userInfos");
 	}

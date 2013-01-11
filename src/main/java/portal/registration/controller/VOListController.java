@@ -61,7 +61,6 @@ public class VOListController {
 
 		response.setRenderParameter("myaction", waif);
 		response.setRenderParameter("userId", userId);
-		sessionStatus.setComplete();
 
 	}
 

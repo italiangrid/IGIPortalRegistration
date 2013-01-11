@@ -135,7 +135,6 @@ public class EditUserToVoController {
 		response.setRenderParameter("myaction", "editUserInfoForm");
 		response.setRenderParameter("userId", Integer.toString(userId));
 		request.setAttribute("userId", userId);
-		sessionStatus.setComplete();
 
 	}
 

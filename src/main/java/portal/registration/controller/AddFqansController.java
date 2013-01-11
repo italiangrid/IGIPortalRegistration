@@ -40,8 +40,7 @@ public class AddFqansController {
 	private UserInfoService userInfoService;
 
 	@ActionMapping(params = "myaction=addFqans")
-	public void addUserInfo(ActionRequest request, ActionResponse response,
-			SessionStatus sessionStatus) {
+	public void addUserInfo(ActionRequest request, ActionResponse response) {
 
 		boolean firstReg = false;
 		String[] fqans = request.getParameterValues("resultList");
@@ -82,7 +81,6 @@ public class AddFqansController {
 
 		response.setRenderParameter("userId", Integer.toString(userId));
 		request.setAttribute("userId", userId);
-		sessionStatus.setComplete();
 
 	}
 

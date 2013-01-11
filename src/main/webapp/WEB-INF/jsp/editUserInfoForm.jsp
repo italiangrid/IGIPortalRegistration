@@ -1,5 +1,8 @@
 <%@ include file="/WEB-INF/jsp/init.jsp"%>
 
+<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />
+
 <script type="text/javascript">
 <!--
 	//-->
@@ -74,6 +77,11 @@
 	
 	$(function() {
 
+		var availableTags = [${voList}];
+	    $( "#tags" ).autocomplete({
+	    	
+	      source: availableTags
+	    });
 
 		$("#foottipUser a, #foottipCert a, #foottipVO a").tooltip({
 			bodyHandler: function() {
@@ -238,8 +246,20 @@ div#advancedSettings {
 	
 }
 
+div.function {
+	padding: 1em 5em 1em 1em;
+	border: 1px;
+	border-color: #C8C9CA;
+	border-style: solid;
+	background-color: #D1D6DC;
+}
+
+#<portlet:namespace/>voOFF .search-results {
+    display: none;
+}
 
 </style>
+
 
 <%-- <c:choose>
 <c:when test="<%= request.isUserInRole("administrator") %>">
@@ -680,7 +700,7 @@ div#advancedSettings {
 	<liferay-ui:success key="user-deactivate" message="user-deactivate" />
 	<liferay-ui:success key="user-activate" message="user-activate" />
 
-	<liferay-ui:error key="user-vo-list-empty" message="user-vo-list-empty" />
+	<liferay-ui:error key="user-vo-list-empty" message="no-VO-found" />
 	<liferay-ui:error key="no-user-found-in-VO"
 		message="no-user-found-in-VO" />
 	<liferay-ui:error key="no-cert-for-user" message="no-cert-for-user" />
@@ -746,10 +766,42 @@ div#advancedSettings {
 		<div id="closeBox"><a href="#vo" onclick="nascondiVoUtente();">Hide VO</a></div>
 		<br /> <br /> <br />
 
+		<div class="function">
+		<aui:fieldset>
+		<aui:column columnWidth="50">
+		<div id="searchForm" >
+	
+		<portlet:actionURL var="searchVOActionUrl">
+			<portlet:param name="myaction" value="searchVo3" />
+			<portlet:param name="userId" value="${userInfo.userId }" />
+		</portlet:actionURL>
 		
+		<aui:form name="searchVo"
+			action="${searchVOActionUrl}"  commandName="registrationModel">
+			
+			<aui:layout>
+				<aui:button-row>
+				
+				<div class="ui-widget" style="float:left;">
+				  Enter your VO's name <input id="tags" name="tags" type="text" />
+				</div>
+				
+				
+				<aui:button type="submit" value="Add" inlineField="true"/>
+				
+				</aui:button-row>
+			</aui:layout>
+		</aui:form>
+		
+		</div>
+		</aui:column>
+		</aui:fieldset>
+	
+		</div>
+
+		<br/>
 
 		<liferay-ui:search-container
-			emptyResultsMessage="No VO selected"
 			delta="5" iteratorURL="<%= itURL %>">
 			<liferay-ui:search-container-results>
 				<%
@@ -772,18 +824,15 @@ div#advancedSettings {
 						<liferay-ui:search-container-column-text name="Default VO">
 						<c:if test="${defaultVo==Vo.vo}">
 							
-							<img src="<%=request.getContextPath()%>/images/success.png"/>	
+							<img src="<%=request.getContextPath()%>/images/NewCheck.png" width="16" height="16"/>	
 							
 						</c:if>
 						</liferay-ui:search-container-column-text>
-						<liferay-ui:search-container-column-text name="Description"
-							property="description" />
+						
 						<liferay-ui:search-container-column-text name="Roles"> 
 							<c:out value="${fn:replace(userFqans[Vo.idVo],';',' ')}"></c:out>
 						</liferay-ui:search-container-column-text>
-						<!-- <c:if test="${certCAonline == 'false' }">
-							
-						</c:if> -->
+						
 						
 						<liferay-ui:search-container-column-jsp
 							path="/WEB-INF/jsp/admin-vo-action.jsp" align="right" />
@@ -805,17 +854,6 @@ div#advancedSettings {
 			<portlet:param name="userId" value="${userInfo.userId}"/>
 		</portlet:renderURL>
 
-		<aui:form name="addUserToVOForm"
-			action="${addUserToVOActionUrl}">
-
-			
-			<aui:button-row>
-				<aui:button type="submit" value="Add VO" />
-				
-				<!--<aui:button type="cancel" value="Request VO association"
-								onClick="location.href='${voUrl}';" />-->
-			</aui:button-row>
-		</aui:form>
 		<div id="apriVo"></div>
 
 	</div>
@@ -832,8 +870,9 @@ div#advancedSettings {
 				<aui:column columnWidth="80">
 					<aui:fieldset>
 					
-						Notification settings.
-				
+						Proxy Notification: <strong><c:if test="${advOpts.proxyExpire=='true' }">ON</c:if><c:if test="${advOpts.proxyExpire=='false' }">OFF</c:if></strong>.<br/>
+						Proxy Expiration time: <strong><c:forEach var="option" items="${expirationTime}"><c:if test="${advOpts.proxyExpireTime==fn:trim(fn:split(option,'/')[0]) }">${fn:split(option,'/')[1] }</c:if></c:forEach></strong>.<br/>
+						Job Notification: <strong><c:if test="${notification.wfchgEnab=='true' }">ON</c:if><c:if test="${notification.wfchgEnab=='false' }">OFF</c:if></strong>.<br/>
 						<br /> <br />
 					</aui:fieldset>
 				</aui:column>
@@ -908,7 +947,7 @@ div#advancedSettings {
 									
 								<aui:fieldset>
 									<aui:column columnWidth="70">
-										<aui:input name="wfchgMess" type="textarea" rows="7" cols="70"
+										<aui:input name="wfchgMess" type="textarea" rows="7" cols="40"
 											label="Insert your message here" value="${notification.wfchgMess }" />
 									</aui:column>
 									<aui:column columnWidth="30">

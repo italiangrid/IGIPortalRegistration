@@ -85,6 +85,152 @@
 	$(document).ready(function() {
 
 	});
+	
+	(function ($) {
+
+		/**********************************
+		* CUSTOMIZE THE DEFAULT SETTINGS
+		* Ex:
+		* var _settings = {
+		* 	id: 'modal',
+		* 	src: function(sender){
+		*		return jQuery(sender).attr('href');
+		*	},
+		* 	width: 800,
+		* 	height: 600
+		* }
+		**********************************/
+		var _settings = {
+			width: 800, // Use this value if not set in CSS or HTML
+			height: 600, // Use this value if not set in CSS or HTML
+			overlayOpacity: .85, // Use this value if not set in CSS or HTML
+			id: 'modal',
+			src: function (sender) {
+				return jQuery(sender).attr('href');
+			},
+			fadeInSpeed: 0,
+			fadeOutSpeed: 0
+		};
+
+		/**********************************
+		* DO NOT CUSTOMIZE BELOW THIS LINE
+		**********************************/
+		$.modal = function (options) {
+			return _modal(this, options);
+		};
+		$.modal.open = function () {
+			_modal.open();
+		};
+		$.modal.close = function () {
+			_modal.close();
+		};
+		$.fn.modal = function (options) {
+			return _modal(this, options);
+		};
+		_modal = function (sender, params) {
+			this.options = {
+				parent: null,
+				overlayOpacity: null,
+				id: null,
+				content: null,
+				width: null,
+				height: null,
+				message: false,
+				modalClassName: null,
+				imageClassName: null,
+				closeClassName: null,
+				overlayClassName: null,
+				src: null
+			};
+			this.options = $.extend({}, options, _defaults);
+			this.options = $.extend({}, options, _settings);
+			this.options = $.extend({}, options, params);
+			this.close = function () {
+				jQuery('.' + options.modalClassName + ', .' + options.overlayClassName).fadeOut(_settings.fadeOutSpeed, function () { jQuery(this).unbind().remove(); });
+			};
+			this.open = function () {
+				if (typeof options.src == 'function') {
+					options.src = options.src(sender);
+				} else {
+					options.src = options.src || _defaults.src(sender);
+				}
+
+				var fileExt = /^.+\.((jpg)|(gif)|(jpeg)|(png)|(jpg))$/i;
+				var contentHTML = '';
+				if (fileExt.test(options.src)) {
+					contentHTML = '<div class="' + options.imageClassName + '"><img src="' + options.src + '"/></div>';
+
+				} else {
+					contentHTML = '<iframe width="' + options.width + '" height="' + options.height + '" frameborder="0" scrolling="no" allowtransparency="true" src="' + options.src + '"></iframe>';
+				}
+				options.content = options.content || contentHTML;
+
+				if (jQuery('.' + options.modalClassName).length && jQuery('.' + options.overlayClassName).length) {
+					jQuery('.' + options.modalClassName).html(options.content);
+				} else {
+					$overlay = jQuery((_isIE6()) ? '<iframe src="BLOCKED SCRIPT\'<html></html>\';" scrolling="no" frameborder="0" class="' + options.overlayClassName + '"></iframe><div class="' + options.overlayClassName + '"></div>' : '<div class="' + options.overlayClassName + '"></div>');
+					$overlay.hide().appendTo(options.parent);
+
+					$modal = jQuery('<div id="' + options.id + '" class="' + options.modalClassName + '" style="width:' + options.width + 'px; height:' + options.height + 'px; margin-top:-' + (options.height / 2) + 'px; margin-left:-' + (options.width / 2) + 'px;">' + options.content + '</div>');
+					$modal.hide().appendTo(options.parent);
+
+					$close = jQuery('<a class="' + options.closeClassName + '"></a>');
+					$close.appendTo($modal);
+
+					var overlayOpacity = _getOpacity($overlay.not('iframe')) || options.overlayOpacity;
+					$overlay.fadeTo(0, 0).show().not('iframe').fadeTo(_settings.fadeInSpeed, overlayOpacity);
+					$modal.fadeIn(_settings.fadeInSpeed);
+					
+					//alert(options.message)
+					if(options.message==false){
+					//$close.click(function () { jQuery.modal().close(); location.href='https://halfback.cnaf.infn.it/casshib/shib/app4/login?service=https%3A%2F%2Fgridlab04.cnaf.infn.it%2Fc%2Fportal%2Flogin%3Fp_l_id%3D10671';});
+					$close.click(function () { jQuery.modal().close(); location.href='https://halfback.cnaf.infn.it/casshib/shib/app1/login?service=https%3A%2F%2Fflyback.cnaf.infn.it%2Fc%2Fportal%2Flogin%3Fp_l_id%3D10669';});
+					}else{
+						$close.click(function () { jQuery.modal().close()});
+						$overlay.click(function () { jQuery.modal().close(); });
+					}
+					
+				}
+			};
+			return this;
+		};
+		_isIE6 = function () {
+			if (document.all && document.getElementById) {
+				if (document.compatMode && !window.XMLHttpRequest) {
+					return true;
+				}
+			}
+			return false;
+		};
+		_getOpacity = function (sender) {
+			$sender = jQuery(sender);
+			opacity = $sender.css('opacity');
+			filter = $sender.css('filter');
+
+			if (filter.indexOf("opacity=") >= 0) {
+				return parseFloat(filter.match(/opacity=([^)]*)/)[1]) / 100;
+			}
+			else if (opacity != '') {
+				return opacity;
+			}
+			return '';
+		};
+		_defaults = {
+			parent: 'body',
+			overlayOpacity: 85,
+			id: 'modal',
+			content: null,
+			width: 800,
+			height: 600,
+			modalClassName: 'modal-window',
+			imageClassName: 'modal-image',
+			closeClassName: 'close-window',
+			overlayClassName: 'modal-overlay',
+			src: function (sender) {
+				return jQuery(sender).attr('href');
+			}
+		};
+	})(jQuery);
 </script>
 
 
@@ -108,6 +254,17 @@ h5#usernameAlert {
 	border-style: solid;
 	background-color: #FFFFDD;
 	padding: 5px;
+}
+
+#submit{
+	float:right; 
+	margin-right:20px;
+}
+
+#help{
+	height: 64px;
+	vertical-align: middle;
+	display: table-cell;
 }
 </style>
 
@@ -164,9 +321,9 @@ h5#usernameAlert {
 
 		<aui:fieldset>
 
-			<aui:column columnWidth="25" style="margin-left:30px;">
+			<aui:column columnWidth="45" style="margin-left:30px;">
 
-				<aui:fieldset label="Upload Certificate">
+				<aui:fieldset>
 					<br />
 					<%
 						if (request.getParameter("userId") != null)
@@ -189,109 +346,84 @@ h5#usernameAlert {
 					<aui:input name="userId" type="hidden" value="${userId}" />
 					<aui:input name="idCert" type="hidden" value="${idCert}" />
 
-
+					<div id="allertDiv2">
 					<div class="portlet-msg-error p12" style="display:none;">
 						Insert certificate here.
 					</div>
-					<div id="foottipP12">
-						<div id="#footnoteP12">
+					
 							<aui:input name="usercert" type="file" label="p12 format Certificate"
 								 />
-						 </div>
-					</div>
-					<!--<aui:input name="userkey" type="file" label="Chiave"
-						value="${userkey }" />-->
 					
 					
 					<div class="portlet-msg-error pwd" style="display:none;">
 						Insert password of your certificate here.
 					</div>
-					<div id="foottipPwdP12">
-						<div id="#footnotePwdP12">
+					
 							<aui:input id="keyPass" name="keyPass" type="password"
 								label="Password of your certificate" onBlur="printCheck($(this).attr('id'));"/>
-						</div>
 					</div>
-
-				</aui:fieldset>
-
-				<br />
-				<br />
-			</aui:column>
-
-			<aui:column columnWidth="25" style="margin-left:30px;">
-
-				<aui:fieldset label="Choose a Password for the Proxy">
-					<br />
-					<div id="allertDiv">
-						<div class="portlet-msg-error proxyPwd" style="display:none;">
-							These password must be the same.
-						</div>
-						<div id="foottipPwdProxy">
-							<div id="#footnotePwdProxy">
-								<aui:input id="password" name="password" type="password"
-									label="Password"  onBlur="printCheck($(this).attr('id'));"/>
-							</div>
-						</div>
-						<div class="portlet-msg-error proxyPwd" style="display:none;">
-							These password must be the same.
-						</div>
-						<div id="foottipPwdReProxy">
-c
-							<div id="#footnotePwdProxy">
-								<aui:input id="passwordVerify" name="passwordVerify"
-									type="password" label="Retype Password"
-									onkeyup="verifyPassword();"/>
-							</div>
-						</div>
-						<div style="display:none;">
-							<aui:input name="primaryCert" type="checkbox" value="${primCert}"
-								label="This is default certificate" />
-
-						</div>
-						<br/>
-						<strong>REMEMBER THIS PASSWORD</strong>
-					</div>
-					<!--
-					<div style="float:left; width: 70%;">Insert a password that will be used for proxy retrieval.<br/>
-					<strong>In the future we will request you only this password for using the portal.</strong></div>
-					<div style="float:left; width: 30%;"><img src="<%=request.getContextPath()%>/images/emblem-important.png"   /></div>
-					<div style="clear:left;"></div>
-					-->
-				</aui:fieldset>
-
-				<br />
-				<br />
-			</aui:column>
-
-			<aui:column columnWidth="25" style="margin-left:30px;">
-
-				<aui:fieldset label="Note">
-					<br />
-					<div id="noteText">
-					<a href="https://portal.italiangrid.it:8443/moreinfo.html" onclick="$(this).modal({width:800, height:600, message:true}).open(); return false;">More Info</a>
-					<br />
 					<br />
 					
-					 <strong>* = Required</strong>
-					 </div>
-					<!--
-					<strong>Don't forget these data</strong>
-					<br />
-					<div id="noteText">
-						The <strong>password</strong> that you have insert will 
-						not be saved. If you lose your password can not be
-						recover and will need to delete the certificate
-						saved and log in again to upload the user certificate. Keep them
-						so in a safe place.
+						Please insert below a new password. <br/>
+						This password will be asked to use Grid and Cloud resources in a secure way. <br/>
+					<div id="allertDiv2">
+				
+						<br/>
+						<div class="portlet-msg-error proxyPwd" style="display:none;">
+							These password must be the same.
+						</div>
+
+								<aui:input id="password" name="password" type="password"
+									label="Insert Password" onBlur="printCheck($(this).attr('id'));"/>
+
+						<div class="portlet-msg-error proxyPwd" style="display:none;">
+							These password must be the same.
+						</div>
+
+								<aui:input id="passwordVerify" name="passwordVerify"
+									type="password" label="Retype Password" onkeyup="verifyPassword();"/>
+
 						
 					</div>
-					-->
+						<br/>
+						<strong>Note:</strong> this password will be not saved in the system.
+					<aui:input name="primaryCert" type="hidden" value="true"/>
 				</aui:fieldset>
 
 				<br />
 				<br />
 			</aui:column>
+
+			<aui:column columnWidth="30" style="margin-left:30px;">
+
+				<aui:fieldset>
+					<br/><br/>
+					
+					<div id="help">
+					<a href="#"><img class="displayed"
+													src="<%=request.getContextPath()%>/images/Help.png"
+													id="noImg" width="64" /> Certificate Upload Help</a>
+													
+					</div>
+					<br/><br/><br/><br/><br/><br/><br/>
+					<div id="help">
+					<a href="#"><img class="displayed"
+													src="<%=request.getContextPath()%>/images/Information2.png"
+													id="noImg" width="64" /> Technical Information</a>
+													
+													<a href="https://portal.italiangrid.it:8443/moreinfo.html" onclick="$(this).modal({width:800, height:600, message:true}).open(); return false;">More Info</a>
+					
+													
+					</div>
+				</aui:fieldset>
+
+				<br />
+				<br />
+			</aui:column>
+
+			
+
+			
 
 			<aui:button-row>
 				<aui:button type="submit" value="Update Certificate"  onClick="return validate();"/>

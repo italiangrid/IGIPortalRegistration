@@ -257,7 +257,7 @@ ul#insertHere{
 <div id="action">
 
 <portlet:actionURL var="addUserToVoActionUrl">
-	<portlet:param name="myaction" value="addFqans" />
+	<portlet:param name="myaction" value="editRoleVO" />
 </portlet:actionURL>
 
 <jsp:useBean id="userToVo" type="it.italiangrid.portal.dbapi.domain.UserToVo"
@@ -286,8 +286,9 @@ ul#insertHere{
 			<aui:input name="certificateStatus" type="hidden" value="${registrationModel.certificateStatus }"/>
 			<aui:input name="voStatus" type="hidden" value="${registrationModel.voStatus }"/>
 			<aui:input name="verifyUser" type="hidden" value="${registrationModel.verifyUser }"/>
+			<aui:input name="idVo" type="hidden" value="${vo.idVo }"/>
 
-			<h1>Modify <c:out value="${vo.vo}" /> Role</h1>
+			<h1>Registration - Edit Role for ${vo.vo }</h1>
 			<br />
 			<strong>Help:</strong>
 			<br />
@@ -391,23 +392,6 @@ ul#insertHere{
 			<aui:button-row>
 			
 				<aui:button type="submit" value="Save List"/>
-
-				<c:if test="${firstReg == 'true' }" >
-									<portlet:renderURL var="backURL">
-									<portlet:param name="myaction" value="showAddUserToVoPresents" />
-									<portlet:param name="userId" value="${userId}" />
-								</portlet:renderURL>
-								<aui:button type="cancel" value="Back"
-									onClick="location.href='${backURL}';" />
-								</c:if>
-								<c:if test="${firstReg != 'true' }" >
-									<portlet:renderURL var="backURL">
-										<portlet:param name="myaction" value="editUserInfoForm" />
-										<portlet:param name="userId" value="${userId}" />
-									</portlet:renderURL>
-									<aui:button type="cancel" value="Back"
-										onClick="location.href='${backURL}';" />
-								</c:if>
 
 			</aui:button-row>
 

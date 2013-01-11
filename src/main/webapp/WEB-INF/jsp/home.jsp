@@ -212,7 +212,7 @@ div#voData {
 		</div>
 	</c:when>
 	<c:otherwise>
-
+		home.jsp
 		<%@ include file="/WEB-INF/jsp/editUserInfoForm.jsp" %>
 
 	</c:otherwise>

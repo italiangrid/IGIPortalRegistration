@@ -7,6 +7,7 @@ import java.util.Properties;
 
 import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
+import javax.portlet.PortletConfig;
 import javax.portlet.RenderRequest;
 
 import it.italiangrid.portal.dbapi.domain.UserInfo;
@@ -31,6 +32,7 @@ import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.servlet.SessionErrors;
 import com.liferay.portal.kernel.servlet.SessionMessages;
+import com.liferay.portal.kernel.util.JavaConstants;
 import com.liferay.portal.kernel.util.WebKeys;
 import com.liferay.portal.model.Role;
 import com.liferay.portal.model.User;
@@ -101,9 +103,13 @@ public class AddUserToVoPresentsController {
 				userInfoService.edit(userInfo);
 
 			} catch (PortalException e) {
+				PortletConfig portletConfig = (PortletConfig)request.getAttribute(JavaConstants.JAVAX_PORTLET_CONFIG);
+				SessionMessages.add(request, portletConfig.getPortletName() + SessionMessages.KEY_SUFFIX_HIDE_DEFAULT_ERROR_MESSAGE);
 				SessionErrors.add(request, "exception-deactivation-user");
 				e.printStackTrace();
 			} catch (SystemException e) {
+				PortletConfig portletConfig = (PortletConfig)request.getAttribute(JavaConstants.JAVAX_PORTLET_CONFIG);
+				SessionMessages.add(request, portletConfig.getPortletName() + SessionMessages.KEY_SUFFIX_HIDE_DEFAULT_ERROR_MESSAGE);
 				SessionErrors.add(request, "exception-deactivation-user");
 				e.printStackTrace();
 			}
@@ -113,7 +119,7 @@ public class AddUserToVoPresentsController {
 
 	@ActionMapping(params = "myaction=goToAddUserToVOForm")
 	public void goToAddUserToVOForm(ActionRequest request,
-			ActionResponse response, SessionStatus sessionStatus) {
+			ActionResponse response) {
 		int userId = 0;
 		if(request.getParameter("userId")==null){
 			log.error("siamo rovinati");
@@ -130,7 +136,6 @@ public class AddUserToVoPresentsController {
 		response.setRenderParameter("userId", Integer.toString(userId));
 		response.setRenderParameter("firstReg", request.getParameter("firstReg"));
 
-		sessionStatus.setComplete();
 
 	}
 
@@ -140,11 +145,9 @@ public class AddUserToVoPresentsController {
 	}
 
 	@ActionMapping(params = "myaction=userToVoComplete")
-	public void userToVoComplete(ActionResponse response,
-			SessionStatus sessionStatus) {
+	public void userToVoComplete(ActionResponse response) {
 
 		response.setRenderParameter("myaction", "userInfos");
-		sessionStatus.setComplete();
 
 	}
 	

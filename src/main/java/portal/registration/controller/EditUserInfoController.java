@@ -11,6 +11,7 @@ import java.util.Properties;
 
 import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
+import javax.portlet.PortletConfig;
 import javax.portlet.RenderRequest;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,7 @@ import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.servlet.SessionErrors;
 import com.liferay.portal.kernel.servlet.SessionMessages;
+import com.liferay.portal.kernel.util.JavaConstants;
 import com.liferay.portal.model.Role;
 import com.liferay.portal.model.User;
 import com.liferay.portal.service.RoleLocalServiceUtil;
@@ -42,6 +44,7 @@ import it.italiangrid.portal.dbapi.services.CertificateService;
 import it.italiangrid.portal.dbapi.services.NotifyService;
 import it.italiangrid.portal.dbapi.services.UserInfoService;
 import it.italiangrid.portal.dbapi.services.UserToVoService;
+import it.italiangrid.portal.dbapi.services.VoService;
 import it.italiangrid.portal.registration.exception.RegistrationException;
 import it.italiangrid.portal.registration.util.RegistrationConfig;
 import portal.registration.utils.GuseNotify;
@@ -68,6 +71,9 @@ public class EditUserInfoController {
 
 	@Autowired
 	private UserToVoService userToVoService;
+	
+	@Autowired
+	private VoService voService;
 
 	@RenderMapping(params = "myaction=editUserInfoForm")
 	public String showEditUserInfoForm(@RequestParam int userId,
@@ -106,9 +112,13 @@ public class EditUserInfoController {
 				userInfoService.edit(userInfo);
 
 			} catch (PortalException e) {
+				PortletConfig portletConfig = (PortletConfig)request.getAttribute(JavaConstants.JAVAX_PORTLET_CONFIG);
+				SessionMessages.add(request, portletConfig.getPortletName() + SessionMessages.KEY_SUFFIX_HIDE_DEFAULT_ERROR_MESSAGE);
 				SessionErrors.add(request, "exception-deactivation-user");
 				e.printStackTrace();
 			} catch (SystemException e) {
+				PortletConfig portletConfig = (PortletConfig)request.getAttribute(JavaConstants.JAVAX_PORTLET_CONFIG);
+				SessionMessages.add(request, portletConfig.getPortletName() + SessionMessages.KEY_SUFFIX_HIDE_DEFAULT_ERROR_MESSAGE);
 				SessionErrors.add(request, "exception-deactivation-user");
 				e.printStackTrace();
 			}
@@ -175,11 +185,27 @@ public class EditUserInfoController {
 			}
 		}
 
+		PortletConfig portletConfig = (PortletConfig)request.getAttribute(JavaConstants.JAVAX_PORTLET_CONFIG);
+		SessionMessages.add(request, portletConfig.getPortletName() + SessionMessages.KEY_SUFFIX_HIDE_DEFAULT_ERROR_MESSAGE);
+		
 		response.setRenderParameter("myaction", "editUserInfoForm");
 		response.setRenderParameter("userId",
 				Integer.toString(userInfo.getUserId()));
-		sessionStatus.setComplete();
 
+	}
+	
+	@ModelAttribute("voList")
+	public String getVoList() {
+		
+		List<Vo> vos = voService.getAllVo();
+		
+		String result="";
+		
+		for(int i=0; i<vos.size()-1; i++){
+			result += "\""+vos.get(i).getVo()+"\", ";
+		}
+		result += "\""+vos.get(vos.size()-1).getVo()+"\"";
+		return result;
 	}
 
 	@ModelAttribute("defaultVo")
@@ -305,7 +331,6 @@ public class EditUserInfoController {
 			SessionStatus sessionStatus) {
 
 		response.setRenderParameter("myaction", "userInfos");
-		sessionStatus.setComplete();
 
 	}
 	
@@ -351,7 +376,6 @@ public class EditUserInfoController {
 		}	
 		response.setRenderParameter("myaction", "editUserInfoForm");
 		response.setRenderParameter("userId", request.getParameter("userId"));
-		sessionStatus.setComplete();
 
 	}
 	
@@ -485,5 +509,7 @@ public class EditUserInfoController {
  		
 		return results;
 	}
+	
+	
 
 }

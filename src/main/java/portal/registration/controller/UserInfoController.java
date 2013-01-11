@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 
+import javax.portlet.PortletConfig;
 import javax.portlet.RenderRequest;
 import javax.portlet.RenderResponse;
 
@@ -25,6 +26,7 @@ import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.servlet.SessionErrors;
 import com.liferay.portal.kernel.servlet.SessionMessages;
+import com.liferay.portal.kernel.util.JavaConstants;
 import com.liferay.portal.kernel.util.WebKeys;
 import com.liferay.portal.model.Role;
 import com.liferay.portal.model.User;
@@ -135,6 +137,20 @@ public class UserInfoController {
 					.getUserId();
 		}
 		return 0;
+	}
+	
+	@ModelAttribute("voList")
+	public String getVoList() {
+		
+		List<Vo> vos = voService.getAllVo();
+		
+		String result="";
+		
+		for(int i=0; i<vos.size()-1; i++){
+			result += "\""+vos.get(i).getVo()+"\", ";
+		}
+		result += "\""+vos.get(vos.size()-1).getVo()+"\"";
+		return result;
 	}
 
 	@ModelAttribute("idpsName")
@@ -288,9 +304,13 @@ public class UserInfoController {
 			SessionMessages.add(request, "user-activate");
 
 		} catch (PortalException e) {
+			PortletConfig portletConfig = (PortletConfig)request.getAttribute(JavaConstants.JAVAX_PORTLET_CONFIG);
+			SessionMessages.add(request, portletConfig.getPortletName() + SessionMessages.KEY_SUFFIX_HIDE_DEFAULT_ERROR_MESSAGE);
 			SessionErrors.add(request,"exception-activation-user");
 			//e.printStackTrace();
 		} catch (SystemException e) {
+			PortletConfig portletConfig = (PortletConfig)request.getAttribute(JavaConstants.JAVAX_PORTLET_CONFIG);
+			SessionMessages.add(request, portletConfig.getPortletName() + SessionMessages.KEY_SUFFIX_HIDE_DEFAULT_ERROR_MESSAGE);
 			SessionErrors.add(request,"exception-activation-user");
 			//e.printStackTrace();
 		}

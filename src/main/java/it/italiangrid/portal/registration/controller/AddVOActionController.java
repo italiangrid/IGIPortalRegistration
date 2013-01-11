@@ -125,6 +125,37 @@ public class AddVOActionController {
 		request.setAttribute("registrationModel", registrationModel);
 	}
 	
+	@ActionMapping(params = "myaction=deleteVo")
+	public void deleteVo(ActionRequest request , ActionResponse response){
+		log.error("myaction=delVo");
+		log.error(request.getParameter("idVo"));
+		
+		RegistrationModel registrationModel = getRegistrationModelFromRequest(request);
+		
+		log.error(registrationModel);
+		
+		UserInfo userInfo = userInfoService.findByMail(registrationModel.getEmail());
+		userToVoService.delete(userInfo.getUserId(), Integer.parseInt(request.getParameter("idVo")));
+		
+		if(!userToVoService.findById(userInfo.getUserId()).isEmpty()){
+			userToVoService.setDefault(userInfo.getUserId(), userToVoService.findById(userInfo.getUserId()).get(0).getId().getIdVo());
+		}
+		
+		if(registrationModel.getVos().contains(request.getParameter("idVo")+"#"))
+			registrationModel.setVos(registrationModel.getVos().replace(request.getParameter("idVo")+"#",""));
+		if(registrationModel.getVos().contains(request.getParameter("idVo")))
+			registrationModel.setVos(registrationModel.getVos().replace(request.getParameter("idVo"),""));
+		if(registrationModel.getVos().endsWith("#"))
+			registrationModel.setVos(registrationModel.getVos().substring(0, registrationModel.getVos().length() - 1));
+		if(registrationModel.getVos().isEmpty())
+			registrationModel.setVoStatus(false);
+		registrationModel.setSearchVo(null);
+		SessionMessages.add(request, "userToVo-removed-success");
+		log.error(registrationModel.toString());
+		response.setRenderParameter("myaction", "showAddVoForm");
+		request.setAttribute("registrationModel", registrationModel);
+	}
+	
 	@ActionMapping(params = "myaction=goToAddUserForm")
 	public void goToAddUserForm(@ModelAttribute RegistrationModel registrationModel, ActionRequest request , ActionResponse response){
 		log.error("myaction=goToAddUserForm");
@@ -157,6 +188,60 @@ public class AddVOActionController {
 		
 		request.setAttribute("registrationModel", registrationModel);
 	}
+	
+	
+	@ActionMapping(params = "myaction=setDefaultVo")
+	public void setDefaultUserToVoEdit(ActionRequest request,
+			ActionResponse response) {
+		
+		RegistrationModel registrationModel = getRegistrationModelFromRequest(request);
+		UserInfo userInfo = userInfoService.findByMail(registrationModel.getEmail());
+		
+		int userId = userInfo.getUserId();
+		int idVo = Integer.parseInt(request.getParameter("idVo"));
 
+		try {
+			log.info("Sto per settare default il userToVo con userId = "
+					+ userId + "e idVo = " + idVo);
+			if (userToVoService.setDefault(userId, idVo))
+				SessionMessages.add(request, "userToVo-updated-successufully");
+			else
+				SessionErrors.add(request, "error-default-userToVo");
+			log.info("UserToVoSettato");
+			userToVoService.findVoByUserId(userId);
+
+		} catch (Exception e) {
+			SessionErrors.add(request, "error-updating-certificate");
+		}
+
+		response.setRenderParameter("myaction", "showAddVoForm");
+		request.setAttribute("registrationModel", registrationModel);
+
+	}
+
+	private RegistrationModel getRegistrationModelFromRequest(
+			ActionRequest request) {
+		RegistrationModel result = new RegistrationModel();
+		
+		result.setCertificateStatus(Boolean.parseBoolean(request.getParameter("certificateStatus")));
+		result.setCertificateUserId(request.getParameter("certificateUserId"));
+		result.setEmail(request.getParameter("email"));
+		result.setExpiration(request.getParameter("expiration"));
+		result.setFirstName(request.getParameter("firstName"));
+		result.setHaveCertificate(Boolean.parseBoolean(request.getParameter("haveCertificate")));
+		result.setHaveIDP(Boolean.parseBoolean(request.getParameter("haveIDP")));
+		result.setInstitute(request.getParameter("institute"));
+		result.setIssuer(request.getParameter("issuer"));
+		result.setLastName(request.getParameter("lastName"));
+		result.setMail(request.getParameter("mail"));
+		result.setSearchVo(request.getParameter("searchVo"));
+		result.setSubject(request.getParameter("subject"));
+		result.setUserStatus(Boolean.parseBoolean(request.getParameter("userStatus")));
+		result.setVerifyUser(Boolean.parseBoolean(request.getParameter("verifyUser")));
+		result.setVos(request.getParameter("vos"));
+		result.setVoStatus(Boolean.parseBoolean(request.getParameter("voStatus")));
+		
+		return result;
+	}
 	
 }

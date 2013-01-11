@@ -20,6 +20,7 @@ import java.util.Locale;
 import javax.servlet.http.HttpServletRequest;
 import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
+import javax.portlet.PortletConfig;
 import javax.portlet.RenderResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +34,7 @@ import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.servlet.SessionErrors;
 import com.liferay.portal.kernel.servlet.SessionMessages;
+import com.liferay.portal.kernel.util.JavaConstants;
 import com.liferay.portal.util.PortalUtil;
 import com.oreilly.servlet.multipart.FilePart;
 import com.oreilly.servlet.multipart.MultipartParser;
@@ -328,7 +330,10 @@ public class UpdateCertController {
 				SessionErrors.add(request, error);
 			}
 
-			sessionStatus.setComplete();
+			PortletConfig portletConfig = (PortletConfig)request.getAttribute(JavaConstants.JAVAX_PORTLET_CONFIG);
+			SessionMessages.add(request, portletConfig.getPortletName() + SessionMessages.KEY_SUFFIX_HIDE_DEFAULT_ERROR_MESSAGE);
+			
+			
 			response.setRenderParameter("myaction", "showUpdateCert");
 			request.setAttribute("userId", uid);
 			request.setAttribute("idCert", idCert);

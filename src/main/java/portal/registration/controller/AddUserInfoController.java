@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Locale;
 import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
+import javax.portlet.PortletConfig;
 import javax.portlet.PortletSession;
 import javax.portlet.RenderResponse;
 import org.apache.log4j.Logger;
@@ -35,6 +36,7 @@ import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.servlet.SessionErrors;
 import com.liferay.portal.kernel.servlet.SessionMessages;
+import com.liferay.portal.kernel.util.JavaConstants;
 import com.liferay.portal.kernel.util.WebKeys;
 import com.liferay.portal.model.Role;
 import com.liferay.portal.model.User;
@@ -234,8 +236,6 @@ public class AddUserInfoController {
 								"showRequestCertificate");
 					}
 
-					sessionStatus.setComplete();
-
 				} else {
 
 					errors.add("error-saving-registration");
@@ -244,6 +244,9 @@ public class AddUserInfoController {
 						log.info("Errore: " + error);
 						SessionErrors.add(request, error);
 					}
+					
+					PortletConfig portletConfig = (PortletConfig)request.getAttribute(JavaConstants.JAVAX_PORTLET_CONFIG);
+					SessionMessages.add(request, portletConfig.getPortletName() + SessionMessages.KEY_SUFFIX_HIDE_DEFAULT_ERROR_MESSAGE);
 
 					log.info("non va bene");
 

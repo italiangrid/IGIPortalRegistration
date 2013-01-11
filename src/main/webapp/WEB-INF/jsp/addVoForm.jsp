@@ -65,8 +65,10 @@
 
 		if (list2.length == 0) {
 			$("#deleteButton").hide();
+			$("#roleButton").hide();
 		} else {
 			$("#deleteButton").show();
+			$("#roleButton").show();
 		}
 	}
 	
@@ -84,6 +86,10 @@
 
 .search-results {
     display: none;
+}
+
+.portlet-msg-info{
+    display: none;
 }
 
 div.function {
@@ -138,6 +144,8 @@ div.function {
 	message="userToVo-adding-success" />
 <liferay-ui:success key="userToVo-removed-success"
 	message="userToVo-removed-success" />
+<liferay-ui:success key="userToVo-updated-successufully"
+	message="userToVo-updated-successufully" />
 <liferay-ui:success key="user-deactivate" message="user-deactivate" />
 <liferay-ui:success key="user-activate" message="user-activate" />
 
@@ -193,7 +201,7 @@ div.function {
 				<aui:button-row>
 				
 				<div class="ui-widget" style="float:left;">
-				  Select your VO <input id="tags" name="tags" type="text" />
+				  Enter your VO's name <input id="tags" name="tags" type="text" />
 				</div>
 				
 				
@@ -224,29 +232,12 @@ div.function {
 					<portlet:actionURL var="delVOActionUrl">
 						<portlet:param name="myaction" value="delVo" />
 					</portlet:actionURL>
-					<aui:form name="delVo"
-						action="${delVOActionUrl}"  commandName="registrationModel">
-						
-					<aui:input name="subject" type="hidden" value="${registrationModel.subject }"></aui:input>
-					<aui:input name="issuer" type="hidden" value="${registrationModel.issuer }"></aui:input>
-					<aui:input name="expiration" type="hidden" value="${registrationModel.expiration }"></aui:input>
-					<aui:input name="haveCertificate" type="hidden" value="${registrationModel.haveCertificate }"></aui:input>
-					<aui:input name="certificateUserId" type="hidden" value="${registrationModel.certificateUserId }"></aui:input>
-					<aui:input name="vos" type="hidden" value="${registrationModel.vos }"></aui:input>
-					<aui:input name="searchVo" type="hidden" value="${registrationModel.searchVo }"></aui:input>
-					<aui:input name="mail" type="hidden" value="${registrationModel.mail }"></aui:input>
-					<aui:input name="haveIDP" type="hidden" value="${registrationModel.haveIDP }"></aui:input>
-					<aui:input name="firstName" type="hidden" value="${registrationModel.firstName }"/>
-					<aui:input name="lastName" type="hidden" value="${registrationModel.lastName }"/>
-					<aui:input name="institute" type="hidden" value="${registrationModel.institute }"/>
-					<aui:input name="email" type="hidden" value="${registrationModel.email }"/>
-					<aui:input name="userStatus" type="hidden" value="${registrationModel.userStatus }"/>
-					<aui:input name="certificateStatus" type="hidden" value="${registrationModel.certificateStatus }"/>
-					<aui:input name="voStatus" type="hidden" value="${registrationModel.voStatus }"/>
-					<aui:input name="verifyUser" type="hidden" value="${registrationModel.verifyUser }"/>
+					<portlet:actionURL var="editRoleActionUrl">
+						<portlet:param name="myaction" value="editRole" />
+					</portlet:actionURL>
 					
-					<liferay-ui:search-container emptyResultsMessage="No VO selected"
-						delta="5">
+					
+					<liferay-ui:search-container delta="5">
 						<liferay-ui:search-container-results>
 							<%
 								results = ListUtil.subList(
@@ -266,30 +257,28 @@ div.function {
 							className="it.italiangrid.portal.dbapi.domain.Vo"
 							keyProperty="idVo" modelVar="Vo">
 							
-							<liferay-ui:search-container-column-text name="Select">
-							<input name="voToDel" type="radio"
-										value="${Vo.idVo }"
-										onchange="viewOrHideDeleteButton2('${Vo.vo }');"></input>
-										
-							</liferay-ui:search-container-column-text>
-							
 							<liferay-ui:search-container-column-text name="VO name"
 								property="vo" />
+							<liferay-ui:search-container-column-text name="Default VO">
+							<c:if test="${defaultVo==Vo.vo}">
+								
+								<img src="<%=request.getContextPath()%>/images/NewCheck.png" width="16" height="16"/>	
+								
+							</c:if>
+							</liferay-ui:search-container-column-text>
 							<liferay-ui:search-container-column-text name="VO description"
 								property="description" />
-
+							<liferay-ui:search-container-column-text name="Roles"> 
+								<c:out value="${fn:replace(userFqans[Vo.idVo],';',' ')}"></c:out>
+							</liferay-ui:search-container-column-text>
+							<liferay-ui:search-container-column-jsp
+								path="/WEB-INF/jsp/addvo-action.jsp" align="right" />
 							
 						</liferay-ui:search-container-row>
 						<liferay-ui:search-iterator />
 					</liferay-ui:search-container>
 					
-					<aui:button-row>
-						
-						<aui:button id="deleteButton" type="submit" value="Delete VO" style="display:none;" />
-						
-					</aui:button-row>
 					
-					</aui:form>
 				</aui:fieldset>
 				<br />
 				<br />

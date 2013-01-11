@@ -11,7 +11,7 @@ public class GuseNotify {
 	private String emailSubj;
 	
 	public GuseNotify() {
-		this.wfchgMess = "Dear user,\n\n[EXAMPLE] The istance #istance# of the workflow #workflow# change status from #oldstatus# to #newstatus# at #now#.  [EXAMPLE] \n\n[ANSYS EXAMPLE]#istance#.[ANSYS EXAMPLE]\n\nRegards.";
+		this.wfchgMess = "Dear user,\n\n[EXAMPLE] The istance #instance# of the workflow #workflow# change status from #oldstatus# to #newstatus# at #now#.  [EXAMPLE] \n\n[ANSYS EXAMPLE]#instance#.[ANSYS EXAMPLE]\n\nRegards.";
 		this.wfchgEnab = "false";
 		this.quotaMess = "";
 		this.quotaEnab = "false";

@@ -35,7 +35,6 @@ public class SearchVOController {
 			SessionStatus sessionStatus) {
 
 		AddUserToVOController.setSearch("");
-		sessionStatus.setComplete();
 
 		String userId = request.getParameter("userId");
 		String firstReg = request.getParameter("firstReg");

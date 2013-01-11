@@ -251,6 +251,9 @@ h5#usernameAlert {
 													src="<%=request.getContextPath()%>/images/Information2.png"
 													id="noImg" width="64" /> Technical Information</a>
 													
+													<a href="https://portal.italiangrid.it:8443/moreinfo.html" onclick="$(this).modal({width:800, height:600, message:true}).open(); return false;">More Info</a>
+					
+													
 					</div>
 				</aui:fieldset>
 

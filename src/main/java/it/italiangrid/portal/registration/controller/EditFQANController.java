@@ -1,7 +1,5 @@
 package it.italiangrid.portal.registration.controller;
 
-import javax.portlet.ActionRequest;
-import javax.portlet.ActionResponse;
 import javax.portlet.RenderRequest;
 
 import org.apache.log4j.Logger;
@@ -9,21 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.support.SessionStatus;
-import org.springframework.web.portlet.bind.annotation.ActionMapping;
 import org.springframework.web.portlet.bind.annotation.RenderMapping;
 
-import com.liferay.portal.kernel.servlet.SessionMessages;
-
-//import portal.registration.domain.Certificate;
-//import portal.registration.domain.UserInfo;
-//import portal.registration.domain.UserToVo;
-//import portal.registration.domain.Vo;
-//import portal.registration.services.CertificateService;
-//import portal.registration.services.UserInfoService;
-//import portal.registration.services.UserToVoService;
-//import portal.registration.services.VoService;
 import it.italiangrid.portal.dbapi.domain.Certificate;
 import it.italiangrid.portal.dbapi.domain.UserInfo;
 import it.italiangrid.portal.dbapi.domain.UserToVo;
@@ -32,6 +17,7 @@ import it.italiangrid.portal.dbapi.services.CertificateService;
 import it.italiangrid.portal.dbapi.services.UserInfoService;
 import it.italiangrid.portal.dbapi.services.UserToVoService;
 import it.italiangrid.portal.dbapi.services.VoService;
+import it.italiangrid.portal.registration.model.RegistrationModel;
 import portal.registration.utils.VOMSAdminCallOut;
 
 @Controller(value = "editFQANController")
@@ -53,43 +39,40 @@ public class EditFQANController {
 	@Autowired
 	private CertificateService certificateService;
 
-	@RenderMapping(params = "myaction=showEditVo")
+	@RenderMapping(params = "myaction=showEditFQAN")
 	public String showEditUserInfoForm() {
-		return "editUserToVo";
-	}
-	
-	@RenderMapping(params = "myaction=showEditVoFirst")
-	public String showEditUserInfoFormFirst(ActionResponse response) {
-		response.setRenderParameter("firstReg", "true");
-		return "editUserToVo";
-	}
-
-	@ModelAttribute("userInfo")
-	public UserInfo getUserInfo(RenderRequest request) {
-		int userId = Integer.parseInt(request.getParameter("userId"));
-		return userInfoService.findById(userId);
-	}
+		return "editFQANForm";
+	}	
 
 	@ModelAttribute("userToVo")
-	public UserToVo getUserToVo(RenderRequest request, @RequestParam int idVo) {
-		int userId = Integer.parseInt(request.getParameter("userId"));
-		return userToVoService.findById(userId, idVo);
+	public UserToVo getUserToVo(RenderRequest request) {
+		RegistrationModel registrationModel = getRegistrationModelFromRequest(request);
+		UserInfo userinfo = userInfoService.findByMail(registrationModel.getEmail());
+		return userToVoService.findById(userinfo.getUserId(), Integer.parseInt(request.getParameter("idVo")));
 	}
-
+	
+	@ModelAttribute("registrationModel")
+	public RegistrationModel getRegistrationModel(RenderRequest request) {
+		RegistrationModel registrationModel = getRegistrationModelFromRequest(request);
+		return registrationModel;
+	}
+	
 	@ModelAttribute("vo")
-	public Vo getVO(@RequestParam int idVo) {
-
-		return voService.findById(idVo);
+	public Vo getVO(RenderRequest request) {
+		return voService.findById(Integer.parseInt(request.getParameter("idVo")));
 	}
 
 	@ModelAttribute("fqans")
-	public String[] getFqans(RenderRequest request, @RequestParam int idVo) {
+	public String[] getFqans(RenderRequest request) {
+		
+		RegistrationModel registrationModel = getRegistrationModelFromRequest(request);
 
-		int userId = Integer.parseInt(request.getParameter("userId"));
+		UserInfo userinfo = userInfoService.findByMail(registrationModel.getEmail());
+		int userId = userinfo.getUserId();
 
-		Vo vo = voService.findById(idVo);
+		Vo vo = voService.findById(Integer.parseInt(request.getParameter("idVo")));
 
-		UserToVo utv = userToVoService.findById(userId, idVo);
+		UserToVo utv = userToVoService.findById(userId, Integer.parseInt(request.getParameter("idVo")));
 
 		Certificate cert = certificateService
 				.findByIdCert(utv.getCertificate());
@@ -101,42 +84,32 @@ public class EditFQANController {
 		
 		return fqans;
 	}
-
-	@ActionMapping(params = "myaction=addUserToVo")
-	public void addUserToVo(ActionRequest request, ActionResponse response,
-			SessionStatus sessionStatus) {
-
-		String[] fqans = request.getParameterValues("resultList");
-		int userId = Integer.parseInt(request.getParameter("userId"));
-		int idVo = Integer.parseInt(request.getParameter("idVo"));
-		UserToVo utv = userToVoService.findById(userId, idVo);
-
-		if (fqans != null && !fqans[0].equals("")) {
-
-			log.info("prova =" + fqans[0] + ";fine");
-
-			String toSave = "";
-
-			for (int i = 0; i < fqans.length; i++)
-				toSave += fqans[i] + ";";
-
-			log.info("Stampa FQANS: " + toSave);
-
-			utv.setFqans(toSave);
-
-		} else {
-			utv.setFqans("");
-		}
-
-		userToVoService.update(utv);
-
-		SessionMessages.add(request, "userToVo-updated-successufully");
-
-		response.setRenderParameter("myaction", "editUserInfoForm");
-		response.setRenderParameter("userId", Integer.toString(userId));
-		request.setAttribute("userId", userId);
-		sessionStatus.setComplete();
-
+	
+	
+	
+	private RegistrationModel getRegistrationModelFromRequest(
+			RenderRequest request) {
+		RegistrationModel result = new RegistrationModel();
+		
+		result.setCertificateStatus(Boolean.parseBoolean(request.getParameter("certificateStatus")));
+		result.setCertificateUserId(request.getParameter("certificateUserId"));
+		result.setEmail(request.getParameter("email"));
+		result.setExpiration(request.getParameter("expiration"));
+		result.setFirstName(request.getParameter("firstName"));
+		result.setHaveCertificate(Boolean.parseBoolean(request.getParameter("haveCertificate")));
+		result.setHaveIDP(Boolean.parseBoolean(request.getParameter("haveIDP")));
+		result.setInstitute(request.getParameter("institute"));
+		result.setIssuer(request.getParameter("issuer"));
+		result.setLastName(request.getParameter("lastName"));
+		result.setMail(request.getParameter("mail"));
+		result.setSearchVo(request.getParameter("searchVo"));
+		result.setSubject(request.getParameter("subject"));
+		result.setUserStatus(Boolean.parseBoolean(request.getParameter("userStatus")));
+		result.setVerifyUser(Boolean.parseBoolean(request.getParameter("verifyUser")));
+		result.setVos(request.getParameter("vos"));
+		result.setVoStatus(Boolean.parseBoolean(request.getParameter("voStatus")));
+		
+		return result;
 	}
 
 }
