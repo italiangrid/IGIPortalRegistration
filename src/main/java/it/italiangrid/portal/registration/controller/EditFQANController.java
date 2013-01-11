@@ -2,7 +2,6 @@ package it.italiangrid.portal.registration.controller;
 
 import javax.portlet.RenderRequest;
 
-import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -23,9 +22,6 @@ import portal.registration.utils.VOMSAdminCallOut;
 @Controller(value = "editFQANController")
 @RequestMapping("view")
 public class EditFQANController {
-
-	private static final Logger log = Logger
-			.getLogger(EditFQANController.class);
 
 	@Autowired
 	private UserInfoService userInfoService;

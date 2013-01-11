@@ -421,17 +421,27 @@ h5#usernameAlert {
 					<br/><br/>
 					
 					<div id="help">
-					<a href="#"><img class="displayed"
+					<script  type="text/javascript">
+					 
+					 function openNewWindow() {
+					 popupWin = window.open('https://portal.italiangrid.it:8443/info/upload-certificate-help.html',
+					 'open_window',
+					 'scrollbars, resizable, dependent, width=640, height=480, left=0, top=0')
+					 }
+					 
+					 </script>
+					<a href="javascript:openNewWindow();" ><img class="displayed"
 													src="<%=request.getContextPath()%>/images/Help.png"
-													id="noImg" width="64" /> Certificate Upload Help</a>
+													id="noImg" width="64" />Certificate Upload Help</a>
 													
 					</div>
 					<br/><br/><br/><br/><br/><br/><br/>
 					<div id="help">
-					<a href="#"><img class="displayed"
+					<a href="https://portal.italiangrid.it:8443/info/certificate-upload-technical-info.html"  onclick="$(this).modal({width:800, height:600, message:true}).open(); return false;"><img class="displayed"
 													src="<%=request.getContextPath()%>/images/Information2.png"
-													id="noImg" width="64" /> Technical Information</a>
+													id="noImg" width="64" />Technical Information</a>
 													
+										
 					</div>
 					<aui:input name="primaryCert" type="hidden" value="true"/>
 
