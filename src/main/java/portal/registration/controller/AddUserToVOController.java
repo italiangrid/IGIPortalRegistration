@@ -377,7 +377,7 @@ public class AddUserToVOController {
 			log.info("Sto per settare default il userToVo con userId = "
 					+ userId + "e idVo = " + idVo);
 			if (userToVoService.setDefault(userId, idVo))
-				SessionMessages.add(request, "userToVo-updated-successufully");
+				SessionMessages.add(request, "userToVo-default-successufully");
 			else
 				SessionErrors.add(request, "error-default-userToVo");
 			log.info("UserToVoSettato");

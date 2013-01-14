@@ -146,6 +146,8 @@ div.function {
 	message="userToVo-removed-success" />
 <liferay-ui:success key="userToVo-updated-successufully"
 	message="userToVo-updated-successufully" />
+<liferay-ui:success key="userToVo-default-successufully"
+	message="userToVo-default-successufully" />
 <liferay-ui:success key="user-deactivate" message="user-deactivate" />
 <liferay-ui:success key="user-activate" message="user-activate" />
 
@@ -164,9 +166,11 @@ div.function {
 	
 	<aui:layout>
 
-		<h1 class="header-title">Registration - Virtual Organization</h1>
 	
-	<aui:fieldset>
+	<aui:fieldset label="Registration">
+	<br/><br/>
+	<img src="<%=request.getContextPath()%>/images/registration_step4-bordo.png"/>
+	<br/><br/>
 	
 	<div class="function">
 		<aui:fieldset>
@@ -266,8 +270,7 @@ div.function {
 								
 							</c:if>
 							</liferay-ui:search-container-column-text>
-							<liferay-ui:search-container-column-text name="VO description"
-								property="description" />
+							
 							<liferay-ui:search-container-column-text name="Roles"> 
 								<c:out value="${fn:replace(userFqans[Vo.idVo],';',' ')}"></c:out>
 							</liferay-ui:search-container-column-text>

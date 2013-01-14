@@ -148,14 +148,16 @@
 
 		<!--  -->
 		
-		<h1 class="header-title">Registration - Select your Profile</h1>
+		
 
 		<aui:form name="askForCertificate" id="askForCertificate"
 			action="${askForCertificateUrl}" commandName="registrationModel">
 			<aui:layout>
 
-				<aui:fieldset>
-					
+				<aui:fieldset label="Registration">
+				<br/><br/>
+				<img src="<%=request.getContextPath()%>/images/registration_step2.png"/>
+				<br/>
 
 						<aui:fieldset>
 							<br />
@@ -188,7 +190,7 @@
 									</a>
 									<div class="reset"></div>
 									<div class="moreInfo">
-										<a href="">More info</a>
+										<a href="https://portal.italiangrid.it:8443/info/user-profile-new-user.html"  onclick="$(this).modal({width:800, height:250, message:true}).open(); return false;">More Info</a>
 									</div>
 									</div>
 								</c:if>
@@ -214,7 +216,7 @@
 								</a>
 								<div class="reset"></div>
 									<div class="moreInfo">
-										<a href="https://portal.italiangrid.it:8443/info/user-profile-new-user.html"  onclick="$(this).modal({width:800, height:600, message:true}).open(); return false;">More Info</a>
+										<a href="https://portal.italiangrid.it:8443/info/user-profile-classic-user.html"  onclick="$(this).modal({width:800, height:250, message:true}).open(); return false;">More Info</a>
 									</div>
 								</div>
 								<c:if test="${false }">

@@ -105,10 +105,14 @@
 
 	<aui:layout>
 
-		<h1 class="header-title">Registration - User Data</h1>
+		
 
 		<br>
-		<aui:fieldset>
+		<aui:fieldset label="Registration">
+		
+			<br/><br/>
+				<img src="<%=request.getContextPath()%>/images/registration_step1.png"/>
+			<br/>
 			<div id="form">
 				<aui:column columnWidth="30">
 				

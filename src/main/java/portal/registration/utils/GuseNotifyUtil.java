@@ -25,17 +25,19 @@ public class GuseNotifyUtil {
 
 	private static final Logger log = Logger.getLogger(GuseNotifyUtil.class);
 
-	public GuseNotify readNotifyXML(long userId) {
+	public GuseNotify readNotifyXML(User user) {
 
 		String filename = System.getProperty("java.io.tmpdir") + "/users/"
-				+ userId + "/.notify.xml";
+				+ user.getUserId() + "/.notify.xml";
 		File notifyFile = new File(filename);
-		GuseNotify guseNotify = new GuseNotify();
+		GuseNotify guseNotify = new GuseNotify(user.getFirstName());
 
+		log.error(filename);
+		
 		try {
 
 			if (notifyFile.exists()) {
-
+				log.error("esiste");
 				SAXBuilder builder = new SAXBuilder();
 				Document doc = (Document) builder.build(notifyFile);
 				Element rootNode = doc.getRootElement();

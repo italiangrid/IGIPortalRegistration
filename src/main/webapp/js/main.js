@@ -154,8 +154,9 @@ $(document).ready(function(){
 				$close.click(function () { jQuery.modal().close(); location.href='https://halfback.cnaf.infn.it/casshib/shib/app1/login?service=https%3A%2F%2Fflyback.cnaf.infn.it%2Fc%2Fportal%2Flogin%3Fp_l_id%3D10669';});
 				}else{
 					$close.click(function () { jQuery.modal().close()});
+					$overlay.click(function () { jQuery.modal().close(); });
 				}
-				//$overlay.click(function () { jQuery.modal().close(); });
+				
 			}
 		};
 		return this;

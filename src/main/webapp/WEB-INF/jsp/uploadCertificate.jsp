@@ -177,11 +177,13 @@ h5#usernameAlert {
 	<aui:input name="verifyUser" type="hidden" value="${registrationModel.verifyUser }"/>
 	<aui:layout>
 
-		<h1 class="header-title">Registration - Certificate Upload</h1>
+		
 
-		<br></br>
-
-		<aui:fieldset>
+		<aui:fieldset label="Registration">
+		
+		<br/><br/>
+		<img src="<%=request.getContextPath()%>/images/registration_step3_upload.png"/>
+		<br/><br/>
 			
 			<aui:column columnWidth="45" style="margin-left:30px;">
 
@@ -203,7 +205,7 @@ h5#usernameAlert {
 					<br />
 					
 						Please insert below a new password. <br/>
-						This password will be asked to use Grid and Cloud resources in a secure way. <br/>
+						<strong>Don't forget this password:</strong> it will be asked again to use Grid and Cloud resources in a secure way and it will be not saved in the system. <br/>
 					<div id="allertDiv2">
 				
 						<br/>
@@ -224,7 +226,7 @@ h5#usernameAlert {
 						
 					</div>
 						<br/>
-						<strong>Note:</strong> this password will be not saved in the system.
+						
 						
 					<aui:input name="primaryCert" type="hidden" value="true"/>
 				</aui:fieldset>

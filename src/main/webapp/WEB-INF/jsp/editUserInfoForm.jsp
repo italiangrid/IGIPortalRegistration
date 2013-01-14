@@ -1,6 +1,9 @@
 <%@ include file="/WEB-INF/jsp/init.jsp"%>
 
 <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+<script src="<%=request.getContextPath()%>/js/jqxcore.js"></script>
+<script src="<%=request.getContextPath()%>/js/jqxswitchbutton.js"></script>
+
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />
 
 <script type="text/javascript">
@@ -47,7 +50,7 @@
 	}
 	
 	function verifyDelete(url){
-		var agree=confirm("Sei sicuro di voler eliminare il tuo account?");
+		var agree=confirm("Do you really want delete your account?");
 		if (agree)
 			return location.href=url ;
 	}
@@ -113,16 +116,250 @@
 		}
 	}
 	
-	$(document).ready(function() {
-		//nascondiCertificatiUtente();
-		//nascondiModificaUtente();
-		//nascondiVoUtente();
-	});
+	$(document).ready(function () {
+        // Create Switch Button.
+        
+        var val = $('#<portlet:namespace/>proxyExpire').val();
+        if(val=='true'){
+        	$("#jqxButton").jqxSwitchButton({ theme: 'classic', width: '100', height: '25', checked: true});
+        }else{
+        	$("#jqxButton").jqxSwitchButton({ theme: 'classic', width: '100', height: '25', checked: false});
+        }
+        $('#jqxButton').bind('checked', function (event) {
+            $('#<portlet:namespace/>proxyExpire').val('true');
+        });
+        $('#jqxButton').bind('unchecked', function (event) {
+            $('#<portlet:namespace/>proxyExpire').val('false');
+        });
+        
+        var val2 = $('#<portlet:namespace/>wfchgEnab').val();
+        if(val2=='true'){
+        	$("#jqxButton2").jqxSwitchButton({ theme: 'classic', width: '100', height: '25', checked: true});
+        }else{
+        	$("#jqxButton2").jqxSwitchButton({ theme: 'classic', width: '100', height: '25', checked: false});
+        }
+        $('#jqxButton2').bind('checked', function (event) {
+            $('#<portlet:namespace/>wfchgEnab').val('true');
+        });
+        $('#jqxButton2').bind('unchecked', function (event) {
+            $('#<portlet:namespace/>wfchgEnab').val('false');
+        });
+        
+        
+        
+       
+        $("#<portlet:namespace/>advSetOff").hide();
+        
+        
+    });
+	
+	(function ($) {
+
+		/**********************************
+		* CUSTOMIZE THE DEFAULT SETTINGS
+		* Ex:
+		* var _settings = {
+		* 	id: 'modal',
+		* 	src: function(sender){
+		*		return jQuery(sender).attr('href');
+		*	},
+		* 	width: 800,
+		* 	height: 600
+		* }
+		**********************************/
+		var _settings = {
+			width: 800, // Use this value if not set in CSS or HTML
+			height: 600, // Use this value if not set in CSS or HTML
+			overlayOpacity: .85, // Use this value if not set in CSS or HTML
+			id: 'modal',
+			src: function (sender) {
+				return jQuery(sender).attr('href');
+			},
+			fadeInSpeed: 0,
+			fadeOutSpeed: 0
+		};
+
+		/**********************************
+		* DO NOT CUSTOMIZE BELOW THIS LINE
+		**********************************/
+		$.modal = function (options) {
+			return _modal(this, options);
+		};
+		$.modal.open = function () {
+			_modal.open();
+		};
+		$.modal.close = function () {
+			_modal.close();
+		};
+		$.fn.modal = function (options) {
+			return _modal(this, options);
+		};
+		_modal = function (sender, params) {
+			this.options = {
+				parent: null,
+				overlayOpacity: null,
+				id: null,
+				content: null,
+				width: null,
+				height: null,
+				message: false,
+				modalClassName: null,
+				imageClassName: null,
+				closeClassName: null,
+				overlayClassName: null,
+				src: null
+			};
+			this.options = $.extend({}, options, _defaults);
+			this.options = $.extend({}, options, _settings);
+			this.options = $.extend({}, options, params);
+			this.close = function () {
+				jQuery('.' + options.modalClassName + ', .' + options.overlayClassName).fadeOut(_settings.fadeOutSpeed, function () { jQuery(this).unbind().remove(); });
+			};
+			this.open = function () {
+				if (typeof options.src == 'function') {
+					options.src = options.src(sender);
+				} else {
+					options.src = options.src || _defaults.src(sender);
+				}
+
+				var fileExt = /^.+\.((jpg)|(gif)|(jpeg)|(png)|(jpg))$/i;
+				var contentHTML = '';
+				if (fileExt.test(options.src)) {
+					contentHTML = '<div class="' + options.imageClassName + '"><img src="' + options.src + '"/></div>';
+
+				} else {
+					contentHTML = '<iframe width="' + options.width + '" height="' + options.height + '" frameborder="0" scrolling="no" allowtransparency="true" src="' + options.src + '"></iframe>';
+				}
+				options.content = options.content || contentHTML;
+
+				if (jQuery('.' + options.modalClassName).length && jQuery('.' + options.overlayClassName).length) {
+					jQuery('.' + options.modalClassName).html(options.content);
+				} else {
+					$overlay = jQuery((_isIE6()) ? '<iframe src="BLOCKED SCRIPT\'<html></html>\';" scrolling="no" frameborder="0" class="' + options.overlayClassName + '"></iframe><div class="' + options.overlayClassName + '"></div>' : '<div class="' + options.overlayClassName + '"></div>');
+					$overlay.hide().appendTo(options.parent);
+
+					$modal = jQuery('<div id="' + options.id + '" class="' + options.modalClassName + '" style="width:' + options.width + 'px; height:' + options.height + 'px; margin-top:-' + (options.height / 2) + 'px; margin-left:-' + (options.width / 2) + 'px;">' + options.content + '</div>');
+					$modal.hide().appendTo(options.parent);
+
+					$close = jQuery('<a class="' + options.closeClassName + '"></a>');
+					$close.appendTo($modal);
+
+					var overlayOpacity = _getOpacity($overlay.not('iframe')) || options.overlayOpacity;
+					$overlay.fadeTo(0, 0).show().not('iframe').fadeTo(_settings.fadeInSpeed, overlayOpacity);
+					$modal.fadeIn(_settings.fadeInSpeed);
+					
+					//alert(options.message)
+					if(options.message==false){
+					//$close.click(function () { jQuery.modal().close(); location.href='https://halfback.cnaf.infn.it/casshib/shib/app4/login?service=https%3A%2F%2Fgridlab04.cnaf.infn.it%2Fc%2Fportal%2Flogin%3Fp_l_id%3D10671';});
+					$close.click(function () { jQuery.modal().close(); location.href='https://halfback.cnaf.infn.it/casshib/shib/app1/login?service=https%3A%2F%2Fflyback.cnaf.infn.it%2Fc%2Fportal%2Flogin%3Fp_l_id%3D10669';});
+					}else{
+						$close.click(function () { jQuery.modal().close()});
+						$overlay.click(function () { jQuery.modal().close(); });
+					}
+					
+				}
+			};
+			return this;
+		};
+		_isIE6 = function () {
+			if (document.all && document.getElementById) {
+				if (document.compatMode && !window.XMLHttpRequest) {
+					return true;
+				}
+			}
+			return false;
+		};
+		_getOpacity = function (sender) {
+			$sender = jQuery(sender);
+			opacity = $sender.css('opacity');
+			filter = $sender.css('filter');
+
+			if (filter.indexOf("opacity=") >= 0) {
+				return parseFloat(filter.match(/opacity=([^)]*)/)[1]) / 100;
+			}
+			else if (opacity != '') {
+				return opacity;
+			}
+			return '';
+		};
+		_defaults = {
+			parent: 'body',
+			overlayOpacity: 85,
+			id: 'modal',
+			content: null,
+			width: 800,
+			height: 600,
+			modalClassName: 'modal-window',
+			imageClassName: 'modal-image',
+			closeClassName: 'close-window',
+			overlayClassName: 'modal-overlay',
+			src: function (sender) {
+				return jQuery(sender).attr('href');
+			}
+		};
+	})(jQuery);
 </script>
 
 
 
 <style>
+
+.jqx-switchbutton-label-on
+        {
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3065c4', endColorstr='#75adfc',GradientType=0 ); /* IE6-9 */    
+            background-image: linear-gradient(bottom, rgb(118,174,252) 20%, rgb(48,103,197) 62%);
+            background-image: -o-linear-gradient(bottom, rgb(118,174,252) 20%, rgb(48,103,197) 62%);
+            background-image: -moz-linear-gradient(bottom, rgb(118,174,252) 20%, rgb(48,103,197) 62%);
+            background-image: -webkit-linear-gradient(bottom, rgb(118,174,252) 20%, rgb(48,103,197) 62%);
+            background-image: -ms-linear-gradient(bottom, rgb(118,174,252) 20%, rgb(48,103,197) 62%);
+            background-image: -webkit-gradient(
+	            linear,
+	            left bottom,
+	            left top,
+	            color-stop(0.2, rgb(118,174,252)),
+	            color-stop(0.62, rgb(48,103,197))
+            );                    
+            color: #fff;
+            text-shadow: 0px -1px 1px #000;                                   
+        }      
+        
+        .jqx-switchbutton-label-off
+        {
+            background: #cfcfcf; /* Old browsers */
+            background: -moz-linear-gradient(top,  #cfcfcf 0%, #fefefe 100%); /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#cfcfcf), color-stop(100%,#fefefe)); /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(top,  #cfcfcf 0%,#fefefe 100%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(top,  #cfcfcf 0%,#fefefe 100%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(top,  #cfcfcf 0%,#fefefe 100%); /* IE10+ */
+            background: linear-gradient(top,  #cfcfcf 0%,#fefefe 100%); /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cfcfcf', endColorstr='#fefefe',GradientType=0 ); /* IE6-9 */ 
+            color: #808080;                 
+        }
+                
+        .jqx-switchbutton-thumb
+        {
+            background: #bababa; /* Old browsers */
+            background: -moz-linear-gradient(top,  #bababa 0%, #fefefe 100%); /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#bababa), color-stop(100%,#fefefe)); /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(top,  #bababa 0%,#fefefe 100%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(top,  #bababa 0%,#fefefe 100%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(top,  #bababa 0%,#fefefe 100%); /* IE10+ */
+            background: linear-gradient(top,  #bababa 0%,#fefefe 100%); /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bababa', endColorstr='#fefefe',GradientType=0 ); /* IE6-9 */    
+            border: 1px solid #aaa;
+            -webkit-box-shadow: -6px 0px 17px 1px #275292;
+            -moz-box-shadow: -6px 0px 17px 1px #275292;
+            box-shadow: -6px 0px 17px 1px #275292;          
+        }
+        .jqx-switchbutton
+        {
+            border: 1px solid #999999;
+        }
+
+        
+        
+
+
 div#personalData {
 	box-shadow: 10px 10px 5px #888;
 	margin: 0 9px 10px 0;
@@ -293,15 +530,6 @@ div.function {
 <jsp:useBean id="userToVoList"
 	type="java.util.List<it.italiangrid.portal.dbapi.domain.Vo>" scope="request"></jsp:useBean>
 	
-	<%
-			User userLF = (User) request.getAttribute(WebKeys.USER);
-			
-			String saluto= "Hi " + userLF.getFirstName();
-		%>
-		<div id="presentation"><aui:fieldset label="<%=saluto %>"></aui:fieldset> </div>
-
-<br/>
-
 <div id="personalData">
 	<h3 class="header-title">Personal data</h3>
 
@@ -368,7 +596,7 @@ div.function {
 				<aui:column columnWidth="20">
 					<aui:fieldset>
 						<div id="foottipUser">
-							<a href="#footnoteUserOK"><img src="<%=request.getContextPath()%>/images/NewCheck.png" width="64" height="64" style="float: right"/></a>
+							<a href="#footnoteUserOK"><img src="<%=request.getContextPath()%>/images/NewCheck.png" width="48" height="48" style="float: right"/></a>
 							<div id="footnoteUserOK" style="display:none;">All is OK.</div>
 						</div>
 					</aui:fieldset>
@@ -499,27 +727,24 @@ div.function {
 			<aui:fieldset>
 				<aui:column columnWidth="70">
 					<aui:fieldset>
-					<a href="#apriCert" ></a> You have uploaded  
-							<c:choose>
-							<c:when test="${fn:length(certList)==0}" >
-							<span style="color:red"><strong><c:out value="${fn:length(certList)}" /></strong></span>
-							certificates<br />
-							</c:when>
-							<c:when test="${fn:length(certList)==1}" >
-							<strong><c:out value="${fn:length(certList)}" />
-							</strong>certificate<br />
-							</c:when>
-							<c:otherwise>
-							<strong><c:out value="${fn:length(certList)}" />
-							</strong>certificates<br />
-							</c:otherwise>
-							</c:choose>
+					<a href="#apriCert" ></a>   
+							
+							<c:if test="${fn:length(certList)==0}" >
+							<div class="portlet-msg-error">You don't have a certificate</div>
+							</c:if>
 					
 					<c:if test="${fn:length(certList) > 0}">
-					Your defaul certificate is: <strong> <c:forEach
+					My certificate is: <strong> <c:forEach
 								var="cert" items="${certList}">
 								<c:if test="${cert.primaryCert == 'true'}">
 									<c:out value="${cert.subject}" />
+								</c:if>
+							</c:forEach> </strong>
+						<br />
+					Expiration Date: <strong> <c:forEach
+								var="cert" items="${certList}">
+								<c:if test="${cert.primaryCert == 'true'}">
+									<c:out value="${cert.expirationDate}" />
 								</c:if>
 							</c:forEach> </strong>
 						<br />
@@ -533,16 +758,16 @@ div.function {
 					<div id="foottipCert">
 						<c:choose>
 							<c:when test="${fn:length(certList)==0}" >
-								<a href="#footnoteCertKO"><img src="<%=request.getContextPath()%>/images/NewDelete.png" width="64" height="64" style="float: right"/></a>
+								<a href="#footnoteCertKO"><img src="<%=request.getContextPath()%>/images/NewDelete.png" width="48" height="48" style="float: right"/></a>
 							</c:when>
 							<c:otherwise>
-								<a href="#footnoteCertOK"><img src="<%=request.getContextPath()%>/images/NewCheck.png" width="64" height="64" style="float: right"/></a>
+								<a href="#footnoteCertOK"><img src="<%=request.getContextPath()%>/images/NewCheck.png" width="48" height="48" style="float: right"/></a>
 							</c:otherwise>
 						</c:choose>
 						<div id="footnoteCertOK" style="display:none;">All is OK.</div>
 						<div id="footnoteCertKO" style="display:none;">Add your Certificate.</div>
 					</div>
-					<div id="userSettings"><a href="#apriCert" onclick="mostraCertificatiUtente();" onmouseover="viewTooltip('#settingsButtonCert');"><img src="<%=request.getContextPath()%>/images/advancedsettings.png" width="64" height="64" style="float: right; padding-right:10px;"/></a></div>
+					<div id="userSettings"><a href="#apriCert" onclick="mostraCertificatiUtente();" onmouseover="viewTooltip('#settingsButtonCert');"><img src="<%=request.getContextPath()%>/images/advancedsettings.png" width="48" height="48" style="float: right; padding-right:10px;"/></a></div>
 					</aui:fieldset>
 				</aui:column>	
 			</aui:fieldset>
@@ -565,7 +790,6 @@ div.function {
 		%>
 
 		<liferay-ui:search-container
-			emptyResultsMessage="No certificates uploaded"
 			delta="5" iteratorURL="<%= itURL %>">
 			<liferay-ui:search-container-results>
 				<%
@@ -655,7 +879,7 @@ div.function {
 						<div class="choose">
 							<div id="or"><strong>OR</strong></div>
 						</div>
-						<a href="https://openlab03.cnaf.infn.it/CAOnlineBridge/home?t1=${tokens[0]}&t2=${tokens[1]}" onclick="setHaveCert('false'); $(this).modal({width:800, height:600}).open(); return false;">
+						<a href="https://openlab03.cnaf.infn.it/CAOnlineBridge/home?t1=${tokens[0]}&t2=${tokens[1]}" onclick="setHaveCert('false'); $(this).modal({width:800, height:400}).open(); return false;">
 						<div class="choose bordered">
 							<div class="mess">
 								<div class="center">
@@ -689,12 +913,14 @@ div.function {
 </div>
 
 <div id="voData">
-	<h3 class="header-title">My VO</h3>
+	<h3 class="header-title">My Virtual Organization</h3>
 
 	<liferay-ui:success key="userToVo-adding-success"
 		message="userToVo-adding-success" />
 	<liferay-ui:success key="userToVo-updated-successufully"
 		message="userToVo-updated-successufully" />
+	<liferay-ui:success key="userToVo-default-successufully"
+		message="userToVo-default-successufully" />
 	<liferay-ui:success key="userToVo-deleted-successufully"
 		message="userToVo-deleted-successufully" />
 	<liferay-ui:success key="user-deactivate" message="user-deactivate" />
@@ -724,17 +950,31 @@ div.function {
 				<aui:column columnWidth="70">
 					<aui:fieldset>
 						<a href="#apriVo"/></a>
-						At the moment you have <strong><c:out
-								value="<%= Integer.toString(userToVoList.size()) %>"></c:out> </strong> VO associations.<br />
-						<c:if test="${!empty defaultVo}">
-					Your default VO is: <strong><c:out value="${defaultVo}" />
-							</strong>
+						
+						
+						<c:choose>
+						<c:when test="${fn:length(userToVoList)==0 }">
+						
+							<div class="portlet-msg-error"> You don't have any VO membership.</div>
+						</c:when>
+						<c:otherwise>
+						<c:if test="${fn:length(userToVoList)==1 }">
+							My VO membership is: 
 						</c:if>
-						<c:if test="${!empty defaultFqan}">
-							<br />Selected roles for your default VO: <strong><c:out
-									value="${fn:replace(defaultFqan,';',' ')}" /> </strong>
+						<c:if test="${fn:length(userToVoList)>1 }">
+							My VO membership are: 
 						</c:if>
-				
+						<strong>
+						<c:forEach var="vo" items="${userToVoList}" varStatus="count">
+							&nbsp ${vo.vo }
+							<c:if test="${defaultVo==vo.vo}">
+								(default)
+							</c:if>
+							<c:if test="${count.count < fn:length(userToVoList)}">,</c:if>
+						</c:forEach>
+						</strong>
+						</c:otherwise>
+						</c:choose>
 						<br /> <br />
 					</aui:fieldset>
 				</aui:column>
@@ -743,16 +983,16 @@ div.function {
 					<div id="foottipVO">
 						<c:choose>
 							<c:when test="${fn:length(userToVoList)==0}" >
-								<a href="#footnoteVOKO"><img src="<%=request.getContextPath()%>/images/NewDelete.png" width="64" height="64" style="float: right"/></a>
+								<a href="#footnoteVOKO"><img src="<%=request.getContextPath()%>/images/NewDelete.png" width="48" height="48" style="float: right"/></a>
 							</c:when>
 							<c:otherwise>
-								<a href="#footnoteVOOK"><img src="<%=request.getContextPath()%>/images/NewCheck.png" width="64" height="64" style="float: right"/></a>
+								<a href="#footnoteVOOK"><img src="<%=request.getContextPath()%>/images/NewCheck.png" width="48" height="48" style="float: right"/></a>
 							</c:otherwise>
 						</c:choose>
 						<div id="footnoteVOOK" style="display:none;">All is OK.</div>
 						<div id="footnoteVOKO" style="display:none;">Add a new VO.</div>
 					</div>
-					<div id="userSettings"><a href="#apriVo" onclick="mostraVoUtente();" onmouseover="viewTooltip('#settingsButtonVO');"><img src="<%=request.getContextPath()%>/images/advancedsettings.png" width="64" height="64" style="float: right; padding-right:10px;"/></a></div>
+					<div id="userSettings"><a href="#apriVo" onclick="mostraVoUtente();" onmouseover="viewTooltip('#settingsButtonVO');"><img src="<%=request.getContextPath()%>/images/advancedsettings.png" width="48" height="48" style="float: right; padding-right:10px;"/></a></div>
 					</aui:fieldset>
 				</aui:column>	
 			</aui:fieldset>
@@ -765,7 +1005,7 @@ div.function {
 		<div id="closeBox"><a href="#vo" onclick="nascondiVoUtente();"><img src="<%=request.getContextPath()%>/images/close-button2.png"/></a></div>
 		<div id="closeBox"><a href="#vo" onclick="nascondiVoUtente();">Hide VO</a></div>
 		<br /> <br /> <br />
-
+		<c:if test="${fn:length(certList) != 0}">
 		<div class="function">
 		<aui:fieldset>
 		<aui:column columnWidth="50">
@@ -853,6 +1093,15 @@ div.function {
 			<portlet:param name="waif" value="editUserInfoForm" />
 			<portlet:param name="userId" value="${userInfo.userId}"/>
 		</portlet:renderURL>
+		
+		</c:if>
+		
+		<c:if test="${fn:length(certList) == 0}">
+			
+			<div class="portlet-msg-error"> You haven't a certificate yet. Request one or upload your Personal Certificate.</div>
+			
+			
+		</c:if>
 
 		<div id="apriVo"></div>
 
@@ -871,21 +1120,21 @@ div.function {
 					<aui:fieldset>
 					
 						Proxy Notification: <strong><c:if test="${advOpts.proxyExpire=='true' }">ON</c:if><c:if test="${advOpts.proxyExpire=='false' }">OFF</c:if></strong>.<br/>
-						Proxy Expiration time: <strong><c:forEach var="option" items="${expirationTime}"><c:if test="${advOpts.proxyExpireTime==fn:trim(fn:split(option,'/')[0]) }">${fn:split(option,'/')[1] }</c:if></c:forEach></strong>.<br/>
+						Proxy Lifetime: <strong><c:forEach var="option" items="${expirationTime}"><c:if test="${advOpts.proxyExpireTime==fn:trim(fn:split(option,'/')[0]) }">${fn:split(option,'/')[1] }</c:if></c:forEach></strong>.<br/>
 						Job Notification: <strong><c:if test="${notification.wfchgEnab=='true' }">ON</c:if><c:if test="${notification.wfchgEnab=='false' }">OFF</c:if></strong>.<br/>
 						<br /> <br />
 					</aui:fieldset>
 				</aui:column>
 				<aui:column columnWidth="20">
 					<aui:fieldset>
-						<div id="userSettings"><a href="#apriAdvSet" onclick="mostraAdvSetUtente();" onmouseover="viewTooltip('#settingsButtonAdv');"><img src="<%=request.getContextPath()%>/images/advancedsettings.png" width="64" height="64" style="float: right; padding-right:10px;"/></a></div>
+						<div id="userSettings"><a href="#apriAdvSet" onclick="mostraAdvSetUtente();" onmouseover="viewTooltip('#settingsButtonAdv');"><img src="<%=request.getContextPath()%>/images/advancedsettings.png" width="48" height="48" style="float: right; padding-right:10px;"/></a></div>
 					</aui:fieldset>
 				</aui:column>	
 			</aui:fieldset>
 		</aui:layout>
 		
 	</div>
-	<div id="<portlet:namespace/>advSetOff" style="display: none;">
+	<div id="<portlet:namespace/>advSetOff" >
 		<div id="closeBox"><a href="#advSet" onclick="nascondiAdvSetUtente();"><img src="<%=request.getContextPath()%>/images/close-button2.png"/></a></div>
 		<div id="closeBox"><a href="#advSet" onclick="nascondiAdvSetUtente();">Hide Settings</a></div>
 		<br /> <br />
@@ -894,9 +1143,10 @@ div.function {
 
 				<aui:fieldset>
 					<aui:column columnWidth="50">
-						<aui:fieldset label="Proxy Notification">
-							<aui:form name="editUserInfoForm" commandName="advOpts"
+					<aui:form name="editUserInfoForm" commandName="advOpts"
 								action="${updateAdvOptsActionUrl}">
+						<aui:fieldset label="Proxy Notification">
+							
 								<br></br>
 								
 								<aui:input name="idNotify" type="hidden"
@@ -905,8 +1155,16 @@ div.function {
 								<aui:input name="userId" type="hidden"
 								value="<%=userInfo.getUserId() %>" />
 								
-								<aui:input name="proxyExpire" type="checkbox"
-									label="Check if you want to be notified by mail 1 hour before the proxy expiration" checked="${advOpts.proxyExpire }" />
+								<aui:input id="proxyExpire" name="proxyExpire" type="hidden" value="${advOpts.proxyExpire }" />
+								<strong>Enable the switch before if you want to be notified by mail 1 hour before the proxy expiration</strong>
+								<br/><br/><div id="jqxButton"></div>
+								
+									
+								
+						</aui:fieldset>
+						<div id="jqxButton3"></div>
+						<aui:fieldset label="Proxy Lifetime">		
+								
 								<aui:select name="proxyExpireTime" inlineLabel="true" label="Expiration Time">
 								
 									<c:forEach var="option" items="${expirationTime}">
@@ -917,19 +1175,26 @@ div.function {
 								
 								</aui:select>
 								
-								<aui:button-row>
-									<aui:button type="submit" />
-								</aui:button-row>
-							</aui:form>
+								
 						</aui:fieldset>
+						<aui:button-row>
+								<aui:button type="submit" />
+							</aui:button-row>
+						</aui:form>
 					</aui:column>
-
+					<div id="jqxButton4"></div>
 					<aui:column columnWidth="50">
-						<aui:fieldset label="Job Notification">
+						
 							<aui:form name="guseNotifyForm" commandName="notification"
 								action="${updateGuseNotifyActionUrl}">
+								<aui:fieldset label="Job Notification">
 								<br></br>
-	
+								<strong>Enable the switch before if you want to be notified by mail on workflow status changing</strong> <br/><br/>
+								<aui:input name="wfchgEnab" id="wfchgEnab" type="hidden"
+									value="${notification.wfchgEnab }" />
+								<div id="jqxButton2"></div>
+								</aui:fieldset>
+								<aui:fieldset label="e-Mail configuration"> 
 								<aui:input name="emailAddr" type="hidden"
 									value="${notification.emailAddr }" />
 									
@@ -941,9 +1206,6 @@ div.function {
 									
 								<aui:input name="emailSubj" type="text"
 									label="Email Subject:" value="${notification.emailSubj }" />
-								
-								<aui:input name="wfchgEnab" type="checkbox"
-									label="Check if you want to be notified by mail on workflow status changing" checked="${notification.wfchgEnab }" />
 									
 								<aui:fieldset>
 									<aui:column columnWidth="70">
@@ -970,9 +1232,10 @@ div.function {
 								<aui:button-row>
 									<aui:button type="submit" />
 								</aui:button-row>
+								</aui:fieldset>
 							</aui:form>
 							
-						</aui:fieldset>
+						
 					</aui:column>
 
 					
@@ -981,8 +1244,11 @@ div.function {
 		
 		
 		<div id="apriAdvSet"></div>
+		<div id="jqxButton5"></div>
 	</div>
+	<div id="jqxButton6"></div>
 </div>
+<div id="jqxButton7"></div>
 
 
 <br/>
@@ -1032,4 +1298,6 @@ div.function {
 <div id="settingsButtonVO" style="display:none;">Edit your VO.</div>
 
 </div>
+
+
 

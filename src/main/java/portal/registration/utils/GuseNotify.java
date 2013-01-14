@@ -20,6 +20,16 @@ public class GuseNotify {
 		this.emailSubj = "Insert your subject here";
 	}
 	
+	public GuseNotify(String name) {
+		this.wfchgMess = "Dear "+name+",\n\n[EXAMPLE] The istance #instance# of the workflow #workflow# change status from #oldstatus# to #newstatus# at #now#.  [EXAMPLE] \n\n[ANSYS EXAMPLE]#instance#.[ANSYS EXAMPLE]\n\nRegards.";
+		this.wfchgEnab = "false";
+		this.quotaMess = "";
+		this.quotaEnab = "false";
+		this.emailAddr = "";
+		this.emailEnab = "false";
+		this.emailSubj = "Insert your subject here";
+	}
+	
 	public GuseNotify(String wfchgMess, String wfchgEnab, String quotaMess,
 			String quotaEnab, String emailAddr, String emailEnab,
 			String emailSubj) {

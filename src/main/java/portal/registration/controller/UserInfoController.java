@@ -332,7 +332,7 @@ public class UserInfoController {
 		User user = (User) request.getAttribute(WebKeys.USER);
 		if(user!=null){
 			GuseNotifyUtil guseNotifyUtil = new GuseNotifyUtil();
-			guseNotify = guseNotifyUtil.readNotifyXML(user.getUserId());
+			guseNotify = guseNotifyUtil.readNotifyXML(user);
 		}
 		return guseNotify;
 	}

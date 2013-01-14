@@ -28,16 +28,20 @@
 
 <div id="action">
 
-	<h1 class="header-title">Registration - Request new certificate</h1>
-	<aui:fieldset>
-	<aui:column columnWidth="50">
-	<iframe frameborder="0" scrolling="no" allowtransparency="true" src="${caUrl }" width="100%" height="320"
+	
+	<aui:fieldset label="Registration">
+	
+	<br/><br/>
+	<img src="<%=request.getContextPath()%>/images/registration_step3_request.png"/>
+	<br/>
+	<aui:column columnWidth="70">
+	<iframe frameborder="0" scrolling="no" allowtransparency="true" src="${caUrl }" width="100%" height="340"
 	 ></iframe>
 	<br/><br/>
 	</aui:column>
-	<aui:column columnWidth="35">
+	<aui:column columnWidth="25">
 	<br/><br/><br/><br/><br/><br/><br/><br/>
-	<a href="https://portal.italiangrid.it:8443/info/certificate-upload-technical-info.html"  onclick="$(this).modal({width:800, height:600, message:true}).open(); return false;"><img class="displayed"
+	<a href="https://portal.italiangrid.it:8443/info/certificate-request-technical-info.html"  onclick="$(this).modal({width:800, height:600, message:true}).open(); return false;"><img class="displayed"
 													src="<%=request.getContextPath()%>/images/Information2.png"
 													id="noImg" width="64" />Technical Information</a>
 	</aui:column>

@@ -331,6 +331,7 @@ public class EditUserInfoController {
 			SessionStatus sessionStatus) {
 
 		response.setRenderParameter("myaction", "userInfos");
+		sessionStatus.setComplete();
 
 	}
 	
@@ -401,8 +402,7 @@ public class EditUserInfoController {
 			User user = UserLocalServiceUtil.getUserByScreenName(companyId,
 					username);
 			GuseNotifyUtil guseNotifyUtil = new GuseNotifyUtil();
-			
-			guseNotify = guseNotifyUtil.readNotifyXML(user.getUserId());
+			guseNotify = guseNotifyUtil.readNotifyXML(user);
 		} catch (PortalException e) {
 			e.printStackTrace();
 		} catch (SystemException e) {

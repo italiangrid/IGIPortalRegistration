@@ -1,7 +1,4 @@
-<%@ include file="/WEB-INF/jsp/init.jsp"%>
-
-			  
-
+<%@ include file="/WEB-INF/jsp/init.jsp"%> 
 
 <style>
 <!--
@@ -35,9 +32,13 @@
 
 <div id="action">
 
-	<h1 class="header-title">Registration - User Data</h1>
 	
-	<aui:fieldset>
+	
+	<aui:fieldset label="Registration">
+	
+		<br/><br/>
+			<img src="<%=request.getContextPath()%>/images/registration_step1.png"/>
+		<br/>
 		<aui:column columnWidth="80">
 		<div id="userData">
 			<br/><br/>
@@ -48,7 +49,7 @@
 			<br/>
 			In the first step we are going to retrieve your personal data from your organization.<br/>
 			<strong>Please in the next page select your institute, if it is not in the list click on "Other Institutes" button.</strong>
-			<br/><br/>
+			<br/><br/><br/>
 			
 		</div>
 		</aui:column>
@@ -62,8 +63,11 @@
 		</portlet:actionURL>
 		
 		<aui:form name="startRegistration" action="${showWAYF }">
-			<aui:button-row id="submit">
+			<aui:button-row>
 				<aui:button type="submit"  value="Continue"></aui:button>
+				<div id="submit" >
+				<aui:button type="cancel"  value="Abort Registration" onClick="location.href='https://flyback.cnaf.infn.it'"></aui:button>
+				</div>
 			</aui:button-row>
 		</aui:form>
 	</aui:fieldset>

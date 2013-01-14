@@ -267,7 +267,7 @@ ul#insertHere{
 	action="${addUserToVoActionUrl}"  commandName="registrationModel">
 
 	<aui:layout>
-		<aui:fieldset>
+		<aui:fieldset label="Registration - Edit Role for ${vo.vo }">
 			
 			<aui:input name="subject" type="hidden" value="${registrationModel.subject }"></aui:input>
 			<aui:input name="issuer" type="hidden" value="${registrationModel.issuer }"></aui:input>
@@ -288,12 +288,13 @@ ul#insertHere{
 			<aui:input name="verifyUser" type="hidden" value="${registrationModel.verifyUser }"/>
 			<aui:input name="idVo" type="hidden" value="${vo.idVo }"/>
 
-			<h1>Registration - Edit Role for ${vo.vo }</h1>
-			<br />
+			
+			<br/><br/>
+			<img src="<%=request.getContextPath()%>/images/registration_step4-bordo.png"/>
+			<br/><br/>
 			<strong>Help:</strong>
 			<br />
 			Drag and drop roles form green zone into yellow zone and order by your preferences. <br/>
-			For erasing a role from your list drag and drop the role from yellow zone into red zone. <br/>
 			<br />
 			<div id="products">
 				<div id="catalog">
