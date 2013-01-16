@@ -4,6 +4,22 @@
 	<portlet:param name="myaction" value="endRegistration" />
 </portlet:actionURL>
 
+<script type="text/javascript">
+<!--
+
+//-->
+
+function submit(){
+	
+	$("#<portlet:namespace/>caForm").submit();
+}
+
+$(document).ready(function() {
+	$(".taglib-text").css("text-decoration","none");
+});
+
+</script>
+
 <style>
 
 #action{
@@ -20,6 +36,50 @@
 		float: left;
 	}
 
+#submit{
+	float: right;
+	margin-right: 20px;
+}
+
+.button{
+	margin: 5px;
+	text-decoration: none;
+
+}
+
+.button a{
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: url("<%=request.getContextPath()%>/images/header_bg.png") repeat-x scroll 0 0 #D4D4D4;
+    border-color: #C8C9CA #9E9E9E #9E9E9E #C8C9CA;
+    border-image: none;
+    border-style: solid;
+    border-width: 1px;
+    color: #34404F;
+    cursor: pointer;
+    font-weight: bold;
+    overflow: visible;
+    padding: 5px;
+    text-shadow: 1px 1px #FFFFFF;
+    width: auto;
+    border-radius: 4px 4px 4px 4px;
+    text-decoration: none;
+    margin: 1px;
+}
+
+.button:hover a{
+    background: url("<%=request.getContextPath()%>/images/state_hover_bg.png") repeat-x scroll 0 0 #B9CED9;
+    border-color: #627782;
+    color: #336699;
+    
+}
+
+.button img{
+	text-decoration: none;
+	margin-top: -1px;
+}
 
 </style>
 
@@ -46,10 +106,26 @@
 													id="noImg" width="64" />Technical Information</a>
 	</aui:column>
 	</aui:fieldset>
-	<aui:form name="caForm" action="${endActionUrl}">
-		<aui:button type="cancel" value= "Back" onClick="history.back()"/>
+	<aui:form name="caForm" id="caForm" action="${endActionUrl}">
+	
+		<aui:button-row>
+			<div class="button" style="float: left;">
+			<liferay-ui:icon-menu>
+			<liferay-ui:icon image="back" message="Back" url="#" onClick="history.back()" />
+			</liferay-ui:icon-menu>
+			</div>
+			<div class="button" style="float: right;">
+			<liferay-ui:icon-menu>
+			<liferay-ui:icon image="forward" message="Registration Completed" url="#" onClick="location.href='${loginUrl}';" />
+			</liferay-ui:icon-menu>
+			</div>
+		</aui:button-row>
+	
+		<aui:button type="cancel" value= "Back" style="display: none;" onClick="history.back()"/>
+		<div id="submit">
 		<aui:button type="cancel" value="Registration Completed"
-						onClick="location.href='${loginUrl}';" />
+						onClick="location.href='${loginUrl}';" style="display: none;"/>
+		</div>
 	</aui:form>
 	
 	

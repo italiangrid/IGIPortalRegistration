@@ -16,6 +16,15 @@
 		
 		
 	}
+	
+	function submit(){
+		
+		$("#<portlet:namespace/>addUserForm").submit();
+	}
+
+	$(document).ready(function() {
+		$(".taglib-text").css("text-decoration","none");
+	});
 
 </script>
 
@@ -59,6 +68,46 @@
 		margin-left: 10px;
 		float: left;
 	}
+	
+.button{
+	margin: 5px;
+	text-decoration: none;
+
+}
+
+.button a{
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: url("<%=request.getContextPath()%>/images/header_bg.png") repeat-x scroll 0 0 #D4D4D4;
+    border-color: #C8C9CA #9E9E9E #9E9E9E #C8C9CA;
+    border-image: none;
+    border-style: solid;
+    border-width: 1px;
+    color: #34404F;
+    cursor: pointer;
+    font-weight: bold;
+    overflow: visible;
+    padding: 5px;
+    text-shadow: 1px 1px #FFFFFF;
+    width: auto;
+    border-radius: 4px 4px 4px 4px;
+    text-decoration: none;
+    margin: 1px;
+}
+
+.button:hover a{
+    background: url("<%=request.getContextPath()%>/images/state_hover_bg.png") repeat-x scroll 0 0 #B9CED9;
+    border-color: #627782;
+    color: #336699;
+    
+}
+
+.button img{
+	text-decoration: none;
+	margin-top: -1px;
+}
 
 </style>
 
@@ -100,7 +149,7 @@
 	
 
 
-<aui:form name="addUserForm" commandName="userInfo"
+<aui:form name="addUserForm" id="addUserForm" commandName="userInfo"
 	action="${addUserActionUrl}">
 
 	<aui:layout>
@@ -112,7 +161,7 @@
 		
 			<br/><br/>
 				<img src="<%=request.getContextPath()%>/images/registration_step1.png"/>
-			<br/>
+			<br/><br/>
 			<div id="form">
 				<aui:column columnWidth="30">
 				
@@ -260,10 +309,22 @@
 				
 
 				<aui:button-row>
-					<aui:button type="submit" value="Continue"/>
-					<div style="float: right;">
+				
+					<div class="button" style="float: left;">
+					<liferay-ui:icon-menu>
+					<liferay-ui:icon image="close" message="Abort Registration" url="#" onClick="location.href='${homeUrl}';" />
+					</liferay-ui:icon-menu>
+					</div>
+					<div class="button" style="float: right;">
+					<liferay-ui:icon-menu>
+					<liferay-ui:icon image="forward" message="Continue" url="#" onClick="submit();" />
+					</liferay-ui:icon-menu>
+					</div>
+					
 					<aui:button type="cancel" value="Abort Registration"
-						onClick="location.href='${homeUrl}';" />
+						onClick="location.href='${homeUrl}';" style="display: none;"/>
+					<div style="float: right; display: none;">
+					<aui:button type="submit" value="Continue"/>
 					</div>
 				</aui:button-row>
 			</div>

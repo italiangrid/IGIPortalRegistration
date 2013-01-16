@@ -22,6 +22,18 @@
 			$("#<portlet:namespace/>askForCertificate").submit();
 		}
 	}
+	
+	function submit(){
+		
+		$("#<portlet:namespace/>askForCertificate").submit();
+	}
+
+	$(document).ready(function() {
+		$(".taglib-text").css("text-decoration","none");
+	});
+	
+	
+	
 </script>
 
 <style>
@@ -61,6 +73,17 @@
 	padding: 8px;
 }
 
+.bordered-disabled {
+	border: 1px;
+	border-style: solid;
+	border-color: grey;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	padding: 8px;
+	opacity: .4; 
+	filter: alpha(opacity=40);
+}
+
 .mess {
 	height: 65px;
 	width: 200px;
@@ -77,7 +100,7 @@
 	font-size: 18px;
 }
 
-.icon {
+.myIcon {
 	width: 64px;
 	margin: auto;
 	vertical-align: middle;
@@ -128,6 +151,46 @@
 	margin-left: 10px;
 	float: left;
 }
+
+.button{
+	margin: 5px;
+	text-decoration: none;
+
+}
+
+.button a{
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: url("<%=request.getContextPath()%>/images/header_bg.png") repeat-x scroll 0 0 #D4D4D4;
+    border-color: #C8C9CA #9E9E9E #9E9E9E #C8C9CA;
+    border-image: none;
+    border-style: solid;
+    border-width: 1px;
+    color: #34404F;
+    cursor: pointer;
+    font-weight: bold;
+    overflow: visible;
+    padding: 5px;
+    text-shadow: 1px 1px #FFFFFF;
+    width: auto;
+    border-radius: 4px 4px 4px 4px;
+    text-decoration: none;
+    margin: 1px;
+}
+
+.button:hover a{
+    background: url("<%=request.getContextPath()%>/images/state_hover_bg.png") repeat-x scroll 0 0 #B9CED9;
+    border-color: #627782;
+    color: #336699;
+    
+}
+
+.button img{
+	text-decoration: none;
+	margin-top: -1px;
+}
 </style>
 <div>
 	<%@ include file="/WEB-INF/jsp/summary.jsp"%>
@@ -162,22 +225,32 @@
 						<aui:fieldset>
 							<br />
 							<br />
+							
+							<c:if test="${!registrationModel.haveIDP }" >
+							<div class="portlet-msg-alert">
+							Depending on the the data collected in the previous step some profiles could be not selectable.
+							</div>
+							
+							</c:if>
 							<br />
 							<br />
-
 							<div id="chooseContainer">
-								<c:if test="${registrationModel.haveIDP }">
+									<c:if test="${registrationModel.haveIDP }" >
 									<div class="type">
+									
 									<a href="" onclick="setHaveCert('false'); return false;">
+									
 										<div class="choose bordered">
 											<div class="title">
 												<strong>New User</strong>
 											</div>
 											<div class="iconContainer">
-												<div class="icon">
+												<div class="myIcon">
+													
 													<img class="displayed"
 														src="<%=request.getContextPath()%>/images/NewUser.png"
 														id="yesImg" width="64" />
+													
 												</div>
 											</div>
 											<div class="reset"></div>
@@ -187,13 +260,51 @@
 											<div class="reset"></div>
 											
 										</div>
+									
 									</a>
+									
 									<div class="reset"></div>
 									<div class="moreInfo">
 										<a href="https://portal.italiangrid.it:8443/info/user-profile-new-user.html"  onclick="$(this).modal({width:800, height:250, message:true}).open(); return false;">More Info</a>
 									</div>
 									</div>
 								</c:if>
+								
+								<c:if test="${!registrationModel.haveIDP }" >
+									<div class="type">
+									
+									
+									
+										<div class="choose bordered-disabled">
+											<div class="title">
+												<strong>New User</strong>
+											</div>
+											<div class="iconContainer">
+												<div class="myIcon">
+													
+													<img class="displayed"
+														src="<%=request.getContextPath()%>/images/NewUser.png"
+														id="yesImg" width="64" style="opacity:0.4; filter:alpha(opacity=40);"/>
+													
+												</div>
+											</div>
+											<div class="reset"></div>
+											<div class="mess">
+												<div class="center">I don't have Grid credentials and I'd like to have them now.</div>
+											</div>
+											<div class="reset"></div>
+											
+										</div>
+									
+									
+									
+									<div class="reset"></div>
+									<div class="moreInfo">
+										<a href="https://portal.italiangrid.it:8443/info/user-profile-new-user.html"  onclick="$(this).modal({width:800, height:250, message:true}).open(); return false;">More Info</a>
+									</div>
+									</div>
+								</c:if>
+								
 								<div class="type">
 								<a href="" onclick="setHaveCert('true'); return false;">
 									<div class="choose bordered">
@@ -201,7 +312,7 @@
 											<strong>Classic User</strong>
 										</div>
 										<div class="iconContainer">
-											<div class="icon">
+											<div class="myIcon">
 												<img class="displayed"
 													src="<%=request.getContextPath()%>/images/NormalUser.png"
 													id="noImg" width="64" />
@@ -227,7 +338,7 @@
 												<strong>Expert User</strong>
 											</div>
 											<div class="iconContainer">
-												<div class="icon">
+												<div class="myIcon">
 													<img class="displayed"
 														src="<%=request.getContextPath()%>/images/ExpertUser.png"
 														id="noImg" width="64" />
@@ -277,11 +388,19 @@
 
 
 					<aui:button-row>
-						<aui:button type="submit" value="Continue" style="display:none" />
-						<div style="float: right;">
-						<aui:button type="cancel" value="Abort Registration"
-							onClick="alert('You are now registrated in the portal, please log into the portal to complete the registraion.');location.href='${loginUrl }';" />
+					
+						<div class="button" style="float: left;">
+						<liferay-ui:icon-menu>
+						<liferay-ui:icon image="close" message="Abort Registration" url="#" onClick="alert('You are now registrated in the portal, please log into the portal to complete the registraion.');location.href='${loginUrl }';" />
+						</liferay-ui:icon-menu>
 						</div>
+						
+						<aui:button type="submit" value="Continue" style="display:none" />
+						
+						
+						<aui:button type="cancel" value="Abort Registration" style="display:none"
+							onClick="alert('You are now registrated in the portal, please log into the portal to complete the registraion.');location.href='${loginUrl }';"  />
+						
 					</aui:button-row>
 
 				</aui:fieldset>
@@ -296,3 +415,4 @@
 
 	<div style="clear: both;"></div>
 </div>
+

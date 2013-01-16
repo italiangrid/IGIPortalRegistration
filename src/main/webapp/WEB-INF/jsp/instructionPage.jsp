@@ -1,5 +1,21 @@
 <%@ include file="/WEB-INF/jsp/init.jsp"%> 
 
+<script type="text/javascript">
+<!--
+
+//-->
+
+function submit(){
+	
+	$("#<portlet:namespace/>startRegistration").submit();
+}
+
+$(document).ready(function() {
+	$(".taglib-text").css("text-decoration","none");
+});
+
+</script>
+
 <style>
 <!--
 
@@ -26,6 +42,46 @@
 
 #userData{
 	font-size: 14px;
+}
+
+.button{
+	margin: 5px;
+	text-decoration: none;
+
+}
+
+.button a{
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: url("<%=request.getContextPath()%>/images/header_bg.png") repeat-x scroll 0 0 #D4D4D4;
+    border-color: #C8C9CA #9E9E9E #9E9E9E #C8C9CA;
+    border-image: none;
+    border-style: solid;
+    border-width: 1px;
+    color: #34404F;
+    cursor: pointer;
+    font-weight: bold;
+    overflow: visible;
+    padding: 5px;
+    text-shadow: 1px 1px #FFFFFF;
+    width: auto;
+    border-radius: 4px 4px 4px 4px;
+    text-decoration: none;
+    margin: 1px;
+}
+
+.button:hover a{
+    background: url("<%=request.getContextPath()%>/images/state_hover_bg.png") repeat-x scroll 0 0 #B9CED9;
+    border-color: #627782;
+    color: #336699;
+    
+}
+
+.button img{
+	text-decoration: none;
+	margin-top: -1px;
 }
 
 </style>
@@ -62,13 +118,26 @@
 			<portlet:param name="myaction" value="startRegistration" />
 		</portlet:actionURL>
 		
-		<aui:form name="startRegistration" action="${showWAYF }">
+		<aui:form id="startRegistration" name="startRegistration" action="${showWAYF }">
+		
+			
 			<aui:button-row>
-				<aui:button type="submit"  value="Continue"></aui:button>
-				<div id="submit" >
-				<aui:button type="cancel"  value="Abort Registration" onClick="location.href='https://flyback.cnaf.infn.it'"></aui:button>
+				<div class="button" style="float: left;">
+				<liferay-ui:icon-menu>
+				<liferay-ui:icon image="close" message="Abort Registration" url="#" onClick="location.href='https://flyback.cnaf.infn.it';" />
+				</liferay-ui:icon-menu>
 				</div>
+				<div class="button" style="float: right;">
+				<liferay-ui:icon-menu>
+				<liferay-ui:icon image="forward" message="Continue" url="#" onClick="submit();" />
+				</liferay-ui:icon-menu>
+				</div>
+				<aui:button type="cancel"  value="Abort Registration" onClick="location.href='https://flyback.cnaf.infn.it'" style="display:none;"></aui:button>
+				
+				<aui:button type="submit"  value="Continue" style="display:none;"></aui:button>
 			</aui:button-row>
+			
 		</aui:form>
 	</aui:fieldset>
 </div>
+
