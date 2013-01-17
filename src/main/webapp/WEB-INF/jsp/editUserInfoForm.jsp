@@ -1,10 +1,8 @@
 <%@ include file="/WEB-INF/jsp/init.jsp"%>
-
-<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
 <script src="<%=request.getContextPath()%>/js/jqxcore.js"></script>
 <script src="<%=request.getContextPath()%>/js/jqxswitchbutton.js"></script>
 
-<link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/base/jquery-ui.css" />
 
 <script type="text/javascript">
 <!--
@@ -1142,18 +1140,16 @@ div.function {
 			<aui:layout>
 
 				<aui:fieldset>
+					<aui:form name="guseNotifyForm" commandName="notification"
+								action="${updateGuseNotifyActionUrl}">
 					<aui:column columnWidth="50">
-					<aui:form name="editUserInfoForm" commandName="advOpts"
-								action="${updateAdvOptsActionUrl}">
+					
 						<aui:fieldset label="Proxy Notification">
 							
 								<br></br>
 								
 								<aui:input name="idNotify" type="hidden"
 									value="${advOpts.idNotify }" />
-									
-								<aui:input name="userId" type="hidden"
-								value="<%=userInfo.getUserId() %>" />
 								
 								<aui:input id="proxyExpire" name="proxyExpire" type="hidden" value="${advOpts.proxyExpire }" />
 								<strong>Enable the switch before if you want to be notified by mail 1 hour before the proxy expiration</strong>
@@ -1162,7 +1158,7 @@ div.function {
 									
 								
 						</aui:fieldset>
-						<div id="jqxButton3"></div>
+						
 						<aui:fieldset label="Proxy Lifetime">		
 								
 								<aui:select name="proxyExpireTime" inlineLabel="true" label="Expiration Time">
@@ -1177,16 +1173,12 @@ div.function {
 								
 								
 						</aui:fieldset>
-						<aui:button-row>
-								<aui:button type="submit" />
-							</aui:button-row>
-						</aui:form>
+						
 					</aui:column>
-					<div id="jqxButton4"></div>
+					
 					<aui:column columnWidth="50">
 						
-							<aui:form name="guseNotifyForm" commandName="notification"
-								action="${updateGuseNotifyActionUrl}">
+							
 								<aui:fieldset label="Job Notification">
 								<br></br>
 								<strong>Enable the switch before if you want to be notified by mail on workflow status changing</strong> <br/><br/>
@@ -1229,26 +1221,27 @@ div.function {
 								<aui:input name="quotaEnab" type="hidden"
 									value="${notification.quotaEnab }" />
 								
-								<aui:button-row>
-									<aui:button type="submit" />
-								</aui:button-row>
-								</aui:fieldset>
-							</aui:form>
-							
+								
+							</aui:fieldset>
 						
 					</aui:column>
 
+					<aui:button-row style="float: right; margin-right: 20px;">
+						<aui:button type="submit" />
+					</aui:button-row>
+					
+				</aui:form>
 					
 				</aui:fieldset>
 			</aui:layout>
 		
 		
 		<div id="apriAdvSet"></div>
-		<div id="jqxButton5"></div>
+
 	</div>
-	<div id="jqxButton6"></div>
+
 </div>
-<div id="jqxButton7"></div>
+
 
 
 <br/>

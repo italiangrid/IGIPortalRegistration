@@ -230,16 +230,16 @@ h5#usernameAlert {
 		
 		<br/><br/>
 		<img src="<%=request.getContextPath()%>/images/registration_step3_upload.png"/>
-		<br/><br/>
-			
-			<aui:column columnWidth="45" style="margin-left:30px;">
+		<br/><br/><br/>
+			<aui:fieldset>
+			<aui:column columnWidth="35" style="margin-left:30px;">
 
 				<aui:fieldset>
 					<div id="allertDiv2">
 					<div class="portlet-msg-error p12" style="display:none;">
 						Insert certificate here.
 					</div>
-							<aui:input id="usercert" name="usercert" type="file" label="Import certificate in P12 format"
+							<aui:input id="usercert" name="usercert" type="file" label="Import certificate in P12 or PFX format"
 								value="${usercert }" />
 
 					
@@ -250,9 +250,47 @@ h5#usernameAlert {
 								label="Import certificate password" onBlur="printCheck($(this).attr('id'));"/> 
 					</div>
 					<br />
+				</aui:fieldset>
+			</aui:column>
+
+			<aui:column columnWidth="50" style="margin-left:30px;">
+			
+				<aui:fieldset>
 					
+					<br/>
+					
+					<div id="help">
+					
+					<script  type="text/javascript">
+					 
+					 function openNewWindow() {
+					 popupWin = window.open('https://portal.italiangrid.it:8443/info/upload-certificate-help.html',
+					 'open_window',
+					 'scrollbars, resizable, dependent, width=640, height=480, left=0, top=0')
+					 }
+					 
+					 </script>
+					<a href="javascript:openNewWindow();"  ><img class="displayed"
+													src="<%=request.getContextPath()%>/images/Help.png"
+													id="noImg" width="48" />Certificate Upload Help</a>
+													
+					</div>
+					
+				</aui:fieldset>
+
+				
+			</aui:column>
+			</aui:fieldset>
+			
+			<hr/>
+			
+			<aui:fieldset>
+			
+			<aui:column columnWidth="35" style="margin-left:30px;">
+					
+					<aui:fieldset>
 						Please insert below a new password. <br/>
-						<strong>Don't forget this password:</strong> it will be asked again to use Grid and Cloud resources in a secure way and it will be not saved in the system. <br/>
+						
 					<div id="allertDiv2">
 				
 						<br/>
@@ -279,45 +317,30 @@ h5#usernameAlert {
 				</aui:fieldset>
 
 				<br />
-				<br />
+				
 			</aui:column>
 
-			<aui:column columnWidth="40" style="margin-left:30px;">
+			<aui:column columnWidth="50" style="margin-left:30px;">
 
 				<aui:fieldset>
 					
-					<br/><br/>
+					<br/>
 					
-					<div id="help">
-					
-					<script  type="text/javascript">
-					 
-					 function openNewWindow() {
-					 popupWin = window.open('https://portal.italiangrid.it:8443/info/upload-certificate-help.html',
-					 'open_window',
-					 'scrollbars, resizable, dependent, width=640, height=480, left=0, top=0')
-					 }
-					 
-					 </script>
-					<a href="javascript:openNewWindow();"  ><img class="displayed"
-													src="<%=request.getContextPath()%>/images/Help.png"
-													id="noImg" width="64" />Certificate Upload Help</a>
-													
-					</div>
-					<br/><br/><br/><br/><br/><br/><br/>
 					<div id="help">
 					<a href="https://portal.italiangrid.it:8443/info/certificate-upload-technical-info.html"  onclick="$(this).modal({width:800, height:600, message:true}).open(); return false;"><img class="displayed"
 													src="<%=request.getContextPath()%>/images/Information2.png"
-													id="noImg" width="64" />Technical Information</a>
+													id="noImg" width="48" />Technical Information</a>
+					 <br/><br/><br/><strong>Don't forget this password:</strong> it will be asked again to use Grid and Cloud resources in a secure way and it will be not saved in the system.
 													
 			
 													
 					</div>
 				</aui:fieldset>
 
-				<br />
-				<br />
+				
 			</aui:column>
+			
+			</aui:fieldset>
 
 			<aui:button-row>
 				

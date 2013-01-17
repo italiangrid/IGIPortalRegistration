@@ -1,10 +1,7 @@
 <%@ include file="/WEB-INF/jsp/init.jsp"%>
 
 
-<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
-
-
-<link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/base/jquery-ui.css" />
 
 <script type="text/javascript">
 <!--
@@ -349,7 +346,6 @@ div.function {
 			<aui:input name="haveCertificate" type="hidden" value="${registrationModel.haveCertificate }"></aui:input>
 			<aui:input name="certificateUserId" type="hidden" value="${registrationModel.certificateUserId }"></aui:input>
 			<aui:input name="vos" type="hidden" value="${registrationModel.vos }"></aui:input>
-			<aui:input name="searchVo" type="hidden" value="${registrationModel.searchVo }"></aui:input>
 			<aui:input name="mail" type="hidden" value="${registrationModel.mail }"></aui:input>
 			<aui:input name="haveIDP" type="hidden" value="${registrationModel.haveIDP }"></aui:input>
 			<aui:input name="firstName" type="hidden" value="${registrationModel.firstName }"/>
@@ -360,6 +356,7 @@ div.function {
 			<aui:input name="certificateStatus" type="hidden" value="${registrationModel.certificateStatus }"/>
 			<aui:input name="voStatus" type="hidden" value="${registrationModel.voStatus }"/>
 			<aui:input name="verifyUser" type="hidden" value="${registrationModel.verifyUser }"/>
+			<aui:input name="searchVo" id="searchVo" type="hidden" value="${registrationModel.searchVo }"/>
 			
 			<aui:button-row id="submit">
 				<div class="button" style="float: right;">

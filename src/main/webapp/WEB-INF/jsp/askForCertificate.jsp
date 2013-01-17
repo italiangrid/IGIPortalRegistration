@@ -60,7 +60,6 @@
 .choose {
 	width: 200px;
 	height: 150px;
-	margin
 }
 
 .bordered {
@@ -97,7 +96,7 @@
 	vertical-align: middle;
 	text-align: center;
 	float: left;
-	font-size: 18px;
+	font-size: 17px;
 }
 
 .myIcon {
@@ -242,7 +241,7 @@
 									
 										<div class="choose bordered">
 											<div class="title">
-												<strong>New User</strong>
+												<strong>I don't have a certificate</strong>
 											</div>
 											<div class="iconContainer">
 												<div class="myIcon">
@@ -277,7 +276,7 @@
 									
 										<div class="choose bordered-disabled">
 											<div class="title">
-												<strong>New User</strong>
+												<strong>I don't have a certificate</strong>
 											</div>
 											<div class="iconContainer">
 												<div class="myIcon">
@@ -309,7 +308,7 @@
 								<a href="" onclick="setHaveCert('true'); return false;">
 									<div class="choose bordered">
 										<div class="title">
-											<strong>Classic User</strong>
+											<strong>I have a certificate</strong>
 										</div>
 										<div class="iconContainer">
 											<div class="myIcon">
@@ -335,7 +334,7 @@
 									<a href="" onclick="return false;">
 										<div class="choose bordered">
 											<div class="title">
-												<strong>Expert User</strong>
+												<strong>I have a proxy</strong>
 											</div>
 											<div class="iconContainer">
 												<div class="myIcon">

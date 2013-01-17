@@ -212,8 +212,21 @@ div#voData {
 		</div>
 	</c:when>
 	<c:otherwise>
+	
 		
-		<%@ include file="/WEB-INF/jsp/editUserInfoForm.jsp" %>
+		
+		<portlet:renderURL var="editURL">
+			<portlet:param name="myaction" value="editUserInfoForm" />
+			<portlet:param name="userId" value="${userId }" />
+		</portlet:renderURL>
+		
+		<script>
+		
+		location.href="${editURL}";
+		
+		</script>
+		
+		
 
 	</c:otherwise>
 </c:choose>

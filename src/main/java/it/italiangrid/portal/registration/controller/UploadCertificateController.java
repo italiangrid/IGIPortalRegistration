@@ -101,6 +101,7 @@ public class UploadCertificateController {
 			SystemException {
 		
 		RegistrationModel registrationModel = new RegistrationModel();
+		UserInfo userInfo = new UserInfo();
 		
 		ArrayList<String> errors = new ArrayList<String>();
 		boolean allOk = true;
@@ -114,6 +115,8 @@ public class UploadCertificateController {
 		String pwd2 = "";
 		ArrayList<String> files = new ArrayList<String>();
 		String certificateUserId = UUID.randomUUID().toString();
+		
+		boolean goToAddUser = false;
 
 		File dir = new File("/upload_files");
 		if (dir.isDirectory()) {
@@ -244,9 +247,11 @@ public class UploadCertificateController {
 						registrationModel.setCertificateUserId(certificateUserId);
 						registrationModel.setMail(mail);
 						
+						
+						
 						if(!registrationModel.isHaveIDP()){
 							
-							UserInfo userInfo = new UserInfo();
+							
 							
 							String[] dnParts = registrationModel.getSubject().split("/");
 							String o = "";
@@ -286,20 +291,30 @@ public class UploadCertificateController {
 							registrationModel.setLastName(lastName);
 							registrationModel.setInstitute(institute);
 							registrationModel.setEmail(registrationModel.getMail());
-							registrationModel.setUserStatus(true);
 							
-							try {
-								RegistrationUtil.insertIntoIDP(userInfo, registrationModel);
-								boolean verify = registrationModel.getEmail().isEmpty();
-								log.error("Verify??? " + verify);
-								RegistrationUtil.addUserToLiferay(request, userInfo, registrationModel, verify);
-								userInfo=RegistrationUtil.addUserToDB(userInfo, userInfoService, notifyService);
-								
-							} catch (RegistrationException e) {
-								// TODO Auto-generated catch block
-								e.printStackTrace();
+							
+							
+							if(!registrationModel.getEmail().isEmpty()&&!registrationModel.getInstitute().isEmpty()){
+								registrationModel.setUserStatus(true);
+								try {
+									RegistrationUtil.insertIntoIDP(userInfo, registrationModel);
+									boolean verify = registrationModel.getEmail().isEmpty();
+									log.error("Verify??? " + verify);
+									RegistrationUtil.addUserToLiferay(request, userInfo, registrationModel, verify);
+									userInfo=RegistrationUtil.addUserToDB(userInfo, userInfoService, notifyService);
+									
+								} catch (RegistrationException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+							} else {
+								goToAddUser = true;
 							}
 						}
+						
+						log.error(registrationModel);
+						
+						log.error("goToAddUser: " + goToAddUser);
 						
 						Certificate cert = new Certificate();
 						cert.setIdCert(0);
@@ -310,7 +325,8 @@ public class UploadCertificateController {
 						cert.setPrimaryCert(primaryCert);
 						cert.setSubject(subject);
 						cert.setUsernameCert(certificateUserId);
-						cert.setUserInfo(userInfoService.findByMail(registrationModel.getEmail()));
+						if(!goToAddUser)
+							cert.setUserInfo(userInfoService.findByMail(registrationModel.getEmail()));
 						
 						log.error("@@@@@@@@"+registrationModel);
 						
@@ -427,8 +443,14 @@ public class UploadCertificateController {
 			SessionMessages.add(request, "upload-cert-successufully");
 			registrationModel.setCertificateStatus(true);
 			request.setAttribute("registrationModel", registrationModel);
-			response.setRenderParameter("myaction", "showAddVoForm");
 			
+			if(goToAddUser){
+				
+				request.setAttribute("userInfo", userInfo);
+				response.setRenderParameter("myaction", "showAddUserForm");
+			}else{
+				response.setRenderParameter("myaction", "showAddVoForm");
+			}
 
 		} else {
 

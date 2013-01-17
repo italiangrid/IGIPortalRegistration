@@ -1,5 +1,6 @@
 package it.italiangrid.portal.registration.controller;
 
+import it.italiangrid.portal.dbapi.domain.Certificate;
 import it.italiangrid.portal.dbapi.domain.UserInfo;
 import it.italiangrid.portal.dbapi.services.CertificateService;
 import it.italiangrid.portal.dbapi.services.NotifyService;
@@ -56,86 +57,98 @@ public class AddUserController {
 		String[] array = {"l","o", "givenName", "sn", "uid", "mail", "persistent-id", "org-dn", "fromIDP"};
 		List<String> attributes = Arrays.asList(array);
 		
-		UserInfo userInfo = new UserInfo();
-		RegistrationModel registrationModel = new RegistrationModel();
+		UserInfo userInfo = (UserInfo) request.getAttribute("userInfo");
 		
-		String o = "";
-		String l = "";
-		
-		for (Enumeration<String> e = request.getParameterNames() ; e.hasMoreElements() ;) {
-			String name = e.nextElement();
-	        log.error(name);
-	        
-	        switch(attributes.indexOf(name)){
-	        case 0:
-//	        	l
-	        	l=request.getParameter(name).replaceAll("%20", " ").toUpperCase();
-	        	break;
-	        case 1:
-//	        	o
-	        	o = request.getParameter(name).replaceAll("%20", " ").toUpperCase();
-	        	break;
-	        case 2:
-//	        	givenName
-	        	userInfo.setFirstName(request.getParameter(name).replaceAll("%20", " "));
-	        	registrationModel.setFirstName(userInfo.getFirstName());
-	        	break;
-	        case 3:
-//	        	sn
-	        	userInfo.setLastName(request.getParameter(name).replaceAll("%20", " "));
-	        	registrationModel.setLastName(userInfo.getLastName());
-	        	break;
-	        case 4:
-//	        	uid
-	        	userInfo.setUsername(request.getParameter(name).replaceAll("%20", " "));
-	        	break;
-	        case 5:
-//	        	mail
-	        	userInfo.setMail(request.getParameter(name).replaceAll("%20", " "));
-	        	registrationModel.setEmail(userInfo.getMail());
-	        	break;
-	        case 6:
-	        	userInfo.setUsername(request.getParameter(name).replaceAll("%20", " "));
-//	        	persistent-id
-	        	break;
-	        case 7:
-//	        	org-dn
-	        	o= request.getParameter(name).replaceAll("%20", " ").replaceAll("dc.", "").replaceAll(",", " ").toUpperCase();
-	        	break;
-	        }
-	        
 
-	     }
 		
-		String institute = l + (((!l.isEmpty())&&(!o.isEmpty()))? " - " : "") + o;
-		userInfo.setInstitute(institute);
-		registrationModel.setInstitute(institute);
+		if(userInfo==null){
+			userInfo = new UserInfo();
 		
-		log.error(registrationModel.toString());
-		registrationModel.setHaveIDP(true);
-		request.setAttribute("fromIDP", "true");
-		request.setAttribute("userInfo", userInfo);
-		
-		if(registrationModel.getEmail().isEmpty())
-			registrationModel.setVerifyUser(true);
-		
-		
-		if((!registrationModel.getFirstName().isEmpty())&&(!registrationModel.getLastName().isEmpty())&&(!registrationModel.getInstitute().isEmpty())&&(!registrationModel.getEmail().isEmpty())){
-			registrationModel.setUserStatus(true);
-			log.error("###########"+registrationModel);
-			request.setAttribute("registrationModel", registrationModel);
-			try {
-				log.error(RegistrationConfig.getProperties("Registration.properties", "login.url"));
-				request.setAttribute("loginUrl", RegistrationConfig.getProperties("Registration.properties", "login.url"));
-			} catch (RegistrationException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+			RegistrationModel registrationModel = new RegistrationModel();
+			
+			String o = "";
+			String l = "";
+			
+			for (Enumeration<String> e = request.getParameterNames() ; e.hasMoreElements() ;) {
+				String name = e.nextElement();
+		        log.error(name);
+		        
+		        switch(attributes.indexOf(name)){
+		        case 0:
+	//	        	l
+		        	l=request.getParameter(name).replaceAll("%20", " ").toUpperCase();
+		        	break;
+		        case 1:
+	//	        	o
+		        	o = request.getParameter(name).replaceAll("%20", " ").toUpperCase();
+		        	break;
+		        case 2:
+	//	        	givenName
+		        	userInfo.setFirstName(request.getParameter(name).replaceAll("%20", " "));
+		        	registrationModel.setFirstName(userInfo.getFirstName());
+		        	break;
+		        case 3:
+	//	        	sn
+		        	userInfo.setLastName(request.getParameter(name).replaceAll("%20", " "));
+		        	registrationModel.setLastName(userInfo.getLastName());
+		        	break;
+		        case 4:
+	//	        	uid
+		        	userInfo.setUsername(request.getParameter(name).replaceAll("%20", " "));
+		        	break;
+		        case 5:
+	//	        	mail
+		        	userInfo.setMail(request.getParameter(name).replaceAll("%20", " "));
+		        	registrationModel.setEmail(userInfo.getMail());
+		        	break;
+		        case 6:
+		        	userInfo.setUsername(request.getParameter(name).replaceAll("%20", " "));
+	//	        	persistent-id
+		        	break;
+		        case 7:
+	//	        	org-dn
+		        	o= request.getParameter(name).replaceAll("%20", " ").replaceAll("dc.", "").replaceAll(",", " ").toUpperCase();
+		        	break;
+		        }
+		        
+	
+		     }
+			
+			String institute = l + (((!l.isEmpty())&&(!o.isEmpty()))? " - " : "") + o;
+			userInfo.setInstitute(institute);
+			registrationModel.setInstitute(institute);
+			
+			log.error(registrationModel.toString());
+			registrationModel.setHaveIDP(true);
+			request.setAttribute("fromIDP", "true");
+			request.setAttribute("userInfo", userInfo);
+			
+			if(registrationModel.getEmail().isEmpty())
+				registrationModel.setVerifyUser(true);
+			
+			
+			if((!registrationModel.getFirstName().isEmpty())&&(!registrationModel.getLastName().isEmpty())&&(!registrationModel.getInstitute().isEmpty())&&(!registrationModel.getEmail().isEmpty())){
+				registrationModel.setUserStatus(true);
+				log.error("###########"+registrationModel);
+				request.setAttribute("registrationModel", registrationModel);
+				try {
+					log.error(RegistrationConfig.getProperties("Registration.properties", "login.url"));
+					request.setAttribute("loginUrl", RegistrationConfig.getProperties("Registration.properties", "login.url"));
+				} catch (RegistrationException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				return addUser(userInfo, registrationModel, request, response);
 			}
-			return addUser(userInfo, registrationModel, request, response);
+			
+			request.setAttribute("registrationModel", registrationModel);
+		}else{
+			
+			RegistrationModel registrationModel = (RegistrationModel) request.getAttribute("registrationModel");
+			request.setAttribute("registrationModel", registrationModel);
+			request.setAttribute("userInfo", userInfo);
+			
 		}
-		
-		request.setAttribute("registrationModel", registrationModel);
-		
 		return "addUserForm";
 	}
 	
@@ -213,6 +226,20 @@ public class AddUserController {
 		
 		RegistrationModel registrationModel = new RegistrationModel();
 		
+		registrationModel.setSubject(request.getParameter("subject"));
+		registrationModel.setIssuer(request.getParameter("issuer"));
+		registrationModel.setExpiration(request.getParameter("expiration"));
+		registrationModel.setHaveCertificate(Boolean.parseBoolean(request.getParameter("haveCertificate")));
+		registrationModel.setCertificateUserId(request.getParameter("certificateUserId"));
+		registrationModel.setMail(request.getParameter("certmail"));
+		registrationModel.setHaveIDP(Boolean.parseBoolean(request.getParameter("haveIDP")));
+		registrationModel.setCertificateStatus(Boolean.parseBoolean(request.getParameter("certificateStatus")));
+		
+		
+		log.error("##########################");
+		log.error(registrationModel);
+		log.error("##########################");
+		
 		if (!userInfo.getFirstName().isEmpty())
 			registrationModel.setFirstName(userInfo.getFirstName());
 		if (!userInfo.getLastName().isEmpty())
@@ -221,6 +248,11 @@ public class AddUserController {
 			registrationModel.setInstitute(userInfo.getInstitute());
 		if (!userInfo.getMail().isEmpty())
 			registrationModel.setEmail(userInfo.getMail());
+		
+		
+		log.error("##########################");
+		log.error(registrationModel);
+		log.error("##########################");
 		
 		List<String> errors = new ArrayList<String>();
 		
@@ -254,19 +286,33 @@ public class AddUserController {
 			
 			log.error(RegistrationConfig.getProperties("Registration.properties", "login.url"));
 			request.setAttribute("loginUrl", RegistrationConfig.getProperties("Registration.properties", "login.url"));
-			request.setAttribute("loginUrl", RegistrationConfig.getProperties("Registration.properties", "login.url"));
 			
-			response.setRenderParameter("myaction", "askForCertificate");
-//			response.sendRedirect(RegistrationConfig.getProperties("Registration.properties", "login.url"));
-			return;
+			if(registrationModel.isCertificateStatus()){
+				RegistrationUtil.insertIntoIDP(userInfo, registrationModel);
+				
+				Certificate certificate = certificateService.findBySubject(registrationModel.getSubject());
+				
+				certificate.setUserInfo(userInfo);
+				
+				certificateService.save(certificate);
+				
+				request.setAttribute("registrationModel", registrationModel);
+				response.setRenderParameter("myaction", "showAddVoForm");
+				return;
+			}else{
+				response.setRenderParameter("myaction", "askForCertificate");
+	//			response.sendRedirect(RegistrationConfig.getProperties("Registration.properties", "login.url"));
+				return;
+			}
 		
 		}catch(RegistrationException e){
 			e.printStackTrace();
 			SessionErrors.add(request, e.getMessage());
 		}
-		
+
 		request.setAttribute("userInfo", userInfo);
 		response.setRenderParameter("myaction", "showAddUserForm");
+		
 		
 	}
 	

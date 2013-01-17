@@ -307,6 +307,20 @@
 				
 				</aui:column>
 				
+				
+				
+				<aui:input name="subject" type="hidden" value="${registrationModel.subject }"></aui:input>
+				<aui:input name="issuer" type="hidden" value="${registrationModel.issuer }"></aui:input>
+				<aui:input name="expiration" type="hidden" value="${registrationModel.expiration }"></aui:input>
+				<aui:input name="haveCertificate" type="hidden" value="${registrationModel.haveCertificate }"></aui:input>
+				<aui:input name="certificateUserId" type="hidden" value="${registrationModel.certificateUserId }"></aui:input>
+				<aui:input name="certmail" type="hidden" value="${registrationModel.mail }"></aui:input>
+				<aui:input name="haveIDP" type="hidden" value="${registrationModel.haveIDP }"></aui:input>
+				<aui:input name="userStatus" type="hidden" value="${registrationModel.userStatus }"/>
+				<aui:input name="certificateStatus" type="hidden" value="${registrationModel.certificateStatus }"/>
+				<aui:input name="voStatus" type="hidden" value="${registrationModel.voStatus }"/>
+				<aui:input name="verifyUser" type="hidden" value="${registrationModel.verifyUser }"/>
+				
 
 				<aui:button-row>
 				

@@ -24,6 +24,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.portlet.bind.annotation.ActionMapping;
 import org.springframework.web.portlet.bind.annotation.RenderMapping;
 
@@ -155,7 +156,7 @@ public class AddUserToVOController {
 	}
 	
 	@ActionMapping(params = "myaction=searchVo3")
-	public void searchVo(ActionRequest request, ActionResponse response) throws PortalException,
+	public void searchVo(@RequestParam int userId, ActionRequest request, ActionResponse response) throws PortalException,
 			SystemException {
 
 		log.error("sono dentro");
@@ -165,7 +166,7 @@ public class AddUserToVOController {
 		
 		Vo vo = voService.findByName(request.getParameter("tags"));
 
-		int userId = Integer.parseInt(request.getParameter("userId"));
+		int userId2 = Integer.parseInt(request.getParameter("userId"));
 		log.error("Valore passato userId " + userId);
 
 		if (vo != null) {

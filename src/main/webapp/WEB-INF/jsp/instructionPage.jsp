@@ -99,7 +99,7 @@ $(document).ready(function() {
 		<div id="userData">
 			<br/><br/>
 			To use the Grid and Cloud resources some credentials are necessary, during the registration phase we check 
-			if you already have all the necessary credentials otherwise we can provide for them.
+			if you already have all the necessary credentials otherwise we can provide you for them.
 			<br/><br/>
 			<hr/>
 			<br/>

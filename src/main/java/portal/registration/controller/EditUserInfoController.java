@@ -78,7 +78,7 @@ public class EditUserInfoController {
 	@RenderMapping(params = "myaction=editUserInfoForm")
 	public String showEditUserInfoForm(@RequestParam int userId,
 			RenderRequest request) {
-
+		log.error(userId);
 		if (userToVoService.findById(userId).size() == 0) {
 			deactivateUser(userId, request);
 
@@ -220,6 +220,7 @@ public class EditUserInfoController {
 
 	@ModelAttribute("userInfo")
 	public UserInfo getUserInfo(@RequestParam int userId) {
+		log.error("############### UserInfo : "+ userId);
 		return userInfoService.findById(userId);
 	}
 
@@ -348,7 +349,7 @@ public class EditUserInfoController {
 	 *            : the status of the portlet
 	 */
 	@ActionMapping(params = "myaction=updateGuseNotify")
-	public void updateGuseNotify(@ModelAttribute("notification") GuseNotify guseNotify,
+	public void updateGuseNotify(@ModelAttribute("notification") GuseNotify guseNotify, @ModelAttribute("advOpts") Notify notify, @RequestParam int userId,
 			ActionRequest request, ActionResponse response,
 			SessionStatus sessionStatus) {
 		
@@ -370,6 +371,27 @@ public class EditUserInfoController {
 			guseNotifyUtil.writeNotifyXML(user, guseNotify);
 			
 			
+			
+			
+			Notify n = notifyService.findByUserInfo(userInfo);
+			if(n!=null){
+				
+				log.debug("session id= " + notify.getIdNotify() + " retrived: "
+						+ n.getIdNotify());
+				n.setProxyExpire(notify.getProxyExpire());
+				n.setProxyExpireTime(notify.getProxyExpireTime());
+				log.debug("session value= " + notify.getProxyExpire() + " retrived: "
+						+ n.getProxyExpire());
+				log.error("session value= " + notify.getProxyExpireTime() + " retrived: "
+						+ n.getProxyExpireTime());
+			}else{
+				log.debug("New entry");
+				n = new Notify(userInfo, notify.getProxyExpire(), notify.getProxyExpireTime());
+				log.debug("session value= " + notify.getProxyExpire() + " retrived: "
+						+ n.getProxyExpire());
+			}
+			notifyService.save(n);
+			
 		} catch (PortalException e) {
 			e.printStackTrace();
 		} catch (SystemException e) {
@@ -377,6 +399,8 @@ public class EditUserInfoController {
 		}	
 		response.setRenderParameter("myaction", "editUserInfoForm");
 		response.setRenderParameter("userId", request.getParameter("userId"));
+		
+		
 
 	}
 	
