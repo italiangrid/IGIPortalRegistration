@@ -136,6 +136,10 @@ public class AddUserController {
 				try {
 					log.error(RegistrationConfig.getProperties("Registration.properties", "login.url"));
 					request.setAttribute("loginUrl", RegistrationConfig.getProperties("Registration.properties", "login.url"));
+					log.error(RegistrationConfig.getProperties("Registration.properties", "CAOnline.enabled"));
+					request.setAttribute("caEnabled", RegistrationConfig.getProperties("Registration.properties", "CAOnline.enabled"));
+					log.error(RegistrationConfig.getProperties("Registration.properties", "proxy.enabled"));
+					request.setAttribute("proxyEnabled", RegistrationConfig.getProperties("Registration.properties", "proxy.enabled"));
 				} catch (RegistrationException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -307,6 +311,10 @@ public class AddUserController {
 				response.setRenderParameter("myaction", "showAddVoForm");
 				return;
 			}else{
+				
+				if(RegistrationConfig.getProperties("Registration.properties", "CAOnline.enabled").equals("false")&&RegistrationConfig.getProperties("Registration.properties", "proxy.enabled").equals("false"))
+					response.setRenderParameter("myaction", "showUploadCertificate");
+				
 				response.setRenderParameter("myaction", "askForCertificate");
 	//			response.sendRedirect(RegistrationConfig.getProperties("Registration.properties", "login.url"));
 				return;
@@ -347,7 +355,8 @@ private String addUser(UserInfo userInfo, RegistrationModel registrationModel, R
 			
 			//AddUser into DB
 			userInfo=RegistrationUtil.addUserToDB(userInfo, userInfoService, notifyService);
-			
+			if(RegistrationConfig.getProperties("Registration.properties", "CAOnline.enabled").equals("false")&&RegistrationConfig.getProperties("Registration.properties", "proxy.enabled").equals("false"))
+				return "uploadCertificate";
 			return "askForCertificate";
 		
 		}catch(RegistrationException e){

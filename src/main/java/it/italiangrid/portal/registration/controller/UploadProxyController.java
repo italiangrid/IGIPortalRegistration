@@ -131,8 +131,8 @@ public class UploadProxyController {
 		String pwd1 = request.getParameter("password");
 		String pwd2 = request.getParameter("passwordVerify");
 		
-		Certificate cert = certificateService.findBySubject(registrationModel.getSubject());
-
+		Certificate cert = certificateService.findByCertificateUsername(registrationModel.getCertificateUserId());
+		
 		if(pwd1.equals(pwd2)){
 	
 			
@@ -307,6 +307,7 @@ public class UploadProxyController {
 			
 			log.error("€€€€€€€€€€€€€€€€€€€€€€€€€€€€€"+cert.getPasswordChanged());
 			certificateService.save(cert);
+			certificateService.update(cert);
 			
 			Certificate c = certificateService.findByIdCert(cert.getIdCert());
 			

@@ -54,7 +54,7 @@
 	width: 200px;
 	height: 155px;
 	float: left;
-	margin: 0px 0px 0px 15%;
+	margin: 0px 5% 0px 5%;
 }
 
 .choose {
@@ -234,76 +234,77 @@
 							<br />
 							<br />
 							<div id="chooseContainer">
+								<c:if test="${caEnabled=='true' }">
 									<c:if test="${registrationModel.haveIDP }" >
-									<div class="type">
-									
-									<a href="" onclick="setHaveCert('false'); return false;">
-									
-										<div class="choose bordered">
-											<div class="title">
-												<strong>I don't have a certificate</strong>
-											</div>
-											<div class="iconContainer">
-												<div class="myIcon">
-													
-													<img class="displayed"
-														src="<%=request.getContextPath()%>/images/NewUser.png"
-														id="yesImg" width="64" />
-													
+										<div class="type">
+										
+										<a href="" onclick="setHaveCert('false'); return false;">
+										
+											<div class="choose bordered">
+												<div class="title">
+													<strong>I don't have a certificate</strong>
 												</div>
-											</div>
-											<div class="reset"></div>
-											<div class="mess">
-												<div class="center">I don't have Grid credentials and I'd like to have them now.</div>
-											</div>
-											<div class="reset"></div>
-											
-										</div>
-									
-									</a>
-									
-									<div class="reset"></div>
-									<div class="moreInfo">
-										<a href="https://portal.italiangrid.it:8443/info/user-profile-new-user.html"  onclick="$(this).modal({width:800, height:250, message:true}).open(); return false;">More Info</a>
-									</div>
-									</div>
-								</c:if>
-								
-								<c:if test="${!registrationModel.haveIDP }" >
-									<div class="type">
-									
-									
-									
-										<div class="choose bordered-disabled">
-											<div class="title">
-												<strong>I don't have a certificate</strong>
-											</div>
-											<div class="iconContainer">
-												<div class="myIcon">
-													
-													<img class="displayed"
-														src="<%=request.getContextPath()%>/images/NewUser.png"
-														id="yesImg" width="64" style="opacity:0.4; filter:alpha(opacity=40);"/>
-													
+												<div class="iconContainer">
+													<div class="myIcon">
+														
+														<img class="displayed"
+															src="<%=request.getContextPath()%>/images/NewUser.png"
+															id="yesImg" width="64" />
+														
+													</div>
 												</div>
+												<div class="reset"></div>
+												<div class="mess">
+													<div class="center">I don't have Grid credentials and I'd like to have them now.</div>
+												</div>
+												<div class="reset"></div>
+												
 											</div>
-											<div class="reset"></div>
-											<div class="mess">
-												<div class="center">I don't have Grid credentials and I'd like to have them now.</div>
-											</div>
-											<div class="reset"></div>
-											
+										
+										</a>
+										
+										<div class="reset"></div>
+										<div class="moreInfo">
+											<a href="https://portal.italiangrid.it:8443/info/user-profile-new-user.html"  onclick="$(this).modal({width:800, height:250, message:true}).open(); return false;">More Info</a>
 										</div>
+										</div>
+									</c:if>
 									
-									
-									
-									<div class="reset"></div>
-									<div class="moreInfo">
-										<a href="https://portal.italiangrid.it:8443/info/user-profile-new-user.html"  onclick="$(this).modal({width:800, height:250, message:true}).open(); return false;">More Info</a>
-									</div>
-									</div>
+									<c:if test="${!registrationModel.haveIDP }" >
+										<div class="type">
+										
+										
+										
+											<div class="choose bordered-disabled">
+												<div class="title">
+													<strong>I don't have a certificate</strong>
+												</div>
+												<div class="iconContainer">
+													<div class="myIcon">
+														
+														<img class="displayed"
+															src="<%=request.getContextPath()%>/images/NewUser.png"
+															id="yesImg" width="64" style="opacity:0.4; filter:alpha(opacity=40);"/>
+														
+													</div>
+												</div>
+												<div class="reset"></div>
+												<div class="mess">
+													<div class="center">I don't have Grid credentials and I'd like to have them now.</div>
+												</div>
+												<div class="reset"></div>
+												
+											</div>
+										
+										
+										
+										<div class="reset"></div>
+										<div class="moreInfo">
+											<a href="https://portal.italiangrid.it:8443/info/user-profile-new-user.html"  onclick="$(this).modal({width:800, height:250, message:true}).open(); return false;">More Info</a>
+										</div>
+										</div>
+									</c:if>
 								</c:if>
-								
 								<div class="type">
 								<a href="" onclick="setHaveCert('true'); return false;">
 									<div class="choose bordered">
@@ -329,7 +330,7 @@
 										<a href="https://portal.italiangrid.it:8443/info/user-profile-classic-user.html"  onclick="$(this).modal({width:800, height:250, message:true}).open(); return false;">More Info</a>
 									</div>
 								</div>
-								<c:if test="${false }">
+								<c:if test="${proxyEnabled=='true' }">
 									<div class="type">
 									<a href="" onclick="return false;">
 										<div class="choose bordered">
@@ -390,7 +391,7 @@
 					
 						<div class="button" style="float: left;">
 						<liferay-ui:icon-menu>
-						<liferay-ui:icon image="close" message="Abort Registration" url="#" onClick="alert('You are now registrated in the portal, please log into the portal to complete the registraion.');location.href='${loginUrl }';" />
+						<liferay-ui:icon image="close" message="Abort Registration" url="${loginUrl }" onClick="alert('You are now registrated in the portal, please log into the portal to complete the registraion.');" />
 						</liferay-ui:icon-menu>
 						</div>
 						

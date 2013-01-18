@@ -41,6 +41,28 @@ public class AskForCertificateController {
 		return null;
 	}
 	
+	@ModelAttribute("caEnabled")
+	public String getCaEnabled() {	
+		try {
+			log.error(RegistrationConfig.getProperties("Registration.properties", "CAOnline.enabled"));
+			return RegistrationConfig.getProperties("Registration.properties", "CAOnline.enabled");
+		} catch (RegistrationException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	@ModelAttribute("proxyEnabled")
+	public String getProxyEnabled() {	
+		try {
+			log.error(RegistrationConfig.getProperties("Registration.properties", "proxy.enabled"));
+			return RegistrationConfig.getProperties("Registration.properties", "proxy.enabled");
+		} catch (RegistrationException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
 	@ActionMapping(params = "myaction=askForCertificateRedirect")
 	public void doRedirect(@ModelAttribute RegistrationModel registrationModel, ActionResponse response, ActionRequest request){
 		log.error("Elaborate response for \"Do you have certificate?\" response is: " + registrationModel.isHaveCertificate());

@@ -92,7 +92,7 @@ $(document).ready(function() {
 	<aui:fieldset label="Registration">
 	
 	<br/><br/>
-	<img src="<%=request.getContextPath()%>/images/registration_step3_request.png"/>
+	<img src="<%=request.getContextPath()%>/images/registration_step2_request.png"/>
 	<br/>
 	<aui:column columnWidth="70">
 	<iframe frameborder="0" scrolling="no" allowtransparency="true" src="${caUrl }" width="100%" height="340"

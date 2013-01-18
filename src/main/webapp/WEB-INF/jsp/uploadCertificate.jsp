@@ -230,7 +230,7 @@ h5#usernameAlert {
 		<aui:fieldset label="Registration">
 		
 		<br/><br/>
-		<img src="<%=request.getContextPath()%>/images/registration_step3_upload.png"/>
+		<img src="<%=request.getContextPath()%>/images/registration_step2_upload_Livelli.png"/>
 		<br/><br/><br/>
 			<aui:fieldset>
 			<p style="font-size: 15px; padding-left: 30px;">Please upload your certificate (.p12 or pfx format) and insert the password used to encrypt it.</p>

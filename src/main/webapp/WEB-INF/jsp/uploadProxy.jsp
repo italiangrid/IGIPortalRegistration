@@ -211,7 +211,7 @@ h5#usernameAlert {
 		<aui:fieldset label="Registration">
 		
 		<br/><br/>
-		<img src="<%=request.getContextPath()%>/images/registration_step3_upload.png"/>
+		<img src="<%=request.getContextPath()%>/images/registration_step4.png"/>
 		<br/><br/><br/>
 			
 			<aui:fieldset>
