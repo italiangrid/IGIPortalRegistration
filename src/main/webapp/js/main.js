@@ -2,7 +2,7 @@ function confirmRemove() {
 	return confirm("Do you want to delete the selected user ?");
 }
 
-function onchangeVO() {
+/*function onchangeVO() {
 	var idVo = $("#<portlet:namespace/>VOids").val();
 	if (idVo==""){
 		$("#<portlet:namespace/>VOrole option").hide();
@@ -51,7 +51,7 @@ $(document).ready(function(){
 	lista = new Array();
 	stampa = new Array();
 
-});
+});*/
 
 (function ($) {
 

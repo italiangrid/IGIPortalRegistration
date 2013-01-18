@@ -124,6 +124,20 @@ public class MyValidator {
 
 		return result;
 	}
+	
+	public static boolean validateCert(String pwd, List<String> errors) throws SystemException {
+		boolean result = true;
+
+		
+
+		if (Validator.isNull(pwd)) {
+			errors.add("key-pass-required");
+			result = false;
+			log.info("Inserire Password");
+		}
+
+		return result;
+	}
 
 	public static boolean validateUpdate(UserInfo target, UserInfo check,
 			List<String> errors) throws SystemException {

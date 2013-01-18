@@ -26,6 +26,8 @@ import org.springframework.web.portlet.bind.annotation.ActionMapping;
 import com.liferay.portal.kernel.servlet.SessionErrors;
 import com.liferay.portal.kernel.servlet.SessionMessages;
 import com.liferay.portal.kernel.util.JavaConstants;
+
+import portal.registration.utils.SendMail;
 import portal.registration.utils.VOMSAdminCallOut;
 
 @Controller(value = "addVOActionController")
@@ -62,6 +64,20 @@ public class AddVOActionController {
 				UserInfo userInfo = userInfoService.findByMail(registrationModel.getEmail());
 				userToVoService.save(userInfo.getUserId(), vo.getIdVo(),registrationModel.getSubject());
 				userToVoService.setDefault(userInfo.getUserId(), vo.getIdVo());
+				if(vo.getConfigured().equals("false")){
+					
+					SessionMessages.add(request, "vo-not-configurated");
+					
+					try {
+						SendMail sm = new SendMail(userInfo.getMail(), RegistrationConfig.getProperties("Registration.properties", "igiportal.mail"), "Please configure "+ vo.getVo(), RegistrationConfig.getProperties("Registration.properties", "request.configre.vo").replaceAll("##VO##", vo.getVo()).replaceAll("##NL##", "\n").replaceAll("##USER##", userInfo.getFirstName()+" "+userInfo.getLastName()).replaceAll("##HOST##", RegistrationConfig.getProperties("Registration.properties", "home.url")));
+						sm.send();
+						log.error(sm);
+					} catch (RegistrationException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					
+				}
 			}else{
 				PortletConfig portletConfig = (PortletConfig)request.getAttribute(JavaConstants.JAVAX_PORTLET_CONFIG);
 				SessionMessages.add(request, portletConfig.getPortletName() + SessionMessages.KEY_SUFFIX_HIDE_DEFAULT_ERROR_MESSAGE);
@@ -166,26 +182,27 @@ public class AddVOActionController {
 		
 //		RegistrationUtil.associateVoToUser(userInfo, registrationModel, userToVoService);
 		
-		if(!registrationModel.getVos().isEmpty())
-			RegistrationUtil.activateUser(userInfo, userInfoService);
+//		if(!registrationModel.getVos().isEmpty())
+//			RegistrationUtil.activateUser(userInfo, userInfoService);
 		
-		try {
-			URL url;
-			if(registrationModel.isVerifyUser()){
-				log.error(RegistrationConfig.getProperties("Registration.properties", "home.url"));
-				url = new URL(RegistrationConfig.getProperties("Registration.properties", "home.url"));
-			}else{
-				log.error(RegistrationConfig.getProperties("Registration.properties", "login.url"));
-				url = new URL(RegistrationConfig.getProperties("Registration.properties", "login.url"));
-			}
-			log.error(url);
-			response.sendRedirect(url.toString());
-		} catch (IOException e) {
-			e.printStackTrace();
-		} catch (RegistrationException e) {
-			e.printStackTrace();
-		}
+//		try {
+//			URL url;
+//			if(registrationModel.isVerifyUser()){
+//				log.error(RegistrationConfig.getProperties("Registration.properties", "home.url"));
+//				url = new URL(RegistrationConfig.getProperties("Registration.properties", "home.url"));
+//			}else{
+//				log.error(RegistrationConfig.getProperties("Registration.properties", "login.url"));
+//				url = new URL(RegistrationConfig.getProperties("Registration.properties", "login.url"));
+//			}
+//			log.error(url);
+//			response.sendRedirect(url.toString());
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		} catch (RegistrationException e) {
+//			e.printStackTrace();
+//		}
 		
+		response.setRenderParameter("myaction", "showUploadProxy");
 		request.setAttribute("registrationModel", registrationModel);
 	}
 	

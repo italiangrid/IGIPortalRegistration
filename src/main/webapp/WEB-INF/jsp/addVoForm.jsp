@@ -1,6 +1,7 @@
 <%@ include file="/WEB-INF/jsp/init.jsp"%>
 
 
+
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/base/jquery-ui.css" />
 
 <script type="text/javascript">
@@ -11,11 +12,11 @@
 	function showSearchForm(){
 		$(".function").show("slow");
 	}
-	
+
 	function hideSearchForm(){
 		$(".function").hide("slow");
 	}
-	
+
 	var list = new Array();
 	var list2 = new Array();
 
@@ -42,7 +43,7 @@
 			$("#addButton").show("slow");
 		}
 	}
-	
+
 	function viewOrHideDeleteButton2(uuid) {
 		var i = 0;
 		var newlist = new Array();
@@ -68,17 +69,17 @@
 			$("#roleButton").show();
 		}
 	}
-	
+
 	$(function() {
 	    var availableTags = [${voList}];
 	    $( "#tags" ).autocomplete({
-	    	
+
 	      source: availableTags
 	    });
 	  });
-	
+
 	function submit(){
-		
+
 		$("#<portlet:namespace/>addVOForm").submit();
 	}
 
@@ -95,7 +96,7 @@
 }
 
 .portlet-msg-info{
-    display: none;
+    display: none;
 }
 
 div.function {
@@ -104,6 +105,7 @@ div.function {
 	border-color: #C8C9CA;
 	border-style: solid;
 	background-color: #D1D6DC;
+	margin-top: 30px;
 }
 
 #action{
@@ -119,7 +121,7 @@ div.function {
 		margin-left: 10px;
 		float: left;
 	}
-	
+
 #submit{
 	float: right;
 	margin-right: 20px;
@@ -166,6 +168,10 @@ div.function {
 	margin-top: -1px;
 }
 
+.results-row td.disabledVo{
+	opacity: .4; 
+	filter: alpha(opacity=40);
+}
 
 </style>
 
@@ -187,7 +193,7 @@ div.function {
 <jsp:useBean id="selectedVos"
 	type="java.util.List<it.italiangrid.portal.dbapi.domain.Vo>"
 	scope="request"></jsp:useBean>	
-	
+
 
 
 <liferay-ui:success key="upload-cert-successufully"
@@ -200,8 +206,8 @@ div.function {
 	message="userToVo-updated-successufully" />
 <liferay-ui:success key="userToVo-default-successufully"
 	message="userToVo-default-successufully" />
-<liferay-ui:success key="user-deactivate" message="user-deactivate" />
-<liferay-ui:success key="user-activate" message="user-activate" />
+<liferay-ui:success key="vo-not-configurated"
+		message="vo-not-configurated" />
 
 <liferay-ui:error key="user-vo-list-empty" message="user-vo-list-empty" />
 <liferay-ui:error key="no-user-found-in-VO"
@@ -215,27 +221,31 @@ div.function {
 	message="edg-mkgridmap-exception" />
 <liferay-ui:error key="exception-deactivation-user"
 	message="exception-deactivation-user" />
-	
+
 	<aui:layout>
 
-	
+
 	<aui:fieldset label="Registration">
 	<br/><br/>
 	<img src="<%=request.getContextPath()%>/images/registration_step4-bordo.png"/>
 	<br/><br/>
 	
+	
+	<p style="font-size: 15px; padding-top:10px;">Digit the name of your VOs and click "<strong>Add</strong>" button.</p>
+	<p style="font-size: 15px;">Than you can also set your VO Group and Role clicking on "<strong>Actions</strong>" button.</p>
+
 	<div class="function">
 		<aui:fieldset>
 		<aui:column columnWidth="50">
 		<div id="searchForm" >
-	
+
 		<portlet:actionURL var="searchVOActionUrl">
 			<portlet:param name="myaction" value="searchVo2" />
 		</portlet:actionURL>
-		
+
 		<aui:form name="searchVo"
 			action="${searchVOActionUrl}"  commandName="registrationModel">
-			
+
 			<aui:input name="subject" type="hidden" value="${registrationModel.subject }"></aui:input>
 			<aui:input name="issuer" type="hidden" value="${registrationModel.issuer }"></aui:input>
 			<aui:input name="expiration" type="hidden" value="${registrationModel.expiration }"></aui:input>
@@ -255,33 +265,33 @@ div.function {
 			<aui:input name="searchVo" id="searchVo" type="hidden" value=""/>
 			<aui:layout>
 				<aui:button-row>
-				
+
 				<div class="ui-widget" style="float:left;">
 				  Enter your VO's name <input id="tags" name="tags" type="text" />
 				</div>
-				
-				
+
+
 				<aui:button type="submit" value="Add" inlineField="true"/>
-				
+
 				</aui:button-row>
 			</aui:layout>
 		</aui:form>
-		
+
 		</div>
 		</aui:column>
 		</aui:fieldset>
-	
+
 </div>
 
 
 </aui:fieldset>
-	
+
 		<br/>
 
 
 		<aui:fieldset>
 
-			
+
 
 				<aui:fieldset>
 
@@ -291,8 +301,8 @@ div.function {
 					<portlet:actionURL var="editRoleActionUrl">
 						<portlet:param name="myaction" value="editRole" />
 					</portlet:actionURL>
-					
-					
+
+
 					<liferay-ui:search-container delta="5">
 						<liferay-ui:search-container-results>
 							<%
@@ -312,32 +322,58 @@ div.function {
 						<liferay-ui:search-container-row
 							className="it.italiangrid.portal.dbapi.domain.Vo"
 							keyProperty="idVo" modelVar="Vo">
+
 							
-							<liferay-ui:search-container-column-text name="VO name"
-								property="vo" />
-							<liferay-ui:search-container-column-text name="Default VO">
-							<c:if test="${defaultVo==Vo.vo}">
+							<c:if test="${Vo.configured=='false' }">	
+								<liferay-ui:search-container-column-text name="VO name" 
+									property="vo"  cssClass="disabledVo"/>
+								<liferay-ui:search-container-column-text name="Default VO" cssClass="disabledVo">
+								<c:if test="${defaultVo==Vo.vo}">
+									
+									<img src="<%=request.getContextPath()%>/images/NewCheck.png" width="16" height="16"/>	
+									
+								</c:if>
+								</liferay-ui:search-container-column-text>
 								
-								<img src="<%=request.getContextPath()%>/images/NewCheck.png" width="16" height="16"/>	
+								<liferay-ui:search-container-column-text name="Roles" cssClass="disabledVo"> 
+									
+									<c:out value="${fn:replace(userFqans[Vo.idVo],';',' ')}"></c:out>
+									
+								</liferay-ui:search-container-column-text>
 								
+								<liferay-ui:search-container-column-jsp cssClass="disabledVo"
+									path="/WEB-INF/jsp/addvo-action.jsp" align="right" />
 							</c:if>
-							</liferay-ui:search-container-column-text>
-							
-							<liferay-ui:search-container-column-text name="Roles"> 
-								<c:out value="${fn:replace(userFqans[Vo.idVo],';',' ')}"></c:out>
-							</liferay-ui:search-container-column-text>
-							<liferay-ui:search-container-column-jsp
-								path="/WEB-INF/jsp/addvo-action.jsp" align="right" />
-							
+							<c:if test="${Vo.configured=='true' }">	
+								<liferay-ui:search-container-column-text name="VO name" 
+									property="vo" />
+								<liferay-ui:search-container-column-text name="Default VO">
+								<c:if test="${defaultVo==Vo.vo}">
+									
+									<img src="<%=request.getContextPath()%>/images/NewCheck.png" width="16" height="16"/>	
+									
+								</c:if>
+								</liferay-ui:search-container-column-text>
+								
+								<liferay-ui:search-container-column-text name="Roles"> 
+									
+									<c:out value="${fn:replace(userFqans[Vo.idVo],';',' ')}"></c:out>
+									
+								</liferay-ui:search-container-column-text>
+								
+								<liferay-ui:search-container-column-jsp 
+									path="/WEB-INF/jsp/addvo-action.jsp" align="right" />
+							</c:if>
+
 						</liferay-ui:search-container-row>
 						<liferay-ui:search-iterator />
 					</liferay-ui:search-container>
-					
-					
+
+
 				</aui:fieldset>
 				<br />
 				<br />
-			
+
 
 		<aui:form name="addVOForm" id="addVOForm" action="${addUserActionUrl}" commandName="registrationModel">
 			<aui:input name="subject" type="hidden" value="${registrationModel.subject }"></aui:input>
@@ -346,6 +382,7 @@ div.function {
 			<aui:input name="haveCertificate" type="hidden" value="${registrationModel.haveCertificate }"></aui:input>
 			<aui:input name="certificateUserId" type="hidden" value="${registrationModel.certificateUserId }"></aui:input>
 			<aui:input name="vos" type="hidden" value="${registrationModel.vos }"></aui:input>
+			<aui:input name="searchVo" type="hidden" value="${registrationModel.searchVo }"></aui:input>
 			<aui:input name="mail" type="hidden" value="${registrationModel.mail }"></aui:input>
 			<aui:input name="haveIDP" type="hidden" value="${registrationModel.haveIDP }"></aui:input>
 			<aui:input name="firstName" type="hidden" value="${registrationModel.firstName }"/>
@@ -356,25 +393,32 @@ div.function {
 			<aui:input name="certificateStatus" type="hidden" value="${registrationModel.certificateStatus }"/>
 			<aui:input name="voStatus" type="hidden" value="${registrationModel.voStatus }"/>
 			<aui:input name="verifyUser" type="hidden" value="${registrationModel.verifyUser }"/>
-			<aui:input name="searchVo" id="searchVo" type="hidden" value="${registrationModel.searchVo }"/>
-			
-			<aui:button-row id="submit">
-				<div class="button" style="float: right;">
+
+			<aui:button-row>
+				
+				<div class="button" style="float: left;">
 				<liferay-ui:icon-menu>
-				<liferay-ui:icon image="forward" message="Registration Completed" url="#" onClick="submit();" />
+				<liferay-ui:icon image="close" message="Abort Registration" url="#"
+					onClick="alert('You are now registrated in the portal, please log into the portal to complete the registraion.');location.href='${loginUrl }';" />
 				</liferay-ui:icon-menu>
 				</div>
 			
+				<div class="button" style="float: right;">
+				<liferay-ui:icon-menu>
+				<liferay-ui:icon image="forward" message="Continue" url="#" onClick="submit();" />
+				</liferay-ui:icon-menu>
+				</div>
+
 				<aui:button type="submit" value="Registration Completed" style="display:none;"/>
 			</aui:button-row>
-		
+
 		</aui:form>
-		
+
 		</aui:fieldset>
 	</aui:layout>
 
 
-	
+
 
 
 </div>

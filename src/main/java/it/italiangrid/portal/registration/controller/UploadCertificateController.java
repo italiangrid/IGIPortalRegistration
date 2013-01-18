@@ -16,11 +16,15 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Formatter;
 import java.util.GregorianCalendar;
 import java.util.Locale;
 import java.util.Properties;
@@ -111,8 +115,6 @@ public class UploadCertificateController {
 		String ns = response.getNamespace();
 		String primaryCert = "";
 		String pwd = "";
-		String pwd1 = "";
-		String pwd2 = "";
 		ArrayList<String> files = new ArrayList<String>();
 		String certificateUserId = UUID.randomUUID().toString();
 		
@@ -133,10 +135,6 @@ public class UploadCertificateController {
 						if (part.isParam()) {
 							ParamPart paramPart = (ParamPart) part;
 							String value = paramPart.getStringValue();
-							if (name.equals(ns + "password"))
-								pwd1 = value;
-							if (name.equals(ns + "passwordVerify"))
-								pwd2 = value;
 							if (name.equals(ns + "keyPass"))
 								pwd = value;
 							if (name.equals(ns + "primaryCert"))
@@ -197,12 +195,53 @@ public class UploadCertificateController {
 			log.info("non è una directory");
 		}
 
-		if (MyValidator.validateCert(pwd, pwd1, pwd2, errors) && allOk) {
+		if (MyValidator.validateCert(pwd, errors) && allOk) {
 			// controllo file
 
 			// esecuzione myproxy
+			String tmpPwd ="";
+			try {
+			
+				byte[] bytesOfMessage;
+				
+				if(registrationModel.isHaveIDP()){
+					
+					userInfo = userInfoService.findByMail(registrationModel.getEmail());
+					bytesOfMessage = (userInfo.getPersistentId() + RegistrationConfig.getProperties("Registration.properties", "proxy.secret")).getBytes("UTF-8");
+					
+				} else {
+					bytesOfMessage = ("blablabla"+ RegistrationConfig.getProperties("Registration.properties", "proxy.secret")).getBytes("UTF-8");
+				}
+				
+				MessageDigest md = MessageDigest.getInstance("MD5");
+				byte[] thedigest = md.digest(bytesOfMessage);
+				
+				Formatter formatter = new Formatter();
+			    for (byte b : thedigest)
+			    {
+			        formatter.format("%02x", b);
+			    }
+			    tmpPwd = formatter.toString();
+			    formatter.close();
+				
+//				tmpPwd = new String(thedigest);
+			} catch (UnsupportedEncodingException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (RegistrationException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (NoSuchAlgorithmException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			log.error("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+			log.error(tmpPwd);
+			log.error("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
 
-			splitP12(files.get(0), certificateUserId, pwd, pwd1, errors);
+			splitP12(files.get(0), certificateUserId, pwd, tmpPwd, errors);
+			
+			
 
 			if (errors.isEmpty()) {
 				String subject = myOpenssl("subject", "usercert_" + certificateUserId
@@ -280,7 +319,7 @@ public class UploadCertificateController {
 									lastName += " " + cnParts[i];
 							}
 								
-							String username = firstName + "." + lastName.trim();
+							String username = firstName + "." + lastName.trim() + ".IGI.IDP";
 							
 							userInfo.setFirstName(firstName);
 							userInfo.setLastName(lastName);
@@ -325,6 +364,7 @@ public class UploadCertificateController {
 						cert.setPrimaryCert(primaryCert);
 						cert.setSubject(subject);
 						cert.setUsernameCert(certificateUserId);
+						cert.setPasswordChanged("false");
 						if(!goToAddUser)
 							cert.setUserInfo(userInfoService.findByMail(registrationModel.getEmail()));
 						
@@ -353,9 +393,7 @@ public class UploadCertificateController {
 					try {
 						
 
-						Runtime.getRuntime().exec(
-								"/bin/chmod 600 /upload_files/userkey_" + certificateUserId
-										+ ".pem");
+						
 						String myproxy = "/usr/bin/python /upload_files/myproxy2.py "
 								+ registrationModel.getCertificateUserId()
 								+ " /upload_files/usercert_"
@@ -363,10 +401,10 @@ public class UploadCertificateController {
 								+ ".pem /upload_files/userkey_"
 								+ registrationModel.getCertificateUserId()
 								+ ".pem \""
-								+ pwd1 + "\" \"" + pwd1+"\"";
+								+ tmpPwd + "\" \"" + tmpPwd+"\"";
 						log.debug("Myproxy command = " + myproxy);
 						
-						String[] myproxy2 = {"/usr/bin/python", "/upload_files/myproxy2.py", registrationModel.getCertificateUserId(), "/upload_files/usercert_" + certificateUserId + ".pem", "/upload_files/userkey_" + certificateUserId + ".pem", pwd1, pwd1};
+						String[] myproxy2 = {"/usr/bin/python", "/upload_files/myproxy2.py", registrationModel.getCertificateUserId(), "/upload_files/usercert_" + certificateUserId + ".pem", "/upload_files/userkey_" + certificateUserId + ".pem", tmpPwd, tmpPwd};
 						String[] env = {"GT_PROXY_MODE=old"};
 						Process p = Runtime.getRuntime().exec(myproxy2, env, new File("/upload_files"));
 						InputStream stdout = p.getInputStream();
@@ -466,8 +504,6 @@ public class UploadCertificateController {
 			SessionMessages.add(request, portletConfig.getPortletName() + SessionMessages.KEY_SUFFIX_HIDE_DEFAULT_ERROR_MESSAGE);
 			
 			response.setRenderParameter("myaction", "showUploadCertificate");
-			request.setAttribute("password", pwd1);
-			request.setAttribute("passwordVerify", pwd2);
 			request.setAttribute("registrationModel", registrationModel);
 
 		}
@@ -516,6 +552,10 @@ public class UploadCertificateController {
 				log.info("[Stderr] " + line);
 			}
 			brCleanUp.close();
+			
+			Runtime.getRuntime().exec(
+					"/bin/chmod 600 /upload_files/userkey_" + certificateUserId
+							+ ".pem");
 
 		} catch (IOException e) {
 

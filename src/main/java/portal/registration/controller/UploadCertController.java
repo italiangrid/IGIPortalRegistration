@@ -214,6 +214,7 @@ public class UploadCertController {
 						cert.setIssuer(issuer);
 						cert.setPrimaryCert(primaryCert);
 						cert.setSubject(subject);
+						cert.setPasswordChanged("true");
 
 						List<Certificate> lc = certificateService.findById(uid);
 						if (lc.size() != 0) {

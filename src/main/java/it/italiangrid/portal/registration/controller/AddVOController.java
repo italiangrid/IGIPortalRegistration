@@ -6,7 +6,10 @@ import it.italiangrid.portal.dbapi.domain.Vo;
 import it.italiangrid.portal.dbapi.services.UserInfoService;
 import it.italiangrid.portal.dbapi.services.UserToVoService;
 import it.italiangrid.portal.dbapi.services.VoService;
+import it.italiangrid.portal.registration.exception.RegistrationException;
 import it.italiangrid.portal.registration.model.RegistrationModel;
+import it.italiangrid.portal.registration.util.RegistrationConfig;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -129,6 +132,18 @@ public class AddVOController {
 		}
 
 		return x;
+	}
+	
+
+	@ModelAttribute("loginUrl")
+	public String getLoginUrl() {	
+		try {
+			log.error(RegistrationConfig.getProperties("Registration.properties", "login.url"));
+			return RegistrationConfig.getProperties("Registration.properties", "login.url");
+		} catch (RegistrationException e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 
 }

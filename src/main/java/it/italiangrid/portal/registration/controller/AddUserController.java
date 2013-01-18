@@ -94,7 +94,7 @@ public class AddUserController {
 		        	break;
 		        case 4:
 	//	        	uid
-		        	userInfo.setUsername(request.getParameter(name).replaceAll("%20", " "));
+		        	//userInfo.setUsername(request.getParameter(name).replaceAll("%20", " "));
 		        	break;
 		        case 5:
 	//	        	mail
@@ -102,7 +102,7 @@ public class AddUserController {
 		        	registrationModel.setEmail(userInfo.getMail());
 		        	break;
 		        case 6:
-		        	userInfo.setUsername(request.getParameter(name).replaceAll("%20", " "));
+		        	userInfo.setPersistentId(request.getParameter(name).replaceAll("%20", " "));
 	//	        	persistent-id
 		        	break;
 		        case 7:
@@ -113,6 +113,8 @@ public class AddUserController {
 		        
 	
 		     }
+			
+			
 			
 			String institute = l + (((!l.isEmpty())&&(!o.isEmpty()))? " - " : "") + o;
 			userInfo.setInstitute(institute);
@@ -249,6 +251,11 @@ public class AddUserController {
 		if (!userInfo.getMail().isEmpty())
 			registrationModel.setEmail(userInfo.getMail());
 		
+		if(userInfo.getUsername().isEmpty()){
+			String username = userInfo.getFirstName() + (!userInfo.getLastName().isEmpty()&&!userInfo.getFirstName().isEmpty()?".":"") + userInfo.getLastName();
+			userInfo.setUsername(username.toLowerCase());
+		}
+		
 		
 		log.error("##########################");
 		log.error(registrationModel);
@@ -319,6 +326,11 @@ public class AddUserController {
 private String addUser(UserInfo userInfo, RegistrationModel registrationModel, RenderRequest request, RenderResponse response){
 		
 		List<String> errors = new ArrayList<String>();
+		
+		if(userInfo.getUsername()==null){
+			String username = userInfo.getFirstName() + (!userInfo.getLastName().isEmpty()&&!userInfo.getFirstName().isEmpty()?".":"") + userInfo.getLastName();
+			userInfo.setUsername(username.toLowerCase());
+		}
 		
 		//Validate user
 		if(!MyValidator.validate(userInfo, errors)){

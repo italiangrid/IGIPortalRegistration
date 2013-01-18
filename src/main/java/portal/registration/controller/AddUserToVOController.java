@@ -18,13 +18,15 @@ import it.italiangrid.portal.dbapi.services.CertificateService;
 import it.italiangrid.portal.dbapi.services.UserInfoService;
 import it.italiangrid.portal.dbapi.services.UserToVoService;
 import it.italiangrid.portal.dbapi.services.VoService;
+import it.italiangrid.portal.registration.exception.RegistrationException;
+import it.italiangrid.portal.registration.util.RegistrationConfig;
+import portal.registration.utils.SendMail;
 import portal.registration.utils.VOMSAdminCallOut;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.portlet.bind.annotation.ActionMapping;
 import org.springframework.web.portlet.bind.annotation.RenderMapping;
 
@@ -103,6 +105,23 @@ public class AddUserToVOController {
 						;
 					userToVoService.setDefault(userId, idVo);
 					log.info("Salvato sul DB ");
+					Vo vo = voService.findById(idVo);
+					if(vo.getConfigured().equals("false")){
+						
+						UserInfo userInfo = userInfoService.findById(userId);
+						SessionMessages.add(request, "vo-not-configurated");
+						
+						try {
+							SendMail sm = new SendMail(userInfo.getMail(), RegistrationConfig.getProperties("Registration.properties", "igiportal.mail"), "Please configure "+ vo.getVo(), RegistrationConfig.getProperties("Registration.properties", "request.configre.vo").replaceAll("##VO##", vo.getVo()).replaceAll("##NL##", "\n").replaceAll("##USER##", userInfo.getFirstName()+" "+userInfo.getLastName()).replaceAll("##HOST##", RegistrationConfig.getProperties("Registration.properties", "home.url")));
+							sm.send();
+							log.error(sm.toString());
+						} catch (RegistrationException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+						
+					}
+					
 				} else {
 					allOk = false;
 				}
@@ -156,7 +175,7 @@ public class AddUserToVOController {
 	}
 	
 	@ActionMapping(params = "myaction=searchVo3")
-	public void searchVo(@RequestParam int userId, ActionRequest request, ActionResponse response) throws PortalException,
+	public void searchVo(ActionRequest request, ActionResponse response) throws PortalException,
 			SystemException {
 
 		log.error("sono dentro");
@@ -166,7 +185,7 @@ public class AddUserToVOController {
 		
 		Vo vo = voService.findByName(request.getParameter("tags"));
 
-		int userId2 = Integer.parseInt(request.getParameter("userId"));
+		int userId = Integer.parseInt(request.getParameter("userId"));
 		log.error("Valore passato userId " + userId);
 
 		if (vo != null) {
@@ -186,6 +205,22 @@ public class AddUserToVOController {
 						;
 					userToVoService.setDefault(userId, idVo);
 					log.error("Salvato sul DB ");
+					
+					if(vo.getConfigured().equals("false")){
+						
+						UserInfo userInfo = userInfoService.findById(userId);
+						SessionMessages.add(request, "vo-not-configurated");
+						
+						try {
+							SendMail sm = new SendMail(userInfo.getMail(), RegistrationConfig.getProperties("Registration.properties", "igiportal.mail"), "Please configure "+ vo.getVo(), RegistrationConfig.getProperties("Registration.properties", "request.configre.vo").replaceAll("##VO##", vo.getVo()).replaceAll("##NL##", "\n").replaceAll("##USER##", userInfo.getFirstName()+" "+userInfo.getLastName()).replaceAll("##HOST##", RegistrationConfig.getProperties("Registration.properties", "home.url")));
+							sm.send();
+							log.error(sm.toString());
+						} catch (RegistrationException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+						
+					}
 				} else {
 					allOk = false;
 				}

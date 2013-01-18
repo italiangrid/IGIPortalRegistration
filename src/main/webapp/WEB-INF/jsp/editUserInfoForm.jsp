@@ -296,6 +296,39 @@
 			}
 		};
 	})(jQuery);
+	
+	function printCheck(element){
+		$('#'+element+'_img').remove();
+		if(!$('#'+element).val()){
+			$('#'+element).after("<img id='"+element+"_img' src='<%=request.getContextPath()%>/images/close-button2.png' width='16' height='16'  style='padding-left:5px;'/>");
+		}else{
+			$('#'+element).after("<img id='"+element+"_img' src='<%=request.getContextPath()%>/images/success.png' style='padding-left:5px;'/>");
+		}
+	}
+	
+	function verifyPassword() {
+		var pwd1 = $("#<portlet:namespace/>password").val();
+		var pwd2 = $("#<portlet:namespace/>passwordVerify").val();
+		var output = "";
+		var check = false;
+		if (pwd1 == pwd2) {
+			$("#<portlet:namespace/>password").css("background", "#ACDFA7");
+			$("#<portlet:namespace/>passwordVerify").css("background",
+					"#ACDFA7");
+			check=true;
+			printCheck("<portlet:namespace/>passwordVerify");
+			
+		} else {
+			$("#<portlet:namespace/>password").css("background", "#FDD");
+			$("#<portlet:namespace/>passwordVerify").css("background",
+					"#FF9999");
+			output = "KO";
+			check=false;
+		}
+		
+		return check;
+	}
+	
 </script>
 
 
@@ -389,6 +422,16 @@ div#voData {
 }
 
 div#advancedSettings {
+	box-shadow: 10px 10px 5px #888;
+	margin: 10px 9px 10px 0;
+	padding: 1em;
+	border: 1px;
+	border-color: #C8C9CA;
+	border-style: solid;
+	background-color: #EFEFEF;
+}
+
+div.changePassword {
 	box-shadow: 10px 10px 5px #888;
 	margin: 10px 9px 10px 0;
 	padding: 1em;
@@ -493,6 +536,11 @@ div.function {
     display: none;
 }
 
+.results-row td.disabledVo{
+	opacity: .4; 
+	filter: alpha(opacity=40);
+}
+
 </style>
 
 
@@ -528,6 +576,19 @@ div.function {
 <jsp:useBean id="userToVoList"
 	type="java.util.List<it.italiangrid.portal.dbapi.domain.Vo>" scope="request"></jsp:useBean>
 	
+	<liferay-ui:success key="user-deactivate" message="user-deactivate" />
+	<liferay-ui:success key="user-activate" message="user-activate" />
+	
+	
+<c:set var="changePasswordNow" value="true"/>	
+	
+<c:forEach var="c" items="${certList }">
+	<c:if test="${c.passwordChanged=='false' }">
+		<c:set var="changePasswordNow" value="false"/>
+	</c:if>
+</c:forEach>
+
+<c:if test="${changePasswordNow=='true' }">
 <div id="personalData">
 	<h3 class="header-title">Personal data</h3>
 
@@ -557,6 +618,10 @@ div.function {
 		message="user-username-must-same" />
 	<liferay-ui:error key="problem-update-user-liferay"
 		message="problem-update-user-liferay" />
+		
+		
+	
+		
 	
 	<div id="<portlet:namespace/>formOn">
 		<!-- <a href="#editUserInfoForm" onclick="mostraModificaUtente();">Modify data</a><br /> <br />  -->
@@ -921,8 +986,10 @@ div.function {
 		message="userToVo-default-successufully" />
 	<liferay-ui:success key="userToVo-deleted-successufully"
 		message="userToVo-deleted-successufully" />
-	<liferay-ui:success key="user-deactivate" message="user-deactivate" />
-	<liferay-ui:success key="user-activate" message="user-activate" />
+	<liferay-ui:success key="vo-not-configurated"
+		message="vo-not-configurated" />
+	
+	
 
 	<liferay-ui:error key="user-vo-list-empty" message="no-VO-found" />
 	<liferay-ui:error key="no-user-found-in-VO"
@@ -1056,8 +1123,28 @@ div.function {
 			<liferay-ui:search-container-row
 				className="it.italiangrid.portal.dbapi.domain.Vo" keyProperty="idVo"
 				modelVar="Vo">
-				
-						<liferay-ui:search-container-column-text name="VO name"
+					<c:if test="${Vo.configured=='false' }">	
+						<liferay-ui:search-container-column-text name="VO name" 
+							property="vo"  cssClass="disabledVo"/>
+						<liferay-ui:search-container-column-text name="Default VO" cssClass="disabledVo">
+						<c:if test="${defaultVo==Vo.vo}">
+							
+							<img src="<%=request.getContextPath()%>/images/NewCheck.png" width="16" height="16"/>	
+							
+						</c:if>
+						</liferay-ui:search-container-column-text>
+						
+						<liferay-ui:search-container-column-text name="Roles" cssClass="disabledVo"> 
+							
+							<c:out value="${fn:replace(userFqans[Vo.idVo],';',' ')}"></c:out>
+							
+						</liferay-ui:search-container-column-text>
+						
+						<liferay-ui:search-container-column-jsp cssClass="disabledVo"
+							path="/WEB-INF/jsp/admin-vo-action.jsp" align="right" />
+					</c:if>
+					<c:if test="${Vo.configured=='true' }">	
+						<liferay-ui:search-container-column-text name="VO name" 
 							property="vo" />
 						<liferay-ui:search-container-column-text name="Default VO">
 						<c:if test="${defaultVo==Vo.vo}">
@@ -1068,13 +1155,14 @@ div.function {
 						</liferay-ui:search-container-column-text>
 						
 						<liferay-ui:search-container-column-text name="Roles"> 
+							
 							<c:out value="${fn:replace(userFqans[Vo.idVo],';',' ')}"></c:out>
+							
 						</liferay-ui:search-container-column-text>
 						
-						
-						<liferay-ui:search-container-column-jsp
+						<liferay-ui:search-container-column-jsp 
 							path="/WEB-INF/jsp/admin-vo-action.jsp" align="right" />
-						
+					</c:if>
 					
 			</liferay-ui:search-container-row>
 			<liferay-ui:search-iterator />
@@ -1289,6 +1377,86 @@ div.function {
 <div id="settingsButtonAdv" style="display:none;">Edit your Advanced Settings.</div>
 <div id="settingsButtonCert" style="display:none;">Edit your certficate.</div>
 <div id="settingsButtonVO" style="display:none;">Edit your VO.</div>
+</c:if>
+
+
+
+<c:if test="${changePasswordNow=='false' }">
+<liferay-ui:error key="myproxy-exception" message="myproxy-exception" />
+
+
+<liferay-ui:error key="no-valid-cert" message="no-valid-cert" />
+<liferay-ui:error key="no-valid-key"
+	message="no-valid-key" />
+<liferay-ui:error key="key-password-failure"
+	message="key-password-failure" />
+<liferay-ui:error key="password-not-changed"
+	message="password-not-changed" />
+<liferay-ui:error key="error-password-mismatch"
+	message="error-password-mismatch" />
+<liferay-ui:error key="myproxy-exception"
+	message="myproxy-exception" />
+<liferay-ui:error key="error-password-too-short"
+	message="error-password-too-short" />
+
+
+<c:forEach var="crt" items="${certList }">
+	
+	
+	<div class="changePassword">
+	<aui:fieldset>
+	<div class="portlet-msg-alert">Please choose a password to encrypt your credentials.<br/>
+			You have to insert this password every time you need to retrieve your credentials, don't forget it because we don't conserve it !!</div>
+	
+	
+	<portlet:actionURL var="changePwdURL">
+		<portlet:param name="myaction" value="changePwd"/>
+		<portlet:param name="userId" value="<%= request.getParameter("userId") %>"/>
+		<portlet:param name="idCert" value="${crt.idCert }"/>
+	</portlet:actionURL>
+	<aui:column columnWidth="40" style="margin-left:30px;">
+	<aui:form name="changePwd_${crt.idCert }" action="${changePwdURL}">
+		<div class="portlet-msg-error proxyPwd" style="display:none;">
+			These password must be the same.
+		</div>
+		<aui:input id="password" name="pwd" type="password" label="Insert Password" onBlur="printCheck($(this).attr('id'));"/>
+		<div class="portlet-msg-error proxyPwd" style="display:none;">
+			These password must be the same.
+		</div>
+		<aui:input  id="passwordVerify" name="confirmpwd" type="password" label="Confirm Password" onkeyup="verifyPassword();"/>
+		<aui:button-row>
+		<aui:button type="submit" value="Save"/>
+		</aui:button-row>
+	</aui:form>
+	</aui:column>
+	<aui:column columnWidth="40" style="margin-left:30px;">
+
+				<aui:fieldset>
+					
+					<br/><br/>
+					
+					<div id="help">
+					<a href="https://portal.italiangrid.it:8443/info/certificate-upload-technical-info.html"  onclick="$(this).modal({width:800, height:600, message:true}).open(); return false;"><img class="displayed"
+													src="<%=request.getContextPath()%>/images/Information2.png"
+													id="noImg" width="48" />Technical Information</a>
+					 							
+			
+													
+					</div>
+				</aui:fieldset>
+
+				
+			</aui:column>
+	
+	</aui:fieldset>
+	</div>
+	
+	
+	
+	
+</c:forEach>
+
+</c:if>
 
 </div>
 

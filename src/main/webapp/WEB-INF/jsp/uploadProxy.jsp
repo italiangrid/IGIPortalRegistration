@@ -42,26 +42,18 @@
 		$(".pwd").hide();
 		$(".p12").hide();
 		allOK = true;
-		/*if(check==false){
+		if(check==false){
 			allOK = false;
 			$(".proxyPwd").show();
-		}*/
-		if(!$("#<portlet:namespace/>keyPass").val()){
-			allOK = false;
-			$(".pwd").show();
-			//alert(allOK);
 		}
-		if(!$("#<portlet:namespace/>usercert").val()){
-			allOK = false;
-			$(".p12").show();
-		}
+		
 		return allOK;
 	}
 	
 
 	function submit(){
 		if(validate()){
-		$("#<portlet:namespace/>uploadCertForm").submit();
+		$("#<portlet:namespace/>uploadProxyForm").submit();
 		}
 	}
 
@@ -168,36 +160,24 @@ h5#usernameAlert {
 		
 <div id="action">
 
-<liferay-ui:success key="user-saved-successufully"
-	message="user-saved-successufully" />
-<liferay-ui:error key="error-uploading-certificate"
-	message="error-uploading-certificate" />
 <liferay-ui:error key="myproxy-exception" message="myproxy-exception" />
-<liferay-ui:error key="cert-password-incorrect"
-	message="cert-password-incorrect" />
-<liferay-ui:error key="cert-pass1-required"
-	message="cert-pass1-required" />
-<liferay-ui:error key="cert-pass2-required"
-	message="cert-pass2-required" />
+
+
 <liferay-ui:error key="no-valid-cert" message="no-valid-cert" />
-<liferay-ui:error key="key-pass-required" message="key-pass-required" />
-<liferay-ui:error key="no-valid-cert-subject"
-	message="no-valid-cert-subject" />
-<liferay-ui:error key="no-valid-cert-issuer"
-	message="no-valid-cert-issuer" />
-<liferay-ui:error key="no-valid-cert-enddate"
-	message="no-valid-cert-enddate" />
-<liferay-ui:error key="user-certificate-expired"
-	message="user-certificate-expired" />
-<liferay-ui:error key="certificate-duplicate"
-	message="certificate-duplicate" />
 <liferay-ui:error key="no-valid-key"
 	message="no-valid-key" />
 <liferay-ui:error key="key-password-failure"
 	message="key-password-failure" />
+<liferay-ui:error key="password-not-changed"
+	message="password-not-changed" />
+<liferay-ui:error key="error-password-mismatch"
+	message="error-password-mismatch" />
+<liferay-ui:error key="error-password-too-short"
+	message="error-password-too-short" />
+
 
 <portlet:actionURL var="uploadCertUrl">
-	<portlet:param name="myaction" value="uploadCertificate" />
+	<portlet:param name="myaction" value="uploadProxy" />
 </portlet:actionURL>
 
 
@@ -206,10 +186,10 @@ h5#usernameAlert {
 	<portlet:param name="userId" value="${userId}" />
 </portlet:renderURL>
 
-<aui:form name="uploadCertForm" id="uploadCertForm" action="${uploadCertUrl}"
-	enctype="multipart/form-data" >
+<aui:form name="uploadProxyForm" id="uploadPorxyForm" action="${uploadCertUrl}" commandName="registrationModel">
 	<aui:input name="subject" type="hidden" value="${registrationModel.subject }"></aui:input>
 	<aui:input name="issuer" type="hidden" value="${registrationModel.issuer }"></aui:input>
+	<aui:input name="expiration" type="hidden" value="${registrationModel.expiration }"></aui:input>
 	<aui:input name="haveCertificate" type="hidden" value="${registrationModel.haveCertificate }"></aui:input>
 	<aui:input name="certificateUserId" type="hidden" value="${registrationModel.certificateUserId }"></aui:input>
 	<aui:input name="vos" type="hidden" value="${registrationModel.vos }"></aui:input>
@@ -222,7 +202,8 @@ h5#usernameAlert {
 	<aui:input name="email" type="hidden" value="${registrationModel.email }"/>
 	<aui:input name="userStatus" type="hidden" value="${registrationModel.userStatus }"/>
 	<aui:input name="verifyUser" type="hidden" value="${registrationModel.verifyUser }"/>
-	<aui:input name="primaryCert" type="hidden" value="true"/>
+	<aui:input name="certificateStatus" type="hidden" value="${registrationModel.certificateStatus }"/>
+	<aui:input name="voStatus" type="hidden" value="${registrationModel.voStatus }"/>
 	<aui:layout>
 
 		
@@ -232,72 +213,70 @@ h5#usernameAlert {
 		<br/><br/>
 		<img src="<%=request.getContextPath()%>/images/registration_step3_upload.png"/>
 		<br/><br/><br/>
+			
 			<aui:fieldset>
-			<p style="font-size: 15px; padding-left: 30px;">Please upload your certificate (.p12 or pfx format) and insert the password used to encrypt it.</p>
+			
+			<div class="portlet-msg-alert">Please choose a password to encrypt your credentials.<br/>
+			You have to insert this password every time you need to retrieve your credentials, don't forget it because we don't conserve it !!</div>
+			
 					
 			
-			<aui:column columnWidth="40" style="margin-left:30px; margin-top:10px;">
-
-				<aui:fieldset>
+			<aui:column columnWidth="40" style="margin-left:30px;">
+					
+					<aui:fieldset>
+						
 					<div id="allertDiv2">
-					
-					
-					
-					<div class="portlet-msg-error p12" style="display:none;">
-						Insert certificate here.
-					</div>
-							<aui:input id="usercert" name="usercert" type="file" label="Import certificate"
-								value="${usercert }" />
+				
+						<br/>
+						<div class="portlet-msg-error proxyPwd" style="display:none;">
+							These password must be the same.
+						</div>
 
+								<aui:input id="password" name="password" type="password"
+									label="Insert Password" onBlur="printCheck($(this).attr('id'));"/>
+
+						<div class="portlet-msg-error proxyPwd" style="display:none;">
+							These password must be the same.
+						</div>
+
+								<aui:input id="passwordVerify" name="passwordVerify"
+									type="password" label="Confirm Password" onkeyup="verifyPassword();"/>
+
+						
+					</div>
+						
+						
+						
 					
-					<div class="portlet-msg-error pwd" style="display:none;">
-						Insert password of your certificate here.
-					</div>
-							<aui:input id="keyPass" name="keyPass" type="password"
-								label="Import certificate password" onBlur="printCheck($(this).attr('id'));"/> 
-					</div>
-					<br />
 				</aui:fieldset>
+
+				
+				
 			</aui:column>
 
 			<aui:column columnWidth="50" style="margin-left:30px;">
-			
+
 				<aui:fieldset>
 					
-					<br/>
+					<br/><br/><br/>
 					
 					<div id="help">
-					
-					<script  type="text/javascript">
-					 
-					 function openNewWindow() {
-					 popupWin = window.open('https://portal.italiangrid.it:8443/info/upload-certificate-help.html',
-					 'open_window',
-					 'scrollbars, resizable, dependent, width=640, height=480, left=0, top=0')
-					 }
-					 
-					 </script>
-					<a href="javascript:openNewWindow();"  ><img class="displayed"
-													src="<%=request.getContextPath()%>/images/Help.png"
-													id="noImg" width="48" />Certificate Upload Help</a>
+					<a href="https://portal.italiangrid.it:8443/info/certificate-upload-technical-info.html"  onclick="$(this).modal({width:800, height:600, message:true}).open(); return false;"><img class="displayed"
+													src="<%=request.getContextPath()%>/images/Information2.png"
+													id="noImg" width="48" />Technical Information</a>
+					 							
+			
 													
 					</div>
-					
 				</aui:fieldset>
 
 				
 			</aui:column>
+			
 			</aui:fieldset>
-			
-			
 
 			<aui:button-row>
 				
-				<div class="button" style="float: left;">
-				<liferay-ui:icon-menu>
-				<liferay-ui:icon image="back" message="Back" url="#" onClick="history.back()" />
-				</liferay-ui:icon-menu>
-				</div>
 				<div class="button" style="float: left;">
 				<liferay-ui:icon-menu>
 				<liferay-ui:icon image="close" message="Abort Registration" url="#"
