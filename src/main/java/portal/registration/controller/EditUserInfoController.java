@@ -23,6 +23,7 @@ import javax.portlet.PortletConfig;
 import javax.portlet.RenderRequest;
 import org.apache.log4j.Logger;
 import org.globus.gsi.GlobusCredential;
+import org.globus.gsi.GlobusCredentialException;
 import org.globus.gsi.gssapi.GlobusGSSCredentialImpl;
 import org.globus.myproxy.MyProxy;
 import org.globus.myproxy.MyProxyException;
@@ -43,6 +44,7 @@ import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.servlet.SessionErrors;
 import com.liferay.portal.kernel.servlet.SessionMessages;
 import com.liferay.portal.kernel.util.JavaConstants;
+import com.liferay.portal.kernel.util.WebKeys;
 import com.liferay.portal.model.Role;
 import com.liferay.portal.model.User;
 import com.liferay.portal.service.RoleLocalServiceUtil;
@@ -854,5 +856,66 @@ public class EditUserInfoController {
 		
 	}
 	
+	@ModelAttribute("proxyDownloaded")
+	public boolean getProxyDownloaded(RenderRequest request) {
+
+		User user = (User) request.getAttribute(WebKeys.USER);
+		if (user != null) {
+			String dir = System.getProperty("java.io.tmpdir");
+			log.error("Directory = " + dir);
+			
+			UserInfo userInfo = userInfoService.findByUsername(user.getScreenName());
+			List<Vo> vos = userToVoService.findVoByUserId(userInfo
+					.getUserId());
+			File proxyVoFile = null;
+			for (Iterator<Vo> iterator = vos.iterator(); iterator
+					.hasNext();) {
+				Vo vo = (Vo) iterator.next();
+				proxyVoFile = new File(dir + "/users/"
+						+ user.getUserId() + "/x509up."
+						+ vo.getVo());
+
+				if (proxyVoFile.exists()&&vo.getConfigured().equals("true")) {
+					try {
+						GlobusCredential cred = new GlobusCredential(
+								proxyVoFile.toString());
+						if (cred.getTimeLeft() > 0) {
+							return true;
+						} else {
+							proxyVoFile.delete();
+							SessionMessages.add(request, "proxy-expired-deleted");
+						}
+					} catch (GlobusCredentialException e) {
+						e.printStackTrace();
+						log.info("e mò sono cazzi amari");
+					}
+				}
+			}
+
+		}
+		return false;
+	}
+	
+	@ModelAttribute("caEnabled")
+	public String getCaEnabled() {	
+		try {
+			log.error(RegistrationConfig.getProperties("Registration.properties", "CAOnline.enabled"));
+			return RegistrationConfig.getProperties("Registration.properties", "CAOnline.enabled");
+		} catch (RegistrationException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	@ModelAttribute("proxyEnabled")
+	public String getProxyEnabled() {	
+		try {
+			log.error(RegistrationConfig.getProperties("Registration.properties", "proxy.enabled"));
+			return RegistrationConfig.getProperties("Registration.properties", "proxy.enabled");
+		} catch (RegistrationException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
 
 }

@@ -174,7 +174,8 @@
 				return jQuery(sender).attr('href');
 			},
 			fadeInSpeed: 0,
-			fadeOutSpeed: 0
+			fadeOutSpeed: 0,
+			redirect: null
 		};
 
 		/**********************************
@@ -205,7 +206,8 @@
 				imageClassName: null,
 				closeClassName: null,
 				overlayClassName: null,
-				src: null
+				src: null,
+				redirect: null
 			};
 			this.options = $.extend({}, options, _defaults);
 			this.options = $.extend({}, options, _settings);
@@ -251,8 +253,13 @@
 					//$close.click(function () { jQuery.modal().close(); location.href='https://halfback.cnaf.infn.it/casshib/shib/app4/login?service=https%3A%2F%2Fgridlab04.cnaf.infn.it%2Fc%2Fportal%2Flogin%3Fp_l_id%3D10671';});
 					$close.click(function () { jQuery.modal().close(); location.href='https://halfback.cnaf.infn.it/casshib/shib/app1/login?service=https%3A%2F%2Fflyback.cnaf.infn.it%2Fc%2Fportal%2Flogin%3Fp_l_id%3D10669';});
 					}else{
-						$close.click(function () { jQuery.modal().close()});
-						$overlay.click(function () { jQuery.modal().close(); });
+						if(options.redirect!=null){
+							$close.click(function () { location.href=options.redirect; });
+							$overlay.click(function () { location.href=options.redirect; });
+						}else{
+							$close.click(function () { jQuery.modal().close()});
+							$overlay.click(function () { jQuery.modal().close(); });
+						}
 					}
 					
 				}
@@ -293,7 +300,8 @@
 			overlayClassName: 'modal-overlay',
 			src: function (sender) {
 				return jQuery(sender).attr('href');
-			}
+			},
+			redirect: null
 		};
 	})(jQuery);
 	
@@ -460,19 +468,22 @@ div.changePassword {
 
 #chooseContainer{
 	font-size: 14px;
-  width: 790px ;
+  width: 900px ;
   margin-left: auto ;
   margin-right: auto ;
 
 }
 
 .choose{
-	width: 250px;
+	width: 60px;
 	height: 80px;
 	float: left;
 }
 
 .bordered{
+	width: 240px;
+	height: 80px;
+	float: left;
 	background-color: #f4fdef;
 	border: 1px;
 	border-style: solid;
@@ -499,7 +510,7 @@ div.changePassword {
 
 .iconContainer{
 	height: 80px;
-	width: 70px;
+	width: 50px;
 	float: left;
 }
 
@@ -539,6 +550,11 @@ div.function {
 .results-row td.disabledVo{
 	opacity: .4; 
 	filter: alpha(opacity=40);
+}
+
+#myAlert div.portlet-msg-success {
+    background: #FFC url(https://flyback.cnaf.infn.it/html/themes/classic/images/messages/alert.png) no-repeat 6px 20%;
+    border: 1px solid #FC0;
 }
 
 </style>
@@ -924,7 +940,7 @@ div.function {
 					
 					<div id="chooseContainer">
 						<a href="" onclick="setHaveCert('true'); return false;">
-						<div class="choose bordered">
+						<div class="bordered">
 						
 							<div class="mess">
 								<div class="center">
@@ -938,12 +954,12 @@ div.function {
 							<div class="reset"></div>
 						</div>
 						</a>
-
+						<c:if test="${caEnabled=='true' }">
 						<div class="choose">
 							<div id="or"><strong>OR</strong></div>
 						</div>
 						<a href="https://openlab03.cnaf.infn.it/CAOnlineBridge/home?t1=${tokens[0]}&t2=${tokens[1]}" onclick="setHaveCert('false'); $(this).modal({width:800, height:400}).open(); return false;">
-						<div class="choose bordered">
+						<div class="bordered">
 							<div class="mess">
 								<div class="center">
 								Request a new certificate<br/>by our on-Line CA.
@@ -957,6 +973,27 @@ div.function {
 							<div class="reset"></div>
 						</div>
 						</a>
+						</c:if>
+						<c:if test="${proxyEnabled=='true' }">
+						<div class="choose">
+							<div id="or"><strong>OR</strong></div>
+						</div>
+						<a href="https://openlab03.cnaf.infn.it/CAOnlineBridge/home?t1=${tokens[0]}&t2=${tokens[1]}" onclick="setHaveCert('false'); $(this).modal({width:800, height:400}).open(); return false;">
+						<div class="bordered">
+							<div class="mess">
+								<div class="center">
+								Request a new certificate<br/>by our on-Line CA.
+								</div>
+							</div>
+							<div class="iconContainer">
+							<div class="icon2">
+								<img class="displayed" src="<%=request.getContextPath()%>/images/cert-download.png" id="noImg" width="64"/>
+							</div>
+							</div>
+							<div class="reset"></div>
+						</div>
+						</a>
+						</c:if>
 					</div>	
 						
 						
@@ -986,8 +1023,10 @@ div.function {
 		message="userToVo-default-successufully" />
 	<liferay-ui:success key="userToVo-deleted-successufully"
 		message="userToVo-deleted-successufully" />
+	<div id="myAlert">
 	<liferay-ui:success key="vo-not-configurated"
 		message="vo-not-configurated" />
+	</div>
 	
 	
 
@@ -1363,13 +1402,19 @@ div.function {
 			<aui:button-row>
 				<aui:button type="cancel" value="Delete Account"
 								onClick="verifyDelete('${deleteURL}')" />
-				<c:if test="${fn:length(userToVoList)>0}">				
-				<aui:button type="button" value="Use Portal"
-								onClick="location.href='${usePortalURL }';" />
+				<c:if test="${fn:length(userToVoList)>0}">
+					<c:if test="${proxyDownloaded=='false' }">				
+					<liferay-portlet:renderURL plid="11914" portletName="Login_WAR_Login11_INSTANCE_OI71Ar1eqW4Y" windowState="<%= LiferayWindowState.POP_UP.toString() %>" var="downloadProxy">
+						<portlet:param name="myaction" value="downloadCertificate" />
+					</liferay-portlet:renderURL>
+					<aui:button type="button" value="Use Portal" onclick="$(this).modal({width:400, height:250, message:true, src: '${downloadProxy }', redirect: '${usePortalURL }'}).open(); return false;"/>
+					</c:if>
+					<c:if test="${proxyDownloaded=='true' }">	
+					<aui:button type="button" value="Use Portal" onclick="location.href='${usePortalURL }';"/>
+					</c:if>
 				</c:if>
 			</aui:button-row>
 		</aui:form>
-	
 	</c:otherwise>
 
 </c:choose>
@@ -1410,7 +1455,7 @@ div.function {
 	
 	
 	<portlet:actionURL var="changePwdURL">
-		<portlet:param name="myaction" value="changePwd"/>
+		<portlet:param name="myaction" value="changePwd2"/>
 		<portlet:param name="userId" value="<%= request.getParameter("userId") %>"/>
 		<portlet:param name="idCert" value="${crt.idCert }"/>
 	</portlet:actionURL>

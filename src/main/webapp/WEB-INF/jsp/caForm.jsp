@@ -84,7 +84,7 @@ $(document).ready(function() {
 </style>
 
 <div>
-		<%@ include file="/WEB-INF/jsp/summary.jsp" %>	
+
 
 <div id="action">
 
@@ -133,5 +133,6 @@ $(document).ready(function() {
 	
 	
 </div>
+<%@ include file="/WEB-INF/jsp/summary.jsp" %>
 <div style="clear:both;"></div>
 </div>

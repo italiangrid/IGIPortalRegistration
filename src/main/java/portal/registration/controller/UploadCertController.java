@@ -1,19 +1,29 @@
 package portal.registration.controller;
 
 import it.italiangrid.portal.dbapi.domain.Certificate;
+import it.italiangrid.portal.dbapi.domain.UserInfo;
 import it.italiangrid.portal.dbapi.services.CertificateService;
+import it.italiangrid.portal.dbapi.services.UserInfoService;
+import it.italiangrid.portal.dbapi.services.UserToVoService;
+import it.italiangrid.portal.registration.exception.RegistrationException;
+import it.italiangrid.portal.registration.util.RegistrationConfig;
 import portal.registration.utils.MyValidator;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Formatter;
 import java.util.GregorianCalendar;
 import java.util.Iterator;
 import java.util.List;
@@ -39,7 +49,10 @@ import com.liferay.portal.kernel.servlet.SessionErrors;
 import com.liferay.portal.kernel.servlet.SessionMessages;
 import com.liferay.portal.kernel.util.JavaConstants;
 import com.liferay.portal.kernel.util.WebKeys;
+import com.liferay.portal.model.Role;
 import com.liferay.portal.model.User;
+import com.liferay.portal.service.RoleLocalServiceUtil;
+import com.liferay.portal.service.UserLocalServiceUtil;
 import com.liferay.portal.util.PortalUtil;
 import com.oreilly.servlet.multipart.FilePart;
 import com.oreilly.servlet.multipart.MultipartParser;
@@ -50,6 +63,11 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.log4j.Logger;
 import org.globus.gsi.GlobusCredential;
 import org.globus.gsi.GlobusCredentialException;
+import org.globus.gsi.gssapi.GlobusGSSCredentialImpl;
+import org.globus.myproxy.MyProxy;
+import org.globus.myproxy.MyProxyException;
+import org.globus.util.Util;
+import org.ietf.jgss.GSSCredential;
 
 @Controller(value = "uploadCertController")
 @RequestMapping(value = "VIEW")
@@ -62,6 +80,12 @@ public class UploadCertController {
 
 	@Autowired
 	private CertificateService certificateService;
+	
+	@Autowired
+	private UserInfoService userInfoService;
+	
+	@Autowired
+	private UserToVoService userToVoService;
 
 	@RenderMapping(params = "myaction=showUploadCert")
 	public String showUploadCert(RenderResponse response) {
@@ -674,6 +698,249 @@ public class UploadCertController {
 		response.setRenderParameter("username", username);
 		response.setRenderParameter("firstReg", firstReg);
 		response.setRenderParameter("myaction", destination);
+
+	}
+	
+	@ActionMapping(params = "myaction=changePwd2")
+	public void updateGuseNotify(ActionRequest request, ActionResponse response) {
+		
+		Certificate cert = certificateService.findByIdCert(Integer.parseInt(request.getParameter("idCert")));
+		
+		String pwd = request.getParameter("pwd");
+		
+		ArrayList<String> errors = new ArrayList<String>();
+		boolean allOk = true;
+		
+		if(pwd.equals(request.getParameter("confirmpwd"))){
+			
+			
+			
+			
+			try {
+				
+				MyProxy mp = new MyProxy(RegistrationConfig.getProperties("Registration.properties", "myproxy.storage"), 7512);
+				UserInfo userInfo =userInfoService.findById(Integer.parseInt(request.getParameter("userId")));
+				Long companyId = PortalUtil.getCompanyId(request);
+				User user = UserLocalServiceUtil.getUserByEmailAddress(companyId, userInfo.getMail());
+
+				String dir = System.getProperty("java.io.tmpdir");
+				log.error("Directory = " + dir);
+
+				File location = new File(dir + "/users/" + user.getUserId() + "/");
+				if (!location.exists()) {
+					location.mkdirs();
+				}
+
+				OutputStream out = null;
+				
+				File proxyFile = new File(dir + "/users/" + user.getUserId()
+						+ "/x509up");
+				
+				String tmpPwd ="";
+				
+				byte[] bytesOfMessage;
+				if(userInfo.getPersistentId()!=null)
+					bytesOfMessage = (userInfo.getPersistentId() + RegistrationConfig.getProperties("Registration.properties", "proxy.secret")).getBytes("UTF-8");
+				else
+					bytesOfMessage = ("blablabla" + RegistrationConfig.getProperties("Registration.properties", "proxy.secret")).getBytes("UTF-8");
+				
+				MessageDigest md = MessageDigest.getInstance("MD5");
+				byte[] thedigest = md.digest(bytesOfMessage);
+				
+				Formatter formatter = new Formatter();
+			    for (byte b : thedigest)
+			    {
+			        formatter.format("%02x", b);
+			    }
+			    tmpPwd = formatter.toString();
+			    formatter.close();
+				
+				log.error("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+				log.error(tmpPwd);
+				log.error("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+				
+				GSSCredential proxy;
+				
+					proxy = mp.get(cert.getUsernameCert(), tmpPwd, 608400);
+				
+					
+				
+				log.error("----- All ok -----");
+				log.error("Proxy:" + proxy.toString());
+
+				GlobusCredential globusCred = null;
+				globusCred = ((GlobusGSSCredentialImpl) proxy)
+						.getGlobusCredential();
+				log.error("----- Passo per il istanceof GlobusGSSCredentialImpl");
+
+				log.error("Save proxy file: " + globusCred);
+				out = new FileOutputStream(proxyFile);
+				Util.setFilePermissions(proxyFile.toString(), 600);
+				globusCred.save(out);
+				
+
+				
+//				String myproxy = "/usr/bin/python /upload_files/myproxy2.py "
+//						+ cert.getUsernameCert()
+//						+ " "
+//						+ proxyFile.toString()
+//						+ " "
+//						+ proxyFile.toString()
+//						+ " \""
+//						+ pwd + "\" \"" + pwd+"\"";
+//				log.error("Myproxy command = " + myproxy);
+				
+				String[] myproxy2 = {"/usr/bin/python", "/upload_files/myproxy3.py", cert.getUsernameCert(), proxyFile.toString(), proxyFile.toString(), pwd, pwd};
+				String[] env = {"GT_PROXY_MODE=old"};
+				Process p = Runtime.getRuntime().exec(myproxy2, env, location);
+				InputStream stdout = p.getInputStream();
+				InputStream stderr = p.getErrorStream();
+
+				BufferedReader output = new BufferedReader(
+						new InputStreamReader(stdout));
+				String line = null;
+
+				while (((line = output.readLine()) != null)) {
+
+					log.error("[Stdout] " + line);
+					if (line.equals("myproxy success")) {
+						log.error("myproxy ok");
+					} else {
+						if (line.equals("myproxy verify password failure")) {
+							errors.add("error-password-mismatch");
+							log.error(line);
+							allOk = false;
+						} else {
+							if (line.equals("myproxy password userkey failure")) {
+								errors.add("error-password-mismatch");
+								log.error(line);
+								allOk = false;
+							} else {
+								if (line.equals("too short passphrase")) {
+									errors.add("error-password-too-short");
+									log.error(line);
+									allOk = false;
+								} else {
+									if (line.equals("key password failure")) {
+										errors.add("key-password-failure");
+										log.error(line);
+										allOk = false;
+									} else {
+										errors.add("no-valid-key");
+										log.error(line);
+										allOk = false;
+									}
+								}
+							}
+						}
+					}
+				}
+				output.close();
+
+				BufferedReader brCleanUp = new BufferedReader(
+						new InputStreamReader(stderr));
+				while ((line = brCleanUp.readLine()) != null) {
+					allOk = false;
+					log.error("[Stderr] " + line);
+					
+				}
+				
+				brCleanUp.close();
+				if(allOk){
+					cert.setPasswordChanged("true");
+					
+					certificateService.save(cert);
+					
+					if ((userToVoService.findById(userInfo.getUserId()).size() > 0))
+						activateUser(userInfo, request, errors);
+					
+					response.setRenderParameter("myaction", "home");
+					response.setRenderParameter("userId", request.getParameter("userId"));
+					
+					return;
+				}
+			} catch (IOException e1) {
+				allOk = false;
+				errors.add("myproxy-exception");
+				e1.printStackTrace();
+			} catch (RegistrationException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (NoSuchAlgorithmException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (PortalException e2) {
+				// TODO Auto-generated catch block
+				e2.printStackTrace();
+			} catch (SystemException e2) {
+				// TODO Auto-generated catch block
+				e2.printStackTrace();
+			} catch (MyProxyException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				errors.add("myproxy-exception");
+			} 
+			
+		}else{
+			SessionErrors.add(request, "error-password-mismatch");
+			
+		}
+		
+		for(String s: errors)
+			SessionErrors.add(request, s);
+		PortletConfig portletConfig = (PortletConfig)request.getAttribute(JavaConstants.JAVAX_PORTLET_CONFIG);
+		SessionMessages.add(request, portletConfig.getPortletName() + SessionMessages.KEY_SUFFIX_HIDE_DEFAULT_ERROR_MESSAGE);
+		response.setRenderParameter("myaction", "editUserInfoForm");
+		response.setRenderParameter("userId", request.getParameter("userId"));
+
+	}
+	
+	private void activateUser(UserInfo userInfo, ActionRequest request,
+			ArrayList<String> errors) {
+
+		String username = userInfo.getUsername();
+
+		long companyId = PortalUtil.getCompanyId(request);
+
+		User user;
+		try {
+			user = UserLocalServiceUtil
+					.getUserByScreenName(companyId, username);
+
+			Role rolePowerUser = RoleLocalServiceUtil.getRole(companyId,
+					"Power User");
+
+			List<User> powerUsers = UserLocalServiceUtil
+					.getRoleUsers(rolePowerUser.getRoleId());
+
+			long users[] = new long[powerUsers.size() + 1];
+
+			int i;
+
+			for (i = 0; i < powerUsers.size(); i++) {
+				users[i] = powerUsers.get(i).getUserId();
+			}
+
+			users[i] = user.getUserId();
+			// long[] roles = {10140};
+
+			// RoleServiceUtil.addUserRoles(user.getUserId(), roles);
+
+			UserLocalServiceUtil.setRoleUsers(rolePowerUser.getRoleId(), users);
+
+			userInfo.setRegistrationComplete("true");
+
+			userInfoService.edit(userInfo);
+
+			SessionMessages.add(request, "user-activate");
+
+		} catch (PortalException e) {
+			errors.add("exception-activation-user");
+			e.printStackTrace();
+		} catch (SystemException e) {
+			errors.add("exception-activation-user");
+			e.printStackTrace();
+		}
 
 	}
 }

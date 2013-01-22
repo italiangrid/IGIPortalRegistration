@@ -192,13 +192,11 @@
 }
 </style>
 <div>
-	<%@ include file="/WEB-INF/jsp/summary.jsp"%>
 
 
 	<div id="action">
 
-		<liferay-ui:success key="user-saved-successufully"
-			message="user-saved-successufully" />
+		
 
 		<portlet:actionURL var="askForCertificateUrl">
 			<portlet:param name="myaction" value="askForCertificateRedirect" />
@@ -220,6 +218,9 @@
 				<br/><br/>
 				<img src="<%=request.getContextPath()%>/images/registration_step2.png"/>
 				<br/>
+				
+				<liferay-ui:success key="user-saved-successufully"
+					message="user-saved-successufully" />
 
 						<aui:fieldset>
 							<br />
@@ -416,7 +417,7 @@
 
 
 	</div>
-
+	<%@ include file="/WEB-INF/jsp/summary.jsp" %>
 	<div style="clear: both;"></div>
 </div>
 

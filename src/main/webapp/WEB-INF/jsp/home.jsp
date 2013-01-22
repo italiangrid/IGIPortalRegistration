@@ -120,8 +120,9 @@ div#voData {
 	<c:when test="<%= !themeDisplay.isSignedIn() %>"> 
 		
 		<div>
-		<%@ include file="/WEB-INF/jsp/summary.jsp" %>	
+			
 		<%@ include file="/WEB-INF/jsp/instructionPage.jsp" %>
+		<%@ include file="/WEB-INF/jsp/summary.jsp" %>
 		<div style="clear:both;"></div>
 		</div>
 	</c:when>

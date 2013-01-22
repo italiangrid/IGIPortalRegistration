@@ -173,10 +173,14 @@ div.function {
 	filter: alpha(opacity=40);
 }
 
+#myAlert div.portlet-msg-success {
+    background: #FFC url(https://flyback.cnaf.infn.it/html/themes/classic/images/messages/alert.png) no-repeat 6px 20%;
+    border: 1px solid #FC0;
+}
+
 </style>
 
-<div>
-		<%@ include file="/WEB-INF/jsp/summary.jsp" %>	
+<div>	
 
 <div id="action">
 
@@ -196,31 +200,7 @@ div.function {
 
 
 
-<liferay-ui:success key="upload-cert-successufully"
-	message="upload-cert-successufully" />
-<liferay-ui:success key="userToVo-adding-success"
-	message="userToVo-adding-success" />
-<liferay-ui:success key="userToVo-removed-success"
-	message="userToVo-removed-success" />
-<liferay-ui:success key="userToVo-updated-successufully"
-	message="userToVo-updated-successufully" />
-<liferay-ui:success key="userToVo-default-successufully"
-	message="userToVo-default-successufully" />
-<liferay-ui:success key="vo-not-configurated"
-		message="vo-not-configurated" />
 
-<liferay-ui:error key="user-vo-list-empty" message="user-vo-list-empty" />
-<liferay-ui:error key="no-user-found-in-VO"
-	message="no-user-found-in-VO" />
-<liferay-ui:error key="no-VO-found"
-	message="no-VO-found" />
-<liferay-ui:error key="no-cert-for-user" message="no-cert-for-user" />
-<liferay-ui:error key="edg-mkgridmap-problem"
-	message="edg-mkgridmap-problem" />
-<liferay-ui:error key="edg-mkgridmap-exception"
-	message="edg-mkgridmap-exception" />
-<liferay-ui:error key="exception-deactivation-user"
-	message="exception-deactivation-user" />
 
 	<aui:layout>
 
@@ -230,6 +210,34 @@ div.function {
 	<img src="<%=request.getContextPath()%>/images/registration_step3.png"/>
 	<br/><br/>
 	
+	
+	<liferay-ui:success key="upload-cert-successufully"
+		message="upload-cert-successufully" />
+	<liferay-ui:success key="userToVo-adding-success"
+		message="userToVo-adding-success" />
+	<liferay-ui:success key="userToVo-removed-success"
+		message="userToVo-removed-success" />
+	<liferay-ui:success key="userToVo-updated-successufully"
+		message="userToVo-updated-successufully" />
+	<liferay-ui:success key="userToVo-default-successufully"
+		message="userToVo-default-successufully" />
+	<div id="myAlert">
+		<liferay-ui:success key="vo-not-configurated"
+			message="vo-not-configurated" />
+		</div>
+	
+	<liferay-ui:error key="user-vo-list-empty" message="user-vo-list-empty" />
+	<liferay-ui:error key="no-user-found-in-VO"
+		message="no-user-found-in-VO" />
+	<liferay-ui:error key="no-VO-found"
+		message="no-VO-found" />
+	<liferay-ui:error key="no-cert-for-user" message="no-cert-for-user" />
+	<liferay-ui:error key="edg-mkgridmap-problem"
+		message="edg-mkgridmap-problem" />
+	<liferay-ui:error key="edg-mkgridmap-exception"
+		message="edg-mkgridmap-exception" />
+	<liferay-ui:error key="exception-deactivation-user"
+		message="exception-deactivation-user" />
 	
 	<p style="font-size: 15px; padding-top:10px;">Digit the name of your VOs and click "<strong>Add</strong>" button.</p>
 	<p style="font-size: 15px;">Than you can also set your VO Group and Role clicking on "<strong>Actions</strong>" button.</p>
@@ -426,5 +434,6 @@ div.function {
 
 
 </div>
+<%@ include file="/WEB-INF/jsp/summary.jsp" %>
 <div style="clear:both;"></div>
 </div>

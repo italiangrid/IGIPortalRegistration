@@ -112,7 +112,7 @@
 </style>
 
 <div>
-		<%@ include file="/WEB-INF/jsp/summary.jsp" %>	
+			
 		
 		
 <div id="action">
@@ -125,24 +125,7 @@
 	<portlet:param name="myaction" value="userInfos" />
 </portlet:renderURL>
 
-<liferay-ui:error key="error-saving-registration"
-	message="error-saving-registration" />
-<liferay-ui:error key="user-first-name-required"
-	message="user-first-name-required" />
-<liferay-ui:error key="user-last-name-required"
-	message="user-last-name-required" />
-<liferay-ui:error key="user-institute-required"
-	message="user-institute-required" />
-<liferay-ui:error key="user-mail-required" message="user-mail-required" />
-<liferay-ui:error key="user-valid-mail-required"
-	message="user-valid-mail-required" />
-<liferay-ui:error key="user-username-required"
-	message="user-username-required" />
-<liferay-ui:error key="user-username-duplicate"
-	message="user-username-duplicate" />
-<liferay-ui:error key="user-mail-duplicate"
-	message="user-mail-duplicate" />
-<liferay-ui:error key="user-phone-valid" message="user-phone-valid" />
+
 
 <jsp:useBean id="userInfo" type="it.italiangrid.portal.dbapi.domain.UserInfo"
 	scope="request" />
@@ -162,6 +145,26 @@
 			<br/><br/>
 				<img src="<%=request.getContextPath()%>/images/registration_step1.png"/>
 			<br/><br/>
+			
+			<liferay-ui:error key="error-saving-registration"
+				message="error-saving-registration" />
+			<liferay-ui:error key="user-first-name-required"
+				message="user-first-name-required" />
+			<liferay-ui:error key="user-last-name-required"
+				message="user-last-name-required" />
+			<liferay-ui:error key="user-institute-required"
+				message="user-institute-required" />
+			<liferay-ui:error key="user-mail-required" message="user-mail-required" />
+			<liferay-ui:error key="user-valid-mail-required"
+				message="user-valid-mail-required" />
+			<liferay-ui:error key="user-username-required"
+				message="user-username-required" />
+			<liferay-ui:error key="user-username-duplicate"
+				message="user-username-duplicate" />
+			<liferay-ui:error key="user-mail-duplicate"
+				message="user-mail-duplicate" />
+			<liferay-ui:error key="user-phone-valid" message="user-phone-valid" />
+			
 			<div id="form">
 				<aui:column columnWidth="30">
 				
@@ -349,5 +352,6 @@
 
 
 </div>
+<%@ include file="/WEB-INF/jsp/summary.jsp" %>
 <div style="clear:both;"></div>
 </div>

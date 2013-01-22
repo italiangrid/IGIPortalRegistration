@@ -297,7 +297,7 @@ ul#insertHere{
 </style>
 
 <div>
-		<%@ include file="/WEB-INF/jsp/summary.jsp" %>	
+
 
 <div id="action">
 
@@ -455,5 +455,6 @@ ul#insertHere{
 </aui:form>
 
 </div>
+<%@ include file="/WEB-INF/jsp/summary.jsp" %>
 <div style="clear:both;"></div>
 </div>

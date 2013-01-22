@@ -328,7 +328,7 @@ public class UploadProxyController {
 			if ((userToVoService.findById(userInfo.getUserId()).size() > 0))
 				activateUser(userInfo, request, errors);
 			
-			
+			CookieUtil.setCookieSession("JSESSIONID", "", response);
 			try {
 				URL url;
 				if(registrationModel.isVerifyUser()){

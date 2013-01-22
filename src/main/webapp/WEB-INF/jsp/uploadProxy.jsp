@@ -155,7 +155,6 @@ h5#usernameAlert {
 </style>
 
 <div>
-		<%@ include file="/WEB-INF/jsp/summary.jsp" %>	
 		
 		
 <div id="action">
@@ -216,8 +215,8 @@ h5#usernameAlert {
 			
 			<aui:fieldset>
 			
-			<div class="portlet-msg-alert">Please choose a password to encrypt your credentials.<br/>
-			You have to insert this password every time you need to retrieve your credentials, don't forget it because we don't conserve it !!</div>
+			<div class="portlet-msg-alert"><p style="font-size: 15px;">Please choose a password to encrypt your credentials. This is the only password we ask you in future to retrieve your credentials.
+</p><span style="font-size: 15px;">Don't forget it because we don't conserve it!!</span></div>
 			
 					
 			
@@ -276,6 +275,11 @@ h5#usernameAlert {
 			</aui:fieldset>
 
 			<aui:button-row>
+				<div class="button" style="float: left;">
+				<liferay-ui:icon-menu>
+				<liferay-ui:icon image="back" message="Back" url="#" onClick="history.back()" />
+				</liferay-ui:icon-menu>
+				</div>
 				<portlet:actionURL var="abortUrl">
 					<portlet:param name="myaction" value="abortRegistration"/>
 				</portlet:actionURL>
@@ -287,7 +291,7 @@ h5#usernameAlert {
 				</div>
 				<div class="button" style="float: right;">
 				<liferay-ui:icon-menu>
-				<liferay-ui:icon image="forward" message="Continue" url="#" onClick="submit();" />
+				<liferay-ui:icon image="forward" message="Registration Completed" url="#" onClick="submit();" />
 				</liferay-ui:icon-menu>
 				</div>
 			
@@ -311,6 +315,6 @@ h5#usernameAlert {
 
 
 </div>
-
+<%@ include file="/WEB-INF/jsp/summary.jsp" %>
 <div style="clear:both;"></div>
 </div>

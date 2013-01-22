@@ -163,38 +163,11 @@ h5#usernameAlert {
 </style>
 
 <div>
-		<%@ include file="/WEB-INF/jsp/summary.jsp" %>	
 		
 		
 <div id="action">
 
-<liferay-ui:success key="user-saved-successufully"
-	message="user-saved-successufully" />
-<liferay-ui:error key="error-uploading-certificate"
-	message="error-uploading-certificate" />
-<liferay-ui:error key="myproxy-exception" message="myproxy-exception" />
-<liferay-ui:error key="cert-password-incorrect"
-	message="cert-password-incorrect" />
-<liferay-ui:error key="cert-pass1-required"
-	message="cert-pass1-required" />
-<liferay-ui:error key="cert-pass2-required"
-	message="cert-pass2-required" />
-<liferay-ui:error key="no-valid-cert" message="no-valid-cert" />
-<liferay-ui:error key="key-pass-required" message="key-pass-required" />
-<liferay-ui:error key="no-valid-cert-subject"
-	message="no-valid-cert-subject" />
-<liferay-ui:error key="no-valid-cert-issuer"
-	message="no-valid-cert-issuer" />
-<liferay-ui:error key="no-valid-cert-enddate"
-	message="no-valid-cert-enddate" />
-<liferay-ui:error key="user-certificate-expired"
-	message="user-certificate-expired" />
-<liferay-ui:error key="certificate-duplicate"
-	message="certificate-duplicate" />
-<liferay-ui:error key="no-valid-key"
-	message="no-valid-key" />
-<liferay-ui:error key="key-password-failure"
-	message="key-password-failure" />
+
 
 <portlet:actionURL var="uploadCertUrl">
 	<portlet:param name="myaction" value="uploadCertificate" />
@@ -232,6 +205,36 @@ h5#usernameAlert {
 		<br/><br/>
 		<img src="<%=request.getContextPath()%>/images/registration_step2_upload_Livelli.png"/>
 		<br/><br/><br/>
+		
+		<liferay-ui:success key="user-saved-successufully"
+			message="user-saved-successufully" />
+		<liferay-ui:error key="error-uploading-certificate"
+			message="error-uploading-certificate" />
+		<liferay-ui:error key="myproxy-exception" message="myproxy-exception" />
+		<liferay-ui:error key="cert-password-incorrect"
+			message="cert-password-incorrect" />
+		<liferay-ui:error key="cert-pass1-required"
+			message="cert-pass1-required" />
+		<liferay-ui:error key="cert-pass2-required"
+			message="cert-pass2-required" />
+		<liferay-ui:error key="no-valid-cert" message="no-valid-cert" />
+		<liferay-ui:error key="key-pass-required" message="key-pass-required" />
+		<liferay-ui:error key="no-valid-cert-subject"
+			message="no-valid-cert-subject" />
+		<liferay-ui:error key="no-valid-cert-issuer"
+			message="no-valid-cert-issuer" />
+		<liferay-ui:error key="no-valid-cert-enddate"
+			message="no-valid-cert-enddate" />
+		<liferay-ui:error key="user-certificate-expired"
+			message="user-certificate-expired" />
+		<liferay-ui:error key="certificate-duplicate"
+			message="certificate-duplicate" />
+		<liferay-ui:error key="no-valid-key"
+			message="no-valid-key" />
+		<liferay-ui:error key="key-password-failure"
+			message="key-password-failure" />
+				
+		
 			<aui:fieldset>
 			<p style="font-size: 15px; padding-left: 30px;">Please upload your certificate (.p12 or pfx format) and insert the password used to encrypt it.</p>
 					
@@ -333,6 +336,6 @@ h5#usernameAlert {
 
 
 </div>
-
+<%@ include file="/WEB-INF/jsp/summary.jsp" %>
 <div style="clear:both;"></div>
 </div>

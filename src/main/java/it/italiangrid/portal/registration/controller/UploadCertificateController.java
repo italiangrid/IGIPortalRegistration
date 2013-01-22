@@ -533,7 +533,7 @@ public class UploadCertificateController {
 			String line = null;
 
 			while ((line = output.readLine()) != null) {
-				log.info("[Stdout] " + line);
+				log.error("[Stdout] " + line);
 				if (line.equals("too short passphrase"))
 					errors.add("error-password-too-short");
 				if (line.equals("p12 passwd error key"))

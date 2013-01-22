@@ -41,6 +41,7 @@
 <%@ page import="com.liferay.portal.model.User"%>
 <%@ page import="javax.portlet.PortletURL" %>
 <%@ page import="com.liferay.portal.security.auth.AuthTokenUtil" %>
+<%@ page import="com.liferay.portal.kernel.portlet.LiferayWindowState" %>
 
 <%@ page import="com.liferay.portal.theme.ThemeDisplay" %>
 <%@ page import="com.liferay.portal.model.Layout" %>
