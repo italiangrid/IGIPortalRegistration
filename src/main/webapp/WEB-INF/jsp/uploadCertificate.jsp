@@ -298,10 +298,13 @@ h5#usernameAlert {
 				<liferay-ui:icon image="back" message="Back" url="#" onClick="history.back()" />
 				</liferay-ui:icon-menu>
 				</div>
+				<portlet:actionURL var="abortUrl">
+					<portlet:param name="myaction" value="abortRegistration"/>
+				</portlet:actionURL>
 				<div class="button" style="float: left;">
 				<liferay-ui:icon-menu>
-				<liferay-ui:icon image="close" message="Abort Registration" url="#"
-					onClick="alert('You are now registrated in the portal, please log into the portal to complete the registraion.');location.href='${loginUrl }';" />
+				<liferay-ui:icon image="close" message="Abort Registration" url="${abortUrl }"
+					onClick="alert('You are now registrated in the portal, please log into the portal to complete the registraion.');" />
 				</liferay-ui:icon-menu>
 				</div>
 				<div class="button" style="float: right;">
@@ -312,7 +315,7 @@ h5#usernameAlert {
 			
 				<aui:button type="cancel" value= "Back" onClick="history.back()"  style="display:none;"/>
 				<aui:button type="cancel" value="Abort Registration"  style="display:none;"
-					onClick="alert('You are now registrated in the portal, please log into the portal to complete the registraion.');location.href='${loginUrl }';" />
+					onClick="alert('You are now registrated in the portal, please log into the portal to complete the registraion.');location.href='${abortUrl }';" />
 				<div style="float: right;">
 				<aui:button type="submit" value="Continue" onClick="return validate();"  style="display:none;"/>
 				</div>

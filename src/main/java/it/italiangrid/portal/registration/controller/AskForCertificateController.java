@@ -2,9 +2,11 @@ package it.italiangrid.portal.registration.controller;
 
 import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
+import javax.servlet.http.Cookie;
 
 import it.italiangrid.portal.registration.exception.RegistrationException;
 import it.italiangrid.portal.registration.model.RegistrationModel;
+import it.italiangrid.portal.registration.util.CookieUtil;
 import it.italiangrid.portal.registration.util.RegistrationConfig;
 
 import org.apache.log4j.Logger;
@@ -69,6 +71,8 @@ public class AskForCertificateController {
 		log.error(registrationModel.toString());
 		
 		if(registrationModel.isHaveCertificate()){
+			
+//			CookieUtil.setCookieSession("JSESSIONID", "", response);
 			
 			log.debug("Redirect to certificate uploader");
 			response.setRenderParameter("myaction", "showUploadCertificate");

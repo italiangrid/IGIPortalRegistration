@@ -136,5 +136,15 @@ public class CookieUtil {
 		}
 	}
 
+	public static void setCookieSession(String name, String value,
+			ActionResponse response) {
+		Cookie cookie = new Cookie(name, value);
+		cookie.setSecure(true);
+		cookie.setPath("/");
+		cookie.setMaxAge(-1);
+		response.addProperty(cookie);
+		
+	}
+
 	
 }

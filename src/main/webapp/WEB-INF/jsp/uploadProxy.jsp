@@ -276,11 +276,13 @@ h5#usernameAlert {
 			</aui:fieldset>
 
 			<aui:button-row>
-				
+				<portlet:actionURL var="abortUrl">
+					<portlet:param name="myaction" value="abortRegistration"/>
+				</portlet:actionURL>
 				<div class="button" style="float: left;">
 				<liferay-ui:icon-menu>
-				<liferay-ui:icon image="close" message="Abort Registration" url="#"
-					onClick="alert('You are now registrated in the portal, please log into the portal to complete the registraion.');location.href='${loginUrl }';" />
+				<liferay-ui:icon image="close" message="Abort Registration" url="${abortUrl }"
+					onClick="alert('You are now registrated in the portal, please log into the portal to complete the registraion.');" />
 				</liferay-ui:icon-menu>
 				</div>
 				<div class="button" style="float: right;">

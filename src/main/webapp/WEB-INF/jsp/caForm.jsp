@@ -114,9 +114,12 @@ $(document).ready(function() {
 			<liferay-ui:icon image="back" message="Back" url="#" onClick="history.back()" />
 			</liferay-ui:icon-menu>
 			</div>
+			<portlet:actionURL var="abortUrl">
+				<portlet:param name="myaction" value="abortRegistration"/>
+			</portlet:actionURL>
 			<div class="button" style="float: right;">
 			<liferay-ui:icon-menu>
-			<liferay-ui:icon image="forward" message="Registration Completed" url="#" onClick="location.href='${loginUrl}';" />
+			<liferay-ui:icon image="forward" message="Registration Completed" url="${abortUrl}" />
 			</liferay-ui:icon-menu>
 			</div>
 		</aui:button-row>

@@ -10,6 +10,7 @@ import it.italiangrid.portal.dbapi.services.UserToVoService;
 import it.italiangrid.portal.dbapi.services.VoService;
 import it.italiangrid.portal.registration.exception.RegistrationException;
 import it.italiangrid.portal.registration.model.RegistrationModel;
+import it.italiangrid.portal.registration.util.CookieUtil;
 import it.italiangrid.portal.registration.util.RegistrationConfig;
 import java.io.BufferedReader;
 import java.io.File;
@@ -18,7 +19,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
-import java.io.UnsupportedEncodingException;
 import java.net.URL;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -29,9 +29,6 @@ import java.util.List;
 import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
 import javax.portlet.PortletConfig;
-import javax.portlet.RenderRequest;
-import javax.portlet.RenderResponse;
-
 import org.apache.log4j.Logger;
 import org.globus.gsi.GlobusCredential;
 import org.globus.gsi.gssapi.GlobusGSSCredentialImpl;
@@ -52,7 +49,6 @@ import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.servlet.SessionErrors;
 import com.liferay.portal.kernel.servlet.SessionMessages;
 import com.liferay.portal.kernel.util.JavaConstants;
-import com.liferay.portal.kernel.util.WebKeys;
 import com.liferay.portal.model.Role;
 import com.liferay.portal.model.User;
 import com.liferay.portal.service.RoleLocalServiceUtil;
@@ -111,6 +107,22 @@ public class UploadProxyController {
 		//request.setAttribute("registrationModel", registrationModel);
 		
 		return result;
+	}
+	
+	@ActionMapping(params = "myaction=abortRegistration")
+	public void abortRegistration(ActionResponse response){
+		CookieUtil.setCookieSession("JSESSIONID", "", response);
+		
+		try {
+			URL url = new URL(RegistrationConfig.getProperties("Registration.properties", "login.url"));
+			
+			log.error(url);
+			response.sendRedirect(url.toString());
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (RegistrationException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	@ActionMapping(params = "myaction=uploadProxy")
@@ -207,15 +219,15 @@ public class UploadProxyController {
 						
 
 						
-						String myproxy = "/usr/bin/python /upload_files/myproxy2.py "
-								+ registrationModel.getCertificateUserId()
-								+ " "
-								+ proxyFile.toString()
-								+ " "
-								+ proxyFile.toString()
-								+ " \""
-								+ pwd1 + "\" \"" + pwd1+"\"";
-						log.error("Myproxy command = " + myproxy);
+//						String myproxy = "/usr/bin/python /upload_files/myproxy2.py "
+//								+ registrationModel.getCertificateUserId()
+//								+ " "
+//								+ proxyFile.toString()
+//								+ " "
+//								+ proxyFile.toString()
+//								+ " \""
+//								+ pwd1 + "\" \"" + pwd1+"\"";
+//						log.error("Myproxy command = " + myproxy);
 						
 						String[] myproxy2 = {"/usr/bin/python", "/upload_files/myproxy3.py", registrationModel.getCertificateUserId(), proxyFile.toString(), proxyFile.toString(), pwd1, pwd1};
 						String[] env = {"GT_PROXY_MODE=old"};

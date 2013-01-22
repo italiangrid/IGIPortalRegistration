@@ -641,15 +641,15 @@ public class EditUserInfoController {
 				
 
 				
-				String myproxy = "/usr/bin/python /upload_files/myproxy2.py "
-						+ cert.getUsernameCert()
-						+ " "
-						+ proxyFile.toString()
-						+ " "
-						+ proxyFile.toString()
-						+ " \""
-						+ pwd + "\" \"" + pwd+"\"";
-				log.error("Myproxy command = " + myproxy);
+//				String myproxy = "/usr/bin/python /upload_files/myproxy2.py "
+//						+ cert.getUsernameCert()
+//						+ " "
+//						+ proxyFile.toString()
+//						+ " "
+//						+ proxyFile.toString()
+//						+ " \""
+//						+ pwd + "\" \"" + pwd+"\"";
+//				log.error("Myproxy command = " + myproxy);
 				
 				String[] myproxy2 = {"/usr/bin/python", "/upload_files/myproxy3.py", cert.getUsernameCert(), proxyFile.toString(), proxyFile.toString(), pwd, pwd};
 				String[] env = {"GT_PROXY_MODE=old"};

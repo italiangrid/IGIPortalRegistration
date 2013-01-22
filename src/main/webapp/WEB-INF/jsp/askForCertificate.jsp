@@ -389,9 +389,13 @@
 
 					<aui:button-row>
 					
+						<portlet:actionURL var="abortUrl">
+							<portlet:param name="myaction" value="abortRegistration"/>
+						</portlet:actionURL>
+					
 						<div class="button" style="float: left;">
 						<liferay-ui:icon-menu>
-						<liferay-ui:icon image="close" message="Abort Registration" url="${loginUrl }" onClick="alert('You are now registrated in the portal, please log into the portal to complete the registraion.');" />
+						<liferay-ui:icon image="close" message="Abort Registration" url="${abortUrl }" onClick="alert('You are now registrated in the portal, please log into the portal to complete the registraion.');" />
 						</liferay-ui:icon-menu>
 						</div>
 						
@@ -399,7 +403,7 @@
 						
 						
 						<aui:button type="cancel" value="Abort Registration" style="display:none"
-							onClick="alert('You are now registrated in the portal, please log into the portal to complete the registraion.');location.href='${loginUrl }';"  />
+							onClick="document.cookie = 'JSESSIONID=;expires=Thu, 01 Jan 1970 00:00:00 GMT';alert('You are now registrated in the portal, please log into the portal to complete the registraion.');location.href='${loginUrl }';"  />
 						
 					</aui:button-row>
 
