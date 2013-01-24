@@ -604,6 +604,10 @@ div.function {
 	</c:if>
 </c:forEach>
 
+<c:if test="${isUserActive=='false' && fn:length(userToVoList)>0}">
+	<div class="portlet-msg-alert">User not active.</div>
+</c:if>
+
 <c:if test="${changePasswordNow=='true' }">
 <div id="personalData">
 	<h3 class="header-title">Personal data</h3>
@@ -1402,12 +1406,14 @@ div.function {
 			<aui:button-row>
 				<aui:button type="cancel" value="Delete Account"
 								onClick="verifyDelete('${deleteURL}')" />
-				<c:if test="${fn:length(userToVoList)>0}">
+								
+				
+				<c:if test="${fn:length(userToVoList)>0&&isUserActive=='true'}">
 					<c:if test="${proxyDownloaded=='false' }">				
 					<liferay-portlet:renderURL plid="11914" portletName="Login_WAR_Login11_INSTANCE_OI71Ar1eqW4Y" windowState="<%= LiferayWindowState.POP_UP.toString() %>" var="downloadProxy">
 						<portlet:param name="myaction" value="downloadCertificate" />
 					</liferay-portlet:renderURL>
-					<aui:button type="button" value="Use Portal" onclick="$(this).modal({width:400, height:250, message:true, src: '${downloadProxy }', redirect: '${usePortalURL }'}).open(); return false;"/>
+					<aui:button type="button" value="Use Portal" onclick="$(this).modal({width:400, height:300, message:true, src: '${downloadProxy }', redirect: '${usePortalURL }'}).open(); return false;"/>
 					</c:if>
 					<c:if test="${proxyDownloaded=='true' }">	
 					<aui:button type="button" value="Use Portal" onclick="location.href='${usePortalURL }';"/>

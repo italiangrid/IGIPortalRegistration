@@ -362,7 +362,7 @@ h5#usernameAlert {
 				<aui:fieldset>
 					<br />
 					
-
+					<div class="portlet-msg-alert" >Please upload your certificate (.p12 or pfx format) and insert the password used to encrypt it.</div>
 
 					<aui:input name="userId" type="hidden" value="${userId}" />
 					<aui:input name="username" type="hidden" value="${username}" />
@@ -372,7 +372,7 @@ h5#usernameAlert {
 						Insert certificate here.
 					</div>
 					
-							<aui:input id="usercert" name="usercert" type="file" label="Import certificate in P12 format"
+							<aui:input id="usercert" name="usercert" type="file" label="Import certificate"
 								value="${usercert }" />
 					
 					
@@ -385,8 +385,8 @@ h5#usernameAlert {
 					</div>
 					<br />
 					
-						Please insert below a new password. <br/>
-						<strong>Don't forget this password:</strong> it will be asked again to use Grid and Cloud resources in a secure way and it will be not saved in the system. <br/>
+						<div class="portlet-msg-alert"><p>Please choose a password to encrypt your credentials. This is the only password you have to edit to retrieve your credentials.
+						</p><span>Don't forget it because we don't conserve it!!</span></div>
 					<div id="allertDiv2">
 				
 						<br/>
@@ -402,7 +402,7 @@ h5#usernameAlert {
 						</div>
 
 								<aui:input id="passwordVerify" name="passwordVerify"
-									type="password" label="Retype Password" onkeyup="verifyPassword();"/>
+									type="password" label="Confim Password" onkeyup="verifyPassword();"/>
 
 						
 					</div>
@@ -418,7 +418,7 @@ h5#usernameAlert {
 			<aui:column columnWidth="30" style="margin-left:30px;">
 
 				<aui:fieldset>
-					<br/><br/>
+					<br/><br/><br/><br/><br/>
 					
 					<div id="help">
 					<script  type="text/javascript">

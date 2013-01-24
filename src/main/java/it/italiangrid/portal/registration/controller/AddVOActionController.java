@@ -1,5 +1,7 @@
 package it.italiangrid.portal.registration.controller;
 
+import java.util.List;
+
 import it.italiangrid.portal.dbapi.domain.UserInfo;
 import it.italiangrid.portal.dbapi.domain.Vo;
 import it.italiangrid.portal.dbapi.services.UserInfoService;
@@ -57,8 +59,8 @@ public class AddVOActionController {
 				SessionMessages.add(request, "userToVo-adding-success");
 				registrationModel.setVoStatus(true);
 				UserInfo userInfo = userInfoService.findByMail(registrationModel.getEmail());
-				userToVoService.save(userInfo.getUserId(), vo.getIdVo(),registrationModel.getSubject());
-				userToVoService.setDefault(userInfo.getUserId(), vo.getIdVo());
+				userToVoService.save(userInfo.getUserId(), vo.getIdVo(), registrationModel.getSubject());
+				
 				if(vo.getConfigured().equals("false")){
 					
 					SessionMessages.add(request, "vo-not-configurated");
@@ -72,6 +74,10 @@ public class AddVOActionController {
 						e.printStackTrace();
 					}
 					
+				}else{
+					String defaultVo = userToVoService.findDefaultVo(userInfo.getUserId());
+					if (defaultVo==null)
+							userToVoService.setDefault(userInfo.getUserId(), vo.getIdVo());
 				}
 			}else{
 				PortletConfig portletConfig = (PortletConfig)request.getAttribute(JavaConstants.JAVAX_PORTLET_CONFIG);
@@ -117,9 +123,23 @@ public class AddVOActionController {
 		UserInfo userInfo = userInfoService.findByMail(registrationModel.getEmail());
 		userToVoService.delete(userInfo.getUserId(), Integer.parseInt(request.getParameter("voToDel")));
 		
-		if(!userToVoService.findById(userInfo.getUserId()).isEmpty()){
-			userToVoService.setDefault(userInfo.getUserId(), userToVoService.findById(userInfo.getUserId()).get(0).getId().getIdVo());
+		String defaultVo = userToVoService.findDefaultVo(userInfo.getUserId());
+		if(defaultVo==null){
+			List<Vo> vos = userToVoService.findVoByUserId(userInfo.getUserId());
+			if(vos!=null)
+				for(Vo vo: vos){
+					log.error(vo.getVo()+" "+vo.getConfigured() + " " +vo.getConfigured().equals("true"));
+					if(vo.getConfigured().equals("true")){
+						userToVoService.setDefault(userInfo.getUserId(), vo.getIdVo());
+						break;
+					}
+				}
+			
 		}
+		
+//		if(!userToVoService.findById(userInfo.getUserId()).isEmpty()){
+//			userToVoService.setDefault(userInfo.getUserId(), userToVoService.findById(userInfo.getUserId()).get(0).getId().getIdVo());
+//		}
 		
 		if(registrationModel.getVos().contains(request.getParameter("voToDel")+"#"))
 			registrationModel.setVos(registrationModel.getVos().replace(request.getParameter("voToDel")+"#",""));
@@ -148,9 +168,23 @@ public class AddVOActionController {
 		UserInfo userInfo = userInfoService.findByMail(registrationModel.getEmail());
 		userToVoService.delete(userInfo.getUserId(), Integer.parseInt(request.getParameter("idVo")));
 		
-		if(!userToVoService.findById(userInfo.getUserId()).isEmpty()){
-			userToVoService.setDefault(userInfo.getUserId(), userToVoService.findById(userInfo.getUserId()).get(0).getId().getIdVo());
+		String defaultVo = userToVoService.findDefaultVo(userInfo.getUserId());
+		if(defaultVo==null){
+			List<Vo> vos = userToVoService.findVoByUserId(userInfo.getUserId());
+			if(vos!=null)
+				for(Vo vo: vos){
+					if(vo.getConfigured().equals("true")){
+						log.error(vo.getVo()+" "+vo.getConfigured() + " " +vo.getConfigured().equals("true"));
+						userToVoService.setDefault(userInfo.getUserId(), vo.getIdVo());
+						break;
+					}
+				}
+			
 		}
+		
+//		if(!userToVoService.findById(userInfo.getUserId()).isEmpty()){
+//			userToVoService.setDefault(userInfo.getUserId(), userToVoService.findById(userInfo.getUserId()).get(0).getId().getIdVo());
+//		}
 		
 		if(registrationModel.getVos().contains(request.getParameter("idVo")+"#"))
 			registrationModel.setVos(registrationModel.getVos().replace(request.getParameter("idVo")+"#",""));
@@ -213,17 +247,24 @@ public class AddVOActionController {
 		try {
 			log.info("Sto per settare default il userToVo con userId = "
 					+ userId + "e idVo = " + idVo);
-			if (userToVoService.setDefault(userId, idVo))
-				SessionMessages.add(request, "userToVo-default-successufully");
-			else
-				SessionErrors.add(request, "error-default-userToVo");
-			log.info("UserToVoSettato");
-			userToVoService.findVoByUserId(userId);
+			if(voService.findById(idVo).getConfigured().equals("true")){
+				if (userToVoService.setDefault(userId, idVo))
+					SessionMessages.add(request, "userToVo-default-successufully");
+				else
+					SessionErrors.add(request, "error-default-userToVo");
+				log.info("UserToVoSettato");
+				userToVoService.findVoByUserId(userId);
+			}else{
+				SessionMessages.add(request, "vo-not-configurated");
+			}
 
 		} catch (Exception e) {
 			SessionErrors.add(request, "error-updating-certificate");
 		}
 
+		PortletConfig portletConfig = (PortletConfig)request.getAttribute(JavaConstants.JAVAX_PORTLET_CONFIG);
+		SessionMessages.add(request, portletConfig.getPortletName() + SessionMessages.KEY_SUFFIX_HIDE_DEFAULT_ERROR_MESSAGE);
+		
 		response.setRenderParameter("myaction", "showAddVoForm");
 		request.setAttribute("registrationModel", registrationModel);
 

@@ -94,22 +94,7 @@ public class EditUserInfoController {
 	@RenderMapping(params = "myaction=editUserInfoForm")
 	public String showEditUserInfoForm(@RequestParam int userId,
 			RenderRequest request) {
-		log.error(userId);
-		if ((userToVoService.findById(userId).size() == 0)) {
-			deactivateUser(userId, request);
-
-		}
-		boolean active = true;
-		for(Certificate c: certificateService.findById(userId)){
-			if(c.getPasswordChanged().equals("false")){
-				deactivateUser(userId, request);
-				active= false;
-			}
-		}
-		List<String> errors = new ArrayList<String>();
-		UserInfo userInfo = userInfoService.findById(userId);
-		if(active&&(userToVoService.findById(userId).size() > 0)&&(userInfo.getRegistrationComplete().equals("false")))
-			activateUser(userInfo, request, errors);
+		
 
 		return "editUserInfoForm";
 	}
@@ -235,6 +220,39 @@ public class EditUserInfoController {
 		}
 		result += "\""+vos.get(vos.size()-1).getVo()+"\"";
 		return result;
+	}
+	
+	@ModelAttribute("isUserActive")
+	public String getIsUserActive(@RequestParam int userId, RenderRequest request) {
+		
+log.error(userId);
+		
+		
+		List<Vo> vos = userToVoService.findVoByUserId(userId);
+		int activeVo = 0;
+		for(Vo vo: vos){
+			if(vo.getConfigured().equals("true"))
+				activeVo++;
+		}
+		
+		if (activeVo == 0) {
+			deactivateUser(userId, request);
+
+		}
+		
+		boolean active = true;
+		for(Certificate c: certificateService.findById(userId)){
+			if(c.getPasswordChanged().equals("false")){
+				deactivateUser(userId, request);
+				active= false;
+			}
+		}
+		List<String> errors = new ArrayList<String>();
+		UserInfo userInfo = userInfoService.findById(userId);
+		if(active&&(activeVo > 0)&&(userInfo.getRegistrationComplete().equals("false")))
+			activateUser(userInfo, request, errors);
+		
+		return userInfoService.findById(userId).getRegistrationComplete();
 	}
 
 	@ModelAttribute("defaultVo")
@@ -868,26 +886,27 @@ public class EditUserInfoController {
 			List<Vo> vos = userToVoService.findVoByUserId(userInfo
 					.getUserId());
 			File proxyVoFile = null;
-			for (Iterator<Vo> iterator = vos.iterator(); iterator
-					.hasNext();) {
-				Vo vo = (Vo) iterator.next();
-				proxyVoFile = new File(dir + "/users/"
-						+ user.getUserId() + "/x509up."
-						+ vo.getVo());
-
-				if (proxyVoFile.exists()&&vo.getConfigured().equals("true")) {
-					try {
-						GlobusCredential cred = new GlobusCredential(
-								proxyVoFile.toString());
-						if (cred.getTimeLeft() > 0) {
-							return true;
-						} else {
-							proxyVoFile.delete();
-							SessionMessages.add(request, "proxy-expired-deleted");
+			for (Vo vo: vos) {
+				if(vo.getConfigured().equals("true")){
+					log.error(vo.getVo() + "enabled");
+					proxyVoFile = new File(dir + "/users/"
+							+ user.getUserId() + "/x509up."
+							+ vo.getVo());
+	
+					if (proxyVoFile.exists()&&vo.getConfigured().equals("true")) {
+						try {
+							GlobusCredential cred = new GlobusCredential(
+									proxyVoFile.toString());
+							if (cred.getTimeLeft() > 0) {
+								return true;
+							} else {
+								proxyVoFile.delete();
+								SessionMessages.add(request, "proxy-expired-deleted");
+							}
+						} catch (GlobusCredentialException e) {
+							e.printStackTrace();
+							log.info("e mò sono cazzi amari");
 						}
-					} catch (GlobusCredentialException e) {
-						e.printStackTrace();
-						log.info("e mò sono cazzi amari");
 					}
 				}
 			}

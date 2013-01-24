@@ -53,11 +53,13 @@ public class AddVOController {
 		RegistrationModel registrationModel = (RegistrationModel) request.getAttribute("registrationModel");
 		
 		List<Vo> result = new ArrayList<Vo>();
-		if(!registrationModel.getVos().isEmpty())
-			for(String id : registrationModel.getVos().split("#"))
-				result.add(voService.findById(Integer.parseInt(id)));
-		
-		request.setAttribute("registrationModel", registrationModel);
+//		if(!registrationModel.getVos().isEmpty())
+//			for(String id : registrationModel.getVos().split("#"))
+//				result.add(voService.findById(Integer.parseInt(id)));
+//		
+//		request.setAttribute("registrationModel", registrationModel);
+//		
+		result = userToVoService.findVoByUserId(userInfoService.findByMail(registrationModel.getEmail()).getUserId());
 		
 		return result;
 	}

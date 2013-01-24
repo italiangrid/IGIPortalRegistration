@@ -342,7 +342,8 @@ h5#usernameAlert {
 						<portlet:param name="userId" value="${userId}" />
 					</portlet:renderURL>
 
-
+					<div class="portlet-msg-alert" >Please upload your certificate (.p12 or pfx format) and insert the password used to encrypt it.</div>
+					
 					<aui:input name="userId" type="hidden" value="${userId}" />
 					<aui:input name="idCert" type="hidden" value="${idCert}" />
 
@@ -351,7 +352,7 @@ h5#usernameAlert {
 						Insert certificate here.
 					</div>
 					
-							<aui:input name="usercert" type="file" label="p12 format Certificate"
+							<aui:input name="usercert" type="file" label="Import certificate"
 								 />
 					
 					
@@ -360,15 +361,14 @@ h5#usernameAlert {
 					</div>
 					
 							<aui:input id="keyPass" name="keyPass" type="password"
-								label="Password of your certificate" onBlur="printCheck($(this).attr('id'));"/>
+								label="Import certificate password" onBlur="printCheck($(this).attr('id'));"/>
 					</div>
 					<br />
 					
-						Please insert below a new password. <br/>
-						<strong>Don't forget this password:</strong> it will be asked again to use Grid and Cloud resources in a secure way and it will be not saved in the system. <br/>
+						<div class="portlet-msg-alert"><p>Please choose a password to encrypt your credentials. This is the only password you have to edit to retrieve your credentials.
+						</p><span>Don't forget it because we don't conserve it!!</span></div>
 					<div id="allertDiv2">
 				
-						<br/>
 						<div class="portlet-msg-error proxyPwd" style="display:none;">
 							These password must be the same.
 						</div>
@@ -381,7 +381,7 @@ h5#usernameAlert {
 						</div>
 
 								<aui:input id="passwordVerify" name="passwordVerify"
-									type="password" label="Retype Password" onkeyup="verifyPassword();"/>
+									type="password" label="Confirm Password" onkeyup="verifyPassword();"/>
 
 						
 					</div>
@@ -397,7 +397,7 @@ h5#usernameAlert {
 			<aui:column columnWidth="30" style="margin-left:30px;">
 
 				<aui:fieldset>
-					<br/><br/>
+					<br/><br/><br/><br/><br/>
 					
 					<div id="help">
 					<script  type="text/javascript">

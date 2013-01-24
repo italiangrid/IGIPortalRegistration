@@ -131,6 +131,7 @@ public class AddUserController {
 			
 			if((!registrationModel.getFirstName().isEmpty())&&(!registrationModel.getLastName().isEmpty())&&(!registrationModel.getInstitute().isEmpty())&&(!registrationModel.getEmail().isEmpty())){
 				registrationModel.setUserStatus(true);
+				registrationModel.setHaveIDP(true);
 				log.error("###########"+registrationModel);
 				request.setAttribute("registrationModel", registrationModel);
 				try {
@@ -219,11 +220,13 @@ public class AddUserController {
 		try {
 			log.error(RegistrationConfig.getProperties("Registration.properties", "login.url"));
 			request.setAttribute("loginUrl", RegistrationConfig.getProperties("Registration.properties", "login.url"));
+			request.setAttribute("caEnabled", RegistrationConfig.getProperties("Registration.properties", "CAOnline.enabled"));
+			request.setAttribute("proxyEnabled", RegistrationConfig.getProperties("Registration.properties", "proxy.enabled"));
 		} catch (RegistrationException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+	
 		return "askForCertificate";
 	}
 	

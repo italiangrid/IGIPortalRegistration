@@ -49,9 +49,9 @@ import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.servlet.SessionErrors;
 import com.liferay.portal.kernel.servlet.SessionMessages;
 import com.liferay.portal.kernel.util.JavaConstants;
-import com.liferay.portal.model.Role;
+//import com.liferay.portal.model.Role;
 import com.liferay.portal.model.User;
-import com.liferay.portal.service.RoleLocalServiceUtil;
+//import com.liferay.portal.service.RoleLocalServiceUtil;
 import com.liferay.portal.service.UserLocalServiceUtil;
 import com.liferay.portal.util.PortalUtil;
 
@@ -110,18 +110,24 @@ public class UploadProxyController {
 	}
 	
 	@ActionMapping(params = "myaction=abortRegistration")
-	public void abortRegistration(ActionResponse response){
-		CookieUtil.setCookieSession("JSESSIONID", "", response);
+	public void abortRegistration(@ModelAttribute RegistrationModel registrationModel, ActionRequest request, ActionResponse response){
 		
-		try {
-			URL url = new URL(RegistrationConfig.getProperties("Registration.properties", "login.url"));
+		log.error(registrationModel);
+		if(registrationModel.isHaveIDP()==true){
+			CookieUtil.setCookieSession("JSESSIONID", "", response);
 			
-			log.error(url);
-			response.sendRedirect(url.toString());
-		} catch (IOException e) {
-			e.printStackTrace();
-		} catch (RegistrationException e) {
-			e.printStackTrace();
+			try {
+				URL url = new URL(RegistrationConfig.getProperties("Registration.properties", "login.url"));
+				
+				log.error(url);
+				response.sendRedirect(url.toString());
+			} catch (IOException e) {
+				e.printStackTrace();
+			} catch (RegistrationException e) {
+				e.printStackTrace();
+			}
+		}else{
+			response.setRenderParameter("myaction", "showAuthentication");
 		}
 	}
 	
@@ -293,13 +299,10 @@ public class UploadProxyController {
 						errors.add("myproxy-exception");
 						e1.printStackTrace();
 					} catch (RegistrationException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					} catch (NoSuchAlgorithmException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					} catch (MyProxyException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 		}else{
@@ -324,11 +327,11 @@ public class UploadProxyController {
 			Certificate c = certificateService.findByIdCert(cert.getIdCert());
 			
 			log.error("€€€€€€€€€€€€€€€€€€€€€€€€€€€€€"+c.getPasswordChanged());
-			UserInfo userInfo = userInfoService.findByMail(registrationModel.getEmail());
-			if ((userToVoService.findById(userInfo.getUserId()).size() > 0))
-				activateUser(userInfo, request, errors);
+//			UserInfo userInfo = userInfoService.findByMail(registrationModel.getEmail());
+//			if ((userToVoService.findById(userInfo.getUserId()).size() > 0))
+//				activateUser(userInfo, request, errors);
 			
-			CookieUtil.setCookieSession("JSESSIONID", "", response);
+			
 			try {
 				URL url;
 				if(registrationModel.isVerifyUser()){
@@ -339,16 +342,23 @@ public class UploadProxyController {
 					url = new URL(RegistrationConfig.getProperties("Registration.properties", "login.url"));
 				}
 				log.error(url);
-				response.sendRedirect(url.toString());
+				
+				SessionMessages.add(request, "upload-cert-successufully");
+				registrationModel.setCertificateStatus(true);
+				request.setAttribute("registrationModel", registrationModel);
+				if(registrationModel.isHaveIDP()==true){
+					CookieUtil.setCookieSession("JSESSIONID", "", response);
+					response.sendRedirect(url.toString());
+				}else{
+					response.setRenderParameter("myaction", "showAuthentication");
+				}
 			} catch (IOException e) {
 				e.printStackTrace();
 			} catch (RegistrationException e) {
 				e.printStackTrace();
 			}
 			
-			SessionMessages.add(request, "upload-cert-successufully");
-			registrationModel.setCertificateStatus(true);
-			request.setAttribute("registrationModel", registrationModel);
+			
 
 		} else {
 
@@ -372,52 +382,52 @@ public class UploadProxyController {
 
 	}
 	
-	private void activateUser(UserInfo userInfo, ActionRequest request,
-			ArrayList<String> errors) {
-
-		String username = userInfo.getUsername();
-
-		long companyId = PortalUtil.getCompanyId(request);
-
-		User user;
-		try {
-			user = UserLocalServiceUtil
-					.getUserByScreenName(companyId, username);
-
-			Role rolePowerUser = RoleLocalServiceUtil.getRole(companyId,
-					"Power User");
-
-			List<User> powerUsers = UserLocalServiceUtil
-					.getRoleUsers(rolePowerUser.getRoleId());
-
-			long users[] = new long[powerUsers.size() + 1];
-
-			int i;
-
-			for (i = 0; i < powerUsers.size(); i++) {
-				users[i] = powerUsers.get(i).getUserId();
-			}
-
-			users[i] = user.getUserId();
-			// long[] roles = {10140};
-
-			// RoleServiceUtil.addUserRoles(user.getUserId(), roles);
-
-			UserLocalServiceUtil.setRoleUsers(rolePowerUser.getRoleId(), users);
-
-			userInfo.setRegistrationComplete("true");
-
-			userInfoService.edit(userInfo);
-
-			SessionMessages.add(request, "user-activate");
-
-		} catch (PortalException e) {
-			errors.add("exception-activation-user");
-			e.printStackTrace();
-		} catch (SystemException e) {
-			errors.add("exception-activation-user");
-			e.printStackTrace();
-		}
-
-	}
+//	private void activateUser(UserInfo userInfo, ActionRequest request,
+//			ArrayList<String> errors) {
+//
+//		String username = userInfo.getUsername();
+//
+//		long companyId = PortalUtil.getCompanyId(request);
+//
+//		User user;
+//		try {
+//			user = UserLocalServiceUtil
+//					.getUserByScreenName(companyId, username);
+//
+//			Role rolePowerUser = RoleLocalServiceUtil.getRole(companyId,
+//					"Power User");
+//
+//			List<User> powerUsers = UserLocalServiceUtil
+//					.getRoleUsers(rolePowerUser.getRoleId());
+//
+//			long users[] = new long[powerUsers.size() + 1];
+//
+//			int i;
+//
+//			for (i = 0; i < powerUsers.size(); i++) {
+//				users[i] = powerUsers.get(i).getUserId();
+//			}
+//
+//			users[i] = user.getUserId();
+//			// long[] roles = {10140};
+//
+//			// RoleServiceUtil.addUserRoles(user.getUserId(), roles);
+//
+//			UserLocalServiceUtil.setRoleUsers(rolePowerUser.getRoleId(), users);
+//
+//			userInfo.setRegistrationComplete("true");
+//
+//			userInfoService.edit(userInfo);
+//
+//			SessionMessages.add(request, "user-activate");
+//
+//		} catch (PortalException e) {
+//			errors.add("exception-activation-user");
+//			e.printStackTrace();
+//		} catch (SystemException e) {
+//			errors.add("exception-activation-user");
+//			e.printStackTrace();
+//		}
+//
+//	}
 }

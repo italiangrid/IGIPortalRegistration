@@ -200,10 +200,7 @@ public class AddUserToVOController {
 						activateUser(ui, request, errors);
 					}
 					userToVoService.save(userId, idVo, subject);
-					List<UserToVo> utvs = userToVoService.findById(userId);
-					if (utvs.size() == 1)
-						;
-					userToVoService.setDefault(userId, idVo);
+					
 					log.error("Salvato sul DB ");
 					
 					if(vo.getConfigured().equals("false")){
@@ -220,6 +217,10 @@ public class AddUserToVOController {
 							e.printStackTrace();
 						}
 						
+					}else{
+						String defaultVo = userToVoService.findDefaultVo(userId);
+						if (defaultVo==null)
+								userToVoService.setDefault(userId, idVo);
 					}
 				} else {
 					allOk = false;
@@ -438,15 +439,33 @@ public class AddUserToVOController {
 		int idVo = Integer.parseInt(request.getParameter("idVo"));
 
 		try {
+			
+			
+			
 			log.info("Sto per cancellare il userToVo con userId = " + userId
 					+ "e idVo = " + idVo);
 			userToVoService.delete(userId, idVo);
 			log.info("userTo Vo cancellato");
+			
+			String defaultVo = userToVoService.findDefaultVo(userId);
+			if(defaultVo==null){
+				List<Vo> vos = userToVoService.findVoByUserId(userId);
+				if(vos!=null)
+					for(Vo vo: vos){
+						log.error(vo.getVo()+" "+vo.getConfigured() + " " +vo.getConfigured().equals("true"));
+						if(vo.getConfigured().equals("true")){
+							userToVoService.setDefault(userId, vo.getIdVo());
+							break;
+						}
+					}
+				
+			}
 
 			SessionMessages.add(request, "userToVo-deleted-successufully");
 			userToVoService.findVoByUserId(userId);
 
 		} catch (Exception e) {
+			e.printStackTrace();
 			PortletConfig portletConfig = (PortletConfig)request.getAttribute(JavaConstants.JAVAX_PORTLET_CONFIG);
 			SessionMessages.add(request, portletConfig.getPortletName() + SessionMessages.KEY_SUFFIX_HIDE_DEFAULT_ERROR_MESSAGE);
 			SessionErrors.add(request, "error-deleting-userToVo");

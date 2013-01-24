@@ -301,15 +301,44 @@ h5#usernameAlert {
 				<liferay-ui:icon image="back" message="Back" url="#" onClick="history.back()" />
 				</liferay-ui:icon-menu>
 				</div>
-				<portlet:actionURL var="abortUrl">
-					<portlet:param name="myaction" value="abortRegistration"/>
-				</portlet:actionURL>
-				<div class="button" style="float: left;">
-				<liferay-ui:icon-menu>
-				<liferay-ui:icon image="close" message="Abort Registration" url="${abortUrl }"
-					onClick="alert('You are now registrated in the portal, please log into the portal to complete the registraion.');" />
-				</liferay-ui:icon-menu>
-				</div>
+				<c:if test="${registrationModel.haveIDP }" >
+					<portlet:actionURL var="abortUrl">
+						<portlet:param name="myaction" value="abortRegistration"/>
+						<portlet:param name="subject" value="${registrationModel.subject }"/>
+						<portlet:param name="issuer" value="${registrationModel.issuer }"/>
+						<portlet:param name="expiration" value="${registrationModel.expiration }"/>
+						<portlet:param name="haveCertificate" value="${registrationModel.haveCertificate }"/>
+						<portlet:param name="certificateUserId" value="${registrationModel.certificateUserId }"/>
+						<portlet:param name="vos" value="${registrationModel.vos }"/>
+						<portlet:param name="searchVo" value="${registrationModel.searchVo }"/>
+						<portlet:param name="mail" value="${registrationModel.mail }"/>
+						<portlet:param name="haveIDP" value="${registrationModel.haveIDP }"/>
+						<portlet:param name="firstName" value="${registrationModel.firstName }"/>
+						<portlet:param name="lastName" value="${registrationModel.lastName }"/>
+						<portlet:param name="institute" value="${registrationModel.institute }"/>
+						<portlet:param name="email" value="${registrationModel.email }"/>
+						<portlet:param name="userStatus" value="${registrationModel.userStatus }"/>
+						<portlet:param name="certificateStatus" value="${registrationModel.certificateStatus }"/>
+						<portlet:param name="voStatus" value="${registrationModel.voStatus }"/>
+						<portlet:param name="verifyUser" value="${registrationModel.verifyUser }"/>
+					</portlet:actionURL>
+					
+					<div class="button" style="float: left;">
+					<liferay-ui:icon-menu>
+					<liferay-ui:icon image="close" message="Abort Registration" url="${abortUrl }" onClick="alert('You are now registrated in the portal, please log into the portal to complete the registraion.');" />
+					</liferay-ui:icon-menu>
+					</div>
+					</c:if>
+					<c:if test="${!registrationModel.haveIDP }" >
+					<portlet:renderURL var="homeUrl">
+						<portlet:param name="myaction" value="userInfos" />
+					</portlet:renderURL>
+					<div class="button" style="float: left;">
+					<liferay-ui:icon-menu>
+					<liferay-ui:icon image="close" message="Abort Registration" url="${homeUrl }" />
+					</liferay-ui:icon-menu>
+					</div>
+				</c:if>
 				<div class="button" style="float: right;">
 				<liferay-ui:icon-menu>
 				<liferay-ui:icon image="forward" message="Continue" url="#" onClick="submit();" />
