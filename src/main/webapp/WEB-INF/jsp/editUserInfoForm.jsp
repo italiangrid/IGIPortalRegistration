@@ -402,7 +402,7 @@
 div#personalData {
 	box-shadow: 10px 10px 5px #888;
 	margin: 0 9px 10px 0;
-	padding: 1em;
+	padding: 0 12px 12px 12px;
 	border: 1px;
 	border-color: #C8C9CA;
 	border-style: solid;
@@ -412,7 +412,7 @@ div#personalData {
 div#certificateData {
 	box-shadow: 10px 10px 5px #888;
 	margin: 10px 9px 10px 0;
-	padding: 1em;
+	padding: 0 12px 12px 12px;
 	border: 1px;
 	border-color: #C8C9CA;
 	border-style: solid;
@@ -422,7 +422,7 @@ div#certificateData {
 div#voData {
 	box-shadow: 10px 10px 5px #888;
 	margin: 10px 9px 10px 0;
-	padding: 1em;
+	padding: 0 12px 12px 12px;
 	border: 1px;
 	border-color: #C8C9CA;
 	border-style: solid;
@@ -432,7 +432,7 @@ div#voData {
 div#advancedSettings {
 	box-shadow: 10px 10px 5px #888;
 	margin: 10px 9px 10px 0;
-	padding: 1em;
+	padding: 0 12px 12px 12px;
 	border: 1px;
 	border-color: #C8C9CA;
 	border-style: solid;
@@ -442,6 +442,16 @@ div#advancedSettings {
 div.changePassword {
 	box-shadow: 10px 10px 5px #888;
 	margin: 10px 9px 10px 0;
+	padding: 0 12px 12px 12px;
+	border: 1px;
+	border-color: #C8C9CA;
+	border-style: solid;
+	background-color: #EFEFEF;
+}
+
+div#side {
+	box-shadow: 10px 10px 5px #888;
+	margin: 0px 0px 0px 0;
 	padding: 1em;
 	border: 1px;
 	border-color: #C8C9CA;
@@ -557,6 +567,52 @@ div.function {
     border: 1px solid #FC0;
 }
 
+.sideButton{
+ background: url("<%=request.getContextPath()%>/images/header_bg.png") repeat-x scroll 0 0 #D4D4D4;
+ 	-moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #C8C9CA #9E9E9E #9E9E9E #C8C9CA;
+    border-image: none;
+    border-style: solid;
+    border-width: 1px;
+    color: #34404F;
+    cursor: pointer;
+    font-weight: bold;
+    overflow: visible;
+    padding: 43px 5px 5px 5px;
+    text-shadow: 1px 1px #FFFFFF;
+    width: auto;
+    border-radius: 4px 4px 4px 4px;
+    text-decoration: none;
+    margin: 1px;
+}
+
+.sideButton:hover {
+	background: url("<%=request.getContextPath()%>/images/state_hover_bg.png") repeat-x scroll 0 0 #B9CED9;
+    border-color: #627782;
+    color: #336699;
+}
+
+.large{
+	padding: 75px 5px 5px 5px;
+}
+
+#presentationLogin {
+	color: black;
+	font-size:120%;
+	font-weight: bold;
+	border-bottom: 1px solid #CCC;
+	display: block;
+	position: absolute;
+	width: 90%;
+}
+
+#side legend.aui-fieldset-legend{
+	margin-bottom: 20px;
+}
+
 </style>
 
 
@@ -568,6 +624,8 @@ div.function {
 	<div>
 </c:otherwise>
 </c:choose> --%>
+
+
 
 <div id="container">
 
@@ -581,10 +639,10 @@ div.function {
 	<portlet:param name="myaction" value="updateGuseNotify" />
 </portlet:actionURL>
 <portlet:renderURL var="homeUrl">
-	<portlet:param name="myaction" value="userInfos" />
+	<portlet:param name="myaction" value="selectedUsers" />
 </portlet:renderURL>
 
-<jsp:useBean id="userInfo" type="it.italiangrid.portal.dbapi.domain.UserInfo"
+<jsp:useBean id="selectedUser" type="it.italiangrid.portal.dbapi.domain.UserInfo"
 	scope="request" />
 <jsp:useBean id="certList"
 	type="java.util.List<it.italiangrid.portal.dbapi.domain.Certificate>"
@@ -609,6 +667,9 @@ div.function {
 </c:if>
 
 <c:if test="${changePasswordNow=='true' }">
+
+<aui:column columnWidth="70">
+
 <div id="personalData">
 	<h3 class="header-title">Personal data</h3>
 
@@ -654,24 +715,24 @@ div.function {
 						<table>
 							<tr>
 								<td align="right" style="margin: 0; padding: 0 1em 0 0;">User:</td>
-								<td><strong><c:out value="${userInfo.firstName }" />
-								</strong> <strong><c:out value="${userInfo.lastName }" /> </strong></td>
+								<td><strong><c:out value="${selectedUser.firstName }" />
+								</strong> <strong><c:out value="${selectedUser.lastName }" /> </strong></td>
 							</tr>
-							<c:if test="${!empty  userInfo.institute}">
+							<c:if test="${!empty  selectedUser.institute}">
 							<tr>
 								<td align="right" style="margin: 0; padding: 0 1em 0 0;">Institute:</td>
-								<td><strong><c:out value="${userInfo.institute }" />
+								<td><strong><c:out value="${selectedUser.institute }" />
 								</strong></td>
 							</tr>
 							</c:if>
 							<!-- <tr>
 								<td align="right" style="margin: 0; padding: 0 1em 0 0;">Username:</td>
-								<td><strong><c:out value="${userInfo.username }" /> </strong>
+								<td><strong><c:out value="${selectedUser.username }" /> </strong>
 								</td>
 							</tr> -->
 							<tr>
 								<td align="right" style="margin: 0; padding: 0 1em 0 0;">e-Mail:</td>
-								<td><strong><c:out value="${userInfo.mail }" /> </strong></td>
+								<td><strong><c:out value="${selectedUser.mail }" /> </strong></td>
 							</tr>
 						</table>
 					</aui:fieldset>
@@ -692,7 +753,7 @@ div.function {
 		<a href="#editUserInfoForm" onclick="nascondiModificaUtente();">Hide data</a><br />
 		<br />
 
-		<aui:form name="editUserInfoForm" commandName="userInfo"
+		<aui:form name="editUserInfoForm" commandName="selectedUser"
 			action="${editUserInfoActionUrl}">
 
 			<aui:layout>
@@ -703,17 +764,17 @@ div.function {
 							<br></br>
 
 							<aui:input name="userId" type="hidden"
-								value="<%=userInfo.getUserId() %>" />
+								value="<%=selectedUser.getUserId() %>" />
 							<liferay-ui:error key="user-first-name-required"
 								message="user-first-name-required" />
 							<strong>First Name</strong><br/>
 							<input name="firstName" type="text"
-								value="<%=userInfo.getFirstName() %>" disabled="disabled"/>
+								value="<%=selectedUser.getFirstName() %>" disabled="disabled"/>
 							<liferay-ui:error key="user-last-name-required"
 								message="user-last-name-required" />
 							<br/><br/><strong>Last Name</strong><br/>
 							<input name="lastName" type="text"
-								value="<%=userInfo.getLastName() %>" disabled="disabled"/>
+								value="<%=selectedUser.getLastName() %>" disabled="disabled"/>
 							<br/> <br/>
 						</aui:fieldset>
 					</aui:column>
@@ -725,12 +786,12 @@ div.function {
 								message="user-institute-required" />
 							<strong>Institute</strong><br/>
 							<input name="institute" type="text"
-								value="<%=userInfo.getInstitute() %>" disabled="disabled"/>
+								value="<%=selectedUser.getInstitute() %>" disabled="disabled"/>
 							<liferay-ui:error key="user-phone-valid"
 								message="user-phone-valid" />
 							<!-- <br/><br/><strong>Phone Number</strong><br/>  -->
 							<input name="phone" type="hidden"
-								value="<%=userInfo.getPhone() %>"  />
+								value="<%=selectedUser.getPhone() %>"  />
 							<liferay-ui:error key="user-mail-required"
 								message="user-mail-required" />
 							<liferay-ui:error key="user-valid-mail-required"
@@ -739,9 +800,9 @@ div.function {
 								message="user-mail-duplicate" />
 							<br/><br/><strong>e-Mail Address</strong><br/>
 							<input name="mail" disabled="disabled" type="text"
-								value="<%=userInfo.getMail() %>" />	
+								value="<%=selectedUser.getMail() %>" />	
 							<input name="username" disabled="disabled" type="hidden"
-								value="<%=userInfo.getUsername() %>" />	
+								value="<%=selectedUser.getUsername() %>" />	
 							<br/> <br/>
 						</aui:fieldset>
 					</aui:column>
@@ -755,7 +816,7 @@ div.function {
 								message="user-username-duplicate" />
 							<strong>Username</strong><br/>
 							<input name="username" disabled="disabled" type="text"
-								value="<%=userInfo.getUsername() %>" />
+								value="<%=selectedUser.getUsername() %>" />
 							<liferay-ui:error key="user-mail-required"
 								message="user-mail-required" />
 							<liferay-ui:error key="user-valid-mail-required"
@@ -764,7 +825,7 @@ div.function {
 								message="user-mail-duplicate" />
 							<br/><br/><strong>e-Mail Address</strong><br/>
 							<input name="mail" disabled="disabled" type="text"
-								value="<%=userInfo.getMail() %>" />
+								value="<%=selectedUser.getMail() %>" />
 							<br/> <br/>
 						</aui:fieldset>
 					</aui:column> -->
@@ -868,7 +929,7 @@ div.function {
 		<%
 		    PortletURL itURL = renderResponse.createRenderURL();
 			itURL.setParameter("myaction","editUserInfoForm");
-			itURL.setParameter("userId",Integer.toString(userInfo.getUserId()));
+			itURL.setParameter("userId",Integer.toString(selectedUser.getUserId()));
 			
 		%>
 
@@ -930,11 +991,11 @@ div.function {
 
 		</portlet:renderURL>
 
-		<aui:form id="uploadCertForm" name="uploadCertForm" commandName="userInfo" action="${uploadCertUrl}">
+		<aui:form id="uploadCertForm" name="uploadCertForm" commandName="selectedUser" action="${uploadCertUrl}">
 			<c:if test="${fn:length(certList) == 0}">
-			<aui:input name="userId" type="hidden" value="${userInfo.userId }" />
+			<aui:input name="userId" type="hidden" value="${selectedUser.userId }" />
 			<aui:input name="username" type="hidden"
-				value="${userInfo.username }" />
+				value="${selectedUser.username }" />
 			<aui:input name="firstReg" type="hidden" value="false" />
 			
 			
@@ -1121,7 +1182,7 @@ div.function {
 	
 		<portlet:actionURL var="searchVOActionUrl">
 			<portlet:param name="myaction" value="searchVo3" />
-			<portlet:param name="userId" value="${userInfo.userId }" />
+			<portlet:param name="userId" value="${selectedUser.userId }" />
 		</portlet:actionURL>
 		
 		<aui:form name="searchVo"
@@ -1213,14 +1274,14 @@ div.function {
 
 		<portlet:renderURL var="addUserToVOActionUrl">
 			<portlet:param name="myaction" value="showAddUserToVO" />
-			<portlet:param name="userId" value="${userInfo.userId}" />
+			<portlet:param name="userId" value="${selectedUser.userId}" />
 			<portlet:param name="firstReg" value="false" />
 		</portlet:renderURL>
 		
 		<portlet:renderURL var="voUrl">
 			<portlet:param name="myaction" value="showVOList" />
 			<portlet:param name="waif" value="editUserInfoForm" />
-			<portlet:param name="userId" value="${userInfo.userId}"/>
+			<portlet:param name="userId" value="${selectedUser.userId}"/>
 		</portlet:renderURL>
 		
 		</c:if>
@@ -1251,7 +1312,7 @@ div.function {
 						Proxy Notification: <strong><c:if test="${advOpts.proxyExpire=='true' }">ON</c:if><c:if test="${advOpts.proxyExpire=='false' }">OFF</c:if></strong>.<br/>
 						Proxy Lifetime: <strong><c:forEach var="option" items="${expirationTime}"><c:if test="${advOpts.proxyExpireTime==fn:trim(fn:split(option,'/')[0]) }">${fn:split(option,'/')[1] }</c:if></c:forEach></strong>.<br/>
 						Job Notification: <strong><c:if test="${notification.wfchgEnab=='true' }">ON</c:if><c:if test="${notification.wfchgEnab=='false' }">OFF</c:if></strong>.<br/>
-						<br /> <br />
+						
 					</aui:fieldset>
 				</aui:column>
 				<aui:column columnWidth="20">
@@ -1322,7 +1383,7 @@ div.function {
 									value="${notification.emailAddr }" />
 									
 								<aui:input name="userId" type="hidden"
-								value="<%=userInfo.getUserId() %>" />
+								value="<%=selectedUser.getUserId() %>" />
 								
 							 	<aui:input name="emailEnab" type="hidden"
 									value="${notification.emailEnab }" />
@@ -1374,60 +1435,134 @@ div.function {
 </div>
 
 
-
-<br/>
-
-<c:choose>
-	<c:when test="<%= request.isUserInRole("administrator") %>">
-	
-		<portlet:actionURL var="homeUrl">
-			<portlet:param name="myaction" value="uploadComplete" />
-			<portlet:param name="userId"
-				value="<%= request.getParameter("userId") %>" />
-		</portlet:actionURL>
-		
-		
-		<aui:form name="catalogForm" action="${homeUrl}">
-			<aui:button-row>
-				<aui:button type="submit" value="Changes completed" />
-			</aui:button-row>
-		</aui:form>
-
-	</c:when>
-	<c:otherwise>
-		
-	
-		<portlet:actionURL var="deleteURL">
-			<portlet:param name="myaction" value="deleteByUser" /> 
-			<portlet:param name="userId" value="${userInfo.userId }" /> 
-		</portlet:actionURL>
-		
-		<aui:form name="catalogForm" action="${deleteUrl}">
-			<aui:button-row>
-				<aui:button type="cancel" value="Delete Account"
-								onClick="verifyDelete('${deleteURL}')" />
-								
-				
-				<c:if test="${fn:length(userToVoList)>0&&isUserActive=='true'}">
-					<c:if test="${proxyDownloaded=='false' }">				
-					<liferay-portlet:renderURL plid="11914" portletName="Login_WAR_Login11_INSTANCE_OI71Ar1eqW4Y" windowState="<%= LiferayWindowState.POP_UP.toString() %>" var="downloadProxy">
-						<portlet:param name="myaction" value="downloadCertificate" />
-					</liferay-portlet:renderURL>
-					<aui:button type="button" value="Use Portal" onclick="$(this).modal({width:400, height:300, message:true, src: '${downloadProxy }', redirect: '${usePortalURL }'}).open(); return false;"/>
-					</c:if>
-					<c:if test="${proxyDownloaded=='true' }">	
-					<aui:button type="button" value="Use Portal" onclick="location.href='${usePortalURL }';"/>
-					</c:if>
-				</c:if>
-			</aui:button-row>
-		</aui:form>
-	</c:otherwise>
-
-</c:choose>
-
 <div id="settingsButtonAdv" style="display:none;">Edit your Advanced Settings.</div>
 <div id="settingsButtonCert" style="display:none;">Edit your certficate.</div>
 <div id="settingsButtonVO" style="display:none;">Edit your VO.</div>
+
+</aui:column>
+
+<aui:column columnWidth="30">
+
+<div id="side">
+
+	
+<c:set var="check" value="<%= request.isUserInRole("administrator") %>"/>
+	
+<c:if test="${check == 'false' }">
+<aui:fieldset label="Hi ${selectedUser.firstName}">
+<table style="width: 100%;">
+	<tbody>
+		<c:if test="${fn:length(userToVoList)>0&&isUserActive=='true'}">
+		<tr>
+			<td colspan="3">
+			
+				<c:if test="${proxyDownloaded=='false' }">				
+				<liferay-portlet:renderURL plid="11914" portletName="Login_WAR_Login11_INSTANCE_OI71Ar1eqW4Y" windowState="<%= LiferayWindowState.POP_UP.toString() %>" var="downloadProxy">
+					<portlet:param name="myaction" value="downloadCertificate" />
+				</liferay-portlet:renderURL>
+				<p style="text-align: center;">
+					<a href="#" onclick="$(this).modal({width:400, height:300, message:true, src: '${downloadProxy }', redirect: '${usePortalURL }'}).open(); return false;" class="sideButton">
+					<img alt="" src="<%=request.getContextPath()%>/images/Use_Portal2.png" style="width: 137px; height: 48px;" /></a></p>
+				
+				</c:if>
+				<c:if test="${proxyDownloaded=='true' }">	
+				<p style="text-align: center;">
+					<a href="#" onclick="location.href='${usePortalURL }';" class="sideButton">
+					<img alt="" src="<%=request.getContextPath()%>/images/Use_Portal2.png" style="width: 137px; height: 48px;" /></a></p>
+				
+				</c:if>
+				<p style="text-align: center;">
+					<img alt="" src="<%=request.getContextPath()%>/images/separatore-giu.png" style="width: 237px; height: 15px;" /></p>
+			</td>
+		</tr>
+		</c:if>
+		<tr>
+			<td colspan="3">
+				
+				<p style="text-align: center;">
+				<portlet:actionURL var="deleteURL">
+					<portlet:param name="myaction" value="deleteByUser" /> 
+					<portlet:param name="userId" value="${selectedUser.userId }" /> 
+				</portlet:actionURL>
+					<a href="#" onClick="verifyDelete('${deleteURL}')" class="sideButton">
+					<img alt="" src="<%=request.getContextPath()%>/images/Delete_user3.png" style="width: 130px; height: 48px;" /></a></p>
+				<p style="text-align: center;">
+					<img alt="" src="<%=request.getContextPath()%>/images/separatore-giu.png" style="width: 237px; height: 15px;" /></p>
+				
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 30%; text-align: center; vertical-align: middle;">
+				<p>
+					<a href="#" onclick="location.href='https://flyback.cnaf.infn.it/web/guest/contact-us';" class="sideButton large">
+					<img alt="" src="<%=request.getContextPath()%>/images/Documentation_guide.png" style="width: 80px; height: 80px;" /></a></p>
+				<p>
+					<img alt="" src="<%=request.getContextPath()%>/images/separatore-giu.png" style="line-height: 1.4; width: 80px; height: 10px;" /></p>
+			</td>
+			<td style="width: 30%; text-align: center; vertical-align: middle;">
+				<p>
+					<a href="#" onclick="location.href='https://flyback.cnaf.infn.it/web/guest/contact-us';" class="sideButton large">
+					<img alt="" src="<%=request.getContextPath()%>/images/Video_guide.png" style="width: 80px; height: 80px;" /></a></p>
+				<p>
+					<img alt="" src="<%=request.getContextPath()%>/images/separatore-giu.png" style="width: 80px; height: 10px;" /></p>
+			</td>
+			<td style="width: 30%; text-align: center; vertical-align: middle;">
+				<p><a href="#" onclick="location.href='https://flyback.cnaf.infn.it/web/guest/contact-us';" class="sideButton large">
+				<img alt="" src="<%=request.getContextPath()%>/images/HelpSide.png" style="width: 80px; height: 80px;" /></a><br />
+				</p><p>
+					<img alt="" src="<%=request.getContextPath()%>/images/separatore-giu.png" style="width: 80px; height: 10px;" /></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</aui:fieldset>
+</c:if>
+<c:if test="<%= request.isUserInRole("administrator") %>">
+<aui:fieldset label="Hi Administrator">
+<table style="width: 100%;">
+	<tbody>
+		<c:if test="${fn:length(userToVoList)>0&&isUserActive=='true'}">
+		<tr>
+			<td colspan="3">
+			
+				<portlet:actionURL var="homeUrl">
+					<portlet:param name="myaction" value="uploadComplete" />
+				</portlet:actionURL>
+				<p style="text-align: center;">
+					<a href="#" onclick="location.href='${homeUrl }';" class="sideButton">
+					<img alt="" src="<%=request.getContextPath()%>/images/Use_Portal2.png" style="width: 137px; height: 48px;" /></a></p>
+				
+				
+				<p style="text-align: center;">
+					<img alt="" src="<%=request.getContextPath()%>/images/separatore-giu.png" style="width: 237px; height: 15px;" /></p>
+			</td>
+		</tr>
+		</c:if>
+		<tr>
+			<td colspan="3">
+				
+				<p style="text-align: center;">
+				<portlet:actionURL var="deleteURL">
+					<portlet:param name="myaction" value="removeUserInfo" /> 
+					<portlet:param name="userId" value="${selectedUser.userId }" /> 
+				</portlet:actionURL>
+					<a href="#" onClick="verifyDelete('${deleteURL}')" class="sideButton">
+					<img alt="" src="<%=request.getContextPath()%>/images/Delete_user3.png" style="width: 130px; height: 48px;" /></a></p>
+				<p style="text-align: center;">
+					<img alt="" src="<%=request.getContextPath()%>/images/separatore-giu.png" style="width: 237px; height: 15px;" /></p>
+				
+			</td>
+		</tr>
+	</tbody>
+</table>
+</aui:fieldset>
+</c:if>
+
+</div>
+	
+</aui:column>
+
+
 </c:if>
 
 
@@ -1510,6 +1645,8 @@ div.function {
 </c:if>
 
 </div>
+
+
 
 
 

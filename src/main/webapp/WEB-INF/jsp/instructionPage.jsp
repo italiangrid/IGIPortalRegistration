@@ -104,7 +104,7 @@ $(document).ready(function() {
 			<hr/>
 			<br/>
 			In the first step we are going to retrieve your personal data from your organization.<br/>
-			<strong>Please in the next page select your institute, if it is not in the list click on "Other Institutes" button.</strong>
+			<strong>Please in the next page select your Organization.</strong><c:if test="${idpEnabled=='true' }"><strong> If it is not in the list click on "Other Institutes" button.</strong></c:if>
 			<br/><br/><br/>
 			
 		</div>

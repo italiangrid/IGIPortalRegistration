@@ -34,6 +34,16 @@ public class InstructionPageController {
 		return new RegistrationModel();
 	}
 	
+	@ModelAttribute("idpEnabled")
+	public String getIdpEnabled(){
+		try {
+			return RegistrationConfig.getProperties("Registration.properties", "idp.enabled");
+		} catch (RegistrationException e) {
+			e.printStackTrace();
+		}
+		return "false";
+	}
+	
 	
 	
 //	

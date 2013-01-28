@@ -8,9 +8,7 @@
 	width: 100%;
 	margin: 0;
 	padding: 0;
-	background: #131313;
-	opacity: .85;
-	filter: alpha(opacity=85);
+	background: url(/Registration-4/images/overlay2.png) repeat;
 	z-index: 101;
 }
 .modal-window {

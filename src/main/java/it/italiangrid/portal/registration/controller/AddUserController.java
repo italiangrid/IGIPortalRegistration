@@ -218,16 +218,24 @@ public class AddUserController {
 		request.setAttribute("registrationModel", registrationModel);
 		
 		try {
-			log.error(RegistrationConfig.getProperties("Registration.properties", "login.url"));
-			request.setAttribute("loginUrl", RegistrationConfig.getProperties("Registration.properties", "login.url"));
-			request.setAttribute("caEnabled", RegistrationConfig.getProperties("Registration.properties", "CAOnline.enabled"));
-			request.setAttribute("proxyEnabled", RegistrationConfig.getProperties("Registration.properties", "proxy.enabled"));
+			if(RegistrationConfig.getProperties("Registration.properties", "idp.enabled").equals("true")){
+				log.error(RegistrationConfig.getProperties("Registration.properties", "login.url"));
+				request.setAttribute("loginUrl", RegistrationConfig.getProperties("Registration.properties", "login.url"));
+				request.setAttribute("caEnabled", RegistrationConfig.getProperties("Registration.properties", "CAOnline.enabled"));
+				request.setAttribute("proxyEnabled", RegistrationConfig.getProperties("Registration.properties", "proxy.enabled"));
+				if(RegistrationConfig.getProperties("Registration.properties", "proxy.enabled").equals("true"))
+					return "askForCertificate";
+				
+				return "uploadCertificate";
+				
+			}
 		} catch (RegistrationException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	
-		return "askForCertificate";
+		
+		return "error";
 	}
 	
 	@ActionMapping(params="myaction=addUser")

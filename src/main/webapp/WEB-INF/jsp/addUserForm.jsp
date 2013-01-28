@@ -329,7 +329,7 @@
 				
 					<div class="button" style="float: left;">
 					<liferay-ui:icon-menu>
-					<liferay-ui:icon image="close" message="Abort Registration" url="#" onClick="location.href='${homeUrl}';" />
+					<liferay-ui:icon image="close" message="Abort Registration" url="${homeUrl}" />
 					</liferay-ui:icon-menu>
 					</div>
 					<div class="button" style="float: right;">

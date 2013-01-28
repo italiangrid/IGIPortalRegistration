@@ -21,6 +21,9 @@ import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
 import javax.portlet.PortletConfig;
 import javax.portlet.RenderRequest;
+import javax.portlet.RenderResponse;
+import javax.portlet.filter.RenderRequestWrapper;
+
 import org.apache.log4j.Logger;
 import org.globus.gsi.GlobusCredential;
 import org.globus.gsi.GlobusCredentialException;
@@ -93,9 +96,7 @@ public class EditUserInfoController {
 
 	@RenderMapping(params = "myaction=editUserInfoForm")
 	public String showEditUserInfoForm(@RequestParam int userId,
-			RenderRequest request) {
-		
-
+			RenderRequest request, RenderResponse response) {
 		return "editUserInfoForm";
 	}
 
@@ -225,7 +226,7 @@ public class EditUserInfoController {
 	@ModelAttribute("isUserActive")
 	public String getIsUserActive(@RequestParam int userId, RenderRequest request) {
 		
-log.error(userId);
+		log.error(userId);
 		
 		
 		List<Vo> vos = userToVoService.findVoByUserId(userId);
@@ -262,17 +263,27 @@ log.error(userId);
 
 	@ModelAttribute("defaultFqan")
 	public String getDefaultFqan(@RequestParam int userId) {
+		log.error("asdasdasdasd");
 		return userToVoService.getDefaultFqan(userId);
 	}
 
 	@ModelAttribute("userInfo")
 	public UserInfo getUserInfo(@RequestParam int userId) {
 		log.error("############### UserInfo : "+ userId);
+		log.error("asdasdasdasd3");
+		return userInfoService.findById(userId);
+	}
+	
+	@ModelAttribute("selectedUser")
+	public UserInfo getSelectedUser(@RequestParam int userId) {
+		log.error("############### UserInfo : "+ userId);
+		log.error("asdasdasdasd4");
 		return userInfoService.findById(userId);
 	}
 
 	@ModelAttribute("certList")
 	public List<Certificate> getListCert(@RequestParam int userId) {
+		log.error("asdasdasdasd2");
 		return certificateService.findById(userId);
 	}
 
@@ -372,84 +383,8 @@ log.error(userId);
 
 		return notifyService.findByUserInfo(userInfo);
 	}
-
-
-	@ActionMapping(params = "myaction=uploadComplete")
-	public void uploadComplete(ActionResponse response,
-			SessionStatus sessionStatus) {
-
-		response.setRenderParameter("myaction", "userInfos");
-		sessionStatus.setComplete();
-
-	}
 	
-	/**
-	 * Update the user's row of the table notification.
-	 * 
-	 * @param notify
-	 *            : the object that contain the advanced options
-	 * @param request
-	 *            : the request of the portlet
-	 * @param response
-	 *            : the response of the portlet
-	 * @param sessionStatus
-	 *            : the status of the portlet
-	 */
-	@ActionMapping(params = "myaction=updateGuseNotify")
-	public void updateGuseNotify(@ModelAttribute("notification") GuseNotify guseNotify, @ModelAttribute("advOpts") Notify notify, @RequestParam int userId,
-			ActionRequest request, ActionResponse response,
-			SessionStatus sessionStatus) {
-		
-		UserInfo userInfo = userInfoService.findById(Integer.valueOf(request.getParameter("userId")));
-		userInfoService.save(userInfo);
-		String username = userInfo.getUsername();
-		long companyId = PortalUtil.getCompanyId(request);
-		
-		try {
-			User user = UserLocalServiceUtil.getUserByScreenName(companyId,
-					username);
-			
-			GuseNotifyUtil guseNotifyUtil = new GuseNotifyUtil();
-			
-			guseNotify.setWfchgEnab((request.getParameter("wfchgEnab").equals("true")?"1":"0"));
-			guseNotify.setEmailEnab((request.getParameter("wfchgEnab").equals("true")?"1":"0"));
-			guseNotify.setQuotaEnab((request.getParameter("quotaEnab").equals("true")?"1":"0"));
-			
-			guseNotifyUtil.writeNotifyXML(user, guseNotify);
-			
-			
-			
-			
-			Notify n = notifyService.findByUserInfo(userInfo);
-			if(n!=null){
-				
-				log.debug("session id= " + notify.getIdNotify() + " retrived: "
-						+ n.getIdNotify());
-				n.setProxyExpire(notify.getProxyExpire());
-				n.setProxyExpireTime(notify.getProxyExpireTime());
-				log.debug("session value= " + notify.getProxyExpire() + " retrived: "
-						+ n.getProxyExpire());
-				log.error("session value= " + notify.getProxyExpireTime() + " retrived: "
-						+ n.getProxyExpireTime());
-			}else{
-				log.debug("New entry");
-				n = new Notify(userInfo, notify.getProxyExpire(), notify.getProxyExpireTime());
-				log.debug("session value= " + notify.getProxyExpire() + " retrived: "
-						+ n.getProxyExpire());
-			}
-			notifyService.save(n);
-			
-		} catch (PortalException e) {
-			e.printStackTrace();
-		} catch (SystemException e) {
-			e.printStackTrace();
-		}	
-		response.setRenderParameter("myaction", "editUserInfoForm");
-		response.setRenderParameter("userId", request.getParameter("userId"));
-		
-		
-
-	}
+	
 	
 	/**
 	 * Return to the portlet the advanced configurations of the user.
@@ -888,7 +823,7 @@ log.error(userId);
 			File proxyVoFile = null;
 			for (Vo vo: vos) {
 				if(vo.getConfigured().equals("true")){
-					log.error(vo.getVo() + "enabled");
+					log.error(vo.getVo() + " enabled");
 					proxyVoFile = new File(dir + "/users/"
 							+ user.getUserId() + "/x509up."
 							+ vo.getVo());
