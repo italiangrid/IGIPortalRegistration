@@ -22,7 +22,8 @@ public class NotificationCenter implements ServletContextListener {
 		// TODO Auto-generated method stub
 		// Destroy thread
 		scheduler = Executors.newSingleThreadScheduledExecutor();
-        scheduler.scheduleAtFixedRate(new Notificator(), 0, 10, TimeUnit.SECONDS);
+//        scheduler.scheduleAtFixedRate(new Notificator(), 0, 10, TimeUnit.SECONDS);
+        scheduler.scheduleAtFixedRate(new Notificator(), 0, 1, TimeUnit.DAYS);
 		
 	}
 

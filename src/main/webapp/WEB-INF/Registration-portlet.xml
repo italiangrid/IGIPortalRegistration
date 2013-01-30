@@ -24,6 +24,8 @@
 	<context:component-scan base-package="portal.registration" />
 	<context:component-scan base-package="it.italiangrid.portal.dbapi" />
 	<context:component-scan base-package="it.italiangrid.portal.registration" />
+	<context:component-scan base-package="portal.registration.server" />
+	
 
 	
 	<!-- Configures the annotation-driven Spring MVC Controller programming model.

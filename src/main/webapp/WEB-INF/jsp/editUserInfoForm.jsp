@@ -873,9 +873,23 @@ div.function {
 					<aui:fieldset>
 					<a href="#apriCert" ></a>   
 							
-							<c:if test="${fn:length(certList)==0}" >
-							<div class="portlet-msg-error">You don't have a certificate</div>
+					<c:if test="${fn:length(certList)==0}" >
+					<div class="portlet-msg-error">You don't have a certificate</div>
+					</c:if>
+					
+					<jsp:useBean id="now" class="java.util.Date" scope="request" />
+					<fmt:formatDate value="${now}" pattern="yyyy-MM-dd" var="today" />
+							
+					<c:forEach var="cert" items="${certList}">
+						<c:if test="${cert.primaryCert == 'true'}">
+						
+							<fmt:formatDate value="${cert.expirationDate}" pattern="yyyy-MM-dd" var="certLifeTime2" />
+							<c:if test="${certLifeTime2 < today}">
+							    <div class="portlet-msg-error">Your certificate is expired. Update it.</div>
 							</c:if>
+
+						</c:if>
+					</c:forEach>
 					
 					<c:if test="${fn:length(certList) > 0}">
 					My certificate is: <strong> <c:forEach
@@ -888,13 +902,21 @@ div.function {
 					Expiration Date: <strong> <c:forEach
 								var="cert" items="${certList}">
 								<c:if test="${cert.primaryCert == 'true'}">
-									<c:out value="${cert.expirationDate}" />
+								
+									<fmt:formatDate value="${cert.expirationDate}" pattern="yyyy-MM-dd" var="certLifeTime" />
+									<c:if test="${certLifeTime >= today}">
+									    <c:out value="${cert.expirationDate}" />
+									</c:if>
+									<c:if test="${certLifeTime < today}">
+									    <span style="color:red; font-weight:bold;"><c:out value="${cert.expirationDate}" /></span>
+									</c:if>
+
 								</c:if>
 							</c:forEach> </strong>
-						<br />
+				
 					</c:if>
 			
-					<br />
+					
 					</aui:fieldset>
 				</aui:column>
 				<aui:column columnWidth="30">
@@ -905,7 +927,20 @@ div.function {
 								<a href="#footnoteCertKO"><img src="<%=request.getContextPath()%>/images/NewDelete.png" width="48" height="48" style="float: right"/></a>
 							</c:when>
 							<c:otherwise>
-								<a href="#footnoteCertOK"><img src="<%=request.getContextPath()%>/images/NewCheck.png" width="48" height="48" style="float: right"/></a>
+								<c:forEach var="cert" items="${certList}">
+									<c:if test="${cert.primaryCert == 'true'}">
+									
+										<fmt:formatDate value="${cert.expirationDate}" pattern="yyyy-MM-dd" var="certLifeTime2" />
+										<c:if test="${certLifeTime2 < today}">
+										    <a href="#footnoteCertKO"><img src="<%=request.getContextPath()%>/images/NewDelete.png" width="48" height="48" style="float: right"/></a>
+										</c:if>
+										<c:if test="${certLifeTime2 >= today}">
+										    <a href="#footnoteCertOK"><img src="<%=request.getContextPath()%>/images/NewCheck.png" width="48" height="48" style="float: right"/></a>
+										</c:if>
+			
+									</c:if>
+								</c:forEach>
+								
 							</c:otherwise>
 						</c:choose>
 						<div id="footnoteCertOK" style="display:none;">All is OK.</div>
@@ -1177,7 +1212,7 @@ div.function {
 		<c:if test="${fn:length(certList) != 0}">
 		<div class="function">
 		<aui:fieldset>
-		<aui:column columnWidth="50">
+		<aui:column columnWidth="80">
 		<div id="searchForm" >
 	
 		<portlet:actionURL var="searchVOActionUrl">
@@ -1194,8 +1229,7 @@ div.function {
 				<div class="ui-widget" style="float:left;">
 				  Enter your VO's name <input id="tags" name="tags" type="text" />
 				</div>
-				
-				
+
 				<aui:button type="submit" value="Add" inlineField="true"/>
 				
 				</aui:button-row>
@@ -1530,7 +1564,7 @@ div.function {
 				</portlet:actionURL>
 				<p style="text-align: center;">
 					<a href="#" onclick="location.href='${homeUrl }';" class="sideButton">
-					<img alt="" src="<%=request.getContextPath()%>/images/Use_Portal2.png" style="width: 137px; height: 48px;" /></a></p>
+					<img alt="" src="<%=request.getContextPath()%>/images/Changes_completed.png" style="width: 137px; height: 48px;" /></a></p>
 				
 				
 				<p style="text-align: center;">

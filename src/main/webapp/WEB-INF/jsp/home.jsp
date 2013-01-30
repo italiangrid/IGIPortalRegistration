@@ -223,10 +223,11 @@ div#voData {
 		
 		<script>
 		
-		location.href="${editURL}";
+		/*location.href="${editURL}";*/
 		
 		</script>
 		
+		non dovresti essere qui.
 		
 
 	</c:otherwise>

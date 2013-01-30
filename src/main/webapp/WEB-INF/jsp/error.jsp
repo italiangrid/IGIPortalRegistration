@@ -73,4 +73,3 @@
 </div>
 <%@ include file="/WEB-INF/jsp/summary.jsp" %>
 <div style="clear:both;"></div>
-</div>
