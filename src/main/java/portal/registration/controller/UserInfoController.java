@@ -261,6 +261,10 @@ public class UserInfoController {
 			}
 			List<String> errors = new ArrayList<String>();
 			UserInfo userInfo = userInfoService.findById(userId);
+			log.error(active);
+			log.error(activeVo > 0);
+			log.error(userInfo.getRegistrationComplete().equals("false"));
+			log.error(active&&(activeVo > 0)&&(userInfo.getRegistrationComplete().equals("false")));
 			if(active&&(activeVo > 0)&&(userInfo.getRegistrationComplete().equals("false")))
 				activateUser(userInfo, request, errors);
 			

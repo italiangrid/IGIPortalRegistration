@@ -207,7 +207,8 @@
 				closeClassName: null,
 				overlayClassName: null,
 				src: null,
-				redirect: null
+				redirect: null,
+				myurl: null
 			};
 			this.options = $.extend({}, options, _defaults);
 			this.options = $.extend({}, options, _settings);
@@ -216,10 +217,16 @@
 				jQuery('.' + options.modalClassName + ', .' + options.overlayClassName).fadeOut(_settings.fadeOutSpeed, function () { jQuery(this).unbind().remove(); });
 			};
 			this.open = function () {
+				
+				
 				if (typeof options.src == 'function') {
 					options.src = options.src(sender);
 				} else {
 					options.src = options.src || _defaults.src(sender);
+				}
+				
+				if(options.myurl != null){
+					options.src=options.myurl;
 				}
 
 				var fileExt = /^.+\.((jpg)|(gif)|(jpeg)|(png)|(jpg))$/i;
@@ -301,7 +308,8 @@
 			src: function (sender) {
 				return jQuery(sender).attr('href');
 			},
-			redirect: null
+			redirect: null,
+			myurl: null
 		};
 	})(jQuery);
 	
@@ -995,26 +1003,47 @@ div.function {
 
 						GregorianCalendar c = new GregorianCalendar();
 						Date oggi = c.getTime();
-	
+						c.add(Calendar.DAY_OF_YEAR, 30);
+						Date days30 = c.getTime();
+						
 						if (cert.getExpirationDate().before(oggi)) {
 							%>
 							<span style="color:red; font-weight:bold;"><c:out value="<%=cert.getExpirationDate().toString() %>"/></span>
 							<%
-							
 						} else {
-							%>
-							<c:out value="<%=cert.getExpirationDate().toString() %>"/>
-							<%
+							if(cert.getExpirationDate().before(days30)){
+								%>
+								<span style="color: orange; font-weight:bold;"><c:out value="<%=cert.getExpirationDate().toString() %>"/></span>
+								<%
+							}else{
+								%>
+								<c:out value="<%=cert.getExpirationDate().toString() %>"/>
+								<%
+							}
 						}
 					%>
 					</liferay-ui:search-container-column-text>
 				
-				<!-- <c:if test="${certCAonline == 'false' }">
-					
-				</c:if> -->
-				
+				<c:if test="${certCAonline == 'false' }">
 					<liferay-ui:search-container-column-jsp
 					path="/WEB-INF/jsp/admin-cert-action.jsp" align="right" />
+				</c:if>
+				
+				<c:if test="${certCAonline == 'true' }">
+					<liferay-ui:search-container-column-text>
+						<liferay-ui:icon-menu>
+
+							
+							<liferay-ui:icon image="edit" message="Renew" url="javascript:$(this).modal({width:800, height:600, message:true, redirect:'https://flyback.cnaf.infn.it/web/guest/registration', myurl: 'https://openlab03.cnaf.infn.it/CAOnlineBridge/RenewPortal?t1=${tokens[0]}&t2=${tokens[1]}'}).open();"/>
+							
+							<liferay-ui:icon-delete url="javascript:$(this).modal({width:800, height:400, message:true, redirect:'https://flyback.cnaf.infn.it/web/guest/registration', myurl: 'https://openlab03.cnaf.infn.it/CAOnlineBridge/RevokePortal?t1=${tokens[0]}&t2=${tokens[1]}'}).open();" />
+							
+
+							</liferay-ui:icon-menu>
+					</liferay-ui:search-container-column-text>
+				</c:if>
+				
+					
 				
 			</liferay-ui:search-container-row>
 			<liferay-ui:search-iterator />
@@ -1058,7 +1087,7 @@ div.function {
 						<div class="choose">
 							<div id="or"><strong>OR</strong></div>
 						</div>
-						<a href="https://openlab03.cnaf.infn.it/CAOnlineBridge/home?t1=${tokens[0]}&t2=${tokens[1]}" onclick="setHaveCert('false'); $(this).modal({width:800, height:400}).open(); return false;">
+						<a href="https://openlab03.cnaf.infn.it/CAOnlineBridge/home?t1=${tokens[0]}&t2=${tokens[1]}" onclick="setHaveCert('false'); $(this).modal({width:800, height:400, message:true, redirect:'https://flyback.cnaf.infn.it/web/guest/registration'}).open(); return false;">
 						<div class="bordered">
 							<div class="mess">
 								<div class="center">
@@ -1078,7 +1107,7 @@ div.function {
 						<div class="choose">
 							<div id="or"><strong>OR</strong></div>
 						</div>
-						<a href="https://openlab03.cnaf.infn.it/CAOnlineBridge/home?t1=${tokens[0]}&t2=${tokens[1]}" onclick="setHaveCert('false'); $(this).modal({width:800, height:400}).open(); return false;">
+						<a href="https://openlab03.cnaf.infn.it/CAOnlineBridge/home?t1=${tokens[0]}&t2=${tokens[1]}" onclick="setHaveCert('false'); $(this).modal({width:800, height:400, message:true, redirect:'https://flyback.cnaf.infn.it/web/guest/registration'}).open(); return false;">
 						<div class="bordered">
 							<div class="mess">
 								<div class="center">
