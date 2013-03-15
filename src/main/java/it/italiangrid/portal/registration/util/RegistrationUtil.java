@@ -11,7 +11,6 @@ import it.italiangrid.portal.registration.exception.RegistrationException;
 import it.italiangrid.portal.registration.model.RegistrationModel;
 
 import java.util.Calendar;
-import java.util.Hashtable;
 import java.util.List;
 import java.util.Locale;
 import java.util.Properties;
@@ -19,7 +18,6 @@ import java.util.Properties;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
-import javax.naming.directory.Attribute;
 import javax.naming.directory.Attributes;
 import javax.naming.directory.BasicAttribute;
 import javax.naming.directory.BasicAttributes;
