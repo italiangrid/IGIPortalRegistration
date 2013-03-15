@@ -37,7 +37,7 @@
 	float: left;
 }
 
-.icon{
+.iconMy{
 	padding-top: 25px; 
 	margin-left: 8px; 
 	float: left;
@@ -164,8 +164,25 @@
 			<liferay-ui:error key="user-mail-duplicate"
 				message="user-mail-duplicate" />
 			<liferay-ui:error key="user-phone-valid" message="user-phone-valid" />
+			<liferay-ui:error key="ldap-error" message="ldap-error" />
 			
+			<aui:column columnWidth="95">
+				<c:if test="${empty  userInfo.mail}">
+					<div class="portlet-msg-error">Is not possible to continue the registration without verified e-mail address.<br/><br/>
+						<c:if test="${!registrationModel.haveIDP }">
+						You must have a certificate with e-mail address, please contact your Registration Authority.
+						</c:if>
+						<c:if test="${registrationModel.haveIDP }">
+						Your Identity Provider don't provide your e-mail address , please contact your Identity Provider administrator.
+						</c:if>
+						<br/><br/>Use the button "Abort Registration" for delete your data.
+					</div>
+				</c:if>
+			</aui:column>
+				
 			<div id="form">
+			
+				
 				<aui:column columnWidth="30">
 				
 					<aui:fieldset>
@@ -175,7 +192,7 @@
 											<aui:input label="First Name" name="firstName" type="input"
 												value="${userInfo.firstName}" readonly="readonly" />
 										</div>
-										<div class="icon">
+										<div class="iconMy">
 											<img src="<%=request.getContextPath()%>/images/NewCheck.png"
 												width="16" height="16" />
 										</div>
@@ -188,7 +205,7 @@
 											<aui:input label="First Name" name="firstName" type="input"
 												value="${userInfo.firstName}"  onkeyup="validate($(this).val(), 'FirstName');"/>
 										</div>
-										<div id="noFirstName" class="icon">
+										<div id="noFirstName" class="iconMy">
 											<img src="<%=request.getContextPath()%>/images/NewDelete.png"
 												width="16" height="16" />
 										</div>
@@ -206,7 +223,7 @@
 											<aui:input label="Last Name" name="lastName" type="input"
 												value="${userInfo.lastName}" readonly="readonly" />
 										</div>
-										<div class="icon">
+										<div class="iconMy">
 											<img src="<%=request.getContextPath()%>/images/NewCheck.png"
 												width="16" height="16" />
 										</div>
@@ -219,7 +236,7 @@
 											<aui:input label="Last Name" name="lastName" type="input"
 												value="${userInfo.lastName}"   onkeyup="validate($(this).val(), 'LastName');"/>
 										</div>
-										<div id="noLastName" class="icon">
+										<div id="noLastName" class="iconMy">
 											<img src="<%=request.getContextPath()%>/images/NewDelete.png"
 												width="16" height="16" />
 										</div>
@@ -237,7 +254,7 @@
 											<aui:input label="Institute" name="institute" type="input"
 												value="${userInfo.institute}" readonly="readonly" />
 										</div>
-										<div class="icon">
+										<div class="iconMy">
 											<img src="<%=request.getContextPath()%>/images/NewCheck.png"
 												width="16" height="16" />
 										</div>
@@ -250,7 +267,7 @@
 											<aui:input label="Institute" name="institute" type="input"
 												value="${userInfo.institute}"  onkeyup="validate($(this).val(), 'Institute');"/>
 										</div>
-										<div id="noInstitute" class="icon">
+										<div id="noInstitute" class="iconMy">
 											<img src="<%=request.getContextPath()%>/images/NewDelete.png"
 												width="16" height="16" />
 										</div>
@@ -270,7 +287,7 @@
 											<aui:input label="e-Mail addess" name="mail" type="input"
 												value="${userInfo.mail }" readonly="readonly" />
 										</div>
-										<div class="icon">
+										<div class="iconMy">
 											<img src="<%=request.getContextPath()%>/images/NewCheck.png"
 												width="16" height="16" />
 										</div>
@@ -278,12 +295,12 @@
 									
 								</c:if>
 								<c:if test="${empty  userInfo.mail}">
-									
+										
 										<div class="input">
-											<aui:input label="e-Mail addess" name="mail" type="input"
+											<aui:input label="e-Mail addess" name="mail" type="input" readonly="readonly"
 												value="${userInfo.mail }" onkeyup="validate(this.val(), 'Mail');"/>
 										</div>
-										<div id="noMail" class="icon">
+										<div id="noMail" class="iconMy">
 											<img src="<%=request.getContextPath()%>/images/NewDelete.png"
 												width="16" height="16" />
 										</div>
@@ -296,6 +313,7 @@
 								</c:if>
 
 								<aui:input  name="username" type="hidden" value="${userInfo.username }"/>
+								<aui:input  name="persistentId" type="hidden" value="${userInfo.persistentId }"/>
 						<aui:input  name="fromIDP" type="hidden" value="${fromIDP }"/>
 						
 					</aui:fieldset>
@@ -312,6 +330,7 @@
 				
 				
 				
+				
 				<aui:input name="subject" type="hidden" value="${registrationModel.subject }"></aui:input>
 				<aui:input name="issuer" type="hidden" value="${registrationModel.issuer }"></aui:input>
 				<aui:input name="expiration" type="hidden" value="${registrationModel.expiration }"></aui:input>
@@ -324,19 +343,50 @@
 				<aui:input name="voStatus" type="hidden" value="${registrationModel.voStatus }"/>
 				<aui:input name="verifyUser" type="hidden" value="${registrationModel.verifyUser }"/>
 				
-
 				<aui:button-row>
-				
+					<c:if test="${registrationModel.haveIDP }">
 					<div class="button" style="float: left;">
 					<liferay-ui:icon-menu>
 					<liferay-ui:icon image="close" message="Abort Registration" url="${homeUrl}" />
 					</liferay-ui:icon-menu>
 					</div>
+					</c:if>
+					<c:if test="${!registrationModel.haveIDP }">
+					<portlet:actionURL var="abortUrl">
+						<portlet:param name="myaction" value="abortRegistration"/>
+						<portlet:param name="subject" value="${registrationModel.subject }"/>
+						<portlet:param name="issuer" value="${registrationModel.issuer }"/>
+						<portlet:param name="expiration" value="${registrationModel.expiration }"/>
+						<portlet:param name="haveCertificate" value="${registrationModel.haveCertificate }"/>
+						<portlet:param name="certificateUserId" value="${registrationModel.certificateUserId }"/>
+						<portlet:param name="vos" value="${registrationModel.vos }"/>
+						<portlet:param name="searchVo" value="${registrationModel.searchVo }"/>
+						<portlet:param name="mail" value="${registrationModel.mail }"/>
+						<portlet:param name="haveIDP" value="${registrationModel.haveIDP }"/>
+						<portlet:param name="firstName" value="${registrationModel.firstName }"/>
+						<portlet:param name="lastName" value="${registrationModel.lastName }"/>
+						<portlet:param name="institute" value="${registrationModel.institute }"/>
+						<portlet:param name="email" value="${registrationModel.email }"/>
+						<portlet:param name="userStatus" value="${registrationModel.userStatus }"/>
+						<portlet:param name="certificateStatus" value="${registrationModel.certificateStatus }"/>
+						<portlet:param name="voStatus" value="${registrationModel.voStatus }"/>
+						<portlet:param name="verifyUser" value="${registrationModel.verifyUser }"/>
+					</portlet:actionURL>
+				
+					<div class="button" style="float: left;">
+					<liferay-ui:icon-menu>
+					<liferay-ui:icon image="close" message="Abort Registration" url="${abortUrl }"
+						onClick="alert('You are now registrated in the portal, please log into the portal to complete the registraion.');" />
+					</liferay-ui:icon-menu>
+					</div>
+					</c:if>
+					<c:if test="${!empty  userInfo.mail}">
 					<div class="button" style="float: right;">
 					<liferay-ui:icon-menu>
 					<liferay-ui:icon image="forward" message="Continue" url="#" onClick="submit();" />
 					</liferay-ui:icon-menu>
 					</div>
+					</c:if>
 					
 					<aui:button type="cancel" value="Abort Registration"
 						onClick="location.href='${homeUrl}';" style="display: none;"/>

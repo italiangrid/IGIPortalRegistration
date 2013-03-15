@@ -110,11 +110,13 @@ public class UploadProxyController {
 	}
 	
 	@ActionMapping(params = "myaction=abortRegistration")
-	public void abortRegistration(@ModelAttribute RegistrationModel registrationModel, ActionRequest request, ActionResponse response){
+	public void abortRegistration(@ModelAttribute RegistrationModel registrationModel, ActionRequest request, ActionResponse response, SessionStatus sessionStatus){
 		
 		log.error(registrationModel);
 		if(registrationModel.isHaveIDP()==true){
 			CookieUtil.setCookieSession("JSESSIONID", "", response);
+			
+			
 			
 			try {
 				URL url = new URL(RegistrationConfig.getProperties("Registration.properties", "login.url"));
@@ -127,8 +129,45 @@ public class UploadProxyController {
 				e.printStackTrace();
 			}
 		}else{
-			response.setRenderParameter("myaction", "showAuthentication");
+			Certificate cert = certificateService.findBySubject(registrationModel.getSubject());
+			
+			if(cert!=null){
+				log.error("Controllo user");
+				if(cert.getUserInfo()==null){
+					log.error("Erase cert!!!!!");
+					certificateService.delete(cert);
+//					response.setRenderParameter("myaction", "home");
+//					sessionStatus.setComplete();
+					try {
+						response.sendRedirect(RegistrationConfig.getProperties("Registration.properties", "home.url"));
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					} catch (RegistrationException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					
+				}else{
+					response.setRenderParameter("myaction", "showAuthentication");
+				}
+			}else{
+				log.error("no cert");
+//				response.setRenderParameter("myaction", "home");
+//				sessionStatus.setComplete();
+				try {
+					response.sendRedirect(RegistrationConfig.getProperties("Registration.properties", "home.url"));
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (RegistrationException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			
 		}
+		
 	}
 	
 	@ActionMapping(params = "myaction=uploadProxy")
@@ -182,14 +221,14 @@ public class UploadProxyController {
 						
 							byte[] bytesOfMessage;
 							
-							if(registrationModel.isHaveIDP()){
+//							if(registrationModel.isHaveIDP()){
 								
 								UserInfo userInfo = userInfoService.findByMail(registrationModel.getEmail());
 								bytesOfMessage = (userInfo.getPersistentId() + RegistrationConfig.getProperties("Registration.properties", "proxy.secret")).getBytes("UTF-8");
 								
-							} else {
-								bytesOfMessage = ("blablabla"+ RegistrationConfig.getProperties("Registration.properties", "proxy.secret")).getBytes("UTF-8");
-							}
+//							} else {
+//								bytesOfMessage = ("blablabla"+ RegistrationConfig.getProperties("Registration.properties", "proxy.secret")).getBytes("UTF-8");
+//							}
 							
 							MessageDigest md = MessageDigest.getInstance("MD5");
 							byte[] thedigest = md.digest(bytesOfMessage);

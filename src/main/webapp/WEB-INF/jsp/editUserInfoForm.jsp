@@ -1025,8 +1025,30 @@ div.function {
 					</liferay-ui:search-container-column-text>
 				
 				<c:if test="${certCAonline == 'false' }">
-					<liferay-ui:search-container-column-jsp
-					path="/WEB-INF/jsp/admin-cert-action.jsp" align="right" />
+					
+					<liferay-ui:search-container-column-text>
+					
+						<liferay-ui:icon-menu>
+	
+							<portlet:renderURL var="updateURL">
+								<portlet:param name="myaction" value="showUpdateCert" />
+								<portlet:param name="idCert" value="${Certificate.idCert }" />
+								<portlet:param name="userId" value="${selectedUser.userId }" />
+								<portlet:param name="primCert" value="${Certificate.primaryCert }" />
+							</portlet:renderURL>
+							<liferay-ui:icon image="edit" message="Update Cert" url="${updateURL}" />
+							
+							
+							<portlet:actionURL var="deleteURL">
+								<portlet:param name="myaction" value="removeCert" />
+								<portlet:param name="idCert" value="${Certificate.idCert }" />
+								<portlet:param name="userId" value="${selectedUser.userId }" />
+							</portlet:actionURL>
+							<liferay-ui:icon-delete url="${deleteURL}" />
+							
+						</liferay-ui:icon-menu>
+						
+					</liferay-ui:search-container-column-text>
 				</c:if>
 				
 				<c:if test="${certCAonline == 'true' }">
@@ -1062,11 +1084,6 @@ div.function {
 				value="${selectedUser.username }" />
 			<aui:input name="firstReg" type="hidden" value="false" />
 			
-			
-			
-					
-					
-					
 					<div id="chooseContainer">
 						<a href="" onclick="setHaveCert('true'); return false;">
 						<div class="bordered">
@@ -1407,7 +1424,7 @@ div.function {
 									value="${advOpts.idNotify }" />
 								
 								<aui:input id="proxyExpire" name="proxyExpire" type="hidden" value="${advOpts.proxyExpire }" />
-								<strong>Enable the switch before if you want to be notified by mail 1 hour before the proxy expiration</strong>
+								<strong>Enable the switch below, if you want to be notified by mail 1 hour before the proxy expiration</strong>
 								<br/><br/><div id="jqxButton"></div>
 								
 									
@@ -1436,7 +1453,7 @@ div.function {
 							
 								<aui:fieldset label="Job Notification">
 								<br></br>
-								<strong>Enable the switch before if you want to be notified by mail on workflow status changing</strong> <br/><br/>
+								<strong>Enable the switch below, if you want to be notified by mail on workflow status changing</strong> <br/><br/>
 								<aui:input name="wfchgEnab" id="wfchgEnab" type="hidden"
 									value="${notification.wfchgEnab }" />
 								<div id="jqxButton2"></div>
@@ -1660,9 +1677,11 @@ div.function {
 	
 	<portlet:actionURL var="changePwdURL">
 		<portlet:param name="myaction" value="changePwd2"/>
-		<portlet:param name="userId" value="<%= request.getParameter("userId") %>"/>
+		<portlet:param name="userId" value="${userId }"/>
 		<portlet:param name="idCert" value="${crt.idCert }"/>
 	</portlet:actionURL>
+	
+	
 	<aui:column columnWidth="40" style="margin-left:30px;">
 	<aui:form name="changePwd_${crt.idCert }" action="${changePwdURL}">
 		<div class="portlet-msg-error proxyPwd" style="display:none;">

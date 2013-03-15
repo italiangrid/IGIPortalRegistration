@@ -11,9 +11,19 @@ import it.italiangrid.portal.registration.model.RegistrationModel;
 import it.italiangrid.portal.registration.util.RegistrationConfig;
 import it.italiangrid.portal.registration.util.RegistrationUtil;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Enumeration;
+import java.util.Formatter;
 import java.util.List;
 
 import javax.portlet.ActionRequest;
@@ -22,6 +32,12 @@ import javax.portlet.RenderRequest;
 import javax.portlet.RenderResponse;
 
 import org.apache.log4j.Logger;
+import org.globus.gsi.GlobusCredential;
+import org.globus.gsi.gssapi.GlobusGSSCredentialImpl;
+import org.globus.myproxy.MyProxy;
+import org.globus.myproxy.MyProxyException;
+import org.globus.util.Util;
+import org.ietf.jgss.GSSCredential;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -29,7 +45,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.portlet.bind.annotation.ActionMapping;
 import org.springframework.web.portlet.bind.annotation.RenderMapping;
 
+import com.liferay.portal.kernel.exception.PortalException;
+import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.servlet.SessionErrors;
+import com.liferay.portal.model.User;
+import com.liferay.portal.service.UserLocalServiceUtil;
+import com.liferay.portal.util.PortalUtil;
 
 import portal.registration.utils.MyValidator;
 
@@ -71,7 +92,7 @@ public class AddUserController {
 			
 			for (Enumeration<String> e = request.getParameterNames() ; e.hasMoreElements() ;) {
 				String name = e.nextElement();
-		        log.error(name);
+		        log.error(name + ": "+request.getParameter(name));
 		        
 		        switch(attributes.indexOf(name)){
 		        case 0:
@@ -102,7 +123,22 @@ public class AddUserController {
 		        	registrationModel.setEmail(userInfo.getMail());
 		        	break;
 		        case 6:
+		        	log.error("PersistentID: "+request.getParameter(name).replaceAll("%20", " "));
 		        	userInfo.setPersistentId(request.getParameter(name).replaceAll("%20", " "));
+		        	
+		        	
+		        	String newUsername = "";
+					char[] chars = request.getParameter(name).replaceAll("%20", " ").toCharArray();
+					
+					for(int i=0; i<chars.length; i++){
+						if(Character.isLetterOrDigit(chars[i]))
+							newUsername+=chars[i];
+						else
+							newUsername+='_';
+					}
+		        	
+					userInfo.setUsername(newUsername.toLowerCase());
+		        	
 	//	        	persistent-id
 		        	break;
 		        case 7:
@@ -251,6 +287,7 @@ public class AddUserController {
 		registrationModel.setMail(request.getParameter("certmail"));
 		registrationModel.setHaveIDP(Boolean.parseBoolean(request.getParameter("haveIDP")));
 		registrationModel.setCertificateStatus(Boolean.parseBoolean(request.getParameter("certificateStatus")));
+		registrationModel.setVerifyUser(Boolean.parseBoolean(request.getParameter("verifyUser")));
 		
 		
 		log.error("##########################");
@@ -318,6 +355,163 @@ public class AddUserController {
 				
 				certificateService.save(certificate);
 				
+				
+				try {
+					
+					MyProxy mp = new MyProxy(RegistrationConfig.getProperties("Registration.properties", "myproxy.storage"), 7512);
+//					UserInfo userInfo =userInfoService.findByMail(registrationModel.getEmail());
+					Long companyId = PortalUtil.getCompanyId(request);
+					User user = UserLocalServiceUtil.getUserByEmailAddress(companyId, userInfo.getMail());
+
+					String dir = System.getProperty("java.io.tmpdir");
+					log.error("Directory = " + dir);
+
+					File location = new File(dir + "/users/" + user.getUserId() + "/");
+					if (!location.exists()) {
+						location.mkdirs();
+					}
+
+					OutputStream out = null;
+					
+					File proxyFile = new File(dir + "/users/" + user.getUserId()
+							+ "/x509up");
+					
+					
+					
+					
+					
+					
+						byte[] bytesOfMessage;
+						
+//						if(registrationModel.isHaveIDP()){
+							
+							userInfo = userInfoService.findByMail(registrationModel.getEmail());
+							bytesOfMessage = (userInfo.getPersistentId() + RegistrationConfig.getProperties("Registration.properties", "proxy.secret")).getBytes("UTF-8");
+							
+//						} else {
+//							bytesOfMessage = ("blablabla"+ RegistrationConfig.getProperties("Registration.properties", "proxy.secret")).getBytes("UTF-8");
+//						}
+						
+						MessageDigest md = MessageDigest.getInstance("MD5");
+						byte[] thedigest = md.digest(bytesOfMessage);
+						
+						Formatter formatter = new Formatter();
+					    for (byte b : thedigest)
+					    {
+					        formatter.format("%02x", b);
+					    }
+					    String newPwd = formatter.toString();
+					    formatter.close();
+					    
+					    byte[] bytesOfMessage2 = ("blablabla"+ RegistrationConfig.getProperties("Registration.properties", "proxy.secret")).getBytes("UTF-8");
+					    
+					    MessageDigest md2 = MessageDigest.getInstance("MD5");
+					    byte[] thedigest2 = md2.digest(bytesOfMessage2);
+					    
+					    Formatter formatter2 = new Formatter();
+					    for (byte b2 : thedigest2)
+					    {
+					        formatter2.format("%02x", b2);
+					    }
+					    String oldPwd = formatter2.toString();
+					    formatter2.close();
+//						tmpPwd = new String(thedigest);
+						
+						log.error("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+						log.error(newPwd);
+						log.error(oldPwd);
+						log.error("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+					
+					GSSCredential proxy = mp.get(registrationModel.getCertificateUserId(), oldPwd, 608400);
+					
+					log.error("----- All ok -----");
+					log.error("Proxy:" + proxy.toString());
+
+					GlobusCredential globusCred = null;
+					globusCred = ((GlobusGSSCredentialImpl) proxy)
+							.getGlobusCredential();
+					log.error("----- Passo per il istanceof GlobusGSSCredentialImpl");
+
+					log.error("Save proxy file: " + globusCred);
+					out = new FileOutputStream(proxyFile);
+					Util.setFilePermissions(proxyFile.toString(), 600);
+					globusCred.save(out);
+					
+					String[] myproxy2 = {"/usr/bin/python", "/upload_files/myproxy3.py", registrationModel.getCertificateUserId(), proxyFile.toString(), proxyFile.toString(), newPwd, newPwd};
+					String[] env = {"GT_PROXY_MODE=old"};
+					Process p = Runtime.getRuntime().exec(myproxy2, env, location);
+					InputStream stdout = p.getInputStream();
+					InputStream stderr = p.getErrorStream();
+
+					BufferedReader output = new BufferedReader(
+							new InputStreamReader(stdout));
+					String line = null;
+
+					while (((line = output.readLine()) != null)) {
+
+						log.error("[Stdout] " + line);
+						if (line.equals("myproxy success")) {
+							log.error("myproxy ok");
+						} else {
+							if (line.equals("myproxy verify password failure")) {
+								errors.add("error-password-mismatch");
+								log.error(line);
+							} else {
+								if (line.equals("myproxy password userkey failure")) {
+									errors.add("error-password-mismatch");
+									log.error(line);
+								} else {
+									if (line.equals("too short passphrase")) {
+										errors.add("error-password-too-short");
+										log.error(line);
+									} else {
+										if (line.equals("key password failure")) {
+											errors.add("key-password-failure");
+											log.error(line);
+										} else {
+											errors.add("no-valid-key");
+											log.error(line);
+										}
+									}
+								}
+							}
+						}
+					}
+					output.close();
+
+					BufferedReader brCleanUp = new BufferedReader(
+							new InputStreamReader(stderr));
+					while ((line = brCleanUp.readLine()) != null) {
+						
+						log.error("[Stderr] " + line);
+						errors.add("no-valid-key");
+					}
+					
+					brCleanUp.close();
+				} catch (IOException e1) {
+					errors.add("myproxy-exception");
+					e1.printStackTrace();
+				} catch (RegistrationException e) {
+					e.printStackTrace();
+				} catch (NoSuchAlgorithmException e) {
+					e.printStackTrace();
+				} catch (MyProxyException e) {
+					e.printStackTrace();
+				} catch (PortalException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (SystemException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+				
+				
+				
+				
+				
+				
+				registrationModel.setHaveIDP(false);
 				request.setAttribute("registrationModel", registrationModel);
 				response.setRenderParameter("myaction", "showAddVoForm");
 				return;
@@ -325,8 +519,9 @@ public class AddUserController {
 				
 				if(RegistrationConfig.getProperties("Registration.properties", "CAOnline.enabled").equals("false")&&RegistrationConfig.getProperties("Registration.properties", "proxy.enabled").equals("false"))
 					response.setRenderParameter("myaction", "showUploadCertificate");
+				else
+					response.setRenderParameter("myaction", "askForCertificate");
 				
-				response.setRenderParameter("myaction", "askForCertificate");
 	//			response.sendRedirect(RegistrationConfig.getProperties("Registration.properties", "login.url"));
 				return;
 			}

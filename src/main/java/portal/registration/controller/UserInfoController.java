@@ -171,9 +171,29 @@ public class UserInfoController {
 		return "home";
 	}
 	
+
+	@ModelAttribute("goToWAYF")
+	public String goToWAYF(){
+		try {
+			return RegistrationConfig.getProperties("Registration.properties", "retrieve.user.information");
+		} catch (RegistrationException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	@ModelAttribute("goToHome")
+	public String goToHome(){
+		try {
+			return RegistrationConfig.getProperties("Registration.properties", "home.url");
+		} catch (RegistrationException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
 	@ModelAttribute("registrationModel")
 	public RegistrationModel getRegistrationModel() {
-//		log.debug("Initialize registration process.");	
+		log.error("Initialize registration process.");	
 		return new RegistrationModel();
 	} 
 

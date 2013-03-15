@@ -539,14 +539,14 @@ public class UploadCertController {
 		String contextPath = UploadCertController.class.getClassLoader()
 				.getResource("").getPath();
 
-		log.info("dove sono:" + contextPath);
+		log.error("Sto per cancellare il proxy dove sono:" + contextPath);
 
 		String myproxyHost = MYPROXY_HOST;
 
 		File test = new File(contextPath + "/content/Registration.properties");
-		log.info("File: " + test.getAbsolutePath());
+		log.error("File: " + test.getAbsolutePath());
 		if (test.exists()) {
-			log.info("ESISTE!!");
+			log.error("ESISTE!!");
 			try {
 				FileInputStream inStream = new FileInputStream(contextPath
 						+ "/content/Registration.properties");
@@ -573,29 +573,29 @@ public class UploadCertController {
 		String userPath = System.getProperty("java.io.tmpdir") + "/users/"
 				+ user.getUserId() + "/";
 
-		File proxy = new File(userPath + "/x509up");
-
-		if (!proxy.exists()) {
-			SessionErrors.add(request,
-					"error-deleting-certificate-proxy-not-exists");
-			return;
-		}
-
-		GlobusCredential cred;
-
-		try {
-			cred = new GlobusCredential(proxy.toString());
-
-			if (cred.getTimeLeft() <= 0) {
-				SessionErrors.add(request,
-						"error-deleting-certificate-proxy-expired");
-				return;
-			}
-
-		} catch (GlobusCredentialException e2) {
-			// TODO Auto-generated catch block
-			e2.printStackTrace();
-		}
+//		File proxy = new File(userPath + "/x509up");
+//
+//		if (!proxy.exists()) {
+//			SessionErrors.add(request,
+//					"error-deleting-certificate-proxy-not-exists");
+//			return;
+//		}
+//
+//		GlobusCredential cred;
+//
+//		try {
+//			cred = new GlobusCredential(proxy.toString());
+//
+//			if (cred.getTimeLeft() <= 0) {
+//				SessionErrors.add(request,
+//						"error-deleting-certificate-proxy-expired");
+//				return;
+//			}
+//
+//		} catch (GlobusCredentialException e2) {
+//			// TODO Auto-generated catch block
+//			e2.printStackTrace();
+//		}
 
 		log.debug("Move to: " + userPath);
 		String[] cmd = new String[] { "/usr/bin/myproxy-destroy", "-s",
@@ -606,12 +606,12 @@ public class UploadCertController {
 			allCmd += string + " ";
 		}
 
-		log.info("myproxy destroy: " + allCmd);
-		String[] env = {"X509_USER_PROXY=x509up", "X509_USER_CERT="+userPath + "/x509up", "X509_USER_KEY="+userPath + "/x509up"};
+		log.error("myproxy destroy: " + allCmd);
+//		String[] env = {"X509_USER_PROXY=x509up", "X509_USER_CERT="+userPath + "/x509up", "X509_USER_KEY="+userPath + "/x509up"};
 
 		try {
 			Process p = Runtime.getRuntime()
-					.exec(cmd, env, new File(userPath));
+					.exec(cmd, null, new File(userPath));
 			InputStream stdout = p.getInputStream();
 			InputStream stderr = p.getErrorStream();
 
@@ -620,7 +620,7 @@ public class UploadCertController {
 			String line = null;
 
 			while ((line = output.readLine()) != null) {
-				log.info("[Stdout] " + line);
+				log.error("[Stdout] " + line);
 			}
 			output.close();
 
@@ -638,9 +638,9 @@ public class UploadCertController {
 			brCleanUp.close();
 
 			if (!isWrong) {
-				log.info("Sto per cancellare il certificato con id = " + idCert);
+				log.error("Sto per cancellare il certificato con id = " + idCert);
 				certificateService.delete(idCert);
-				log.info("Certificato cancellato");
+				log.error("Certificato cancellato");
 
 				SessionMessages.add(request,
 						"certificate-deleted-successufully");
@@ -705,7 +705,7 @@ public class UploadCertController {
 	public void updateGuseNotify(ActionRequest request, ActionResponse response) {
 		
 		Certificate cert = certificateService.findByIdCert(Integer.parseInt(request.getParameter("idCert")));
-		
+		log.error(Integer.parseInt(request.getParameter("idCert")));
 		String pwd = request.getParameter("pwd");
 		
 		ArrayList<String> errors = new ArrayList<String>();
@@ -739,10 +739,10 @@ public class UploadCertController {
 				String tmpPwd ="";
 				
 				byte[] bytesOfMessage;
-				if(userInfo.getPersistentId()!=null)
+//				if(userInfo.getPersistentId()!=null)
 					bytesOfMessage = (userInfo.getPersistentId() + RegistrationConfig.getProperties("Registration.properties", "proxy.secret")).getBytes("UTF-8");
-				else
-					bytesOfMessage = ("blablabla" + RegistrationConfig.getProperties("Registration.properties", "proxy.secret")).getBytes("UTF-8");
+//				else
+//					bytesOfMessage = ("blablabla" + RegistrationConfig.getProperties("Registration.properties", userInfo.getPersistentId())).getBytes("UTF-8");
 				
 				MessageDigest md = MessageDigest.getInstance("MD5");
 				byte[] thedigest = md.digest(bytesOfMessage);
@@ -892,6 +892,7 @@ public class UploadCertController {
 		SessionMessages.add(request, portletConfig.getPortletName() + SessionMessages.KEY_SUFFIX_HIDE_DEFAULT_ERROR_MESSAGE);
 		response.setRenderParameter("myaction", "editUserInfoForm");
 		response.setRenderParameter("userId", request.getParameter("userId"));
+		request.setAttribute("userId", request.getParameter("userId"));
 
 	}
 	

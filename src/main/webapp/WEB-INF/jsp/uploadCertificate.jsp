@@ -233,6 +233,9 @@ h5#usernameAlert {
 			message="no-valid-key" />
 		<liferay-ui:error key="key-password-failure"
 			message="key-password-failure" />
+		<liferay-ui:error key="ldap-error"
+			message="ldap-error" />		
+				
 				
 		
 			<aui:fieldset>

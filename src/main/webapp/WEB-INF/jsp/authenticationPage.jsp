@@ -55,6 +55,9 @@
 	text-decoration: none;
 	margin-top: -1px;
 }
+.text{
+	font-size: 14px;
+}
 
 </style>
 
@@ -62,7 +65,14 @@
 
 
 	<div id="action">
-	Usa il pulsante certificate login.
+	<aui:fieldset label="Registration">
+    <p class="text">You have been automatically registered in the Portal Identity provider. </br> The next times to log into the portal choose the <b>IGI Portal IDP</b> and  click on <b>Certificate Login</b> button.</p>
+    <p></p>
+ 	<div>
+    <div style="float:left; border: 5px solid black; "><img src="<%=request.getContextPath()%>/images/idp-login1.png" height="290px" alt="Portal idp choose" /></div>
+    <div style="float:left; margin-left:10px; margin-right:10px; margin-top:150px;"><img src="<%=request.getContextPath()%>/images/Arrow_Right.png" height="56px" alt="idp logo" /></div>
+    <div style="float:left; border: 5px solid black; margin-bottom:10px"><img src="<%=request.getContextPath()%>/images/idp-login2.png" height="290px" alt="Portal idp login"/></div>
+   </div>
 	<aui:form>
 	<aui:button-row>
 				<portlet:actionURL var="abortUrl">
@@ -77,7 +87,9 @@
 				
 	</aui:button-row>
 	</aui:form>
+	</aui:fieldset>
 	</div>
 	<%@ include file="/WEB-INF/jsp/summary.jsp" %>
 	<div style="clear: both;"></div>
+	
 </div>

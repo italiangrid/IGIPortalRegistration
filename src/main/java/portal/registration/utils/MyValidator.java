@@ -46,6 +46,7 @@ public class MyValidator {
 		if (Validator.isNotNull(target.getMail())) {
 			if (!Validator.isEmailAddress(target.getMail())) {
 				errors.add("user-valid-mail-required");
+				target.setMail("");
 				result = false;
 				log.info("mail invalida sbagliato");
 			}

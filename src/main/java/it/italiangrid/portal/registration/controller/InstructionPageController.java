@@ -44,6 +44,16 @@ public class InstructionPageController {
 		return "false";
 	}
 	
+	@ModelAttribute("goToWAYF")
+	public String goToWAYF(){
+		try {
+			return RegistrationConfig.getProperties("Registration.properties", "retrieve.user.information");
+		} catch (RegistrationException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
 	
 	
 //	

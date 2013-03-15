@@ -98,13 +98,15 @@ $(document).ready(function() {
 		<aui:column columnWidth="80">
 		<div id="userData">
 			<br/><br/>
-			To use the Grid and Cloud resources some credentials are necessary, during the registration phase we check 
-			if you already have all the necessary credentials otherwise we can provide you for them.
-			<br/><br/>
+			We are going to retrieve your personal data from your organization.<br/><br/>
+			<div style="float: left; color: red; font-size: 16px; height: 32px; margin: 0 10px 15px;"><img src="<%=request.getContextPath()%>/images/arrow_right2.png" width="32" /></div>
+			<div style="float: left; font-weight: bold; width: 75% ;height: 25px; padding-top:7px; margin: 0 0px 15px; color: #215285;">Please in the next page select your Organization<c:if test="${idpEnabled=='true' }"> or click on "Other Institute" button.</c:if></div>
+			<div style="float: left; color: red; font-size: 16px; height: 32px; margin: 0 10px 15px;"><img src="<%=request.getContextPath()%>/images/arrow_left.png" width="32" /></div>
+			<div style="clear: both;"></div>
+			
 			<hr/>
 			<br/>
-			In the first step we are going to retrieve your personal data from your organization.<br/>
-			<strong>Please in the next page select your Organization.</strong><c:if test="${idpEnabled=='true' }"><strong> If it is not in the list click on "Other Institutes" button.</strong></c:if>
+			In case of problems please delete cache and cookies from your browser or restart your browser.
 			<br/><br/><br/>
 			
 		</div>
@@ -114,30 +116,22 @@ $(document).ready(function() {
 		<img src="<%=request.getContextPath()%>/images/PatientFile.png" width="128" style="margin-right:20px; float: right"/>
 		
 		</aui:column>
-		<portlet:actionURL var="showWAYF">
-			<portlet:param name="myaction" value="startRegistration" />
-		</portlet:actionURL>
 		
-		<aui:form id="startRegistration" name="startRegistration" action="${showWAYF }">
-		
-			
 			<aui:button-row>
 				<div class="button" style="float: left;">
 				<liferay-ui:icon-menu>
-				<liferay-ui:icon image="close" message="Abort Registration" url="#" onClick="location.href='https://flyback.cnaf.infn.it';" />
+				<liferay-ui:icon image="close" message="Abort Registration" url="#" onClick="location.href='${goToHome}';" />
 				</liferay-ui:icon-menu>
 				</div>
 				<div class="button" style="float: right;">
 				<liferay-ui:icon-menu>
-				<liferay-ui:icon image="forward" message="Continue" url="#" onClick="submit();" />
+				<liferay-ui:icon image="forward" message="Continue" url="#" onClick="location.href='${goToWAYF}';" />
 				</liferay-ui:icon-menu>
 				</div>
-				<aui:button type="cancel"  value="Abort Registration" onClick="location.href='https://flyback.cnaf.infn.it'" style="display:none;"></aui:button>
 				
-				<aui:button type="submit"  value="Continue" style="display:none;"></aui:button>
 			</aui:button-row>
 			
-		</aui:form>
+		
 	</aui:fieldset>
 </div>
 

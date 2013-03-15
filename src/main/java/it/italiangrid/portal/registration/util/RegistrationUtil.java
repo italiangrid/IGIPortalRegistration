@@ -19,6 +19,7 @@ import java.util.Properties;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
+import javax.naming.directory.Attribute;
 import javax.naming.directory.Attributes;
 import javax.naming.directory.BasicAttribute;
 import javax.naming.directory.BasicAttributes;
@@ -172,7 +173,7 @@ public class RegistrationUtil {
 			log.debug("companyid = " + companyId);
 			log.debug("settate variabili di supporto ora si aggiunge un utenti a liferay!!");
 
-			User u = UserLocalServiceUtil.addUser(0L, companyId, false,
+			User u = UserLocalServiceUtil.addUser(0L, companyId, true,
 					PASSWORD, PASSWORD, false, userInfo.getUsername(), userInfo
 							.getMail(), 0L, "", new Locale("en"), userInfo
 							.getFirstName(), "", userInfo.getLastName(), 0, 0,
@@ -180,9 +181,9 @@ public class RegistrationUtil {
 					null, true, scf);
 			
 			log.error("verify = "+verify);
-			if(verify)
+			if(verify){
 				UserLocalServiceUtil.sendEmailAddressVerification(u, u.getEmailAddress(), scf);
-
+			}
 			if (u == null) {
 				throw new RegistrationException("no-user-inserted");
 			} else {
@@ -206,6 +207,10 @@ public class RegistrationUtil {
 			UserInfoService userInfoService, NotifyService notifyService)
 			throws RegistrationException {
 
+		String persistentId = userInfo.getPersistentId();
+		if(persistentId == null){
+			userInfo.setPersistentId(userInfo.getUsername());
+		}
 		userInfo.setRegistrationComplete("false");
 		int userId = userInfoService.save(userInfo, 1);
 
@@ -262,24 +267,18 @@ public class RegistrationUtil {
 	
 	 public static String INITCTX = "com.sun.jndi.ldap.LdapCtxFactory";
 
-	  public static String MY_HOST = "ldap://gridlab01.cnaf.infn.it:389";
+	  public static String MY_HOST = "ldap://idp-portal.italiangrid.it:389";
 
-	  public static String MGR_DN = "cn=Manager,dc=portalidp,dc=cnaf,dc=infn.it";
+	  public static String MGR_DN = "cn=Directory Manager";
 
-	  public static String MGR_PW = "secret";
+	  public static String MGR_PW = "02o3708jt0";
 
-	  public static String MY_SEARCHBASE = "ou=people,dc=portalidp,dc=cnaf,dc=infn.it";
+	  public static String MY_SEARCHBASE = "ou=People,dc=italiangrid,dc=it";
 
 	public static void insertIntoIDP(UserInfo userInfo,
-			RegistrationModel registrationModel) {
+			RegistrationModel registrationModel) throws RegistrationException {
 		log.debug("inserimento utente nell'IDP");
-		Hashtable<String, String> env = new Hashtable<String, String>();
-	    env.put(Context.INITIAL_CONTEXT_FACTORY, INITCTX);
-
-	    env.put(Context.PROVIDER_URL, MY_HOST);
-	    env.put(Context.SECURITY_AUTHENTICATION, "simple");
-	    env.put(Context.SECURITY_PRINCIPAL, MGR_DN);
-	    env.put(Context.SECURITY_CREDENTIALS, MGR_PW);
+		
 	    
 	    String[] dnParts = registrationModel.getSubject().split("/");
 		String o = "";
@@ -295,13 +294,13 @@ public class RegistrationUtil {
 				cn = value.replace("CN=", "");
 		}
 		
-		cn += " IGP";
+//		cn += " IGP";
 	    
 	    String uid = (userInfo.getFirstName()+"."+userInfo.getLastName()).toLowerCase();
 	    
 	    try {
 	    	InitialContext ctx = getLDAPContext(  
-	    			MGR_DN, MGR_PW, "gridlab01.cnaf.infn.it:389"); 
+	    			"cn=Directory Manager", "02o3708jt0", "idp-portal.italiangrid.it:389"); 
 		    DirContext dirContext = (DirContext)ctx;
 		    
 		    Attributes matchAttrs = new BasicAttributes(true);  
@@ -310,13 +309,18 @@ public class RegistrationUtil {
 	        matchAttrs.put(new BasicAttribute("cn", cn));             
 	        matchAttrs.put(new BasicAttribute("givenName", userInfo.getFirstName()));             
 	        matchAttrs.put(new BasicAttribute("sn", userInfo.getLastName()));  
-	        matchAttrs.put(new BasicAttribute("l", l)); 
-	        matchAttrs.put(new BasicAttribute("o", o)); 
+	        if(!l.isEmpty()){
+	        	matchAttrs.put(new BasicAttribute("l", l)); 
+	        }
+	        if(!o.isEmpty()){
+	        	matchAttrs.put(new BasicAttribute("o", o)); 
+	        }
 	        matchAttrs.put(new BasicAttribute("mail", userInfo.getMail()));
 	        matchAttrs.put(new BasicAttribute("userPassword", "password"));          
 	        matchAttrs.put(new BasicAttribute("objectClass","inetOrgPerson"));
+//	        matchAttrs.put(new BasicAttribute("objectClass","eduPerson"));
 	    
-	        String name="cn="+cn+",ou=people";
+	        String name="cn="+cn;
 	        
 //			ctx.bind("cn="+cn+"2,"+MY_SEARCHBASE, matchAttrs);
 	        InitialDirContext iniDirContext = (InitialDirContext)dirContext;  
@@ -325,22 +329,26 @@ public class RegistrationUtil {
 		} catch (NamingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			throw new RegistrationException("ldap-error");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			throw new RegistrationException("ldap-error");
 		}
 	}
 	
 	 private static InitialContext getLDAPContext(String dn,   
              String userpassword, String server) throws Exception  
      {  
-         String baseDN = "dc=portalidp,dc=cnaf,dc=infn.it";  
+         String baseDN = "ou=People,dc=italiangrid,dc=it";  
+//		 String baseDN = "";
          Properties props = new Properties();  
          props.put(Context.INITIAL_CONTEXT_FACTORY,   
                  "com.sun.jndi.ldap.LdapCtxFactory");  
          props.put(Context.PROVIDER_URL, "ldap://" + server + "/" + baseDN);  
          props.put(Context.SECURITY_CREDENTIALS, userpassword);  
          props.put(Context.SECURITY_PRINCIPAL, dn);  
+         log.error(props.toString());
          return new InitialDirContext(props);  
  } 
 

@@ -335,7 +335,7 @@ ul#insertHere{
 
 			
 			<br/><br/>
-			<img src="<%=request.getContextPath()%>/images/registration_step4-bordo.png"/>
+			<img src="<%=request.getContextPath()%>/images/registration_step3.png"/>
 			<br/><br/>
 			<strong>Help:</strong>
 			<br />
