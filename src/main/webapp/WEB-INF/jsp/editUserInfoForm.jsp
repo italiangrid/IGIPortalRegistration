@@ -1537,7 +1537,7 @@ div.function {
 			<td colspan="3">
 			
 				<c:if test="${proxyDownloaded=='false' }">				
-				<liferay-portlet:renderURL plid="11914" portletName="Login_WAR_Login11_INSTANCE_OI71Ar1eqW4Y" windowState="<%= LiferayWindowState.POP_UP.toString() %>" var="downloadProxy">
+				<liferay-portlet:renderURL plid="11508" portletName="Login_WAR_Login11_INSTANCE_Oe5h" windowState="<%= LiferayWindowState.POP_UP.toString() %>" var="downloadProxy">
 					<portlet:param name="myaction" value="downloadCertificate" />
 				</liferay-portlet:renderURL>
 				<p style="text-align: center;">
@@ -1574,20 +1574,20 @@ div.function {
 		<tr>
 			<td style="width: 30%; text-align: center; vertical-align: middle;">
 				<p>
-					<a href="#" onclick="location.href='https://flyback.cnaf.infn.it/web/guest/contact-us';" class="sideButton large">
+					<a href="#" onclick="location.href='https://portal.italiangrid.it/web/guest/contact-us';" class="sideButton large">
 					<img alt="" src="<%=request.getContextPath()%>/images/Documentation_guide.png" style="width: 80px; height: 80px;" /></a></p>
 				<p>
 					<img alt="" src="<%=request.getContextPath()%>/images/separatore-giu.png" style="line-height: 1.4; width: 80px; height: 10px;" /></p>
 			</td>
 			<td style="width: 30%; text-align: center; vertical-align: middle;">
 				<p>
-					<a href="#" onclick="location.href='https://flyback.cnaf.infn.it/web/guest/contact-us';" class="sideButton large">
+					<a href="#" onclick="location.href='https://portal.italiangrid.it/web/guest/contact-us';" class="sideButton large">
 					<img alt="" src="<%=request.getContextPath()%>/images/Video_guide.png" style="width: 80px; height: 80px;" /></a></p>
 				<p>
 					<img alt="" src="<%=request.getContextPath()%>/images/separatore-giu.png" style="width: 80px; height: 10px;" /></p>
 			</td>
 			<td style="width: 30%; text-align: center; vertical-align: middle;">
-				<p><a href="#" onclick="location.href='https://flyback.cnaf.infn.it/web/guest/contact-us';" class="sideButton large">
+				<p><a href="#" onclick="location.href='https://portal.italiangrid.it/web/guest/contact-us';" class="sideButton large">
 				<img alt="" src="<%=request.getContextPath()%>/images/HelpSide.png" style="width: 80px; height: 80px;" /></a><br />
 				</p><p>
 					<img alt="" src="<%=request.getContextPath()%>/images/separatore-giu.png" style="width: 80px; height: 10px;" /></p>

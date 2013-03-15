@@ -16,7 +16,7 @@ public class SuccessCAController {
 
 	@RenderMapping(params = "myaction=showSuccessCAOnline")
 	public String showUploadCert(RenderResponse response) {
-		log.error("Registration with CA-online certificate request completed.");
+		log.info("Registration with CA-online certificate request completed.");
 		return "successCAonline";
 		
 	}

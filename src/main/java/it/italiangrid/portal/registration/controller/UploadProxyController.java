@@ -78,7 +78,7 @@ public class UploadProxyController {
 	
 	@RenderMapping(params = "myaction=showUploadProxy")
 	public String showAskForCertificate() {
-		log.error("Show uploadCertificate.jsp");
+		log.info("Show uploadCertificate.jsp");
 		return "uploadProxy";
 	}
 	
@@ -112,7 +112,7 @@ public class UploadProxyController {
 	@ActionMapping(params = "myaction=abortRegistration")
 	public void abortRegistration(@ModelAttribute RegistrationModel registrationModel, ActionRequest request, ActionResponse response, SessionStatus sessionStatus){
 		
-		log.error(registrationModel);
+		log.info(registrationModel);
 		if(registrationModel.isHaveIDP()==true){
 			CookieUtil.setCookieSession("JSESSIONID", "", response);
 			
@@ -121,7 +121,7 @@ public class UploadProxyController {
 			try {
 				URL url = new URL(RegistrationConfig.getProperties("Registration.properties", "login.url"));
 				
-				log.error(url);
+				log.info(url);
 				response.sendRedirect(url.toString());
 			} catch (IOException e) {
 				e.printStackTrace();
@@ -132,9 +132,9 @@ public class UploadProxyController {
 			Certificate cert = certificateService.findBySubject(registrationModel.getSubject());
 			
 			if(cert!=null){
-				log.error("Controllo user");
+				log.info("Controllo user");
 				if(cert.getUserInfo()==null){
-					log.error("Erase cert!!!!!");
+					log.info("Erase cert!!!!!");
 					certificateService.delete(cert);
 //					response.setRenderParameter("myaction", "home");
 //					sessionStatus.setComplete();
@@ -152,7 +152,7 @@ public class UploadProxyController {
 					response.setRenderParameter("myaction", "showAuthentication");
 				}
 			}else{
-				log.error("no cert");
+				log.info("no cert");
 //				response.setRenderParameter("myaction", "home");
 //				sessionStatus.setComplete();
 				try {
@@ -175,7 +175,7 @@ public class UploadProxyController {
 			SessionStatus sessionStatus) throws PortalException,
 			SystemException {
 		
-		log.error(registrationModel);
+		log.info(registrationModel);
 		
 		
 		ArrayList<String> errors = new ArrayList<String>();
@@ -202,7 +202,7 @@ public class UploadProxyController {
 						User user = UserLocalServiceUtil.getUserByEmailAddress(companyId, registrationModel.getEmail());
 
 						String dir = System.getProperty("java.io.tmpdir");
-						log.error("Directory = " + dir);
+						log.info("Directory = " + dir);
 
 						File location = new File(dir + "/users/" + user.getUserId() + "/");
 						if (!location.exists()) {
@@ -243,40 +243,27 @@ public class UploadProxyController {
 							
 //							tmpPwd = new String(thedigest);
 							
-							log.error("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
-							log.error(tmpPwd);
-							log.error("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+						    log.info("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+						    log.info(tmpPwd);
+						    log.info("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
 						
 						GSSCredential proxy = mp.get(registrationModel.getCertificateUserId(), tmpPwd, 608400);
 						
-						log.error("----- All ok -----");
-						log.error("Proxy:" + proxy.toString());
+						log.info("----- All ok -----");
+						log.info("Proxy:" + proxy.toString());
 
 						GlobusCredential globusCred = null;
 						globusCred = ((GlobusGSSCredentialImpl) proxy)
 								.getGlobusCredential();
-						log.error("----- Passo per il istanceof GlobusGSSCredentialImpl");
+						log.info("----- Passo per il istanceof GlobusGSSCredentialImpl");
 
-						log.error("Save proxy file: " + globusCred);
+						log.info("Save proxy file: " + globusCred);
 						out = new FileOutputStream(proxyFile);
 						Util.setFilePermissions(proxyFile.toString(), 600);
 						globusCred.save(out);
-						
-
-						
-//						String myproxy = "/usr/bin/python /upload_files/myproxy2.py "
-//								+ registrationModel.getCertificateUserId()
-//								+ " "
-//								+ proxyFile.toString()
-//								+ " "
-//								+ proxyFile.toString()
-//								+ " \""
-//								+ pwd1 + "\" \"" + pwd1+"\"";
-//						log.error("Myproxy command = " + myproxy);
-						
-						String[] myproxy2 = {"/usr/bin/python", "/upload_files/myproxy3.py", registrationModel.getCertificateUserId(), proxyFile.toString(), proxyFile.toString(), pwd1, pwd1};
-						String[] env = {"GT_PROXY_MODE=old"};
-						Process p = Runtime.getRuntime().exec(myproxy2, env, location);
+												
+						String[] myproxy2 = {"/usr/bin/python", "/upload_files/myproxy3-change.py", RegistrationConfig.getProperties("Registration.properties", "myproxy.storage"), cert.getUsernameCert(), tmpPwd, pwd1};
+						Process p = Runtime.getRuntime().exec(myproxy2, null, location);
 						InputStream stdout = p.getInputStream();
 						InputStream stderr = p.getErrorStream();
 
@@ -286,38 +273,27 @@ public class UploadProxyController {
 
 						while (((line = output.readLine()) != null)) {
 
-							log.error("[Stdout] " + line);
-							if (line.equals("myproxy success")) {
-								log.error("myproxy ok");
+							log.info("[Stdout] " + line);
+							if (line.equals("myproxy password changed")) {
+								log.info("myproxy ok");
 							} else {
-								if (line.equals("myproxy verify password failure")) {
-									errors.add("error-password-mismatch");
+								if (line.equals("password too short")) {
+									errors.add("error-password-too-short");
 									log.error(line);
 									allOk = false;
 								} else {
-									if (line.equals("myproxy password userkey failure")) {
-										errors.add("error-password-mismatch");
+									if (line.equals("myproxy password not changed")) {
+										errors.add("key-password-failure");
 										log.error(line);
 										allOk = false;
 									} else {
-										if (line.equals("too short passphrase")) {
-											errors.add("error-password-too-short");
-											log.error(line);
-											allOk = false;
-										} else {
-											if (line.equals("key password failure")) {
-												errors.add("key-password-failure");
-												log.error(line);
-												allOk = false;
-											} else {
-												errors.add("no-valid-key");
-												log.error(line);
-												allOk = false;
-											}
-										}
+										errors.add("no-valid-key");
+										log.error(line);
+										allOk = false;
 									}
 								}
 							}
+								
 						}
 						output.close();
 
@@ -351,21 +327,21 @@ public class UploadProxyController {
 			
 		
 
-		log.error("controllo errori");
+		log.info("controllo errori");
 		if (allOk && errors.isEmpty()) {
 
-			log.error("tutto ok!!");
+			log.info("tutto ok!!");
 			
 			cert.setPasswordChanged("true");
 			
 			
-			log.error("€€€€€€€€€€€€€€€€€€€€€€€€€€€€€"+cert.getPasswordChanged());
+			log.info("€€€€€€€€€€€€€€€€€€€€€€€€€€€€€"+cert.getPasswordChanged());
 			certificateService.save(cert);
 			certificateService.update(cert);
 			
 			Certificate c = certificateService.findByIdCert(cert.getIdCert());
 			
-			log.error("€€€€€€€€€€€€€€€€€€€€€€€€€€€€€"+c.getPasswordChanged());
+			log.info("€€€€€€€€€€€€€€€€€€€€€€€€€€€€€"+c.getPasswordChanged());
 //			UserInfo userInfo = userInfoService.findByMail(registrationModel.getEmail());
 //			if ((userToVoService.findById(userInfo.getUserId()).size() > 0))
 //				activateUser(userInfo, request, errors);
@@ -374,13 +350,13 @@ public class UploadProxyController {
 			try {
 				URL url;
 				if(registrationModel.isVerifyUser()){
-					log.error(RegistrationConfig.getProperties("Registration.properties", "home.url"));
+					log.info(RegistrationConfig.getProperties("Registration.properties", "home.url"));
 					url = new URL(RegistrationConfig.getProperties("Registration.properties", "home.url"));
 				}else{
-					log.error(RegistrationConfig.getProperties("Registration.properties", "login.url"));
+					log.info(RegistrationConfig.getProperties("Registration.properties", "login.url"));
 					url = new URL(RegistrationConfig.getProperties("Registration.properties", "login.url"));
 				}
-				log.error(url);
+				log.info(url);
 				
 				SessionMessages.add(request, "upload-cert-successufully");
 				registrationModel.setCertificateStatus(true);
@@ -401,11 +377,11 @@ public class UploadProxyController {
 
 		} else {
 
-			log.error("Trovato errori");
+			log.info("Trovato errori");
 			errors.add("error-uploading-certificate");
 
 			for (String error : errors) {
-				log.error("Errore: " + error);
+				log.info("Errore: " + error);
 				SessionErrors.add(request, error);
 			}
 			

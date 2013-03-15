@@ -29,6 +29,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import java.util.Properties;
+import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.portlet.ActionRequest;
@@ -193,6 +194,8 @@ public class UploadCertController {
 			// controllo file
 
 			// esecuzione myproxy
+			
+			String usernameCert = UUID.randomUUID().toString();
 
 			splitP12(files.get(0), uid, pwd, pwd1, errors);
 
@@ -239,6 +242,9 @@ public class UploadCertController {
 						cert.setPrimaryCert(primaryCert);
 						cert.setSubject(subject);
 						cert.setPasswordChanged("true");
+						
+						cert.setUsernameCert(usernameCert);
+						cert.setUserInfo(userInfoService.findById(uid));
 
 						List<Certificate> lc = certificateService.findById(uid);
 						if (lc.size() != 0) {
@@ -253,7 +259,7 @@ public class UploadCertController {
 							}
 						}
 						if (allOk) {
-							int id = certificateService.save(cert, uid);
+							int id = certificateService.save(cert);
 
 							if (id != -1) {
 								log.info("inserito il certificato per l'utente con userId = "
@@ -289,7 +295,7 @@ public class UploadCertController {
 								"/bin/chmod 600 /upload_files/userkey_" + uid
 										+ ".pem");
 						String myproxy = "/usr/bin/python /upload_files/myproxy2.py "
-								+ usrnm
+								+ usernameCert
 								+ " /upload_files/usercert_"
 								+ uid
 								+ ".pem /upload_files/userkey_"
@@ -297,7 +303,7 @@ public class UploadCertController {
 								+ ".pem \""
 								+ pwd1 + "\" \"" + pwd1+"\"";
 						log.debug("Myproxy command = " + myproxy);
-						
+						log.error("Username: "+usrnm);
 						String[] myproxy2 = {"/usr/bin/python", "/upload_files/myproxy2.py", usrnm, "/upload_files/usercert_" + uid + ".pem", "/upload_files/userkey_" + uid + ".pem", pwd1, pwd1};
 						String[] env = {"GT_PROXY_MODE=old"};
 						Process p = Runtime.getRuntime().exec(myproxy2, env, new File("/upload_files"));
@@ -539,14 +545,14 @@ public class UploadCertController {
 		String contextPath = UploadCertController.class.getClassLoader()
 				.getResource("").getPath();
 
-		log.error("Sto per cancellare il proxy dove sono:" + contextPath);
+		log.info("Sto per cancellare il proxy dove sono:" + contextPath);
 
 		String myproxyHost = MYPROXY_HOST;
 
 		File test = new File(contextPath + "/content/Registration.properties");
-		log.error("File: " + test.getAbsolutePath());
+		log.info("File: " + test.getAbsolutePath());
 		if (test.exists()) {
-			log.error("ESISTE!!");
+			log.info("ESISTE!!");
 			try {
 				FileInputStream inStream = new FileInputStream(contextPath
 						+ "/content/Registration.properties");
@@ -606,7 +612,7 @@ public class UploadCertController {
 			allCmd += string + " ";
 		}
 
-		log.error("myproxy destroy: " + allCmd);
+		log.info("myproxy destroy: " + allCmd);
 //		String[] env = {"X509_USER_PROXY=x509up", "X509_USER_CERT="+userPath + "/x509up", "X509_USER_KEY="+userPath + "/x509up"};
 
 		try {
@@ -620,7 +626,7 @@ public class UploadCertController {
 			String line = null;
 
 			while ((line = output.readLine()) != null) {
-				log.error("[Stdout] " + line);
+				log.info("[Stdout] " + line);
 			}
 			output.close();
 
@@ -638,9 +644,9 @@ public class UploadCertController {
 			brCleanUp.close();
 
 			if (!isWrong) {
-				log.error("Sto per cancellare il certificato con id = " + idCert);
+				log.info("Sto per cancellare il certificato con id = " + idCert);
 				certificateService.delete(idCert);
-				log.error("Certificato cancellato");
+				log.info("Certificato cancellato");
 
 				SessionMessages.add(request,
 						"certificate-deleted-successufully");
@@ -705,7 +711,7 @@ public class UploadCertController {
 	public void updateGuseNotify(ActionRequest request, ActionResponse response) {
 		
 		Certificate cert = certificateService.findByIdCert(Integer.parseInt(request.getParameter("idCert")));
-		log.error(Integer.parseInt(request.getParameter("idCert")));
+		log.info(Integer.parseInt(request.getParameter("idCert")));
 		String pwd = request.getParameter("pwd");
 		
 		ArrayList<String> errors = new ArrayList<String>();
@@ -724,7 +730,7 @@ public class UploadCertController {
 				User user = UserLocalServiceUtil.getUserByEmailAddress(companyId, userInfo.getMail());
 
 				String dir = System.getProperty("java.io.tmpdir");
-				log.error("Directory = " + dir);
+				log.info("Directory = " + dir);
 
 				File location = new File(dir + "/users/" + user.getUserId() + "/");
 				if (!location.exists()) {
@@ -755,9 +761,9 @@ public class UploadCertController {
 			    tmpPwd = formatter.toString();
 			    formatter.close();
 				
-				log.error("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
-				log.error(tmpPwd);
-				log.error("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+			    log.info("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+			    log.info(tmpPwd);
+			    log.info("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
 				
 				GSSCredential proxy;
 				
@@ -765,34 +771,21 @@ public class UploadCertController {
 				
 					
 				
-				log.error("----- All ok -----");
-				log.error("Proxy:" + proxy.toString());
+					log.info("----- All ok -----");
+					log.info("Proxy:" + proxy.toString());
 
 				GlobusCredential globusCred = null;
 				globusCred = ((GlobusGSSCredentialImpl) proxy)
 						.getGlobusCredential();
-				log.error("----- Passo per il istanceof GlobusGSSCredentialImpl");
+				log.info("----- Passo per il istanceof GlobusGSSCredentialImpl");
 
-				log.error("Save proxy file: " + globusCred);
+				log.info("Save proxy file: " + globusCred);
 				out = new FileOutputStream(proxyFile);
 				Util.setFilePermissions(proxyFile.toString(), 600);
 				globusCred.save(out);
 				
-
-				
-//				String myproxy = "/usr/bin/python /upload_files/myproxy2.py "
-//						+ cert.getUsernameCert()
-//						+ " "
-//						+ proxyFile.toString()
-//						+ " "
-//						+ proxyFile.toString()
-//						+ " \""
-//						+ pwd + "\" \"" + pwd+"\"";
-//				log.error("Myproxy command = " + myproxy);
-				
-				String[] myproxy2 = {"/usr/bin/python", "/upload_files/myproxy3.py", cert.getUsernameCert(), proxyFile.toString(), proxyFile.toString(), pwd, pwd};
-				String[] env = {"GT_PROXY_MODE=old"};
-				Process p = Runtime.getRuntime().exec(myproxy2, env, location);
+				String[] myproxy2 = {"/usr/bin/python", "/upload_files/myproxy3-change.py", RegistrationConfig.getProperties("Registration.properties", "myproxy.storage"), cert.getUsernameCert(), tmpPwd, pwd};
+				Process p = Runtime.getRuntime().exec(myproxy2, null, location);
 				InputStream stdout = p.getInputStream();
 				InputStream stderr = p.getErrorStream();
 
@@ -802,38 +795,27 @@ public class UploadCertController {
 
 				while (((line = output.readLine()) != null)) {
 
-					log.error("[Stdout] " + line);
-					if (line.equals("myproxy success")) {
-						log.error("myproxy ok");
+					log.info("[Stdout] " + line);
+					if (line.equals("myproxy password changed")) {
+						log.info("myproxy ok");
 					} else {
-						if (line.equals("myproxy verify password failure")) {
-							errors.add("error-password-mismatch");
+						if (line.equals("password too short")) {
+							errors.add("error-password-too-short");
 							log.error(line);
 							allOk = false;
 						} else {
-							if (line.equals("myproxy password userkey failure")) {
-								errors.add("error-password-mismatch");
+							if (line.equals("myproxy password not changed")) {
+								errors.add("key-password-failure");
 								log.error(line);
 								allOk = false;
 							} else {
-								if (line.equals("too short passphrase")) {
-									errors.add("error-password-too-short");
-									log.error(line);
-									allOk = false;
-								} else {
-									if (line.equals("key password failure")) {
-										errors.add("key-password-failure");
-										log.error(line);
-										allOk = false;
-									} else {
-										errors.add("no-valid-key");
-										log.error(line);
-										allOk = false;
-									}
-								}
+								errors.add("no-valid-key");
+								log.error(line);
+								allOk = false;
 							}
 						}
 					}
+						
 				}
 				output.close();
 

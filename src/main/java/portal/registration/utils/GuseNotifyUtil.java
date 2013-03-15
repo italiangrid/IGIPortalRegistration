@@ -32,12 +32,12 @@ public class GuseNotifyUtil {
 		File notifyFile = new File(filename);
 		GuseNotify guseNotify = new GuseNotify(user.getFirstName());
 
-		log.error(filename);
+		log.info(filename);
 		
 		try {
 
 			if (notifyFile.exists()) {
-				log.error("esiste");
+				log.info("esiste");
 				SAXBuilder builder = new SAXBuilder();
 				Document doc = (Document) builder.build(notifyFile);
 				Element rootNode = doc.getRootElement();
@@ -59,7 +59,7 @@ public class GuseNotifyUtil {
 
 			} else {
 
-				log.error("non esiste");
+				log.info("non esiste");
 			}
 
 		} catch (JDOMException e) {
@@ -78,7 +78,7 @@ public class GuseNotifyUtil {
 
 		File directory = new File(filename.replace("/.notify.xml", ""));
 		File notifyFile = new File(filename);
-		log.error(filename);
+		log.info(filename);
 
 		List<String> keys = new ArrayList<String>();
 		keys = Arrays.asList(VALUES);

@@ -115,7 +115,7 @@ public class SearchController {
 				n.setProxyExpireTime(notify.getProxyExpireTime());
 				log.debug("session value= " + notify.getProxyExpire() + " retrived: "
 						+ n.getProxyExpire());
-				log.error("session value= " + notify.getProxyExpireTime() + " retrived: "
+				log.info("session value= " + notify.getProxyExpireTime() + " retrived: "
 						+ n.getProxyExpireTime());
 			}else{
 				log.debug("New entry");
@@ -140,7 +140,7 @@ public class SearchController {
 	@ActionMapping(params = "myaction=uploadComplete")
 	public void uploadComplete(ActionResponse response,
 			SessionStatus sessionStatus) {
-		log.error("passo di qui!!");
+		log.info("passo di qui!!");
 		sessionStatus.setComplete();
 		response.setRenderParameter("myaction", "home");
 		

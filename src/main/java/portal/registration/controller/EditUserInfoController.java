@@ -224,7 +224,7 @@ public class EditUserInfoController {
 	@ModelAttribute("isUserActive")
 	public String getIsUserActive(@RequestParam int userId, RenderRequest request) {
 		
-		log.error(userId);
+		log.info(userId);
 		
 		
 		List<Vo> vos = userToVoService.findVoByUserId(userId);
@@ -261,27 +261,27 @@ public class EditUserInfoController {
 
 	@ModelAttribute("defaultFqan")
 	public String getDefaultFqan(@RequestParam int userId) {
-		log.error("asdasdasdasd");
+		log.info("asdasdasdasd");
 		return userToVoService.getDefaultFqan(userId);
 	}
 
 	@ModelAttribute("userInfo")
 	public UserInfo getUserInfo(@RequestParam int userId) {
-		log.error("############### UserInfo : "+ userId);
-		log.error("asdasdasdasd3");
+		log.info("############### UserInfo : "+ userId);
+		log.info("asdasdasdasd3");
 		return userInfoService.findById(userId);
 	}
 	
 	@ModelAttribute("selectedUser")
 	public UserInfo getSelectedUser(@RequestParam int userId) {
-		log.error("############### UserInfo : "+ userId);
-		log.error("asdasdasdasd4");
+		log.info("############### UserInfo : "+ userId);
+		log.info("asdasdasdasd4");
 		return userInfoService.findById(userId);
 	}
 
 	@ModelAttribute("certList")
 	public List<Certificate> getListCert(@RequestParam int userId) {
-		log.error("asdasdasdasd2");
+		log.info("asdasdasdasd2");
 		return certificateService.findById(userId);
 	}
 
@@ -443,7 +443,7 @@ public class EditUserInfoController {
 			n.setProxyExpireTime(notify.getProxyExpireTime());
 			log.debug("session value= " + notify.getProxyExpire() + " retrived: "
 					+ n.getProxyExpire());
-			log.error("session value= " + notify.getProxyExpireTime() + " retrived: "
+			log.info("session value= " + notify.getProxyExpireTime() + " retrived: "
 					+ n.getProxyExpireTime());
 		}else{
 			log.debug("New entry");
@@ -538,7 +538,7 @@ public class EditUserInfoController {
 				User user = UserLocalServiceUtil.getUserByEmailAddress(companyId, userInfo.getMail());
 
 				String dir = System.getProperty("java.io.tmpdir");
-				log.error("Directory = " + dir);
+				log.info("Directory = " + dir);
 
 				File location = new File(dir + "/users/" + user.getUserId() + "/");
 				if (!location.exists()) {
@@ -569,9 +569,9 @@ public class EditUserInfoController {
 			    tmpPwd = formatter.toString();
 			    formatter.close();
 				
-				log.error("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
-				log.error(tmpPwd);
-				log.error("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+			    log.info("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+			    log.info(tmpPwd);
+			    log.info("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
 				
 				GSSCredential proxy;
 				
@@ -579,30 +579,18 @@ public class EditUserInfoController {
 				
 					
 				
-				log.error("----- All ok -----");
-				log.error("Proxy:" + proxy.toString());
+					log.info("----- All ok -----");
+					log.info("Proxy:" + proxy.toString());
 
 				GlobusCredential globusCred = null;
 				globusCred = ((GlobusGSSCredentialImpl) proxy)
 						.getGlobusCredential();
-				log.error("----- Passo per il istanceof GlobusGSSCredentialImpl");
+				log.info("----- Passo per il istanceof GlobusGSSCredentialImpl");
 
-				log.error("Save proxy file: " + globusCred);
+				log.info("Save proxy file: " + globusCred);
 				out = new FileOutputStream(proxyFile);
 				Util.setFilePermissions(proxyFile.toString(), 600);
 				globusCred.save(out);
-				
-
-				
-//				String myproxy = "/usr/bin/python /upload_files/myproxy2.py "
-//						+ cert.getUsernameCert()
-//						+ " "
-//						+ proxyFile.toString()
-//						+ " "
-//						+ proxyFile.toString()
-//						+ " \""
-//						+ pwd + "\" \"" + pwd+"\"";
-//				log.error("Myproxy command = " + myproxy);
 				
 				String[] myproxy2 = {"/usr/bin/python", "/upload_files/myproxy3.py", cert.getUsernameCert(), proxyFile.toString(), proxyFile.toString(), pwd, pwd};
 				String[] env = {"GT_PROXY_MODE=old"};
@@ -616,9 +604,9 @@ public class EditUserInfoController {
 
 				while (((line = output.readLine()) != null)) {
 
-					log.error("[Stdout] " + line);
+					log.info("[Stdout] " + line);
 					if (line.equals("myproxy success")) {
-						log.error("myproxy ok");
+						log.info("myproxy ok");
 					} else {
 						if (line.equals("myproxy verify password failure")) {
 							errors.add("error-password-mismatch");
@@ -813,7 +801,7 @@ public class EditUserInfoController {
 		User user = (User) request.getAttribute(WebKeys.USER);
 		if (user != null) {
 			String dir = System.getProperty("java.io.tmpdir");
-			log.error("Directory = " + dir);
+			log.info("Directory = " + dir);
 			
 			UserInfo userInfo = userInfoService.findByUsername(user.getScreenName());
 			List<Vo> vos = userToVoService.findVoByUserId(userInfo
@@ -821,7 +809,7 @@ public class EditUserInfoController {
 			File proxyVoFile = null;
 			for (Vo vo: vos) {
 				if(vo.getConfigured().equals("true")){
-					log.error(vo.getVo() + " enabled");
+					log.info(vo.getVo() + " enabled");
 					proxyVoFile = new File(dir + "/users/"
 							+ user.getUserId() + "/x509up."
 							+ vo.getVo());
@@ -851,7 +839,7 @@ public class EditUserInfoController {
 	@ModelAttribute("caEnabled")
 	public String getCaEnabled() {	
 		try {
-			log.error(RegistrationConfig.getProperties("Registration.properties", "CAOnline.enabled"));
+			log.info(RegistrationConfig.getProperties("Registration.properties", "CAOnline.enabled"));
 			return RegistrationConfig.getProperties("Registration.properties", "CAOnline.enabled");
 		} catch (RegistrationException e) {
 			e.printStackTrace();
@@ -862,7 +850,7 @@ public class EditUserInfoController {
 	@ModelAttribute("proxyEnabled")
 	public String getProxyEnabled() {	
 		try {
-			log.error(RegistrationConfig.getProperties("Registration.properties", "proxy.enabled"));
+			log.info(RegistrationConfig.getProperties("Registration.properties", "proxy.enabled"));
 			return RegistrationConfig.getProperties("Registration.properties", "proxy.enabled");
 		} catch (RegistrationException e) {
 			e.printStackTrace();

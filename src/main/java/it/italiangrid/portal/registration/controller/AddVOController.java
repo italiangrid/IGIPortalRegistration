@@ -140,7 +140,7 @@ public class AddVOController {
 	@ModelAttribute("loginUrl")
 	public String getLoginUrl() {	
 		try {
-			log.error(RegistrationConfig.getProperties("Registration.properties", "login.url"));
+			log.info(RegistrationConfig.getProperties("Registration.properties", "login.url"));
 			return RegistrationConfig.getProperties("Registration.properties", "login.url");
 		} catch (RegistrationException e) {
 			e.printStackTrace();

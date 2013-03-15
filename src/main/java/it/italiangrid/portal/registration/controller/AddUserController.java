@@ -92,7 +92,7 @@ public class AddUserController {
 			
 			for (Enumeration<String> e = request.getParameterNames() ; e.hasMoreElements() ;) {
 				String name = e.nextElement();
-		        log.error(name + ": "+request.getParameter(name));
+		        log.info(name + ": "+request.getParameter(name));
 		        
 		        switch(attributes.indexOf(name)){
 		        case 0:
@@ -123,7 +123,7 @@ public class AddUserController {
 		        	registrationModel.setEmail(userInfo.getMail());
 		        	break;
 		        case 6:
-		        	log.error("PersistentID: "+request.getParameter(name).replaceAll("%20", " "));
+		        	log.info("PersistentID: "+request.getParameter(name).replaceAll("%20", " "));
 		        	userInfo.setPersistentId(request.getParameter(name).replaceAll("%20", " "));
 		        	
 		        	
@@ -156,7 +156,7 @@ public class AddUserController {
 			userInfo.setInstitute(institute);
 			registrationModel.setInstitute(institute);
 			
-			log.error(registrationModel.toString());
+			log.info(registrationModel.toString());
 			registrationModel.setHaveIDP(true);
 			request.setAttribute("fromIDP", "true");
 			request.setAttribute("userInfo", userInfo);
@@ -168,14 +168,14 @@ public class AddUserController {
 			if((!registrationModel.getFirstName().isEmpty())&&(!registrationModel.getLastName().isEmpty())&&(!registrationModel.getInstitute().isEmpty())&&(!registrationModel.getEmail().isEmpty())){
 				registrationModel.setUserStatus(true);
 				registrationModel.setHaveIDP(true);
-				log.error("###########"+registrationModel);
+				log.info("###########"+registrationModel);
 				request.setAttribute("registrationModel", registrationModel);
 				try {
-					log.error(RegistrationConfig.getProperties("Registration.properties", "login.url"));
+					log.info(RegistrationConfig.getProperties("Registration.properties", "login.url"));
 					request.setAttribute("loginUrl", RegistrationConfig.getProperties("Registration.properties", "login.url"));
-					log.error(RegistrationConfig.getProperties("Registration.properties", "CAOnline.enabled"));
+					log.info(RegistrationConfig.getProperties("Registration.properties", "CAOnline.enabled"));
 					request.setAttribute("caEnabled", RegistrationConfig.getProperties("Registration.properties", "CAOnline.enabled"));
-					log.error(RegistrationConfig.getProperties("Registration.properties", "proxy.enabled"));
+					log.info(RegistrationConfig.getProperties("Registration.properties", "proxy.enabled"));
 					request.setAttribute("proxyEnabled", RegistrationConfig.getProperties("Registration.properties", "proxy.enabled"));
 				} catch (RegistrationException e) {
 					// TODO Auto-generated catch block
@@ -197,65 +197,13 @@ public class AddUserController {
 	
 	@RenderMapping(params = "myaction=showAddUserFormNoIDP")
 	public String showAddUserFormNoIDP(RenderRequest request, RenderResponse response) {
-//		log.error("Show addUserForm.jsp");
-//		
-//		UserInfo userInfo = new UserInfo();
-//		
-//		RegistrationModel registrationModel = CookieUtil.getCookie(request);
-//		log.error(registrationModel.toString());
-//		
-//		if(registrationModel.isHaveCertificate()){
-//			
-//			String[] dnParts = registrationModel.getSubject().split("/");
-//			String o = "";
-//			String l = "";
-//			String cn = "";
-//			
-//			for(String value: dnParts){
-//				if(value.contains("O="))
-//					o = value.replace("O=", "");
-//				if(value.contains("L="))
-//					l = value.replace("L=", "");
-//				if(value.contains("CN="))
-//					cn = value.replace("CN=", "");
-//			}
-//			
-//			String institute = o + (((!o.isEmpty())&&(!l.isEmpty()))? " - " : "") + l;
-//			userInfo.setInstitute(institute);
-//			
-//			String[] cnParts = cn.split(" ");
-//			String firstName = cnParts[0];
-//			
-//			String lastName = cnParts[1];
-//			
-//			for(int i=2; i < cnParts.length; i++ ){
-//				if(!cnParts[i].contains("@"))
-//					lastName += " " + cnParts[i];
-//			}
-//				
-//			String username = firstName + "." + lastName.trim();
-//			
-//			userInfo.setFirstName(firstName);
-//			userInfo.setLastName(lastName);
-//			userInfo.setUsername(username.toLowerCase());
-//			userInfo.setMail(registrationModel.getMail());
-//			
-//			registrationModel.setHaveIDP(false);
-//			CookieUtil.setCookie("haveIDP", Boolean.toString(registrationModel.isHaveIDP()), response);
-//			CookieUtil.setCookie(registrationModel, response);
-//			request.setAttribute("fromIDP", "false");
-//			request.setAttribute("userInfo", userInfo);
-//			
-//			return "addUserForm";
-//		}
-//		return "noRegistration";
-		
+
 		RegistrationModel registrationModel = new RegistrationModel();
 		request.setAttribute("registrationModel", registrationModel);
 		
 		try {
 			if(RegistrationConfig.getProperties("Registration.properties", "idp.enabled").equals("true")){
-				log.error(RegistrationConfig.getProperties("Registration.properties", "login.url"));
+				log.info(RegistrationConfig.getProperties("Registration.properties", "login.url"));
 				request.setAttribute("loginUrl", RegistrationConfig.getProperties("Registration.properties", "login.url"));
 				request.setAttribute("caEnabled", RegistrationConfig.getProperties("Registration.properties", "CAOnline.enabled"));
 				request.setAttribute("proxyEnabled", RegistrationConfig.getProperties("Registration.properties", "proxy.enabled"));
@@ -290,9 +238,9 @@ public class AddUserController {
 		registrationModel.setVerifyUser(Boolean.parseBoolean(request.getParameter("verifyUser")));
 		
 		
-		log.error("##########################");
-		log.error(registrationModel);
-		log.error("##########################");
+		log.info("##########################");
+		log.info(registrationModel);
+		log.info("##########################");
 		
 		if (!userInfo.getFirstName().isEmpty())
 			registrationModel.setFirstName(userInfo.getFirstName());
@@ -309,9 +257,9 @@ public class AddUserController {
 		}
 		
 		
-		log.error("##########################");
-		log.error(registrationModel);
-		log.error("##########################");
+		log.info("##########################");
+		log.info(registrationModel);
+		log.info("##########################");
 		
 		List<String> errors = new ArrayList<String>();
 		
@@ -332,7 +280,7 @@ public class AddUserController {
 			
 			//AddUser into Liferay
 			boolean verify = registrationModel.isVerifyUser();
-			log.error("Verify??? " + verify);
+			log.info("Verify??? " + verify);
 			RegistrationUtil.addUserToLiferay(request, userInfo, registrationModel, verify);
 			
 			//AddUser into DB
@@ -343,7 +291,7 @@ public class AddUserController {
 			registrationModel.setHaveIDP(true);
 			request.setAttribute("registrationModel", registrationModel);
 			
-			log.error(RegistrationConfig.getProperties("Registration.properties", "login.url"));
+			log.info(RegistrationConfig.getProperties("Registration.properties", "login.url"));
 			request.setAttribute("loginUrl", RegistrationConfig.getProperties("Registration.properties", "login.url"));
 			
 			if(registrationModel.isCertificateStatus()){
@@ -364,7 +312,7 @@ public class AddUserController {
 					User user = UserLocalServiceUtil.getUserByEmailAddress(companyId, userInfo.getMail());
 
 					String dir = System.getProperty("java.io.tmpdir");
-					log.error("Directory = " + dir);
+					log.info("Directory = " + dir);
 
 					File location = new File(dir + "/users/" + user.getUserId() + "/");
 					if (!location.exists()) {
@@ -417,22 +365,22 @@ public class AddUserController {
 					    formatter2.close();
 //						tmpPwd = new String(thedigest);
 						
-						log.error("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
-						log.error(newPwd);
-						log.error(oldPwd);
-						log.error("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+					    log.info("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+					    log.info(newPwd);
+					    log.info(oldPwd);
+					    log.info("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
 					
 					GSSCredential proxy = mp.get(registrationModel.getCertificateUserId(), oldPwd, 608400);
 					
-					log.error("----- All ok -----");
-					log.error("Proxy:" + proxy.toString());
+					log.info("----- All ok -----");
+					log.info("Proxy:" + proxy.toString());
 
 					GlobusCredential globusCred = null;
 					globusCred = ((GlobusGSSCredentialImpl) proxy)
 							.getGlobusCredential();
-					log.error("----- Passo per il istanceof GlobusGSSCredentialImpl");
+					log.info("----- Passo per il istanceof GlobusGSSCredentialImpl");
 
-					log.error("Save proxy file: " + globusCred);
+					log.info("Save proxy file: " + globusCred);
 					out = new FileOutputStream(proxyFile);
 					Util.setFilePermissions(proxyFile.toString(), 600);
 					globusCred.save(out);
@@ -449,9 +397,9 @@ public class AddUserController {
 
 					while (((line = output.readLine()) != null)) {
 
-						log.error("[Stdout] " + line);
+						log.info("[Stdout] " + line);
 						if (line.equals("myproxy success")) {
-							log.error("myproxy ok");
+							log.info("myproxy ok");
 						} else {
 							if (line.equals("myproxy verify password failure")) {
 								errors.add("error-password-mismatch");
