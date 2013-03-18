@@ -274,50 +274,38 @@ public class UploadProxyController {
 //								+ pwd1 + "\" \"" + pwd1+"\"";
 //						log.error("Myproxy command = " + myproxy);
 						
-						String[] myproxy2 = {"/usr/bin/python", "/upload_files/myproxy3.py", registrationModel.getCertificateUserId(), proxyFile.toString(), proxyFile.toString(), pwd1, pwd1};
-						String[] env = {"GT_PROXY_MODE=old"};
-						Process p = Runtime.getRuntime().exec(myproxy2, env, location);
+						String[] myproxy2 = {"/usr/bin/python", "/upload_files/myproxy3-change.py", RegistrationConfig.getProperties("Registration.properties", "myproxy.storage"), cert.getUsernameCert(), tmpPwd, pwd1};
+						Process p = Runtime.getRuntime().exec(myproxy2, null, location);
 						InputStream stdout = p.getInputStream();
 						InputStream stderr = p.getErrorStream();
 
 						BufferedReader output = new BufferedReader(
-								new InputStreamReader(stdout));
+						new InputStreamReader(stdout));
 						String line = null;
 
 						while (((line = output.readLine()) != null)) {
 
-							log.error("[Stdout] " + line);
-							if (line.equals("myproxy success")) {
-								log.error("myproxy ok");
+							log.info("[Stdout] " + line);
+							if (line.equals("myproxy password changed")) {
+								log.info("myproxy ok");
 							} else {
-								if (line.equals("myproxy verify password failure")) {
-									errors.add("error-password-mismatch");
+								if (line.equals("password too short")) {
+									errors.add("error-password-too-short");
 									log.error(line);
 									allOk = false;
 								} else {
-									if (line.equals("myproxy password userkey failure")) {
-										errors.add("error-password-mismatch");
+									if (line.equals("myproxy password not changed")) {
+										errors.add("key-password-failure");
 										log.error(line);
 										allOk = false;
 									} else {
-										if (line.equals("too short passphrase")) {
-											errors.add("error-password-too-short");
-											log.error(line);
-											allOk = false;
-										} else {
-											if (line.equals("key password failure")) {
-												errors.add("key-password-failure");
-												log.error(line);
-												allOk = false;
-											} else {
-												errors.add("no-valid-key");
-												log.error(line);
-												allOk = false;
-											}
-										}
+										errors.add("no-valid-key");
+										log.error(line);
+										allOk = false;
 									}
 								}
 							}
+
 						}
 						output.close();
 

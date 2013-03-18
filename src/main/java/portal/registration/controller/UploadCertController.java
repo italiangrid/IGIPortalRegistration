@@ -29,6 +29,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import java.util.Properties;
+import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.portlet.ActionRequest;
@@ -62,7 +63,6 @@ import com.oreilly.servlet.multipart.Part;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.log4j.Logger;
 import org.globus.gsi.GlobusCredential;
-import org.globus.gsi.GlobusCredentialException;
 import org.globus.gsi.gssapi.GlobusGSSCredentialImpl;
 import org.globus.myproxy.MyProxy;
 import org.globus.myproxy.MyProxyException;
@@ -193,7 +193,8 @@ public class UploadCertController {
 			// controllo file
 
 			// esecuzione myproxy
-
+			String usernameCert = UUID.randomUUID().toString();
+			
 			splitP12(files.get(0), uid, pwd, pwd1, errors);
 
 			if (errors.isEmpty()) {
@@ -239,6 +240,9 @@ public class UploadCertController {
 						cert.setPrimaryCert(primaryCert);
 						cert.setSubject(subject);
 						cert.setPasswordChanged("true");
+						
+						cert.setUsernameCert(usernameCert);
+						cert.setUserInfo(userInfoService.findById(uid));
 
 						List<Certificate> lc = certificateService.findById(uid);
 						if (lc.size() != 0) {
@@ -253,7 +257,7 @@ public class UploadCertController {
 							}
 						}
 						if (allOk) {
-							int id = certificateService.save(cert, uid);
+							int id = certificateService.save(cert);
 
 							if (id != -1) {
 								log.info("inserito il certificato per l'utente con userId = "
@@ -297,6 +301,8 @@ public class UploadCertController {
 								+ ".pem \""
 								+ pwd1 + "\" \"" + pwd1+"\"";
 						log.debug("Myproxy command = " + myproxy);
+						
+						log.error("Username: "+usrnm);
 						
 						String[] myproxy2 = {"/usr/bin/python", "/upload_files/myproxy2.py", usrnm, "/upload_files/usercert_" + uid + ".pem", "/upload_files/userkey_" + uid + ".pem", pwd1, pwd1};
 						String[] env = {"GT_PROXY_MODE=old"};
@@ -790,50 +796,38 @@ public class UploadCertController {
 //						+ pwd + "\" \"" + pwd+"\"";
 //				log.error("Myproxy command = " + myproxy);
 				
-				String[] myproxy2 = {"/usr/bin/python", "/upload_files/myproxy3.py", cert.getUsernameCert(), proxyFile.toString(), proxyFile.toString(), pwd, pwd};
-				String[] env = {"GT_PROXY_MODE=old"};
-				Process p = Runtime.getRuntime().exec(myproxy2, env, location);
+				String[] myproxy2 = {"/usr/bin/python", "/upload_files/myproxy3-change.py", RegistrationConfig.getProperties("Registration.properties", "myproxy.storage"), cert.getUsernameCert(), tmpPwd, pwd};
+				Process p = Runtime.getRuntime().exec(myproxy2, null, location);
 				InputStream stdout = p.getInputStream();
 				InputStream stderr = p.getErrorStream();
 
 				BufferedReader output = new BufferedReader(
-						new InputStreamReader(stdout));
+				new InputStreamReader(stdout));
 				String line = null;
 
 				while (((line = output.readLine()) != null)) {
 
-					log.error("[Stdout] " + line);
-					if (line.equals("myproxy success")) {
-						log.error("myproxy ok");
+					log.info("[Stdout] " + line);
+					if (line.equals("myproxy password changed")) {
+						log.info("myproxy ok");
 					} else {
-						if (line.equals("myproxy verify password failure")) {
-							errors.add("error-password-mismatch");
+						if (line.equals("password too short")) {
+							errors.add("error-password-too-short");
 							log.error(line);
 							allOk = false;
 						} else {
-							if (line.equals("myproxy password userkey failure")) {
-								errors.add("error-password-mismatch");
+							if (line.equals("myproxy password not changed")) {
+								errors.add("key-password-failure");
 								log.error(line);
 								allOk = false;
 							} else {
-								if (line.equals("too short passphrase")) {
-									errors.add("error-password-too-short");
-									log.error(line);
-									allOk = false;
-								} else {
-									if (line.equals("key password failure")) {
-										errors.add("key-password-failure");
-										log.error(line);
-										allOk = false;
-									} else {
-										errors.add("no-valid-key");
-										log.error(line);
-										allOk = false;
-									}
-								}
+								errors.add("no-valid-key");
+								log.error(line);
+								allOk = false;
 							}
 						}
 					}
+
 				}
 				output.close();
 

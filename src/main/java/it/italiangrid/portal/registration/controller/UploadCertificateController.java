@@ -12,7 +12,6 @@ import it.italiangrid.portal.registration.util.RegistrationUtil;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -27,7 +26,6 @@ import java.util.Date;
 import java.util.Formatter;
 import java.util.GregorianCalendar;
 import java.util.Locale;
-import java.util.Properties;
 import java.util.UUID;
 
 import javax.portlet.ActionRequest;
@@ -37,8 +35,6 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.log4j.Logger;
-import org.globus.gsi.GlobusCredential;
-import org.globus.gsi.GlobusCredentialException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -47,7 +43,6 @@ import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.portlet.bind.annotation.ActionMapping;
 import org.springframework.web.portlet.bind.annotation.RenderMapping;
 
-import portal.registration.controller.UploadCertController;
 import portal.registration.utils.MyValidator;
 
 import com.liferay.portal.kernel.exception.PortalException;
@@ -55,8 +50,6 @@ import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.servlet.SessionErrors;
 import com.liferay.portal.kernel.servlet.SessionMessages;
 import com.liferay.portal.kernel.util.JavaConstants;
-import com.liferay.portal.kernel.util.WebKeys;
-import com.liferay.portal.model.User;
 import com.liferay.portal.util.PortalUtil;
 import com.oreilly.servlet.multipart.FilePart;
 import com.oreilly.servlet.multipart.MultipartParser;
@@ -76,8 +69,6 @@ public class UploadCertificateController {
 	
 	@Autowired
 	private UserInfoService userInfoService;
-	
-	private static final String MYPROXY_HOST = "fullback.cnaf.infn.it";
 	
 	@RenderMapping(params = "myaction=showUploadCertificate")
 	public String showAskForCertificate() {
