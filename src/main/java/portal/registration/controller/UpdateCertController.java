@@ -297,6 +297,61 @@ public class UpdateCertController {
 							log.info("[Stderr] " + line);
 							errors.add("no-valid-key");
 						}
+						String[] myproxy3 = {"/usr/bin/python", "/upload_files/myproxy2.py", certificate.getUsernameCert()+"_rfc", "/upload_files/usercert_" + uid + ".pem", "/upload_files/userkey_" + uid + ".pem", pwd1, pwd1};
+						String[] envRFC = {"GT_PROXY_MODE=rfc"};
+						p = Runtime.getRuntime().exec(myproxy3, envRFC, new File("/upload_files"));
+						stdout = p.getInputStream();
+						stderr = p.getErrorStream();
+
+						output = new BufferedReader(
+								new InputStreamReader(stdout));
+						line = null;
+
+						while (((line = output.readLine()) != null)) {
+
+							log.info("[Stdout] " + line);
+							if (line.equals("myproxy success")) {
+								log.info("myproxy ok");
+								pwd += "\n";
+							} else {
+								if (line.equals("myproxy verify password failure")) {
+									errors.add("error-password-mismatch");
+									log.info(line);
+									allOk = false;
+								} else {
+									if (line.equals("myproxy password userkey failure")) {
+										errors.add("error-password-mismatch");
+										log.info(line);
+										allOk = false;
+									} else {
+										if (line.equals("too short passphrase")) {
+											errors.add("error-password-too-short");
+											log.info(line);
+											allOk = false;
+										} else {
+											if (line.equals("key password failure")) {
+												errors.add("key-password-failure");
+												log.info(line);
+												allOk = false;
+											} else {
+												errors.add("no-valid-key");
+												log.info(line);
+												allOk = false;
+											}
+										}
+									}
+								}
+							}
+						}
+						output.close();
+
+						brCleanUp = new BufferedReader(
+								new InputStreamReader(stderr));
+						while ((line = brCleanUp.readLine()) != null) {
+							allOk = false;
+							log.info("[Stderr] " + line);
+							errors.add("no-valid-key");
+						}
 						if (!allOk) {
 							// certificateService.delete(certificate);
 							certificateService.update(backUp);

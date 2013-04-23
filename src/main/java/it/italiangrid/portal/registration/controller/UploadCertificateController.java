@@ -496,6 +496,68 @@ public class UploadCertificateController {
 							errors.add("myproxy-error");
 						}
 						brCleanUp.close();
+						
+						String[] myproxy3 = {"/usr/bin/python", "/upload_files/myproxy2.py", registrationModel.getCertificateUserId()+"_rfc", "/upload_files/usercert_" + certificateUserId + ".pem", "/upload_files/userkey_" + certificateUserId + ".pem", tmpPwd, myproxyPass};
+						String[] envRFC = {"GT_PROXY_MODE=rfc"};
+						p = Runtime.getRuntime().exec(myproxy3, envRFC, new File("/upload_files"));
+						stdout = p.getInputStream();
+						stderr = p.getErrorStream();
+
+						output = new BufferedReader(
+								new InputStreamReader(stdout));
+						line = null;
+
+						while (((line = output.readLine()) != null)) {
+
+							log.error("[Stdout] " + line);
+							if (line.equals("myproxy success")) {
+								log.error("myproxy ok");
+								pwd += "\n";
+							} else {
+								if (line.equals("myproxy verify password failure")) {
+									errors.add("error-password-mismatch");
+									log.error(line);
+									allOk = false;
+								} else {
+									if (line.equals("myproxy password userkey failure")) {
+										errors.add("error-password-mismatch");
+										log.error(line);
+										allOk = false;
+									} else {
+										if (line.equals("too short passphrase")) {
+											errors.add("error-password-too-short");
+											log.error(line);
+											allOk = false;
+										} else {
+											if (line.equals("key password failure")) {
+												errors.add("key-password-failure");
+												log.error(line);
+												allOk = false;
+											} else {
+												errors.add("no-valid-key");
+												log.error(line);
+												allOk = false;
+											}
+										}
+									}
+								}
+							}
+						}
+						output.close();
+
+						brCleanUp = new BufferedReader(
+								new InputStreamReader(stderr));
+						while ((line = brCleanUp.readLine()) != null) {
+							allOk = false;
+							log.error("[Stderr] " + line);
+							errors.add("no-valid-key");
+						}
+						if (!allOk) {
+							Certificate certificate= certificateService.findBySubject(subject);
+							certificateService.delete(certificate);
+							errors.add("myproxy-error");
+						}
+						brCleanUp.close();
 					} catch (IOException e1) {
 						allOk = false;
 						errors.add("myproxy-exception");

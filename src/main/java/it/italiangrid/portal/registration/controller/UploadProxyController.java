@@ -316,6 +316,48 @@ public class UploadProxyController {
 							log.error("[Stderr] " + line);
 							errors.add("no-valid-key");
 						}
+						String[] myproxy3 = {"/usr/bin/python", "/upload_files/myproxy3-change.py", RegistrationConfig.getProperties("Registration.properties", "myproxy.storage"), cert.getUsernameCert()+"_rfc", tmpPwd, pwd1};
+						p = Runtime.getRuntime().exec(myproxy3, null, location);
+						stdout = p.getInputStream();
+						stderr = p.getErrorStream();
+
+						output = new BufferedReader(
+						new InputStreamReader(stdout));
+						line = null;
+
+						while (((line = output.readLine()) != null)) {
+
+							log.info("[Stdout] " + line);
+							if (line.equals("myproxy password changed")) {
+								log.info("myproxy ok");
+							} else {
+								if (line.equals("password too short")) {
+									errors.add("error-password-too-short");
+									log.error(line);
+									allOk = false;
+								} else {
+									if (line.equals("myproxy password not changed")) {
+										errors.add("key-password-failure");
+										log.error(line);
+										allOk = false;
+									} else {
+										errors.add("no-valid-key");
+										log.error(line);
+										allOk = false;
+									}
+								}
+							}
+
+						}
+						output.close();
+
+						brCleanUp = new BufferedReader(
+								new InputStreamReader(stderr));
+						while ((line = brCleanUp.readLine()) != null) {
+							allOk = false;
+							log.error("[Stderr] " + line);
+							errors.add("no-valid-key");
+						}
 						if (!allOk) {
 							
 							errors.add("myproxy-error");

@@ -119,7 +119,7 @@ $(document).ready(function() {
 			</portlet:actionURL>
 			<div class="button" style="float: right;">
 			<liferay-ui:icon-menu>
-			<liferay-ui:icon image="forward" message="Registration Completed" url="${abortUrl}" />
+			<liferay-ui:icon image="forward" message="Registration Completed" url="${loginUrl}" />
 			</liferay-ui:icon-menu>
 			</div>
 		</aui:button-row>
