@@ -7,10 +7,14 @@
 		<instanceable>true</instanceable>
 		<header-portlet-css>/css/main.css</header-portlet-css>
 		<header-portlet-css>/css/jquery.tooltip.css</header-portlet-css>
+		<header-portlet-css>/css/jqx.base.css</header-portlet-css>
+		<header-portlet-css>/css/jqx.classic.css</header-portlet-css>
 		<header-portal-javascript>/Registration-4/js/jquery-1.6.1.min.js</header-portal-javascript>
 		<header-portal-javascript>/Registration-4/js/jquery-ui.min.js</header-portal-javascript>
 		<header-portal-javascript>/Registration-4/js/main.js</header-portal-javascript>
 		<header-portal-javascript>/Registration-4/js/jquery.tooltip.js</header-portal-javascript>
+		<header-portal-javascript>/Registration-4/js/jqxcore.js</header-portal-javascript>
+		<header-portal-javascript>/Registration-4/js/jqxswitchbutton.js</header-portal-javascript>
 	</portlet>
 	<role-mapper>
 		<role-name>administrator</role-name>

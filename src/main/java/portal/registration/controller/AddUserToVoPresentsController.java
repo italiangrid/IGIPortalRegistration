@@ -7,14 +7,16 @@ import java.util.Properties;
 
 import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
+import javax.portlet.PortletConfig;
 import javax.portlet.RenderRequest;
 
-import portal.registration.domain.UserInfo;
-import portal.registration.domain.UserToVo;
-import portal.registration.domain.Vo;
-import portal.registration.services.UserInfoService;
-import portal.registration.services.UserToVoService;
-import portal.registration.services.VoService;
+import it.italiangrid.portal.dbapi.domain.UserInfo;
+import it.italiangrid.portal.dbapi.domain.UserToVo;
+import it.italiangrid.portal.dbapi.domain.Vo;
+import it.italiangrid.portal.dbapi.services.UserInfoService;
+import it.italiangrid.portal.dbapi.services.UserToVoService;
+import it.italiangrid.portal.dbapi.services.VoService;
+
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +24,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.portlet.bind.annotation.ActionMapping;
 import org.springframework.web.portlet.bind.annotation.RenderMapping;
 
@@ -30,6 +31,7 @@ import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.servlet.SessionErrors;
 import com.liferay.portal.kernel.servlet.SessionMessages;
+import com.liferay.portal.kernel.util.JavaConstants;
 import com.liferay.portal.kernel.util.WebKeys;
 import com.liferay.portal.model.Role;
 import com.liferay.portal.model.User;
@@ -40,7 +42,7 @@ import com.liferay.portal.util.PortalUtil;
 @Controller(value = "addUserToVoPresentsController")
 @RequestMapping(value = "VIEW")
 public class AddUserToVoPresentsController {
-	
+
 	private static final Logger log = Logger
 			.getLogger(AddUserToVoPresentsController.class);
 
@@ -89,7 +91,7 @@ public class AddUserToVoPresentsController {
 			try {
 				user = UserLocalServiceUtil.getUserByScreenName(companyId,
 						username);
-				
+
 				Role rolePowerUser = RoleLocalServiceUtil.getRole(companyId, "Power User");
 
 				UserLocalServiceUtil.deleteRoleUser(rolePowerUser.getRoleId(),
@@ -100,9 +102,13 @@ public class AddUserToVoPresentsController {
 				userInfoService.edit(userInfo);
 
 			} catch (PortalException e) {
+				PortletConfig portletConfig = (PortletConfig)request.getAttribute(JavaConstants.JAVAX_PORTLET_CONFIG);
+				SessionMessages.add(request, portletConfig.getPortletName() + SessionMessages.KEY_SUFFIX_HIDE_DEFAULT_ERROR_MESSAGE);
 				SessionErrors.add(request, "exception-deactivation-user");
 				e.printStackTrace();
 			} catch (SystemException e) {
+				PortletConfig portletConfig = (PortletConfig)request.getAttribute(JavaConstants.JAVAX_PORTLET_CONFIG);
+				SessionMessages.add(request, portletConfig.getPortletName() + SessionMessages.KEY_SUFFIX_HIDE_DEFAULT_ERROR_MESSAGE);
 				SessionErrors.add(request, "exception-deactivation-user");
 				e.printStackTrace();
 			}
@@ -110,27 +116,25 @@ public class AddUserToVoPresentsController {
 
 	}
 
-	//
 	@ActionMapping(params = "myaction=goToAddUserToVOForm")
 	public void goToAddUserToVOForm(ActionRequest request,
-			ActionResponse response, SessionStatus sessionStatus) {
+			ActionResponse response) {
 		int userId = 0;
 		if(request.getParameter("userId")==null){
-			log.error("siamo rovinati");
+			log.info("siamo rovinati");
 			User user = (User) request.getAttribute(WebKeys.USER);
 			if(user!=null)
 				userId = userInfoService.findByUsername(user.getScreenName()).getUserId();
 		}else{
 			userId = Integer.parseInt(request.getParameter("userId"));
 		}
-		
+
 		log.info("UserID = " + request.getParameter("userId"));
-		
+
 		response.setRenderParameter("myaction", "showAddUserToVO");
 		response.setRenderParameter("userId", Integer.toString(userId));
 		response.setRenderParameter("firstReg", request.getParameter("firstReg"));
 
-		sessionStatus.setComplete();
 
 	}
 
@@ -140,11 +144,9 @@ public class AddUserToVoPresentsController {
 	}
 
 	@ActionMapping(params = "myaction=userToVoComplete")
-	public void userToVoComplete(ActionResponse response,
-			SessionStatus sessionStatus) {
+	public void userToVoComplete(ActionResponse response) {
 
 		response.setRenderParameter("myaction", "userInfos");
-		sessionStatus.setComplete();
 
 	}
 	

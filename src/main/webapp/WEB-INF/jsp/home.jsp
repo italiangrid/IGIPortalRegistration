@@ -1,20 +1,3 @@
-
-<%
-	/**
-	 * Copyright (c) 2000-2010 Liferay, Inc. All rights reserved.
-	 *
-	 * This library is free software; you can redistribute it and/or modify it under
-	 * the terms of the GNU Lesser General Public License as published by the Free
-	 * Software Foundation; either version 2.1 of the License, or (at your option)
-	 * any later version.
-	 *
-	 * This library is distributed in the hope that it will be useful, but WITHOUT
-	 * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
-	 * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
-	 * details.
-	 */
-%>
-
 <%@ include file="/WEB-INF/jsp/init.jsp"%>
 
 <script type="text/javascript">
@@ -109,23 +92,17 @@ div#voData {
 
 </style>
 
-<div id="container">
 
-<portlet:renderURL var="showAddUserInfoUrl">
-	<portlet:param name="myaction" value="addUserInfoForm" />
+
+<portlet:renderURL var="showAskForCertificateUrl">
+	<portlet:param name="myaction" value="askForCertificate" />
 </portlet:renderURL>
 
-
-
-
-
-
-
 <jsp:useBean id="userInfos"
-	type="java.util.List<portal.registration.domain.UserInfo>"
+	type="java.util.List<it.italiangrid.portal.dbapi.domain.UserInfo>"
 	scope="request" />
 <jsp:useBean id="idps"
-	type="java.util.List<portal.registration.domain.Idp>" scope="request" />
+	type="java.util.List<it.italiangrid.portal.dbapi.domain.Idp>" scope="request" />
 <jsp:useBean id="idpsName" type="java.util.Map" scope="request" />
 
 
@@ -139,38 +116,18 @@ div#voData {
 <liferay-ui:error key="exception-activation-user"
 	message="exception-activation-user" />
 
-
-
-<c:if test="<%= !themeDisplay.isSignedIn() %>">
-
-</c:if>
-
 <c:choose>
 	<c:when test="<%= !themeDisplay.isSignedIn() %>"> 
-		<aui:fieldset>
-		<aui:column columnWidth="75">
-	    <div style="text-align: justify">
-	 	<strong>Welcome into registration page.</strong>
-		<br/><br/>
-		<img src="<%=request.getContextPath()%>/images/3-steps.png"/>
-		<!-- <img src="https://gridlab17.cnaf.infn.it/image/image_gallery?img_id=12355&t=1326102175121" alt="Fase 1" />  -->
+		
+		<div>
+			
+		<%@ include file="/WEB-INF/jsp/instructionPage.jsp" %>
+		<%@ include file="/WEB-INF/jsp/summary.jsp" %>
+		<div style="clear:both;"></div>
 		</div>
-		</aui:column>
-		<aui:column columnWidth="25">
-		<br/><br/>
-		<br/><br/>
-		<br/><br/>
-		<br/><br/>
-		<br/><br/>
-		<aui:form name="catalogForm" action="${showAddUserInfoUrl}">
-			<aui:button-row>
-				<aui:button type="submit" value="Register NOW!!!"/>
-			</aui:button-row>
-		</aui:form>
-		</aui:column>
-		</aui:fieldset>
 	</c:when>
-	<c:when test="<%= request.isUserInRole("administrator") %>">
+	<c:when test="<%= (themeDisplay.isSignedIn()) && (request.isUserInRole("administrator")) %>">
+		<div id="container2">
 	  	<div id="presentation">
 		
 			<%
@@ -189,6 +146,7 @@ div#voData {
 			<portlet:actionURL var="searchVOActionUrl">
 				<portlet:param name="myaction" value="searchUser" />
 			</portlet:actionURL>
+			
 			
 			<aui:form name="searchUserInfo" 
 				action="${searchVOActionUrl}">
@@ -214,7 +172,7 @@ div#voData {
 		</div>
 		<div id="tabella">
 		<liferay-ui:search-container
-			emptyResultsMessage="No user registred" delta="5">
+			emptyResultsMessage="No user registred" delta="20">
 			<liferay-ui:search-container-results>
 				<%
 					results = ListUtil.subList(userInfos,
@@ -230,7 +188,7 @@ div#voData {
 
 			</liferay-ui:search-container-results>
 			<liferay-ui:search-container-row
-				className="portal.registration.domain.UserInfo" keyProperty="userId"
+				className="it.italiangrid.portal.dbapi.domain.UserInfo" keyProperty="userId"
 				modelVar="UserInfo">
 				<liferay-ui:search-container-column-text name="Last Name"
 					property="lastName" />
@@ -252,15 +210,27 @@ div#voData {
 		</liferay-ui:search-container>
 		</div>
 		
-
+		</div>
 	</c:when>
 	<c:otherwise>
-
-		<%@ include file="/WEB-INF/jsp/editUserInfoForm.jsp" %>
+	
+		
+		
+		<portlet:renderURL var="editURL">
+			<portlet:param name="myaction" value="editUserInfoForm" />
+			<portlet:param name="userId" value="${userId }" />
+		</portlet:renderURL>
+		
+		<script>
+		
+		/*location.href="${editURL}";*/
+		
+		</script>
+		
+		non dovresti essere qui.
+		
 
 	</c:otherwise>
 </c:choose>
-
-</div>
 
 

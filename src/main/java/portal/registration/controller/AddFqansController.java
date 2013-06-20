@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.portlet.bind.annotation.ActionMapping;
 
 import com.liferay.portal.kernel.exception.PortalException;
@@ -20,10 +19,11 @@ import com.liferay.portal.model.User;
 import com.liferay.portal.service.UserLocalServiceUtil;
 import com.liferay.portal.util.PortalUtil;
 
-import portal.registration.domain.UserInfo;
-import portal.registration.domain.UserToVo;
-import portal.registration.services.UserInfoService;
-import portal.registration.services.UserToVoService;
+
+import it.italiangrid.portal.dbapi.domain.UserInfo;
+import it.italiangrid.portal.dbapi.domain.UserToVo;
+import it.italiangrid.portal.dbapi.services.UserInfoService;
+import it.italiangrid.portal.dbapi.services.UserToVoService;
 
 @Controller(value = "addFqansController")
 @RequestMapping(value = "VIEW")
@@ -39,12 +39,13 @@ public class AddFqansController {
 	private UserInfoService userInfoService;
 
 	@ActionMapping(params = "myaction=addFqans")
-	public void addUserInfo(ActionRequest request, ActionResponse response,
-			SessionStatus sessionStatus) {
+	public void addUserInfo(ActionRequest request, ActionResponse response) {
+
 		boolean firstReg = false;
 		String[] fqans = request.getParameterValues("resultList");
 		int userId = Integer.parseInt(request.getParameter("userId"));
 		int idVo = Integer.parseInt(request.getParameter("idVo"));
+
 		if (request.getParameter("firstReg") != null)
 			firstReg = Boolean.parseBoolean(request.getParameter("firstReg"));
 
@@ -79,7 +80,6 @@ public class AddFqansController {
 
 		response.setRenderParameter("userId", Integer.toString(userId));
 		request.setAttribute("userId", userId);
-		sessionStatus.setComplete();
 
 	}
 
@@ -90,21 +90,21 @@ public class AddFqansController {
 
 		UserInfo userInfo = userInfoService.findById(userId);
 		String username = userInfo.getUsername();
-		log.error("ricevuto userId " + userId + "corrispondente all'utente "
+		log.info("ricevuto userId " + userId + "corrispondente all'utente "
 				+ username);
 		long companyId = PortalUtil.getCompanyId(request);
-		log.error("companyId " + companyId);
+		log.info("companyId " + companyId);
 		User user = UserLocalServiceUtil.getUserByScreenName(companyId,
 				username);
 		if (user != null) {
-			log.error("recuperato liferay user " + user.getScreenName());
+			log.info("recuperato liferay user " + user.getScreenName());
 			// user.setActive(false);
 			// UserLocalServiceUtil.updateActive(user.getUserId(),false);
 			UserLocalServiceUtil.deleteUser(user.getUserId());
-			log.error("eliminato utente liferay");
+			log.info("eliminato utente liferay");
 		}
 		userInfoService.delete(userId);
-		log.error("eliminato utente portalUser");
+		log.info("eliminato utente portalUser");
 		response.sendRedirect(PortalUtil.getPortalURL(request)
 				+ "/c/portal/logout");
 

@@ -21,15 +21,12 @@ public class SearchVOController {
 		String userId = request.getParameter("userId");
 		String firstReg = request.getParameter("firstReg");
 
-		// request.setAttribute("waif", waif);
-		// request.setAttribute("userId", userId);
 
 		response.setRenderParameter("myaction", "showAddUserToVO");
 		response.setRenderParameter("firstReg", firstReg);
 		response.setRenderParameter("userId", userId);
 		request.setAttribute("firstReg", request.getParameter("firstReg"));
 
-		// sessionStatus.setComplete();
 
 	}
 
@@ -38,7 +35,6 @@ public class SearchVOController {
 			SessionStatus sessionStatus) {
 
 		AddUserToVOController.setSearch("");
-		sessionStatus.setComplete();
 
 		String userId = request.getParameter("userId");
 		String firstReg = request.getParameter("firstReg");

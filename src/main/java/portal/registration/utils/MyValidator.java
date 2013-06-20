@@ -4,7 +4,9 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 
-import portal.registration.domain.UserInfo;
+//import portal.registration.domain.UserInfo;
+import it.italiangrid.portal.dbapi.domain.UserInfo;
+
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.Validator;
 import com.liferay.portal.model.User;
@@ -14,8 +16,7 @@ public class MyValidator {
 
 	private static final Logger log = Logger.getLogger(MyValidator.class);
 
-	public static boolean validate(UserInfo target, List<String> errors)
-			throws SystemException {
+	public static boolean validate(UserInfo target, List<String> errors){
 		boolean result = true;
 
 		if (Validator.isNull(target.getFirstName())) {
@@ -45,6 +46,7 @@ public class MyValidator {
 		if (Validator.isNotNull(target.getMail())) {
 			if (!Validator.isEmailAddress(target.getMail())) {
 				errors.add("user-valid-mail-required");
+				target.setMail("");
 				result = false;
 				log.info("mail invalida sbagliato");
 			}
@@ -64,22 +66,30 @@ public class MyValidator {
 			}
 		}
 
-		List<User> liferayUsers = UserLocalServiceUtil.getUsers(0,
-				UserLocalServiceUtil.getUsersCount());
-
-		for (int i = 0; i < UserLocalServiceUtil.getUsersCount(); i++) {
-			if (liferayUsers.get(i).getScreenName()
-					.equals(target.getUsername())) {
-				errors.add("user-username-duplicate");
-				result = false;
-				log.info("username duplicato sbagliato");
+		List<User> liferayUsers;
+		try {
+			liferayUsers = UserLocalServiceUtil.getUsers(0,
+					UserLocalServiceUtil.getUsersCount());
+			
+			for (int i = 0; i < UserLocalServiceUtil.getUsersCount(); i++) {
+				if (liferayUsers.get(i).getScreenName()
+						.equals(target.getUsername())) {
+					errors.add("user-username-duplicate");
+					result = false;
+					log.info("username duplicato sbagliato");
+				}
+				if (liferayUsers.get(i).getEmailAddress().equals(target.getMail())) {
+					errors.add("user-mail-duplicate");
+					result = false;
+					log.info("mail duplicato sbagliato " + target.getMail() + " = "
+							+ liferayUsers.get(i).getEmailAddress());
+				}
 			}
-			if (liferayUsers.get(i).getEmailAddress().equals(target.getMail())) {
-				errors.add("user-mail-duplicate");
-				result = false;
-				log.info("mail duplicato sbagliato " + target.getMail() + " = "
-						+ liferayUsers.get(i).getEmailAddress());
-			}
+		} catch (SystemException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			errors.add("user-problem");
+			result = false;
 		}
 
 		return result;
@@ -111,6 +121,20 @@ public class MyValidator {
 			errors.add("cert-pass2-required");
 			result = false;
 			log.info("Inserire Password di controllo");
+		}
+
+		return result;
+	}
+	
+	public static boolean validateCert(String pwd, List<String> errors) throws SystemException {
+		boolean result = true;
+
+		
+
+		if (Validator.isNull(pwd)) {
+			errors.add("key-pass-required");
+			result = false;
+			log.info("Inserire Password");
 		}
 
 		return result;

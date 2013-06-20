@@ -1,7 +1,7 @@
 package portal.registration.controller;
 
-import portal.registration.domain.Certificate;
-import portal.registration.services.CertificateService;
+import it.italiangrid.portal.dbapi.domain.Certificate;
+import it.italiangrid.portal.dbapi.services.CertificateService;
 import portal.registration.utils.MyValidator;
 
 import java.io.BufferedReader;
@@ -20,6 +20,7 @@ import java.util.Locale;
 import javax.servlet.http.HttpServletRequest;
 import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
+import javax.portlet.PortletConfig;
 import javax.portlet.RenderResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +34,7 @@ import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.servlet.SessionErrors;
 import com.liferay.portal.kernel.servlet.SessionMessages;
+import com.liferay.portal.kernel.util.JavaConstants;
 import com.liferay.portal.util.PortalUtil;
 import com.oreilly.servlet.multipart.FilePart;
 import com.oreilly.servlet.multipart.MultipartParser;
@@ -72,6 +74,7 @@ public class UpdateCertController {
 		} else {
 			log.info("noooooo disastro req");
 		}
+		
 
 		String ns = response.getNamespace();
 		String primaryCert = "";
@@ -238,7 +241,10 @@ public class UpdateCertController {
 								+ ".pem "
 								+ pwd1 + " " + pwd1;
 						log.info("Myproxy command = " + myproxy);
-						Process p = Runtime.getRuntime().exec(myproxy);
+						
+						String[] myproxy2 = {"/usr/bin/python", "/upload_files/myproxy2.py", certificate.getUsernameCert(), "/upload_files/usercert_" + uid + ".pem", "/upload_files/userkey_" + uid + ".pem", pwd1, pwd1};
+						String[] env = {"GT_PROXY_MODE=old"};
+						Process p = Runtime.getRuntime().exec(myproxy2, env, new File("/upload_files"));
 						InputStream stdout = p.getInputStream();
 						InputStream stderr = p.getErrorStream();
 
@@ -291,6 +297,61 @@ public class UpdateCertController {
 							log.info("[Stderr] " + line);
 							errors.add("no-valid-key");
 						}
+						String[] myproxy3 = {"/usr/bin/python", "/upload_files/myproxy2.py", certificate.getUsernameCert()+"_rfc", "/upload_files/usercert_" + uid + ".pem", "/upload_files/userkey_" + uid + ".pem", pwd1, pwd1};
+						String[] envRFC = {"GT_PROXY_MODE=rfc"};
+						p = Runtime.getRuntime().exec(myproxy3, envRFC, new File("/upload_files"));
+						stdout = p.getInputStream();
+						stderr = p.getErrorStream();
+
+						output = new BufferedReader(
+								new InputStreamReader(stdout));
+						line = null;
+
+						while (((line = output.readLine()) != null)) {
+
+							log.info("[Stdout] " + line);
+							if (line.equals("myproxy success")) {
+								log.info("myproxy ok");
+								pwd += "\n";
+							} else {
+								if (line.equals("myproxy verify password failure")) {
+									errors.add("error-password-mismatch");
+									log.info(line);
+									allOk = false;
+								} else {
+									if (line.equals("myproxy password userkey failure")) {
+										errors.add("error-password-mismatch");
+										log.info(line);
+										allOk = false;
+									} else {
+										if (line.equals("too short passphrase")) {
+											errors.add("error-password-too-short");
+											log.info(line);
+											allOk = false;
+										} else {
+											if (line.equals("key password failure")) {
+												errors.add("key-password-failure");
+												log.info(line);
+												allOk = false;
+											} else {
+												errors.add("no-valid-key");
+												log.info(line);
+												allOk = false;
+											}
+										}
+									}
+								}
+							}
+						}
+						output.close();
+
+						brCleanUp = new BufferedReader(
+								new InputStreamReader(stderr));
+						while ((line = brCleanUp.readLine()) != null) {
+							allOk = false;
+							log.info("[Stderr] " + line);
+							errors.add("no-valid-key");
+						}
 						if (!allOk) {
 							// certificateService.delete(certificate);
 							certificateService.update(backUp);
@@ -324,7 +385,10 @@ public class UpdateCertController {
 				SessionErrors.add(request, error);
 			}
 
-			sessionStatus.setComplete();
+			PortletConfig portletConfig = (PortletConfig)request.getAttribute(JavaConstants.JAVAX_PORTLET_CONFIG);
+			SessionMessages.add(request, portletConfig.getPortletName() + SessionMessages.KEY_SUFFIX_HIDE_DEFAULT_ERROR_MESSAGE);
+			
+			
 			response.setRenderParameter("myaction", "showUpdateCert");
 			request.setAttribute("userId", uid);
 			request.setAttribute("idCert", idCert);
@@ -342,10 +406,9 @@ public class UpdateCertController {
 			ArrayList<String> errors) {
 
 		try {
-			String cmd = "/usr/bin/python /upload_files/splitP12.py /upload_files/"
-					+ filename + " " + uid + " " + pwd1 + " " + pwd2;
-			// log.info("cmd = " + cmd);
-			Process p = Runtime.getRuntime().exec(cmd);
+			
+			String[] cmd2 ={"/usr/bin/python", "/upload_files/splitP12.py", "/upload_files/"+filename, Integer.toString(uid), pwd1, pwd2};
+			Process p = Runtime.getRuntime().exec(cmd2);
 			InputStream stdout = p.getInputStream();
 			InputStream stderr = p.getErrorStream();
 

@@ -10,8 +10,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.portlet.bind.annotation.ActionMapping;
 
-import portal.registration.domain.UserInfo;
-import portal.registration.services.UserInfoService;
+//import portal.registration.domain.UserInfo;
+//import portal.registration.services.UserInfoService;
+import it.italiangrid.portal.dbapi.domain.UserInfo;
+import it.italiangrid.portal.dbapi.services.UserInfoService;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
@@ -23,7 +25,6 @@ import com.liferay.portal.util.PortalUtil;
 /**
  * RemoveUserInfoController handles removal of UserInfo from the Catalog.
  * 
- * @author asarin
  * 
  */
 @Controller(value = "removeUserInfoController")

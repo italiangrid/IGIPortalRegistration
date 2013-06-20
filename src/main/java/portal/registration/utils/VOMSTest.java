@@ -2,13 +2,6 @@ package portal.registration.utils;
 
 import java.net.MalformedURLException;
 import java.rmi.RemoteException;
-//import java.text.DateFormat;
-//import java.text.ParseException;
-//import java.text.SimpleDateFormat;
-//import java.util.Date;
-//import java.util.GregorianCalendar;
-//import java.util.Locale;
-
 import javax.xml.rpc.ServiceException;
 
 import org.glite.security.voms.VOMSException;
@@ -17,7 +10,7 @@ public class VOMSTest {
 
 	public static void main(String[] args) throws VOMSException, MalformedURLException, RemoteException, ServiceException {
 		
-		VOMSAdminCallOut.test();
+//		VOMSAdminCallOut.test();
 		
 		
 //		String[] roles = VOMSAdminCallOut.getUserFQANs("/C=IT/O=INFN/OU=Personal Certificate/L=Ferrara/CN=Enrico Vianello", "/C=IT/O=INFN/CN=INFN CA", "voms-02.pd.infn.it:8443/voms/superbvo.org");
@@ -60,6 +53,16 @@ public class VOMSTest {
 			System.out.println("Eccezzione data");
 			e.printStackTrace();
 		}*/
+		
+//		String[] values = {"wfchg_mess","wfchg_enab","quota_mess","quota_enab","email_addr","email_enab","email_subj"};
+//		
+//		List<String> keys = new ArrayList<String>(); //;
+//		
+//		keys = Arrays.asList(values);
+//		
+//		for (String string : keys) {
+//			System.out.println(string);
+//		}
 	}
 
 }

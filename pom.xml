@@ -8,7 +8,7 @@
 	<name>Registration Portlet</name>
 	<version>4</version>
 	<properties>
-		<liferay.auto.deploy.dir>/Users/dmichelotto/Sities/liferay-portal-6.0.5/deploy</liferay.auto.deploy.dir>
+		<liferay.auto.deploy.dir>/Users/dmichelotto/Sities/liferay-portal-6.1.0/deploy</liferay.auto.deploy.dir>
 		<liferay.version>6.1.0</liferay.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -141,7 +141,6 @@
 	    		</exclusion>
 	    	</exclusions>
 	    </dependency>
-	    
 	    <dependency>
 	    	<groupId>log4j</groupId>
 	    	<artifactId>log4j</artifactId>
@@ -210,7 +209,7 @@
 	    	<type>jar</type>
 	    	<scope>compile</scope>
 	    </dependency>
-	    <dependency>
+	    <!-- <dependency>
 	    	<groupId>org.hibernate</groupId>
 	    	<artifactId>hibernate-core</artifactId>
 	    	<version>3.3.2.GA</version>
@@ -226,7 +225,7 @@
 		    <groupId>org.hibernate</groupId>
 		    <artifactId>hibernate-entitymanager</artifactId>
 		    <version>3.3.2.GA</version>
-		</dependency>
+		</dependency>  -->
 	    <dependency>
 	    	<groupId>javax.persistence</groupId>
 	    	<artifactId>persistence-api</artifactId>
@@ -234,13 +233,13 @@
 	    	<type>jar</type>
 	    	<scope>compile</scope>
 	    </dependency>
-	    <dependency>
+	    <!-- <dependency>
 	    	<groupId>c3p0</groupId>
 	    	<artifactId>c3p0</artifactId>
 	    	<version>0.9.1.2</version>
 	    	<type>jar</type>
 	    	<scope>compile</scope>
-	    </dependency>
+	    </dependency> -->
 	    <dependency>
 	    	<groupId>org.springframework</groupId>
 	    	<artifactId>spring-orm</artifactId>
@@ -269,7 +268,7 @@
 	    	<type>jar</type>
 	    	<scope>compile</scope>
 	    </dependency>
-	    <dependency>
+	    <!-- <dependency>
 	    	<groupId>org.hibernate</groupId>
 	    	<artifactId>hibernate-annotations</artifactId>
 	    	<version>3.4.0.GA</version>
@@ -282,16 +281,7 @@
 	    	<version>5.1.16</version>
 	    	<type>jar</type>
 	    	<scope>provided</scope>
-	    </dependency>
-	    <!-- 
-	    <dependency>
-	    	<groupId>javax</groupId>
-	    	<artifactId>javaee-web-api</artifactId>
-	    	<version>6.0</version>
-	    </dependency>
-	    -->
-	    
-		
+	    </dependency> -->
 		<dependency>
 		    <groupId>commons-fileupload</groupId>
 		    <artifactId>commons-fileupload</artifactId>
@@ -302,70 +292,54 @@
 		    <artifactId>cos</artifactId>
 		    <version>05Nov2002</version>
 		</dependency>
-		
 		<dependency>
            <groupId>axis</groupId>
            <artifactId>axis</artifactId>
            <version>${axis-version}</version>
        </dependency>
-       
        <dependency>
            <groupId>axis</groupId>
            <artifactId>axis-jaxrpc</artifactId>
            <version>${axis-version}</version>
        </dependency>
-       <!--  
-       <dependency>
-           <groupId>axis</groupId>
-           <artifactId>axis-saaj</artifactId>
-           <version>${axis-version}</version>
-       </dependency>
-       
-		<dependency>
-           <groupId>javax.mail</groupId>
-           <artifactId>mail</artifactId>
-           <version>1.4</version>
-           <scope>provided</scope>
-       </dependency>  -->
-       
-       <!-- <dependency>
-           <groupId>emi</groupId>
-           <artifactId>trustmanager</artifactId>
-           <version>3.0.0</version>
-       </dependency> -->
-       
-       
       <dependency>
-           
            <groupId>org.glite.security</groupId>
 			<artifactId>trustmanager</artifactId>
 			<version>2.0.6</version>
-			<!-- <version>2.5.5</version> -->
        </dependency>
        <dependency>
        		<groupId>org.glite.security</groupId>
 			<artifactId>util-java</artifactId>
 			<version>2.0.3</version>
        </dependency>
-       
-       
        <dependency>
            <groupId>emi</groupId>
            <artifactId>trustmanager-axis</artifactId>
            <version>1.0.0</version>
        </dependency> 
-       
        <dependency>
            <groupId>org.bouncycastle</groupId>
            <artifactId>bcprov-jdk15</artifactId>
            <version>1.44</version>
            <scope>provided</scope>
        </dependency>
-       
        <dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
 			<version>3.1</version>
+		</dependency>
+		
+		<dependency>
+	    	<groupId>it.italiangrid.portal</groupId>
+	    	<artifactId>db-api</artifactId>
+	    	<version>0.0.1</version>
+	    </dependency>
+	    
+	    <dependency>
+			<groupId>cog-jglobus</groupId>
+			<artifactId>cog-jglobus</artifactId>
+			<version>1.8.0</version>
+			<scope>compile</scope>
 		</dependency>
        
        <!-- <dependency>
@@ -398,5 +372,20 @@
 			<artifactId>commons-codec</artifactId>
 			<version>1.6</version>
 		</dependency> -->
+		<dependency>
+			<groupId>org.jdom</groupId>
+			<artifactId>jdom</artifactId>
+			<version>2.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jasig.cas</groupId>
+			<artifactId>cas-client-core</artifactId>
+			<version>3.1.5</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>1.4.5</version>
+		</dependency>
 	</dependencies> 
 </project>

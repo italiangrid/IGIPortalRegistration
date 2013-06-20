@@ -1,12 +1,57 @@
+.modal-overlay {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	background: url(/Registration-4/images/overlay2.png) repeat;
+	z-index: 101;
+}
+.modal-window {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin: 0;
+	padding: 0;
+	z-index: 102;
+	background: #fff;
+	border: solid 8px #000;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+}
+.close-window {
+	position: absolute;
+	width: 47px;
+	height: 47px;
+	right: -23px;
+	top: -23px;
+	background: transparent url(/Registration-4/images/close-button2.png) no-repeat scroll right top;
+	text-indent: -99999px;
+	overflow: hidden;
+	cursor: pointer;
+}
+
 #container {
-	background-color: #e4e4e4;
-	border: 1px;
-	border-style: solid;
-	border-color: #c1c1c1;
-	border-radius: 5px;
 	padding: 5px;
+	margin-right: 9px;
+}
+
+#container2 {
+	box-shadow: 10px 10px 5px #888;
+	border: 1px;
+	border-color: #C8C9CA;
+	border-style: solid;
+	background-color: #EFEFEF;
+	border-radius: 5px;
+	padding: 10px;
+	margin-right: 9px;
 }
 
 #presentation {
 	margin: 10px;
 }
+

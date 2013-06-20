@@ -20,9 +20,10 @@ div.function {
 #search{float:left;}
 #addVo{float:left;}
 #clear{clear:both;}
+
 </style>
 
-<div id="container">
+<div id="container2">
 
 <liferay-ui:error key="user-vo-list-empty" message="user-vo-list-empty"/>
 <liferay-ui:error key="no-user-found-in-VO" message="no-user-found-in-VO"/>
@@ -31,7 +32,7 @@ div.function {
 <liferay-ui:error key="edg-mkgridmap-exception" message="edg-mkgridmap-exception"/>
 
 
-<h1 class="header-title">Lista Virtual Organization</h1>
+<h1 class="header-title">Virtual Organization List</h1>
 
 <%
 	if (request.getParameter("userId") != null){
@@ -42,6 +43,7 @@ div.function {
 	}
 											
 %>
+
 
 <div class="function">
 			<aui:fieldset>
@@ -79,7 +81,7 @@ div.function {
 <div id="tabella">
 
 <jsp:useBean id="vos"
-	type="java.util.List<portal.registration.domain.Vo>" scope="request" />
+	type="java.util.List<it.italiangrid.portal.dbapi.domain.Vo>" scope="request" />
 
 	
 <%
@@ -108,7 +110,7 @@ div.function {
 
 	</liferay-ui:search-container-results>
 	<liferay-ui:search-container-row
-		className="portal.registration.domain.Vo" keyProperty="idVo"
+		className="it.italiangrid.portal.dbapi.domain.Vo" keyProperty="idVo"
 		modelVar="vo">
 		<liferay-ui:search-container-column-text name="VO Name"
 			property="vo" />

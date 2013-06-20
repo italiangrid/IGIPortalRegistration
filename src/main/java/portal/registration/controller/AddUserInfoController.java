@@ -6,14 +6,17 @@ import java.util.List;
 import java.util.Locale;
 import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
+import javax.portlet.PortletConfig;
 import javax.portlet.PortletSession;
 import javax.portlet.RenderResponse;
 import org.apache.log4j.Logger;
 
-import portal.registration.domain.Idp;
-import portal.registration.domain.UserInfo;
-import portal.registration.services.IdpService;
-import portal.registration.services.UserInfoService;
+import it.italiangrid.portal.dbapi.domain.Idp;
+import it.italiangrid.portal.dbapi.domain.Notify;
+import it.italiangrid.portal.dbapi.domain.UserInfo;
+import it.italiangrid.portal.dbapi.services.IdpService;
+import it.italiangrid.portal.dbapi.services.NotifyService;
+import it.italiangrid.portal.dbapi.services.UserInfoService;
 import portal.registration.utils.LongNumberEditor;
 import portal.registration.utils.MyValidator;
 
@@ -33,6 +36,7 @@ import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.servlet.SessionErrors;
 import com.liferay.portal.kernel.servlet.SessionMessages;
+import com.liferay.portal.kernel.util.JavaConstants;
 import com.liferay.portal.kernel.util.WebKeys;
 import com.liferay.portal.model.Role;
 import com.liferay.portal.model.User;
@@ -49,11 +53,14 @@ public class AddUserInfoController {
 
 	private static final Logger log = Logger
 			.getLogger(AddUserInfoController.class);
-
+	
 	private static String PASSWORD = "settedByPortal";
 
 	@Autowired
 	private IdpService idpService;
+	
+	@Autowired
+	private NotifyService notifyService;
 
 	@Autowired
 	private UserInfoService userInfoService;
@@ -79,11 +86,13 @@ public class AddUserInfoController {
 			ActionResponse response, SessionStatus sessionStatus,
 			PortletSession session) throws PortalException, SystemException {
 
+
 		log.info("sono dentro");
 
+		
 		User u = null;
 		long companyId = PortalUtil.getCompanyId(request);
-
+		
 		if (!bindingResult.hasErrors()) {
 
 			ArrayList<String> errors = new ArrayList<String>();
@@ -117,14 +126,17 @@ public class AddUserInfoController {
 								newUsername+='_';
 						}
 						
-						userInfo.setUsername(newUsername.toLowerCase());
+						userInfo.setUsername(newUsername);
+						
 
 						try {
+
 
 							ThemeDisplay themeDisplay = (ThemeDisplay) request
 									.getAttribute(WebKeys.THEME_DISPLAY);
 							long[] groupIds = { themeDisplay.getLayout()
 									.getGroupId() };
+
 							log.info("companyid = " + companyId);
 							log.info("settate variabili di supporto ora si aggiunge un utenti a liferay!!");
 
@@ -138,12 +150,14 @@ public class AddUserInfoController {
 									null, null, null, true,
 									ServiceContextFactory.getInstance(
 											User.class.getName(), request));
+							
 
-							if (u == null) {
+							if (u == null){
 
 								log.info("nulla di fatto");
 							} else {
-
+								u.setPasswordReset(false);
+								UserLocalServiceUtil.updateUser(u);
 								Role rolePowerUser = RoleLocalServiceUtil
 										.getRole(companyId, "Power User");
 
@@ -155,11 +169,15 @@ public class AddUserInfoController {
 						} catch (Exception e) {
 
 							errors.add("user-liferay-problem");
-							log.error("Inserimento utente in liferay "
+
+							log.info("Inserimento utente in liferay "
 									+ e.getMessage());
+
 							allOk = false;
 							request.setAttribute("firstReg", "true");
 						}
+						
+						
 
 						if (allOk) {
 							try {
@@ -172,6 +190,10 @@ public class AddUserInfoController {
 
 								log.info("Utente aggiunto in PortalUsert con UserId = "
 										+ userId);
+								
+								Notify notify = new Notify(userInfo, "false");
+								
+								notifyService.save(notify);
 
 							} catch (Exception e) {
 
@@ -192,6 +214,8 @@ public class AddUserInfoController {
 
 					allOk = false;
 				}
+				
+				
 
 				if (allOk) {
 
@@ -199,7 +223,7 @@ public class AddUserInfoController {
 
 					if (request.getParameter("haveCert").equals("true")) {
 						response.setRenderParameter("myaction",
-								"showUploadCert");
+								"showCAOnline");
 						response.setRenderParameter("userId",
 								Integer.toString(userId));
 						request.setAttribute("userId", userId);
@@ -213,8 +237,6 @@ public class AddUserInfoController {
 								"showRequestCertificate");
 					}
 
-					sessionStatus.setComplete();
-
 				} else {
 
 					errors.add("error-saving-registration");
@@ -223,6 +245,9 @@ public class AddUserInfoController {
 						log.info("Errore: " + error);
 						SessionErrors.add(request, error);
 					}
+					
+					PortletConfig portletConfig = (PortletConfig)request.getAttribute(JavaConstants.JAVAX_PORTLET_CONFIG);
+					SessionMessages.add(request, portletConfig.getPortletName() + SessionMessages.KEY_SUFFIX_HIDE_DEFAULT_ERROR_MESSAGE);
 
 					log.info("non va bene");
 
@@ -246,6 +271,7 @@ public class AddUserInfoController {
 			response.setRenderParameter("myaction", "addUserInfoForm");
 		}
 	}
+
 
 	@ModelAttribute("idps")
 	public List<Idp> getIdps() {

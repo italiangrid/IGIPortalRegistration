@@ -19,25 +19,22 @@
 
 	<portlet:renderURL var="editURL">
 		<portlet:param name="myaction" value="showEditVo" />
-		<portlet:param name="userId"
-			value="${userId}" />
+		<portlet:param name="userId" value="${userId}" />
 		<portlet:param name="idVo" value="<%=primKey %>" />
 	</portlet:renderURL>
 	<liferay-ui:icon image="edit" message="Set Role VO" url="${editURL}" />
 
 	<portlet:actionURL var="editURL">
 		<portlet:param name="myaction" value="setDefaultUserToVoEdit" />
-		<portlet:param name="userId"
-			value="${userId}" />
+		<portlet:param name="userId" value="${userId}" />
 		<portlet:param name="idVo" value="<%=primKey %>" />
 	</portlet:actionURL>
-	<liferay-ui:icon image="edit" message="Set Default" url="${editURL}" />
+	<liferay-ui:icon image="tag" message="Set Default" url="${editURL}" />
 
 
 	<portlet:actionURL var="deleteURL">
 		<portlet:param name="myaction" value="removeUserToVoEdit" />
-		<portlet:param name="userId"
-			value="${userId}" />
+		<portlet:param name="userId" value="${userId}" />
 		<portlet:param name="idVo" value="<%=primKey %>" />
 	</portlet:actionURL>
 	<liferay-ui:icon-delete url="${deleteURL}" />

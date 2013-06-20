@@ -182,6 +182,9 @@
 	width: 250px;
 	margin-right: 2em;
 }
+#catalog{
+	margin-bottom: 20px;
+}
 
 #insertHere {
 	margin: 0;
@@ -230,18 +233,19 @@ ul#insertHere{
 	list-style-image: url('<%=request.getContextPath()%>/images/arrow.16x16.png');
 }
 
+
 /*li{
 	padding: 0 1em 0 0 ;
 }*/
 </style>
 
-<div id="container">
+<div id="container2">
 
 <portlet:actionURL var="addUserToVoActionUrl">
 	<portlet:param name="myaction" value="addFqans" />
 </portlet:actionURL>
 
-<jsp:useBean id="userToVo" type="portal.registration.domain.UserToVo"
+<jsp:useBean id="userToVo" type="it.italiangrid.portal.dbapi.domain.UserToVo"
 	scope="request" />
 
 <aui:form name="addUserToVoForm"
@@ -347,7 +351,7 @@ ul#insertHere{
 				<h3 class="ui-widget-header"><img src="<%=request.getContextPath()%>/images/delete.png" width="24" height="24"/>Trash</h3>
 				<div class="ui-widget-content">
 
-					<ul id="sortable-delete" class="sortable">Drag and drop here for erase role</ul>
+					<ul id="sortable-delete" class="sortable"><c:out value="Drag and drop here for erase role"/></ul>
 
 					<br />
 				</div>

@@ -24,7 +24,7 @@
 		// timeout id for delayed tooltips
 		tID,
 		// IE 5.5 or 6
-		IE = $.browser.msie && /MSIE\s(5\.5|6\.)/.test(navigator.userAgent),
+		IE = false,//$.browser.msie && /MSIE\s(5\.5|6\.)/.test(navigator.userAgent),
 		// flag for mouse tracking
 		track = false;
 	
@@ -147,7 +147,7 @@
 			helper.title.hide();
 			var bodyContent = settings(this).bodyHandler.call(this);
 			if (bodyContent.nodeType || bodyContent.jquery) {
-				helper.body.empty().append(bodyContent)
+				helper.body.empty().append(bodyContent);
 			} else {
 				helper.body.html( bodyContent );
 			}
@@ -212,7 +212,7 @@
 		
 		// stop updating when tracking is disabled and the tooltip is visible
 		if ( !track && helper.parent.is(":visible")) {
-			$(document.body).unbind('mousemove', update)
+			$(document.body).unbind('mousemove', update);
 		}
 		
 		// if no current element is available, remove this listener

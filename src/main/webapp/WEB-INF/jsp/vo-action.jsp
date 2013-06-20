@@ -23,8 +23,7 @@
 
 	<portlet:actionURL var="deleteURL">
 		<portlet:param name="myaction" value="removeUserToVo" />
-		<portlet:param name="userId"
-			value="<%=request.getParameter("userId") %>" />
+		<portlet:param name="userId" value="<%=request.getParameter("userId") %>" />
 		<portlet:param name="idVo" value="<%=primKey %>" />
 	</portlet:actionURL>
 	<liferay-ui:icon-delete url="${deleteURL}" />

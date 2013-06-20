@@ -8,7 +8,8 @@
 <%@ taglib uri="http://alloy.liferay.com/tld/aui" prefix="aui" %>
 <%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
 
-<%@ page import="portal.registration.domain.*" %>
+<%@ page import="it.italiangrid.portal.dbapi.domain.*" %>
+<%@ page import="it.italiangrid.portal.registration.model.*" %>
 <%@ page import="portal.registration.controller.AddUserToVOController" %>
 <%@ page import="java.security.cert.X509Certificate" %>
 <%@ page import="java.net.*" %>
@@ -40,6 +41,12 @@
 <%@ page import="com.liferay.portal.model.User"%>
 <%@ page import="javax.portlet.PortletURL" %>
 <%@ page import="com.liferay.portal.security.auth.AuthTokenUtil" %>
+<%@ page import="com.liferay.portal.kernel.portlet.LiferayWindowState" %>
+
+<%@ page import="com.liferay.portal.theme.ThemeDisplay" %>
+<%@ page import="com.liferay.portal.model.Layout" %>
+
+
 
 <portlet:defineObjects />	
 <liferay-theme:defineObjects />

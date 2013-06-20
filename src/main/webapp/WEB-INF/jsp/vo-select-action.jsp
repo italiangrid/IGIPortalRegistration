@@ -22,8 +22,7 @@
 
 	<portlet:actionURL var="addUserToVOActionUrl">
 		<portlet:param name="myaction" value="addUserToVO" />
-		<portlet:param name="userId"
-			value="<%=request.getParameter("userId") %>" />
+		<portlet:param name="userId" value="<%=request.getParameter("userId") %>" />
 		<portlet:param name="VOids" value="<%=primKey %>" />
 		<portlet:param name="firstReg" value="${firstReg}" />
 		

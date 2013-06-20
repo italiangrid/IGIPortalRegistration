@@ -75,31 +75,12 @@ public class VOMSAdminCallOut {
 		log.info("porpietà axis: " + AxisProperties.getProperty("axis.socketSecureFactory").toString());
 		
 		Properties properties = AXISSocketFactory.getCurrentProperties();
-
-		// log.info(properties);
-
-		// Properties old = AXISSocketFactory.getCurrentProperties();
-
-		// log.info(old);
 		
 		log.info("set cert: "+ cert + " key: "+key);
 
-		properties.setProperty("sslCertFile", cert); //
-		// hostcert.pem
+		properties.setProperty("sslCertFile", cert); 
 
-		properties.setProperty("sslKey", key); // hostkey.pem
-
-		// AXISSocketFactory.setCurrentProperties(properties);
-		// System.setProperties(properties);
-
-		/*
-		 * if(properties.equals(old)){ log.info("***** UGUALI *****"); } else {
-		 * log.info("***** DIVERSI *****"); }
-		 */
-
-		// Properties properties2 = AXISSocketFactory.getCurrentProperties();
-
-		// log.info(properties2);
+		properties.setProperty("sslKey", key); 
 
 		String[] roles = null;
 		String[] groups = null;
