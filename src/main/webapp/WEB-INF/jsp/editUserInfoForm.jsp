@@ -1537,7 +1537,7 @@ div.function {
 			<td colspan="3">
 			
 				<c:if test="${proxyDownloaded=='false' }">				
-				<liferay-portlet:renderURL plid="11914" portletName="Login_WAR_Login11_INSTANCE_OI71Ar1eqW4Y" windowState="<%= LiferayWindowState.POP_UP.toString() %>" var="downloadProxy">
+				<liferay-portlet:renderURL plid="11520" portletName="Login_WAR_Login11_INSTANCE_Y0o3" windowState="<%= LiferayWindowState.POP_UP.toString() %>" var="downloadProxy">
 					<portlet:param name="myaction" value="downloadCertificate" />
 				</liferay-portlet:renderURL>
 				<p style="text-align: center;">
@@ -1601,7 +1601,7 @@ div.function {
 <aui:fieldset label="Hi Administrator">
 <table style="width: 100%;">
 	<tbody>
-		<c:if test="${fn:length(userToVoList)>0&&isUserActive=='true'}">
+		
 		<tr>
 			<td colspan="3">
 			
@@ -1617,7 +1617,6 @@ div.function {
 					<img alt="" src="<%=request.getContextPath()%>/images/separatore-giu.png" style="width: 237px; height: 15px;" /></p>
 			</td>
 		</tr>
-		</c:if>
 		<tr>
 			<td colspan="3">
 				

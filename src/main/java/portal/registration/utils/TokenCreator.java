@@ -182,7 +182,7 @@ public class TokenCreator {
     
     public static List<String> getToken(String userSecret) {
     	
-        log.error(System.currentTimeMillis()/1000);
+        log.info(System.currentTimeMillis()/1000);
         
         List<String> tokens = new ArrayList<String>();
         
@@ -210,7 +210,7 @@ public class TokenCreator {
             
             tokens.add(generateTOTP(seed64, steps, "8", "HmacSHA512"));
             
-            log.error("TokenCreator[t1] = " + tokens.get(0));
+            log.info("TokenCreator[t1] = " + tokens.get(0));
             
             timeNow = timeNow +60L;
             T = ((timeNow) - T0) / X;
@@ -221,7 +221,7 @@ public class TokenCreator {
             
             tokens.add(generateTOTP(seed64, steps, "8", "HmacSHA512"));
             
-            log.error("TokenCreator[t2] = " + tokens.get(1));
+            log.info("TokenCreator[t2] = " + tokens.get(1));
             
         } catch (final Exception e) {
             System.out.println("Error : " + e);

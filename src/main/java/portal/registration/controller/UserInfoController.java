@@ -107,7 +107,7 @@ public class UserInfoController {
 //			// TODO Auto-generated catch block
 //			e.printStackTrace();
 //		}
-		log.error("home controller");
+		log.info("home controller");
 		User user = (User) request.getAttribute(WebKeys.USER);
 		if(user!=null){
 			long companyId = PortalUtil.getCompanyId(request);
@@ -120,11 +120,11 @@ public class UserInfoController {
 				
 				for (Role role : roles) {
 					if (role.equals(roleAdmin)){
-						log.error("home.jsp");
+						log.info("home.jsp");
 						return "home";
 					}
 				}
-				log.error("mando a editUserInfoForm.jsp");
+				log.info("mando a editUserInfoForm.jsp");
 				return "editUserInfoForm";
 			
 			} catch (PortalException e) {
@@ -193,7 +193,7 @@ public class UserInfoController {
 	
 	@ModelAttribute("registrationModel")
 	public RegistrationModel getRegistrationModel() {
-		log.error("Initialize registration process.");	
+		log.info("Initialize registration process.");	
 		return new RegistrationModel();
 	} 
 
@@ -257,7 +257,7 @@ public class UserInfoController {
 			int userId = userInfoService.findByUsername(user.getScreenName())
 					.getUserId();
 		
-			log.error(userId);
+			log.info(userId);
 			
 			
 			List<Vo> vos = userToVoService.findVoByUserId(userId);
@@ -281,10 +281,10 @@ public class UserInfoController {
 			}
 			List<String> errors = new ArrayList<String>();
 			UserInfo userInfo = userInfoService.findById(userId);
-			log.error(active);
-			log.error(activeVo > 0);
-			log.error(userInfo.getRegistrationComplete().equals("false"));
-			log.error(active&&(activeVo > 0)&&(userInfo.getRegistrationComplete().equals("false")));
+			log.info(active);
+			log.info(activeVo > 0);
+			log.info(userInfo.getRegistrationComplete().equals("false"));
+			log.info(active&&(activeVo > 0)&&(userInfo.getRegistrationComplete().equals("false")));
 			if(active&&(activeVo > 0)&&(userInfo.getRegistrationComplete().equals("false")))
 				activateUser(userInfo, request, errors);
 			
@@ -628,7 +628,7 @@ public class UserInfoController {
 	@ModelAttribute("caEnabled")
 	public String getCaEnabled() {	
 		try {
-			log.error(RegistrationConfig.getProperties("Registration.properties", "CAOnline.enabled"));
+			log.info(RegistrationConfig.getProperties("Registration.properties", "CAOnline.enabled"));
 			return RegistrationConfig.getProperties("Registration.properties", "CAOnline.enabled");
 		} catch (RegistrationException e) {
 			e.printStackTrace();
@@ -639,7 +639,7 @@ public class UserInfoController {
 	@ModelAttribute("proxyEnabled")
 	public String getProxyEnabled() {	
 		try {
-			log.error(RegistrationConfig.getProperties("Registration.properties", "proxy.enabled"));
+			log.info(RegistrationConfig.getProperties("Registration.properties", "proxy.enabled"));
 			return RegistrationConfig.getProperties("Registration.properties", "proxy.enabled");
 		} catch (RegistrationException e) {
 			e.printStackTrace();
@@ -653,7 +653,7 @@ public class UserInfoController {
 		User user = (User) request.getAttribute(WebKeys.USER);
 		if (user != null) {
 			String dir = System.getProperty("java.io.tmpdir");
-			log.error("Directory = " + dir);
+			log.info("Directory = " + dir);
 			
 			UserInfo userInfo = userInfoService.findByUsername(user.getScreenName());
 			List<Vo> vos = userToVoService.findVoByUserId(userInfo
@@ -661,7 +661,7 @@ public class UserInfoController {
 			File proxyVoFile = null;
 			for (Vo vo: vos) {
 				if(vo.getConfigured().equals("true")){
-					log.error(vo.getVo() + " enabled");
+					log.info(vo.getVo() + " enabled");
 					proxyVoFile = new File(dir + "/users/"
 							+ user.getUserId() + "/x509up."
 							+ vo.getVo());

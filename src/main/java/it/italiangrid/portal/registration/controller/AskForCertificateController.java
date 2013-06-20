@@ -32,7 +32,7 @@ public class AskForCertificateController {
 	@ModelAttribute("loginUrl")
 	public String getLoginUrl() {	
 		try {
-			log.error(RegistrationConfig.getProperties("Registration.properties", "login.url"));
+			log.info(RegistrationConfig.getProperties("Registration.properties", "login.url"));
 			return RegistrationConfig.getProperties("Registration.properties", "login.url");
 		} catch (RegistrationException e) {
 			e.printStackTrace();
@@ -43,7 +43,7 @@ public class AskForCertificateController {
 	@ModelAttribute("caEnabled")
 	public String getCaEnabled() {	
 		try {
-			log.error(RegistrationConfig.getProperties("Registration.properties", "CAOnline.enabled"));
+			log.info(RegistrationConfig.getProperties("Registration.properties", "CAOnline.enabled"));
 			return RegistrationConfig.getProperties("Registration.properties", "CAOnline.enabled");
 		} catch (RegistrationException e) {
 			e.printStackTrace();
@@ -54,7 +54,7 @@ public class AskForCertificateController {
 	@ModelAttribute("proxyEnabled")
 	public String getProxyEnabled() {	
 		try {
-			log.error(RegistrationConfig.getProperties("Registration.properties", "proxy.enabled"));
+			log.info(RegistrationConfig.getProperties("Registration.properties", "proxy.enabled"));
 			return RegistrationConfig.getProperties("Registration.properties", "proxy.enabled");
 		} catch (RegistrationException e) {
 			e.printStackTrace();
@@ -64,27 +64,15 @@ public class AskForCertificateController {
 	
 	@ActionMapping(params = "myaction=askForCertificateRedirect")
 	public void doRedirect(@ModelAttribute RegistrationModel registrationModel, ActionResponse response, ActionRequest request){
-		log.error("Elaborate response for \"Do you have certificate?\" response is: " + registrationModel.isHaveCertificate());
-		log.error(registrationModel.toString());
+		log.info("Elaborate response for \"Do you have certificate?\" response is: " + registrationModel.isHaveCertificate());
+		log.info(registrationModel.toString());
 		
 		if(registrationModel.isHaveCertificate()){
-			
-//			CookieUtil.setCookieSession("JSESSIONID", "", response);
 			
 			log.debug("Redirect to certificate uploader");
 			response.setRenderParameter("myaction", "showUploadCertificate");
 			request.setAttribute("registrationModel", registrationModel);
 		}else{
-//			CookieUtil.setCookie(registrationModel, response);
-//			try {
-//				URL url = new URL("https://halfback.cnaf.infn.it/app1/index.jsp");
-//				
-//				log.error(url);
-//				response.sendRedirect(url.toString());
-//			} catch (IOException e) {
-//				e.printStackTrace();
-//			}
-//			log.debug("Redirect to IDP");
 			try {
 				if(Boolean.parseBoolean(RegistrationConfig.getProperties("Registration.properties", "CAOnline.enabled"))){
 					request.setAttribute("registrationModel", registrationModel);
@@ -94,7 +82,6 @@ public class AskForCertificateController {
 					return;
 				}
 			} catch (RegistrationException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 				SessionErrors.add(request, e.getMessage());
 			}

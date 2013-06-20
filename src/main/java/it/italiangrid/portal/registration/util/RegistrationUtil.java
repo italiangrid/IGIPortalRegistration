@@ -178,7 +178,7 @@ public class RegistrationUtil {
 					true, Calendar.JANUARY, 1, 1970, "", groupIds, null, null,
 					null, true, scf);
 			
-			log.error("verify = "+verify);
+			log.info("verify = "+verify);
 			if(verify){
 				UserLocalServiceUtil.sendEmailAddressVerification(u, u.getEmailAddress(), scf);
 			}
@@ -346,7 +346,7 @@ public class RegistrationUtil {
          props.put(Context.PROVIDER_URL, "ldap://" + server + "/" + baseDN);  
          props.put(Context.SECURITY_CREDENTIALS, userpassword);  
          props.put(Context.SECURITY_PRINCIPAL, dn);  
-         log.error(props.toString());
+         log.info(props.toString());
          return new InitialDirContext(props);  
  } 
 

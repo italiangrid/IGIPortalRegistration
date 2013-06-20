@@ -31,7 +31,7 @@ public class CAController {
 	public String getCaUrl(RenderRequest request) {
 		
 		try {
-			log.error(RegistrationConfig.getProperties("Registration.properties", "login.url"));
+			log.info(RegistrationConfig.getProperties("Registration.properties", "login.url"));
 			RegistrationModel registrationModel = (RegistrationModel) request.getAttribute("registrationModel");	
 			List<String> tokens = TokenCreator.getToken(registrationModel.getEmail());
 			return RegistrationConfig.getProperties("Registration.properties", "CAOnline.url")+"?t1="+tokens.get(0)+"&t2="+tokens.get(1);
@@ -44,7 +44,7 @@ public class CAController {
 	@ModelAttribute("loginUrl")
 	public String getLoginUrl() {	
 		try {
-			log.error(RegistrationConfig.getProperties("Registration.properties", "login.url"));
+			log.info(RegistrationConfig.getProperties("Registration.properties", "login.url"));
 			return RegistrationConfig.getProperties("Registration.properties", "login.url");
 		} catch (RegistrationException e) {
 			e.printStackTrace();

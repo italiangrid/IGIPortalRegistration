@@ -169,7 +169,7 @@ public class AddUserInfoController {
 
 							errors.add("user-liferay-problem");
 
-							log.error("Inserimento utente in liferay "
+							log.info("Inserimento utente in liferay "
 									+ e.getMessage());
 
 							allOk = false;

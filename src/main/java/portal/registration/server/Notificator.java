@@ -74,9 +74,9 @@ public class Notificator implements Runnable {
 		    conn.close();
 		    log.debug("Disconnected from database");
 		} catch(RegistrationException e){
-			log.error(e.getMessage());
+			log.info(e.getMessage());
 		} catch (ParseException e) {
-			log.error("Parsing exception");
+			log.info("Parsing exception");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

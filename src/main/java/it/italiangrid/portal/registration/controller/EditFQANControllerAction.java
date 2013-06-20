@@ -39,8 +39,8 @@ public class EditFQANControllerAction {
 		int userId = userInfo.getUserId();
 		int idVo = Integer.parseInt(request.getParameter("idVo"));
 		
-		log.error(registrationModel);
-		log.error(idVo + " " + userId);
+		log.info(registrationModel);
+		log.info(idVo + " " + userId);
 		UserToVo utv = userToVoService.findById(userId, idVo);
 
 		if (fqans != null && !fqans[0].equals("")) {

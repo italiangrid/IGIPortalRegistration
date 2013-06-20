@@ -64,7 +64,7 @@ public class InstructionPageController {
 		try {
 			URL url = new URL(RegistrationConfig.getProperties("Registration.properties", "retrieve.user.information"));
 			
-			log.error(url);
+			log.info(url);
 			response.sendRedirect(url.toString());
 		} catch (IOException e) {
 			e.printStackTrace();

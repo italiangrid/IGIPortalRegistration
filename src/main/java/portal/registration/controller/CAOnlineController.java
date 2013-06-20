@@ -39,7 +39,7 @@ public class CAOnlineController {
 	@ActionMapping(params = "myaction=haveCert")
 	public void haveCert(ActionRequest request, ActionResponse response) {
 		
-		log.error("Scelta UploadCert o CAonline");
+		log.info("Scelta UploadCert o CAonline");
 		
 		
 		String userId = request.getParameter("userId");
@@ -47,13 +47,13 @@ public class CAOnlineController {
 		String firstReg = request.getParameter("firstReg");
 		boolean haveCert = Boolean.parseBoolean((String) request.getParameter("haveCert"));
 		
-		log.error("Ha il certificato? " + haveCert + " = "+ request.getParameter("haveCert") +" UFFA UFFA");
+		log.info("Ha il certificato? " + haveCert + " = "+ request.getParameter("haveCert") +" UFFA UFFA");
 
 		String destination = "showSuccessCAOnline";
 		if(haveCert)
 			destination = "showUploadCert";
 			
-		log.error("destination: " + destination);
+		log.info("destination: " + destination);
 		
 		response.setRenderParameter("userId", userId);
 		response.setRenderParameter("username", username);

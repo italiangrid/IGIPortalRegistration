@@ -114,7 +114,7 @@ public class AddUserToVOController {
 						try {
 							SendMail sm = new SendMail(userInfo.getMail(), RegistrationConfig.getProperties("Registration.properties", "igiportal.mail"), "Please configure "+ vo.getVo(), RegistrationConfig.getProperties("Registration.properties", "request.configre.vo").replaceAll("##VO##", vo.getVo()).replaceAll("##NL##", "\n").replaceAll("##USER##", userInfo.getFirstName()+" "+userInfo.getLastName()).replaceAll("##HOST##", RegistrationConfig.getProperties("Registration.properties", "home.url")));
 							sm.send();
-							log.error(sm.toString());
+							log.info(sm.toString());
 						} catch (RegistrationException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
@@ -178,7 +178,7 @@ public class AddUserToVOController {
 	public void searchVo(ActionRequest request, ActionResponse response) throws PortalException,
 			SystemException {
 
-		log.error("sono dentro");
+		log.info("sono dentro");
 
 		ArrayList<String> errors = new ArrayList<String>();
 		boolean allOk = true;
@@ -186,22 +186,22 @@ public class AddUserToVOController {
 		Vo vo = voService.findByName(request.getParameter("tags"));
 
 		int userId = Integer.parseInt(request.getParameter("userId"));
-		log.error("Valore passato userId " + userId);
+		log.info("Valore passato userId " + userId);
 
 		if (vo != null) {
-			log.error("recupero idVo");
+			log.info("recupero idVo");
 			int idVo = vo.getIdVo();
 			if (idVo != 0) {
 				String subject = null;
 				if ((subject = checkVO(idVo, userId, errors)) != null) {
-					log.error("Salvo sul DB la Vo " + idVo);
+					log.info("Salvo sul DB la Vo " + idVo);
 					UserInfo ui = userInfoService.findById(userId);
 					if (ui.getRegistrationComplete().equals("false")) {
 						activateUser(ui, request, errors);
 					}
 					userToVoService.save(userId, idVo, subject);
 					
-					log.error("Salvato sul DB ");
+					log.info("Salvato sul DB ");
 					
 					if(vo.getConfigured().equals("false")){
 						
@@ -211,7 +211,7 @@ public class AddUserToVOController {
 						try {
 							SendMail sm = new SendMail(userInfo.getMail(), RegistrationConfig.getProperties("Registration.properties", "igiportal.mail"), "Please configure "+ vo.getVo(), RegistrationConfig.getProperties("Registration.properties", "request.configre.vo").replaceAll("##VO##", vo.getVo()).replaceAll("##NL##", "\n").replaceAll("##USER##", userInfo.getFirstName()+" "+userInfo.getLastName()).replaceAll("##HOST##", RegistrationConfig.getProperties("Registration.properties", "home.url")));
 							sm.send();
-							log.error(sm.toString());
+							log.info(sm.toString());
 						} catch (RegistrationException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
@@ -244,14 +244,14 @@ public class AddUserToVOController {
 			errors.add("error-saving-registration");
 
 			for (String error : errors) {
-				log.error("Errore: " + error);
+				log.info("Errore: " + error);
 				SessionErrors.add(request, error);
 			}
 			
 			PortletConfig portletConfig = (PortletConfig)request.getAttribute(JavaConstants.JAVAX_PORTLET_CONFIG);
 			SessionMessages.add(request, portletConfig.getPortletName() + SessionMessages.KEY_SUFFIX_HIDE_DEFAULT_ERROR_MESSAGE);
 
-			log.error("Errori in userToVO");
+			log.info("Errori in userToVO");
 			response.setRenderParameter("myaction", "editUserInfoForm");
 			response.setRenderParameter("userId", Integer.toString(userId));
 			request.setAttribute("userId", userId);
@@ -452,7 +452,7 @@ public class AddUserToVOController {
 				List<Vo> vos = userToVoService.findVoByUserId(userId);
 				if(vos!=null)
 					for(Vo vo: vos){
-						log.error(vo.getVo()+" "+vo.getConfigured() + " " +vo.getConfigured().equals("true"));
+						log.info(vo.getVo()+" "+vo.getConfigured() + " " +vo.getConfigured().equals("true"));
 						if(vo.getConfigured().equals("true")){
 							userToVoService.setDefault(userId, vo.getIdVo());
 							break;

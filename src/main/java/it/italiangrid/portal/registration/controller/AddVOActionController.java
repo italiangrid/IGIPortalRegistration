@@ -45,11 +45,11 @@ public class AddVOActionController {
 	
 	@ActionMapping(params = "myaction=searchVo2")
 	public void searchVo(@ModelAttribute RegistrationModel registrationModel, ActionRequest request , ActionResponse response){
-		log.error(registrationModel.toString());
+		log.info(registrationModel.toString());
 		
 		registrationModel.setSearchVo((String) request.getParameter("tags"));
 		
-		log.error(registrationModel.toString());
+		log.info(registrationModel.toString());
 		
 		Vo vo = voService.findByName(registrationModel.getSearchVo());
 		
@@ -68,7 +68,7 @@ public class AddVOActionController {
 					try {
 						SendMail sm = new SendMail(userInfo.getMail(), RegistrationConfig.getProperties("Registration.properties", "igiportal.mail"), "Please configure "+ vo.getVo(), RegistrationConfig.getProperties("Registration.properties", "request.configre.vo").replaceAll("##VO##", vo.getVo()).replaceAll("##NL##", "\n").replaceAll("##USER##", userInfo.getFirstName()+" "+userInfo.getLastName()).replaceAll("##HOST##", RegistrationConfig.getProperties("Registration.properties", "home.url")));
 						sm.send();
-						log.error(sm);
+						log.info(sm);
 					} catch (RegistrationException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
@@ -96,10 +96,10 @@ public class AddVOActionController {
 	
 	@ActionMapping(params = "myaction=addVo")
 	public void addVo(@ModelAttribute RegistrationModel registrationModel, ActionRequest request , ActionResponse response){
-		log.error("myaction=addVo");
-		log.error(registrationModel.toString());
-		log.error(request.getParameter("voToAdd"));
-		log.error(voService.findById(Integer.valueOf(request.getParameter("voToAdd"))).getHost());
+		log.info("myaction=addVo");
+		log.info(registrationModel.toString());
+		log.info(request.getParameter("voToAdd"));
+		log.info(voService.findById(Integer.valueOf(request.getParameter("voToAdd"))).getHost());
 		if(VOMSAdminCallOut.getUser(registrationModel.getSubject(), registrationModel.getIssuer(), voService.findById(Integer.valueOf(request.getParameter("voToAdd"))).getHost())){
 			registrationModel.setVos(registrationModel.getVos().isEmpty()?request.getParameter("voToAdd"):registrationModel.getVos()+"#"+request.getParameter("voToAdd"));
 			SessionMessages.add(request, "userToVo-adding-success");
@@ -110,16 +110,16 @@ public class AddVOActionController {
 		}
 		registrationModel.setSearchVo(null);
 		registrationModel.setVoStatus(true);
-		log.error(registrationModel.toString());
+		log.info(registrationModel.toString());
 		response.setRenderParameter("myaction", "showAddVoForm");
 		request.setAttribute("registrationModel", registrationModel);
 	}
 	
 	@ActionMapping(params = "myaction=delVo")
 	public void delVo(@ModelAttribute RegistrationModel registrationModel, ActionRequest request , ActionResponse response){
-		log.error("myaction=delVo");
-		log.error(registrationModel.toString());
-		log.error(request.getParameter("voToDel"));
+		log.info("myaction=delVo");
+		log.info(registrationModel.toString());
+		log.info(request.getParameter("voToDel"));
 		UserInfo userInfo = userInfoService.findByMail(registrationModel.getEmail());
 		userToVoService.delete(userInfo.getUserId(), Integer.parseInt(request.getParameter("voToDel")));
 		
@@ -128,7 +128,7 @@ public class AddVOActionController {
 			List<Vo> vos = userToVoService.findVoByUserId(userInfo.getUserId());
 			if(vos!=null)
 				for(Vo vo: vos){
-					log.error(vo.getVo()+" "+vo.getConfigured() + " " +vo.getConfigured().equals("true"));
+					log.info(vo.getVo()+" "+vo.getConfigured() + " " +vo.getConfigured().equals("true"));
 					if(vo.getConfigured().equals("true")){
 						userToVoService.setDefault(userInfo.getUserId(), vo.getIdVo());
 						break;
@@ -151,19 +151,19 @@ public class AddVOActionController {
 			registrationModel.setVoStatus(false);
 		registrationModel.setSearchVo(null);
 		SessionMessages.add(request, "userToVo-removed-success");
-		log.error(registrationModel.toString());
+		log.info(registrationModel.toString());
 		response.setRenderParameter("myaction", "showAddVoForm");
 		request.setAttribute("registrationModel", registrationModel);
 	}
 	
 	@ActionMapping(params = "myaction=deleteVo")
 	public void deleteVo(ActionRequest request , ActionResponse response){
-		log.error("myaction=delVo");
-		log.error(request.getParameter("idVo"));
+		log.info("myaction=delVo");
+		log.info(request.getParameter("idVo"));
 		
 		RegistrationModel registrationModel = getRegistrationModelFromRequest(request);
 		
-		log.error(registrationModel);
+		log.info(registrationModel);
 		
 		UserInfo userInfo = userInfoService.findByMail(registrationModel.getEmail());
 		userToVoService.delete(userInfo.getUserId(), Integer.parseInt(request.getParameter("idVo")));
@@ -174,7 +174,7 @@ public class AddVOActionController {
 			if(vos!=null)
 				for(Vo vo: vos){
 					if(vo.getConfigured().equals("true")){
-						log.error(vo.getVo()+" "+vo.getConfigured() + " " +vo.getConfigured().equals("true"));
+						log.info(vo.getVo()+" "+vo.getConfigured() + " " +vo.getConfigured().equals("true"));
 						userToVoService.setDefault(userInfo.getUserId(), vo.getIdVo());
 						break;
 					}
@@ -196,38 +196,16 @@ public class AddVOActionController {
 			registrationModel.setVoStatus(false);
 		registrationModel.setSearchVo(null);
 		SessionMessages.add(request, "userToVo-removed-success");
-		log.error(registrationModel.toString());
+		log.info(registrationModel.toString());
 		response.setRenderParameter("myaction", "showAddVoForm");
 		request.setAttribute("registrationModel", registrationModel);
 	}
 	
 	@ActionMapping(params = "myaction=goToAddUserForm")
 	public void goToAddUserForm(@ModelAttribute RegistrationModel registrationModel, ActionRequest request , ActionResponse response){
-		log.error("myaction=goToAddUserForm");
+		log.info("myaction=goToAddUserForm");
 		
-		log.error(registrationModel.toString());
-		
-//		RegistrationUtil.associateVoToUser(userInfo, registrationModel, userToVoService);
-		
-//		if(!registrationModel.getVos().isEmpty())
-//			RegistrationUtil.activateUser(userInfo, userInfoService);
-		
-//		try {
-//			URL url;
-//			if(registrationModel.isVerifyUser()){
-//				log.error(RegistrationConfig.getProperties("Registration.properties", "home.url"));
-//				url = new URL(RegistrationConfig.getProperties("Registration.properties", "home.url"));
-//			}else{
-//				log.error(RegistrationConfig.getProperties("Registration.properties", "login.url"));
-//				url = new URL(RegistrationConfig.getProperties("Registration.properties", "login.url"));
-//			}
-//			log.error(url);
-//			response.sendRedirect(url.toString());
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		} catch (RegistrationException e) {
-//			e.printStackTrace();
-//		}
+		log.info(registrationModel.toString());
 		
 		response.setRenderParameter("myaction", "showUploadProxy");
 		request.setAttribute("registrationModel", registrationModel);

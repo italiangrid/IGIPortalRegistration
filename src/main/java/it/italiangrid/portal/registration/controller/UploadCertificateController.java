@@ -72,7 +72,7 @@ public class UploadCertificateController {
 	
 	@RenderMapping(params = "myaction=showUploadCertificate")
 	public String showAskForCertificate() {
-		log.error("Show uploadCertificate.jsp");
+		log.info("Show uploadCertificate.jsp");
 		return "uploadCertificate";
 	}
 	
@@ -122,7 +122,7 @@ public class UploadCertificateController {
 					Part part;
 					while ((part = mp.readNextPart()) != null) {
 						String name = part.getName();
-						log.error(name);
+						log.info(name);
 						if (part.isParam()) {
 							ParamPart paramPart = (ParamPart) part;
 							String value = paramPart.getStringValue();
@@ -226,9 +226,9 @@ public class UploadCertificateController {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			log.error("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
-			log.error(tmpPwd);
-			log.error("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+			log.info("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+			log.info(tmpPwd);
+			log.info("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
 			String myproxyPass = tmpPwd;
 			splitP12(files.get(0), certificateUserId, pwd, tmpPwd, errors);
 			
@@ -243,7 +243,7 @@ public class UploadCertificateController {
 						+ ".pem", errors);
 				String mail = myOpenssl("email", "usercert_" + certificateUserId
 						+ ".pem", errors);
-				log.error("mail is: " +  mail);
+				log.info("mail is: " +  mail);
 				if ((subject != null) && (issuer != null) && (enddate != null)
 						&& allOk) {
 					Date date = null;
@@ -336,10 +336,10 @@ public class UploadCertificateController {
 								try {
 									RegistrationUtil.insertIntoIDP(userInfo, registrationModel);
 									boolean verify = registrationModel.getEmail().isEmpty();
-									log.error("Verify??? " + verify);
+									log.info("Verify??? " + verify);
 									RegistrationUtil.addUserToLiferay(request, userInfo, registrationModel, verify);
 									userInfo=RegistrationUtil.addUserToDB(userInfo, userInfoService, notifyService);
-									log.error("PersistentID: " + userInfo.getPersistentId());
+									log.info("PersistentID: " + userInfo.getPersistentId());
 										
 									try {
 										
@@ -382,9 +382,9 @@ public class UploadCertificateController {
 							}
 						}
 						
-						log.error(registrationModel);
+						log.info(registrationModel);
 						
-						log.error("goToAddUser: " + goToAddUser);
+						log.info("goToAddUser: " + goToAddUser);
 						
 						Certificate cert = new Certificate();
 						cert.setIdCert(0);
@@ -399,7 +399,7 @@ public class UploadCertificateController {
 						if(!goToAddUser)
 							cert.setUserInfo(userInfoService.findByMail(registrationModel.getEmail()));
 						
-						log.error("@@@@@@@@"+registrationModel);
+						log.info("@@@@@@@@"+registrationModel);
 						
 						int id = certificateService.save(cert);
 						
@@ -408,14 +408,14 @@ public class UploadCertificateController {
 						registrationModel.setExpiration(cert2.getExpirationDate().toString());
 
 						if (id != -1) {
-							log.error("inserito il certificato");
+							log.info("inserito il certificato");
 						} else {
 							allOk = false;
 						}
 						
 					}
 				} else {
-					log.error("errori vari");
+					log.info("errori vari");
 					allOk = false;
 				}
 
@@ -447,33 +447,33 @@ public class UploadCertificateController {
 
 						while (((line = output.readLine()) != null)) {
 
-							log.error("[Stdout] " + line);
+							log.info("[Stdout] " + line);
 							if (line.equals("myproxy success")) {
-								log.error("myproxy ok");
+								log.info("myproxy ok");
 								pwd += "\n";
 							} else {
 								if (line.equals("myproxy verify password failure")) {
 									errors.add("error-password-mismatch");
-									log.error(line);
+									log.info(line);
 									allOk = false;
 								} else {
 									if (line.equals("myproxy password userkey failure")) {
 										errors.add("error-password-mismatch");
-										log.error(line);
+										log.info(line);
 										allOk = false;
 									} else {
 										if (line.equals("too short passphrase")) {
 											errors.add("error-password-too-short");
-											log.error(line);
+											log.info(line);
 											allOk = false;
 										} else {
 											if (line.equals("key password failure")) {
 												errors.add("key-password-failure");
-												log.error(line);
+												log.info(line);
 												allOk = false;
 											} else {
 												errors.add("no-valid-key");
-												log.error(line);
+												log.info(line);
 												allOk = false;
 											}
 										}
@@ -509,33 +509,33 @@ public class UploadCertificateController {
 
 						while (((line = output.readLine()) != null)) {
 
-							log.error("[Stdout] " + line);
+							log.info("[Stdout] " + line);
 							if (line.equals("myproxy success")) {
-								log.error("myproxy ok");
+								log.info("myproxy ok");
 								pwd += "\n";
 							} else {
 								if (line.equals("myproxy verify password failure")) {
 									errors.add("error-password-mismatch");
-									log.error(line);
+									log.info(line);
 									allOk = false;
 								} else {
 									if (line.equals("myproxy password userkey failure")) {
 										errors.add("error-password-mismatch");
-										log.error(line);
+										log.info(line);
 										allOk = false;
 									} else {
 										if (line.equals("too short passphrase")) {
 											errors.add("error-password-too-short");
-											log.error(line);
+											log.info(line);
 											allOk = false;
 										} else {
 											if (line.equals("key password failure")) {
 												errors.add("key-password-failure");
-												log.error(line);
+												log.info(line);
 												allOk = false;
 											} else {
 												errors.add("no-valid-key");
-												log.error(line);
+												log.info(line);
 												allOk = false;
 											}
 										}
@@ -567,10 +567,10 @@ public class UploadCertificateController {
 			}
 		}
 
-		log.error("controllo errori");
+		log.info("controllo errori");
 		if (allOk && errors.isEmpty()) {
 
-			log.error("tutto ok!!");
+			log.info("tutto ok!!");
 			SessionMessages.add(request, "upload-cert-successufully");
 			registrationModel.setCertificateStatus(true);
 			request.setAttribute("registrationModel", registrationModel);
@@ -586,11 +586,11 @@ public class UploadCertificateController {
 
 		} else {
 
-			log.error("Trovato errori");
+			log.info("Trovato errori");
 			errors.add("error-uploading-certificate");
 
 			for (String error : errors) {
-				log.error("Errore: " + error);
+				log.info("Errore: " + error);
 				SessionErrors.add(request, error);
 			}
 			
@@ -627,7 +627,7 @@ public class UploadCertificateController {
 			String line = null;
 
 			while ((line = output.readLine()) != null) {
-				log.error("[Stdout] " + line);
+				log.info("[Stdout] " + line);
 				if (line.equals("too short passphrase"))
 					errors.add("error-password-too-short");
 				if (line.equals("p12 passwd error key"))
@@ -666,7 +666,7 @@ public class UploadCertificateController {
 		try {
 			String cmd = "/usr/bin/openssl x509 -in /upload_files/" + filename
 					+ " -" + opt + " -noout";
-			log.error("cmd = " + cmd);
+			log.info("cmd = " + cmd);
 			Process p = Runtime.getRuntime().exec(cmd);
 			InputStream stdout = p.getInputStream();
 			InputStream stderr = p.getErrorStream();
@@ -680,15 +680,15 @@ public class UploadCertificateController {
 					: 1;
 
 			while ((line = output.readLine()) != null) {
-				log.error("[Stdout] " + line);
+				log.info("[Stdout] " + line);
 				if(opt.equals("email")){
 					result = line;
-					log.error(opt + " = " + result);
+					log.info(opt + " = " + result);
 				}
 					
 				if ((posizione = line.indexOf("=")) != -1) {
 					result = line.substring(posizione + cursore);
-					log.error(opt + " = " + result);
+					log.info(opt + " = " + result);
 				}
 			}
 			output.close();

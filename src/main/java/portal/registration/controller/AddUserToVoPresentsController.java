@@ -121,7 +121,7 @@ public class AddUserToVoPresentsController {
 			ActionResponse response) {
 		int userId = 0;
 		if(request.getParameter("userId")==null){
-			log.error("siamo rovinati");
+			log.info("siamo rovinati");
 			User user = (User) request.getAttribute(WebKeys.USER);
 			if(user!=null)
 				userId = userInfoService.findByUsername(user.getScreenName()).getUserId();

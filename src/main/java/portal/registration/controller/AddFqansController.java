@@ -90,21 +90,21 @@ public class AddFqansController {
 
 		UserInfo userInfo = userInfoService.findById(userId);
 		String username = userInfo.getUsername();
-		log.error("ricevuto userId " + userId + "corrispondente all'utente "
+		log.info("ricevuto userId " + userId + "corrispondente all'utente "
 				+ username);
 		long companyId = PortalUtil.getCompanyId(request);
-		log.error("companyId " + companyId);
+		log.info("companyId " + companyId);
 		User user = UserLocalServiceUtil.getUserByScreenName(companyId,
 				username);
 		if (user != null) {
-			log.error("recuperato liferay user " + user.getScreenName());
+			log.info("recuperato liferay user " + user.getScreenName());
 			// user.setActive(false);
 			// UserLocalServiceUtil.updateActive(user.getUserId(),false);
 			UserLocalServiceUtil.deleteUser(user.getUserId());
-			log.error("eliminato utente liferay");
+			log.info("eliminato utente liferay");
 		}
 		userInfoService.delete(userId);
-		log.error("eliminato utente portalUser");
+		log.info("eliminato utente portalUser");
 		response.sendRedirect(PortalUtil.getPortalURL(request)
 				+ "/c/portal/logout");
 
