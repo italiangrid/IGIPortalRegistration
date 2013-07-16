@@ -24,5 +24,8 @@
 	<listener>
 		<listener-class>portal.registration.server.NotificationCenter</listener-class>
 	</listener>
+	<listener>
+		<listener-class>it.italiangrid.portal.registration.server.DiracRegistrationService</listener-class>
+	</listener>
 	
 </web-app>

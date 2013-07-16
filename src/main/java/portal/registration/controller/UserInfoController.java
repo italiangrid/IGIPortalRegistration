@@ -121,6 +121,7 @@ public class UserInfoController {
 				for (Role role : roles) {
 					if (role.equals(roleAdmin)){
 						log.info("home.jsp");
+						
 						return "home";
 					}
 				}
@@ -134,6 +135,7 @@ public class UserInfoController {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			
 		}
 		
 		return "home";

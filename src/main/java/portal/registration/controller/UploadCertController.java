@@ -5,7 +5,11 @@ import it.italiangrid.portal.dbapi.domain.UserInfo;
 import it.italiangrid.portal.dbapi.services.CertificateService;
 import it.italiangrid.portal.dbapi.services.UserInfoService;
 import it.italiangrid.portal.dbapi.services.UserToVoService;
+import it.italiangrid.portal.registration.dirac.DiracTask;
+import it.italiangrid.portal.registration.dirac.DiracUtil;
 import it.italiangrid.portal.registration.exception.RegistrationException;
+import it.italiangrid.portal.registration.server.DiracRegistration;
+import it.italiangrid.portal.registration.server.DiracRegistrationService;
 import it.italiangrid.portal.registration.util.RegistrationConfig;
 import portal.registration.utils.MyValidator;
 import java.io.BufferedReader;
@@ -435,6 +439,23 @@ public class UploadCertController {
 
 			log.info("tutto ok!!");
 			SessionMessages.add(request, "upload-cert-successufully");
+			
+			UserInfo userInfo = userInfoService.findById(uid);
+			
+			Certificate cert = certificateService.findById(userInfo.getUserId()).get(0);
+			
+			DiracTask diracTask = new DiracTask("/upload_files/usercert_" + uid + ".pem", "/upload_files/userkey_" + uid + ".pem", pwd1, userInfo.getMail(), cert.getSubject(), userInfo.getUsername());
+			DiracRegistration.addDiracTask(diracTask);
+			
+//			DiracUtil util = new DiracUtil(userInfo, cert.getSubject());
+//			
+//			try {
+//				util.addUser();
+//				util.uploadCert("/upload_files/usercert_" + uid + ".pem", "/upload_files/userkey_" + uid + ".pem", pwd1);
+//			} catch (RegistrationException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
 
 			if (firstReg.equals("true")) {
 				response.setRenderParameter("myaction",
@@ -473,8 +494,8 @@ public class UploadCertController {
 
 		}
 
-		if (!files.isEmpty())
-			deleteUploadedFile(files, uid);
+//		if (!files.isEmpty())
+//			deleteUploadedFile(files, uid);
 
 	}
 

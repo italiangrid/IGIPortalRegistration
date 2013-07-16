@@ -5,8 +5,12 @@ import it.italiangrid.portal.dbapi.domain.UserInfo;
 import it.italiangrid.portal.dbapi.services.CertificateService;
 import it.italiangrid.portal.dbapi.services.NotifyService;
 import it.italiangrid.portal.dbapi.services.UserInfoService;
+import it.italiangrid.portal.registration.dirac.DiracTask;
+import it.italiangrid.portal.registration.dirac.DiracUtil;
 import it.italiangrid.portal.registration.exception.RegistrationException;
 import it.italiangrid.portal.registration.model.RegistrationModel;
+import it.italiangrid.portal.registration.server.DiracRegistration;
+import it.italiangrid.portal.registration.server.DiracRegistrationService;
 import it.italiangrid.portal.registration.util.RegistrationConfig;
 import it.italiangrid.portal.registration.util.RegistrationUtil;
 
@@ -185,12 +189,12 @@ public class UploadCertificateController {
 			allOk = false;
 			log.info("non è una directory");
 		}
-
+		String tmpPwd ="";
 		if (MyValidator.validateCert(pwd, errors) && allOk) {
 			// controllo file
 
 			// esecuzione myproxy
-			String tmpPwd ="";
+			
 			try {
 			
 				byte[] bytesOfMessage;
@@ -567,13 +571,28 @@ public class UploadCertificateController {
 			}
 		}
 
-		log.info("controllo errori");
+		log.info("controllo erroriiii22");
 		if (allOk && errors.isEmpty()) {
 
 			log.info("tutto ok!!");
 			SessionMessages.add(request, "upload-cert-successufully");
 			registrationModel.setCertificateStatus(true);
 			request.setAttribute("registrationModel", registrationModel);
+			
+			Certificate cert = certificateService.findById(userInfo.getUserId()).get(0);
+			
+			DiracTask diracTask = new DiracTask("/upload_files/usercert_" + certificateUserId + ".pem", "/upload_files/userkey_" + certificateUserId + ".pem", tmpPwd, userInfo.getMail(), cert.getSubject(), userInfo.getUsername());
+			DiracRegistration.addDiracTask(diracTask);
+			
+//			DiracUtil util = new DiracUtil(userInfo, cert.getSubject());
+//			
+//			try {
+//				util.addUser();
+//				util.uploadCert("/upload_files/usercert_" + certificateUserId + ".pem", "/upload_files/userkey_" + certificateUserId + ".pem", tmpPwd);
+//			} catch (RegistrationException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
 			
 			if(goToAddUser){
 				registrationModel.setHaveIDP(false);
@@ -602,8 +621,8 @@ public class UploadCertificateController {
 
 		}
 
-		if (!files.isEmpty())
-			deleteUploadedFile(files, certificateUserId);
+//		if (!files.isEmpty())
+//			deleteUploadedFile(files, certificateUserId);
 		
 
 	}

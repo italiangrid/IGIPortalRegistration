@@ -1,7 +1,14 @@
 package portal.registration.controller;
 
 import it.italiangrid.portal.dbapi.domain.Certificate;
+import it.italiangrid.portal.dbapi.domain.UserInfo;
 import it.italiangrid.portal.dbapi.services.CertificateService;
+import it.italiangrid.portal.dbapi.services.UserInfoService;
+import it.italiangrid.portal.registration.dirac.DiracTask;
+import it.italiangrid.portal.registration.dirac.DiracUtil;
+import it.italiangrid.portal.registration.exception.RegistrationException;
+import it.italiangrid.portal.registration.server.DiracRegistration;
+import it.italiangrid.portal.registration.server.DiracRegistrationService;
 import portal.registration.utils.MyValidator;
 
 import java.io.BufferedReader;
@@ -53,6 +60,9 @@ public class UpdateCertController {
 
 	@Autowired
 	private CertificateService certificateService;
+	
+	@Autowired
+	private UserInfoService userInfoService;
 
 	@RenderMapping(params = "myaction=showUpdateCert")
 	public String showUploadCert(RenderResponse response) {
@@ -374,6 +384,23 @@ public class UpdateCertController {
 			SessionMessages.add(request, "upload-cert-successufully");
 			response.setRenderParameter("myaction", "editUserInfoForm");
 			response.setRenderParameter("userId", Integer.toString(uid));
+			
+			UserInfo userInfo = userInfoService.findById(uid);
+			
+			Certificate cert = certificateService.findById(userInfo.getUserId()).get(0);
+			
+			DiracTask diracTask = new DiracTask("/upload_files/usercert_" + uid + ".pem", "/upload_files/userkey_" + uid + ".pem", pwd1, userInfo.getMail(), cert.getSubject(), userInfo.getUsername());
+			DiracRegistration.addDiracTask(diracTask);
+			
+//			DiracUtil util = new DiracUtil(userInfo, cert.getSubject());
+//			
+//			try {
+//				util.addUser();
+//				util.uploadCert("/upload_files/usercert_" + uid + ".pem", "/upload_files/userkey_" + uid + ".pem", pwd1);
+//			} catch (RegistrationException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
 
 		} else {
 
@@ -397,8 +424,9 @@ public class UpdateCertController {
 			request.setAttribute("primCert", primaryCert);
 
 		}
-		if (!files.isEmpty())
-			deleteUploadedFile(files, uid);
+		
+//		if (!files.isEmpty())
+//			deleteUploadedFile(files, uid);
 
 	}
 
