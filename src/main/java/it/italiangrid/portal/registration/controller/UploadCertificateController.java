@@ -6,11 +6,9 @@ import it.italiangrid.portal.dbapi.services.CertificateService;
 import it.italiangrid.portal.dbapi.services.NotifyService;
 import it.italiangrid.portal.dbapi.services.UserInfoService;
 import it.italiangrid.portal.registration.dirac.DiracTask;
-import it.italiangrid.portal.registration.dirac.DiracUtil;
 import it.italiangrid.portal.registration.exception.RegistrationException;
 import it.italiangrid.portal.registration.model.RegistrationModel;
 import it.italiangrid.portal.registration.server.DiracRegistration;
-import it.italiangrid.portal.registration.server.DiracRegistrationService;
 import it.italiangrid.portal.registration.util.RegistrationConfig;
 import it.italiangrid.portal.registration.util.RegistrationUtil;
 
@@ -219,15 +217,11 @@ public class UploadCertificateController {
 			    tmpPwd = formatter.toString();
 			    formatter.close();
 				
-//				tmpPwd = new String(thedigest);
 			} catch (UnsupportedEncodingException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			} catch (RegistrationException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			} catch (NoSuchAlgorithmException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			log.info("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
@@ -360,21 +354,16 @@ public class UploadCertificateController {
 									    myproxyPass = formatter.toString();
 									    formatter.close();
 										
-//												tmpPwd = new String(thedigest);
 									} catch (UnsupportedEncodingException e) {
-										// TODO Auto-generated catch block
 										e.printStackTrace();
 									} catch (RegistrationException e) {
-										// TODO Auto-generated catch block
 										e.printStackTrace();
 									} catch (NoSuchAlgorithmException e) {
-										// TODO Auto-generated catch block
 										e.printStackTrace();
 									}
 									
 									
 								} catch (RegistrationException e) {
-									// TODO Auto-generated catch block
 									e.printStackTrace();
 									
 									allOk = false;
@@ -584,16 +573,6 @@ public class UploadCertificateController {
 			DiracTask diracTask = new DiracTask("/upload_files/usercert_" + certificateUserId + ".pem", "/upload_files/userkey_" + certificateUserId + ".pem", tmpPwd, userInfo.getMail(), cert.getSubject(), userInfo.getUsername());
 			DiracRegistration.addDiracTask(diracTask);
 			
-//			DiracUtil util = new DiracUtil(userInfo, cert.getSubject());
-//			
-//			try {
-//				util.addUser();
-//				util.uploadCert("/upload_files/usercert_" + certificateUserId + ".pem", "/upload_files/userkey_" + certificateUserId + ".pem", tmpPwd);
-//			} catch (RegistrationException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
-			
 			if(goToAddUser){
 				registrationModel.setHaveIDP(false);
 				request.setAttribute("registrationModel", registrationModel);
@@ -750,26 +729,5 @@ public class UploadCertificateController {
 		response.setRenderParameter("myaction", "editUserInfoForm");
 		response.setRenderParameter("userId", userId);
 
-	}
-
-	private void deleteUploadedFile(ArrayList<String> files, String certificateUserId) {
-		try {
-			String cmd = "rm -f /upload_files/" + files.get(0);
-			// + " /upload_files/" + files.get(1);
-			log.info("cmd = " + cmd);
-			Runtime.getRuntime().exec(cmd);
-
-			File cert = new File("/upload_files/usercert_" + certificateUserId + ".pem");
-			if (cert.exists())
-
-				cert.delete();
-			File key = new File("/upload_files/userkey_" + certificateUserId + ".pem");
-			if (key.exists())
-				key.delete();
-
-		} catch (IOException e) {
-
-			e.printStackTrace();
-		}
 	}
 }
