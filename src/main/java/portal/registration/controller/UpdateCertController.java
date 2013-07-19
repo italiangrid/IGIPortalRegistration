@@ -5,10 +5,7 @@ import it.italiangrid.portal.dbapi.domain.UserInfo;
 import it.italiangrid.portal.dbapi.services.CertificateService;
 import it.italiangrid.portal.dbapi.services.UserInfoService;
 import it.italiangrid.portal.registration.dirac.DiracTask;
-import it.italiangrid.portal.registration.dirac.DiracUtil;
-import it.italiangrid.portal.registration.exception.RegistrationException;
 import it.italiangrid.portal.registration.server.DiracRegistration;
-import it.italiangrid.portal.registration.server.DiracRegistrationService;
 import portal.registration.utils.MyValidator;
 
 import java.io.BufferedReader;
@@ -391,16 +388,6 @@ public class UpdateCertController {
 			
 			DiracTask diracTask = new DiracTask("/upload_files/usercert_" + uid + ".pem", "/upload_files/userkey_" + uid + ".pem", pwd1, userInfo.getMail(), cert.getSubject(), userInfo.getUsername());
 			DiracRegistration.addDiracTask(diracTask);
-			
-//			DiracUtil util = new DiracUtil(userInfo, cert.getSubject());
-//			
-//			try {
-//				util.addUser();
-//				util.uploadCert("/upload_files/usercert_" + uid + ".pem", "/upload_files/userkey_" + uid + ".pem", pwd1);
-//			} catch (RegistrationException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
 
 		} else {
 
@@ -516,25 +503,5 @@ public class UpdateCertController {
 		}
 
 		return result;
-	}
-
-	private void deleteUploadedFile(ArrayList<String> files, int uid) {
-		try {
-			String cmd = "rm -f /upload_files/" + files.get(0);
-			// + " /upload_files/" + files.get(1);
-			log.info("cmd = " + cmd);
-			Runtime.getRuntime().exec(cmd);
-
-			File cert = new File("/upload_files/usercert_" + uid + ".pem");
-			if (cert.exists())
-				cert.delete();
-			File key = new File("/upload_files/userkey_" + uid + ".pem");
-			if (key.exists())
-				key.delete();
-
-		} catch (IOException e) {
-
-			e.printStackTrace();
-		}
 	}
 }

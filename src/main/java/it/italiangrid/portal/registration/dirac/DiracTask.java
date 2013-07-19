@@ -28,6 +28,10 @@ public class DiracTask {
 		this.username = username;
 	}
 	
+	public DiracTask() {
+		
+	}
+
 	/**
 	 * @return the userCert
 	 */
@@ -184,5 +188,4 @@ public class DiracTask {
 		return true;
 	}
 	
-
 }

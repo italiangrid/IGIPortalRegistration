@@ -13,7 +13,6 @@ import org.apache.log4j.Logger;
 
 import com.liferay.portal.kernel.util.FileUtil;
 
-import it.italiangrid.portal.dbapi.domain.UserInfo;
 import it.italiangrid.portal.registration.exception.RegistrationException;
 import it.italiangrid.portal.registration.util.RegistrationConfig;
 
@@ -72,7 +71,7 @@ public class DiracUtil{
 		String diracDir = RegistrationConfig.getProperties("Registration.properties", "dirac.admin.homedir");
 		String diracHost = RegistrationConfig.getProperties("Registration.properties", "dirac.admin.host");
 		
-		String[] cmd = {"/usr/bin/python", "../dirac-restart-proxymanager.py", diracHost};
+		String[] cmd = {"/usr/bin/python", "dirac-restart-proxymanager.py", diracHost};
 		
 		File path = new File(System.getProperty("java.io.tmpdir") + "/" + diracDir);
 		
@@ -117,6 +116,24 @@ public class DiracUtil{
 		
 	}
 	
+	public void deleteUser() throws RegistrationException{
+		String diracDir = RegistrationConfig.getProperties("Registration.properties", "dirac.admin.homedir");
+		log.info("Deleting User: " + diracTask.getUsername());
+		
+		String[] cmd = {"/usr/bin/python", "dirac-delete-user.py", diracTask.getUsername()};
+		
+		File path = new File(System.getProperty("java.io.tmpdir") + "/" + diracDir);
+		
+		try {
+			executeCommand(path, cmd);
+		} catch (IOException e) {
+			e.printStackTrace();
+			throw new RegistrationException("dirac-delete-user-exception");
+		}
+		
+		log.info("User " + diracTask.getUsername() + ": DELETED");
+	}
+	
 	private String printArray(String[] array){
 		String print = "";
 		for (String string : array) {
@@ -138,8 +155,8 @@ public class DiracUtil{
 		String line = null;
 
 		while (((line = output.readLine()) != null)) {
-
-			log.info("[Stdout] " + line);
+			if(!line.contains("password"))
+				log.info("[Stdout] " + line);
 			
 		}
 		output.close();

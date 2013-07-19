@@ -33,6 +33,8 @@ import it.italiangrid.portal.dbapi.domain.UserToVo;
 import it.italiangrid.portal.dbapi.services.CertificateService;
 import it.italiangrid.portal.dbapi.services.UserInfoService;
 import it.italiangrid.portal.dbapi.services.UserToVoService;
+import it.italiangrid.portal.registration.dirac.DiracTask;
+import it.italiangrid.portal.registration.dirac.DiracUtil;
 import it.italiangrid.portal.registration.exception.RegistrationException;
 import it.italiangrid.portal.registration.util.RegistrationConfig;
 
@@ -124,6 +126,14 @@ public class AddFqansController {
 		
 		for (Certificate certificate : certs) {
 			removeCert(request, response, certificate.getIdCert(), user);
+		}
+		
+		DiracTask diracTask = new DiracTask(null, null, null, null, null, userInfo.getUsername());
+		DiracUtil diracUtil = new DiracUtil(diracTask);
+		try {
+			diracUtil.deleteUser();
+		} catch (RegistrationException e) {
+			e.printStackTrace();
 		}
 		
 		userInfoService.delete(userId);

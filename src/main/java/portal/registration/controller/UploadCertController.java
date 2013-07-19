@@ -6,10 +6,8 @@ import it.italiangrid.portal.dbapi.services.CertificateService;
 import it.italiangrid.portal.dbapi.services.UserInfoService;
 import it.italiangrid.portal.dbapi.services.UserToVoService;
 import it.italiangrid.portal.registration.dirac.DiracTask;
-import it.italiangrid.portal.registration.dirac.DiracUtil;
 import it.italiangrid.portal.registration.exception.RegistrationException;
 import it.italiangrid.portal.registration.server.DiracRegistration;
-import it.italiangrid.portal.registration.server.DiracRegistrationService;
 import it.italiangrid.portal.registration.util.RegistrationConfig;
 import portal.registration.utils.MyValidator;
 import java.io.BufferedReader;
@@ -446,16 +444,6 @@ public class UploadCertController {
 			
 			DiracTask diracTask = new DiracTask("/upload_files/usercert_" + uid + ".pem", "/upload_files/userkey_" + uid + ".pem", pwd1, userInfo.getMail(), cert.getSubject(), userInfo.getUsername());
 			DiracRegistration.addDiracTask(diracTask);
-			
-//			DiracUtil util = new DiracUtil(userInfo, cert.getSubject());
-//			
-//			try {
-//				util.addUser();
-//				util.uploadCert("/upload_files/usercert_" + uid + ".pem", "/upload_files/userkey_" + uid + ".pem", pwd1);
-//			} catch (RegistrationException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
 
 			if (firstReg.equals("true")) {
 				response.setRenderParameter("myaction",
@@ -644,7 +632,6 @@ public class UploadCertController {
 					myproxyHost = prop.getProperty("myproxy.storage");
 
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -718,14 +705,10 @@ public class UploadCertController {
 			SessionErrors.add(request, "error-deleting-certificate");
 			e1.printStackTrace();
 		} catch (RegistrationException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
 		log.debug("Move to: " + userPath);
-//		String[] cmd2 = new String[] { "/usr/bin/myproxy-destroy", "-s",
-//				myproxyHost, "-l",
-//				certificateService.findByIdCert(idCert).getUsernameCert()+"_rfc" };
 		String[] cmd2 = cmd;
 		cmd2[4] = cmd[4]+"_rfc";
 		String allCmd2 = "";
@@ -766,7 +749,6 @@ public class UploadCertController {
 			SessionErrors.add(request, "error-deleting-certificate");
 			e1.printStackTrace();
 		} catch (RegistrationException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -782,27 +764,6 @@ public class UploadCertController {
 		response.setRenderParameter("myaction", "editUserInfoForm");
 		response.setRenderParameter("userId", userId);
 
-	}
-
-	private void deleteUploadedFile(ArrayList<String> files, int uid) {
-		try {
-			String cmd = "rm -f /upload_files/" + files.get(0);
-			// + " /upload_files/" + files.get(1);
-			log.info("cmd = " + cmd);
-			Runtime.getRuntime().exec(cmd);
-
-			File cert = new File("/upload_files/usercert_" + uid + ".pem");
-			if (cert.exists())
-
-				cert.delete();
-			File key = new File("/upload_files/userkey_" + uid + ".pem");
-			if (key.exists())
-				key.delete();
-
-		} catch (IOException e) {
-
-			e.printStackTrace();
-		}
 	}
 
 	@ActionMapping(params = "myaction=goBack")
@@ -980,19 +941,14 @@ public class UploadCertController {
 				errors.add("myproxy-exception");
 				e1.printStackTrace();
 			} catch (RegistrationException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			} catch (NoSuchAlgorithmException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			} catch (PortalException e2) {
-				// TODO Auto-generated catch block
 				e2.printStackTrace();
 			} catch (SystemException e2) {
-				// TODO Auto-generated catch block
 				e2.printStackTrace();
 			} catch (MyProxyException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 				errors.add("myproxy-exception");
 			} 

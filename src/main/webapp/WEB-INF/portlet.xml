@@ -32,5 +32,12 @@
 		<security-role-ref>
 			<role-name>user</role-name>
 		</security-role-ref>
+		<supported-processing-event>
+			<qname xmlns:x="http://liferay.com/events">x:add.task</qname>
+		</supported-processing-event>
 	</portlet>
+	<event-definition>
+		<qname xmlns:x="http://liferay.com/events">x:add.task</qname>
+		<value-type>java.lang.String</value-type>
+	</event-definition>
 </portlet-app>
