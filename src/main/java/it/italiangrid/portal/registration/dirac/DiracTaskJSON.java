@@ -56,6 +56,7 @@ public class DiracTaskJSON {
 	}
 	
 	
+	
 	@SuppressWarnings("unchecked")
 	private void decode(String encodedString){
 		JSONParser parser = new JSONParser();
@@ -70,14 +71,25 @@ public class DiracTaskJSON {
 
 		};
 		
-		Map<String, String> json;
+		Map<String, String> json = new LinkedHashMap<String, String>();
+		Object obj;
 		try {
-			json = (Map<String, String>)parser.parse(encodedString, containerFactory);
+			
+			obj = parser.parse(encodedString, containerFactory);
+			
+			if(obj instanceof LinkedHashMap)
+				json = (Map<String, String>) obj;
+			else
+				throw new ParseException(ParseException.ERROR_UNEXPECTED_EXCEPTION);
+			
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return;
 		}
+		
+		
+		
+
 		
 		diracTask.setDn(json.get("dn"));
 		diracTask.setEmail(json.get("email"));
