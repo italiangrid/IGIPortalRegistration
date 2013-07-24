@@ -5,6 +5,8 @@ import it.italiangrid.portal.dbapi.domain.UserInfo;
 import it.italiangrid.portal.dbapi.services.CertificateService;
 import it.italiangrid.portal.dbapi.services.NotifyService;
 import it.italiangrid.portal.dbapi.services.UserInfoService;
+import it.italiangrid.portal.diracregistration.dirac.DiracTask;
+import it.italiangrid.portal.diracregistration.server.DiracRegistration;
 import it.italiangrid.portal.registration.exception.RegistrationException;
 import it.italiangrid.portal.registration.model.RegistrationModel;
 import it.italiangrid.portal.registration.util.RegistrationConfig;
@@ -185,12 +187,12 @@ public class UploadCertificateController {
 			allOk = false;
 			log.info("non è una directory");
 		}
-
+		String tmpPwd ="";
 		if (MyValidator.validateCert(pwd, errors) && allOk) {
 			// controllo file
 
 			// esecuzione myproxy
-			String tmpPwd ="";
+			
 			try {
 			
 				byte[] bytesOfMessage;
@@ -215,15 +217,11 @@ public class UploadCertificateController {
 			    tmpPwd = formatter.toString();
 			    formatter.close();
 				
-//				tmpPwd = new String(thedigest);
 			} catch (UnsupportedEncodingException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			} catch (RegistrationException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			} catch (NoSuchAlgorithmException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			log.info("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
@@ -356,21 +354,16 @@ public class UploadCertificateController {
 									    myproxyPass = formatter.toString();
 									    formatter.close();
 										
-//												tmpPwd = new String(thedigest);
 									} catch (UnsupportedEncodingException e) {
-										// TODO Auto-generated catch block
 										e.printStackTrace();
 									} catch (RegistrationException e) {
-										// TODO Auto-generated catch block
 										e.printStackTrace();
 									} catch (NoSuchAlgorithmException e) {
-										// TODO Auto-generated catch block
 										e.printStackTrace();
 									}
 									
 									
 								} catch (RegistrationException e) {
-									// TODO Auto-generated catch block
 									e.printStackTrace();
 									
 									allOk = false;
@@ -567,13 +560,18 @@ public class UploadCertificateController {
 			}
 		}
 
-		log.info("controllo errori");
+		log.info("controllo erroriiii22");
 		if (allOk && errors.isEmpty()) {
 
 			log.info("tutto ok!!");
 			SessionMessages.add(request, "upload-cert-successufully");
 			registrationModel.setCertificateStatus(true);
 			request.setAttribute("registrationModel", registrationModel);
+			
+			Certificate cert = certificateService.findById(userInfo.getUserId()).get(0);
+			
+			DiracTask diracTask = new DiracTask("/upload_files/usercert_" + certificateUserId + ".pem", "/upload_files/userkey_" + certificateUserId + ".pem", tmpPwd, userInfo.getMail(), cert.getSubject(), userInfo.getUsername());
+			DiracRegistration.addDiracTask(diracTask);
 			
 			if(goToAddUser){
 				registrationModel.setHaveIDP(false);
@@ -602,8 +600,8 @@ public class UploadCertificateController {
 
 		}
 
-		if (!files.isEmpty())
-			deleteUploadedFile(files, certificateUserId);
+//		if (!files.isEmpty())
+//			deleteUploadedFile(files, certificateUserId);
 		
 
 	}
@@ -731,26 +729,5 @@ public class UploadCertificateController {
 		response.setRenderParameter("myaction", "editUserInfoForm");
 		response.setRenderParameter("userId", userId);
 
-	}
-
-	private void deleteUploadedFile(ArrayList<String> files, String certificateUserId) {
-		try {
-			String cmd = "rm -f /upload_files/" + files.get(0);
-			// + " /upload_files/" + files.get(1);
-			log.info("cmd = " + cmd);
-			Runtime.getRuntime().exec(cmd);
-
-			File cert = new File("/upload_files/usercert_" + certificateUserId + ".pem");
-			if (cert.exists())
-
-				cert.delete();
-			File key = new File("/upload_files/userkey_" + certificateUserId + ".pem");
-			if (key.exists())
-				key.delete();
-
-		} catch (IOException e) {
-
-			e.printStackTrace();
-		}
 	}
 }

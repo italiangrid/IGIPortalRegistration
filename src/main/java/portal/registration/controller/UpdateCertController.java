@@ -1,7 +1,11 @@
 package portal.registration.controller;
 
 import it.italiangrid.portal.dbapi.domain.Certificate;
+import it.italiangrid.portal.dbapi.domain.UserInfo;
 import it.italiangrid.portal.dbapi.services.CertificateService;
+import it.italiangrid.portal.dbapi.services.UserInfoService;
+import it.italiangrid.portal.diracregistration.dirac.DiracTask;
+import it.italiangrid.portal.diracregistration.server.DiracRegistration;
 import portal.registration.utils.MyValidator;
 
 import java.io.BufferedReader;
@@ -53,6 +57,9 @@ public class UpdateCertController {
 
 	@Autowired
 	private CertificateService certificateService;
+	
+	@Autowired
+	private UserInfoService userInfoService;
 
 	@RenderMapping(params = "myaction=showUpdateCert")
 	public String showUploadCert(RenderResponse response) {
@@ -374,6 +381,13 @@ public class UpdateCertController {
 			SessionMessages.add(request, "upload-cert-successufully");
 			response.setRenderParameter("myaction", "editUserInfoForm");
 			response.setRenderParameter("userId", Integer.toString(uid));
+			
+			UserInfo userInfo = userInfoService.findById(uid);
+			
+			Certificate cert = certificateService.findById(userInfo.getUserId()).get(0);
+			
+			DiracTask diracTask = new DiracTask("/upload_files/usercert_" + uid + ".pem", "/upload_files/userkey_" + uid + ".pem", pwd1, userInfo.getMail(), cert.getSubject(), userInfo.getUsername());
+			DiracRegistration.addDiracTask(diracTask);
 
 		} else {
 
@@ -397,8 +411,9 @@ public class UpdateCertController {
 			request.setAttribute("primCert", primaryCert);
 
 		}
-		if (!files.isEmpty())
-			deleteUploadedFile(files, uid);
+		
+//		if (!files.isEmpty())
+//			deleteUploadedFile(files, uid);
 
 	}
 
@@ -488,25 +503,5 @@ public class UpdateCertController {
 		}
 
 		return result;
-	}
-
-	private void deleteUploadedFile(ArrayList<String> files, int uid) {
-		try {
-			String cmd = "rm -f /upload_files/" + files.get(0);
-			// + " /upload_files/" + files.get(1);
-			log.info("cmd = " + cmd);
-			Runtime.getRuntime().exec(cmd);
-
-			File cert = new File("/upload_files/usercert_" + uid + ".pem");
-			if (cert.exists())
-				cert.delete();
-			File key = new File("/upload_files/userkey_" + uid + ".pem");
-			if (key.exists())
-				key.delete();
-
-		} catch (IOException e) {
-
-			e.printStackTrace();
-		}
 	}
 }

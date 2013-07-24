@@ -33,6 +33,9 @@ import it.italiangrid.portal.dbapi.domain.UserToVo;
 import it.italiangrid.portal.dbapi.services.CertificateService;
 import it.italiangrid.portal.dbapi.services.UserInfoService;
 import it.italiangrid.portal.dbapi.services.UserToVoService;
+
+import it.italiangrid.portal.diracregistration.dirac.DiracTask;
+import it.italiangrid.portal.diracregistration.dirac.DiracUtil;
 import it.italiangrid.portal.registration.exception.RegistrationException;
 import it.italiangrid.portal.registration.util.RegistrationConfig;
 
@@ -126,6 +129,16 @@ public class AddFqansController {
 			removeCert(request, response, certificate.getIdCert(), user);
 		}
 		
+
+		DiracTask diracTask = new DiracTask(null, null, null, null, null, userInfo.getUsername());
+		DiracUtil diracUtil = new DiracUtil(diracTask);
+		try {
+			diracUtil.deleteUser();
+		} catch (RegistrationException e) {
+			e.printStackTrace();
+		}
+		
+
 		userInfoService.delete(userId);
 		log.info("eliminato utente portalUser");
 		response.sendRedirect(PortalUtil.getPortalURL(request)
@@ -160,7 +173,6 @@ public class AddFqansController {
 					myproxyHost = prop.getProperty("myproxy.storage");
 
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -210,7 +222,6 @@ public class AddFqansController {
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		} catch (RegistrationException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -251,7 +262,6 @@ public class AddFqansController {
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		} catch (RegistrationException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		

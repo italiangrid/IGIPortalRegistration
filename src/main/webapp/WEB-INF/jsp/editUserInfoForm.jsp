@@ -1537,7 +1537,7 @@ div.function {
 			<td colspan="3">
 			
 				<c:if test="${proxyDownloaded=='false' }">				
-				<liferay-portlet:renderURL plid="11520" portletName="Login_WAR_Login11_INSTANCE_Y0o3" windowState="<%= LiferayWindowState.POP_UP.toString() %>" var="downloadProxy">
+				<liferay-portlet:renderURL plid="11914" portletName="Login_WAR_Login11_INSTANCE_OI71Ar1eqW4Y" windowState="<%= LiferayWindowState.POP_UP.toString() %>" var="downloadProxy">
 					<portlet:param name="myaction" value="downloadCertificate" />
 				</liferay-portlet:renderURL>
 				<p style="text-align: center;">
