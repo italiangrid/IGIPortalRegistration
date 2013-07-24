@@ -17,12 +17,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.portlet.bind.annotation.ActionMapping;
 
 import it.italiangrid.portal.dbapi.domain.Certificate;
-//import portal.registration.domain.UserInfo;
-//import portal.registration.services.UserInfoService;
 import it.italiangrid.portal.dbapi.domain.UserInfo;
 import it.italiangrid.portal.dbapi.services.CertificateService;
 import it.italiangrid.portal.dbapi.services.UserInfoService;
@@ -31,9 +28,7 @@ import it.italiangrid.portal.registration.util.RegistrationConfig;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
-import com.liferay.portal.kernel.servlet.SessionErrors;
 import com.liferay.portal.kernel.servlet.SessionMessages;
-import com.liferay.portal.kernel.util.WebKeys;
 import com.liferay.portal.model.User;
 import com.liferay.portal.service.UserLocalServiceUtil;
 import com.liferay.portal.util.PortalUtil;
@@ -118,7 +113,6 @@ public class RemoveUserInfoController {
 					myproxyHost = prop.getProperty("myproxy.storage");
 
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -168,7 +162,6 @@ public class RemoveUserInfoController {
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		} catch (RegistrationException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -209,7 +202,6 @@ public class RemoveUserInfoController {
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		} catch (RegistrationException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
