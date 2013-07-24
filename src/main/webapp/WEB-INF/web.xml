@@ -1,31 +1,57 @@
 <?xml version="1.0"?>
 
-<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
-     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd" version="2.4">
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_5.xsd"
+	version="2.5">
 	<context-param>
 		<param-name>log4jConfigLocation</param-name>
 		<param-value>/WEB-INF/classes/log4j.properties</param-value>
 	</context-param>
 	<servlet>
 		<servlet-name>view-servlet</servlet-name>
-		<servlet-class>org.springframework.web.servlet.ViewRendererServlet</servlet-class>
+		<servlet-class>org.springframework.web.servlet.ViewRendererServlet
+		</servlet-class>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>view-servlet</servlet-name>
 		<url-pattern>/WEB-INF/servlet/view</url-pattern>
 	</servlet-mapping>
-	
-	<!-- <listener>
-		<listener-class>portal.registration.server.PortalContextListener</listener-class>
-	</listener>   -->
-	
+
+	<servlet>
+		<servlet-name>rest-servlet</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet
+		</servlet-class>
+		<load-on-startup>1</load-on-startup>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/rest-config.xml</param-value>
+		</init-param>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>rest-servlet</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>default</servlet-name>
+		<url-pattern>*.png</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>default</servlet-name>
+		<url-pattern>*.gif</url-pattern>
+	</servlet-mapping>
+
+	<!-- <listener> <listener-class>portal.registration.server.PortalContextListener</listener-class> 
+		</listener> -->
+
 	<listener>
-		<listener-class>portal.registration.server.NotificationCenter</listener-class>
+		<listener-class>portal.registration.server.NotificationCenter
+		</listener-class>
 	</listener>
 	<listener>
-		<listener-class>it.italiangrid.portal.registration.server.DiracRegistrationService</listener-class>
+		<listener-class>it.italiangrid.portal.diracregistration.server.DiracRegistrationService
+		</listener-class>
 	</listener>
-	
+
 </web-app>

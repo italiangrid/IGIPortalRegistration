@@ -4,8 +4,8 @@ import it.italiangrid.portal.dbapi.domain.Certificate;
 import it.italiangrid.portal.dbapi.domain.UserInfo;
 import it.italiangrid.portal.dbapi.services.CertificateService;
 import it.italiangrid.portal.dbapi.services.UserInfoService;
-import it.italiangrid.portal.registration.dirac.DiracTask;
-import it.italiangrid.portal.registration.server.DiracRegistration;
+import it.italiangrid.portal.diracregistration.dirac.DiracTask;
+import it.italiangrid.portal.diracregistration.server.DiracRegistration;
 import portal.registration.utils.MyValidator;
 
 import java.io.BufferedReader;

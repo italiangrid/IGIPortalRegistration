@@ -5,10 +5,10 @@ import it.italiangrid.portal.dbapi.domain.UserInfo;
 import it.italiangrid.portal.dbapi.services.CertificateService;
 import it.italiangrid.portal.dbapi.services.NotifyService;
 import it.italiangrid.portal.dbapi.services.UserInfoService;
-import it.italiangrid.portal.registration.dirac.DiracTask;
+import it.italiangrid.portal.diracregistration.dirac.DiracTask;
+import it.italiangrid.portal.diracregistration.server.DiracRegistration;
 import it.italiangrid.portal.registration.exception.RegistrationException;
 import it.italiangrid.portal.registration.model.RegistrationModel;
-import it.italiangrid.portal.registration.server.DiracRegistration;
 import it.italiangrid.portal.registration.util.RegistrationConfig;
 import it.italiangrid.portal.registration.util.RegistrationUtil;
 
