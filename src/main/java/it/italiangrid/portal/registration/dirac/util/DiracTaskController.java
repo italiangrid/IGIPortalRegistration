@@ -1,6 +1,6 @@
-package it.italiangrid.portal.diracregistration.dirac;
+package it.italiangrid.portal.registration.dirac.util;
 
-import it.italiangrid.portal.diracregistration.server.DiracRegistration;
+import it.italiangrid.portal.registration.dirac.server.DiracRegistration;
 
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;

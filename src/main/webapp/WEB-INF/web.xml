@@ -58,7 +58,7 @@
 		</listener-class>
 	</listener>
 	<listener>
-		<listener-class>it.italiangrid.portal.diracregistration.server.DiracRegistrationService
+		<listener-class>it.italiangrid.portal.registration.dirac.server.DiracRegistrationService
 		</listener-class>
 	</listener>
 

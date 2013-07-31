@@ -5,4 +5,4 @@
  * @author dmichelotto
  *
  */
-package it.italiangrid.portal.diracregistration.dirac;
+package it.italiangrid.portal.registration.dirac.util;

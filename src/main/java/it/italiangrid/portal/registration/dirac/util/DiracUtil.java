@@ -1,4 +1,4 @@
-package it.italiangrid.portal.diracregistration.dirac;
+package it.italiangrid.portal.registration.dirac.util;
 
 import java.io.BufferedReader;
 import java.io.File;
