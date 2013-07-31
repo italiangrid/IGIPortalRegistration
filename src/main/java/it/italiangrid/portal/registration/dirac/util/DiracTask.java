@@ -1,4 +1,4 @@
-package it.italiangrid.portal.diracregistration.dirac;
+package it.italiangrid.portal.registration.dirac.util;
 
 /**
  * The class that contains the user's information for the task.
@@ -7,6 +7,9 @@ package it.italiangrid.portal.diracregistration.dirac;
  * 
  */
 public class DiracTask {
+	
+	public static final int ADD_TASK = 0;
+	public static final int REMOVE_TASK = 1;
 
 	/**
 	 * User's certificate path.
@@ -37,6 +40,11 @@ public class DiracTask {
 	 * User's username.
 	 */
 	private String username;
+	
+	/**
+	 * The operation.
+	 */
+	private int operation;
 
 	/**
 	 * Constructor.
@@ -55,7 +63,7 @@ public class DiracTask {
 	 *            - User's username.
 	 */
 	public DiracTask(String userCert, String userKey, String password,
-			String email, String dn, String username) {
+			String email, String dn, String username, int operation) {
 		super();
 		this.userCert = userCert;
 		this.userKey = userKey;
@@ -63,6 +71,7 @@ public class DiracTask {
 		this.email = email;
 		this.dn = dn;
 		this.username = username;
+		this.operation = operation;
 	}
 
 	/**
@@ -186,21 +195,31 @@ public class DiracTask {
 		this.username = username;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
+	/**
+	 * @return the operation
+	 */
+	public int getOperation() {
+		return operation;
+	}
+
+	/**
+	 * @param operation the operation to set
+	 */
+	public void setOperation(int operation) {
+		this.operation = operation;
+	}
+
+	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
 	public String toString() {
 		return "DiracTask [userCert=" + userCert + ", userKey=" + userKey
 				+ ", password=" + password + ", email=" + email + ", dn=" + dn
-				+ ", username=" + username + "]";
+				+ ", username=" + username + ", operation=" + operation + "]";
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
+	/* (non-Javadoc)
 	 * @see java.lang.Object#hashCode()
 	 */
 	@Override
@@ -209,6 +228,7 @@ public class DiracTask {
 		int result = 1;
 		result = prime * result + ((dn == null) ? 0 : dn.hashCode());
 		result = prime * result + ((email == null) ? 0 : email.hashCode());
+		result = prime * result + operation;
 		result = prime * result
 				+ ((password == null) ? 0 : password.hashCode());
 		result = prime * result
@@ -219,9 +239,7 @@ public class DiracTask {
 		return result;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
+	/* (non-Javadoc)
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
 	@Override
@@ -242,6 +260,8 @@ public class DiracTask {
 			if (other.email != null)
 				return false;
 		} else if (!email.equals(other.email))
+			return false;
+		if (operation != other.operation)
 			return false;
 		if (password == null) {
 			if (other.password != null)

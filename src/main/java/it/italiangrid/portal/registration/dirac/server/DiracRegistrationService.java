@@ -1,4 +1,4 @@
-package it.italiangrid.portal.diracregistration.server;
+package it.italiangrid.portal.registration.dirac.server;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

@@ -21,7 +21,7 @@
             for classes configured as Spring managed beans and automatically sets up objects annotated with  
             @Controller, @Service etc.  
       -->  
-      <context:component-scan base-package="it.italiangrid.portal.diracregistration.dirac" />  
+      <context:component-scan base-package="it.italiangrid.portal.registration.dirac.util" />  
       <bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" />  
       <!--  
             Configures view for returning JSON to the client  

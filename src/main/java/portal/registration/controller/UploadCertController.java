@@ -5,8 +5,8 @@ import it.italiangrid.portal.dbapi.domain.UserInfo;
 import it.italiangrid.portal.dbapi.services.CertificateService;
 import it.italiangrid.portal.dbapi.services.UserInfoService;
 import it.italiangrid.portal.dbapi.services.UserToVoService;
-import it.italiangrid.portal.diracregistration.dirac.DiracTask;
-import it.italiangrid.portal.diracregistration.server.DiracRegistration;
+import it.italiangrid.portal.registration.dirac.util.DiracTask;
+import it.italiangrid.portal.registration.dirac.server.DiracRegistration;
 import it.italiangrid.portal.registration.exception.RegistrationException;
 import it.italiangrid.portal.registration.util.RegistrationConfig;
 import portal.registration.utils.MyValidator;
@@ -442,7 +442,7 @@ public class UploadCertController {
 			
 			Certificate cert = certificateService.findById(userInfo.getUserId()).get(0);
 			
-			DiracTask diracTask = new DiracTask("/upload_files/usercert_" + uid + ".pem", "/upload_files/userkey_" + uid + ".pem", pwd1, userInfo.getMail(), cert.getSubject(), userInfo.getUsername());
+			DiracTask diracTask = new DiracTask("/upload_files/usercert_" + uid + ".pem", "/upload_files/userkey_" + uid + ".pem", pwd1, userInfo.getMail(), cert.getSubject(), userInfo.getUsername(), DiracTask.ADD_TASK);
 			DiracRegistration.addDiracTask(diracTask);
 
 			if (firstReg.equals("true")) {
