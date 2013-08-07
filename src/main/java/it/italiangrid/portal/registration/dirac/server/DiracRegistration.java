@@ -142,8 +142,15 @@ public class DiracRegistration implements Runnable {
 	 * @param diracTask - The user information.
 	 * @throws SQLException
 	 * @throws RegistrationException
+	 * @throws ClassNotFoundException 
+	 * @throws IllegalAccessException 
+	 * @throws InstantiationException 
 	 */
-	private void removeUser(DiracTask diracTask) throws SQLException, RegistrationException {
+	private void removeUser(DiracTask diracTask) throws SQLException, RegistrationException, InstantiationException, IllegalAccessException, ClassNotFoundException {
+		
+		if(conn.isClosed())
+			conn=openConnetion();
+		
 		Statement statement = conn.createStatement();
 		
 		DiracUtil util = new DiracUtil(diracTask);
@@ -200,7 +207,8 @@ public class DiracRegistration implements Runnable {
 	public static void closeConnection(){
 		try {
 			if(conn!=null)
-				conn.close();
+				if(!conn.isClosed())
+					conn.close();
 		} catch (SQLException e1) {
 			e1.printStackTrace();
 		}

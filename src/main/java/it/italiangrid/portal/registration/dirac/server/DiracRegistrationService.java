@@ -32,6 +32,9 @@ public class DiracRegistrationService implements ServletContextListener {
 	public void contextDestroyed(ServletContextEvent arg0) {
 
 		log.info("Shutting down of DIRAC registration queue");
+		
+		DiracRegistration.closeConnection();
+		
 		executor.shutdownNow();
 
 	}
