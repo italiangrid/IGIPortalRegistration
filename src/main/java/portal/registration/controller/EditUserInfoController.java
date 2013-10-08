@@ -376,9 +376,14 @@ public class EditUserInfoController {
 
 		UserInfo userInfo = userInfoService.findById(userId);
 		
-		if(notifyService.findByUserInfo(userInfo)==null)
-			notifyService.save(new Notify(userInfo, "false", "12:00"));
-
+		if(notifyService.findByUserInfo(userInfo)==null){
+			try {
+				notifyService.save(new Notify(userInfo, "false", RegistrationConfig.getProperties("Registration.properties", "proxy.expiration.times.default")));
+			} catch (RegistrationException e) {
+				e.printStackTrace();
+				notifyService.save(new Notify(userInfo, "false", "48:00"));
+			}
+		}
 		return notifyService.findByUserInfo(userInfo);
 	}
 	

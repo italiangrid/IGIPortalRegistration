@@ -214,9 +214,12 @@ public class RegistrationUtil {
 
 		log.debug("Utente aggiunto in PortalUsert con UserId = " + userId);
 
-		Notify notify = new Notify(userInfo, "false");
-
-		notifyService.save(notify);
+		try {
+			notifyService.save(new Notify(userInfo, "false", RegistrationConfig.getProperties("Registration.properties", "proxy.expiration.times.default")));
+		} catch (RegistrationException e) {
+			e.printStackTrace();
+			notifyService.save(new Notify(userInfo, "false", "48:00"));
+		}
 
 		UserInfo newUser = userInfoService.findById(userId);
 

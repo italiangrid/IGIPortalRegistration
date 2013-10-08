@@ -541,8 +541,15 @@ public class UserInfoController {
 		if (user != null) {
 			UserInfo userInfo = userInfoService.findByUsername(user.getScreenName());
 			if(notifyService.findByUserInfo(userInfo)==null){
-				notifyService.save(new Notify(userInfo, "false", "12:00"));
+				try {
+					notifyService.save(new Notify(userInfo, "false", RegistrationConfig.getProperties("Registration.properties", "proxy.expiration.times.default")));
+				} catch (RegistrationException e) {
+					e.printStackTrace();
+					notifyService.save(new Notify(userInfo, "false", "48:00"));
+				}
 			}
+			log.info("userId: " + user.getUserId());
+			log.info("notify: " + notifyService.findByUserInfo(userInfo).getProxyExpireTime());
 			return notifyService.findByUserInfo(userInfo);
 		}
 		return null;
