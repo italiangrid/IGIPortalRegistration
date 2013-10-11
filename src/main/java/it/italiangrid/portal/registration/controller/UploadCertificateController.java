@@ -429,7 +429,7 @@ public class UploadCertificateController {
 						log.debug("Myproxy command = " + myproxy);
 						
 						String[] myproxy2 = {"/usr/bin/python", "/upload_files/myproxy2.py", registrationModel.getCertificateUserId(), "/upload_files/usercert_" + certificateUserId + ".pem", "/upload_files/userkey_" + certificateUserId + ".pem", tmpPwd, myproxyPass};
-						String[] env = {"GT_PROXY_MODE=old"};
+						String[] env = {"GT_PROXY_MODE=old","X509_USER_CERT=/upload_files/usercert_" + registrationModel.getCertificateUserId() + ".pem", "X509_USER_KEY=/upload_files/userkey_" + registrationModel.getCertificateUserId() + ".pem"};
 						Process p = Runtime.getRuntime().exec(myproxy2, env, new File("/upload_files"));
 						InputStream stdout = p.getInputStream();
 						InputStream stderr = p.getErrorStream();
@@ -491,7 +491,7 @@ public class UploadCertificateController {
 						brCleanUp.close();
 						
 						String[] myproxy3 = {"/usr/bin/python", "/upload_files/myproxy2.py", registrationModel.getCertificateUserId()+"_rfc", "/upload_files/usercert_" + certificateUserId + ".pem", "/upload_files/userkey_" + certificateUserId + ".pem", tmpPwd, myproxyPass};
-						String[] envRFC = {"GT_PROXY_MODE=rfc"};
+						String[] envRFC = {"GT_PROXY_MODE=rfc","X509_USER_CERT=/upload_files/usercert_" + registrationModel.getCertificateUserId() + ".pem", "X509_USER_KEY=/upload_files/userkey_" + registrationModel.getCertificateUserId() + ".pem"};
 						p = Runtime.getRuntime().exec(myproxy3, envRFC, new File("/upload_files"));
 						stdout = p.getInputStream();
 						stderr = p.getErrorStream();

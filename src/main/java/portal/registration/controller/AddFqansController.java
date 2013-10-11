@@ -21,6 +21,7 @@ import org.springframework.web.portlet.bind.annotation.ActionMapping;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.servlet.SessionErrors;
 import com.liferay.portal.kernel.servlet.SessionMessages;
 import com.liferay.portal.model.User;
 import com.liferay.portal.service.UserLocalServiceUtil;
@@ -36,8 +37,6 @@ import it.italiangrid.portal.dbapi.services.UserToVoService;
 
 import it.italiangrid.portal.registration.dirac.server.DiracRegistration;
 import it.italiangrid.portal.registration.dirac.util.DiracTask;
-import it.italiangrid.portal.registration.exception.RegistrationException;
-import it.italiangrid.portal.registration.util.RegistrationConfig;
 
 @Controller(value = "addFqansController")
 @RequestMapping(value = "VIEW")
@@ -171,8 +170,12 @@ public class AddFqansController {
 
 		String userPath = System.getProperty("java.io.tmpdir") + "/users/"
 				+ user.getUserId() + "/";
+		
+		File userPathFile = new File(userPath);
+		if(!userPathFile.exists());
+			userPathFile.mkdirs();
 
-		log.debug("Move to: " + userPath);
+		log.info("Move to: " + userPath);
 		String[] cmd = new String[] { "/usr/bin/myproxy-destroy", "-s",
 				myproxyHost, "-l",
 				certificateService.findByIdCert(idCert).getUsernameCert() };
@@ -186,9 +189,10 @@ public class AddFqansController {
 		boolean isWrong = false;
 		
 		try {
-			String[] envp = {"X509_USER_CERT="+RegistrationConfig.getProperties("Registration.properties", "SSL_CERT_FILE"), "X509_USER_KEY="+RegistrationConfig.getProperties("Registration.properties", "SSL_KEY")};
+//			String[] envp = {"X509_USER_CERT="+RegistrationConfig.getProperties("Registration.properties", "SSL_CERT_FILE"), "X509_USER_KEY="+RegistrationConfig.getProperties("Registration.properties", "SSL_KEY")};
+			String[] envp = {"X509_USER_CERT=x509up", "X509_USER_KEY=x509up"};
 			Process p = Runtime.getRuntime()
-					.exec(cmd, envp, new File(userPath));
+					.exec(cmd, envp, userPathFile);
 			InputStream stdout = p.getInputStream();
 			InputStream stderr = p.getErrorStream();
 
@@ -213,9 +217,10 @@ public class AddFqansController {
 
 		} catch (IOException e1) {
 			e1.printStackTrace();
-		} catch (RegistrationException e) {
-			e.printStackTrace();
-		}
+		} 
+//		catch (RegistrationException e) {
+//			e.printStackTrace();
+//		}
 		
 		log.debug("Move to: " + userPath);
 		String[] cmd2 = cmd;
@@ -228,9 +233,10 @@ public class AddFqansController {
 		log.info("myproxy destroy: " + allCmd2);
 
 		try {
-			String[] envp = {"X509_USER_CERT="+RegistrationConfig.getProperties("Registration.properties", "SSL_CERT_FILE"), "X509_USER_KEY="+RegistrationConfig.getProperties("Registration.properties", "SSL_KEY")};
+//			String[] envp = {"X509_USER_CERT="+RegistrationConfig.getProperties("Registration.properties", "SSL_CERT_FILE"), "X509_USER_KEY="+RegistrationConfig.getProperties("Registration.properties", "SSL_KEY")};
+			String[] envp = {"X509_USER_CERT=x509up", "X509_USER_KEY=x509up"};
 			Process p = Runtime.getRuntime()
-					.exec(cmd2, envp, new File(userPath));
+					.exec(cmd2, envp, userPathFile);
 			InputStream stdout = p.getInputStream();
 			InputStream stderr = p.getErrorStream();
 
@@ -253,9 +259,71 @@ public class AddFqansController {
 
 		} catch (IOException e1) {
 			e1.printStackTrace();
-		} catch (RegistrationException e) {
-			e.printStackTrace();
+		} 
+//		catch (RegistrationException e) {
+//			e.printStackTrace();
+//		}
+		
+		log.info("Move to: " + userPath);
+		String[] cmd3 = new String[] { "/usr/bin/myproxy-destroy", "-s",
+				myproxyHost, "-d" };
+		String allCmd3 = "";
+		for (String string : cmd3) {
+			allCmd3 += string + " ";
 		}
+
+		log.info("myproxy destroy: " + allCmd3);
+
+//		Map<String,String> sysEnv = System.getenv();
+//		
+//		Set<String> list  = sysEnv.keySet();
+//		Iterator<String> iter = list.iterator();
+//		String enviroment = "";			
+//		while(iter.hasNext()) {
+//		     String key = iter.next();
+//		     String value = sysEnv.get(key);
+//		     enviroment +="@@"+key+"="+value;
+//		}
+//		String[] envp = enviroment.split("@@");
+//		
+//		for(int i=0; i<envp.length; i++)
+//				log.info("ENVP: " + envp[i]);
+		
+		try {
+//			String[] envp = {"X509_USER_CERT="+RegistrationConfig.getProperties("Registration.properties", "SSL_CERT_FILE"), "X509_USER_KEY="+RegistrationConfig.getProperties("Registration.properties", "SSL_KEY")};
+			String[] envp = {"X509_USER_PROXY=x509up"};
+			Process p = Runtime.getRuntime().exec(cmd3, envp, userPathFile);
+			InputStream stdout = p.getInputStream();
+			InputStream stderr = p.getErrorStream();
+
+			BufferedReader output = new BufferedReader(new InputStreamReader(
+					stdout));
+			String line = null;
+
+			while ((line = output.readLine()) != null) {
+				log.info("[Stdout] " + line);
+			}
+			output.close();
+
+			
+
+			BufferedReader brCleanUp = new BufferedReader(
+					new InputStreamReader(stderr));
+			while ((line = brCleanUp.readLine()) != null) {
+				log.info("[Stderr] " + line);
+				if (!isWrong)
+					SessionErrors.add(request,
+							"error-deleting-certificate-wrong-proxy");
+//				isWrong = true;
+			}
+			brCleanUp.close();
+
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+//		catch (RegistrationException e) {
+//			e.printStackTrace();
+//		}
 		
 		if (!isWrong) {
 			log.info("Sto per cancellare il certificato con id = " + idCert);

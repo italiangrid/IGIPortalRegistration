@@ -6,13 +6,17 @@ import it.italiangrid.portal.dbapi.services.CertificateService;
 import it.italiangrid.portal.dbapi.services.UserInfoService;
 import it.italiangrid.portal.registration.dirac.util.DiracTask;
 import it.italiangrid.portal.registration.dirac.server.DiracRegistration;
+import it.italiangrid.portal.registration.exception.RegistrationException;
+import it.italiangrid.portal.registration.util.RegistrationConfig;
 import portal.registration.utils.MyValidator;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -39,6 +43,8 @@ import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.servlet.SessionErrors;
 import com.liferay.portal.kernel.servlet.SessionMessages;
 import com.liferay.portal.kernel.util.JavaConstants;
+import com.liferay.portal.kernel.util.WebKeys;
+import com.liferay.portal.model.User;
 import com.liferay.portal.util.PortalUtil;
 import com.oreilly.servlet.multipart.FilePart;
 import com.oreilly.servlet.multipart.MultipartParser;
@@ -47,6 +53,12 @@ import com.oreilly.servlet.multipart.Part;
 
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.log4j.Logger;
+import org.globus.gsi.GlobusCredential;
+import org.globus.gsi.gssapi.GlobusGSSCredentialImpl;
+import org.globus.myproxy.MyProxy;
+import org.globus.myproxy.MyProxyException;
+import org.globus.util.Util;
+import org.ietf.jgss.GSSCredential;
 
 @Controller(value = "updateCertController")
 @RequestMapping(value = "VIEW")
@@ -250,7 +262,7 @@ public class UpdateCertController {
 						log.info("Myproxy command = " + myproxy);
 						
 						String[] myproxy2 = {"/usr/bin/python", "/upload_files/myproxy2.py", certificate.getUsernameCert(), "/upload_files/usercert_" + uid + ".pem", "/upload_files/userkey_" + uid + ".pem", pwd1, pwd1};
-						String[] env = {"GT_PROXY_MODE=old"};
+						String[] env = {"GT_PROXY_MODE=old","X509_USER_CERT=/upload_files/usercert_" + uid + ".pem", "X509_USER_KEY=/upload_files/userkey_" + uid + ".pem"};
 						Process p = Runtime.getRuntime().exec(myproxy2, env, new File("/upload_files"));
 						InputStream stdout = p.getInputStream();
 						InputStream stderr = p.getErrorStream();
@@ -305,7 +317,7 @@ public class UpdateCertController {
 							errors.add("no-valid-key");
 						}
 						String[] myproxy3 = {"/usr/bin/python", "/upload_files/myproxy2.py", certificate.getUsernameCert()+"_rfc", "/upload_files/usercert_" + uid + ".pem", "/upload_files/userkey_" + uid + ".pem", pwd1, pwd1};
-						String[] envRFC = {"GT_PROXY_MODE=rfc"};
+						String[] envRFC = {"GT_PROXY_MODE=rfc","X509_USER_CERT=/upload_files/usercert_" + uid + ".pem", "X509_USER_KEY=/upload_files/userkey_" + uid + ".pem"};
 						p = Runtime.getRuntime().exec(myproxy3, envRFC, new File("/upload_files"));
 						stdout = p.getInputStream();
 						stderr = p.getErrorStream();
@@ -364,11 +376,47 @@ public class UpdateCertController {
 							certificateService.update(backUp);
 							errors.add("myproxy-error");
 						}
-						brCleanUp.close();
+brCleanUp.close();
+						
+						User user = (User) request.getAttribute(WebKeys.USER);
+
+						String userPath = System.getProperty("java.io.tmpdir") + "/users/"
+								+ user.getUserId() + "/";
+						
+						File userPathFile = new File(userPath);
+						
+						if(!userPathFile.exists())
+							userPathFile.exists();
+						
+						MyProxy mp = new MyProxy(RegistrationConfig.getProperties("Registration.properties", "myproxy.storage"), 7512);
+						
+						GSSCredential proxy = mp.get(certificate.getUsernameCert(), pwd1, 608400);
+						
+						log.debug("----- All ok -----");
+						log.debug("Proxy:" + proxy.toString());
+
+						GlobusCredential globusCred = null;
+						globusCred = ((GlobusGSSCredentialImpl) proxy)
+								.getGlobusCredential();
+						log.debug("----- Passo per il istanceof GlobusGSSCredentialImpl");
+						
+						File proxyFile = new File(userPath + "/x509up");
+
+						log.debug("Save proxy file: " + globusCred);
+						OutputStream out = new FileOutputStream(proxyFile);
+						Util.setFilePermissions(proxyFile.toString(), 600);
+						globusCred.save(out);
+						
 					} catch (IOException e1) {
 						allOk = false;
 						errors.add("myproxy-exception");
 						e1.printStackTrace();
+					} catch (RegistrationException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					} catch (MyProxyException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
 					}
 				}
 			}

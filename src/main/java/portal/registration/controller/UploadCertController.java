@@ -309,7 +309,7 @@ public class UploadCertController {
 						log.info("Username: "+usrnm);
 						
 						String[] myproxy2 = {"/usr/bin/python", "/upload_files/myproxy2.py", usrnm, "/upload_files/usercert_" + uid + ".pem", "/upload_files/userkey_" + uid + ".pem", pwd1, pwd1};
-						String[] env = {"GT_PROXY_MODE=old"};
+						String[] env = {"GT_PROXY_MODE=old","X509_USER_CERT=/upload_files/usercert_" + uid + ".pem", "X509_USER_KEY=/upload_files/userkey_" + uid + ".pem"};
 						Process p = Runtime.getRuntime().exec(myproxy2, env, new File("/upload_files"));
 						InputStream stdout = p.getInputStream();
 						InputStream stderr = p.getErrorStream();
@@ -364,7 +364,7 @@ public class UploadCertController {
 							errors.add("no-valid-key");
 						}
 						String[] myproxy3 = {"/usr/bin/python", "/upload_files/myproxy2.py", usrnm+"_rfc", "/upload_files/usercert_" + uid + ".pem", "/upload_files/userkey_" + uid + ".pem", pwd1, pwd1};
-						String[] envRFC = {"GT_PROXY_MODE=rfc"};
+						String[] envRFC = {"GT_PROXY_MODE=rfc","X509_USER_CERT=/upload_files/usercert_" + uid + ".pem", "X509_USER_KEY=/upload_files/userkey_" + uid + ".pem"};
 						p = Runtime.getRuntime().exec(myproxy3 , envRFC, new File("/upload_files"));
 						stdout = p.getInputStream();
 						stderr = p.getErrorStream();
@@ -423,10 +423,46 @@ public class UploadCertController {
 							errors.add("myproxy-error");
 						}
 						brCleanUp.close();
+						
+						User user = (User) request.getAttribute(WebKeys.USER);
+
+						String userPath = System.getProperty("java.io.tmpdir") + "/users/"
+								+ user.getUserId() + "/";
+						
+						File userPathFile = new File(userPath);
+						
+						if(!userPathFile.exists())
+							userPathFile.exists();
+						
+						MyProxy mp = new MyProxy(RegistrationConfig.getProperties("Registration.properties", "myproxy.storage"), 7512);
+						
+						GSSCredential proxy = mp.get(usernameCert, pwd1, 608400);
+						
+						log.debug("----- All ok -----");
+						log.debug("Proxy:" + proxy.toString());
+
+						GlobusCredential globusCred = null;
+						globusCred = ((GlobusGSSCredentialImpl) proxy)
+								.getGlobusCredential();
+						log.debug("----- Passo per il istanceof GlobusGSSCredentialImpl");
+						
+						File proxyFile = new File(userPath + "/x509up");
+
+						log.debug("Save proxy file: " + globusCred);
+						OutputStream out = new FileOutputStream(proxyFile);
+						Util.setFilePermissions(proxyFile.toString(), 600);
+						globusCred.save(out);
+						
 					} catch (IOException e1) {
 						allOk = false;
 						errors.add("myproxy-exception");
 						e1.printStackTrace();
+					} catch (RegistrationException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					} catch (MyProxyException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
 					}
 				}
 			}
@@ -643,8 +679,12 @@ public class UploadCertController {
 
 		String userPath = System.getProperty("java.io.tmpdir") + "/users/"
 				+ user.getUserId() + "/";
+		
+		File userPathFile = new File(userPath);
+		if(!userPathFile.exists());
+			userPathFile.mkdirs();
 
-		log.debug("Move to: " + userPath);
+		log.info("Move to: " + userPath);
 		String[] cmd = new String[] { "/usr/bin/myproxy-destroy", "-s",
 				myproxyHost, "-l",
 				certificateService.findByIdCert(idCert).getUsernameCert() };
@@ -673,9 +713,9 @@ public class UploadCertController {
 //				log.info("ENVP: " + envp[i]);
 		
 		try {
-			String[] envp = {"X509_USER_CERT="+RegistrationConfig.getProperties("Registration.properties", "SSL_CERT_FILE"), "X509_USER_KEY="+RegistrationConfig.getProperties("Registration.properties", "SSL_KEY")};
-			Process p = Runtime.getRuntime()
-					.exec(cmd, envp, new File(userPath));
+//			String[] envp = {"X509_USER_CERT="+RegistrationConfig.getProperties("Registration.properties", "SSL_CERT_FILE"), "X509_USER_KEY="+RegistrationConfig.getProperties("Registration.properties", "SSL_KEY")};
+			String[] envp = {"X509_USER_CERT=x509up", "X509_USER_KEY=x509up"};
+			Process p = Runtime.getRuntime().exec(cmd, envp, userPathFile);
 			InputStream stdout = p.getInputStream();
 			InputStream stderr = p.getErrorStream();
 
@@ -704,11 +744,12 @@ public class UploadCertController {
 		} catch (IOException e1) {
 			SessionErrors.add(request, "error-deleting-certificate");
 			e1.printStackTrace();
-		} catch (RegistrationException e) {
-			e.printStackTrace();
 		}
+//		catch (RegistrationException e) {
+//			e.printStackTrace();
+//		}
 		
-		log.debug("Move to: " + userPath);
+		log.info("Move to: " + userPath);
 		String[] cmd2 = cmd;
 		cmd2[4] = cmd[4]+"_rfc";
 		String allCmd2 = "";
@@ -719,9 +760,9 @@ public class UploadCertController {
 		log.info("myproxy destroy: " + allCmd2);
 
 		try {
-			String[] envp = {"X509_USER_CERT="+RegistrationConfig.getProperties("Registration.properties", "SSL_CERT_FILE"), "X509_USER_KEY="+RegistrationConfig.getProperties("Registration.properties", "SSL_KEY")};
-			Process p = Runtime.getRuntime()
-					.exec(cmd2, envp, new File(userPath));
+//			String[] envp = {"X509_USER_CERT="+RegistrationConfig.getProperties("Registration.properties", "SSL_CERT_FILE"), "X509_USER_KEY="+RegistrationConfig.getProperties("Registration.properties", "SSL_KEY")};
+			String[] envp = {"X509_USER_CERT=x509up", "X509_USER_KEY=x509up"};
+			Process p = Runtime.getRuntime().exec(cmd2, envp, userPathFile);
 			InputStream stdout = p.getInputStream();
 			InputStream stderr = p.getErrorStream();
 
@@ -748,9 +789,72 @@ public class UploadCertController {
 		} catch (IOException e1) {
 			SessionErrors.add(request, "error-deleting-certificate");
 			e1.printStackTrace();
-		} catch (RegistrationException e) {
-			e.printStackTrace();
+		} 
+//		catch (RegistrationException e) {
+//			e.printStackTrace();
+//		}
+		
+		log.info("Move to: " + userPath);
+		String[] cmd3 = new String[] { "/usr/bin/myproxy-destroy", "-s",
+				myproxyHost, "-d" };
+		String allCmd3 = "";
+		for (String string : cmd3) {
+			allCmd3 += string + " ";
 		}
+
+		log.info("myproxy destroy: " + allCmd3);
+
+//		Map<String,String> sysEnv = System.getenv();
+//		
+//		Set<String> list  = sysEnv.keySet();
+//		Iterator<String> iter = list.iterator();
+//		String enviroment = "";			
+//		while(iter.hasNext()) {
+//		     String key = iter.next();
+//		     String value = sysEnv.get(key);
+//		     enviroment +="@@"+key+"="+value;
+//		}
+//		String[] envp = enviroment.split("@@");
+//		
+//		for(int i=0; i<envp.length; i++)
+//				log.info("ENVP: " + envp[i]);
+		
+		try {
+//			String[] envp = {"X509_USER_CERT="+RegistrationConfig.getProperties("Registration.properties", "SSL_CERT_FILE"), "X509_USER_KEY="+RegistrationConfig.getProperties("Registration.properties", "SSL_KEY")};
+			String[] envp = {"X509_USER_PROXY=x509up"};
+			Process p = Runtime.getRuntime().exec(cmd3, envp, userPathFile);
+			InputStream stdout = p.getInputStream();
+			InputStream stderr = p.getErrorStream();
+
+			BufferedReader output = new BufferedReader(new InputStreamReader(
+					stdout));
+			String line = null;
+
+			while ((line = output.readLine()) != null) {
+				log.info("[Stdout] " + line);
+			}
+			output.close();
+
+			
+
+			BufferedReader brCleanUp = new BufferedReader(
+					new InputStreamReader(stderr));
+			while ((line = brCleanUp.readLine()) != null) {
+				log.info("[Stderr] " + line);
+				if (!isWrong)
+					SessionErrors.add(request,
+							"error-deleting-certificate-wrong-proxy");
+//				isWrong = true;
+			}
+			brCleanUp.close();
+
+		} catch (IOException e1) {
+			SessionErrors.add(request, "error-deleting-certificate");
+			e1.printStackTrace();
+		}
+//		catch (RegistrationException e) {
+//			e.printStackTrace();
+//		}
 		
 		if (!isWrong) {
 			log.info("Sto per cancellare il certificato con id = " + idCert);
