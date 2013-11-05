@@ -2,6 +2,9 @@ package it.italiangrid.portal.registration.dirac.server;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
+
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
@@ -25,6 +28,7 @@ public class DiracRegistrationService implements ServletContextListener {
 	 * The executor for the thread management.
 	 */
 	private ExecutorService executor = Executors.newSingleThreadExecutor();
+	private ScheduledExecutorService scheduler  = Executors.newSingleThreadScheduledExecutor();
 
 	/**
 	 * Kill the Dirac Registration thread.
@@ -35,7 +39,7 @@ public class DiracRegistrationService implements ServletContextListener {
 		
 		DiracRegistration.closeConnection();
 		
-		executor.shutdownNow();
+		scheduler.shutdownNow();
 
 	}
 
@@ -46,7 +50,7 @@ public class DiracRegistrationService implements ServletContextListener {
 
 		log.info("Starting of DIRAC registration queue.");
 
-		executor.execute(new DiracRegistration());
+		scheduler.scheduleAtFixedRate(new DiracRegistration(), 0, 10, TimeUnit.SECONDS);
 
 		log.info("DIRAC registration queue Started.");
 

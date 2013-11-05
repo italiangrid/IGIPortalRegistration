@@ -83,50 +83,47 @@ public class DiracRegistration implements Runnable {
 			log.info("Starting Queue Scanner Process.");
 			
 			conn = openConnetion();
-			
-			while (true) {
 
-				if (!queue.isEmpty()) {
-					
-					List<DiracTask> scanList = new ArrayList<DiracTask>(queue);
-					for (DiracTask diracTask : scanList) {
-						switch (diracTask.getOperation()) {
-						case DiracTask.ADD_TASK:
-							log.info("Add task");
-							DiracUtil util = new DiracUtil(diracTask);
-							try {
-								log.info("Adding User: " + diracTask.getDn()
-										+ " in DIRAC.");
-								util.addUser();
-								log.info("Restarting DIRAC Proxy Manager");
-								util.restartProxyManager();
-								log.info("Waiting fo Restarting DIRAC Proxy Manager");
-								Thread.sleep(5000);
-								log.info("Uploading proxies for user: "
-										+ diracTask.getDn());
-								util.uploadCert();
-							} catch (RegistrationException e) {
-								e.printStackTrace();
-							}
-							break;
-						
-						case DiracTask.REMOVE_TASK:
-							log.info("Delete task");
-							removeUser(diracTask);
-							break;
-
-						default: log.info("Operation Not Permided. Removing Task.");
-							
-							break;
+			if (!queue.isEmpty()) {
+				
+				List<DiracTask> scanList = new ArrayList<DiracTask>(queue);
+				for (DiracTask diracTask : scanList) {
+					switch (diracTask.getOperation()) {
+					case DiracTask.ADD_TASK:
+						log.info("Add task");
+						DiracUtil util = new DiracUtil(diracTask);
+						try {
+							log.info("Adding User: " + diracTask.getDn()
+									+ " in DIRAC.");
+							util.addUser();
+							log.info("Restarting DIRAC Proxy Manager");
+							util.restartProxyManager();
+							log.info("Waiting fo Restarting DIRAC Proxy Manager");
+							Thread.sleep(5000);
+							log.info("Uploading proxies for user: "
+									+ diracTask.getDn());
+							util.uploadCert();
+						} catch (RegistrationException e) {
+							e.printStackTrace();
 						}
-						queue.remove(diracTask);
-					}
+						break;
 					
-				} else {
-					log.info("Empty List");
+					case DiracTask.REMOVE_TASK:
+						log.info("Delete task");
+						removeUser(diracTask);
+						break;
+
+					default: log.info("Operation Not Permided. Removing Task.");
+						
+						break;
+					}
+					queue.remove(diracTask);
 				}
-				Thread.sleep(10000);
+				
+			} else {
+				log.info("Empty List");
 			}
+				
 		} catch (Exception e) {
 			e.printStackTrace();
 			closeConnection();
