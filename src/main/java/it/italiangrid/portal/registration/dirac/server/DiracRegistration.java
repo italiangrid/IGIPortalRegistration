@@ -128,9 +128,8 @@ public class DiracRegistration implements Runnable {
 		} catch (Exception e) {
 			e.printStackTrace();
 			closeConnection();
-			return;
 		}
-
+		return;
 	}
 
 	
