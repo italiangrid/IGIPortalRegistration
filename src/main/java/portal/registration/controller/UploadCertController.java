@@ -345,9 +345,15 @@ public class UploadCertController {
 												log.info(line);
 												allOk = false;
 											} else {
-												errors.add("no-valid-key");
-												log.info(line);
-												allOk = false;
+												if (line.equals("CA not supported")) {
+													errors.add("CA-not-supported");
+													log.info(line);
+													allOk = false;
+												} else {
+													errors.add("no-valid-key");
+													log.info(line);
+													allOk = false;
+												}
 											}
 										}
 									}
@@ -400,9 +406,15 @@ public class UploadCertController {
 												log.info(line);
 												allOk = false;
 											} else {
-												errors.add("no-valid-key");
-												log.info(line);
-												allOk = false;
+												if (line.equals("CA not supported")) {
+													errors.add("CA-not-supported");
+													log.info(line);
+													allOk = false;
+												} else {
+													errors.add("no-valid-key");
+													log.info(line);
+													allOk = false;
+												}
 											}
 										}
 									}
@@ -432,7 +444,7 @@ public class UploadCertController {
 						File userPathFile = new File(userPath);
 						
 						if(!userPathFile.exists())
-							userPathFile.exists();
+							userPathFile.mkdirs();
 						
 						MyProxy mp = new MyProxy(RegistrationConfig.getProperties("Registration.properties", "myproxy.storage"), 7512);
 						

@@ -1,6 +1,5 @@
 package it.italiangrid.portal.registration.dirac.server;
 
-import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -27,7 +26,6 @@ public class DiracRegistrationService implements ServletContextListener {
 	/**
 	 * The executor for the thread management.
 	 */
-	private ExecutorService executor = Executors.newSingleThreadExecutor();
 	private ScheduledExecutorService scheduler  = Executors.newSingleThreadScheduledExecutor();
 
 	/**

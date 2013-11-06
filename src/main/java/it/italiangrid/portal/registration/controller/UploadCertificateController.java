@@ -311,7 +311,8 @@ public class UploadCertificateController {
 									lastName += " " + cnParts[i];
 							}
 								
-							String username = firstName + "." + lastName.trim() + ".IGI.IDP";
+							String username = firstName + "." + lastName + ".IGI.IDP";
+							username = username.replaceAll(" ", "");
 							if(!firstName.isEmpty()){
 								userInfo.setFirstName(firstName);
 								registrationModel.setFirstName(firstName);
@@ -335,6 +336,7 @@ public class UploadCertificateController {
 									RegistrationUtil.insertIntoIDP(userInfo, registrationModel);
 									boolean verify = registrationModel.getEmail().isEmpty();
 									log.info("Verify??? " + verify);
+									log.info("UserInfo: " + userInfo);
 									RegistrationUtil.addUserToLiferay(request, userInfo, registrationModel, verify);
 									userInfo=RegistrationUtil.addUserToDB(userInfo, userInfoService, notifyService);
 									log.info("PersistentID: " + userInfo.getPersistentId());
@@ -358,6 +360,8 @@ public class UploadCertificateController {
 										e.printStackTrace();
 									} catch (RegistrationException e) {
 										e.printStackTrace();
+										allOk = false;
+										errors.add(e.getMessage());
 									} catch (NoSuchAlgorithmException e) {
 										e.printStackTrace();
 									}
@@ -367,43 +371,45 @@ public class UploadCertificateController {
 									e.printStackTrace();
 									
 									allOk = false;
-									errors.add("ldap-error");
+									errors.add(e.getMessage());
 								}
 							} else {
 								registrationModel.setVerifyUser(true);
 								goToAddUser = true;
 							}
 						}
+						if(allOk){
 						
-						log.info(registrationModel);
-						
-						log.info("goToAddUser: " + goToAddUser);
-						
-						Certificate cert = new Certificate();
-						cert.setIdCert(0);
-						cert.setUserInfo(null);
-						cert.setCaonline("false");
-						cert.setExpirationDate(date);
-						cert.setIssuer(issuer);
-						cert.setPrimaryCert(primaryCert);
-						cert.setSubject(subject);
-						cert.setUsernameCert(certificateUserId);
-						cert.setPasswordChanged("false");
-						if(!goToAddUser)
-							cert.setUserInfo(userInfoService.findByMail(registrationModel.getEmail()));
-						
-						log.info("@@@@@@@@"+registrationModel);
-						
-						int id = certificateService.save(cert);
-						
-						Certificate cert2 = certificateService.findByIdCert(id);
-						
-						registrationModel.setExpiration(cert2.getExpirationDate().toString());
-
-						if (id != -1) {
-							log.info("inserito il certificato");
-						} else {
-							allOk = false;
+							log.info(registrationModel);
+							
+							log.info("goToAddUser: " + goToAddUser);
+							
+							Certificate cert = new Certificate();
+							cert.setIdCert(0);
+							cert.setUserInfo(null);
+							cert.setCaonline("false");
+							cert.setExpirationDate(date);
+							cert.setIssuer(issuer);
+							cert.setPrimaryCert(primaryCert);
+							cert.setSubject(subject);
+							cert.setUsernameCert(certificateUserId);
+							cert.setPasswordChanged("false");
+							if(!goToAddUser)
+								cert.setUserInfo(userInfoService.findByMail(registrationModel.getEmail()));
+							
+							log.info("@@@@@@@@"+registrationModel);
+							
+							int id = certificateService.save(cert);
+							
+							Certificate cert2 = certificateService.findByIdCert(id);
+							
+							registrationModel.setExpiration(cert2.getExpirationDate().toString());
+	
+							if (id != -1) {
+								log.info("inserito il certificato");
+							} else {
+								allOk = false;
+							}
 						}
 						
 					}
@@ -465,9 +471,15 @@ public class UploadCertificateController {
 												log.info(line);
 												allOk = false;
 											} else {
-												errors.add("no-valid-key");
-												log.info(line);
-												allOk = false;
+												if (line.equals("CA not supported")) {
+													errors.add("CA-not-supported");
+													log.info(line);
+													allOk = false;
+												} else {
+													errors.add("no-valid-key");
+													log.info(line);
+													allOk = false;
+												}
 											}
 										}
 									}
@@ -485,72 +497,85 @@ public class UploadCertificateController {
 						}
 						if (!allOk) {
 							Certificate certificate= certificateService.findBySubject(subject);
-							certificateService.delete(certificate);
+							if(certificate!=null)
+								certificateService.delete(certificate);
 							errors.add("myproxy-error");
+							
+							//se è registrazione con certificato cancellare utente
+							
 						}
 						brCleanUp.close();
 						
-						String[] myproxy3 = {"/usr/bin/python", "/upload_files/myproxy2.py", registrationModel.getCertificateUserId()+"_rfc", "/upload_files/usercert_" + certificateUserId + ".pem", "/upload_files/userkey_" + certificateUserId + ".pem", tmpPwd, myproxyPass};
-						String[] envRFC = {"GT_PROXY_MODE=rfc","X509_USER_CERT=/upload_files/usercert_" + registrationModel.getCertificateUserId() + ".pem", "X509_USER_KEY=/upload_files/userkey_" + registrationModel.getCertificateUserId() + ".pem"};
-						p = Runtime.getRuntime().exec(myproxy3, envRFC, new File("/upload_files"));
-						stdout = p.getInputStream();
-						stderr = p.getErrorStream();
-
-						output = new BufferedReader(
-								new InputStreamReader(stdout));
-						line = null;
-
-						while (((line = output.readLine()) != null)) {
-
-							log.info("[Stdout] " + line);
-							if (line.equals("myproxy success")) {
-								log.info("myproxy ok");
-								pwd += "\n";
-							} else {
-								if (line.equals("myproxy verify password failure")) {
-									errors.add("error-password-mismatch");
-									log.info(line);
-									allOk = false;
+						if(allOk){
+							String[] myproxy3 = {"/usr/bin/python", "/upload_files/myproxy2.py", registrationModel.getCertificateUserId()+"_rfc", "/upload_files/usercert_" + certificateUserId + ".pem", "/upload_files/userkey_" + certificateUserId + ".pem", tmpPwd, myproxyPass};
+							String[] envRFC = {"GT_PROXY_MODE=rfc","X509_USER_CERT=/upload_files/usercert_" + registrationModel.getCertificateUserId() + ".pem", "X509_USER_KEY=/upload_files/userkey_" + registrationModel.getCertificateUserId() + ".pem"};
+							p = Runtime.getRuntime().exec(myproxy3, envRFC, new File("/upload_files"));
+							stdout = p.getInputStream();
+							stderr = p.getErrorStream();
+	
+							output = new BufferedReader(
+									new InputStreamReader(stdout));
+							line = null;
+	
+							while (((line = output.readLine()) != null)) {
+	
+								log.info("[Stdout] " + line);
+								if (line.equals("myproxy success")) {
+									log.info("myproxy ok");
+									pwd += "\n";
 								} else {
-									if (line.equals("myproxy password userkey failure")) {
+									if (line.equals("myproxy verify password failure")) {
 										errors.add("error-password-mismatch");
 										log.info(line);
 										allOk = false;
 									} else {
-										if (line.equals("too short passphrase")) {
-											errors.add("error-password-too-short");
+										if (line.equals("myproxy password userkey failure")) {
+											errors.add("error-password-mismatch");
 											log.info(line);
 											allOk = false;
 										} else {
-											if (line.equals("key password failure")) {
-												errors.add("key-password-failure");
+											if (line.equals("too short passphrase")) {
+												errors.add("error-password-too-short");
 												log.info(line);
 												allOk = false;
 											} else {
-												errors.add("no-valid-key");
-												log.info(line);
-												allOk = false;
+												if (line.equals("key password failure")) {
+													errors.add("key-password-failure");
+													log.info(line);
+													allOk = false;
+												} else {
+													if (line.equals("CA not supported")) {
+														errors.add("CA-not-supported");
+														log.info(line);
+														allOk = false;
+													} else {
+														errors.add("no-valid-key");
+														log.info(line);
+														allOk = false;
+													}
+												}
 											}
 										}
 									}
 								}
 							}
+							output.close();
+							
+	
+							brCleanUp = new BufferedReader(
+									new InputStreamReader(stderr));
+							while ((line = brCleanUp.readLine()) != null) {
+								allOk = false;
+								log.error("[Stderr] " + line);
+								errors.add("no-valid-key");
+							}
+							if (!allOk) {
+								Certificate certificate= certificateService.findBySubject(subject);
+								certificateService.delete(certificate);
+								errors.add("myproxy-error");
+							}
+							brCleanUp.close();
 						}
-						output.close();
-
-						brCleanUp = new BufferedReader(
-								new InputStreamReader(stderr));
-						while ((line = brCleanUp.readLine()) != null) {
-							allOk = false;
-							log.error("[Stderr] " + line);
-							errors.add("no-valid-key");
-						}
-						if (!allOk) {
-							Certificate certificate= certificateService.findBySubject(subject);
-							certificateService.delete(certificate);
-							errors.add("myproxy-error");
-						}
-						brCleanUp.close();
 					} catch (IOException e1) {
 						allOk = false;
 						errors.add("myproxy-exception");

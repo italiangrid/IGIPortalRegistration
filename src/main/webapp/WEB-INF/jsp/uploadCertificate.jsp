@@ -235,8 +235,11 @@ h5#usernameAlert {
 			message="key-password-failure" />
 		<liferay-ui:error key="ldap-error"
 			message="ldap-error" />		
-				
-				
+		<liferay-ui:error key="user-liferay-problem"
+			message="user-liferay-problem" />
+		<liferay-ui:error key="CA-not-supported"
+			message="CA-not-supported" />	
+		
 		
 			<aui:fieldset>
 			<p style="font-size: 15px; padding-left: 30px;">Please upload your certificate (.p12 or pfx format) and insert the password used to encrypt it.</p>

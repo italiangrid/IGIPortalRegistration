@@ -330,7 +330,7 @@ public class RegistrationUtil {
 		} catch (NamingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			throw new RegistrationException("ldap-error");
+//			throw new RegistrationException("ldap-error");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

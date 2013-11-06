@@ -29,7 +29,7 @@ public class DiracRegistration implements Runnable {
 	 * Class logger.
 	 */
 	private static final Logger log = Logger
-			.getLogger(DiracRegistrationService.class);
+			.getLogger(DiracRegistration.class);
 
 	/**
 	 * Queue of DiracTask.
@@ -82,9 +82,10 @@ public class DiracRegistration implements Runnable {
 		try {
 			log.info("Starting Queue Scanner Process.");
 			
-			conn = openConnetion();
-
 			if (!queue.isEmpty()) {
+				
+				if(conn==null || conn.isClosed())
+					conn = openConnetion();
 				
 				List<DiracTask> scanList = new ArrayList<DiracTask>(queue);
 				for (DiracTask diracTask : scanList) {
