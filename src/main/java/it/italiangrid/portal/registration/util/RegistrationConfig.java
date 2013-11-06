@@ -17,9 +17,9 @@ public class RegistrationConfig {
 		String contextPath = RegistrationConfig.class.getClassLoader()
 				.getResource("").getPath();
 		File test = new File(contextPath + "/content/" + file);
-		log.info("File: " + test.getAbsolutePath());
+		log.debug("File: " + test.getAbsolutePath());
 		if (test.exists()) {
-			log.info("ESISTE!!");
+			log.debug("ESISTE!!");
 			try {
 				FileInputStream inStream = new FileInputStream(contextPath
 						+ "/content/" + file);

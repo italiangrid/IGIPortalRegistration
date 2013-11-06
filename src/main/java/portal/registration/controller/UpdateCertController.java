@@ -132,7 +132,7 @@ public class UpdateCertController {
 								pwd = value;
 							if (name.equals(ns + "primaryCert"))
 								primaryCert = value;
-							log.info("param; name=" + name + ", value=" + value);
+							log.info("param; name=" + name + ", value= *******");
 						} else if (part.isFile()) {
 							// it's a file part
 							FilePart filePart = (FilePart) part;
