@@ -51,6 +51,14 @@
                <enabled>false</enabled>
            </snapshots>
        </repository>
+       <repository>
+           <id>jglobus</id>
+           <name>jglobus</name>
+           <url>http://commonsvfsgrid.sourceforge.net/maven/external/</url>
+           <snapshots>
+               <enabled>false</enabled>
+           </snapshots>
+       </repository>
 	</repositories>
 	<dependencies>
 		<dependency>
