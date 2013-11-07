@@ -39,8 +39,10 @@ public class DiracTaskController {
 		log.info(addtask);
 
 		DiracRegistration.addDiracTask(addtask);
+		
+		log.debug("Task added: " + addtask);
 
-		return "Saved addtask: " + addtask;
+		return "Task successfully added.";
 	}
 
 }

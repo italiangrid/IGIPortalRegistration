@@ -55,7 +55,7 @@ public class DiracRegistration implements Runnable {
 	 *            - the task to add.
 	 */
 	public static void addDiracTask(DiracTask diracTask) {
-		log.debug("Adding Task do DIRAC Queue");
+		log.info("Adding Task do DIRAC Queue");
 
 		for (DiracTask dt : queue) {
 			if (dt.equals(diracTask)) {
@@ -64,12 +64,12 @@ public class DiracRegistration implements Runnable {
 		}
 
 		if (queue.add(diracTask)) {
-			log.debug("Task Successfully Added");
+			log.info("Task Successfully Added");
 		} else {
 			log.error("Task Not Added ");
 		}
 
-		log.info(queue);
+		log.debug(queue);
 	}
 
 	/**
@@ -80,7 +80,7 @@ public class DiracRegistration implements Runnable {
 	 */
 	public void run() {
 		try {
-			log.debug("Starting Queue Scanner Process.");
+			log.info("Starting Queue Scanner Process.");
 			
 			if (!queue.isEmpty()) {
 				
@@ -122,7 +122,7 @@ public class DiracRegistration implements Runnable {
 				}
 				
 			} else {
-				log.debug("Empty List");
+				log.info("Empty List");
 			}
 				
 		} catch (Exception e) {

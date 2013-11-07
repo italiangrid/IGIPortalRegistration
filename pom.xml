@@ -32,19 +32,6 @@
 					<target>1.5</target>
 				</configuration>
 			</plugin>
-			<!-- <plugin>
-			  <groupId>org.zeroturnaround</groupId>
-			  <artifactId>jrebel-maven-plugin</artifactId>
-			  <executions>
-			    <execution>
-			      <id>generate-rebel-xml</id>
-			      <phase>process-resources</phase>
-			      <goals>
-			        <goal>generate</goal>
-			      </goals>
-			    </execution>
-			  </executions>
-			</plugin> -->
 		</plugins>
 	</build>
 	<repositories>
@@ -56,17 +43,14 @@
                <enabled>false</enabled>
            </snapshots>
        </repository>
-       
        <repository>
            <id>radiohead</id>
            <name>Test</name>
-           <url>http://radiohead.cnaf.infn.it:9999/mvn/</url>
+           <url>http://radiohead.cnaf.infn.it:8081/nexus/content/groups/public/</url>
            <snapshots>
                <enabled>false</enabled>
            </snapshots>
        </repository>
-       
-       
 	</repositories>
 	<dependencies>
 		<dependency>
@@ -80,7 +64,6 @@
 			<artifactId>util-bridges</artifactId>
 			<version>${liferay.version}</version>
 		</dependency>
-		
 		<dependency>
 			<groupId>com.liferay.portal</groupId>
 			<artifactId>util-taglib</artifactId>
@@ -103,87 +86,15 @@
 			<version>2.4</version>
 			<scope>provided</scope>
 		</dependency>
-		<dependency>
+	  	<dependency>
 			<groupId>javax.servlet.jsp</groupId>
 			<artifactId>jsp-api</artifactId>
 			<version>2.0</version>
 			<scope>provided</scope>
 		</dependency>
-		<dependency>
-		    <groupId>javax.faces</groupId>
-		    <artifactId>jsf-api</artifactId>
-		    <version>1.2_02</version>
-		</dependency>
-		<dependency>
-	  		<groupId>junit</groupId>
-	  		<artifactId>junit</artifactId>
-	  		<version>4.8.1</version>
-	  		<type>jar</type>
-	  		<scope>compile</scope>
-	  	</dependency>
-	  	<dependency>
-	    	<groupId>org.springframework</groupId>
-	    	<artifactId>spring-web</artifactId>
-	    	<version>3.2.2.RELEASE</version>
-	    	<type>jar</type>
-	    	<scope>compile</scope>
-	    </dependency>
-	    <dependency>
-	    	<groupId>org.springframework</groupId>
-	    	<artifactId>spring-core</artifactId>
-	    	<version>3.2.2.RELEASE</version>
-	    	<type>jar</type>
-	    	<scope>compile</scope>
-	    	<exclusions>
-	    		<exclusion>
-	    			<artifactId>commons-logging</artifactId>
-	    			<groupId>commons-logging</groupId>
-	    		</exclusion>
-	    	</exclusions>
-	    </dependency>
-	    <dependency>
-	    	<groupId>log4j</groupId>
-	    	<artifactId>log4j</artifactId>
-	    	<version>1.2.16</version>
-	    	<type>jar</type>
-	    	<scope>compile</scope>
-	    </dependency>
-	    <dependency>
-	    	<groupId>org.springframework</groupId>
-	    	<artifactId>spring-tx</artifactId>
-	    	<version>3.2.2.RELEASE</version>
-	    	<type>jar</type>
-	    	<scope>compile</scope>
-	    </dependency>
-	    <dependency>
-		    <groupId>org.springframework</groupId>
-		    <artifactId>spring-hibernate3</artifactId>
-		    <version>2.0.8</version>
-		</dependency>
-	    <dependency>
-	    	<groupId>jstl</groupId>
-	    	<artifactId>jstl</artifactId>
-	    	<version>1.1.2</version>
-	    	<type>jar</type>
-	    	<scope>compile</scope>
-	    </dependency>
-	    <dependency>
-	    	<groupId>taglibs</groupId>
-	    	<artifactId>standard</artifactId>
-	    	<version>1.1.2</version>
-	    	<type>jar</type>
-	    	<scope>compile</scope>
-	    </dependency>
 	    <dependency>
 	    	<groupId>org.springframework</groupId>
 	    	<artifactId>spring-webmvc</artifactId>
-	    	<version>3.2.2.RELEASE</version>
-	    	<type>jar</type>
-	    	<scope>compile</scope>
-	    </dependency>
-	    <dependency>
-	    	<groupId>org.springframework</groupId>
-	    	<artifactId>spring-aop</artifactId>
 	    	<version>3.2.2.RELEASE</version>
 	    	<type>jar</type>
 	    	<scope>compile</scope>
@@ -195,93 +106,18 @@
 		    <type>jar</type>
 	    	<scope>compile</scope>
 		</dependency>
-	    <dependency>
-	    	<groupId>commons-digester</groupId>
-	    	<artifactId>commons-digester</artifactId>
-	    	<version>2.1</version>
-	    	<type>jar</type>
-	    	<scope>compile</scope>
-	    </dependency>
-	    <dependency>
-	    	<groupId>commons-collections</groupId>
-	    	<artifactId>commons-collections</artifactId>
-	    	<version>3.2.1</version>
-	    	<type>jar</type>
-	    	<scope>compile</scope>
-	    </dependency>
-	    <!-- <dependency>
-	    	<groupId>org.hibernate</groupId>
-	    	<artifactId>hibernate-core</artifactId>
-	    	<version>3.3.2.GA</version>
-	    	<type>jar</type>
-	    	<scope>compile</scope>
-	    </dependency>
-	    <dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-validator</artifactId>
-			<version>4.0.0.GA</version>
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-hibernate3</artifactId>
+		    <version>2.0.8</version>
 		</dependency>
 		<dependency>
-		    <groupId>org.hibernate</groupId>
-		    <artifactId>hibernate-entitymanager</artifactId>
-		    <version>3.3.2.GA</version>
-		</dependency>  -->
-	    <dependency>
-	    	<groupId>javax.persistence</groupId>
-	    	<artifactId>persistence-api</artifactId>
-	    	<version>1.0</version>
+	    	<groupId>jstl</groupId>
+	    	<artifactId>jstl</artifactId>
+	    	<version>1.2</version>
 	    	<type>jar</type>
 	    	<scope>compile</scope>
 	    </dependency>
-	    <!-- <dependency>
-	    	<groupId>c3p0</groupId>
-	    	<artifactId>c3p0</artifactId>
-	    	<version>0.9.1.2</version>
-	    	<type>jar</type>
-	    	<scope>compile</scope>
-	    </dependency> -->
-	    <dependency>
-	    	<groupId>org.springframework</groupId>
-	    	<artifactId>spring-orm</artifactId>
-	    	<version>3.2.2.RELEASE</version>
-	    	<type>jar</type>
-	    	<scope>compile</scope>
-	    </dependency>
-	    <dependency>
-	    	<groupId>org.slf4j</groupId>
-	    	<artifactId>slf4j-api</artifactId>
-	    	<version>1.6.1</version>
-	    	<type>jar</type>
-	    	<scope>compile</scope>
-	    </dependency>
-	    <dependency>
-	    	<groupId>org.slf4j</groupId>
-	    	<artifactId>slf4j-log4j12</artifactId>
-	    	<version>1.6.1</version>
-	    	<type>jar</type>
-	    	<scope>compile</scope>
-	    </dependency>
-	    <dependency>
-	    	<groupId>cglib</groupId>
-	    	<artifactId>cglib-nodep</artifactId>
-	    	<version>2.2</version>
-	    	<type>jar</type>
-	    	<scope>compile</scope>
-	    </dependency>
-	    <!-- <dependency>
-	    	<groupId>org.hibernate</groupId>
-	    	<artifactId>hibernate-annotations</artifactId>
-	    	<version>3.4.0.GA</version>
-	    	<type>jar</type>
-	    	<scope>compile</scope>
-	    </dependency>
-	    <dependency>
-	    	<groupId>mysql</groupId>
-	    	<artifactId>mysql-connector-java</artifactId>
-	    	<version>5.1.16</version>
-	    	<type>jar</type>
-	    	<scope>provided</scope>
-	    </dependency> -->
 		<dependency>
 		    <groupId>commons-fileupload</groupId>
 		    <artifactId>commons-fileupload</artifactId>
@@ -302,21 +138,21 @@
            <artifactId>axis-jaxrpc</artifactId>
            <version>${axis-version}</version>
        </dependency>
-      <dependency>
-           <groupId>org.glite.security</groupId>
-			<artifactId>trustmanager</artifactId>
-			<version>2.0.6</version>
-       </dependency>
-       <dependency>
-       		<groupId>org.glite.security</groupId>
-			<artifactId>util-java</artifactId>
-			<version>2.0.3</version>
-       </dependency>
        <dependency>
            <groupId>emi</groupId>
            <artifactId>trustmanager-axis</artifactId>
            <version>1.0.0</version>
-       </dependency> 
+       </dependency>
+       <dependency>
+           <groupId>org.glite.security</groupId>
+           <artifactId>trustmanager</artifactId>
+           <version>2.5.5</version>
+       </dependency>
+       <dependency>
+		   <groupId>org.glite.security</groupId>
+           <artifactId>util-java</artifactId>
+           <version>2.8.6</version>
+       </dependency>
        <dependency>
            <groupId>org.bouncycastle</groupId>
            <artifactId>bcprov-jdk15</artifactId>
@@ -328,59 +164,21 @@
 			<artifactId>commons-lang3</artifactId>
 			<version>3.1</version>
 		</dependency>
-		
 		<dependency>
 	    	<groupId>it.italiangrid.portal</groupId>
 	    	<artifactId>db-api</artifactId>
 	    	<version>0.0.1</version>
 	    </dependency>
-	    
 	    <dependency>
 			<groupId>cog-jglobus</groupId>
 			<artifactId>cog-jglobus</artifactId>
 			<version>1.8.0</version>
 			<scope>compile</scope>
 		</dependency>
-       
-       <!-- <dependency>
-    		<groupId>org.bouncycastle</groupId>
-    		<artifactId>bcprov-jdk14</artifactId>
-    		<version>1.46</version>
-		</dependency> -->
-		
-		<dependency>
-			<groupId>cog-jglobus</groupId>
-			<artifactId>cog-jglobus</artifactId>
-			<version>1.8.0</version>
-			<scope>compile</scope>
-		</dependency>
-
-
-
-		<!-- <dependency>
-			<groupId>com.liferay.portal</groupId>
-			<artifactId>portal-impl</artifactId>
-			<version>6.1.0</version>
-		</dependency>
-		<dependency>
-			<groupId>easyconf</groupId>
-			<artifactId>easyconf</artifactId>
-			<version>0.9.5</version>
-		</dependency>
-		<dependency>
-			<groupId>commons-codec</groupId>
-			<artifactId>commons-codec</artifactId>
-			<version>1.6</version>
-		</dependency> -->
 		<dependency>
 			<groupId>org.jdom</groupId>
 			<artifactId>jdom</artifactId>
 			<version>2.0.2</version>
-		</dependency>
-		<dependency>
-			<groupId>org.jasig.cas</groupId>
-			<artifactId>cas-client-core</artifactId>
-			<version>3.1.5</version>
 		</dependency>
 		<dependency>
 			<groupId>javax.mail</groupId>
