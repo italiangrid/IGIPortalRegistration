@@ -12,6 +12,8 @@ import it.italiangrid.portal.registration.exception.RegistrationException;
 import it.italiangrid.portal.registration.model.RegistrationModel;
 import it.italiangrid.portal.registration.util.CookieUtil;
 import it.italiangrid.portal.registration.util.RegistrationConfig;
+import it.italiangrid.portal.registration.util.RegistrationUtil;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -42,6 +44,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.portlet.bind.annotation.ActionMapping;
 import org.springframework.web.portlet.bind.annotation.RenderMapping;
+
+import portal.registration.utils.SendMail;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
@@ -95,15 +99,11 @@ public class UploadProxyController {
 	
 	@ModelAttribute("selectedVos")
 	public List<Vo> getSelectedVo(@ModelAttribute RegistrationModel registrationModel){
- 
-		//RegistrationModel registrationModel = (RegistrationModel) request.getAttribute("registrationModel");
 		
 		List<Vo> result = new ArrayList<Vo>();
 		if(!registrationModel.getVos().isEmpty())
 			for(String id : registrationModel.getVos().split("#"))
 				result.add(voService.findById(Integer.parseInt(id)));
-		
-		//request.setAttribute("registrationModel", registrationModel);
 		
 		return result;
 	}
@@ -135,32 +135,41 @@ public class UploadProxyController {
 				if(cert.getUserInfo()==null){
 					log.info("Erase cert!!!!!");
 					certificateService.delete(cert);
-//					response.setRenderParameter("myaction", "home");
-//					sessionStatus.setComplete();
 					try {
 						response.sendRedirect(RegistrationConfig.getProperties("Registration.properties", "home.url"));
 					} catch (IOException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					} catch (RegistrationException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 					
 				}else{
+					
+					try {
+						String from = RegistrationConfig.getProperties("Registration.properties", "igiportal.mail");
+						String mailSubject = "[IGP - IGI Grid Portal] Authentication Instructions";
+						String mailContent = RegistrationUtil.readFile(RegistrationConfig.getProperties("Registration.properties", "authentication.mail.template"));
+						boolean isHtml = true;
+						mailContent = mailContent.replaceAll("##USER##", registrationModel.getFirstName());
+						mailContent = mailContent.replaceAll("##HOST##", RegistrationConfig.getProperties("Registration.properties", "home.url"));
+						
+						SendMail sm = new SendMail(from, registrationModel.getEmail(), mailSubject, mailContent, isHtml);
+						sm.send();
+					} catch (RegistrationException e) {
+						e.printStackTrace();
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
+					
 					response.setRenderParameter("myaction", "showAuthentication");
 				}
 			}else{
 				log.info("no cert");
-//				response.setRenderParameter("myaction", "home");
-//				sessionStatus.setComplete();
 				try {
 					response.sendRedirect(RegistrationConfig.getProperties("Registration.properties", "home.url"));
 				} catch (IOException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				} catch (RegistrationException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}
@@ -180,10 +189,6 @@ public class UploadProxyController {
 		ArrayList<String> errors = new ArrayList<String>();
 		boolean allOk = true;
 
-		
-		
-		
-		
 		String pwd1 = request.getParameter("password");
 		String pwd2 = request.getParameter("passwordVerify");
 		
@@ -196,7 +201,6 @@ public class UploadProxyController {
 					try {
 						
 						MyProxy mp = new MyProxy(RegistrationConfig.getProperties("Registration.properties", "myproxy.storage"), 7512);
-//						UserInfo userInfo =userInfoService.findByMail(registrationModel.getEmail());
 						Long companyId = PortalUtil.getCompanyId(request);
 						User user = UserLocalServiceUtil.getUserByEmailAddress(companyId, registrationModel.getEmail());
 
@@ -213,38 +217,29 @@ public class UploadProxyController {
 						File proxyFile = new File(dir + "/users/" + user.getUserId()
 								+ "/x509up");
 						
-						
-						
 						String tmpPwd ="";
 						
 						
-							byte[] bytesOfMessage;
-							
-//							if(registrationModel.isHaveIDP()){
-								
-								UserInfo userInfo = userInfoService.findByMail(registrationModel.getEmail());
-								bytesOfMessage = (userInfo.getPersistentId() + RegistrationConfig.getProperties("Registration.properties", "proxy.secret")).getBytes("UTF-8");
-								
-//							} else {
-//								bytesOfMessage = ("blablabla"+ RegistrationConfig.getProperties("Registration.properties", "proxy.secret")).getBytes("UTF-8");
-//							}
-							
-							MessageDigest md = MessageDigest.getInstance("MD5");
-							byte[] thedigest = md.digest(bytesOfMessage);
-							
-							Formatter formatter = new Formatter();
-						    for (byte b : thedigest)
-						    {
-						        formatter.format("%02x", b);
-						    }
-						    tmpPwd = formatter.toString();
-						    formatter.close();
-							
-//							tmpPwd = new String(thedigest);
-							
-							log.info("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
-							log.info(tmpPwd);
-							log.info("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+						byte[] bytesOfMessage;
+						
+						UserInfo userInfo = userInfoService.findByMail(registrationModel.getEmail());
+						bytesOfMessage = (userInfo.getPersistentId() + RegistrationConfig.getProperties("Registration.properties", "proxy.secret")).getBytes("UTF-8");
+						
+						
+						MessageDigest md = MessageDigest.getInstance("MD5");
+						byte[] thedigest = md.digest(bytesOfMessage);
+						
+						Formatter formatter = new Formatter();
+					    for (byte b : thedigest)
+					    {
+					        formatter.format("%02x", b);
+					    }
+					    tmpPwd = formatter.toString();
+					    formatter.close();
+						
+						log.info("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+						log.info(tmpPwd);
+						log.info("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
 						
 						GSSCredential proxy = mp.get(registrationModel.getCertificateUserId(), tmpPwd, 608400);
 						
@@ -260,18 +255,6 @@ public class UploadProxyController {
 						out = new FileOutputStream(proxyFile);
 						Util.setFilePermissions(proxyFile.toString(), 600);
 						globusCred.save(out);
-						
-
-						
-//						String myproxy = "/usr/bin/python /upload_files/myproxy2.py "
-//								+ registrationModel.getCertificateUserId()
-//								+ " "
-//								+ proxyFile.toString()
-//								+ " "
-//								+ proxyFile.toString()
-//								+ " \""
-//								+ pwd1 + "\" \"" + pwd1+"\"";
-//						log.error("Myproxy command = " + myproxy);
 						
 						String[] myproxy2 = {"/usr/bin/python", "/upload_files/myproxy3-change.py", RegistrationConfig.getProperties("Registration.properties", "myproxy.storage"), cert.getUsernameCert(), tmpPwd, pwd1};
 						Process p = Runtime.getRuntime().exec(myproxy2, null, location);
@@ -393,32 +376,12 @@ public class UploadProxyController {
 			
 			log.info("€€€€€€€€€€€€€€€€€€€€€€€€€€€€€"+c.getPasswordChanged());
 			
-			
-			/*
-			 * If all the registration step is completed
-			 * 1 set Job status notificatio enabled
-			 * 2 set PowerUser permissions
-			 * 3 get proxy for the default VO
-			 */
-			
 			long companyId = PortalUtil.getCompanyId(request);
 			
 			try {
 				User user = UserLocalServiceUtil.getUserByEmailAddress(companyId,
 						registrationModel.getEmail());
 				
-				/* 1 */
-				
-//				GuseNotifyUtil guseNotifyUtil = new GuseNotifyUtil();
-//				GuseNotify guseNotify = new GuseNotify(registrationModel.getFirstName());
-//				
-//				guseNotify.setWfchgEnab("1");
-//				guseNotify.setEmailEnab("1");
-//				guseNotify.setQuotaEnab("0");
-//				
-//				guseNotifyUtil.writeNotifyXML(user, guseNotify);
-				
-				/* 2 */
 				if(registrationModel.isVoStatus()){
 					Role rolePowerUser = RoleLocalServiceUtil.getRole(companyId,
 							"Power User");
@@ -438,7 +401,6 @@ public class UploadProxyController {
 	
 					UserLocalServiceUtil.setRoleUsers(rolePowerUser.getRoleId(), users);
 					
-					/* 3 */
 					UserInfo userInfo = userInfoService.findByMail(registrationModel.getEmail());
 					String selectedVo = userToVoService.findDefaultVo(userInfo.getUserId());
 					if(selectedVo!=null){
@@ -450,12 +412,8 @@ public class UploadProxyController {
 			} catch (SystemException e) {
 				e.printStackTrace();
 			} catch (RegistrationException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}	
-			
-			
-			
 			
 			try {
 				URL url;
@@ -475,6 +433,23 @@ public class UploadProxyController {
 					CookieUtil.setCookieSession("JSESSIONID", "", response);
 					response.sendRedirect(url.toString());
 				}else{
+					
+					try {
+						String from = RegistrationConfig.getProperties("Registration.properties", "igiportal.mail");
+						String mailSubject = "[IGP - IGI Grid Portal] Authentication Instructions";
+						String mailContent = RegistrationUtil.readFile(RegistrationConfig.getProperties("Registration.properties", "authentication.mail.template"));
+						boolean isHtml = true;
+						mailContent = mailContent.replaceAll("##USER##", registrationModel.getFirstName());
+						mailContent = mailContent.replaceAll("##HOST##", RegistrationConfig.getProperties("Registration.properties", "home.url"));
+						
+						SendMail sm = new SendMail(from, registrationModel.getEmail(), mailSubject, mailContent, isHtml);
+						sm.send();
+					} catch (RegistrationException e) {
+						e.printStackTrace();
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
+					
 					response.setRenderParameter("myaction", "showAuthentication");
 				}
 			} catch (IOException e) {
@@ -483,8 +458,6 @@ public class UploadProxyController {
 				e.printStackTrace();
 			}
 			
-			
-
 		} else {
 
 			log.info("Trovato errori");
@@ -510,20 +483,7 @@ public class UploadProxyController {
 	private void myVomsProxyInit(User user, String voms, String role, String valid, ActionRequest request){
 		try {
 			
-//			String contextPath = UploadProxyController.class.getClassLoader().getResource("").getPath();
-//			
-//			log.debug("dove sono:" + contextPath);
-//			
-//			FileInputStream inStream =
-//		    new FileInputStream(contextPath + "/content/MyProxy.properties");
-//
-//			Properties prop = new Properties();
-//			prop.load(inStream);
-//			inStream.close();
-//			
 			String cloudVo = RegistrationConfig.getProperties("Registration.properties", "cloud.vo");
-//			
-//			User user = (User) request.getAttribute(WebKeys.USER);
 
 			String dir = System.getProperty("java.io.tmpdir");
 			log.debug("Directory = " + dir);
@@ -553,19 +513,14 @@ public class UploadProxyController {
 				log.debug("[Stdout] " + line);
 			}
 			output.close();
-			
-			//boolean error = false;
 
 			BufferedReader brCleanUp = new BufferedReader(
 					new InputStreamReader(stderr));
 			while ((line = brCleanUp.readLine()) != null) {
-				//error= true;
 				if(!line.contains("....")){
 					log.error("[Stderr] " + line);
 				}
 			}
-			/*if(error)
-				SessionErrors.add(request, "voms-proxy-init-problem");*/
 			brCleanUp.close();
 			
 
@@ -574,7 +529,6 @@ public class UploadProxyController {
 			SessionErrors.add(request, "voms-proxy-init-exception");
 			e.printStackTrace();
 		} catch (RegistrationException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
