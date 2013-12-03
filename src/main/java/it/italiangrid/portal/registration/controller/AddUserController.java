@@ -52,6 +52,8 @@ import com.liferay.portal.model.User;
 import com.liferay.portal.service.UserLocalServiceUtil;
 import com.liferay.portal.util.PortalUtil;
 
+import portal.registration.utils.GuseNotify;
+import portal.registration.utils.GuseNotifyUtil;
 import portal.registration.utils.MyValidator;
 
 @Controller(value = "addUserController")
@@ -119,7 +121,7 @@ public class AddUserController {
 		        	break;
 		        case 5:
 	//	        	mail
-		        	userInfo.setMail(request.getParameter(name).replaceAll("%20", " "));
+		        	userInfo.setMail(request.getParameter(name).replaceAll("%20", " ").toLowerCase());
 		        	registrationModel.setEmail(userInfo.getMail());
 		        	break;
 		        case 6:
@@ -509,6 +511,23 @@ private String addUser(UserInfo userInfo, RegistrationModel registrationModel, R
 			
 			//AddUser into DB
 			userInfo=RegistrationUtil.addUserToDB(userInfo, userInfoService, notifyService);
+			
+			long companyId = PortalUtil.getCompanyId(request);
+			
+			User user = UserLocalServiceUtil.getUserByEmailAddress(companyId,
+					registrationModel.getEmail());
+			
+			/* 1 */
+			
+			GuseNotifyUtil guseNotifyUtil = new GuseNotifyUtil();
+			GuseNotify guseNotify = new GuseNotify(registrationModel.getFirstName());
+			
+			guseNotify.setWfchgEnab("1");
+			guseNotify.setEmailEnab("1");
+			guseNotify.setQuotaEnab("0");
+			
+			guseNotifyUtil.writeNotifyXML(user, guseNotify);
+			
 			if(RegistrationConfig.getProperties("Registration.properties", "CAOnline.enabled").equals("false")&&RegistrationConfig.getProperties("Registration.properties", "proxy.enabled").equals("false"))
 				return "uploadCertificate";
 			return "askForCertificate";
@@ -516,6 +535,12 @@ private String addUser(UserInfo userInfo, RegistrationModel registrationModel, R
 		}catch(RegistrationException e){
 			e.printStackTrace();
 			SessionErrors.add(request, e.getMessage());
+		} catch (PortalException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SystemException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		
 		return "addUserForm";

@@ -1,0 +1,15 @@
+<html>
+	<head></head>
+	<body>
+	<div style=background-color:white;margin-left:auto;margin-right:auto;margin-top:10px;margin-top:15px;margin-bottom:15px;>
+			<div style=padding-left:10px;padding-top:10px;><a href='https://portal.italiangrid.it'><img src='http://portal-se.cnaf.infn.it/ajp/plugins/access.lfc/logo.png' width='80px' height='40px' alt='' /></a></div> 
+			<div style=margin-top:10px;margin-bottom:10px;color:black;padding-left:10px;padding-right:10px;>
+				<p>Dear ##USER##<br/><br/>as IGI Portal user we inform you that your certificate with subject:<br/><br/>&nbsp&nbsp&nbsp&nbsp<strong>##SUBJECT##</strong><br/><br/>will expire in ##DAYS## days.<br/><br/>If you don't upload your new certificate, you can't use the portal.<br/><br/>Please as soon as you have a new certificate go to "My Data" page and in "My Certificate" section click on "Actions" - "Update" and upload the new certificate.<br/><br/>##HOME##<br/><br/>Thanks and best regards,<br/>&nbsp&nbsp&nbsp&nbspPortal Administrators.
+				<p/>
+			</div>
+			<div style=margin-top:20px;margin-bottom:20px;color:black;padding-left:10px;padding-right:10px;>
+		        Need assistance? Replay this mail to <a tabindex='120' href='mailto:igi-portal-admin@lists.italiangrid.it'>Administrators</a>.
+		    </div>
+	</div>
+	</body>
+</html>

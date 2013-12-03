@@ -1,0 +1,12 @@
+<html>
+	<head></head>
+	<body>
+	<div style=background-color:white;margin-left:auto;margin-right:auto;margin-top:10px;margin-top:15px;margin-bottom:15px;>
+			<div style=padding-left:10px;padding-top:10px;><a href='https://portal.italiangrid.it'><img src='http://portal-se.cnaf.infn.it/ajp/plugins/access.lfc/logo.png' width='80px' height='40px' alt='' /></a></div> 
+			<div style=margin-top:10px;margin-bottom:10px;color:black;padding-left:10px;padding-right:10px;>
+				<p>Dear Portal Admins,<br/><br/>please configure the ##VO## VO on ##HOST##.<br/><br/>##USER##
+				<p/>
+			</div>
+	</div>
+	</body>
+</html>

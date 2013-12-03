@@ -345,6 +345,14 @@
 		return check;
 	}
 	
+	
+	$(document).ready(function() {
+		
+		document.closeFrame = function(){  
+			window.location.href='${usePortalURL}';
+		};
+	});
+	
 </script>
 
 
@@ -1458,6 +1466,7 @@ div.function {
 									value="${notification.wfchgEnab }" />
 								<div id="jqxButton2"></div>
 								</aui:fieldset>
+								<div style="display: none;">
 								<aui:fieldset label="e-Mail configuration"> 
 								<aui:input name="emailAddr" type="hidden"
 									value="${notification.emailAddr }" />
@@ -1495,6 +1504,7 @@ div.function {
 								
 								
 							</aui:fieldset>
+							</div>
 						
 					</aui:column>
 

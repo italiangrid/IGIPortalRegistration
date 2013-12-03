@@ -1,5 +1,6 @@
 package it.italiangrid.portal.registration.controller;
 
+import java.io.IOException;
 import java.util.List;
 
 import it.italiangrid.portal.dbapi.domain.UserInfo;
@@ -10,6 +11,8 @@ import it.italiangrid.portal.dbapi.services.VoService;
 import it.italiangrid.portal.registration.exception.RegistrationException;
 import it.italiangrid.portal.registration.model.RegistrationModel;
 import it.italiangrid.portal.registration.util.RegistrationConfig;
+import it.italiangrid.portal.registration.util.RegistrationUtil;
+
 import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
 import javax.portlet.PortletConfig;
@@ -66,7 +69,21 @@ public class AddVOActionController {
 					SessionMessages.add(request, "vo-not-configurated");
 					
 					try {
-						SendMail sm = new SendMail(userInfo.getMail(), RegistrationConfig.getProperties("Registration.properties", "igiportal.mail"), "Please configure "+ vo.getVo(), RegistrationConfig.getProperties("Registration.properties", "request.configre.vo").replaceAll("##VO##", vo.getVo()).replaceAll("##NL##", "\n").replaceAll("##USER##", userInfo.getFirstName()+" "+userInfo.getLastName()).replaceAll("##HOST##", RegistrationConfig.getProperties("Registration.properties", "home.url")));
+						String mail ="";
+						boolean isHtml = true;
+						try {
+							mail = RegistrationUtil.readFile(RegistrationConfig.getProperties("Registration.properties", "request.configure.vo"));
+							mail = mail.replaceAll("##VO##", vo.getVo());
+							mail = mail.replaceAll("##USER##", userInfo.getFirstName()+" "+userInfo.getLastName());
+							mail = mail.replaceAll("##HOST##", RegistrationConfig.getProperties("Registration.properties", "home.url"));
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+							isHtml = false;
+							mail= RegistrationConfig.getProperties("Registration.properties", "request.configure.vo").replaceAll("##VO##", vo.getVo()).replaceAll("##NL##", "\n").replaceAll("##USER##", userInfo.getFirstName()+" "+userInfo.getLastName()).replaceAll("##HOST##", RegistrationConfig.getProperties("Registration.properties", "home.url"));
+						}
+						
+						SendMail sm = new SendMail(userInfo.getMail(), RegistrationConfig.getProperties("Registration.properties", "igiportal.mail"), "Please configure "+ vo.getVo(), mail, isHtml);
 						sm.send();
 						log.info(sm);
 					} catch (RegistrationException e) {

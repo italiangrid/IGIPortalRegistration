@@ -25,7 +25,6 @@ import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Formatter;
 import java.util.List;
-
 import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
 import javax.portlet.PortletConfig;
@@ -49,9 +48,9 @@ import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.servlet.SessionErrors;
 import com.liferay.portal.kernel.servlet.SessionMessages;
 import com.liferay.portal.kernel.util.JavaConstants;
-//import com.liferay.portal.model.Role;
+import com.liferay.portal.model.Role;
 import com.liferay.portal.model.User;
-//import com.liferay.portal.service.RoleLocalServiceUtil;
+import com.liferay.portal.service.RoleLocalServiceUtil;
 import com.liferay.portal.service.UserLocalServiceUtil;
 import com.liferay.portal.util.PortalUtil;
 
@@ -379,15 +378,12 @@ public class UploadProxyController {
 			errors.add("error-password-mismatch");
 		}	
 			
-		
-
 		log.info("controllo errori");
 		if (allOk && errors.isEmpty()) {
 
 			log.info("tutto ok!!");
 			
 			cert.setPasswordChanged("true");
-			
 			
 			log.info("€€€€€€€€€€€€€€€€€€€€€€€€€€€€€"+cert.getPasswordChanged());
 			certificateService.save(cert);
@@ -396,9 +392,69 @@ public class UploadProxyController {
 			Certificate c = certificateService.findByIdCert(cert.getIdCert());
 			
 			log.info("€€€€€€€€€€€€€€€€€€€€€€€€€€€€€"+c.getPasswordChanged());
-//			UserInfo userInfo = userInfoService.findByMail(registrationModel.getEmail());
-//			if ((userToVoService.findById(userInfo.getUserId()).size() > 0))
-//				activateUser(userInfo, request, errors);
+			
+			
+			/*
+			 * If all the registration step is completed
+			 * 1 set Job status notificatio enabled
+			 * 2 set PowerUser permissions
+			 * 3 get proxy for the default VO
+			 */
+			
+			long companyId = PortalUtil.getCompanyId(request);
+			
+			try {
+				User user = UserLocalServiceUtil.getUserByEmailAddress(companyId,
+						registrationModel.getEmail());
+				
+				/* 1 */
+				
+//				GuseNotifyUtil guseNotifyUtil = new GuseNotifyUtil();
+//				GuseNotify guseNotify = new GuseNotify(registrationModel.getFirstName());
+//				
+//				guseNotify.setWfchgEnab("1");
+//				guseNotify.setEmailEnab("1");
+//				guseNotify.setQuotaEnab("0");
+//				
+//				guseNotifyUtil.writeNotifyXML(user, guseNotify);
+				
+				/* 2 */
+				if(registrationModel.isVoStatus()){
+					Role rolePowerUser = RoleLocalServiceUtil.getRole(companyId,
+							"Power User");
+	
+					List<User> powerUsers = UserLocalServiceUtil
+							.getRoleUsers(rolePowerUser.getRoleId());
+	
+					long users[] = new long[powerUsers.size() + 1];
+	
+					int i;
+	
+					for (i = 0; i < powerUsers.size(); i++) {
+						users[i] = powerUsers.get(i).getUserId();
+					}
+	
+					users[i] = user.getUserId();
+	
+					UserLocalServiceUtil.setRoleUsers(rolePowerUser.getRoleId(), users);
+					
+					/* 3 */
+					UserInfo userInfo = userInfoService.findByMail(registrationModel.getEmail());
+					String selectedVo = userToVoService.findDefaultVo(userInfo.getUserId());
+					if(selectedVo!=null){
+						myVomsProxyInit(user, selectedVo, "norole", RegistrationConfig.getProperties("Registration.properties", "proxy.expiration.times.default"), request);
+					}
+				}
+			} catch (PortalException e) {
+				e.printStackTrace();
+			} catch (SystemException e) {
+				e.printStackTrace();
+			} catch (RegistrationException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}	
+			
+			
 			
 			
 			try {
@@ -449,5 +505,77 @@ public class UploadProxyController {
 
 		}
 
+	}
+	
+	private void myVomsProxyInit(User user, String voms, String role, String valid, ActionRequest request){
+		try {
+			
+//			String contextPath = UploadProxyController.class.getClassLoader().getResource("").getPath();
+//			
+//			log.debug("dove sono:" + contextPath);
+//			
+//			FileInputStream inStream =
+//		    new FileInputStream(contextPath + "/content/MyProxy.properties");
+//
+//			Properties prop = new Properties();
+//			prop.load(inStream);
+//			inStream.close();
+//			
+			String cloudVo = RegistrationConfig.getProperties("Registration.properties", "cloud.vo");
+//			
+//			User user = (User) request.getAttribute(WebKeys.USER);
+
+			String dir = System.getProperty("java.io.tmpdir");
+			log.debug("Directory = " + dir);
+
+			String proxy = dir + "/users/" + user.getUserId() + "/x509up";
+			String proxyFile = dir + "/users/" + user.getUserId() + "/x509up." + voms;
+			
+			String cmd = "voms-proxy-init -noregen -cert " + proxy + " -key " + proxy + " -out " + proxyFile + " -valid " + valid  + " -voms " + voms;
+			
+			log.debug(cmd);
+			if(!role.equals("norole")){
+				cmd += ":" + role;
+			}
+			
+			if(voms.equals(cloudVo))
+				cmd += " -rfc";
+			log.error("cmd = " + cmd);
+			Process p = Runtime.getRuntime().exec(cmd);
+			InputStream stdout = p.getInputStream();
+			InputStream stderr = p.getErrorStream();
+
+			BufferedReader output = new BufferedReader(new InputStreamReader(
+					stdout));
+			String line = null;
+
+			while ((line = output.readLine()) != null) {
+				log.debug("[Stdout] " + line);
+			}
+			output.close();
+			
+			//boolean error = false;
+
+			BufferedReader brCleanUp = new BufferedReader(
+					new InputStreamReader(stderr));
+			while ((line = brCleanUp.readLine()) != null) {
+				//error= true;
+				if(!line.contains("....")){
+					log.error("[Stderr] " + line);
+				}
+			}
+			/*if(error)
+				SessionErrors.add(request, "voms-proxy-init-problem");*/
+			brCleanUp.close();
+			
+
+		} catch (IOException e) {
+			
+			SessionErrors.add(request, "voms-proxy-init-exception");
+			e.printStackTrace();
+		} catch (RegistrationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }

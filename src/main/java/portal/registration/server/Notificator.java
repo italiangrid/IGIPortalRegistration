@@ -1,8 +1,10 @@
 package portal.registration.server;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -14,6 +16,7 @@ import java.util.Locale;
 
 import it.italiangrid.portal.registration.exception.RegistrationException;
 import it.italiangrid.portal.registration.util.RegistrationConfig;
+import it.italiangrid.portal.registration.util.RegistrationUtil;
 
 import org.apache.log4j.Logger;
 import portal.registration.utils.SendMail;
@@ -65,8 +68,21 @@ public class Notificator implements Runnable {
 		    			log.debug("####################### Expire in " + days + " days");
 						String from = RegistrationConfig.getProperties("Registration.properties", "igiportal.mail");
 						String mailSubject = RegistrationConfig.getProperties("Registration.properties", days==0?"certificate.check.subject.expired":"certificate.check.subject.days").replace("##DAYS##", String.valueOf(days));
-						String mailContent = RegistrationConfig.getProperties("Registration.properties", days==0?"certificate.check.mail.expired":"certificate.check.mail.days").replaceAll("##DAYS##", String.valueOf(days)).replaceAll("##USER##", user).replaceAll("##SUBJECT##", subject).replaceAll("##HOME##", RegistrationConfig.getProperties("Registration.properties", "home.url"));
-						SendMail sm = new SendMail(from, mail, mailSubject, mailContent);
+						String mailContent ="";
+						boolean isHtml = true;
+						try {
+							mailContent= RegistrationUtil.readFile(RegistrationConfig.getProperties("Registration.properties", days==0?"certificate.check.mail.expired.template":"certificate.check.mail.days.template"));
+						} catch (IOException e) {
+							e.printStackTrace();
+							mailContent = RegistrationConfig.getProperties("Registration.properties", days==0?"certificate.check.mail.expired":"certificate.check.mail.days");
+							isHtml= false;
+						}
+						mailContent = mailContent.replaceAll("##DAYS##", String.valueOf(days));
+						mailContent = mailContent.replaceAll("##USER##", user);
+						mailContent = mailContent.replaceAll("##SUBJECT##", subject);
+						mailContent = mailContent.replaceAll("##HOME##", RegistrationConfig.getProperties("Registration.properties", "home.url"));
+						
+						SendMail sm = new SendMail(from, mail, mailSubject, mailContent, isHtml);
 						sm.send();
 		    		}
 		    	}
@@ -74,11 +90,17 @@ public class Notificator implements Runnable {
 		    conn.close();
 		    log.debug("Disconnected from database");
 		} catch(RegistrationException e){
-			log.info(e.getMessage());
+			log.debug(e.getMessage());
 		} catch (ParseException e) {
-			log.info("Parsing exception");
-		} catch (Exception e) {
+			log.debug("Parsing exception");
+		} catch (SQLException e) {
 			e.printStackTrace();
+		} catch (InstantiationException e1) {
+			e1.printStackTrace();
+		} catch (IllegalAccessException e1) {
+			e1.printStackTrace();
+		} catch (ClassNotFoundException e1) {
+			e1.printStackTrace();
 		}
 		return;
 			

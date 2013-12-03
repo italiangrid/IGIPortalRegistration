@@ -10,6 +10,9 @@ import it.italiangrid.portal.dbapi.services.UserToVoService;
 import it.italiangrid.portal.registration.exception.RegistrationException;
 import it.italiangrid.portal.registration.model.RegistrationModel;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
@@ -352,5 +355,22 @@ public class RegistrationUtil {
          log.info(props.toString());
          return new InitialDirContext(props);  
  } 
+	 
+	 public static String readFile(String fileName) throws IOException {
+		    BufferedReader br = new BufferedReader(new FileReader(RegistrationUtil.class.getClassLoader().getResource("").getPath() + fileName));
+		    try {
+		        StringBuilder sb = new StringBuilder();
+		        String line = br.readLine();
+
+		        while (line != null) {
+		            sb.append(line);
+		            sb.append("\n");
+		            line = br.readLine();
+		        }
+		        return sb.toString();
+		    } finally {
+		        br.close();
+		    }
+		}
 
 }
