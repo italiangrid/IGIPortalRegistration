@@ -326,8 +326,8 @@ public class UploadCertificateController {
 							
 							if(!registrationModel.getMail().split("/")[0]
 									.isEmpty()){
-								userInfo.setMail(registrationModel.getMail().split("/")[0]);
-								registrationModel.setEmail(registrationModel.getMail().split("/")[0]);
+								userInfo.setMail(registrationModel.getMail().split("/")[0].toLowerCase());
+								registrationModel.setEmail(registrationModel.getMail().split("/")[0].toLowerCase());
 							}
 							
 							if(!registrationModel.getEmail().isEmpty()&&!registrationModel.getInstitute().isEmpty()){
