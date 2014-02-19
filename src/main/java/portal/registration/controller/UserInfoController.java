@@ -95,18 +95,6 @@ public class UserInfoController {
 	@RenderMapping
 	public String showUserInfos(RenderRequest request, RenderResponse response) {
 		
-//		try {
-//			User user = PortalUtil.getUser(request);
-//			if(user!=null){
-//				activateUser(user, request);
-//			}
-//		} catch (PortalException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		} catch (SystemException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
 		log.info("home controller");
 		User user = (User) request.getAttribute(WebKeys.USER);
 		if(user!=null){
@@ -361,9 +349,6 @@ public class UserInfoController {
 			}
 
 			users[i] = user.getUserId();
-			// long[] roles = {10140};
-
-			// RoleServiceUtil.addUserRoles(user.getUserId(), roles);
 
 			UserLocalServiceUtil.setRoleUsers(rolePowerUser.getRoleId(), users);
 

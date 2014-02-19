@@ -1,8 +1,13 @@
 package it.italiangrid.portal.registration.controller;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
+import it.italiangrid.portal.dbapi.domain.Certificate;
 import it.italiangrid.portal.dbapi.domain.UserInfo;
+import it.italiangrid.portal.dbapi.services.CertificateService;
 import it.italiangrid.portal.dbapi.services.UserInfoService;
 import it.italiangrid.portal.registration.util.RegistrationConfig;
 import it.italiangrid.portal.registration.util.RegistrationUtil;
@@ -18,9 +23,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.portlet.bind.annotation.ActionMapping;
 import org.springframework.web.portlet.bind.annotation.RenderMapping;
 
+import com.liferay.portal.kernel.dao.orm.DynamicQuery;
+import com.liferay.portal.kernel.dao.orm.DynamicQueryFactoryUtil;
+import com.liferay.portal.kernel.dao.orm.PropertyFactoryUtil;
+import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.servlet.SessionErrors;
 import com.liferay.portal.kernel.servlet.SessionMessages;
 import com.liferay.portal.kernel.util.JavaConstants;
+import com.liferay.portal.model.User;
+import com.liferay.portal.service.UserLocalServiceUtil;
 
 import portal.registration.utils.SendMail;
 
@@ -32,6 +43,9 @@ public class SendMailController {
 	
 	@Autowired
 	private UserInfoService userInfoService;
+	
+	@Autowired
+	private CertificateService certificateService;
 
 	
 	@RenderMapping(params = "myaction=showSendMail")
@@ -52,24 +66,26 @@ public class SendMailController {
 		String text = request.getParameter("text");
 		text = text.replaceAll("\n", "<br/>");
 		
+		String sendToAll = request.getParameter("sendToAll");
+		log.info("Send To All: " + sendToAll);
 		try {
 			String mail = RegistrationUtil.readFile(RegistrationConfig.getProperties("Registration.properties", "admin.mail.template"));
 		
 			mail = mail.replaceAll("##MESSAGE##", text);
+			
+			log.info(mail);
+			
 			String to = "";
-			List<UserInfo> infos = userInfoService.getAllUserInfo();
 			
-			for (UserInfo userInfo : infos) {
-				to += userInfo.getMail()+",";
+			if(sendToAll.equals("true")){
+				to = sendToAll();
+			} else {
+				to = sendToRecentUser();
 			}
-			
-			to = to.substring(0, to.length()-1);
-			
 			log.info(to);
 			
 			SendMail sm = new SendMail(RegistrationConfig.getProperties("Registration.properties", "igiportal.mail"), to, subject, mail, true);
 			sm.sendList();
-				
 		
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -79,5 +95,72 @@ public class SendMailController {
 			SessionMessages.add(request, portletConfig.getPortletName() + SessionMessages.KEY_SUFFIX_HIDE_DEFAULT_ERROR_MESSAGE);
 		}
 		response.setRenderParameter("myaction", "showSendMailSuccess");
+	}
+
+	@SuppressWarnings("unchecked")
+	private String sendToRecentUser() {
+		
+		log.info("Creating recent user mail list.");
+		
+		String to = "";
+		
+		DynamicQuery dynamicQuery = DynamicQueryFactoryUtil.forClass(User.class);
+		
+		Calendar currentDate = Calendar.getInstance(); 
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+		log.info("Taday date: " + sdf.format(currentDate.getTime()));
+		Date today = currentDate.getTime();
+		
+		Calendar aMonthAgo = currentDate;
+		aMonthAgo.roll(Calendar.MONTH, -1);
+		log.info("A Month Ago date: " + sdf.format(currentDate.getTime()));
+		
+	    Date compare = aMonthAgo.getTime();
+		
+		dynamicQuery.add(PropertyFactoryUtil.forName("lastLoginDate").gt(compare));
+		
+		try {
+			List<User> users = UserLocalServiceUtil.dynamicQuery(dynamicQuery);
+			for (User user : users) {
+				UserInfo userInfo = userInfoService.findByMail(user.getEmailAddress());
+				if (userInfo.getRegistrationComplete().equals("true")){
+					List<Certificate> certifcates = certificateService.findById(userInfo.getUserId());
+					boolean isntExpired = false;
+					for (Certificate certificate : certifcates) {
+						if(certificate.getExpirationDate().after(today)){
+							isntExpired = true;
+						}
+					}
+					if(isntExpired){
+						to += userInfo.getMail()+",";
+					}
+				}
+			}
+			
+		} catch (SystemException e) {
+			e.printStackTrace();
+		}
+		
+		to = to.substring(0, to.length()-1);
+		
+		log.info("List created.");
+		return to;
+	}
+
+	private String sendToAll() {
+		
+		log.info("Creating all user mail list.");
+		
+		String to = "";
+		List<UserInfo> infos = userInfoService.getAllUserInfo();
+		
+		for (UserInfo userInfo : infos) {
+			to += userInfo.getMail()+",";
+		}
+		
+		to = to.substring(0, to.length()-1);
+		
+		log.info("List created.");
+		return to;
 	}
 }
