@@ -69,7 +69,7 @@ public class SendMail {
 		}
 	}
 	
-	public void sendList(){
+	public void sendList() throws MessagingException{
 		 
 		Properties props = new Properties();
 		props.put("mail.smtp.host", "localhost");
@@ -80,28 +80,20 @@ public class SendMail {
  
 		InternetAddress fromAddress = null;
 		InternetAddress[] toAddress = null;
-		try {
-			fromAddress = new InternetAddress(from);
-			toAddress = InternetAddress.parse(to);
-		} catch (AddressException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		
+		fromAddress = new InternetAddress(from);
+		toAddress = InternetAddress.parse(to);
+		
+		simpleMessage.setFrom(fromAddress);
+		simpleMessage.setRecipients(RecipientType.BCC, toAddress);
+		simpleMessage.setSubject(subject);
+		if(isHtml){
+			simpleMessage.setContent(text, "text/html; charset=utf-8");
+		}else{
+			simpleMessage.setText(text);
 		}
  
-		try {
-			simpleMessage.setFrom(fromAddress);
-			simpleMessage.setRecipients(RecipientType.BCC, toAddress);
-			simpleMessage.setSubject(subject);
-			if(isHtml){
-				simpleMessage.setContent(text, "text/html; charset=utf-8");
-			}else{
-				simpleMessage.setText(text);
-			}
- 
-			Transport.send(simpleMessage);
-		} catch (MessagingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		Transport.send(simpleMessage);
+		
 	}
 }

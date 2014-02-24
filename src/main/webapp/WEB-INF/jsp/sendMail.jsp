@@ -8,6 +8,9 @@
 
 <liferay-ui:error key="send-mail-problem"
 	message="send-mail-problem" />
+<liferay-ui:error key="send-mail-empty-list"
+	message="send-mail-empty-list" />	
+	
 
 <aui:form action="${sendMailUrl }" >
 	

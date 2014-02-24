@@ -9,6 +9,7 @@ import it.italiangrid.portal.dbapi.domain.Certificate;
 import it.italiangrid.portal.dbapi.domain.UserInfo;
 import it.italiangrid.portal.dbapi.services.CertificateService;
 import it.italiangrid.portal.dbapi.services.UserInfoService;
+import it.italiangrid.portal.registration.exception.RegistrationException;
 import it.italiangrid.portal.registration.util.RegistrationConfig;
 import it.italiangrid.portal.registration.util.RegistrationUtil;
 
@@ -82,19 +83,26 @@ public class SendMailController {
 			} else {
 				to = sendToRecentUser();
 			}
-			log.info(to);
 			
-			SendMail sm = new SendMail(RegistrationConfig.getProperties("Registration.properties", "igiportal.mail"), to, subject, mail, true);
-			sm.sendList();
+			if(to.length() > 0){
+				to = to.substring(0, to.length()-1);
+				log.info(to);
+				SendMail sm = new SendMail(RegistrationConfig.getProperties("Registration.properties", "igiportal.mail"), to, subject, mail, true);
+				sm.sendList();
+				response.setRenderParameter("myaction", "showSendMailSuccess");
+				return;
+			}
+			
+			SessionErrors.add(request, "send-mail-empty-list");
 		
 		} catch (Exception e) {
 			e.printStackTrace();
-			response.setRenderParameter("myaction", "showSendMail");
 			SessionErrors.add(request, "send-mail-problem");
-			PortletConfig portletConfig = (PortletConfig)request.getAttribute(JavaConstants.JAVAX_PORTLET_CONFIG);
-			SessionMessages.add(request, portletConfig.getPortletName() + SessionMessages.KEY_SUFFIX_HIDE_DEFAULT_ERROR_MESSAGE);
 		}
-		response.setRenderParameter("myaction", "showSendMailSuccess");
+		response.setRenderParameter("myaction", "showSendMail");
+		
+		PortletConfig portletConfig = (PortletConfig)request.getAttribute(JavaConstants.JAVAX_PORTLET_CONFIG);
+		SessionMessages.add(request, portletConfig.getPortletName() + SessionMessages.KEY_SUFFIX_HIDE_DEFAULT_ERROR_MESSAGE);
 	}
 
 	@SuppressWarnings("unchecked")
@@ -111,15 +119,21 @@ public class SendMailController {
 		log.info("Taday date: " + sdf.format(currentDate.getTime()));
 		Date today = currentDate.getTime();
 		
-		Calendar aMonthAgo = currentDate;
-		aMonthAgo.roll(Calendar.MONTH, -1);
-		log.info("A Month Ago date: " + sdf.format(currentDate.getTime()));
-		
-	    Date compare = aMonthAgo.getTime();
-		
-		dynamicQuery.add(PropertyFactoryUtil.forName("lastLoginDate").gt(compare));
-		
+		Calendar monthAgo = currentDate;
 		try {
+			int monthEarly = Integer.parseInt(RegistrationConfig.getProperties("Registration.properties", "admin.mail.month.early"));
+			if(monthEarly < currentDate.MONTH){
+				monthAgo.roll(Calendar.MONTH, -monthEarly);
+			}else{
+				
+			}
+			log.info("A Month Ago date: " + sdf.format(currentDate.getTime()));
+			
+		    Date compare = monthAgo.getTime();
+			
+			dynamicQuery.add(PropertyFactoryUtil.forName("lastLoginDate").gt(compare));
+		
+		
 			List<User> users = UserLocalServiceUtil.dynamicQuery(dynamicQuery);
 			for (User user : users) {
 				UserInfo userInfo = userInfoService.findByMail(user.getEmailAddress());
@@ -139,10 +153,11 @@ public class SendMailController {
 			
 		} catch (SystemException e) {
 			e.printStackTrace();
+		} catch (NumberFormatException e) {
+			e.printStackTrace();
+		} catch (RegistrationException e) {
+			e.printStackTrace();
 		}
-		
-		to = to.substring(0, to.length()-1);
-		
 		log.info("List created.");
 		return to;
 	}
