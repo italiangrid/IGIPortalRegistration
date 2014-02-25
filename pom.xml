@@ -86,6 +86,7 @@
 		    <groupId>com.liferay.portal</groupId>
 		    <artifactId>portal-impl</artifactId>
 		    <version>${liferay.version}</version>
+		    <scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>javax.portlet</groupId>
