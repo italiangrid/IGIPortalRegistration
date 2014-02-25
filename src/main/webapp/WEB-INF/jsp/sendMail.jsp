@@ -14,10 +14,15 @@
 
 <aui:form action="${sendMailUrl }" >
 	
-	<aui:input name="subject"  label="Subject"/>
-	<br/>
-	<aui:input name="sendToAll" label="Send to All" type="checkbox"/>
-	<br/>
+	<aui:fieldset>
+	<aui:column columnWidth="40">
+		<aui:input name="subject"  label="Subject"/>
+	</aui:column>
+	<aui:column columnWidth="60">
+		<aui:input name="sendToAll" label="Send to All" type="radio" value="true"/>
+		<aui:input id="select" name="sendToAll" label="Only valid user that was loged in ${monthEarly } months." type="radio" value="false" checked="checked"/>
+	</aui:column>
+	</aui:fieldset>
 	<aui:input name="text" label="Message (html)" type="textarea" cols="100" rows="13"/>
 	
 	<aui:button-row>
@@ -25,3 +30,10 @@
 	</aui:button-row>
 
 </aui:form>
+
+
+<script type="text/javascript">
+
+	$("#<portlet:namespace/>select").prop('checked',true);
+	
+</script>

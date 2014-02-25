@@ -20,6 +20,7 @@ import javax.portlet.PortletConfig;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.portlet.bind.annotation.ActionMapping;
 import org.springframework.web.portlet.bind.annotation.RenderMapping;
@@ -60,6 +61,18 @@ public class SendMailController {
 		return "sendMailSuccess";
 	}
 	
+	@ModelAttribute("monthEarly")
+	public String getLoginUrl() {	
+		try {
+			log.info("Getting admin.mail.month.early value.");
+			String value = RegistrationConfig.getProperties("Registration.properties", "admin.mail.month.early");
+			return value;
+		} catch (RegistrationException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
 	
 	@ActionMapping(params = "myaction=sendMail")
 	public void sendMail(ActionRequest request, ActionResponse response){
@@ -74,7 +87,7 @@ public class SendMailController {
 		
 			mail = mail.replaceAll("##MESSAGE##", text);
 			
-			log.info(mail);
+			log.debug(mail);
 			
 			String to = "";
 			
@@ -89,23 +102,26 @@ public class SendMailController {
 				log.info(to);
 				SendMail sm = new SendMail(RegistrationConfig.getProperties("Registration.properties", "igiportal.mail"), to, subject, mail, true);
 				sm.sendList();
+				log.info("Mail successfully sent");
 				response.setRenderParameter("myaction", "showSendMailSuccess");
 				return;
 			}
 			
 			SessionErrors.add(request, "send-mail-empty-list");
+			log.info("e-mail address list empty");
 		
 		} catch (Exception e) {
 			e.printStackTrace();
 			SessionErrors.add(request, "send-mail-problem");
 		}
+		
 		response.setRenderParameter("myaction", "showSendMail");
 		
 		PortletConfig portletConfig = (PortletConfig)request.getAttribute(JavaConstants.JAVAX_PORTLET_CONFIG);
 		SessionMessages.add(request, portletConfig.getPortletName() + SessionMessages.KEY_SUFFIX_HIDE_DEFAULT_ERROR_MESSAGE);
 	}
 
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings({ "unchecked", "static-access" })
 	private String sendToRecentUser() {
 		
 		log.info("Creating recent user mail list.");
@@ -122,22 +138,27 @@ public class SendMailController {
 		Calendar monthAgo = currentDate;
 		try {
 			int monthEarly = Integer.parseInt(RegistrationConfig.getProperties("Registration.properties", "admin.mail.month.early"));
-			if(monthEarly < currentDate.MONTH){
-				monthAgo.roll(Calendar.MONTH, -monthEarly);
-			}else{
-				
+			int yearsAgo = monthEarly/12;
+			if(monthEarly >= currentDate.MONTH){
+				yearsAgo++;
 			}
-			log.info("A Month Ago date: " + sdf.format(currentDate.getTime()));
+			monthAgo.roll(Calendar.MONTH, -monthEarly);
+			monthAgo.roll(Calendar.YEAR, -yearsAgo);
+			log.info(monthEarly + " Month Ago date: " + sdf.format(currentDate.getTime()));
 			
 		    Date compare = monthAgo.getTime();
 			
 			dynamicQuery.add(PropertyFactoryUtil.forName("lastLoginDate").gt(compare));
 		
-		
 			List<User> users = UserLocalServiceUtil.dynamicQuery(dynamicQuery);
+			if(users.isEmpty()){
+				return to;
+			}
 			for (User user : users) {
+				log.debug("Find: "+ user.getEmailAddress());
 				UserInfo userInfo = userInfoService.findByMail(user.getEmailAddress());
-				if (userInfo.getRegistrationComplete().equals("true")){
+				if (userInfo != null && userInfo.getRegistrationComplete().equals("true")){
+					log.debug("User " +userInfo.getMail() + " have completed registration.");
 					List<Certificate> certifcates = certificateService.findById(userInfo.getUserId());
 					boolean isntExpired = false;
 					for (Certificate certificate : certifcates) {
@@ -146,8 +167,13 @@ public class SendMailController {
 						}
 					}
 					if(isntExpired){
+						log.debug("User " + userInfo.getMail() + " have valid cetificate");
 						to += userInfo.getMail()+",";
+					}else{
+						log.debug("User " + userInfo.getMail() + " haven't valid cetificate");
 					}
+				}else{
+					log.debug("User " + user.getEmailAddress() + " haven't completed registration.");
 				}
 			}
 			
