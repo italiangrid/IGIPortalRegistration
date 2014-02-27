@@ -34,15 +34,19 @@ public class DiracUtil {
 	 * The task to use.
 	 */
 	private DiracTask diracTask;
+	
+	private List<String> vos = null;
 
 	/**
 	 * The class constriuctor.
 	 * 
 	 * @param diracTask
 	 *            - The task to use.
+	 * @throws RegistrationException 
 	 */
-	public DiracUtil(DiracTask diracTask) {
+	public DiracUtil(DiracTask diracTask) throws RegistrationException {
 		this.diracTask = diracTask;
+		this.vos = getVo();
 	}
 
 	/**
@@ -56,9 +60,6 @@ public class DiracUtil {
 				"Registration.properties", "dirac.admin.homedir");
 		File path = new File(System.getProperty("java.io.tmpdir") + "/"
 				+ diracDir);
-		String[] vos = RegistrationConfig.getProperties(
-				"Registration.properties", "dirac.admin.configuredVo").split(
-				";");
 
 		String[] startCmd = { "dirac-admin-add-user", "-N",
 				diracTask.getUsername(), "-D", "\"" + diracTask.getDn() + "\"",
@@ -122,10 +123,7 @@ public class DiracUtil {
 	public void uploadCert() throws RegistrationException {
 		String diracDir = RegistrationConfig.getProperties(
 				"Registration.properties", "dirac.admin.homedir");
-
-		String[] vos = RegistrationConfig.getProperties(
-				"Registration.properties", "dirac.admin.configuredVo").split(
-				";");
+		
 		String[] cmd = { "/usr/bin/python", "../dirac-proxy-upload.py",
 				diracTask.getUserCert(), diracTask.getUserKey(), "vo",
 				diracTask.getPassword() };
@@ -196,7 +194,7 @@ public class DiracUtil {
 		return print;
 
 	}
-
+	
 	/**
 	 * Execute the specified command.
 	 * 
@@ -208,6 +206,20 @@ public class DiracUtil {
 	 */
 	private void executeCommand(File path, String[] cmd) throws IOException {
 
+		executeCommand(path, cmd, null);
+	}
+
+	/**
+	 * Execute the specified command.
+	 * 
+	 * @param path
+	 *            - The locatio of the execution.
+	 * @param cmd
+	 *            - The command.
+	 * @throws IOException
+	 */
+	private void executeCommand(File path, String[] cmd, List<String> outputs) throws IOException {
+
 		Process p = Runtime.getRuntime().exec(printArray(cmd), null, path);
 		InputStream stdout = p.getInputStream();
 		InputStream stderr = p.getErrorStream();
@@ -217,9 +229,12 @@ public class DiracUtil {
 		String line = null;
 
 		while (((line = output.readLine()) != null)) {
-			if (!line.contains("password"))
+			if (!line.contains("password")){
 				log.info("[Stdout] " + line);
-
+				if(outputs!=null){
+					outputs.add(line);
+				}
+			}	
 		}
 		output.close();
 
@@ -231,6 +246,46 @@ public class DiracUtil {
 		}
 
 		brCleanUp.close();
+	}
+	
+	public List<String> getVo() throws RegistrationException {
+		if(vos == null){
+			List<String> outputs = new ArrayList<String>();
+		
+			String diracDir = RegistrationConfig.getProperties(
+					"Registration.properties", "dirac.admin.homedir");
+			File exeDir = new File(System.getProperty("java.io.tmpdir") + "/" + diracDir);
+			
+			log.info("Getting VO list");
+			
+			String[] cmd = { "/usr/bin/python", "dirac-get-vo.py"};
+			
+			log.info("Execute command: " + printArray(cmd));
+			
+			try {
+				executeCommand(exeDir, cmd, outputs);
+			} catch (IOException e) {
+				e.printStackTrace();
+				throw new RegistrationException("error-retrieving-sites");
+			}
+			
+			List<String> voList = new ArrayList<String>();
+			
+			for (String line : outputs) {
+				if(line.contains("Registry/VO/")){
+					line = line.split("#")[0];
+					line = line.replace("Registry/VO/", "");
+					line = line.replaceAll(" ", "");
+					voList.add(line);
+				}
+			}
+			
+			log.info("VOs: " + voList);
+			
+			return voList;
+		} else {
+			return vos;
+		}
 	}
 
 }

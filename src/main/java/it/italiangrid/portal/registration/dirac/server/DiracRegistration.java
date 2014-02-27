@@ -154,7 +154,7 @@ public class DiracRegistration implements Runnable {
 		util.deleteUser();
 		log.info("User deleted");
 		
-	    String[] vos = RegistrationConfig.getProperties("Registration.properties", "dirac.admin.configuredVo").split(";");
+	    List<String> vos = util.getVo();
 	    
 	    for (String vo : vos) {
 	    	
