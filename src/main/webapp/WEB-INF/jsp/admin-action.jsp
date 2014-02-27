@@ -16,6 +16,11 @@
 		test = true;
 		
 	pageContext.setAttribute("test",test);
+	
+	long companyId = PortalUtil.getCompanyId(request);
+	User liferayUser = UserLocalServiceUtil.getUserByEmailAddress(companyId, userInfo.getMail());
+	
+	pageContext.setAttribute("liferayUser",liferayUser.getUserId());
 %>
 
 <liferay-ui:icon-menu>
@@ -25,6 +30,8 @@
 		<portlet:param name="userId" value="<%=primKey %>" />
 	</portlet:renderURL>
 	<liferay-ui:icon image="edit" message="Edit" url="${editURL}" />
+	<liferay-security:doAsURL  doAsUserId="${liferayUser}"  var="impersonateUserURL"/>
+	<liferay-ui:icon image="impersonate_user" target="_blank" message="Impersonate User" url="${impersonateUserURL}" />
 	
 	<c:if test="${!test}">
 		<portlet:actionURL var="deleteURL">

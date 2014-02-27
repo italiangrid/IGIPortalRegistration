@@ -530,9 +530,16 @@ public class UploadCertController {
 
 		}
 
-//		if (!files.isEmpty())
-//			deleteUploadedFile(files, uid);
+		if (!files.isEmpty())
+			deleteUploadedFile(files);
 
+	}
+
+	private void deleteUploadedFile(ArrayList<String> files) {
+		for (String file : files) {
+			File delete = new File("/upload_files/" + file);
+			delete.delete();
+		}
 	}
 
 	private void splitP12(String filename, int uid, String pwd1, String pwd2,

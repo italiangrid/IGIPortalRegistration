@@ -424,10 +424,8 @@ brCleanUp.close();
 						errors.add("myproxy-exception");
 						e1.printStackTrace();
 					} catch (RegistrationException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					} catch (MyProxyException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 				}
@@ -472,9 +470,16 @@ brCleanUp.close();
 
 		}
 		
-//		if (!files.isEmpty())
-//			deleteUploadedFile(files, uid);
+		if (!files.isEmpty())
+			deleteUploadedFile(files);
 
+	}
+
+	private void deleteUploadedFile(ArrayList<String> files) {
+		for (String file : files) {
+			File delete = new File("/upload_files/" + file);
+			delete.delete();
+		}
 	}
 
 	private void splitP12(String filename, int uid, String pwd1, String pwd2,

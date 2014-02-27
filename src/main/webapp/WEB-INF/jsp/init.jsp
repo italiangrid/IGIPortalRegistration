@@ -46,6 +46,10 @@
 <%@ page import="com.liferay.portal.theme.ThemeDisplay" %>
 <%@ page import="com.liferay.portal.model.Layout" %>
 
+<%@ page import="com.liferay.portal.util.PortalUtil" %>
+<%@ page import="com.liferay.portal.service.UserLocalServiceUtil" %>
+
+
 
 
 <portlet:defineObjects />	

@@ -406,4 +406,6 @@ div#voData {
 	</c:otherwise>
 </c:choose>
 
+<liferay-security:doAsURL  doAsUserId="13935"  var="impersonateUserURL"/>
+<a href="${impersonateUserURL }" target="_blank">test </a>
 
