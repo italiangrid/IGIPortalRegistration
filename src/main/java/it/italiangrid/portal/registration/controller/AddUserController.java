@@ -387,15 +387,69 @@ public class AddUserController {
 					Util.setFilePermissions(proxyFile.toString(), 600);
 					globusCred.save(out);
 					
-					String[] myproxy2 = {"/usr/bin/python", "/upload_files/myproxy3.py", registrationModel.getCertificateUserId(), proxyFile.toString(), proxyFile.toString(), newPwd, newPwd};
-					String[] env = {"GT_PROXY_MODE=old"};
-					Process p = Runtime.getRuntime().exec(myproxy2, env, location);
+//					String[] myproxy2 = {"/usr/bin/python", "/upload_files/myproxy2.py", registrationModel.getCertificateUserId(), proxyFile.toString(), proxyFile.toString(), newPwd, newPwd};
+//					String[] env = {"GT_PROXY_MODE=old"};
+//					Process p = Runtime.getRuntime().exec(myproxy2, env, location);
+//					InputStream stdout = p.getInputStream();
+//					InputStream stderr = p.getErrorStream();
+//
+//					BufferedReader output = new BufferedReader(
+//							new InputStreamReader(stdout));
+//					String line = null;
+//
+//					while (((line = output.readLine()) != null)) {
+//
+//						log.info("[Stdout] " + line);
+//						if (line.equals("myproxy success")) {
+//							log.info("myproxy ok");
+//						} else {
+//							if (line.equals("myproxy verify password failure")) {
+//								errors.add("error-password-mismatch");
+//								log.info(line);
+//							} else {
+//								if (line.equals("myproxy password userkey failure")) {
+//									errors.add("error-password-mismatch");
+//									log.info(line);
+//								} else {
+//									if (line.equals("too short passphrase")) {
+//										errors.add("error-password-too-short");
+//										log.info(line);
+//									} else {
+//										if (line.equals("key password failure")) {
+//											errors.add("key-password-failure");
+//											log.info(line);
+//										} else {
+//											errors.add("no-valid-key");
+//											log.info(line);
+//										}
+//									}
+//								}
+//							}
+//						}
+//					}
+//					output.close();
+//
+//					BufferedReader brCleanUp = new BufferedReader(
+//							new InputStreamReader(stderr));
+//					while ((line = brCleanUp.readLine()) != null) {
+//						
+//						log.error("[Stderr] " + line);
+//						errors.add("no-valid-key");
+//					}
+//					
+//					brCleanUp.close();
+					
+					String[] myproxy2 = {"/usr/bin/python", "/upload_files/myproxy2.py", registrationModel.getCertificateUserId(), "/upload_files/usercert_" + registrationModel.getCertificateUserId() + ".pem", "/upload_files/userkey_" + registrationModel.getCertificateUserId() + ".pem", newPwd, newPwd};
+					String[] env = {"GT_PROXY_MODE=old","X509_USER_CERT=/upload_files/usercert_" + registrationModel.getCertificateUserId() + ".pem", "X509_USER_KEY=/upload_files/userkey_" + registrationModel.getCertificateUserId() + ".pem"};
+					Process p = Runtime.getRuntime().exec(myproxy2, env, new File("/upload_files"));
 					InputStream stdout = p.getInputStream();
 					InputStream stderr = p.getErrorStream();
 
 					BufferedReader output = new BufferedReader(
 							new InputStreamReader(stdout));
 					String line = null;
+					
+					boolean allOk = true;
 
 					while (((line = output.readLine()) != null)) {
 
@@ -406,21 +460,32 @@ public class AddUserController {
 							if (line.equals("myproxy verify password failure")) {
 								errors.add("error-password-mismatch");
 								log.info(line);
+								allOk = false;
 							} else {
 								if (line.equals("myproxy password userkey failure")) {
 									errors.add("error-password-mismatch");
 									log.info(line);
+									allOk = false;
 								} else {
 									if (line.equals("too short passphrase")) {
 										errors.add("error-password-too-short");
 										log.info(line);
+										allOk = false;
 									} else {
 										if (line.equals("key password failure")) {
 											errors.add("key-password-failure");
 											log.info(line);
+											allOk = false;
 										} else {
-											errors.add("no-valid-key");
-											log.info(line);
+											if (line.equals("CA not supported")) {
+												errors.add("CA-not-supported");
+												log.info(line);
+												allOk = false;
+											} else {
+												errors.add("no-valid-key");
+												log.info(line);
+												allOk = false;
+											}
 										}
 									}
 								}
@@ -432,12 +497,90 @@ public class AddUserController {
 					BufferedReader brCleanUp = new BufferedReader(
 							new InputStreamReader(stderr));
 					while ((line = brCleanUp.readLine()) != null) {
-						
+						allOk = false;
 						log.error("[Stderr] " + line);
 						errors.add("no-valid-key");
 					}
-					
+					if (!allOk) {
+						Certificate certificate2= certificateService.findBySubject(registrationModel.getSubject());
+						if(certificate2!=null)
+							certificateService.delete(certificate);
+						errors.add("myproxy-error");
+						
+						//se è registrazione con certificato cancellare utente
+						
+					}
 					brCleanUp.close();
+					
+					if(allOk){
+						String[] myproxy3 = {"/usr/bin/python", "/upload_files/myproxy2.py", registrationModel.getCertificateUserId()+"_rfc", "/upload_files/usercert_" + registrationModel.getCertificateUserId() + ".pem", "/upload_files/userkey_" + registrationModel.getCertificateUserId() + ".pem", newPwd, newPwd};
+						String[] envRFC = {"GT_PROXY_MODE=rfc","X509_USER_CERT=/upload_files/usercert_" + registrationModel.getCertificateUserId() + ".pem", "X509_USER_KEY=/upload_files/userkey_" + registrationModel.getCertificateUserId() + ".pem"};
+						p = Runtime.getRuntime().exec(myproxy3, envRFC, new File("/upload_files"));
+						stdout = p.getInputStream();
+						stderr = p.getErrorStream();
+
+						output = new BufferedReader(
+								new InputStreamReader(stdout));
+						line = null;
+
+						while (((line = output.readLine()) != null)) {
+
+							log.info("[Stdout] " + line);
+							if (line.equals("myproxy success")) {
+								log.info("myproxy ok");
+							} else {
+								if (line.equals("myproxy verify password failure")) {
+									errors.add("error-password-mismatch");
+									log.info(line);
+									allOk = false;
+								} else {
+									if (line.equals("myproxy password userkey failure")) {
+										errors.add("error-password-mismatch");
+										log.info(line);
+										allOk = false;
+									} else {
+										if (line.equals("too short passphrase")) {
+											errors.add("error-password-too-short");
+											log.info(line);
+											allOk = false;
+										} else {
+											if (line.equals("key password failure")) {
+												errors.add("key-password-failure");
+												log.info(line);
+												allOk = false;
+											} else {
+												if (line.equals("CA not supported")) {
+													errors.add("CA-not-supported");
+													log.info(line);
+													allOk = false;
+												} else {
+													errors.add("no-valid-key");
+													log.info(line);
+													allOk = false;
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+						output.close();
+						
+
+						brCleanUp = new BufferedReader(
+								new InputStreamReader(stderr));
+						while ((line = brCleanUp.readLine()) != null) {
+							allOk = false;
+							log.error("[Stderr] " + line);
+							errors.add("no-valid-key");
+						}
+						if (!allOk) {
+							Certificate certificate2= certificateService.findBySubject(registrationModel.getSubject());
+							certificateService.delete(certificate2);
+							errors.add("myproxy-error");
+						}
+						brCleanUp.close();
+					}
 				} catch (IOException e1) {
 					errors.add("myproxy-exception");
 					e1.printStackTrace();
