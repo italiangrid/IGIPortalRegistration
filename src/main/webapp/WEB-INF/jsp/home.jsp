@@ -3,41 +3,6 @@
 <script type="text/javascript">
 <!--
 	//-->
-	function mostraModificaUtente() {
-		$("#<portlet:namespace/>formOFF").show("slow");
-		$("#<portlet:namespace/>formOn").hide("slow");
-	}
-
-	function nascondiModificaUtente() {
-		$("#<portlet:namespace/>formOFF").hide("slow");
-		$("#<portlet:namespace/>formOn").show("slow");
-	}
-
-	function mostraCertificatiUtente() {
-		$("#<portlet:namespace/>certificatiOFF").show("slow");
-		$("#<portlet:namespace/>certificatiOn").hide("slow");
-	}
-
-	function nascondiCertificatiUtente() {
-		$("#<portlet:namespace/>certificatiOFF").hide("slow");
-		$("#<portlet:namespace/>certificatiOn").show("slow");
-	}
-
-	function mostraVoUtente() {
-		$("#<portlet:namespace/>voOFF").show("slow");
-		$("#<portlet:namespace/>voOn").hide("slow");
-	}
-
-	function nascondiVoUtente() {
-		$("#<portlet:namespace/>voOFF").hide("slow");
-		$("#<portlet:namespace/>voOn").show("slow");
-	}
-	
-	function verifyDelete(url){
-		var agree=confirm("Sei sicuro di voler eliminare il tuo account?");
-		if (agree)
-			return location.href=url ;
-	}
 	
 	(function ($) {
 
@@ -233,31 +198,6 @@ div.function {
 #addVo{float:left;}
 #clear{clear:both;}
 
-div#personalData {
-	padding: 1em;
-	border: 1px;
-	border-color: #C8C9CA;
-	border-style: solid;
-	background-color: #EFEFEF;
-}
-
-div#certificateData {
-	margin: 3px 0 3px 0;
-	padding: 1em;
-	border: 1px;
-	border-color: #C8C9CA;
-	border-style: solid;
-	background-color: #EFEFEF;
-}
-
-div#voData {
-	padding: 1em;
-	border: 1px;
-	border-color: #C8C9CA;
-	border-style: solid;
-	background-color: #EFEFEF;
-}
-
 </style>
 
 
@@ -271,7 +211,6 @@ div#voData {
 	scope="request" />
 <jsp:useBean id="idps"
 	type="java.util.List<it.italiangrid.portal.dbapi.domain.Idp>" scope="request" />
-<jsp:useBean id="idpsName" type="java.util.Map" scope="request" />
 
 
 <liferay-ui:success key="user-delated-successufully"
@@ -374,10 +313,73 @@ div#voData {
 
 				<%
 					UserInfo ui = (UserInfo) row.getObject();
-									String res = (String) idpsName.get(ui.getUserId());
+					long companyId = PortalUtil.getCompanyId(request);
+					User liferayUser = UserLocalServiceUtil.getUserByEmailAddress(companyId, ui.getMail());
+					List<Group> groups = liferayUser.getGroups();
+					
+					String groupsString = "";
+					String groupsStringName = "";
+					
+					for(Group g : groups){
+						if(g.getName().equals("Guest")){
+							groupsString+= g.getName() + "|/web" + g.getFriendlyURL() + ",";
+						} else {
+							groupsString+= g.getName() + "|/group" + g.getFriendlyURL() + ",";
+						}
+						groupsStringName+= g.getName() + ", ";
+					}
+					groupsString = groupsString.substring(0, groupsString.length() -1 );
+					groupsStringName = groupsStringName.substring(0, groupsStringName.length() -2 );
+					
+					pageContext.setAttribute("groupList",groupsString);
+					pageContext.setAttribute("groupListName",groupsStringName);
+					pageContext.setAttribute("liferayUser",liferayUser.getUserId());
+					pageContext.setAttribute("registrationDate",liferayUser.getCreateDate().toString());
+					Boolean test = false;
+					if(ui.getUsername().equals(user.getScreenName()))
+						test = true;
+						
+					pageContext.setAttribute("test",test);
+					
 				%>
-				<liferay-ui:search-container-column-jsp
-					path="/WEB-INF/jsp/admin-action.jsp" align="right" />
+				<liferay-ui:search-container-column-text name="Registration Date">${registrationDate }</liferay-ui:search-container-column-text>
+				<liferay-ui:search-container-column-text name="Liferay UID">${liferayUser }</liferay-ui:search-container-column-text>
+				<liferay-ui:search-container-column-text name="Group">${groupListName }</liferay-ui:search-container-column-text>
+				
+				<liferay-ui:search-container-column-text name="Actions">
+					<liferay-ui:icon-menu>
+
+						<portlet:renderURL var="editURL">
+							<portlet:param name="myaction" value="editUserInfoForm" />
+							<portlet:param name="userId" value="${UserInfo.userId }" />
+						</portlet:renderURL>
+						<liferay-ui:icon image="edit" message="Edit" url="${editURL}" />
+						
+						<c:forTokens var="group" items="${groupList }" delims=",">
+						
+							<c:if test="${fn:split(group,'|')[0] == 'Guest' }">
+								<liferay-security:doAsURL  doAsUserId="${liferayUser}"  var="impersonateUserURL"/>
+								<liferay-ui:icon image="impersonate_user" target="_blank" message="Impersonate User" url="${impersonateUserURL}" />
+							</c:if>
+							<c:if test="${fn:split(group,'|')[0] != 'Guest' }">
+								<liferay-security:doAsURL  doAsUserId="${liferayUser}"  var="impersonateUserURL"/>
+								<c:set var="impersonateUserURL" value="${fn:replace(impersonateUserURL, '/web/guest/welcome', fn:split(group,'|')[1])}"/>
+								<liferay-ui:icon image="impersonate_user" target="_blank" message="Impersonate User ${fn:split(group,'|')[0]}" url="${impersonateUserURL}" />
+							</c:if>
+						
+						</c:forTokens>
+						
+						<c:if test="${!test}">
+							<portlet:actionURL var="deleteURL">
+								<portlet:param name="myaction" value="removeUserInfo" /> 
+								<portlet:param name="userId" value="${UserInfo.userId }" />
+							</portlet:actionURL>
+							<liferay-ui:icon-delete url="${deleteURL}" />
+						</c:if>
+					
+					</liferay-ui:icon-menu>
+				</liferay-ui:search-container-column-text>
+				
 			</liferay-ui:search-container-row>
 			<liferay-ui:search-iterator />
 		</liferay-ui:search-container>
@@ -385,27 +387,5 @@ div#voData {
 		
 		</div>
 	</c:when>
-	<c:otherwise>
-	
-		
-		
-		<portlet:renderURL var="editURL">
-			<portlet:param name="myaction" value="editUserInfoForm" />
-			<portlet:param name="userId" value="${userId }" />
-		</portlet:renderURL>
-		
-		<script>
-		
-		/*location.href="${editURL}";*/
-		
-		</script>
-		
-		non dovresti essere qui.
-		
-
-	</c:otherwise>
 </c:choose>
-
-<liferay-security:doAsURL  doAsUserId="13935"  var="impersonateUserURL"/>
-<a href="${impersonateUserURL }" target="_blank">test </a>
 

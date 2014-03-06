@@ -224,21 +224,6 @@ public class UserInfoController {
 		result += "\""+vos.get(vos.size()-1).getVo()+"\"";
 		return result;
 	}
-
-	@ModelAttribute("idpsName")
-	public Map<Object, Object> getIdpsName() {
-
-		Map<Object, Object> x = new Properties();
-
-		List<UserInfo> users = userInfoService.getAllUserInfo();
-
-		for (int i = 0; i < users.size(); i++) {
-
-			x.put(users.get(i).getUserId(),
-					idpService.findByIdp(users.get(i).getIdp()));
-		}
-		return x;
-	}
 	
 	@ModelAttribute("isUserActive")
 	public String getIsUserActive(RenderRequest request) {
