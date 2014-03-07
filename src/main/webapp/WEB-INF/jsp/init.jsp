@@ -27,6 +27,7 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.Calendar" %> 
 <%@ page import="java.util.Collections" %>
+<%@ page import="java.text.SimpleDateFormat" %>
 
 <%@ page import="javax.portlet.PortletURL" %>
  

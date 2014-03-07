@@ -191,8 +191,11 @@ public class UserInfoController {
 	public List<UserInfo> getUserInfos() {
 		if (search == null || search.equals(""))
 			return userInfoService.getAllUserInfo();
-		else
-			return userInfoService.getAllUserInfoByName(search);
+		else{
+			String temp = search;
+			search = "";
+			return userInfoService.getAllUserInfoByName(temp);
+		}
 	}
 
 	@ModelAttribute("idps")

@@ -265,7 +265,7 @@ div.function {
 						<portlet:param name="myaction" value="searchResetUser" />
 					</portlet:actionURL>
 					
-					<aui:button type="cancel" value="Erase search"
+					<aui:button type="cancel" value="Reset Search"
 						onClick="location.href='${backURL}';" />
 					<liferay-portlet:renderURL  windowState="<%= LiferayWindowState.POP_UP.toString() %>" var="downloadProxy">
 						<portlet:param name="myaction" value="showSendMail" />
@@ -297,7 +297,7 @@ div.function {
 		 
 		} else { 
 		 
-			sortByCol = portalPrefs.getValue("NAME_SPACE", "sort-by-col", "First Name");
+			sortByCol = portalPrefs.getValue("NAME_SPACE", "sort-by-col", "lastName");
 			sortByType = portalPrefs.getValue("NAME_SPACE", "sort-by-type ", "asc");   
 		}
 		
@@ -359,7 +359,8 @@ div.function {
 					pageContext.setAttribute("groupList",groupsString);
 					pageContext.setAttribute("groupListName",groupsStringName);
 					pageContext.setAttribute("liferayUser",liferayUser.getUserId());
-					pageContext.setAttribute("registrationDate",liferayUser.getCreateDate().toString());
+					SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy");
+					pageContext.setAttribute("registrationDate",sdf.format(liferayUser.getCreateDate()));
 					Boolean test = false;
 					if(ui.getUsername().equals(user.getScreenName()))
 						test = true;
