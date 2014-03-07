@@ -283,16 +283,41 @@ div.function {
 			</aui:fieldset>
 		</div>
 		<div id="tabella">
+		
+		<%
+		
+		PortalPreferences portalPrefs = PortletPreferencesFactoryUtil.getPortalPreferences(request); 
+		String sortByCol = ParamUtil.getString(request, "orderByCol"); 
+		String sortByType = ParamUtil.getString(request, "orderByType"); 
+		   
+		if (Validator.isNotNull(sortByCol ) && Validator.isNotNull(sortByType )) { 
+		 
+			portalPrefs.setValue("NAME_SPACE", "sort-by-col", sortByCol); 
+			portalPrefs.setValue("NAME_SPACE", "sort-by-type", sortByCol); 
+		 
+		} else { 
+		 
+			sortByCol = portalPrefs.getValue("NAME_SPACE", "sort-by-col", "First Name");
+			sortByType = portalPrefs.getValue("NAME_SPACE", "sort-by-type ", "asc");   
+		}
+		
+		%>
+		
 		<liferay-ui:search-container
-			emptyResultsMessage="No user registred" delta="20">
+			emptyResultsMessage="No user registred" delta="20" orderByCol="<%= sortByCol %>" orderByType="<%= sortByType %>">
 			<liferay-ui:search-container-results>
 				<%
+					
+					OrderByComparator orderByComparator = CustomComparatorUtil.getUserOrderByComparator(sortByCol, sortByType, PortalUtil.getCompanyId(request));         
+		  
+		           	Collections.sort(userInfos,orderByComparator);
+		           
 					results = ListUtil.subList(userInfos,
 							searchContainer.getStart(),
 							searchContainer.getEnd());
 					total = userInfos.size();
 
-					pageContext.setAttribute("idps", idps);
+					
 					pageContext.setAttribute("results", results);
 					pageContext.setAttribute("total", total);
 				%>
@@ -303,13 +328,13 @@ div.function {
 				className="it.italiangrid.portal.dbapi.domain.UserInfo" keyProperty="userId"
 				modelVar="UserInfo">
 				<liferay-ui:search-container-column-text name="Last Name"
-					property="lastName" />
+					property="lastName" orderable="<%= true %>" orderableProperty="lastName"/>
 				<liferay-ui:search-container-column-text name="First Name"
-					property="firstName" />
+					property="firstName" orderable="<%= true %>" orderableProperty="firstName"/>
 				<liferay-ui:search-container-column-text name="Institute"
-					property="institute" />
+					property="institute" orderable="<%= true %>" orderableProperty="institute"/>
 				<liferay-ui:search-container-column-text name="e-Mail"
-					property="mail" />
+					property="mail" orderable="<%= true %>" orderableProperty="mail"/>
 
 				<%
 					UserInfo ui = (UserInfo) row.getObject();
@@ -342,9 +367,9 @@ div.function {
 					pageContext.setAttribute("test",test);
 					
 				%>
-				<liferay-ui:search-container-column-text name="Registration Date">${registrationDate }</liferay-ui:search-container-column-text>
-				<liferay-ui:search-container-column-text name="Liferay UID">${liferayUser }</liferay-ui:search-container-column-text>
-				<liferay-ui:search-container-column-text name="Group">${groupListName }</liferay-ui:search-container-column-text>
+				<liferay-ui:search-container-column-text name="Registration Date" orderable="<%= true %>" >${registrationDate }</liferay-ui:search-container-column-text>
+				<liferay-ui:search-container-column-text name="Liferay UID" orderable="<%= true %>">${liferayUser }</liferay-ui:search-container-column-text>
+				<liferay-ui:search-container-column-text name="Group" orderable="<%= true %>">${groupListName }</liferay-ui:search-container-column-text>
 				
 				<liferay-ui:search-container-column-text name="Actions">
 					<liferay-ui:icon-menu>

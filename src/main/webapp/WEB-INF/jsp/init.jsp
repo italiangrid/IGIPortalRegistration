@@ -56,5 +56,12 @@
 
 <%@ page import="com.liferay.portal.util.PortalUtil" %>
 
+<%@ page import="com.liferay.portal.kernel.util.OrderByComparator" %>
+<%@ page import="com.liferay.portal.kernel.util.Validator" %>
+<%@ page import="com.liferay.portlet.PortalPreferences" %>
+<%@ page import="com.liferay.portlet.PortletPreferencesFactoryUtil" %>
+<%@ page import="it.italiangrid.portal.registration.util.CustomComparatorUtil" %>
+
+
 <portlet:defineObjects />	
 <liferay-theme:defineObjects />
