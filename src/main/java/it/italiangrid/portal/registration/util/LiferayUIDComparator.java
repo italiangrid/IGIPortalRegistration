@@ -36,7 +36,9 @@ public class LiferayUIDComparator extends OrderByComparator {
 			
 			User instance1 = UserLocalServiceUtil.fetchUserByScreenName(companyId, user1.getUsername());
 			User instance2 = UserLocalServiceUtil.fetchUserByScreenName(companyId, user2.getUsername());
-			
+			if(instance1==null || instance2==null){
+				return 0;
+			}
 			if(instance1.getUserId() < instance2.getUserId()){
 				return asc ? -1 : 1;
 			}

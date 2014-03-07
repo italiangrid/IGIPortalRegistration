@@ -37,6 +37,10 @@ public class RegistrationDateComparator extends OrderByComparator {
 			User instance1 = UserLocalServiceUtil.fetchUserByScreenName(companyId, user1.getUsername());
 			User instance2 = UserLocalServiceUtil.fetchUserByScreenName(companyId, user2.getUsername());
 			
+			if(instance1==null || instance2==null){
+				return 0;
+			}
+			
 			int value = instance1.getCreateDate()
 					.compareTo(instance2.getCreateDate());
 

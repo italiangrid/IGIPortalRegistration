@@ -39,6 +39,10 @@ public class GroupComparator extends OrderByComparator {
 			User instance1 = UserLocalServiceUtil.fetchUserByScreenName(companyId, user1.getUsername());
 			User instance2 = UserLocalServiceUtil.fetchUserByScreenName(companyId, user2.getUsername());
 			
+			if(instance1==null || instance2==null){
+				return 0;
+			}
+			
 			String groups1 = groupToString(instance1.getGroups());
 			String groups2 = groupToString(instance2.getGroups());
 			

@@ -579,7 +579,7 @@ div.function {
 }
 
 #myAlert div.portlet-msg-success {
-    background: #FFC url(https://flyback.cnaf.infn.it/html/themes/classic/images/messages/alert.png) no-repeat 6px 20%;
+    background: #FFC url(https://portal.italiangrid.it/html/themes/classic/images/messages/alert.png) no-repeat 6px 20%;
     border: 1px solid #FC0;
 }
 
@@ -1584,20 +1584,20 @@ div.function {
 		<tr>
 			<td style="width: 30%; text-align: center; vertical-align: middle;">
 				<p>
-					<a href="#" onclick="location.href='https://flyback.cnaf.infn.it/web/guest/contact-us';" class="sideButton large">
+					<a href="#" onclick="location.href='https://portal.italiangrid.it/web/guest/contact-us';" class="sideButton large">
 					<img alt="" src="<%=request.getContextPath()%>/images/Documentation_guide.png" style="width: 80px; height: 80px;" /></a></p>
 				<p>
 					<img alt="" src="<%=request.getContextPath()%>/images/separatore-giu.png" style="line-height: 1.4; width: 80px; height: 10px;" /></p>
 			</td>
 			<td style="width: 30%; text-align: center; vertical-align: middle;">
 				<p>
-					<a href="#" onclick="location.href='https://flyback.cnaf.infn.it/web/guest/contact-us';" class="sideButton large">
+					<a href="#" onclick="location.href='https://portal.italiangrid.it/web/guest/contact-us';" class="sideButton large">
 					<img alt="" src="<%=request.getContextPath()%>/images/Video_guide.png" style="width: 80px; height: 80px;" /></a></p>
 				<p>
 					<img alt="" src="<%=request.getContextPath()%>/images/separatore-giu.png" style="width: 80px; height: 10px;" /></p>
 			</td>
 			<td style="width: 30%; text-align: center; vertical-align: middle;">
-				<p><a href="#" onclick="location.href='https://flyback.cnaf.infn.it/web/guest/contact-us';" class="sideButton large">
+				<p><a href="#" onclick="location.href='https://portal.italiangrid.it/web/guest/contact-us';" class="sideButton large">
 				<img alt="" src="<%=request.getContextPath()%>/images/HelpSide.png" style="width: 80px; height: 80px;" /></a><br />
 				</p><p>
 					<img alt="" src="<%=request.getContextPath()%>/images/separatore-giu.png" style="width: 80px; height: 10px;" /></p>
