@@ -215,7 +215,7 @@ public class DiracTask {
 	@Override
 	public String toString() {
 		return "DiracTask [userCert=" + userCert + ", userKey=" + userKey
-				+ ", password=" + password + ", email=" + email + ", dn=" + dn
+				+ ", password= ******* , email=" + email + ", dn=" + dn
 				+ ", username=" + username + ", operation=" + operation + "]";
 	}
 
