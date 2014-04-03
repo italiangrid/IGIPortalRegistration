@@ -31,6 +31,7 @@ import it.italiangrid.portal.registration.util.RegistrationConfig;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.servlet.SessionMessages;
+import com.liferay.portal.kernel.util.FileUtil;
 import com.liferay.portal.model.User;
 import com.liferay.portal.service.UserLocalServiceUtil;
 import com.liferay.portal.util.PortalUtil;
@@ -83,9 +84,13 @@ public class RemoveUserInfoController {
 			DiracRegistration.addDiracTask(diracTask);
 		}
 		
-		
 		userInfoService.delete(userId);
 		log.info("eliminato utente portalUser");
+		
+		String userPath = System.getProperty("java.io.tmpdir") + "/users/"+ user.getUserId() + "/";
+		FileUtil.deltree(userPath);
+		log.info("Deleted User's Home Directory");
+		
 		response.setRenderParameter("myaction", "userInfos");
 		SessionMessages.add(request, "user-delated-successufully");
 	}
