@@ -418,12 +418,12 @@
 						</div>
 						</c:if>
 						<c:if test="${!registrationModel.haveIDP }" >
-						<portlet:renderURL var="homeUrl">
+						<portlet:renderURL var="userUrl">
 							<portlet:param name="myaction" value="userInfos" />
 						</portlet:renderURL>
 						<div class="button" style="float: left;">
 						<liferay-ui:icon-menu>
-						<liferay-ui:icon image="close" message="Abort Registration" url="${homeUrl }" />
+						<liferay-ui:icon image="close" message="Abort Registration" url="${userUrl }" />
 						</liferay-ui:icon-menu>
 						</div>
 						</c:if>

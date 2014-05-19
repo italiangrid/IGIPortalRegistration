@@ -24,12 +24,12 @@
 	</portlet:renderURL>
 	<liferay-ui:icon image="edit" message="Set Role VO" url="${editURL}" />
 
-	<portlet:actionURL var="editURL">
+	<portlet:actionURL var="defaultURL">
 		<portlet:param name="myaction" value="setDefaultUserToVoEdit" />
 		<portlet:param name="userId" value="${userId}" />
 		<portlet:param name="idVo" value="<%=primKey %>" />
 	</portlet:actionURL>
-	<liferay-ui:icon image="tag" message="Set Default" url="${editURL}" />
+	<liferay-ui:icon image="tag" message="Set Default" url="${defaultURL}" />
 
 
 	<portlet:actionURL var="deleteURL">

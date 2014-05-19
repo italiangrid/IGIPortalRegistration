@@ -1615,11 +1615,11 @@ div.function {
 		<tr>
 			<td colspan="3">
 			
-				<portlet:actionURL var="homeUrl">
+				<portlet:actionURL var="userUrl">
 					<portlet:param name="myaction" value="uploadComplete" />
 				</portlet:actionURL>
 				<p style="text-align: center;">
-					<a href="#" onclick="location.href='${homeUrl }';" class="sideButton">
+					<a href="#" onclick="location.href='${userUrl }';" class="sideButton">
 					<img alt="" src="<%=request.getContextPath()%>/images/Changes_completed.png" style="width: 137px; height: 48px;" /></a></p>
 				
 				

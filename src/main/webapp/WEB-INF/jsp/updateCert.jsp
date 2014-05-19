@@ -337,7 +337,7 @@ h5#usernameAlert {
 									request.getParameter("primCert"));
 					%>
 					
-					<portlet:renderURL var="homeUrl">
+					<portlet:renderURL var="editUrl">
 						<portlet:param name="myaction" value="editUserInfoForm" />
 						<portlet:param name="userId" value="${userId}" />
 					</portlet:renderURL>
@@ -435,7 +435,7 @@ h5#usernameAlert {
 			<aui:button-row>
 				<aui:button type="submit" value="Update Certificate"  onClick="return validate();"/>
 				<aui:button type="cancel" value="Back"
-					onClick="location.href='${homeUrl}';" />
+					onClick="location.href='${editUrl}';" />
 
 			</aui:button-row>
 

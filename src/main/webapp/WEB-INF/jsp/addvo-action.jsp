@@ -33,7 +33,7 @@
 	</portlet:renderURL>
 	<liferay-ui:icon image="edit" message="Set Role VO" url="${editURL}" />
 	
-	<portlet:actionURL var="editURL">
+	<portlet:actionURL var="voURL">
 		<portlet:param name="myaction" value="setDefaultVo" />
 		<portlet:param name="idVo" value="<%=primKey %>" />
 		<portlet:param name="subject" value="${registrationModel.subject }"/>
@@ -54,7 +54,7 @@
 		<portlet:param name="voStatus" value="${registrationModel.voStatus }"/>
 		<portlet:param name="verifyUser" value="${registrationModel.verifyUser }"/>
 	</portlet:actionURL>
-	<liferay-ui:icon image="tag" message="Default VO" url="${editURL}" />
+	<liferay-ui:icon image="tag" message="Default VO" url="${voURL}" />
 
 	<portlet:actionURL var="deleteURL">
 		<portlet:param name="myaction" value="deleteVo" />
