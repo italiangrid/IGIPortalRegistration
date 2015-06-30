@@ -448,7 +448,9 @@ public class UploadCertController {
 						
 						MyProxy mp = new MyProxy(RegistrationConfig.getProperties("Registration.properties", "myproxy.storage"), 7512);
 						
-						GSSCredential proxy = mp.get(usernameCert, pwd1, 608400);
+						File proxyFile = new File(userPath + "/x509up");
+						
+						/*GSSCredential proxy = mp.get(usernameCert, pwd1, 608400);
 						
 						log.debug("----- All ok -----");
 						log.debug("Proxy:" + proxy.toString());
@@ -463,7 +465,9 @@ public class UploadCertController {
 						log.debug("Save proxy file: " + globusCred);
 						OutputStream out = new FileOutputStream(proxyFile);
 						Util.setFilePermissions(proxyFile.toString(), 600);
-						globusCred.save(out);
+						globusCred.save(out);*/
+						
+						boolean proxylogon = myMyProxyLogon(proxyFile.toString(), usernameCert, pwd1, 608400, request);
 						
 					} catch (IOException e1) {
 						allOk = false;
@@ -472,10 +476,10 @@ public class UploadCertController {
 					} catch (RegistrationException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
-					} catch (MyProxyException e) {
+					} /*catch (MyProxyException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
-					}
+					}*/
 				}
 			}
 		}
@@ -971,7 +975,7 @@ public class UploadCertController {
 				log.info(tmpPwd);
 				log.info("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
 				
-				GSSCredential proxy;
+				/*GSSCredential proxy;
 				
 					proxy = mp.get(cert.getUsernameCert(), tmpPwd, 608400);
 				
@@ -989,7 +993,9 @@ public class UploadCertController {
 				out = new FileOutputStream(proxyFile);
 				Util.setFilePermissions(proxyFile.toString(), 600);
 				globusCred.save(out);
+				*/
 				
+				boolean proxylogon = myMyProxyLogon(proxyFile.toString(), cert.getUsernameCert(), tmpPwd, 608400, request);
 
 				
 //				String myproxy = "/usr/bin/python /upload_files/myproxy2.py "
@@ -1071,10 +1077,10 @@ public class UploadCertController {
 				e2.printStackTrace();
 			} catch (SystemException e2) {
 				e2.printStackTrace();
-			} catch (MyProxyException e) {
+			} /*catch (MyProxyException e) {
 				e.printStackTrace();
 				errors.add("myproxy-exception");
-			} 
+			} */
 			
 		}else{
 			SessionErrors.add(request, "error-password-mismatch");
@@ -1139,4 +1145,73 @@ public class UploadCertController {
 		}
 
 	}
+	
+	private boolean myMyProxyLogon(String proxyFile, String username, String password, int valid, ActionRequest request){
+		try {
+			
+			String contextPath = UploadCertController.class.getClassLoader().getResource("").getPath();
+			
+			log.debug("dove sono:" + contextPath);
+			
+			FileInputStream inStream =
+		    new FileInputStream(contextPath + "/content/Registration.properties");
+
+			Properties prop = new Properties();
+			prop.load(inStream);
+			inStream.close();
+			
+			String myproxyHost = prop.getProperty("myproxy.storage");
+			
+			String cmd = "myproxy-logon.py " + myproxyHost + " " + username+ " " + valid + " " + proxyFile + " " + password;
+			
+			log.debug("Myproxy-logon command = " + cmd);
+			
+			String[] myproxylogon = {"/usr/bin/python", "/upload_files/myproxy-logon.py", myproxyHost, username, Integer.toString(valid), proxyFile, password};
+			Process p = Runtime.getRuntime().exec(myproxylogon);
+			InputStream stdout = p.getInputStream();
+			InputStream stderr = p.getErrorStream();
+
+			BufferedReader output = new BufferedReader(
+					new InputStreamReader(stdout));
+			String line = null;
+
+			while (((line = output.readLine()) != null)) {
+
+				log.info("[Stdout] " + line);
+				
+				if (line.equals("myproxy success")) {
+					log.info("myproxy ok");
+				} else {
+					if (line.equals("myproxy username failure")) {
+						log.info(line);
+					} else {
+						if (line.equals("myproxy password failure")) {
+							log.info(line);
+						} else {
+							if (line.equals("myproxy password too short")) {
+								log.info(line);
+							}
+						}
+					}
+				}
+			}
+			output.close();
+
+			BufferedReader brCleanUp = new BufferedReader(
+					new InputStreamReader(stderr));
+			while ((line = brCleanUp.readLine()) != null) {
+				log.error("[Stderr] " + line);
+			}
+			brCleanUp.close();
+			
+			return true;
+
+		} catch (IOException e) {
+			
+			SessionErrors.add(request, "myMyProxyInit-exception");
+			e.printStackTrace();
+			return false;
+		}
+	}
+	
 }
